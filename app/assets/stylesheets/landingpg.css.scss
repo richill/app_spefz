@@ -194,7 +194,7 @@
   padding: 15px 0px !important;
 }
 
-.logo_section {
+.logo_links_section {
   text-align: left;
   width: 960px !important;
   // background-color: green;
@@ -207,6 +207,36 @@
   font-weight: 200;
   color: #fff;
 }
+
+.links {
+  float: right;
+  display: inline-block;
+}
+
+.links ul {
+  list-style-type: none;
+}
+
+.links ul li {
+  float: right;
+}
+
+.links ul li a {
+  font-family: "Lato", sans-serif;
+  font-size: 18px;
+  font-weight: 200;
+  color: #fff !important;
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  padding: 15px;
+  margin-left: 5px;
+}
+
+.links ul li a:hover {
+  background-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+
+
 
 
 
