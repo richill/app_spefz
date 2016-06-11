@@ -2,3 +2,113 @@
     Section: landing page
     File: views / static_pages / landingpg.html.erb
   =========================================*/
+
+.landingpg_section #signup_name {
+  font-family: "Lato", sans-serif;
+  border: none !important;
+  box-shadow: none !important;
+  outline: 0 !important;
+  border-radius: 3px !important;
+  padding: 0px 15px !important;
+  height: 40px;
+  color: #454d53;
+  font-size: 18px;
+  width: 394px;
+  float: left;
+  margin-right: 30px;
+}
+@media only screen and (max-width: 520px) {
+  .landingpg_section #signup_name {
+    font-size: 15px;
+  }
+}
+@media only screen and (max-width: 940px) {
+  .landingpg_section #signup_name {
+    width: 100%;
+    margin-right: 0px;
+  }
+}
+
+.landingpg_section #signup_email {
+  font-family: "Lato", sans-serif;
+  border: none !important;
+  box-shadow: none !important;
+  outline: 0 !important;
+  border-radius: 3px !important;
+  padding: 0px 15px !important;
+  height: 40px;
+  color: #454d53;
+  font-size: 18px;
+  width: 394px;
+  float: left;
+}
+@media only screen and (max-width: 520px) {
+  .landingpg_section #signup_email {
+    font-size: 15px;
+  }
+}
+@media only screen and (max-width: 940px) {
+  .landingpg_section #signup_email {
+    width: 100%;
+    margin-right: 0px;
+  }
+}
+
+.landingpg_section #signup_category_user_id {
+  font-family: "Lato", sans-serif;
+  border: none !important;
+  box-shadow: none !important;
+  outline: 0 !important;
+  border-radius: 3px !important;
+  padding: 0px 15px !important;
+  color: #454d53;
+  font-size: 16px;
+  height: 40px;
+}
+@media only screen and (max-width: 520px) {
+  .landingpg_section #signup_category_user_id {
+    font-size: 15px;
+  }
+}
+
+
+.landingpg_section input[type="submit"] {
+  margin-bottom: 0px !important;
+  width: 100%;
+  border-radius: 2px;
+  background-color: #E1473E !important;
+  font-weight: bold;
+}
+
+.landingpg_section input[type="submit"]:hover {
+  background-color: #2F3F5B !important;
+}
+
+.landingpg_section .notified_text {
+  color: #2F3F5B;
+  font-size: 13px;
+  text-align: center;
+  margin-top: 5px;
+}
+
+@media only screen and (max-width: 640px) {
+.landingpg_footer_section .social_media {
+    margin: 15px auto !important;
+    width: 270px !important;
+  }
+}
+
+
+@media only screen and (max-width: 800px) {
+  .landingpg_section .banner_singedout_section p {
+    font-size: 18px !important;
+  }
+}
+
+.landingpg_section .signedout_content_section .point {
+  margin-top: 15px !important
+}
+
+
+
+
