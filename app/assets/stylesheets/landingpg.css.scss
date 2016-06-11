@@ -5,7 +5,7 @@
 
 .landingpage_singedout_section .banner_singedout_section {
   background-color: green;
-  background: url("img_background_one.jpg") no-repeat;
+  background: url("img_background.jpg") no-repeat;
   background-position: 0% 63%;
   background-size: cover;
   padding: 0px !important;
@@ -172,39 +172,56 @@
 //   workings
 // -------------------------
 
-.header_section {
+.landingpage_singedout_section .header_section {
   padding: 15px 0px !important;
 }
 
-.logo_links_section {
+.landingpage_singedout_section .logo_links_section {
   text-align: left;
   width: 960px !important;
   margin: auto;
 }
 
-.logo_title {
+.landingpage_singedout_section .logo img {
+  width: 65px;
+  border-radius: 2px;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease; 
+}
+
+.landingpage_singedout_section .logo img:hover {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  padding: 15px;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease; 
+}
+
+.landingpage_singedout_section .logo_title {
   font-family: "Lato", sans-serif;
   font-size: 30px;
   font-weight: 200;
   color: #fff;
 }
 
-.links {
+.landingpage_singedout_section .links {
   float: right;
   display: inline-block;
 }
 
-.links ul {
+.landingpage_singedout_section .links ul {
   list-style-type: none;
   padding: 14px 0px;
   margin: 0px !important;
 }
 
-.links ul li {
+.landingpage_singedout_section .links ul li {
   float: right;
+  margin-top: 3px;
 }
 
-.links ul li a {
+.landingpage_singedout_section .links ul li a {
   font-family: "Lato", sans-serif;
   font-size: 18px;
   font-weight: 200;
@@ -217,14 +234,14 @@
   -o-transition: all 0.3s ease; 
 }
 
-.links ul li a:hover {
+.landingpage_singedout_section .links ul li a:hover {
   background-color: rgba(47,63,91,0.3) !important;
   -webkit-transition: all 0.3s ease; 
   -moz-transition: all 0.3s ease; 
   -o-transition: all 0.3s ease; 
 }
 
-.launch_info {
+.landingpage_singedout_section .launch_info {
   font-family: "Lato", sans-serif;
   font-size: 10px;
   font-weight: 200;
