@@ -130,23 +130,6 @@
   }
 }
 
-.landingpage_singedout_section #signup_category_user_id {
-  font-family: "Lato", sans-serif;
-  border: none !important;
-  box-shadow: none !important;
-  outline: 0 !important;
-  border-radius: 3px !important;
-  padding: 0px 15px !important;
-  color: #454d53;
-  font-size: 16px;
-  height: 40px;
-}
-@media only screen and (max-width: 520px) {
-  .landingpage_singedout_section #signup_category_user_id {
-    font-size: 15px;
-  }
-}
-
 .landingpage_singedout_section input[type="submit"] {
   margin-bottom: 0px !important;
   width: 100%;
@@ -232,7 +215,7 @@
 }
 
 .links ul li a:hover {
-  background-color: rgba(255, 255, 255, 0.2) !important;
+  background-color: rgba(47,63,91,0.3) !important;
 }
 
 
