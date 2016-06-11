@@ -2,7 +2,7 @@
     Section: landing page
     File: views / static_pages / landingpg.html.erb
   =========================================*/
-  
+
 .landingpage_singedout_section .banner_singedout_section {
   background-color: green;
   background: url("img_howitworks_background.png") no-repeat;
@@ -179,7 +179,6 @@
   }
 }
 
-
 @media only screen and (max-width: 800px) {
   .landingpage_singedout_section .banner_singedout_section p {
     font-size: 18px !important;
@@ -189,6 +188,40 @@
 .landingpage_singedout_section .signedout_content_section .point {
   margin-top: 15px !important
 }
+
+
+// -------------------------
+//   workings
+// -------------------------
+
+.header_section {
+  // background-color: red;
+  padding: 15px 0px !important;
+}
+
+.logo_section {
+  text-align: left;
+  width: 960px !important;
+  // background-color: green;
+  margin: auto;
+}
+
+.logo_title {
+  font-family: "Lato", sans-serif;
+  font-size: 30px;
+  font-weight: 200;
+  color: #fff;
+}
+
+
+
+
+
+
+
+
+
+
 
 
 
