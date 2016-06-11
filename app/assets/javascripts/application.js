@@ -17,3 +17,21 @@
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
+
+// sigin-in alert message | devise signin/signout error messages
+$(document).ready(function(){
+  setTimeout(function(){
+    $('#notice_wrapper').fadeOut("slow", function() {
+      $(this).remove();
+    })
+  }, 2500);
+});
+
+// sigin-out alert message | devise signin/signout error messages
+$(document).ready(function(){
+  setTimeout(function(){
+    $('#alert_wrapper').fadeOut("slow", function() {
+      $(this).remove();
+    })
+  }, 2500);
+});

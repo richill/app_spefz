@@ -25,13 +25,12 @@ class SignupsController < ApplicationController
   # POST /signups.json
   def create
     @signup = Signup.new(signup_params)
-
     respond_to do |format|
       if @signup.save
-        format.html { redirect_to @signup, notice: 'Signup was successfully created.' }
-        format.json { render :show, status: :created, location: @signup }
+        format.html { redirect_to root_path, notice: 'Thank You! You have been successfully added to our Beta List.' }
+        format.json { render json: @signup, status: :created, location: @signup }
       else
-        format.html { render :new }
+        format.html { redirect_to root_path, alert: 'Ensure all fields are completed' }
         format.json { render json: @signup.errors, status: :unprocessable_entity }
       end
     end
