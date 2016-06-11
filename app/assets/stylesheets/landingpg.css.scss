@@ -114,7 +114,7 @@
   font-weight: 200 !important;
   font-size: 18px;
   width: 394px;
-  float: left;
+  float: right;
   background-color: transparent;
   border: 1px solid #fff !important;
 }
@@ -150,9 +150,10 @@
 .landingpage_singedout_section input[type="submit"] {
   margin-bottom: 0px !important;
   width: 100%;
-  border-radius: 2px;
   background-color: #E1473E !important;
-  font-weight: bold;
+  font-weight: 200;
+  letter-spacing: 2px;
+  font-size: 18px;
 }
 
 .landingpage_singedout_section input[type="submit"]:hover {
