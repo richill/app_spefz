@@ -1,0 +1,76 @@
+/*===================================================
+    Page: responsive CSS for all partials beginning with _responsive_content
+    Note: views/shared/_responsive_content [for all partials beginning with _responsive_content in shared folder]
+    File: 
+  ===================================================*/
+
+.responsive_banner_signedout_section .tab-bar {
+  height: 47px;
+  background-color: #20232C;
+}
+
+.responsive_banner_signedout_section .image_logo {
+  margin-left: 0px;
+}
+
+.responsive_banner_signedout_section .image_logo img {
+  width: 29px;
+}
+
+.responsive_banner_signedout_section .image_text {
+  margin-left: 2px;
+}
+
+.responsive_banner_signedout_section .image_text img {
+  width: 180px;
+}
+
+.responsive_banner_signedout_section .right-off-canvas-menu {
+  background-color: #20232C !important;
+  border-bottom: 1px solid #2F3F5B;
+}
+
+.responsive_banner_signedout_section .title ul {
+  width: 300px;
+  padding: 9px 0px;
+  margin: 0px 5px !important;
+}
+
+.responsive_banner_signedout_section .responsive_nav_list li a {
+  font-family: 'Lato', sans-serif;
+  font-size: 15px;
+  color: #fff !important;
+  text-transform: uppercase;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease; 
+}
+ 
+.responsive_banner_signedout_section .responsive_nav_list a:hover {
+  color: #E1473E !important;
+  background-color: #2F3F5B !important;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease; 
+}
+
+.responsive_banner_signedout_section .responsive_nav_list .username {
+  font-family: 'Lato', sans-serif !important;
+  font-size: 15px !important;
+  color: #fff !important;
+  text-transform: uppercase !important;
+  border-bottom: 1px solid #262626 !important;
+  padding: 10px !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+

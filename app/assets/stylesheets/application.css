@@ -15,3 +15,125 @@
  *= require foundation_and_overrides
 
  */
+
+/*=========================================
+    general css content
+  =========================================*/
+
+body {
+  line-height: 1.5 !important;
+}
+
+.clear { 
+  clear: both; 
+}
+
+.hidden { 
+  display: none; 
+}
+
+.hide { 
+  display: none; 
+}
+
+.non_visible {
+  visibility: hidden !important;
+}
+
+a {
+  color: #4d85b0 !important;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus,
+button:focus
+ {
+    outline: none !important;
+}
+
+a:hover {
+  background-color: transparent !important;
+}
+
+.container {
+  height: 100%;
+  background-color: #fff;
+  /*background-color: #71B2D3;*/
+  padding: 0px !important;
+}
+
+button a { 
+  color: #fff !important;
+}
+
+button { 
+  background-color: #E1473E !important;
+  border-radius: 2px !important;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease; 
+}
+
+button:hover {
+  background-color: #2F3F5B !important;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease; 
+}
+
+button input {
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+}
+
+/*----------------------------------------
+    devise signin/signout error messages
+----------------------------------------*/
+
+#notice_wrapper {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  background: #8ABFA1;
+}
+
+#notice_wrapper p {
+  font-family: "Lato", sans-serif;
+  color: #fff;
+  padding: 22px 0px;
+  text-align: center;
+  margin: 0px;
+  font-size: 20px;
+  font-weight: bold;
+  text-shadow: 0px 4px 30px #888888;
+  letter-spacing: 1px;
+}
+
+#alert_wrapper {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  background: rgba(255, 71, 62, 0.95);
+}
+
+#alert_wrapper p {
+  font-family: "Lato", sans-serif;
+  color: #fff;
+  padding: 22px 0px;
+  text-align: center;
+  margin: 0px;
+  font-size: 20px;
+  font-weight: bold;
+  text-shadow: 0px 4px 30px #888888;
+  letter-spacing: 1px;
+}
+
+small {
+  color: #E1473E;
+}
