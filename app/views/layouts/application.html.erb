@@ -13,17 +13,21 @@
 
   <body>
 
-    <% if notice %>
-      <div id="notice_wrapper">
-        <p id="notice"><%= notice %></p>
-      </div>
-    <% elsif alert %>
-      <div id="alert_wrapper">
-        <p id="alert"><%= alert %></p> 
-      </div>
-    <% end %>
+    <div class="medium-12 columns container"> 
+      <div><%# debug(params) if Rails.env.development? %></div>
+      <% if notice %>
+        <div id="notice_wrapper">
+          <p id="notice"><%= notice %></p>
+        </div>
+      <% elsif alert %>
+        <div id="alert_wrapper">
+          <p id="alert"><%= alert %></p> 
+        </div>
+      <% end %>
 
-    <%= yield %>
+      <%= yield %>
+    </div>
     <%= javascript_include_tag "application" %>
   </body>
 </html>
+
