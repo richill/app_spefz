@@ -64,13 +64,17 @@
 }
 
 .landingpage_singedout_section .signup_container {
-  background-color: rgba(255, 255, 255, 0.05) !important;
+  background-color: rgba(255, 255, 255, 0.08) !important;
   padding: 15px 0px;
   margin-top: 30px
 }
 
 .signup_name {
   float: left !important;
+}
+
+.signup_name label {
+  color: #fff !important;
 }
 
 .landingpage_singedout_section #signup_name {
