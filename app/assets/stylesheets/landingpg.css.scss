@@ -311,22 +311,23 @@
 }
 
 .feed_user {
-  background-color: red;
-  width: 65px;
-  height: 65px;
+  width: 20%;
   margin: auto;
+  height: 20%;
+  position: relative;
 }
 
 .feed_user img {
   position: absolute;
   z-index: 1000;
-  height: 65px;
-  width: 65px;
-  bottom: 50px;
+  bottom: -20px;
   background-color: #fff;
   padding: 2px;
 }
 
+.feed_sub_title {
+  margin-top: 25px;
+}
 
 
 
