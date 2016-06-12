@@ -309,10 +309,10 @@
   color: #fff;
   word-spacing: 3px;
   text-transform: uppercase;
-  background-color: rgba(47,63,91,0.3) !important;
+  background-color: rgba(47,63,91,0.5) !important;
   position: absolute;
   z-index: 1000;
-  height: 60px;
+  height: 80px;
   width: 100%;
   padding: 10px 15px;
 }
@@ -321,11 +321,20 @@
   margin-bottom: 3px;
 }
 
+.feed_location {
+  margin-bottom: 3px;
+}
+
 .feed_header .date {
   margin-right: 5px;
 }
 
 .feed_header .location {
+  margin-right: 10px;
+  margin-left: 2px;
+} 
+
+.feed_header .price {
   margin-right: 10px;
   margin-left: 2px;
 } 
