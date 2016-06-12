@@ -8,7 +8,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'simple_form'
 gem 'foundation-rails'
-gem 'font-awesome-sass', '~> 4.6.2'
+gem "font-awesome-rails"
 gem 'devise'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
