@@ -251,21 +251,21 @@
 //   workings
 // -------------------------
 
-.lower_section {
+.landingpage_singedout_section .lower_section {
   padding: 0px !important;
 }
 
-.content_container {
+.landingpage_singedout_section .content_container {
   padding: 30px 0px !important;
   background-color: red;
   background: url("img_background_main.png") repeat;
 }
 
-.header_section {
+.landingpage_singedout_section .header_section {
   padding: 15px 0px;
 }
 
-.header {
+.landingpage_singedout_section .header {
   font-family: "Lato", sans-serif;
   font-size: 35px;
   font-weight: 200;
@@ -274,15 +274,37 @@
   text-align: center;
 }
 
-.sub_header {
+.landingpage_singedout_section .sub_header {
   font-family: "Lato", sans-serif;
   font-size: 15px;
   font-weight: 400;
   letter-spacing: 1px;
   text-transform: capitalize;
   text-align: center;
+  padding: 15px 0px !important;
 }
 
+.content_details {
+  padding: 15px 0px !important;
+}
+
+.landingpage_singedout_section .feed_container ul {
+  list-style-type: none;
+  margin: 0px !important;
+}
+
+.feed {
+  position: relative;
+  background-color: red;
+}
+
+.feed_header {
+  background-color: red;
+  position: absolute;
+  z-index: 1000;
+  height: 100px;
+  width: 100%;
+}
 
 
 
