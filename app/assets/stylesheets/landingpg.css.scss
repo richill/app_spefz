@@ -294,12 +294,13 @@
 }
 
 .feed_inner_section {
-  background-color: green;
+  // background-color: green;
+  background-color: #fff;
 }
 
 .feed {
   position: relative;
-  background-color: red;
+  // background-color: red;
 }
 
 .feed_header {
@@ -327,6 +328,27 @@
 
 .feed_sub_title {
   margin-top: 25px;
+  text-align: center;
+  border-bottom: 1px solid #888888;
+}
+
+
+.feed_organizer {
+  font-family: "Lato", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: #888888;
+  text-transform: uppercase;
+}
+
+.feed_title {
+  font-family: "Lato", sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  color: #283041;
+  text-transform: uppercase;
+  padding: 3px;
+  line-height: 25px;
 }
 
 
