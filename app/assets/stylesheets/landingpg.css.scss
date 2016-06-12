@@ -329,7 +329,8 @@
 .feed_sub_title {
   margin-top: 25px;
   text-align: center;
-  border-bottom: 1px solid #888888;
+  // border-bottom: 1px solid #f3f4f7;
+  border-bottom: 1px solid #f8f8f9;
 }
 
 .feed_organizer {
@@ -349,6 +350,24 @@
   margin-bottom: 15px;
   line-height: 25px;
 }
+
+.feed_comments {
+  background-color: green;
+  width: 100%;
+}
+
+.feed_comments ul li {
+  margin: 0px !important;  
+}
+
+
+.feed_comments img {
+  width: 40px;
+  border-radius: 2px;
+}
+
+
+
 
 
 
