@@ -299,13 +299,30 @@
 }
 
 .feed_header {
-  background-color: red;
+  background-color: rgba(47,63,91,0.3) !important;
   position: absolute;
   z-index: 1000;
-  height: 100px;
+  height: 75px;
   width: 100%;
 }
 
+.feed_user {
+  background-color: red;
+  width: 65px;
+  height: 65px;
+  margin: auto;
+}
+
+.feed_user img {
+  position: absolute;
+  z-index: 1000;
+  height: 65px;
+  width: 65px;
+  bottom: 50px;
+  background-color: #fff;
+  padding: 2px;
+  border-radius: 3px;
+}
 
 
 
