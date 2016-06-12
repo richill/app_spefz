@@ -52,10 +52,17 @@
                     <div class="feed_title">chicken and veg dinner after work</div>
                   </div>
                 </div>
-                <div class="feed_comments">
-                  <ul class="inline-list">
-                    <li><%= link_to(image_tag("img-profile-image.png", :alt =>  "alt text", :class =>"#"), root_path) %></li>
-                    <li class="">chicken and veg dinner after work</li>
+                <div class="feed_comments_container">
+                  <ul>
+
+                    <!-- first comment -->
+                    <li>
+                      <ul class="inline-list">
+                        <li class="medium-2 columns feed_comment_img"><%= link_to(image_tag("img-profile-image.png", :alt =>  "alt text", :class =>"#"), root_path) %></li>
+                        <li class="medium-10 columns feed_comment">chicken and veg dinner after work chicken and veg dinner after work</li>
+                      </ul>
+                    </li>
+
                   </ul>
                 </div>
               </div>

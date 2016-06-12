@@ -351,19 +351,27 @@
   line-height: 25px;
 }
 
-.feed_comments {
+.feed_comments_container {
   background-color: green;
   width: 100%;
 }
 
-.feed_comments ul li {
+.feed_comments_container ul li {
   margin: 0px !important;  
 }
 
-
-.feed_comments img {
+.feed_comments_container img {
   width: 40px;
   border-radius: 2px;
+}
+
+.feed_comment_img {
+  padding: 0px !important;
+  margin-right: 5px;
+}
+
+.feed_comment {
+  padding: 15px;
 }
 
 
