@@ -378,8 +378,21 @@
 }
 
 .feed_comment span {
+  font-family: "Lato", sans-serif;
+  color: #283041;
   background-color: rgba(47,63,91,0.02) !important;
   padding: 5px !important;
+}
+
+.feed_comment span b a {
+  font-family: "Lato", sans-serif;
+  color: #E34B51 !important;
+  // color: #283041 !important;
+  margin-right: 5px;
+}
+
+.feed_comment span b a:hover {
+  text-decoration: underline;
 }
 
 
