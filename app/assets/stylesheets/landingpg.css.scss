@@ -397,12 +397,18 @@
 
 .booking {
   border-top: 1px solid #f8f8f9;
-  padding: 32px 15px;
+  padding: 15px;
 }
 
 .booking a {
+  font-family: "Lato", sans-serif;
+  color: #fff !important;
+  text-transform: uppercase;
   padding: 15px;
-  background-color: red;
+  background-color: #E34B51;
+  width: 100% !important;
+  display: inline-block;
+  text-align: center;
 }
 
 
