@@ -465,6 +465,27 @@
   font-weight: 200 !important;
 }
 
+.social_media {
+  text-align: center;
+}
+
+.social_media a {
+  color: #fff !important;
+  font-size: 60px;
+  padding: 0px 15px;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease; 
+}
+
+.social_media a:hover {
+  color: #E34B51 !important;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease; 
+}
+
+
 
 
 
