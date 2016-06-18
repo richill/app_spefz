@@ -459,7 +459,7 @@
   padding: 30px 0px !important;
   background-size: cover;
   background: url("img_background_main_02.png") repeat;
-  height: 400px;
+  height: 600px;
 }
 
 .background_dark .header {
@@ -491,6 +491,20 @@
   -o-transition: all 0.3s ease; 
 }
 
+.phone_img_container {
+  width: 295px;
+  margin: auto;
+}
+
+.apple_store_img_container {
+  position: absolute;
+  top: 350px;
+  right: 250px;
+}
+
+.apple_store_img_container img {
+  border-radius: 3px;
+}
 
 
 
