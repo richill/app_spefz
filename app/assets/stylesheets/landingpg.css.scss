@@ -515,47 +515,41 @@
   bottom: 700px;
 }
 
-// -------------------------
-//   workings
-// -------------------------
-
-
-.howitworks_container {
+.landingpage_singedout_section .howitworks_container {
   background-color: rgba(47,63,91,0.1) !important;
   text-align: center;
   padding: 15px;
-  // border-bottom: 2px solid #58CDA6;
+  border-bottom: 2px solid #58CDA6;
 }
 
-.howitworks_container i {
+.landingpage_singedout_section .howitworks_container i {
   opacity: 0.8;
 }
 
-.howitworks_container .fa-mobile {
+.landingpage_singedout_section .howitworks_container .fa-mobile {
   font-size: 100px;
   color: #283041;
 }
 
-.howitworks_container .fa-calendar {
+.landingpage_singedout_section .howitworks_container .fa-calendar {
   font-size: 60px;
   color: #283041;
   margin: 20px;
 }
 
-.howitworks_container .fa-user-plus {
+.landingpage_singedout_section .howitworks_container .fa-user-plus {
   font-size: 60px;
   color: #283041;
   margin: 20px;
 }
 
-.howitworks_container .fa-users {
+.landingpage_singedout_section .howitworks_container .fa-users {
   font-size: 60px;
   color: #283041;
   margin: 20px;
 }
 
-
-.cover_number {
+.landingpage_singedout_section .howitworks_container .cover_number {
   background-color: #E34B51;
   width: 40px;
   padding: 10px;
@@ -566,22 +560,63 @@
   margin-bottom: 15px;
 }
 
-.howitworks_container .header_main {
+.landingpage_singedout_section .howitworks_container .header_main {
   font-size: 20px;
   text-transform: capitalize;
   margin-bottom: 10px;
 }
 
-.howitworks_container .header_sub {
+.landingpage_singedout_section .howitworks_container .header_sub {
   text-transform: capitalize;
   font-size: 12px; 
   color: #888888;
 }
 
 
+// -------------------------
+//   workings
+// -------------------------
+
+.footer_links {
+  border-top: 1px solid #393838;
+  border-bottom: 1px solid #393838;
+  padding: 20px;
+  width: 1500px;
+  margin: auto;
+  margin-top: 40px;
+}
+
+.footer_links ul {
+  margin-bottom: 0px !important;
+  width: 365px;
+  margin: auto;
+}
+
+.footer_links a {
+  font-family: "Lato", sans-serif;
+  color: #fff !important;
+  font-weight: 300;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+}
 
 
+.footer_links a:hover {
+  color: #E34B51 !important;
+}
 
+.copyright_content {
+  font-family: "Lato", sans-serif;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+  width: 1500px;
+  margin: auto;
+  margin-top: 25px;
+  text-align: center;
+}
 
 
 
