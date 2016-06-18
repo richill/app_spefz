@@ -494,16 +494,20 @@
 .phone_img_container {
   width: 295px;
   margin: auto;
+  margin-top: 25px;
 }
 
 .apple_store_img_container {
   position: absolute;
   top: 350px;
   right: 250px;
+  position: relative;
 }
 
 .apple_store_img_container img {
   border-radius: 3px;
+  position: absolute;
+  bottom: 700px;
 }
 
 
