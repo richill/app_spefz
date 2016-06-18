@@ -520,9 +520,63 @@
 // -------------------------
 
 
+.howitworks_container {
+  background-color: rgba(47,63,91,0.1) !important;
+  text-align: center;
+  padding: 15px;
+  border-bottom: 2px solid #58CDA6;
+}
+
+.howitworks_container i {
+  opacity: 0.8;
+}
+
+.howitworks_container .fa-mobile {
+  font-size: 100px;
+  color: #283041;
+}
+
+.howitworks_container .fa-calendar {
+  font-size: 60px;
+  color: #283041;
+  margin: 20px;
+}
+
+.howitworks_container .fa-user-plus {
+  font-size: 60px;
+  color: #283041;
+  margin: 20px;
+}
+
+.howitworks_container .fa-users {
+  font-size: 60px;
+  color: #283041;
+  margin: 20px;
+}
 
 
+.cover_number {
+  background-color: #E34B51;
+  width: 40px;
+  padding: 10px;
+  margin: auto;
+  border-radius: 2px;
+  font-size: 15px;
+  color: #fff;
+  margin-bottom: 15px;
+}
 
+.howitworks_container .header_main {
+  font-size: 20px;
+  text-transform: capitalize;
+  margin-bottom: 10px;
+}
+
+.howitworks_container .header_sub {
+  text-transform: capitalize;
+  font-size: 12px; 
+  color: #888888;
+}
 
 
 
