@@ -302,7 +302,6 @@
 
 .landingpage_singedout_section .feed {
   position: relative;
-  // background-color: red;
 }
 
 .landingpage_singedout_section .feed_header {
@@ -363,7 +362,6 @@
 .landingpage_singedout_section .feed_sub_title {
   margin-top: 25px;
   text-align: center;
-  // border-bottom: 1px solid #f3f4f7;
   border-bottom: 1px solid #f8f8f9;
 }
 
@@ -386,7 +384,6 @@
 }
 
 .landingpage_singedout_section .feed_comments_container {
-  // background-color: green;
   padding: 10px;
 }
 @media only screen and (max-width: 960px) {
@@ -519,7 +516,7 @@
   background-color: rgba(47,63,91,0.1) !important;
   text-align: center;
   padding: 15px;
-  border-bottom: 2px solid #58CDA6;
+  // border-bottom: 2px solid #58CDA6;
 }
 
 .landingpage_singedout_section .howitworks_container i {
