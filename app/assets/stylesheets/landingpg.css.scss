@@ -614,8 +614,20 @@
 
 .landingpage_singedout_section .footer_links ul {
   margin-bottom: 0px !important;
-  width: 500px;
-  margin: auto;
+}
+@media only screen and (min-width: 500px) {
+  .landingpage_singedout_section .footer_links ul {
+    width: 500px;
+    margin: auto;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .landingpage_singedout_section .footer_links ul li {
+    width: 100% !important;
+    text-align: center !important;
+    padding: 15px 0px !important;
+  }
 }
 
 .landingpage_singedout_section .footer_links a {
