@@ -1,0 +1,22 @@
+/*=========================================
+    Section: contact us modal / landing page
+    File: views / static_pages / landingpg.html.erb
+    File: views / shared / modal_contactus.html.erb
+  =========================================*/
+
+.contactus_modal {
+  font-family: 'Lato', sans-serif;
+  color: #283041 !important;
+  background-color: #fff;
+  border-radius: 0px !important;
+  text-align: center !important;
+  border-bottom: 3px solid #E34B51;
+}
+
+.contactus_modal .modal_header {
+  text-transform: capitalize !important;
+}
+
+.contactus_modal .cancel_button {
+  color: #E34B51 !important;
+}
