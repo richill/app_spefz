@@ -68,10 +68,6 @@
   padding: 25px;
 }
 
-.signup_name {
-  float: left !important;
-}
-
 .signup_name label {
   color: #fff !important;
 }
@@ -172,8 +168,17 @@
 
 .landingpage_singedout_section .logo_links_section {
   text-align: left;
-  width: 960px !important;
   margin: auto;
+}
+@media only screen and (min-width: 970px) {
+  .landingpage_singedout_section .logo_links_section {
+    width: 960px !important;
+  }
+}
+@media only screen and (max-width: 970px) {
+  .landingpage_singedout_section .logo_links_section {
+    padding: 0px 15px !important;
+  }
 }
 
 .landingpage_singedout_section .logo img {
@@ -202,6 +207,11 @@
 .landingpage_singedout_section .links {
   float: right;
   display: inline-block;
+}
+@media only screen and (max-width: 490px) {
+  .landingpage_singedout_section .links {
+    display: none !important;
+  }
 }
 
 .landingpage_singedout_section .links ul {
@@ -290,8 +300,12 @@
 }
 
 .landingpage_singedout_section .feed_container {
-  width: 1500px;
   margin: auto;
+}
+@media only screen and (min-width: 1522px) {
+.landingpage_singedout_section .feed_container {
+    width: 1500px;
+  }
 }
 
 .landingpage_singedout_section .feed_inner_section {
