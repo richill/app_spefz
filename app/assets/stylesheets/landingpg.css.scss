@@ -538,6 +538,11 @@
   position: absolute;
   bottom: 700px;
 }
+@media only screen and (max-width: 815px) {
+  .landingpage_singedout_section .apple_store_img_container img {
+    display: none;
+  }
+}
 
 .landingpage_singedout_section .howitworks_container {
   background-color: rgba(47,63,91,0.1) !important;
