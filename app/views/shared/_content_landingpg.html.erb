@@ -10,15 +10,15 @@
           <span class="links">
             <ul>
               <li><%= link_to "Contact us", "#" %></li>
-              <li><%= link_to "How it works", "#howitworks" %></li>
-              <li><%= link_to "About us", "#aboutus" %></li>
+              <li><%= link_to "How it works", ".howitworksheader", rel: "relativeanchor" %></li>
+              <li><%= link_to "About us", ".aboutusheader", rel: "relativeanchor" %></li>
             </ul>
           </span>
         </div>
       </div>
 
       <!-- banner content -->
-      <div class="banner_content">
+      <div class="banner_content signupheader">
         <h1>Meet New People, Enjoy Your City</h1>
         <div class="sub_header">Discover the most interesting socials and events happening around you.</div>
         <div class="signup_container">
@@ -222,7 +222,7 @@
   <div class="medium-12 columns lower_section">
     <div class="medium-12 columns content_container">
       <div class="header_section">
-        <div class="header" id="aboutus">about us</div>
+        <div class="header aboutusheader">about us</div>
         <div class="sub_header">use spefz when you travel to new cities to travel with locals</div>
       </div>
       <div class="medium-12 columns content_details">
@@ -236,7 +236,7 @@
   <div class="medium-12 columns lower_section">
     <div class="medium-12 columns content_container">
       <div class="header_section">
-        <div class="header" id="howitworks">how it works</div>
+        <div class="header howitworksheader">how it works</div>
         <div class="sub_header">use spefz when you travel to new cities to travel with locals</div>
       </div>
       <div class="medium-12 columns content_details">
@@ -330,9 +330,9 @@
         </div>
         <div class="footer_links">
           <ul class="inline-list">
-            <li><%= link_to "about us", "#" %></li>
-            <li><%= link_to "how it works", "#" %></li>
-            <li><%= link_to "signup", "#" %></li>
+            <li><%= link_to "about us", ".aboutusheader", rel: "relativeanchor" %></li>
+            <li><%= link_to "how it works", ".howitworksheader", rel: "relativeanchor" %></li>
+            <li><%= link_to "signup", ".signupheader", rel: "relativeanchor"  %></li>
             <li><%= link_to "contact us", "#" %></li>
           </ul>
         </div>
