@@ -1,1 +1,349 @@
-<div>hello</div>
+<div class="homepage_singedout_section">
+  
+  <div class="medium-12 columns banner_singedout_section upper_section">
+    <div class="banner_inner_section">
+      <!-- header -->
+      <div class="header_section">
+        <div class="logo_links_section">
+          <span class="logo"><%= link_to(image_tag("img_spefz_logo.png", :alt =>  "alt text", :class =>"#"), root_path) %></span>
+          <!-- <span class="logo_title">Spef<span>z</span></span> -->
+          <span class="links">
+            <ul>
+              <li><%= link_to "Sign in", "https://angel.co/spefz/jobs?utm_source=startup_profile_header", target: "_blank" %></li>
+              <li><%= link_to "How it works", ".howitworksheader", rel: "relativeanchor" %></li>
+              <li><%= link_to "About us", ".aboutusheader", rel: "relativeanchor" %></li>
+            </ul>
+          </span>
+        </div>
+      </div>
+
+      <!-- banner content -->
+      <div class="banner_content signupheader">
+        <h1>Meet New People, Enjoy Your City</h1>
+        <div class="sub_header">Discover the most interesting socials and events happening around you.</div>
+        <div class="signup_container">
+          <div class="btn_signup"><%= link_to "Sign up", new_signup_path %></div>
+          <div class="launch_info">meet like minded people, share great times</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!--content -->
+  <div class="medium-12 columns lower_section">
+    <div class="medium-12 columns content_container">
+      <div class="header_section">
+        <div class="header">explore your city with new people</div>
+        <div class="sub_header">do more of things you like and discover your surroundings</div>
+      </div>
+      <div class="medium-12 columns content_details">
+        <div class="feed_container">
+          <ul>
+            <!-- first feed -->
+            <li class="medium-3 columns">
+              <div class="feed_inner_section">
+                <div class="feed">
+                  <div class="feed_header">
+                    <div class="feed_date"><i class="fa fa-calendar date"></i> sat, 24 october 2016</div>
+                    <div class="feed_location"><i class="fa fa-map-pin location"></i> 14 cantoments, accra</div>
+                    <div class="feed_price"><i class="fa fa-gbp price"></i> £14.99</div>
+                  </div>
+                  <div class="feed_img"><%= link_to(image_tag("img_feed_01.png", :alt =>  "alt text", :class =>"#"), root_path) %></div>
+                  <div class="feed_user"><%= link_to(image_tag("img_profile_01.png", :alt =>  "alt text", :class =>"#"), root_path) %></div>
+                  <div class="clear"></div>
+                  <div class="feed_sub_title">
+                    <div class="feed_organizer">richill is organising</div>
+                    <div class="feed_title">chicken and veg dinner after work</div>
+                  </div>
+                </div>
+                <div class="feed_comments_container">
+                  <ul>
+                    <!-- first comment -->
+                    <li>
+                      <ul class="inline-list feed_inner_comment_section">
+                        <li class="medium-2 columns feed_comment_img"><%= link_to(image_tag("img_profile_05.png", :alt =>  "alt text", :class =>"#"), root_path) %></li>
+                        <li class="medium-10 columns feed_comment"><span><b><%= link_to "michael", "#" %></b>looking fwd to your chicken and veg dinner. You always organise the best events after work</span></li>
+                      </ul>
+                    </li>
+                    <!-- second comment -->
+                    <li>
+                      <ul class="inline-list feed_inner_comment_section">
+                        <li class="medium-2 columns feed_comment_img"><%= link_to(image_tag("img_profile_02.png", :alt =>  "alt text", :class =>"#"), root_path) %></li>
+                        <li class="medium-10 columns feed_comment"><span><b><%= link_to "emma", "#" %></b>yessss!!! will definitely be there. You must tell me the secret recipe to your grilled chicken</span></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+                <div class="booking">
+                  <div><%= link_to "attend", "#" %></div>
+                </div>
+              </div>
+            </li>
+            <!-- second feed -->
+            <li class="medium-3 columns">
+              <div class="feed_inner_section">
+                <div class="feed">
+                  <div class="feed_header">
+                    <div class="feed_date"><i class="fa fa-calendar date"></i> fri, 14 september 2016</div>
+                    <div class="feed_location"><i class="fa fa-map-pin location"></i> 29 mayfair, london</div>
+                    <div class="feed_price"><i class="fa fa-gbp price"></i> FREE</div>
+                  </div>
+                  <div class="feed_img"><%= link_to(image_tag("img_feed_04.png", :alt =>  "alt text", :class =>"#"), root_path) %></div>
+                  <div class="feed_user"><%= link_to(image_tag("img_profile_08.png", :alt =>  "alt text", :class =>"#"), root_path) %></div>
+                  <div class="clear"></div>
+                  <div class="feed_sub_title">
+                    <div class="feed_organizer">stacey is organising</div>
+                    <div class="feed_title">delicious afternoon brunch & wine</div>
+                  </div>
+                </div>
+                <div class="feed_comments_container">
+                  <ul>
+                    <!-- first comment -->
+                    <li>
+                      <ul class="inline-list feed_inner_comment_section">
+                        <li class="medium-2 columns feed_comment_img"><%= link_to(image_tag("img_profile_07.png", :alt =>  "alt text", :class =>"#"), root_path) %></li>
+                        <li class="medium-10 columns feed_comment"><span><b><%= link_to "stephen", "#" %></b>cool!! count me in, would be great to see you all again this weekend</span></li>
+                      </ul>
+                    </li>
+                    <!-- second comment -->
+                    <li>
+                      <ul class="inline-list feed_inner_comment_section">
+                        <li class="medium-2 columns feed_comment_img"><%= link_to(image_tag("img_profile_09.png", :alt =>  "alt text", :class =>"#"), root_path) %></li>
+                        <li class="medium-10 columns feed_comment"><span><b><%= link_to "matt", "#" %></b> hey stacey! thanks for the invite, looking fwd to meeting new friendly faces</span></li>
+                      </ul>
+                    </li>
+                    <!-- third comment -->
+                    <li>
+                      <ul class="inline-list feed_inner_comment_section">
+                        <li class="medium-2 columns feed_comment_img"><%= link_to(image_tag("img_profile_08.png", :alt =>  "alt text", :class =>"#"), root_path) %></li>
+                        <li class="medium-10 columns feed_comment"><span><b><%= link_to "stacey", "#" %></b>hey stephen and matt! the last one was a blast, such great fun - see you all there</span></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+                <div class="booking">
+                  <div><%= link_to "attend", "#" %></div>
+                </div>
+              </div>
+            </li>
+            <!-- third feed -->
+            <li class="medium-3 columns">
+              <div class="feed_inner_section">
+                <div class="feed">
+                  <div class="feed_header">
+                    <div class="feed_date"><i class="fa fa-calendar date"></i> sat, 24 december 2016</div>
+                    <div class="feed_location"><i class="fa fa-map-pin location"></i> 163 Duane St, New York</div>
+                    <div class="feed_price"><i class="fa fa-gbp price"></i> £24.99</div>
+                  </div>
+                  <div class="feed_img"><%= link_to(image_tag("img_feed_03.png", :alt =>  "alt text", :class =>"#"), root_path) %></div>
+                  <div class="feed_user"><%= link_to(image_tag("img_profile_13.png", :alt =>  "alt text", :class =>"#"), root_path) %></div>
+                  <div class="clear"></div>
+                  <div class="feed_sub_title">
+                    <div class="feed_organizer">josh is organising</div>
+                    <div class="feed_title">come dine with me at muchos burger</div>
+                  </div>
+                </div>
+                <div class="feed_comments_container">
+                  <ul>
+                    <!-- second comment -->
+                    <li>
+                      <ul class="inline-list feed_inner_comment_section">
+                        <li class="medium-2 columns feed_comment_img"><%= link_to(image_tag("img_profile_04.png", :alt =>  "alt text", :class =>"#"), root_path) %></li>
+                        <li class="medium-10 columns feed_comment"><span><b><%= link_to "peter", "#" %></b>hey josh! bringing mark and chris along. Last get-together was a blast! always fun! See you there after work</span></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+                <div class="booking">
+                  <div><%= link_to "attend", "#" %></div>
+                </div>
+              </div>
+            </li>
+            <!-- fourth feed -->
+            <li class="medium-3 columns">
+              <div class="feed_inner_section">
+                <div class="feed">
+                  <div class="feed_header">
+                    <div class="feed_date"><i class="fa fa-calendar date"></i> thur, 24 november 2016</div>
+                    <div class="feed_location"><i class="fa fa-map-pin location"></i> king's college, london</div>
+                    <div class="feed_price"><i class="fa fa-gbp price"></i> FREE</div>
+                  </div>
+                  <div class="feed_img"><%= link_to(image_tag("img_feed_05.png", :alt =>  "alt text", :class =>"#"), root_path) %></div>
+                  <div class="feed_user"><%= link_to(image_tag("img_profile_11.png", :alt =>  "alt text", :class =>"#"), root_path) %></div>
+                  <div class="clear"></div>
+                  <div class="feed_sub_title">
+                    <div class="feed_organizer">ellen is organising</div>
+                    <div class="feed_title">new members meet up drinks</div>
+                  </div>
+                </div>
+                <div class="feed_comments_container">
+                  <ul>
+                    <!-- first comment -->
+                    <li>
+                      <ul class="inline-list feed_inner_comment_section">
+                        <li class="medium-2 columns feed_comment_img"><%= link_to(image_tag("img_profile_06.png", :alt =>  "alt text", :class =>"#"), root_path) %></li>
+                        <li class="medium-10 columns feed_comment"><span><b><%= link_to "linda", "#" %></b>looking fwd to the event & meeting new faces. heard soo much about spefz socials</span></li>
+                      </ul>
+                    </li>
+                    <!-- second comment -->
+                    <li>
+                      <ul class="inline-list feed_inner_comment_section">
+                        <li class="medium-2 columns feed_comment_img"><%= link_to(image_tag("img_profile_11.png", :alt =>  "alt text", :class =>"#"), root_path) %></li>
+                        <li class="medium-10 columns feed_comment"><span><b><%= link_to "ellen", "#" %></b>see you there linda, as usual lots of great new friendly faces to meet</span></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+                <div class="booking">
+                  <div><%= link_to "attend", "#" %></div>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="medium-12 columns lower_section">
+    <div class="medium-12 columns background_dark">
+      <div class="header_section">
+        <div class="header">fill your social calendar instantly with socials & events</div>
+        <div class="sub_header">find lots of fun socials and events and like minded people to hang out with</div>
+        <div class="phone_img_container">
+          <%= link_to(image_tag("img_spefz_phone.png", :alt =>  "alt text", :class =>"#"), root_path) %>
+          <div class="apple_store_img_container"><%= link_to(image_tag("img_apple_store.png", :alt =>  "alt text", :class =>"#"), root_path) %></div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+  <div class="medium-12 columns lower_section">
+    <div class="medium-12 columns content_container">
+      <div class="header_section">
+        <div class="header aboutusheader">about us</div>
+        <div class="sub_header">spefz is a social app used to explore socials, events and meet new friendly faces</div>
+      </div>
+      <div class="medium-12 columns content_details">
+        <div class="feed_container aboutus">
+          We’re passionate about connecting people via social events & virtual event experiences, get connected & re-discover your surrounding! We work tirelessly around the clock to bring you the best socials and events happening around you....some last minute, some in advance. Spefz then picks out the hottest of the lot and personalises it all to you – so you can get your social life sorted in a snap, discover new places and meet new friendly faces.... Launching soon!
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="medium-12 columns lower_section">
+    <div class="medium-12 columns content_container">
+      <div class="header_section">
+        <div class="header howitworksheader">how it works</div>
+        <div class="sub_header">Keep an eye out for great socials, events, shows, invitation-only events, VIP upgrades, freebies and more</div>
+      </div>
+      <div class="medium-12 columns content_details">
+        <div class="feed_container">
+          <ul>
+            <!-- first feed -->
+            <li class="medium-3 columns">
+              <div class="howitworks_container">
+                <div><i class="fa fa-mobile" aria-hidden="true"></i></div>
+                <div class="cover_number">1</div>
+                <div class="header_main">join spefz online</div>
+                <div class="header_sub">be part of a fun friendly comminuty.</div>
+              </div>
+            </li>
+            <!-- second feed -->
+            <li class="medium-3 columns">
+              <div class="howitworks_container">
+                <div><i class="fa fa-calendar" aria-hidden="true"></i></div>
+                <div class="cover_number">2</div>
+                <div class="header_main">go to events & socials</div>
+                <div class="header_sub">pick your favourite events to attend.</div>
+              </div>
+            </li>
+            <!-- third feed -->
+            <li class="medium-3 columns">
+              <div class="howitworks_container">
+                <div><i class="fa fa-user-plus" aria-hidden="true"></i></div>
+                <div class="cover_number">3</div>
+                <div class="header_main">meet new people</div>
+                <div class="header_sub">meet lots of interesting people.</div>
+              </div>
+            </li>
+            <!-- fourth feed -->
+            <li class="medium-3 columns">
+              <div class="howitworks_container">
+                <div><i class="fa fa-users" aria-hidden="true"></i></div>
+                <div class="cover_number">4</div>
+                <div class="header_main">make friends and have fun</div>
+                <div class="header_sub">have lots of fun with like minded people.</div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="medium-12 columns lower_section">
+    <div class="medium-12 columns content_container">
+      <div class="header_section">
+        <div class="header">socials & events in more than 50 cities!</div>
+        <div class="sub_header">explore your surroundings & meet new people</div>
+      </div>
+      <div class="medium-12 columns content_details" style="margin-bottom:50px">
+        <div class="feed_container">
+          <ul>
+            <!-- first feed -->
+            <li class="medium-3 columns">
+              <div><%= link_to(image_tag("img_city_accra.png", :alt =>  "alt text", :class =>"#"), root_path) %></div>
+            </li>
+            <!-- second feed -->
+            <li class="medium-3 columns">
+              <div><%= link_to(image_tag("img_city_lagos.png", :alt =>  "alt text", :class =>"#"), root_path) %></div>
+            </li>
+            <!-- third feed -->
+            <li class="medium-3 columns">
+              <div><%= link_to(image_tag("img_city_london.png", :alt =>  "alt text", :class =>"#"), root_path) %></div>
+            </li>
+            <!-- fourth feed -->
+            <li class="medium-3 columns">
+              <div><%= link_to(image_tag("img_city_ny.png", :alt =>  "alt text", :class =>"#"), root_path) %></div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="medium-12 columns lower_section">
+    <div class="medium-12 columns background_dark">
+      <div class="header_section">
+        <div class="header">find out more about us</div>
+        <div class="sub_header">we like to keep our members up to date via social media</div>
+      </div>
+      <div class="medium-12 columns content_details">
+        <div class="social_media">
+          <%= link_to '', 'https://www.facebook.com/Spefz-258495281186318/', class: "fa fa-facebook-square", target:"_blank" %>
+          <%= link_to '', 'https://twitter.com/spefz', class: "fa fa-twitter-square", target:"_blank" %>
+          <% link_to '', 'https://www.instagram.com/spefz/', class: "fa fa-linkedin-square", target:"_blank" %>
+          <%= link_to '', 'https://www.instagram.com/spefz/', class: "fa fa-instagram", target:"_blank" %>
+        </div>
+        <div class="footer_links">
+          <ul class="inline-list">
+            <li><%= link_to "about us", ".aboutusheader", rel: "relativeanchor" %></li>
+            <li><%= link_to "how it works", ".howitworksheader", rel: "relativeanchor" %></li>
+            <li><%= link_to "signup", ".signupheader", rel: "relativeanchor"  %></li>
+            <li><%= link_to "we are hiring!", "https://angel.co/spefz/jobs?utm_source=startup_profile_header", target: "_blank" %></li>
+            <li>
+              <a href="#" data-reveal-id="myModal-contactus">contact us</a>
+              <div><%= render 'shared/modal_contactus' %></div>
+            </li>
+          </ul>
+        </div>
+        <div class="copyright_content">Copyright © 2016 Spefz App | ARTLoe Technologies Ltd</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
