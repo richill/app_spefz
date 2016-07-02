@@ -5,9 +5,16 @@ class ApplicationController < ActionController::Base
   before_filter :configure_permitted_parameters, if: :devise_controller?
 
   def after_sign_in_path_for(resources)
-    if user_signed_in?
-      user_path(current_user)
-    end
+    user_path(current_user)
+  end
+
+  def after_sign_out_path_for(resources)
+    root_path
+  end
+
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.for(:sign_in) { |u| u.permit(:email) }
+    devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:email) }
   end
 
 end
