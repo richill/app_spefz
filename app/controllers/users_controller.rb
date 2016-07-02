@@ -6,6 +6,14 @@ class UsersController < ApplicationController
     respond_with(@user)
   end
 
+  def edit
+  end
+
+  def update
+    @user.update(user_params)
+    redirect_to @user
+  end
+
   private
     def set_user
       @user = User.find(params[:id])
