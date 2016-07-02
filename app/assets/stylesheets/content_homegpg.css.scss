@@ -138,6 +138,61 @@
   background-color: rgba(47,63,91,0.7) !important;
 }
 
+.homepage_singedout_section .btn_signin a {
+  font-family: "Lato", sans-serif;
+  font-size: 18px !important;
+  font-weight: 300 !important;
+  color: #fff !important;
+  margin-bottom: 15px !important;
+  width: 100%;
+  background-color: rgba(88, 205, 166, 0.7) !important;
+  letter-spacing: 2px;
+  display: inline-block;
+  padding: 15px;
+  text-align: center;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease; 
+}
+@media only screen and (min-width: 490px) {
+  .homepage_singedout_section .btn_signin a {
+    display: none !important;
+  }
+}
+
+.homepage_singedout_section .btn_signin a:hover {
+  background-color: rgba(47, 63, 91, 0.7) !important;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease; 
+}
+
+
+.homepage_singedout_section .btn_signup a {
+  font-family: "Lato", sans-serif;
+  font-size: 18px !important;
+  font-weight: 300 !important;
+  color: #fff !important;
+  margin-bottom: 0px !important;
+  width: 100%;
+  background-color: rgba(225, 71, 62, 0.7) !important;
+  letter-spacing: 2px;
+  display: inline-block;
+  padding: 15px;
+  text-align: center;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease; 
+}
+
+.homepage_singedout_section .btn_signup a:hover {
+  background-color: rgba(47, 63, 91, 0.7) !important;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease; 
+}
+
+
 .homepage_singedout_section .notified_text {
   color: #2F3F5B;
   font-size: 13px;
@@ -668,29 +723,6 @@
 // workings
 // -------------------------------
 
-.homepage_singedout_section .btn_signup a {
-  font-family: "Lato", sans-serif;
-  margin-bottom: 0px !important;
-  width: 100%;
-  background-color: rgba(225, 71, 62, 0.7) !important;
-  font-weight: 300 !important;
-  letter-spacing: 2px;
-  font-size: 18px !important;
-  color: #fff !important;
-  display: inline-block;
-  padding: 15px;
-  text-align: center;
-  -webkit-transition: all 0.3s ease; 
-  -moz-transition: all 0.3s ease; 
-  -o-transition: all 0.3s ease; 
-}
-
-.homepage_singedout_section .btn_signup a:hover {
-  background-color: rgba(47, 63, 91, 0.7) !important;
-  -webkit-transition: all 0.3s ease; 
-  -moz-transition: all 0.3s ease; 
-  -o-transition: all 0.3s ease; 
-}
 
 
 
