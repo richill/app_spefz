@@ -6,7 +6,6 @@
       <div class="header_section">
         <div class="logo_links_section">
           <span class="logo"><%= link_to(image_tag("img_spefz_logo.png", :alt =>  "alt text", :class =>"#"), root_path) %></span>
-          <!-- <span class="logo_title">Spef<span>z</span></span> -->
           <span class="links">
             <ul>
               <li><%= link_to "Sign in", user_session_path, target: "_blank" %></li>
@@ -332,7 +331,7 @@
           <ul class="inline-list">
             <li><%= link_to "about us", ".aboutusheader", rel: "relativeanchor" %></li>
             <li><%= link_to "how it works", ".howitworksheader", rel: "relativeanchor" %></li>
-            <li><%= link_to "signup", ".signupheader", rel: "relativeanchor"  %></li>
+            <li><%= link_to "signup", new_signup_path %></li>
             <li><%= link_to "we are hiring!", "https://angel.co/spefz/jobs?utm_source=startup_profile_header", target: "_blank" %></li>
             <li>
               <a href="#" data-reveal-id="myModal-contactus">contact us</a>
