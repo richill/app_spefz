@@ -2,7 +2,6 @@ class UsersController < ApplicationController
   respond_to :html, :xml, :json
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
-
   def show
     respond_with(@user)
   end
