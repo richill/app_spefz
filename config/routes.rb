@@ -5,5 +5,5 @@ Rails.application.routes.draw do
   resources :users
   
   root 'static_pages#homepg'
-  get     'landing-page',                   to: 'static_pages#landingpg'
+  get  'landing-page',                   to: 'static_pages#landingpg'
 end
