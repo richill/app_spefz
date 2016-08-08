@@ -18,29 +18,37 @@
 
       <!-- banner content -->
       <div class="signup_content signupheader">
-        <h1>WelcomeTo Spefz</h1>
-        <div class="sub_header">Discover the most interesting socials and events happening around you.</div>
 
-        <div>
-          <h2>Sign up hello</h2>
-          <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-            <%= f.error_notification %>
-            <div class="form-inputs">
-              <%= f.input :firstname %>
-              <%= f.input :lastname %>
-              <%= f.date_field :birthdate %>
-              <%= f.input :email, required: true, autofocus: true %>
-              <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-              <%= f.input :password_confirmation, required: true %>
-              <%= f.association :category_gender, collection: CategoryGender.all, required: true, prompt: "please choose", label: 'Gender' %>
+        <div class="signup_inner_content">
+          <div class="signup_inner_upper_content">We use cookies. If you use our website, we shall assume that you are happy with the use of cookies as described in our privacy policy.</div>
+          <div class="signup_inner_lower_content">
+            <h1>WelcomeTo Spefz</h1>
+            <div class="sub_header">Discover the most interesting socials and events happening around you.</div>
+            <div>
+              <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+                <%= f.error_notification %>
+                <div class="form-inputs">
+                  <%= f.input :firstname %>
+                  <%= f.input :lastname %>
+                  <%= f.date_field :birthdate %>
+                  <%= f.input :email, required: true, autofocus: true %>
+                  <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
+                  <%= f.input :password_confirmation, required: true %>
+                  <%= f.association :category_gender, collection: CategoryGender.all, required: true, prompt: "please choose", label: 'Gender' %>
+                </div>
+                <div class="form-actions">
+                  <%= f.button :submit, "Sign up" %>
+                </div>
+              <% end %>
+              <%= render "users/shared/links" %>
             </div>
-            <div class="form-actions">
-              <%= f.button :submit, "Sign up" %>
-            </div>
-          <% end %>
-          <%= render "users/shared/links" %>
+          </div>
         </div>
+
+
       </div>
+
+
     </div>
   </div>
 
