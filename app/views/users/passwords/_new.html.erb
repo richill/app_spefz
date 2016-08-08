@@ -1,0 +1,77 @@
+<div class="users_passwords_new_section">
+  <div class="medium-12 columns users_inner_passwords_new_section upper_section">
+    <div class="banner_inner_section">
+      <!-- header -->
+      <div class="header_section">
+        <div class="logo_links_section">
+          <span class="logo"><%= link_to(image_tag("img_spefz_logo.png", :alt =>  "alt text", :class =>"#"), root_path) %><span class="logo_text">pefz</span></span>
+          <span class="links">
+            <ul>
+              <li><%= link_to "Sign up", new_user_registration_path %></li>
+              <li><%= link_to "How it works", ".howitworksheader", rel: "relativeanchor" %></li>
+              <li><%= link_to "About us", ".aboutusheader", rel: "relativeanchor" %></li>
+            </ul>
+          </span>
+        </div>
+      </div>
+
+      <!-- banner content -->
+      <div class="signup_content signupheader">
+        <div class="signup_inner_content">
+          <div class="signup_inner_upper_content">We use <%= link_to "cookies", "#" %>. If you use our website, we shall assume that you are happy with the use of cookies as described in our <%= link_to "privacy policy", "#" %>.</div>
+          <div class="signup_inner_middle_content">
+            <h1>Forgot your password?</h1>
+            <div class="sub_header">Instructions for resetting password would be sent to your stated email address.</div>
+            <div>
+
+              <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+                <%= f.error_notification %>
+                <div class="form-inputs">
+                  <%= f.input :email, required: true, autofocus: true, placeholder: "Email", label: false %>
+                </div>
+                <div class="form-actions">
+                  <%= f.button :submit, "Send me reset password instructions" %>
+                </div>
+              <% end %>
+ 
+            </div>
+          </div>
+          <div class="signup_inner_bottom_content">Already a Spefz Member? <%= link_to "Sign in now", user_session_path %></div>
+        </div>
+      </div>
+      <!-- banner content -->
+    </div>
+  </div>
+
+  <!-- footer -->
+  <div class="medium-12 columns lower_section">
+    <div class="medium-12 columns background_dark">
+      <div class="header_section">
+        <div class="header">find out more about us</div>
+        <div class="sub_header">we like to keep our members up to date via social media</div>
+      </div>
+      <div class="medium-12 columns content_details">
+        <div class="social_media">
+          <%= link_to '', 'https://www.facebook.com/Spefz-258495281186318/', class: "fa fa-facebook-square", target:"_blank" %>
+          <%= link_to '', 'https://twitter.com/spefz', class: "fa fa-twitter-square", target:"_blank" %>
+          <% link_to '', 'https://www.instagram.com/spefz/', class: "fa fa-linkedin-square", target:"_blank" %>
+          <%= link_to '', 'https://www.instagram.com/spefz/', class: "fa fa-instagram", target:"_blank" %>
+        </div>
+        <div class="footer_links">
+          <ul class="inline-list">
+            <li><%= link_to "about us", ".aboutusheader", rel: "relativeanchor" %></li>
+            <li><%= link_to "how it works", ".howitworksheader", rel: "relativeanchor" %></li>
+            <li><%= link_to "signup", new_user_registration_path %></li>
+            <li><%= link_to "we are hiring!", "https://angel.co/spefz/jobs?utm_source=startup_profile_header", target: "_blank" %></li>
+            <li>
+              <a href="#" data-reveal-id="myModal-contactus">contact us</a>
+              <div><%= render 'shared/modal_contactus' %></div>
+            </li>
+          </ul>
+        </div>
+        <div class="copyright_content">Copyright © 2016 Spefz App | ARTLoe Technologies Ltd</div>
+      </div>
+    </div>
+  </div>
+  <!-- footer -->
+</div>
