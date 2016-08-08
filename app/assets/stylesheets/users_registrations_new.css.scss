@@ -35,7 +35,7 @@
 @media only screen and (min-width: 940px) {
   .users_registrations_new_section .users_inner_registrations_new_section .signup_content {
     width: 900px;
-    padding: 50px 0px;
+    padding: 50px 0px 130px;
     text-align: left;
   }
 }
@@ -57,12 +57,21 @@
   line-height: 25px;
 }
 
-
-.users_registrations_new_section .signup_inner_lower_content {
+.users_registrations_new_section .signup_inner_middle_content {
   background-color: #fff;
-  padding: 60px;
+  padding: 30px 60px;
 }
 
+.users_registrations_new_section .signup_inner_bottom_content {
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  word-spacing: 2px;
+  color: #fff;
+  background-color: #283041;
+  padding: 25px;
+  text-align: center;
+  line-height: 25px;
+}
 
 .users_registrations_new_section .users_inner_registrations_new_section .sub_header {
   font-family: "Lato", sans-serif;
