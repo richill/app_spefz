@@ -88,6 +88,21 @@
   line-height: 25px;
 }
 
+.users_registrations_new_section .signup_inner_bottom_content a {
+  color: #fff !important;
+  text-decoration: underline;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease; 
+}
+
+.users_registrations_new_section .signup_inner_bottom_content a:hover {
+  color: #E34B51 !important;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease; 
+}
+
 .users_registrations_new_section .users_inner_registrations_new_section .sub_header {
   font-family: "Lato", sans-serif;
   font-size: 16px;
