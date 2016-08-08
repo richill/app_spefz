@@ -77,6 +77,29 @@
   padding: 30px 60px;
 }
 
+.users_registrations_new_section .signup_inner_middle_content .terms_info {
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  word-spacing: 2px;
+  color: #283041;
+  margin-top: 5px;
+}
+
+.users_registrations_new_section .signup_inner_middle_content .terms_info a {
+  color: #283041 !important;
+  text-decoration: underline;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease; 
+}
+
+.users_registrations_new_section .signup_inner_middle_content .terms_info a:hover {
+  color: #E34B51 !important;
+  text-decoration: underline;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease; 
+}
 .users_registrations_new_section .signup_inner_bottom_content {
   font-family: "Lato", sans-serif;
   font-weight: 300;
@@ -308,6 +331,12 @@
   -webkit-transition: all 0.3s ease; 
   -moz-transition: all 0.3s ease; 
   -o-transition: all 0.3s ease; 
+}
+
+.users_registrations_new_section .logo_text {
+  font-size: 25px;
+  font-weight: bold;
+  color: rgba(47, 63, 91, 0.7) !important;
 }
 
 .users_registrations_new_section .logo_title {
@@ -594,8 +623,7 @@
 
 .users_registrations_new_section .background_dark {
   padding: 30px 0px !important;
-  background-size: cover;
-  background: url("img_background_main_02.png") repeat;
+  background-color: #283041;
   height: 600px;
 }
 @media only screen and (max-width: 600px) {

@@ -5,7 +5,7 @@
       <!-- header -->
       <div class="header_section">
         <div class="logo_links_section">
-          <span class="logo"><%= link_to(image_tag("img_spefz_logo.png", :alt =>  "alt text", :class =>"#"), root_path) %></span>
+          <span class="logo"><%= link_to(image_tag("img_spefz_logo.png", :alt =>  "alt text", :class =>"#"), root_path) %><span class="logo_text">pefz</span></span>
           <span class="links">
             <ul>
               <li><%= link_to "Sign in", user_session_path %></li>
@@ -39,7 +39,7 @@
                   <%= f.button :submit, "Sign up" %>
                 </div>
               <% end %>
-              <%= render "users/shared/links" %>
+              <div class="terms_info">By clicking on the "Sign up" button, you agree to our <%= link_to "Terms & Conditions", "#" %> </div>
             </div>
           </div>
           <div class="signup_inner_bottom_content">Already a Spefz Member? <%= link_to "Sign in now", user_session_path %></div>
