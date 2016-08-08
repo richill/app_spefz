@@ -1,5 +1,5 @@
-<div class="users_registrations_new_section">
-  <div class="medium-12 columns users_inner_registrations_new_section upper_section">
+<div class="users_sessions_new_section">
+  <div class="medium-12 columns users_inner_sessions_new_section upper_section">
     <div class="banner_inner_section">
       <!-- header -->
       <div class="header_section">
@@ -7,7 +7,7 @@
           <span class="logo"><%= link_to(image_tag("img_spefz_logo.png", :alt =>  "alt text", :class =>"#"), root_path) %><span class="logo_text">pefz</span></span>
           <span class="links">
             <ul>
-              <li><%= link_to "Sign in", user_session_path %></li>
+              <li><%= link_to "Sign up", new_user_registration_path %></li>
               <li><%= link_to "How it works", ".howitworksheader", rel: "relativeanchor" %></li>
               <li><%= link_to "About us", ".aboutusheader", rel: "relativeanchor" %></li>
             </ul>
@@ -20,28 +20,25 @@
         <div class="signup_inner_content">
           <div class="signup_inner_upper_content">We use <%= link_to "cookies", "#" %>. If you use our website, we shall assume that you are happy with the use of cookies as described in our <%= link_to "privacy policy", "#" %>.</div>
           <div class="signup_inner_middle_content">
-            <h1>Welcome To Spefz!</h1>
+            <h1>Welcome Back!</h1>
             <div class="sub_header">Discover the most interesting socials and events happening around you.</div>
             <div>
-              <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-                <%= f.error_notification %>
+
+              <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
                 <div class="form-inputs">
-                  <%= f.input :firstname, placeholder: "First name", label: false %>
-                  <%= f.input :lastname, placeholder: "Last name", label: false %>
-                  <%= f.input :email, required: true, autofocus: true, placeholder: "Email", label: false %>
-                  <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), placeholder: "Password", label: false %>
-                  <%= f.input :password_confirmation, required: true, placeholder: "Password Confirmation", label: false %>
-                  <%= f.date_field :birthdate, placeholder: "Birthdate" %>
-                  <%= f.association :category_gender, collection: CategoryGender.all, required: true, prompt: "select gender", label: 'Gender', label: false %>
+                  <%= f.input :email, required: false, autofocus: true, placeholder: "Email", label: false %>
+                  <%= f.input :password, required: false, placeholder: "Password", label: false %>
+                  <%# f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
                 </div>
                 <div class="form-actions">
-                  <%= f.button :submit, "Sign up" %>
+                  <%= f.button :submit, "Sign in" %>
                 </div>
               <% end %>
-              <div class="terms_info">By clicking on the "Sign up" button, you agree to our <%= link_to "Terms & Conditions", "#" %> </div>
+
+              <div class="terms_info"><%= render "users/shared/links" %></div>
             </div>
           </div>
-          <div class="signup_inner_bottom_content">Already a Spefz Member? <%= link_to "Sign in now", user_session_path %></div>
+          <div class="signup_inner_bottom_content">Not a Spefz Member? <%= link_to "Create an account", new_user_registration_path %></div>
         </div>
       </div>
       <!-- banner content -->
