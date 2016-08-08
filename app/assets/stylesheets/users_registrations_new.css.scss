@@ -31,7 +31,6 @@
 .users_registrations_new_section .users_inner_registrations_new_section .signup_content {
   margin: auto;
   padding: 25px 15px;
-  margin-top: 70px;
 }
 @media only screen and (min-width: 940px) {
   .users_registrations_new_section .users_inner_registrations_new_section .signup_content {
@@ -234,13 +233,14 @@
 .users_registrations_new_section .logo img {
   width: 65px;
   border-radius: 2px;
+  background-color: rgba(225, 71, 62, 0.7) !important;
   -webkit-transition: all 0.3s ease; 
   -moz-transition: all 0.3s ease; 
   -o-transition: all 0.3s ease; 
 }
 
 .users_registrations_new_section .logo img:hover {
-  background-color: rgba(255, 255, 255, 0.1) !important;
+  background-color: rgba(88, 205, 166, 0.5) !important;
   padding: 15px;
   -webkit-transition: all 0.3s ease; 
   -moz-transition: all 0.3s ease; 
@@ -280,7 +280,7 @@
   font-size: 18px;
   font-weight: 200;
   color: #fff !important;
-  background-color: rgba(255, 255, 255, 0.1) !important;
+  background-color: rgba(225, 71, 62, 0.7) !important;
   padding: 15px;
   margin-left: 5px;
   -webkit-transition: all 0.3s ease; 
@@ -289,7 +289,7 @@
 }
 
 .users_registrations_new_section .links ul li a:hover {
-  background-color: rgba(47,63,91,0.3) !important;
+  background-color: rgba(88, 205, 166, 0.5) !important;
   -webkit-transition: all 0.3s ease; 
   -moz-transition: all 0.3s ease; 
   -o-transition: all 0.3s ease; 
