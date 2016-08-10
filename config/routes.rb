@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :events
+
   resources :signups
 
   devise_for :users
