@@ -1,4 +1,13 @@
-<div>i am the proile page - show.html.erb</div>
-<div><%= link_to "socials", events_path %></div>
-<div><%= link_to "edit profile", edit_user_path(current_user) %></div>
-<div><%= link_to "sign out", destroy_user_session_path, method: :delete  %></div>
+<% provide(:title, "Profile") %>
+<div>
+  <% if current_user %>
+    <div>
+      <div class="desktop_view show-for-medium-up">
+          <%# render 'shared/header_signedin_user' %>
+          <%= render 'users/show' %>
+          <%# render 'shared/footer' %>
+      </div>
+      <!-- <div class="mobile_view show-for-small-only"><%# render 'shared/responsive_content_userr_show_userr' %></div> -->
+    </div>
+  <% end %>
+</div>
