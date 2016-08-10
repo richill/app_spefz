@@ -26,24 +26,24 @@
               <li class="credit_container">
               
                 <div class="credit_info">subscription</div>
-                <div class="credit_info"><i class="fa fa-angle-double-right" aria-hidden="true"></i> job credits <span style="margin-left:4px; font-size:11px; text-transform:capitalize;">[<%= admin.advert_credits %>]</span> </div>
+                <div class="credit_info"><i class="fa fa-angle-double-right" aria-hidden="true"></i> job credits <span style="margin-left:4px; font-size:11px; text-transform:capitalize;">[5]</span> </div>
                 <div class="credit_info"><i class="fa fa-angle-double-right" aria-hidden="true"></i> cv credits <span style="margin-left:11px; font-size:11px; text-transform:capitalize;">[unlimited<%# admin.payments.last.product.cvs %>]</span></div>
 
         
               </li>
-              <% if current_userr.admin_pa_management_group %>
-                <% if current_userr.company.userrs.admins.first.subscribed?  %>
+              <%# if current_userr.admin_pa_management_group %>
+                <%# if current_userr.company.userrs.admins.first.subscribed?  %>
                   <li class="payment_plan">
                     <a href="#" data-reveal-id="myModal-products-currentplan">view current plan</a>
                     <%# render 'shared/modal_products_current_plan' %>
                   </li>
-                <% else %>
+                <%# else %>
                   <li class="payment_plan"><%= link_to "get payment plan", '#' %></li>
-                <% end %>
-              <% end %>
-              <li><%= link_to "edit profile", edit_user_path(current_userr) %></li>
+                <%# end %>
+              <%# end %>
+              <li><%= link_to "edit profile", edit_user_path(current_user) %></li>
               <li><%= link_to "socials", events_path %></li>
-              <li><%= link_to "signout", destroy_userr_session_path, method: :delete %></li>
+              <li><%= link_to "signout", destroy_user_session_path, method: :delete %></li>
             </ul>
           </li>
 
