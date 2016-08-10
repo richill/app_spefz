@@ -2,13 +2,18 @@ class UsersController < ApplicationController
   respond_to :html, :xml, :json
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
+  # GET /users/1
+  # GET /users/1.json
   def show
     respond_with(@user)
   end
 
+  # GET /users/1/edit
   def edit
   end
 
+  # PATCH/PUT /users/1
+  # PATCH/PUT /users/1.json
   def update
     @user.update(user_params)
     redirect_to @user
