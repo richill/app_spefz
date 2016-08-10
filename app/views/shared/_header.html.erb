@@ -9,6 +9,26 @@
         <li class="special_link view_hide"><%= link_to 'company', '#' %></li>
         <li class="special_link view_hide"><%= link_to 'dashboard', '#' %></li>
         <li class="special_link"><%= link_to 'create social', '#' %></li>
+        <li class="link profile_image"><%= link_to(image_tag("img-profile-default.png", :alt =>  "image", :class =>"#"), '#') %></li>
+      </ul>
+    </nav>
+  </header>
+</div>
+
+
+
+
+<div class="medium-12 columns nav_userr_section">
+  <header class="nav_userr_inner_section">
+    <nav class="nav_list">
+      <ul class="inline-list left">
+        <li class="logo_image"><%= link_to(image_tag("img-logo-five.png", :alt =>  "alt text", :class =>"#"), '#') %></li>
+        <li class="logo_title"><%= link_to(image_tag("img-logo-four.png", :alt =>  "alt text", :class =>"#"), '#') %></li>
+      </ul>
+      <ul class="inline-list right">
+        <li class="special_link view_hide"><%= link_to 'company', '#' %></li>
+        <li class="special_link view_hide"><%= link_to 'dashboard', '#' %></li>
+        <li class="special_link"><%= link_to 'create social', '#' %></li>
  
         <li class="link profile_image">
           <%# if current_user.image.blank? %>
