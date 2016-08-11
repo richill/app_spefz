@@ -20,6 +20,31 @@
   margin: 0px !important;
 }
 
+.nav_user_section .nav_list .left .logo_text {
+  margin-left: 0px;
+}
+
+.nav_user_section .nav_list .left .logo_text a {
+  font-family: 'Lato', sans-serif;
+  font-size: 22px !important;
+  font-weight: 300;
+  color: #fff !important;
+  letter-spacing: 5px;
+  margin-top: 11px !important;
+  margin-bottom: 11px !important;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease; 
+}
+
+.nav_user_section .nav_list .left .logo_text a:hover {
+  color: #38a581 !important;
+  font-weight: bold !important;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease; 
+}
+
 .nav_user_section .nav_list ul .link {
   font-family: 'Lato', sans-serif;
   font-size: 12px !important;
@@ -45,17 +70,6 @@
   -o-transition: all 0.3s ease; 
 }
 
-.nav_user_section .nav_list .left .logo_text a {
-  font-family: 'Lato', sans-serif;
-  font-size: 22px !important;
-  font-weight: 300;
-  color: #fff !important;
-  letter-spacing: 5px;
-  -webkit-transition: all 0.3s ease; 
-  -moz-transition: all 0.3s ease; 
-  -o-transition: all 0.3s ease; 
-}
-
 .create_button a {
   font-family: 'Lato', sans-serif;
   font-size: 12px !important;
@@ -74,14 +88,24 @@
 
 .create_button a:hover {
   background-color: #283041 !important;
-  // background-color: rgba(225, 71, 62, 0.9) !important;
 }
 
 .nav_user_section .notification_li .fa {
-  color: #38a581 !important;
   color: #283041 !important;
   margin-top: 10px;
   font-size: 18px;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease;
+}
+
+.nav_user_section .notification_li .fa:hover {
+  color: #38a581 !important;
+  margin-top: 10px;
+  font-size: 18px;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease;
 }
 
 /*----- notifications_bell -----*/
@@ -152,7 +176,6 @@
   font-size: 12px;
   border-top: 1px solid #dddddd;
 }
-
 
 /*----- notifications_comment -----*/
 .nav_user_section #notification_count_comment {
