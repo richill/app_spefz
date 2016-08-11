@@ -4,11 +4,20 @@
   ===================================================*/
 
 .nav_user_section {
-  background-color: #20232C;
-  padding: 18px 0px;
+  background-color: #58CDA6;
   box-shadow: 0 5px 15px rgba(0,0,0,0.3); 
   -webkit-box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
+
+.nav_user_inner_section {
+  margin: auto ;
+  width: 960px;
+}
+
+.nav_user_section .nav_list ul {
+  margin: 0px !important;
+}
+
 
 
 /*===================================================
