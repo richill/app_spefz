@@ -4,8 +4,9 @@
   ===================================================*/
 
 .nav_user_section {
-  background-color: #283041;
-  background-color: #58CDA6;
+  // background-color: #283041;
+  // background-color: #58CDA6;
+  background-color: #E34B51;
   padding: 10px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.3); 
   -webkit-box-shadow: 0 5px 15px rgba(0,0,0,0.3);
@@ -38,7 +39,8 @@
 }
 
 .nav_user_section .nav_list .left .logo_text a:hover {
-  color: #38a581 !important;
+  // color: #38a581 !important;
+  color: #283041  !important;
   font-weight: bold !important;
   -webkit-transition: all 0.3s ease; 
   -moz-transition: all 0.3s ease; 
@@ -63,7 +65,8 @@
 }
 
 .nav_user_section .nav_list ul .link a:hover {
-  color: #38a581 !important;
+  // color: #38a581 !important;
+  color: #283041  !important;
   font-weight: bold !important;
   -webkit-transition: all 0.3s ease; 
   -moz-transition: all 0.3s ease; 
@@ -77,7 +80,8 @@
   color: #fff !important;
   text-transform: uppercase;
   letter-spacing: 1px;
-  background-color: #E34B51;
+  // background-color: #E34B51;
+  background-color: #283041;
   padding: 8px 10px;
   border-radius: 2px;
   margin-top: 2px;
@@ -87,7 +91,8 @@
 }
 
 .create_button a:hover {
-  background-color: #283041 !important;
+  // background-color: #283041 !important;
+  background-color: #58CDA6 !important;
 }
 
 .nav_user_section .notification_li .fa {
@@ -112,7 +117,8 @@
 .nav_user_section #notification_count_bell {
   font-family: 'Lato', sans-serif;
   padding: 0px 6px 0px 5px;
-  background-color: #E34B51;
+  // background-color: #E34B51;
+  background-color: #58CDA6;
   color: #ffffff;
   font-weight: 500;
   border-radius: 4px;
@@ -181,7 +187,8 @@
 .nav_user_section #notification_count_comment {
   font-family: 'Lato', sans-serif;
   padding: 0px 6px 0px 5px;
-  background-color: #E34B51;
+  // background-color: #E34B51;
+  background-color: #58CDA6;
   color: #ffffff;
   font-weight: 500;
   border-radius: 4px;
@@ -247,7 +254,7 @@
 }
 
 .nav_user_section .nav_list .right .profile_img_cover {
-  background-color: #aee0cf;
+  // background-color: #aee0cf;
   padding: 3px;
   border-radius: 200px;
 }
