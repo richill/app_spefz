@@ -4,7 +4,9 @@
   ===================================================*/
 
 .nav_user_section {
+  background-color: #283041;
   background-color: #58CDA6;
+  padding: 15px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.3); 
   -webkit-box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
@@ -18,6 +20,23 @@
   margin: 0px !important;
 }
 
+.nav_user_section .nav_list .left .logo_text a {
+  font-family: 'Lato', sans-serif;
+  font-size: 22px !important;
+  font-weight: 300;
+  color: #fff !important;
+  letter-spacing: 5px;
+}
+
+
+.nav_user_section .nav_list .right a {
+  font-family: 'Lato', sans-serif;
+  font-size: 12px !important;
+  font-weight: 300;
+  text-transform: uppercase;
+  color: #fff !important;
+  letter-spacing: 1px;
+}
 
 
 /*===================================================
