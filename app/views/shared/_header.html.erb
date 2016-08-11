@@ -12,6 +12,17 @@
         <li class="link"><%= link_to 'company', '#' %></li>
         <li class="link"><%= link_to 'dashboard', '#' %></li>
         <li class="link"><%= link_to 'create social', '#' %></li>
+        <li class="link"><i class="fa fa-bell" aria-hidden="true"></i></li>
+        <li class="notification_li">
+          <span id="notification_count">2</span>
+          <div><%= link_to '', '#', id: "notificationLink", class: "fa fa-bell" %></div>
+          <div id="notificationContainer">
+            <div id="notificationTitle">Notifications</div>
+            <div id="notificationsBody" class="notifications"><%# render 'shared/notification' %></div>
+            <!-- <div id="notificationFooter"><a href="#">See All</a></div> -->
+          </div>
+        </li>
+        <li class="link"><i class="fa fa-comment" aria-hidden="true"></i></li>
         <li class="profile_img_cover"><%= link_to(image_tag("img-profile-image.png", :alt =>  "image", :class =>"#"), '#') %></li>
       </ul>
     </nav>
@@ -23,7 +34,7 @@
 
 
 
-<div class="medium-12 columns nav_userr_section">
+<div class="medium-12 columns nav_userr_section hide">
   <header class="nav_userr_inner_section">
     <nav class="nav_list">
       <ul class="inline-list left">
