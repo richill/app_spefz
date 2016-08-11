@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160810145616) do
+ActiveRecord::Schema.define(version: 20160811103936) do
 
   create_table "category_genders", force: :cascade do |t|
     t.string   "name"
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20160810145616) do
     t.float    "longitude"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "user_id"
   end
 
   create_table "signups", force: :cascade do |t|
@@ -58,7 +59,6 @@ ActiveRecord::Schema.define(version: 20160810145616) do
     t.string   "lastname"
     t.date     "birthdate"
     t.integer  "category_gender_id"
-    t.integer  "event_id"
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
