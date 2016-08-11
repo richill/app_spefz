@@ -21,6 +21,11 @@
 }
 
 .nav_user_section .nav_list ul .link {
+  font-family: 'Lato', sans-serif;
+  font-size: 12px !important;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 1px;
   margin-top: 11px !important;
   margin-bottom: 11px !important;
 }
@@ -34,12 +39,7 @@
 }
 
 .nav_user_section .nav_list .right a {
-  font-family: 'Lato', sans-serif;
-  font-size: 12px !important;
-  font-weight: 300;
-  text-transform: uppercase;
   color: #fff !important;
-  letter-spacing: 1px;
 }
 
 .nav_user_section .nav_list .right .profile_img_cover {
