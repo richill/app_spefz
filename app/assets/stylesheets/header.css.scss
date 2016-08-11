@@ -30,16 +30,16 @@
   margin-bottom: 11px !important;
 }
 
+.nav_user_section .nav_list ul .link a {
+  color: #fff !important;
+}
+
 .nav_user_section .nav_list .left .logo_text a {
   font-family: 'Lato', sans-serif;
   font-size: 22px !important;
   font-weight: 300;
   color: #fff !important;
   letter-spacing: 5px;
-}
-
-.nav_user_section .nav_list .right a {
-  color: #fff !important;
 }
 
 .nav_user_section .nav_list .right .profile_img_cover {
@@ -55,6 +55,7 @@
 }
 
 .notification_li .fa {
+  color: #38a581 !important;
   margin-top: 10px;
   font-size: 18px;
 }
