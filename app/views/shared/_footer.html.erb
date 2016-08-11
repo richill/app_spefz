@@ -1,1 +1,29 @@
-<h1>i am the footer</h1>
+<div class="medium-12 columns footer_main_section">
+  <div class="medium-12 columns background_dark">
+    <div class="header_section">
+      <div class="header">find out more about us</div>
+      <div class="sub_header">we like to keep our members up to date via social media</div>
+    </div>
+    <div class="medium-12 columns content_details">
+      <div class="social_media">
+        <%= link_to '', 'https://www.facebook.com/Spefz-258495281186318/', class: "fa fa-facebook-square", target:"_blank" %>
+        <%= link_to '', 'https://twitter.com/spefz', class: "fa fa-twitter-square", target:"_blank" %>
+        <% link_to '', 'https://www.instagram.com/spefz/', class: "fa fa-linkedin-square", target:"_blank" %>
+        <%= link_to '', 'https://www.instagram.com/spefz/', class: "fa fa-instagram", target:"_blank" %>
+      </div>
+      <div class="footer_links">
+        <ul class="inline-list">
+          <li><%= link_to "about us", ".aboutusheader", rel: "relativeanchor" %></li>
+          <li><%= link_to "how it works", ".howitworksheader", rel: "relativeanchor" %></li>
+          <li><%= link_to "signup", new_user_registration_path %></li>
+          <li><%= link_to "we are hiring!", "https://angel.co/spefz/jobs?utm_source=startup_profile_header", target: "_blank" %></li>
+          <li>
+            <a href="#" data-reveal-id="myModal-contactus">contact us</a>
+            <div><%= render 'shared/modal_contactus' %></div>
+          </li>
+        </ul>
+      </div>
+      <div class="copyright_content">Copyright © 2016 Spefz App | ARTLoe Technologies Ltd</div>
+    </div>
+  </div>
+</div>
