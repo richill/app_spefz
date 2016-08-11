@@ -49,19 +49,38 @@ $(document).ready(function() {
 
 // notifications
 $(document).ready(function() {
-  // [nav] notificationLink general_notification
+  // [nav] notificationLink_bell
   $(document).ready(function() {
-    $("#notificationLink").click(function() {
-      $("#notificationContainer").fadeToggle(300);
-      $("#notification_count").fadeOut("slow");
+    $("#notificationLink_bell").click(function() {
+      $("#notificationContainer_bell").fadeToggle(300);
+      $("#notification_count_bell").fadeOut("slow");
+      $("#notificationContainer_comment").fadeOut("slow");
       return false;
     });
     //Document Click hiding the popup 
     $(document).click(function() {
-      $("#notificationContainer").hide();
+      $("#notificationContainer_bell").hide();
     });
     //Popup on click
-    $("#notificationContainer").click(function() {
+    $("#notificationContainer_bell").click(function() {
+      return false;
+    });
+  });
+
+  // [nav] notificationLink_comment
+  $(document).ready(function() {
+    $("#notificationLink_comment").click(function() {
+      $("#notificationContainer_comment").fadeToggle(300);
+      $("#notification_count_comment").fadeOut("slow");
+      $("#notificationContainer_bell").fadeOut("slow");
+      return false;
+    });
+    //Document Click hiding the popup 
+    $(document).click(function() {
+      $("#notificationContainer_comment").hide();
+    });
+    //Popup on click
+    $("#notificationContainer_comment").click(function() {
       return false;
     });
   });

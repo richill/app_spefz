@@ -12,17 +12,24 @@
         <li class="link"><%= link_to 'company', '#' %></li>
         <li class="link"><%= link_to 'dashboard', '#' %></li>
         <li class="link"><%= link_to 'create social', '#' %></li>
-        <li class="link"><i class="fa fa-bell" aria-hidden="true"></i></li>
         <li class="notification_li">
-          <span id="notification_count">2</span>
-          <div><%= link_to '', '#', id: "notificationLink", class: "fa fa-bell" %></div>
-          <div id="notificationContainer">
-            <div id="notificationTitle">Notifications</div>
-            <div id="notificationsBody" class="notifications"><%# render 'shared/notification' %></div>
+          <span id="notification_count_bell">2</span>
+          <div><%= link_to '', '#', id: "notificationLink_bell", class: "fa fa-bell" %></div>
+          <div id="notificationContainer_bell">
+            <div id="notificationTitle_bell">Notifications</div>
+            <div id="notificationsBody_bell" class="notifications"><%# render 'shared/notification' %></div>
             <!-- <div id="notificationFooter"><a href="#">See All</a></div> -->
           </div>
         </li>
-        <li class="link"><i class="fa fa-comment" aria-hidden="true"></i></li>
+        <li class="notification_li">
+          <span id="notification_count_comment">2</span>
+          <div><%= link_to '', '#', id: "notificationLink_comment", class: "fa fa-comment" %></div>
+          <div id="notificationContainer_comment">
+            <div id="notificationTitle_comment">Notifications</div>
+            <div id="notificationsBody_comment" class="notifications"><%# render 'shared/notification' %></div>
+            <!-- <div id="notificationFooter"><a href="#">See All</a></div> -->
+          </div>
+        </li>
         <li class="profile_img_cover"><%= link_to(image_tag("img-profile-image.png", :alt =>  "image", :class =>"#"), '#') %></li>
       </ul>
     </nav>
