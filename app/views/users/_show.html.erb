@@ -1,10 +1,9 @@
-<div class="users_profile_page_section">
-  <div class="medium-12 columns banner_users_profile_page upper_section">
-    <div class="banner_inner_section">hello
-      <div>i am the proile page - show.html.erb</div>
-      <div><%= link_to "socials", events_path %></div>
-      <div><%= link_to "edit profile", edit_user_path(current_user) %></div>
-      <div><%= link_to "sign out", destroy_user_session_path, method: :delete  %></div>
-    </div>
-  </div>
+<div class="medium-12 columns users_profile_page_section">
+  <div class="upper_section">upper_section</div>
+  <div class="lower_section"></div>
 </div>
+
+<div>i am the proile page - show.html.erb</div>
+<div><%= link_to "socials", events_path %></div>
+<div><%= link_to "edit profile", edit_user_path(current_user) %></div>
+<div><%= link_to "sign out", destroy_user_session_path, method: :delete  %></div>
