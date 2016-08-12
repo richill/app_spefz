@@ -5,15 +5,25 @@
 
 .users_profile_page_section {
   background: url("img_background_main.png") repeat;
-  height: 600px;
+  height: 800px;
   padding: 0px !important;
 }
 
+
+// -------- upper_section --------
 .upper_section {
   background-color: green;
   padding: 0px !important;
 }
 
+.profile_banner {
+  background: url("img_background.jpg") no-repeat;
+  background-position: 0% 60%;
+  background-size: cover;
+  height: 350px;
+}
+
+// -------- lower_section --------
 .lower_section {
   padding: 0px !important;
   width: 1170px !important;
