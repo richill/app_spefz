@@ -1,0 +1,49 @@
+/*=========================================
+    Section: profile page
+    File: views / users / _show.html.erb
+  =========================================*/
+
+.users_profile_page_section {
+  background-color: red;
+  // height: 500px;
+}
+
+.users_profile_page_section .banner_users_profile_page {
+  background-color: green;
+  background: url("img_background_main.png") repeat;
+  padding: 0px !important;
+}
+
+.users_profile_page_section .banner_users_profile_page .banner_inner_section {
+  text-align: center;
+  height: 650px;
+}
+
+.users_profile_page_section .banner_users_profile_page h1 {
+  font-family: 'Lato', sans-serif;
+  font-size: 48px;
+  font-weight: 200;
+  text-align: center;
+  margin: 0px;
+  color: #fff;
+  text-transform: capitalize;
+  word-spacing: 3px;
+}
+@media only screen and (max-width: 670px) {
+  .users_profile_page_section .banner_users_profile_page h1  {
+    font-size: 30px;
+  }
+}
+
+.users_profile_page_section .banner_users_profile_page .banner_content {
+  margin: auto;
+  padding: 25px 15px;
+  margin-top: 70px;
+}
+@media only screen and (min-width: 940px) {
+  .users_profile_page_section .banner_users_profile_page .banner_content {
+    width: 900px;
+    padding: 50px 0px;
+    text-align: left;
+  }
+}
