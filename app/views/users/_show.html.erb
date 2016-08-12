@@ -1,4 +1,10 @@
-<div>i am the proile page - show.html.erb</div>
-<div><%= link_to "socials", events_path %></div>
-<div><%= link_to "edit profile", edit_user_path(current_user) %></div>
-<div><%= link_to "sign out", destroy_user_session_path, method: :delete  %></div>
+<div class="homepage_singedout_section">
+  <div class="medium-12 columns banner_singedout_section upper_section">
+    <div class="banner_inner_section">
+      <div>i am the proile page - show.html.erb</div>
+      <div><%= link_to "socials", events_path %></div>
+      <div><%= link_to "edit profile", edit_user_path(current_user) %></div>
+      <div><%= link_to "sign out", destroy_user_session_path, method: :delete  %></div>
+    </div>
+  </div>
+</div>
