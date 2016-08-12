@@ -29,8 +29,18 @@
   height: 350px;
 }
 
-.upper_profile_content {
-  
+.profile_img_main_cover {
+  background-color: #283041;
+  padding: 5px;
+  width: 150px;
+  height: 150px;
+  margin: auto;
+  border-radius: 200px;
+}
+
+.profile_img_main_cover img {
+  width: 150px;
+  border-radius: 200px !important;
 }
 
 // -------- lower_section --------
