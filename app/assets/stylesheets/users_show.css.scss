@@ -239,6 +239,18 @@
   letter-spacing: 1px !important;
 }
 
+.column_left .left_container .interest_container {
+  background-color: #E34B51 !important;
+  color: #fff !important;
+}
+
+.column_left .left_container .interest_container .header {
+  border-bottom: 1px solid #fff !important;
+  letter-spacing: 1px !important;
+}
+
+
+
 // -------- column_middle --------
 .column_middle {
   // background-color: red; //comment out
@@ -276,6 +288,7 @@
 
 .evt_feed:hover {
   background-color: #58CDA6 !important;
+  cursor: pointer;
   -webkit-transition: all 0.3s ease; 
   -moz-transition: all 0.3s ease; 
   -o-transition: all 0.3s ease;
@@ -288,6 +301,7 @@
 
 .evts_upcoming:hover {
   background-color: #58CDA6 !important;
+  cursor: pointer;
   -webkit-transition: all 0.3s ease; 
   -moz-transition: all 0.3s ease; 
   -o-transition: all 0.3s ease;
@@ -295,11 +309,11 @@
 
 .evts_past:hover {
   background-color: #58CDA6 !important;
+  cursor: pointer;
   -webkit-transition: all 0.3s ease; 
   -moz-transition: all 0.3s ease; 
   -o-transition: all 0.3s ease;
 }
-
 
 .column_middle .middle_container .content .content_info {
   padding: 15px;
