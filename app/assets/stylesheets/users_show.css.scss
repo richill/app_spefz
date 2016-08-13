@@ -258,6 +258,8 @@
 }
 
 .column_middle .middle_container .header {
+  color: #fff;
+  letter-spacing: 1px;
   text-transform: uppercase;
   font-weight: bold;
   border-bottom: 1px solid #7C93A7;
@@ -266,13 +268,13 @@
 }
 
 .column_middle .middle_container .header .header_content {
-  background-color: green;
+  background-color: #283041;
   padding: 9px !important;
 }
 
 .evts_upcoming {
-  border-left: 1px solid red;
-  border-right: 1px solid red;
+  border-left: 1px solid #fff;
+  border-right: 1px solid #fff;
 }
 
 
