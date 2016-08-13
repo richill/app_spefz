@@ -12,7 +12,7 @@
 
 // -------- upper_section --------
 .upper_section {
-  background-color: green;
+  // background-color: green;
   padding: 0px !important;
 }
 
@@ -104,12 +104,22 @@
 
 // -------- middle_section --------
 
+.middle_section {
+  background-color: green;
+  // background-color: rgba(255, 255, 255, 0.7) !important;
+}
 
+.middle_inner_section {
+  width: 1170px !important;
+  background-color: red;
+  height: 50px;
+  margin: auto;
+
+}
 
 
 // -------- lower_section --------
 .lower_section {
-  padding: 0px !important;
   width: 1170px !important;
   margin: auto;
   height: 400px;
