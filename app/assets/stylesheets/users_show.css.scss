@@ -71,25 +71,30 @@
 }
 
 .user_social_icons {
-  margin-top: 22px
+  margin-top: 10px
 }
 
-.user_social_icons a {
+.user_social_icons .fa-facebook {
   font-size: 15px;
   color: #fff !important; 
-}
-
-.socialicon_cover_fb {
+  padding: 16px 20px;
   background-color: rgba(255,255,255, 0.2) !important;
-  padding: 15px 20px;
   margin: 0px 2px;
 }
 
-.socialicon_cover_tt {
+.user_social_icons .fa-twitter {
+  font-size: 15px;
+  color: #fff !important; 
+  padding: 16px 18px;
   background-color: rgba(255,255,255, 0.2) !important;
-  padding: 15px 18px;
   margin: 0px 2px;
 }
+
+.user_social_icons a:hover {
+  color: red !important; 
+}
+
+
 
 
 
