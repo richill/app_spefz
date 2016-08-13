@@ -49,8 +49,8 @@
         <div class="left_container">
           <div class="left_inner_container interest_container">
             <div class="header"><div class="header_content"><i class="fa fa-street-view" aria-hidden="true"></i> interests</div></div>
-            <div class="content">
-              <div class="content_info">
+            <div class="medium-12 columns content">
+              <div class="medium-12 columns content_info">
                 <ul class="tags">
                   <li><%= link_to 'tag', '#' %></li>
                   <li><%= link_to 'tag name', '#' %></li>
@@ -96,7 +96,11 @@
   </div>
 </div>
 
-<div>i am the proile page - show.html.erb</div>
-<div><%= link_to "socials", events_path %></div>
-<div><%= link_to "edit profile", edit_user_path(current_user) %></div>
-<div><%= link_to "sign out", destroy_user_session_path, method: :delete  %></div>
+<div class="hide">
+  <div>i am the proile page - show.html.erb</div>
+  <div><%= link_to "socials", events_path %></div>
+  <div><%= link_to "edit profile", edit_user_path(current_user) %></div>
+  <div><%= link_to "sign out", destroy_user_session_path, method: :delete  %></div>
+</div>
+
+
