@@ -262,7 +262,6 @@
   letter-spacing: 1px;
   text-transform: uppercase;
   font-weight: bold;
-  border-bottom: 1px solid #7C93A7;
   padding: 0px !important;
   text-align: center;
 }
@@ -270,6 +269,16 @@
 .column_middle .middle_container .header .header_content {
   background-color: #283041;
   padding: 9px !important;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease;
+}
+
+.evt_feed:hover {
+  background-color: #58CDA6 !important;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease;
 }
 
 .evts_upcoming {
@@ -277,6 +286,19 @@
   border-right: 1px solid #fff;
 }
 
+.evts_upcoming:hover {
+  background-color: #58CDA6 !important;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease;
+}
+
+.evts_past:hover {
+  background-color: #58CDA6 !important;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease;
+}
 
 
 .column_middle .middle_container .content .content_info {
