@@ -187,18 +187,18 @@
 // -------- lower_section --------
 .lower_section {
   padding: 15px 0px;
-  // background-color: blue;
+  background-color: blue; //comment out
 }
 
 .lower_section .lower_inner_section {
-  background-color: green;
+  background-color: green; //comment out
   width: 1170px !important;
   margin: auto;
   height: 400px;
 }
 
 .column_left {
-  background-color: red;
+  background-color: red; //comment out
   padding: 0px !important;
 }
 
@@ -229,6 +229,16 @@
   padding: 15px;
 }
 
+.aboutme_container {
+  background-color: #4BB4BF !important;
+  color: #fff !important;
+}
+
+.aboutme_container .header {
+  border-bottom: 1px solid #fff !important;
+  letter-spacing: 1px !important;
+}
+
 
 
 
@@ -244,12 +254,12 @@
 
 
 .column_middle {
-  background-color: pink;
+  // background-color: pink;
   padding: 0px !important;
 }
 
 .column_right {
-  background-color: orange;
+  // background-color: orange;
   padding: 0px !important;
 }
 
