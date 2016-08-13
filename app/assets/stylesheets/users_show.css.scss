@@ -16,20 +16,22 @@
   padding: 0px !important;
 }
 
-.profile_banner {
+.upper_section .profile_banner {
   background: url("img_background.jpg") no-repeat;
   background-position: 0% 60%;
   background-size: cover;
-  // height: 350px;
 }
 
-.profile_inner_banner {
+.upper_section .profile_inner_banner {
   background-color: rgba(0, 0, 0, 0.6) !important;
   text-align: center;
-  // height: 350px;
 }
 
-.profile_img_main_cover {
+.upper_section .upper_profile_content {
+  padding: 25px 0px;
+}
+
+.upper_section .profile_img_main_cover {
   // background-color: rgba(40, 48, 45, 0.5) !important;
   background-color: rgba(255, 255, 255, 0.2) !important;
   padding: 10px;
@@ -39,12 +41,12 @@
   border-radius: 200px;
 }
 
-.profile_img_main_cover img {
+.upper_section .profile_img_main_cover img {
   width: 150px;
   border-radius: 200px !important;
 }
 
-.user_name {
+.upper_section .user_name {
   font-family: 'Lato', sans-serif;
   font-size: 35px;
   font-weight: 300;
@@ -55,7 +57,7 @@
   word-spacing: 3px;
 }
 
-.user_location {
+.upper_section .user_location {
   font-family: 'Lato', sans-serif;
   font-size: 12px;
   font-weight: 300;
@@ -66,15 +68,19 @@
   letter-spacing: 1px;
 }
 
-.user_location i {
-  margin-right: 5px;
+.upper_section .divider {
+  margin: 0px 8px;
 }
 
-.user_social_icons {
+.upper_section .user_location i {
+  margin-right: 2px;
+}
+
+.upper_section .user_social_icons {
   margin-top: 10px
 }
 
-.user_social_icons .fa-facebook {
+.upper_section .user_social_icons .fa-facebook {
   font-size: 15px;
   color: #fff !important; 
   padding: 16px 20px;
@@ -82,7 +88,7 @@
   margin: 0px 2px;
 }
 
-.user_social_icons .fa-twitter {
+.upper_section .user_social_icons .fa-twitter {
   font-size: 15px;
   color: #fff !important; 
   padding: 16px 18px;
@@ -90,13 +96,13 @@
   margin: 0px 2px;
 }
 
-.user_social_icons a:hover {
+.upper_section .user_social_icons a:hover {
   color: #E34B51 !important; 
 }
 
 
 
-
+// -------- middle_section --------
 
 
 
