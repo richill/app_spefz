@@ -186,20 +186,19 @@
 // ======== lower_section ========
 .lower_section {
   padding: 15px 0px;
-  background-color: blue; //comment out
+  // background-color: blue; //comment out
 }
 
 .lower_section .lower_inner_section {
-  background-color: green; //comment out
+  // background-color: green; //comment out
   width: 1170px !important;
   margin: auto;
   height: 400px;
 }
 
-
 // -------- column_left --------
 .column_left {
-  background-color: red; //comment out
+  // background-color: red; //comment out
   padding: 0px !important;
 }
 
@@ -240,10 +239,9 @@
   letter-spacing: 1px !important;
 }
 
-
 // -------- column_middle --------
 .column_middle {
-  background-color: red; //comment out
+  // background-color: red; //comment out
   padding: 0px !important;
 }
 
@@ -263,11 +261,18 @@
   text-transform: uppercase;
   font-weight: bold;
   border-bottom: 1px solid #7C93A7;
-  padding: 9px 0px;
+  padding: 0px !important;
+  text-align: center;
 }
 
 .column_middle .middle_container .header .header_content {
-  padding: 0px !important;
+  background-color: green;
+  padding: 9px !important;
+}
+
+.evts_upcoming {
+  border-left: 1px solid red;
+  border-right: 1px solid red;
 }
 
 
