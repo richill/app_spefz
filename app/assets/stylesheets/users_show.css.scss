@@ -102,20 +102,28 @@
 
 // -------- middle_section --------
 .middle_section {
-  background-color: green;
+  // background-color: green;
   // background-color: rgba(255, 255, 255, 0.7) !important;
 }
 
 .middle_inner_section {
   width: 1170px !important;
-  background-color: red;
+  // background-color: red;
   margin: auto;
   padding: 15px 0px;
 
 }
 
+.left {
+  margin-bottom: 0px;
+}
+
 .left li span {
   float: left;
+}
+
+.right {
+  margin-bottom: 0px;
 }
 
 .right .btn a {
@@ -130,6 +138,13 @@
   letter-spacing: 1px;
 }
 
+.btn_follow a {
+  background-color: #E34B51 !important;
+}
+
+.btn_friend a {
+  background-color: #58CDA6 !important;
+}
 
 // -------- lower_section --------
 .lower_section {
