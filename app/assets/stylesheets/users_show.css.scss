@@ -103,7 +103,6 @@
 // -------- middle_section --------
 .middle_section {
   background-color: green;
-  height: 50px;
   // background-color: rgba(255, 255, 255, 0.7) !important;
 }
 
@@ -111,7 +110,24 @@
   width: 1170px !important;
   background-color: red;
   margin: auto;
+  padding: 15px 0px;
 
+}
+
+.left li span {
+  float: left;
+}
+
+.right .btn a {
+  font-family: 'Lato', sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  background: #000;
+  text-transform: capitalize;
+  color: #fff !important;
+  padding: 10px 25px;
+  margin-left: -15px;
+  letter-spacing: 1px;
 }
 
 
