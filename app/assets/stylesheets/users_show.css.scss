@@ -32,6 +32,18 @@
   background-color: rgba(255, 255, 255, 0.2) !important;
 }
 
+.users_profile_page_section .header .create_button a {
+  background-color: #E34B51 !important;
+}
+
+.users_profile_page_section .header .create_button a:hover {
+  background-color: #283041 !important;
+}
+
+.users_profile_page_section .header .nav_user_section .notification_li .fa {
+  color: rgba(255,255,255, 0.8) !important;
+}
+
 .upper_section .upper_profile_content {
   padding: 25px 0px;
 }
