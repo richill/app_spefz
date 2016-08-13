@@ -409,7 +409,8 @@
 }
 
 .tags a:hover {
-  background: #2B3547;
+  text-decoration: underline;
+  background: #2B3547 !important;
 } 
 
 .tags a:hover:before {
