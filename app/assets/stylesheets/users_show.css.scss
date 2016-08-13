@@ -103,6 +103,7 @@
 // -------- middle_section --------
 .middle_section {
   background-color: rgba(255, 255, 255, 0.7) !important;
+  // background-color: #fff !important;
   padding: 8px 0px;
 }
 
@@ -185,9 +186,8 @@
 
 // -------- lower_section --------
 .lower_section {
-  // background-color: rgba(255, 255, 255, 0.7) !important;
-  padding: 5px 0px;
-  background-color: blue;
+  padding: 15px 0px;
+  // background-color: blue;
 }
 
 .lower_section .lower_inner_section {
@@ -198,11 +198,30 @@
   background-color: green;
 }
 
-
 .column_left {
   background-color: red;
   padding: 0px !important;
 }
+
+.decription_container {
+  background-color: #fff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .column_middle {
   background-color: pink;
