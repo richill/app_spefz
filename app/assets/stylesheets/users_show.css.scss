@@ -191,11 +191,10 @@
 }
 
 .lower_section .lower_inner_section {
-  background-color: red;
+  background-color: green;
   width: 1170px !important;
   margin: auto;
   height: 400px;
-  background-color: green;
 }
 
 .column_left {
@@ -204,6 +203,14 @@
 }
 
 .decription_container {
+  padding: 5px;
+}
+
+.decription_inner_container {
+  font-family: 'Lato', sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  padding: 15px;
   background-color: #fff;
 }
 
