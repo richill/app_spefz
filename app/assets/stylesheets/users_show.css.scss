@@ -99,7 +99,6 @@
 }
 
 
-
 // ======== middle_section ========
 .middle_section {
   background-color: rgba(255, 255, 255, 0.7) !important;
@@ -242,7 +241,7 @@
 }
 
 
-// -------- middle_left --------
+// -------- column_middle --------
 .column_middle {
   background-color: red; //comment out
   padding: 0px !important;
@@ -264,12 +263,11 @@
   text-transform: uppercase;
   font-weight: bold;
   border-bottom: 1px solid #7C93A7;
+  padding: 9px 0px;
 }
 
-.column_middle  .middle_container .header .header_content {
-  padding: 8px 0px;
-  text-align: center;
-}
+
+
 
 .column_middle .middle_container .content .content_info {
   padding: 15px;
