@@ -204,11 +204,11 @@
 // ======== lower_section ========
 .lower_section {
   padding: 15px 0px;
-  // background-color: blue; //comment out
+  background-color: blue; //comment out
 }
 
 .lower_section .lower_inner_section {
-  // background-color: green; //comment out
+  background-color: green; //comment out
   width: 1170px !important;
   margin: auto;
   height: 400px;
@@ -216,7 +216,7 @@
 
 // -------- column_left --------
 .column_left {
-  // background-color: red; //comment out
+  background-color: red; //comment out
   padding: 0px !important;
 }
 
@@ -250,6 +250,7 @@
 .column_left .left_container .aboutme_container {
   background-color: #4BB4BF !important;
   color: #fff !important;
+  padding: 0px !important;
 }
 
 .column_left .left_container .aboutme_container .header {
@@ -264,6 +265,7 @@
 .column_left .left_container .interest_container {
   background-color: #58CDA6 !important;
   color: #fff !important;
+  padding: 0px !important;
 }
 
 .column_left .left_container .interest_container .header {
@@ -348,7 +350,7 @@
 
 // -------- column_middle --------
 .column_middle {
-  // background-color: red; //comment out
+  background-color: red; //comment out
   padding: 0px !important;
 }
 
