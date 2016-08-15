@@ -10,10 +10,11 @@
               <div><%= image_tag("img_background.jpg") %></div>
             </div>
             <div class="right_evt">
-              <div><i class="fa fa-calendar" aria-hidden="true"></i> Friday, 1 july</div>
-              <div><i class="fa fa-clock-o" aria-hidden="true"></i> 18:00h - 19:00h</div>
-              <div><i class="fa fa-map-pin" aria-hidden="true"></i> london, united kingdom</div>
-              <div><%= truncate(event.description, length: 100) %></div>
+              <div class="info"><i class="fa fa-calendar" aria-hidden="true"></i> Friday, 1 july</div>
+              <div class="info"><i class="fa fa-clock-o" aria-hidden="true"></i> 18:00h - 19:00h</div>
+              <div class="info city_country"><i class="fa fa-map-pin" aria-hidden="true"></i> london, united kingdom</div>
+              <div class="divider"></div>
+              <div class="description"><%= truncate(event.description, length: 100) %></div>
             </div>
           </div>
 

@@ -24,6 +24,7 @@
 
 .event_container .title a {
   font-family: 'Lato', sans-serif;
+  font-size: 15px;
   color: #414249 !important;
   font-weight: bold;
   text-transform: capitalize;
@@ -31,6 +32,8 @@
 
 .image_content_info {
   // background-color: red;
+  font-size: 11px;
+  font-weight: bold;
   padding: 0px !important;
 }
 
@@ -44,4 +47,34 @@
 
 .right_evt {
   margin-left: 160px;
+}
+
+.right_evt .info {
+  margin-bottom: 2px;
+  letter-spacing: 1px;
+}
+
+.right_evt i {
+  font-size: 14px;
+  margin-right: 5px;
+}
+
+.right_evt .fa-map-pin {
+  margin-left: 3px;
+  margin-right: 8px;
+}
+
+.right_evt .city_country {
+  text-transform: capitalize;
+}
+
+.right_evt .divider {
+  border-top: 1px solid #ededf3;
+  margin: 7px 0px;
+}
+
+.right_evt .description {
+  color: #7C93A7;
+  font-weight: 300;
+  letter-spacing: 1px;
 }
