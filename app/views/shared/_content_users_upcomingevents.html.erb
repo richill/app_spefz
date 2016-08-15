@@ -4,16 +4,19 @@
       <% Event.all.each do |event| %>
       <ul>
         <li>
-          <div class="title"><%= event.title %></div>
-          <div class="left">
-            <div><%= image_tag("img_background.jpg") %></div>
+          <div class="title"><%= link_to "#{event.title}", "#" %></div>
+          <div class="medium-12 columns image_content_info">
+            <div class="left">
+              <div><%= image_tag("img_background.jpg") %></div>
+            </div>
+            <div class="right">
+              <div><i class="fa fa-calendar" aria-hidden="true"></i> Friday, 1 july</div>
+              <div><i class="fa fa-clock-o" aria-hidden="true"></i> 18:00h - 19:00h</div>
+              <div><i class="fa fa-map-pin" aria-hidden="true"></i> london, united kingdom</div>
+              <div><%= event.description %></div>
+            </div>
           </div>
-          <div class="right">
-            <div><i class="fa fa-calendar" aria-hidden="true"></i> Friday, 1 july</div>
-            <div><i class="fa fa-clock-o" aria-hidden="true"></i> 18:00h - 19:00h</div>
-            <div><i class="fa fa-map-pin" aria-hidden="true"></i> london, united kingdom</div>
-            <div><%= event.description %></div>
-          </div>
+
           <div><%= event.address %></div>
           <div><%= event.postcode %></div>
         </li>
