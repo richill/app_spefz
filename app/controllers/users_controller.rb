@@ -6,6 +6,7 @@ class UsersController < ApplicationController
   # GET /users/1.json
   def show
     respond_with(@user)
+    @events = Event.all
   end
 
   # GET /users/1/edit

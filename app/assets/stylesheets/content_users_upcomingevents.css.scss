@@ -1,0 +1,15 @@
+/*=========================================
+    Section: profile page
+    File: views / users / _show.html.erb
+    File: views / users / _content_users_upcomingevents.html.erb
+  =========================================*/
+
+.event_container ul {
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  margin: 0px !important;
+}
+
+.event_container ul li {
+  list-style-type: none;
+}
