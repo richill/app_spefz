@@ -106,6 +106,12 @@
   float: left;
 }
 
+.left_evt_info .header {
+  font-size: 10px !important;
+  color: #414249 !important;
+  font-weight: bold;
+}
+
 .left_evt_info li {
   font-size: 12px;
   text-transform: capitalize;
@@ -135,9 +141,21 @@
   color: #fff !important;
   letter-spacing: 1px;
   background-color: #E34B51;
-  margin-right: 15px !important;
+  margin-right: 8px !important;
   padding: 5px 25px;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease;
 }
+
+
+.right_evt_info .btn_attend a:hover {
+  background-color: rgba(47, 63, 91, 0.5) !important;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease;
+}
+
 
 .right_evt_info .btn_save a {
   font-family: 'Lato', sans-serif;
@@ -147,6 +165,16 @@
   letter-spacing: 1px;
   background-color: #E34B51;
   padding: 5px 25px;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease;
+}
+
+.right_evt_info .btn_save a:hover {
+  background-color: rgba(47, 63, 91, 0.5) !important;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease;
 }
 
 
