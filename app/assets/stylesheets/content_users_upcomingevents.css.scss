@@ -30,6 +30,18 @@
 }
 
 .image_content_info {
-  background-color: red;
+  // background-color: red;
   padding: 0px !important;
+}
+
+.image_content_info img {
+  width: 150px;
+}
+
+.left_evt {
+  float: left;
+}
+
+.right_evt {
+  margin-left: 160px;
 }
