@@ -265,7 +265,7 @@
 .column_left .left_container .interest_container {
   background-color: #58CDA6 !important;
   color: #fff !important;
-  padding: 0px !important;
+  padding: 0px 0px 10px !important;
 }
 
 .column_left .left_container .interest_container .header {
@@ -384,7 +384,7 @@
   -o-transition: all 0.3s ease;
 }
 
-.evt_feed:hover {
+.evts_feed:hover {
   background-color: #E34B51 !important;
   cursor: pointer;
   -webkit-transition: all 0.3s ease; 
