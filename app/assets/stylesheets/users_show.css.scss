@@ -13,17 +13,17 @@
 
 
 // ======== upper_section ========
-.upper_section {
+.users_profile_page_section .upper_section {
   padding: 0px !important;
 }
 
-.upper_section .profile_banner {
+.users_profile_page_section .upper_section .profile_banner {
   background: url("img_background.jpg") no-repeat;
   background-position: 0% 60%;
   background-size: cover;
 }
 
-.upper_section .profile_inner_banner {
+.users_profile_page_section .upper_section .profile_inner_banner {
   background-color: rgba(0, 0, 0, 0.6) !important;
   text-align: center;
 }
@@ -44,11 +44,11 @@
   color: rgba(255,255,255, 0.8) !important;
 }
 
-.upper_section .upper_profile_content {
+.users_profile_page_section .upper_section .upper_profile_content {
   padding: 25px 0px;
 }
 
-.upper_section .profile_img_main_cover {
+.users_profile_page_section .upper_section .profile_img_main_cover {
   background-color: rgba(255, 255, 255, 0.2) !important;
   padding: 10px;
   width: 150px;
@@ -57,12 +57,12 @@
   border-radius: 200px;
 }
 
-.upper_section .profile_img_main_cover img {
+.users_profile_page_section .upper_section .profile_img_main_cover img {
   width: 150px;
   border-radius: 200px !important;
 }
 
-.upper_section .user_name {
+.users_profile_page_section .upper_section .user_name {
   font-family: 'Lato', sans-serif;
   font-size: 35px;
   font-weight: 300;
@@ -73,7 +73,7 @@
   word-spacing: 3px;
 }
 
-.upper_section .user_location {
+.users_profile_page_section .upper_section .user_location {
   font-family: 'Lato', sans-serif;
   font-size: 12px;
   font-weight: 300;
@@ -84,19 +84,19 @@
   letter-spacing: 1px;
 }
 
-.upper_section .divider {
+.users_profile_page_section .users_profile_page_section .upper_section .divider {
   margin: 0px 8px;
 }
 
-.upper_section .user_location i {
+.users_profile_page_section .upper_section .user_location i {
   margin-right: 2px;
 }
 
-.upper_section .user_social_icons {
+.users_profile_page_section .upper_section .user_social_icons {
   margin-top: 10px
 }
 
-.upper_section .user_social_icons .fa-facebook {
+.users_profile_page_section .upper_section .user_social_icons .fa-facebook {
   font-size: 15px;
   color: #fff !important; 
   padding: 16px 20px;
@@ -104,7 +104,7 @@
   margin: 0px 2px;
 }
 
-.upper_section .user_social_icons .fa-twitter {
+.users_profile_page_section .upper_section .user_social_icons .fa-twitter {
   font-size: 15px;
   color: #fff !important; 
   padding: 16px 18px;
@@ -112,34 +112,34 @@
   margin: 0px 2px;
 }
 
-.upper_section .user_social_icons a:hover {
+.users_profile_page_section .upper_section .user_social_icons a:hover {
   color: #E34B51 !important; 
 }
 
 
 // ======== middle_section ========
-.middle_section {
+.users_profile_page_section .middle_section {
   background-color: rgba(255, 255, 255, 0.7) !important;
   // background-color: #fff !important;
   padding: 8px 0px;
 }
 
-.middle_section .middle_inner_section {
+.users_profile_page_section .middle_section .middle_inner_section {
   background-color: red;
   width: 1170px !important;
   margin: auto;
 }
 
-.middle_section .left {
+.users_profile_page_section .middle_section .left {
   margin-top: 10px;
   margin-bottom: 10px;
 }
 
-.middle_section .left li span {
+.users_profile_page_section .middle_section .left li span {
   float: left;
 }
 
-.middle_section .left .header {
+.users_profile_page_section .middle_section .left .header {
   font-family: 'Lato', sans-serif;
   font-size: 14px;
   font-weight: bold;
@@ -149,18 +149,18 @@
   margin-right: 4px;
 }
 
-.middle_section .left .content {
+.users_profile_page_section .middle_section .left .content {
   font-family: 'Lato', sans-serif;
   font-size: 14px;
   font-weight: bold;
   color: #414249;
 }
 
-.middle_section .right {
+.users_profile_page_section .middle_section .right {
   margin-bottom: 0px;
 }
 
-.middle_section .right .btn a {
+.users_profile_page_section .middle_section .right .btn a {
   font-family: 'Lato', sans-serif;
   font-size: 13px;
   font-weight: 300;
@@ -172,28 +172,28 @@
   letter-spacing: 1px;
 }
 
-.middle_section .right .btn a:hover {
+.users_profile_page_section .middle_section .right .btn a:hover {
   background-color: rgba(47, 63, 91, 0.5) !important;
   -webkit-transition: all 0.3s ease; 
   -moz-transition: all 0.3s ease; 
   -o-transition: all 0.3s ease; 
 }
 
-.middle_section .right .btn_follow a {
+.users_profile_page_section .middle_section .right .btn_follow a {
   background-color: #E34B51 !important;
   -webkit-transition: all 0.3s ease; 
   -moz-transition: all 0.3s ease; 
   -o-transition: all 0.3s ease; 
 }
 
-.middle_section .right .btn_friend a {
+.users_profile_page_section .middle_section .right .btn_friend a {
   background-color: #58CDA6 !important;
   -webkit-transition: all 0.3s ease; 
   -moz-transition: all 0.3s ease; 
   -o-transition: all 0.3s ease; 
 }
 
-.middle_section .right .btn_invite a {
+.users_profile_page_section .middle_section .right .btn_invite a {
   background-color: #4BB4BF !important;
   -webkit-transition: all 0.3s ease; 
   -moz-transition: all 0.3s ease; 
@@ -202,12 +202,12 @@
 
 
 // ======== lower_section ========
-.lower_section {
+.users_profile_page_section .lower_section {
   padding: 15px 0px;
   // background-color: blue; //comment out
 }
 
-.lower_section .lower_inner_section {
+.users_profile_page_section .lower_section .lower_inner_section {
   // background-color: green; //comment out
   width: 1170px !important;
   margin: auto;
@@ -215,16 +215,16 @@
 }
 
 // -------- column_left --------
-.column_left {
+.users_profile_page_section .column_left {
   // background-color: red; //comment out
   padding: 0px !important;
 }
 
-.column_left .left_container {
+.users_profile_page_section .column_left .left_container {
   padding: 5px;
 }
 
-.column_left .left_container .left_inner_container {
+.users_profile_page_section .column_left .left_container .left_inner_container {
   font-family: 'Lato', sans-serif;
   font-size: 13px;
   font-weight: 300;
@@ -232,60 +232,60 @@
   background-color: #fff;
 }
 
-.column_left .left_container .header {
+.users_profile_page_section .column_left .left_container .header {
   text-transform: uppercase;
   font-weight: bold;
   border-bottom: 1px solid #7C93A7;
 }
 
-.column_left  .left_container .header .header_content {
+.users_profile_page_section .column_left  .left_container .header .header_content {
   padding: 8px 0px;
   text-align: center;
 }
 
-.column_left .left_container .content .content_info {
+.users_profile_page_section .column_left .left_container .content .content_info {
   padding: 15px;
 }
 
-.column_left .left_container .aboutme_container {
+.users_profile_page_section .column_left .left_container .aboutme_container {
   background-color: #4BB4BF !important;
   color: #fff !important;
   padding: 0px !important;
 }
 
-.column_left .left_container .aboutme_container .header {
+.users_profile_page_section .column_left .left_container .aboutme_container .header {
   border-bottom: 1px solid #fff !important;
   letter-spacing: 1px !important;
 }
 
-.column_left .left_container .aboutme_container .content_info {
+.users_profile_page_section .column_left .left_container .aboutme_container .content_info {
   word-spacing: 3px !important;
 }
 
-.column_left .left_container .interest_container {
+.users_profile_page_section .column_left .left_container .interest_container {
   background-color: #58CDA6 !important;
   color: #fff !important;
   padding: 0px 0px 10px !important;
 }
 
-.column_left .left_container .interest_container .header {
+.users_profile_page_section .column_left .left_container .interest_container .header {
   border-bottom: 1px solid #fff !important;
   letter-spacing: 1px !important;
 }
 
-.column_left .left_container .interest_container .content {
+.users_profile_page_section .column_left .left_container .interest_container .content {
   background-color: #58CDA6 !important;
   padding: 0px !important;
 }
 
-.column_left .left_container .interest_container .content_info .tags {
+.users_profile_page_section .column_left .left_container .interest_container .content_info .tags {
   margin: 0;
   padding: 0;
   right: 24px;
   list-style: none;
 }
 
-.column_left .left_container .interest_container .content_info .tags li, .tags a {
+.users_profile_page_section .column_left .left_container .interest_container .content_info .tags li, .tags a {
   float: left;
   height: 24px;
   line-height: 24px;
@@ -294,7 +294,7 @@
   margin-bottom: 5px;
 }
 
-.column_left .left_container .interest_container .content_info .tags a {
+.users_profile_page_section .column_left .left_container .interest_container .content_info .tags a {
   font-family: 'Lato', sans-serif;
   font-size: 12px;
   font-weight: 300;
@@ -306,7 +306,7 @@
   text-decoration: none;  
 }
 
-.column_left .left_container .interest_container .content_info .tags a:before {
+.users_profile_page_section .column_left .left_container .interest_container .content_info .tags a:before {
   content: "";
   float: left;
   position: absolute;
@@ -319,7 +319,7 @@
   border-width: 12px 12px 12px 0;    
 }
 
-.column_left .left_container .interest_container .content_info .tags a:after{
+.users_profile_page_section .column_left .left_container .interest_container .content_info .tags a:after{
   content: "";
   position: absolute;
   top: 10px;
@@ -336,29 +336,27 @@
   box-shadow: -1px -1px 2px #004977;
 }
 
-.column_left .left_container .interest_container .content_info .tags a:hover {
+.users_profile_page_section .column_left .left_container .interest_container .content_info .tags a:hover {
   text-decoration: underline;
   background: #2B3547 !important;
 } 
 
-.column_left .left_container .interest_container .content_info .tags a:hover:before {
+.users_profile_page_section .column_left .left_container .interest_container .content_info .tags a:hover:before {
   border-color:transparent #2B3547 transparent transparent;
 }
 
 
-
-
 // -------- column_middle --------
-.column_middle {
+.users_profile_page_section .column_middle {
   // background-color: red; //comment out
   padding: 0px !important;
 }
 
-.column_middle .middle_container {
+.users_profile_page_section .column_middle .middle_container {
   padding: 5px;
 }
 
-.column_middle .middle_container .middle_inner_container {
+.users_profile_page_section .column_middle .middle_container .middle_inner_container {
   font-family: 'Lato', sans-serif;
   font-size: 13px;
   font-weight: 300;
@@ -366,7 +364,7 @@
   background-color: #fff;
 }
 
-.column_middle .middle_container .header {
+.users_profile_page_section .column_middle .middle_container .header {
   color: #fff;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -375,7 +373,7 @@
   text-align: center;
 }
 
-.column_middle .middle_container .header .header_content {
+.users_profile_page_section .column_middle .middle_container .header .header_content {
   background-color: #283041;
   padding: 9px !important;
   border-bottom: 2px solid #E34B51;
@@ -384,7 +382,7 @@
   -o-transition: all 0.3s ease;
 }
 
-.evts_feed:hover {
+.users_profile_page_section .evts_feed:hover {
   background-color: #E34B51 !important;
   cursor: pointer;
   -webkit-transition: all 0.3s ease; 
@@ -392,12 +390,12 @@
   -o-transition: all 0.3s ease;
 }
 
-.evts_upcoming {
+.users_profile_page_section .evts_upcoming {
   border-left: 1px solid #fff;
   border-right: 1px solid #fff;
 }
 
-.evts_upcoming:hover {
+.users_profile_page_section .evts_upcoming:hover {
   background-color: #E34B51 !important;
   cursor: pointer;
   -webkit-transition: all 0.3s ease; 
@@ -405,7 +403,7 @@
   -o-transition: all 0.3s ease;
 }
 
-.evts_past:hover {
+.users_profile_page_section .evts_past:hover {
   background-color: #E34B51 !important;
   cursor: pointer;
   -webkit-transition: all 0.3s ease; 
@@ -413,7 +411,7 @@
   -o-transition: all 0.3s ease;
 }
 
-.column_middle .middle_container .content .content_info {
+.users_profile_page_section .column_middle .middle_container .content .content_info {
   padding: 15px;
 }
 
@@ -433,8 +431,7 @@
 
 
 
-
-
+// -------- column_right --------
 .column_right {
   // background-color: orange;
   padding: 0px !important;
