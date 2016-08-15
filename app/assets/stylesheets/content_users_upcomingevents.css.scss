@@ -103,7 +103,6 @@
 
 .left_evt_info {
   // width: 230px;
-  background-color: red;
   float: left;
 }
 
@@ -130,13 +129,23 @@
 }
 
 .right_evt_info .btn_attend a {
-  background-color: green;
+  font-family: 'Lato', sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  color: #fff !important;
+  letter-spacing: 1px;
+  background-color: #E34B51;
   margin-right: 15px !important;
   padding: 5px 25px;
 }
 
 .right_evt_info .btn_save a {
-  background-color: green;
+  font-family: 'Lato', sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  color: #fff !important;
+  letter-spacing: 1px;
+  background-color: #E34B51;
   padding: 5px 25px;
 }
 
