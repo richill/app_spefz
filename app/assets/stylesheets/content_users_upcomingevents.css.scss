@@ -12,4 +12,13 @@
 
 .event_container ul li {
   list-style-type: none;
+  margin-bottom: 15px;
+  background-color: rgba(47, 63, 91, 0.03) !important;
+  padding: 15px;
+}
+
+.event_container .title {
+  font-weight: bold;
+  text-transform: capitalize;
+  margin-bottom: 5px;
 }
