@@ -202,11 +202,11 @@
 // ======== lower_section ========
 .users_profile_page_section .lower_section {
   padding: 15px 0px;
-  // background-color: blue; //comment out
+  background-color: blue; //////////////////////////////comment out
 }
 
 .users_profile_page_section .lower_section .lower_inner_section {
-  // background-color: green; //comment out
+  background-color: green; //////////////////////////////comment out
   width: 1170px !important;
   margin: auto;
   height: 400px;
@@ -214,7 +214,7 @@
 
 // -------- column_left --------
 .users_profile_page_section .column_left {
-  // background-color: red; //comment out
+  background-color: red; //////////////////////////////comment out
   padding: 0px !important;
 }
 
@@ -346,7 +346,7 @@
 
 // -------- column_middle --------
 .users_profile_page_section .column_middle {
-  // background-color: red; //comment out
+  background-color: red; //////////////////////////////comment out
   padding: 0px !important;
 }
 
@@ -415,25 +415,22 @@
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // -------- column_right --------
-.column_right {
-  // background-color: orange;
+.users_profile_page_section .column_right {
+  background-color: red; //////////////////////////////comment out
   padding: 0px !important;
+}
+
+.users_profile_page_section .column_right .right_container {
+  padding: 5px;
+}
+
+.users_profile_page_section .column_right .right_container .right_inner_container {
+  font-family: 'Lato', sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  color: #414249;
+  background-color: #fff;
 }
 
 
