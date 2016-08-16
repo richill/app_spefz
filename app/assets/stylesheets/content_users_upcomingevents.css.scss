@@ -51,8 +51,14 @@
   float: left;
 }
 
+.users_upcomingevents_section .left_evt .img_cover {
+  width: 150px;
+      background-color: rgba(40, 48, 45, 0.1) !important;
+}
+
 .users_upcomingevents_section .left_evt img {
   width: 150px;
+  height: 105px;
 }
 
 .users_upcomingevents_section .right_evt {
