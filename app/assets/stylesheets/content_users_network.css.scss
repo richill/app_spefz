@@ -1,0 +1,23 @@
+/*=========================================
+    Section: profile page
+    File: views / users / _show.html.erb
+    File: views / users / _content_users_network.html.erb
+  =========================================*/
+
+.users_network_section ul {
+  margin: 0px;
+}
+
+.users_network_section ul li {
+  margin: 3px;
+  background-color: rgba(225, 71, 62, 0.2) !important;
+  padding: 4px;
+  border-radius: 5px;
+}
+
+.users_network_section ul li img {
+  height: 48px;
+  width: 48px;
+  border-radius: 200px;
+}
+
