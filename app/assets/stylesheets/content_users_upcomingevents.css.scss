@@ -4,25 +4,25 @@
     File: views / users / _content_users_upcomingevents.html.erb
   =========================================*/
 
-.event_container ul {
+.users_upcomingevents_section .event_container ul {
   font-family: 'Lato', sans-serif;
   font-weight: 300;
   color: #414249;
   margin: 0px !important;
 }
 
-.event_container ul li {
+.users_upcomingevents_section .event_container ul li {
   list-style-type: none;
   margin-bottom: 15px;
   background-color: rgba(47, 63, 91, 0.03);
   padding: 15px;
 }
 
-.event_container .title {
+.users_upcomingevents_section .event_container .title {
   margin-bottom: 5px;
 }
 
-.event_container .title a {
+.users_upcomingevents_section .event_container .title a {
   font-family: 'Lato', sans-serif;
   font-size: 15px;
   color: #414249 !important;
@@ -33,94 +33,94 @@
   -o-transition: all 0.3s ease;
 }
 
-.event_container .title a:hover {
+.users_upcomingevents_section .event_container .title a:hover {
   color: #E34B51 !important;
   -webkit-transition: all 0.3s ease; 
   -moz-transition: all 0.3s ease; 
   -o-transition: all 0.3s ease;
 }
 
-.image_content_info {
+.users_upcomingevents_section .image_content_info {
   font-size: 11px;
   font-weight: bold;
   padding: 0px !important;
 }
 
 
-.left_evt {
+.users_upcomingevents_section .left_evt {
   float: left;
 }
 
-.left_evt img {
+.users_upcomingevents_section .left_evt img {
   width: 150px;
 }
 
-.right_evt {
+.users_upcomingevents_section .right_evt {
   margin-left: 160px;
 }
 
-.right_evt .info {
+.users_upcomingevents_section .right_evt .info {
   margin-bottom: 2px;
   letter-spacing: 1px;
 }
 
-.right_evt i {
+.users_upcomingevents_section .right_evt i {
   font-size: 14px;
   margin-right: 5px;
 }
 
-.right_evt .fa-map-pin {
+.users_upcomingevents_section .right_evt .fa-map-pin {
   margin-left: 3px;
   margin-right: 8px;
 }
 
-.right_evt .city_country {
+.users_upcomingevents_section .right_evt .city_country {
   text-transform: capitalize;
 }
 
-.right_evt .divider {
+.users_upcomingevents_section .right_evt .divider {
   border-top: 1px solid #ededf3;
   margin: 7px 0px;
 }
 
-.right_evt .description {
+.users_upcomingevents_section .right_evt .description {
   color: #7C93A7;
   font-weight: 300;
   letter-spacing: 1px;
 }
 
-.info_action_container {
+.users_upcomingevents_section .info_action_container {
   margin-top: 10px;
 }
 
-.info_action_container ul {
+.users_upcomingevents_section .info_action_container ul {
   margin: 0px !important;
   display: inline-block;
 }
 
 
-.left_evt_info {
+.users_upcomingevents_section .left_evt_info {
   float: left;
 }
 
-.left_evt_info .header {
+.users_upcomingevents_section .left_evt_info .header {
   font-size: 10px !important;
   color: #414249 !important;
 }
 
-.left_evt_info .content a {
+.users_upcomingevents_section .left_evt_info .content a {
   font-size: 12px !important;
   color: #414249 !important;
   text-align: center !important;
 }
 
-.left_evt_info .content a:hover {
+.users_upcomingevents_section .left_evt_info .content a:hover {
   color: #E34B51 !important;
   font-weight: bold;
 }
 
 
-.left_evt_info li {
+.users_upcomingevents_section .left_evt_info li {
   font-size: 12px;
   text-transform: capitalize;
   margin: 0px !important;
@@ -130,11 +130,11 @@
 }
 
 
-.right_evt_info {
+.users_upcomingevents_section .right_evt_info {
   float: right;
 }
 
-.right_evt_info li {
+.users_upcomingevents_section .right_evt_info li {
   font-size: 12px;
   text-transform: capitalize;
   margin: 0px !important;
@@ -142,7 +142,7 @@
   background-color: transparent !important;
 }
 
-.right_evt_info .btn_attend a {
+.users_upcomingevents_section .right_evt_info .btn_attend a {
   font-family: 'Lato', sans-serif;
   font-size: 13px;
   font-weight: 300;
@@ -157,7 +157,7 @@
 }
 
 
-.right_evt_info .btn_attend a:hover {
+.users_upcomingevents_section .right_evt_info .btn_attend a:hover {
   background-color: #eeaa02 !important;
   -webkit-transition: all 0.3s ease; 
   -moz-transition: all 0.3s ease; 
@@ -165,7 +165,7 @@
 }
 
 
-.right_evt_info .btn_save a {
+.users_upcomingevents_section .right_evt_info .btn_save a {
   font-family: 'Lato', sans-serif;
   font-size: 13px;
   font-weight: 300;
@@ -178,7 +178,7 @@
   -o-transition: all 0.3s ease;
 }
 
-.right_evt_info .btn_save a:hover {
+.users_upcomingevents_section .right_evt_info .btn_save a:hover {
   background-color: #eeaa02 !important;
   -webkit-transition: all 0.3s ease; 
   -moz-transition: all 0.3s ease; 
