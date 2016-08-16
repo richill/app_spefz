@@ -458,6 +458,21 @@
   text-align: center;
 }
 
+.users_profile_page_section .column_right .right_container .header .header_content a {
+  color: #414249 !important;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease;
+}
+
+.users_profile_page_section .column_right .right_container .header .header_content a:hover {
+  color: #E34B51 !important;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease;
+}
+
+
 .users_profile_page_section .column_right .right_container .content .content_info {
   padding: 15px;
 }
