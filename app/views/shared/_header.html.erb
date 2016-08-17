@@ -31,7 +31,15 @@
             <!-- <div id="notificationFooter"><a href="#">See All</a></div> -->
           </div>
         </li>
-        <li class="profile_img_cover"><%= link_to(image_tag("img-profile-image.png", :alt =>  "image", :class =>"#"), '#') %></li>
+        <li class="notification_li">
+          <div class="profile_img_cover"><%= link_to(image_tag("img-profile-image.png", :alt =>  "image", :class =>"#"), '#') %></div>
+          <div id="notificationContainer_comment">
+            <div id="notificationTitle_comment">Notifications</div>
+            <div id="notificationsBody_comment" class="notifications"><%# render 'shared/notification' %></div>
+            <!-- <div id="notificationFooter"><a href="#">See All</a></div> -->
+          </div>
+        </li>
+        <!-- <li class="profile_img_cover"><%# link_to(image_tag("img-profile-image.png", :alt =>  "image", :class =>"#"), '#') %></li> -->
       </ul>
     </nav>
   </header>
