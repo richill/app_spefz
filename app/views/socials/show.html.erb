@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @social.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @social.description %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @social.address %>
+</p>
+
+<p>
+  <strong>Postcode:</strong>
+  <%= @social.postcode %>
+</p>
+
+<p>
+  <strong>Latitude:</strong>
+  <%= @social.latitude %>
+</p>
+
+<p>
+  <strong>Longitude:</strong>
+  <%= @social.longitude %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @social.user_id %>
+</p>
+
+<%= link_to 'Edit', edit_social_path(@social) %> |
+<%= link_to 'Back', socials_path %>
