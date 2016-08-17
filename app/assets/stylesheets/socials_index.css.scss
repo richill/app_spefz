@@ -379,29 +379,17 @@
 
 .socials_section .feed_header {
   font-family: "Lato", sans-serif;
+  font-size: 12px !important;
   font-weight: 300;
   color: #fff;
   word-spacing: 3px;
   text-transform: uppercase;
-  background-color: rgba(47,63,91,0.5) !important;
+  background-color: rgba(47, 63, 91, 0.5) !important;
   position: absolute;
-  z-index: 1000;
-  height: 80px;
+  // z-index: 1000;
+  height: 70px;
   width: 100%;
-  padding: 10px 15px;
-}
-
-.socials_section .feed_date {
-  margin-bottom: 3px;
-}
-
-.socials_section .feed_location {
-  margin-bottom: 3px;
-}
-@media screen and (min-width: 640px) and (max-width: 1145px) {
- .socials_section .feed_location {
-  display: none;
-  } 
+  padding: 8px 15px;
 }
 
 .socials_section .feed_header .date {
@@ -445,24 +433,27 @@
 
 .socials_section .feed_organizer {
   font-family: "Lato", sans-serif;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 400;
-  color: #888888;
+  color: #7C93A7;
   text-transform: uppercase;
 }
 
 .socials_section .feed_title {
   font-family: "Lato", sans-serif;
-  font-size: 20px;
+  font-size: 13px;
   font-weight: bold;
-  color: #283041;
+  color: #414249;
   text-transform: uppercase;
   margin-bottom: 15px;
-  line-height: 25px;
+  margin-top: 5px;
+  line-height: 18px;
+  padding: 0px 8px;
 }
 
 .socials_section .feed_comments_container {
   padding: 10px;
+  display: none;
 }
 @media only screen and (max-width: 960px) {
   .socials_section .feed_comments_container {
@@ -511,6 +502,7 @@
 .socials_section .booking {
   border-top: 1px solid #f8f8f9;
   padding: 15px;
+  display: none;
 }
 
 .socials_section .booking a {
