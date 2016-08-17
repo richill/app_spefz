@@ -1,5 +1,7 @@
 <p id="notice"><%= notice %></p>
 
+<div><%= link_to "sign out", destroy_user_session_path, method: :delete  %></div>
+<div><%= link_to "profile", user_path(current_user) %></div>
 <h1>Listing Socials</h1>
 
 <table>
@@ -23,12 +25,10 @@
         <td><%= social.description %></td>
         <td><%= social.address %></td>
         <td><%= social.postcode %></td>
-        <td><%= social.latitude %></td>
-        <td><%= social.longitude %></td>
         <td><%= social.user_id %></td>
-        <td><%= link_to 'Show', social %></td>
-        <td><%= link_to 'Edit', edit_social_path(social) %></td>
-        <td><%= link_to 'Destroy', social, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', user_social_path(social.user, social) %></td>
+        <td><%= link_to 'Edit', edit_user_social_path(social.user, social) %></td>
+        <td><%= link_to 'Destroy', user_social_path(social.user, social), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -36,4 +36,4 @@
 
 <br>
 
-<%= link_to 'New Social', new_social_path %>
+<%= link_to 'New Social', new_user_social_path(current_user) %>

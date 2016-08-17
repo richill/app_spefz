@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   resources :signups
 
   devise_for :users
-  resources :users
+  resources :users do
+    resources :socials
+  end
   
   root 'static_pages#homepg'
   get  'landing-page',                   to: 'static_pages#landingpg'

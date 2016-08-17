@@ -9,7 +9,7 @@
 
       <!-- nav right side -->
       <ul class="inline-list right">
-        <li class="link"><%= link_to 'socials', events_path %></li>
+        <li class="link"><%= link_to 'socials', socials_path %></li>
         <li class="link"><%= link_to 'activity', '#' %></li>
         <li class="link"><%= link_to 'members', '#' %></li>
         <li class="create_button"><%= link_to 'create social', '#' %></li>
@@ -82,7 +82,7 @@
                 <%# end %>
               <%# end %>
               <li><%= link_to "edit profile", edit_user_path(current_user) %></li>
-              <li><%= link_to "socials", events_path %></li>
+              <li><%= link_to "socials", socials_path %></li>
               <li><%= link_to "signout", destroy_user_session_path, method: :delete %></li>
             </ul>
           </li>

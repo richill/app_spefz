@@ -1,73 +1,71 @@
 class SocialsController < ApplicationController
+  respond_to :html, :xml, :json
   before_action :set_social, only: [:show, :edit, :update, :destroy]
 
-  # GET /socials
-  # GET /socials.json
   def index
     @socials = Social.all
   end
 
-  # GET /socials/1
-  # GET /socials/1.json
+  def user_socials
+    @user = User.find(params[:user_id])
+    @socials = @user.socials.order("created_at DESC")
+    respond_with(@socials)
+  end
+
   def show
+    @user = User.find(params[:user_id])
+    @social = @user.socials.find(params[:id]) 
+    respond_with(@social)
   end
 
-  # GET /socials/new
   def new
-    @social = Social.new
+    @user = User.find(params[:user_id])
+    @social = @user.socials.build
   end
 
-  # GET /socials/1/edit
   def edit
+    @user = User.find(params[:user_id])
   end
 
-  # POST /socials
-  # POST /socials.json
   def create
-    @social = Social.new(social_params)
+    @user = User.find(params[:user_id])
+    @social = @user.socials.create(social_params)
 
     respond_to do |format|
       if @social.save
-        format.html { redirect_to @social, notice: 'Social was successfully created.' }
-        format.json { render :show, status: :created, location: @social }
+        format.html { redirect_to([@social.user, @social], notice: 'Social was successfully created.') }
+        format.json  { render json: @social, status: :created, location: @social }
       else
-        format.html { render :new }
-        format.json { render json: @social.errors, status: :unprocessable_entity }
+        format.html { render action: "new" }
+        format.json  { render json: @social.errors, status: :unprocessable_entity }
       end
     end
   end
 
-  # PATCH/PUT /socials/1
-  # PATCH/PUT /socials/1.json
   def update
     respond_to do |format|
-      if @social.update(social_params)
-        format.html { redirect_to @social, notice: 'Social was successfully updated.' }
-        format.json { render :show, status: :ok, location: @social }
+      if @social.update_attributes(social_params)
+        format.html { redirect_to([@social.user, @social], notice: 'Social was successfully updated.') }
+        format.json { head :no_content }
       else
-        format.html { render :edit }
+        format.html { render action: "edit" }
         format.json { render json: @social.errors, status: :unprocessable_entity }
       end
     end
   end
 
-  # DELETE /socials/1
-  # DELETE /socials/1.json
   def destroy
+    @user = User.find(params[:user_id])
+    @social = @user.socials.find(params[:id])
     @social.destroy
-    respond_to do |format|
-      format.html { redirect_to socials_url, notice: 'Social was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    redirect_to socials_path
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_social
       @social = Social.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def social_params
       params.require(:social).permit(:title, :description, :address, :postcode, :latitude, :longitude, :user_id)
     end

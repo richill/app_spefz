@@ -5,11 +5,11 @@ class ApplicationController < ActionController::Base
   before_filter :configure_permitted_parameters, if: :devise_controller?
 
   def after_sign_up_path_for(resources)
-    events_path
+    socials_path
   end
   
   def after_sign_in_path_for(resources)
-    events_path
+    socials_path
   end
 
   def after_sign_out_path_for(resources)

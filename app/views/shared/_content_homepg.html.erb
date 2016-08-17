@@ -10,7 +10,7 @@
             <ul>
               <li>
                 <% if signed_in? %>
-                  <%= link_to "Socials", events_path %>
+                  <%= link_to "Socials", socials_path %>
                   <%= link_to "Profile", current_user %>
                 <% else %>
                   <%= link_to "Sign in", user_session_path %>
@@ -29,7 +29,7 @@
           <h1>Meet New People, Enjoy Your City</h1>
           <div class="sub_header">Discover the most interesting socials and events happening around you.</div>
           <div class="signup_container">
-            <div class="btn_signup"><%= link_to "Search Socials", events_path %></div>
+            <div class="btn_signup"><%= link_to "Search Socials", socials_path %></div>
             <div class="launch_info">meet like minded people, share great times</div>
           </div>
         </div>
