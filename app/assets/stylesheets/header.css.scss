@@ -159,7 +159,6 @@
   font-size: 13px;
   background-color: #ffffff;
   z-index: 1000;
-  width: 384px;
   border-bottom: 1px solid #dddddd;
   font-weight: 400;
   color: #41494f;
@@ -229,7 +228,6 @@
   font-size: 13px;
   background-color: #ffffff;
   z-index: 1000;
-  width: 384px;
   border-bottom: 1px solid #dddddd;
   font-weight: 400;
   color: #41494f;
@@ -249,6 +247,8 @@
   border-top: 1px solid #dddddd;
 }
 
+
+/*----- notifications_profile -----*/
 .nav_user_section .nav_list .right .profile_img_cover {
   border-radius: 200px;
 }
@@ -259,6 +259,73 @@
   height: 35px;
 }
 
+.nav_user_section #notification_count_profile {
+  font-family: 'Lato', sans-serif;
+  padding: 0px 6px 0px 5px;
+  // background-color: #E34B51;
+  background-color: #58CDA6;
+  color: #ffffff;
+  font-weight: 500;
+  border-radius: 4px;
+  position: absolute;
+  margin-left: 10px;
+  top: 8px;
+  font-size: 11px;
+}
+
+.nav_user_section #notificationLink_profile:hover {
+  background-color: transparent;
+}
+
+.nav_user_section #notificationContainer_profile {
+  background-color: #fff;
+  border: 1px solid rgba(100, 100, 100, .4);
+  -webkit-box-shadow: 0 3px 8px rgba(0, 0, 0, .25);
+  overflow: visible;
+  position: absolute;
+  top: 60px;
+  margin-left: -321px;
+  width: 400px;
+  z-index: 1;
+  display: none; /*info: Enable this after jquery implementation*/ 
+}
+
+.nav_user_section #notificationContainer_profile:before { /*info: Popup Arrow*/
+  content: '';
+  display: block;
+  position: absolute;
+  width: 0;
+  height: 0;
+  color: transparent;
+  border: 10px solid black;
+  border-color: transparent transparent white;
+  margin-top: -20px;
+  margin-left: 327px;
+}
+
+.nav_user_section #notificationTitle_profile {
+  padding: 8px;
+  font-size: 13px;
+  background-color: #ffffff;
+  z-index: 1000;
+  border-bottom: 1px solid #dddddd;
+  font-weight: 400;
+  color: #41494f;
+}
+
+.nav_user_section #notificationsBody_profile {
+  padding: 0px 0px 0px 0px !important;
+  min-height: 300px;
+}
+
+.nav_user_section #notificationFooter_profile {
+  background-color: #e9eaed;
+  text-align: center;
+  font-weight: bold;
+  padding: 8px;
+  font-size: 12px;
+  border-top: 1px solid #dddddd;
+}
 
 
 

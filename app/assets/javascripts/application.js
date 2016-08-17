@@ -55,6 +55,7 @@ $(document).ready(function() {
       $("#notificationContainer_bell").fadeToggle(300);
       $("#notification_count_bell").fadeOut("slow");
       $("#notificationContainer_comment").fadeOut("slow");
+      $("#notificationContainer_profile").fadeOut("slow");
       return false;
     });
     //Document Click hiding the popup 
@@ -73,6 +74,7 @@ $(document).ready(function() {
       $("#notificationContainer_comment").fadeToggle(300);
       $("#notification_count_comment").fadeOut("slow");
       $("#notificationContainer_bell").fadeOut("slow");
+      $("#notificationContainer_profile").fadeOut("slow");
       return false;
     });
     //Document Click hiding the popup 
@@ -81,6 +83,25 @@ $(document).ready(function() {
     });
     //Popup on click
     $("#notificationContainer_comment").click(function() {
+      return false;
+    });
+  });
+
+  // [nav] notificationLink_profile
+  $(document).ready(function() {
+    $("#notificationLink_profile").click(function() {
+      $("#notificationContainer_profile").fadeToggle(300);
+      $("#notification_count_profile").fadeOut("slow");
+      $("#notificationContainer_bell").fadeOut("slow");
+      $("#notificationContainer_comment").fadeOut("slow");
+      return false;
+    });
+    //Document Click hiding the popup 
+    $(document).click(function() {
+      $("#notificationContainer_profile").hide();
+    });
+    //Popup on click
+    $("#notificationContainer_profile").click(function() {
       return false;
     });
   });
