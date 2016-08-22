@@ -26,6 +26,18 @@
   }
 }
 
+.socials_section .search_container {
+  height: 65px;
+  background-color: rgba(47, 63, 91, 0.1);
+}
+
+.socials_section .search_inner_container {
+  height: 65px;
+  background-color: green;
+  width: 1170px;
+  margin: auto;
+}
+
 .socials_section .social_content_section {
   padding: 0px !important;
 }
@@ -249,10 +261,7 @@
 //   workings
 // ---------------------------
 
-.search_container {
-  height: 65px;
-  background-color: red;
-}
+
 
 
 
