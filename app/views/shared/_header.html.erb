@@ -39,9 +39,11 @@
               <div><%= link_to "sign out test", destroy_user_session_path, method: :delete  %></div>
               <div><%= link_to "profile test", user_path(current_user) %></div>
               <%= render 'shared/content_users_dropdownbox_profile' %>
+              <div><%= link_to "profile test100", user_path(current_user) %></div>
             </div>
             <!-- <div id="notificationFooter"><a href="#">See All</a></div> -->
           </div>
+          <div><%= link_to "profile test200", user_path(current_user) %></div>
         </li>
         <!-- <li class="profile_img_cover"><%# link_to(image_tag("img-profile-image.png", :alt =>  "image", :class =>"#"), '#') %></li> -->
       </ul>
