@@ -13,9 +13,6 @@ class SocialsController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:user_id])
-    @social = @user.socials.find(params[:id]) 
-    respond_with(@social)
   end
 
   def new
