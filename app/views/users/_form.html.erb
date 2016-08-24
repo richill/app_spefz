@@ -5,6 +5,7 @@
     <%= f.input :firstname %>
     <%= f.input :lastname %>
     <%= f.association :category_gender, collection: CategoryGender.all, prompt: "select a category", label: "Gender" %>
+    <%= f.input :description %>
   </div>
 
   <div class="form-actions">
