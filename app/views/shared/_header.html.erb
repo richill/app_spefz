@@ -32,7 +32,13 @@
           </div>
         </li>
         <li class="notification_li">
-          <div class="profile_img_cover"><%= link_to(image_tag("img-profile-image.png", :alt =>  "image", :class =>"#", id: "notificationLink_profile"), '#') %></div>
+          <div class="profile_img_cover">
+            <% if @user.image.present? %>
+              <div><%= link_to(image_tag(@user.image_url, :alt =>  "image", :class =>"#", id: "notificationLink_profile"), '#') %></div>
+            <% else %>
+              <div class="img_default"><%= link_to(image_tag("img-profile-image-default.png", :alt =>  "image", :class =>"#", id: "notificationLink_profile"), '#') %></div>
+            <% end %>
+          </div>
           <div id="notificationContainer_profile">
             <div id="notificationTitle_profile">Notifications</div>
             <div id="notificationsBody_profile" class="notifications">
