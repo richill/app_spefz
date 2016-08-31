@@ -24,7 +24,13 @@
                         <div class="feed_price"><i class="fa fa-gbp price"></i> £14.99</div>
                       </div>
                       <div class="feed_img"><%= link_to(image_tag("img_feed_01.png", :alt =>  "alt text", :class =>"#"), user_social_path(social.user, social)) %></div>
-                      <div class="feed_user"><%= link_to(image_tag("img_profile_01.png", :alt =>  "alt text", :class =>"#"), user_path(social.user)) %></div>
+                      <div class="feed_user">
+                        <% if social.user.image.present? %>
+                          <div><%= link_to(image_tag(social.user.image_url), user_path(social.user)) %></div>
+                        <% else %>
+                          <div class="img_default"><%= link_to(image_tag("img-profile-image-default.png", :alt =>  "alt text", :class =>"#"), user_path(social.user)) %></div>
+                        <% end %>
+                      </div>
                       <div class="clear"></div>
                       <div class="feed_sub_title">
                         <div class="feed_organizer"><%= social.user.firstname %> is organising</div>
