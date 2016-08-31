@@ -12,6 +12,8 @@ gem "font-awesome-rails"
 gem 'devise'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
+gem 'carrierwave'
+gem 'rmagick'
 
 group :development, :test do
   gem 'sqlite3'
