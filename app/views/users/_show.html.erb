@@ -47,7 +47,6 @@
             <div class="content">
               <div class="content_info">
                 <%= truncate(@user.description, length: 260) %> 
-                <%# link_to "view", "#" %>
                 <span><a href="#" data-reveal-id="myModal-users-aboutme">view</a></span>
                 <div><%= render 'shared/modal_users_aboutme' %></div>
               </div>
