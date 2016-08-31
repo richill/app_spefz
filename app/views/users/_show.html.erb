@@ -13,10 +13,10 @@
               <div class="img_default"><%= image_tag("img-profile-image-default.png") %></div>
             <% end %>
           </div>
-          <div class="user_name"><%= "#{current_user.firstname} #{current_user.lastname}" %></div>
+          <div class="user_name"><%= "#{@user.firstname} #{@user.lastname}" %></div>
           <div class="user_location">
             <i class="fa fa-map-pin" aria-hidden="true"></i> <span>london</span>, <span>united kingdom</span>
-            <% if current_user.profession? %>
+            <% if @user.profession? %>
               <span class="divider">|</span>
               <i class="fa fa-suitcase" aria-hidden="true"></i> 
               <span><%= @user.profession %></span>
@@ -50,18 +50,36 @@
     <div class="lower_inner_section">
       <!-- left column -->
       <div class="medium-3 columns column_left">
-        <div class="medium-12 columns left_container">
-          <div class="medium-12 columns left_inner_container aboutme_container">
-            <div class="header"><div class="header_content"><i class="fa fa-user" aria-hidden="true"></i> about me</div></div>
-            <div class="content">
-              <div class="content_info">
-                <%= truncate(@user.description, length: 260) %> 
-                <span><a href="#" data-reveal-id="myModal-users-aboutme">view</a></span>
-                <div><%= render 'shared/modal_users_aboutme' %></div>
+        <!-- about me -->
+        <% if current_user.id == @user.id %>
+          <% if current_user.description? %>
+          <div class="medium-12 columns left_container">
+            <div class="medium-12 columns left_inner_container aboutme_container">
+              <div class="header"><div class="header_content"><i class="fa fa-user" aria-hidden="true"></i> about me</div></div>
+              <div class="content">
+                <div class="content_info">
+                  <%= truncate(@user.description, length: 260) %> 
+                  <span><a href="#" data-reveal-id="myModal-users-aboutme">view</a></span>
+                  <div><%= render 'shared/modal_users_aboutme' %></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+          <% else %>
+          <div class="medium-12 columns left_container">
+            <div class="medium-12 columns left_inner_container aboutme_container">
+              <div class="header"><div class="header_content"><i class="fa fa-user" aria-hidden="true"></i> about me</div></div>
+              <div class="content">
+                <div class="content_info">
+                  <%= link_to "Tell Us About You", edit_user_path(current_user) %>
+                </div>
+              </div>
+            </div>
+          </div>
+          <% end %>
+        <% end %>
+
+        <!-- interests -->
         <div class="medium-12 columns left_container">
           <div class="medium-12 columns left_inner_container interest_container">
             <div class="header"><div class="header_content"><i class="fa fa-street-view" aria-hidden="true"></i> interests</div></div>
