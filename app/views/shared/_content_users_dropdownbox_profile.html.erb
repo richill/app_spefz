@@ -1,5 +1,5 @@
 <div>
+  <div><%= link_to "edit profile", edit_user_path(current_user) %></div>
   <div><%= link_to "sign out", destroy_user_session_path, method: :delete  %></div>
-  <div><%= link_to "profile", user_path(current_user) %></div>
   <div><%= link_to "profile_a", user_path(current_user) %></div>
 </div>
