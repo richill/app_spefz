@@ -7,4 +7,6 @@ class User < ActiveRecord::Base
   belongs_to :category_gender 
   has_many :events
   has_many :socials
+
+  mount_uploader :image, ImageUploader
 end

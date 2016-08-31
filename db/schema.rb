@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160824164045) do
+ActiveRecord::Schema.define(version: 20160831131851) do
 
   create_table "category_genders", force: :cascade do |t|
     t.string   "name"
@@ -73,6 +73,7 @@ ActiveRecord::Schema.define(version: 20160824164045) do
     t.integer  "category_gender_id"
     t.text     "description"
     t.string   "profession"
+    t.string   "image"
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
