@@ -118,9 +118,13 @@
         <div class="left_container middle_container">
           <div class="medium-12 columns middle_inner_container">
             <div class="medium-12 columns header">
-              <div class="medium-4 columns header_content evts_feed">feed</div>
-              <div class="medium-4 columns header_content evts_upcoming">upcoming socials</div>
-              <div class="medium-4 columns header_content evts_past">past socials</div>
+              <% if @user.socials.present? %>
+                <div class="medium-4 columns header_content evts_feed">feed</div>
+                <div class="medium-4 columns header_content evts_upcoming">upcoming socials</div>
+                <div class="medium-4 columns header_content evts_past">past socials</div>
+              <% else %>
+                <div class="medium-12 columns header_content evts_feed">feed</div>
+              <% end %>
             </div>
             <div class="clear"></div>
             <div class="content">
