@@ -38,8 +38,11 @@
       </ul>
       <ul class="inline-list right">
         <% unless current_user.id == @user.id %>
-          <li class="btn btn_unfollow"><%= link_to "unfollow", "#" %></li>
-          <li class="btn btn_follow"><%= link_to "follow", "#" %></li>
+          <li class="btn btn_unfollow_submit"><%= render 'unfollow' %></li>
+          <li class="btn btn_follow_submit"><%= render 'follow' %></li>
+
+          <li class="btn btn_unfollow"><%= link_to "old_unfollow", "#" %></li>
+          <li class="btn btn_follow"><%= link_to "old_follow", "#" %></li>
           <li class="btn btn_friend"><%= link_to "add as friend", "#" %></li>
           <li class="btn btn_invite"><%= link_to "invite to social", "#" %></li>
         <% else %>
@@ -182,6 +185,8 @@
     <% end %>
   </div>
 </div>
+
+
 
 <div class="hide">
   <div>i am the proile page - show.html.erb</div>
