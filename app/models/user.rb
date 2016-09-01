@@ -5,8 +5,9 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   belongs_to :category_gender 
-  has_many :events
-  has_many :socials
+  has_many :events, dependent: :destroy
+  has_many :socials, dependent: :destroy
+  has_many :active_relationships, class_name: "Relationship", foreign_key: "follower_id", dependent: :destroy
 
   mount_uploader :image, ImageUploader
 end
