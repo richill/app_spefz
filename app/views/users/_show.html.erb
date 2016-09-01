@@ -45,23 +45,24 @@
               <span class=""><%# render 'follow' %></span>
             <%# end %>
           </li> -->
-
-
-          <li id="follow_form">
+          <li id="follow_unfollow_form">
             <% if current_user.active_relationships.present? %>
               <span class=""><%= render 'unfollow' %></span>
             <% else %>
               <span class=""><%= render 'follow' %></span>
             <% end %>
           </li>
-
-
-
           <li class="btn btn_friend"><%= link_to "add as friend", "#" %></li>
           <li class="btn btn_invite"><%= link_to "invite to social", "#" %></li>
         <% else %>
-          <li class="btn btn_followings_stats"><%= link_to "following [#{@user.followings.count}]", followings_user_path(@user) %></li>
-          <li class="btn btn_followers_stats"><%= link_to "followers [#{@user.followers.count}]", followers_user_path(@user) %></li>
+          <li class="btn btn_followings_stats">
+            <a href="#" data-reveal-id="myModal-users-followings"><%= "following [#{@user.followings.count}]" %></a>
+            <span><%= render 'shared/modal_users_followings' %></span>
+          </li>
+          <li class="btn btn_followers_stats">
+            <a href="#" data-reveal-id="myModal-users-followers"><%= "followers [#{@user.followers.count}]" %></a>
+            <span><%= render 'shared/modal_users_followers' %></span>
+          </li>
           <li class="btn btn_friend_stats"><%= link_to "friends [14]", "#" %></li>
         <% end %>
       </ul>
@@ -190,8 +191,7 @@
 
 
 
-<div class="hide">
-  <div>i am the proile page - show.html.erb</div>
+<div class="">
   <div><%= link_to "socials", socials_path %></div>
   <div><%= link_to "edit profile", edit_user_path(current_user) %></div>
   <div><%= link_to "sign out", destroy_user_session_path, method: :delete  %></div>

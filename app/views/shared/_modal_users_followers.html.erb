@@ -1,0 +1,12 @@
+<div id="myModal-users-followers" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+  <h1>followers</h1>
+  <ul>
+    <% @user.followers.each do |user| %>
+      <li>
+        <%= link_to(image_tag(user.image_url, :alt =>  "image", :class =>"#", id: ""), user) %>
+        <%= link_to "#{user.firstname} #{user.lastname}", user %>
+      </li>
+    <% end %>
+  </ul>
+  <a class="close-reveal-modal cancel_button" aria-label="Close">&#215;</a>
+</div>
