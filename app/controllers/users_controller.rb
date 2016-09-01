@@ -24,18 +24,6 @@ class UsersController < ApplicationController
     redirect_to @user
   end
 
-  def followings
-    @title = "Following"
-    @user  = User.find(params[:id])
-    render 'show_follow'
-  end
-
-  def followers
-    @title = "Followers"
-    @user  = User.find(params[:id])
-    render 'show_follow'
-  end
-
   private
     def set_user
       @user = User.find(params[:id])

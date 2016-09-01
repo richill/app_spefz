@@ -7,9 +7,6 @@ Rails.application.routes.draw do
   devise_for :users
   resources :users do
     resources :socials
-    member do
-      get :followings, :followers
-    end
   end
   
   root 'static_pages#homepg'

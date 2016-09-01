@@ -47,9 +47,9 @@
           </li> -->
           <li id="follow_unfollow_form">
             <% if current_user.active_relationships.present? %>
-              <span class=""><%= render 'unfollow' %></span>
+              <span class=""><%= render 'user_unfollow' %></span>
             <% else %>
-              <span class=""><%= render 'follow' %></span>
+              <span class=""><%= render 'user_follow' %></span>
             <% end %>
           </li>
           <li class="btn btn_friend"><%= link_to "add as friend", "#" %></li>
