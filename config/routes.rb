@@ -12,3 +12,4 @@ Rails.application.routes.draw do
   root 'static_pages#homepg'
   get  'landing-page',                   to: 'static_pages#landingpg'
 end
+
