@@ -1,5 +1,5 @@
 <% if !current_user.active_relationships == nil %>
-  <%= form_for(current_user.active_relationships.find_by(followed_id: @user.id), html: { method: :delete }) do |f| %>
-    <%= f.submit "new_Unfollow" %>
+  <%= form_for(current_user.active_relationships.find_by(followed_id: @user.id), html: { method: :delete }, remote: true) do |f| %>
+    <%= f.submit "Unfollow" %>
   <% end %>
 <% end %>
