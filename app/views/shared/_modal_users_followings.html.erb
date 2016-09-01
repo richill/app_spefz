@@ -1,18 +1,6 @@
 <div id="myModal-users-followings" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
   <h1>You are following</h1>
   <ul>
-    <% @user.followings.each do |user| %>
-      <li>
-        <%= link_to(image_tag(user.image_url, :alt =>  "image", :class =>"#", id: ""), user) %>
-        <%= link_to "#{user.firstname} #{user.lastname}", user %>
-        <button><%= link_to "unfollow", "#" %></button>
-      </li>
-    <% end %>
-  </ul>
-
-
-  <h1>You are new_following</h1>
-  <ul>
     <% @user.active_relationships.each do |relationship| %>
       <li>
         <%= link_to(image_tag(relationship.followed.image_url, :alt =>  "image", :class =>"#", id: ""), relationship) %>
