@@ -38,13 +38,6 @@
       </ul>
       <ul class="inline-list right">
         <% unless current_user.id == @user.id %>
-          <!-- <li id="follow_form">
-            <%# if current_user.followings(@user) && !current_user.active_relationships == nil %>
-              <span class=""><%# render 'unfollow' %></span>
-            <%# else %>
-              <span class=""><%# render 'follow' %></span>
-            <%# end %>
-          </li> -->
           <li id="follow_unfollow_form">
             <% if current_user.active_relationships.present? %>
               <span class=""><%= render 'user_unfollow' %></span>
