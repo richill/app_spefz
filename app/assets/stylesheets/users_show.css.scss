@@ -188,7 +188,7 @@
 
 
 
-.btn_follow_submit input[type="submit"] {
+.btn_follow_submit {
   font-family: 'Lato', sans-serif;
   font-size: 13px;
   font-weight: 300;
@@ -205,14 +205,14 @@
   -o-transition: all 0.3s ease; 
 }
 
-.btn_follow_submit input[type="submit"]:hover {
+.btn_follow_submit:hover {
   background-color: rgba(47, 63, 91, 0.5) !important;
   -webkit-transition: all 0.3s ease; 
   -moz-transition: all 0.3s ease; 
   -o-transition: all 0.3s ease; 
 }
 
-.btn_unfollow_submit input[type="submit"] {
+.btn_unfollow_submit {
   font-family: 'Lato', sans-serif;
   font-size: 13px;
   font-weight: 300;
@@ -229,7 +229,7 @@
   -o-transition: all 0.3s ease; 
 }
 
-.btn_unfollow_submit input[type="submit"]:hover {
+.btn_unfollow_submit:hover {
   background-color: #E34B51 !important;
   -webkit-transition: all 0.3s ease; 
   -moz-transition: all 0.3s ease; 
