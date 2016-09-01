@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   respond_to :html, :xml, :json
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: [:show, :edit, :update, :destroy, :followings, :followers]
 
   def index
     @users = User.all
@@ -22,6 +22,18 @@ class UsersController < ApplicationController
   def update
     @user.update(user_params)
     redirect_to @user
+  end
+
+  def followings
+    @title = "Following"
+    @user  = User.find(params[:id])
+    render 'show_follow'
+  end
+
+  def followers
+    @title = "Followers"
+    @user  = User.find(params[:id])
+    render 'show_follow'
   end
 
   private

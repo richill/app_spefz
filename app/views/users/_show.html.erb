@@ -42,8 +42,8 @@
           <li class="btn btn_friend"><%= link_to "add as friend", "#" %></li>
           <li class="btn btn_invite"><%= link_to "invite to social", "#" %></li>
         <% else %>
-          <li class="btn btn_invite"><%= link_to "following [30]", "#" %></li>
-          <li class="btn btn_follow"><%= link_to "followers [100]", "#" %></li>
+          <li class="btn btn_invite"><%= link_to "following [#{@user.followings.count}]", followings_user_path(@user) %></li>
+          <li class="btn btn_follow"><%= link_to "followers [#{@user.followers.count}]", followers_user_path(@user) %></li>
           <li class="btn btn_friend"><%= link_to "friends [14]", "#" %></li>
         <% end %>
       </ul>
@@ -165,6 +165,20 @@
 
       </div>
     </div>
+  </div>
+</div>
+
+<div class="row">
+  <aside>
+    <section class="stats">
+      <%= render 'shared/stats' %>
+    </section>
+  </aside>
+  <div>
+    <%= render 'follow_form' if signed_in? %>
+    <% if @user.socials.any? %>
+      <h3>Socials (<%= @user.socials.count %>)</h3>
+    <% end %>
   </div>
 </div>
 
