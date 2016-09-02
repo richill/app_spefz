@@ -9,8 +9,7 @@
 <table>
   <thead>
     <tr>
-      <th>Lastname</th>
-      <th>Firstname</th>
+      <th>name</th>
       <th>Birthday</th>
       <th>Gender</th>
       <th>Profession</th>
@@ -22,8 +21,7 @@
   <tbody>
     <% @users.each do |user| %>
       <tr>
-        <td><%= user.firstname %></td>
-        <td><%= user.lastname %></td>
+        <td><%= link_to "#{user.firstname} #{user.lastname}", user %></td>
         <td><%= user.birthdate %></td>
         <td><%= user.category_gender.name %></td>
         <td><%= user.profession %></td>

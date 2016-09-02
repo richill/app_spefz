@@ -5,10 +5,10 @@
 <div class="users_upcomingevents_section">
   <div class="users_upcomingevents_inner_section">
     <div class="event_container">
-      <% Event.all.each do |event| %>
+      <% @user.socials.all.each do |social| %>
       <ul>
         <li class="medium-12 columns">
-          <div class="title"><%= link_to "#{event.title}", "#" %></div>
+          <div class="title"><%= link_to "#{social.title}", user_social_path(social.user, social) %></div>
           <div class="medium-12 columns image_content_info">
             <div class="left_evt">
               <div class="img_cover"><%= image_tag("img_background.jpg") %></div>
@@ -18,7 +18,7 @@
               <div class="info"><i class="fa fa-clock-o" aria-hidden="true"></i> 18:00h - 19:00h</div>
               <div class="info city_country"><i class="fa fa-map-pin" aria-hidden="true"></i> london, united kingdom</div>
               <div class="divider"></div>
-              <div class="description"><%= truncate(event.description, length: 100) %></div>
+              <div class="description"><%= truncate(social.description, length: 100) %></div>
             </div>
           </div>
           <div class="clear"></div>

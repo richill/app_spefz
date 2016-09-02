@@ -15,7 +15,6 @@
       <li>
         <%= link_to(image_tag(relationship.follower.image_url, :alt =>  "image", :class =>"#", id: ""), relationship) %>
         <%= link_to "#{relationship.follower.firstname} #{relationship.follower.lastname}", relationship %>
-        <!-- <button><%# link_to "unfollow", relationship, method: :delete %></button> -->
       </li>
     <% end %>
   </ul>
