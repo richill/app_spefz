@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160831155033) do
+ActiveRecord::Schema.define(version: 20160902123427) do
 
   create_table "category_genders", force: :cascade do |t|
     t.string   "name"
@@ -30,6 +30,17 @@ ActiveRecord::Schema.define(version: 20160831155033) do
     t.datetime "updated_at",  null: false
     t.integer  "user_id"
   end
+
+  create_table "friendships", force: :cascade do |t|
+    t.integer  "friender_id"
+    t.integer  "friended_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "friendships", ["friended_id"], name: "index_friendships_on_friended_id"
+  add_index "friendships", ["friender_id", "friended_id"], name: "index_friendships_on_friender_id_and_friended_id", unique: true
+  add_index "friendships", ["friender_id"], name: "index_friendships_on_friender_id"
 
   create_table "relationships", force: :cascade do |t|
     t.integer  "follower_id"
