@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  acts_as_taggable
+
   belongs_to :category_gender 
   has_many :events, dependent: :destroy
   has_many :socials, dependent: :destroy

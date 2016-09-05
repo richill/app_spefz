@@ -14,7 +14,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'carrierwave'
 gem 'rmagick'
-gem 'acts-as-taggable-on', '~> 4.0'
+gem 'acts-as-taggable-on'
 
 group :development, :test do
   gem 'sqlite3'

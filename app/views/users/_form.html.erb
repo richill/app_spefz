@@ -6,6 +6,7 @@
     <%= f.input :firstname %>
     <%= f.input :lastname %>
     <%= f.input :profession %>
+    <%= f.text_field :tag_list, placeholder: "tags" %>
     <%= f.association :category_gender, collection: CategoryGender.all, prompt: "select a category", label: "Gender" %>
     <%= f.input :description %>
   </div>
