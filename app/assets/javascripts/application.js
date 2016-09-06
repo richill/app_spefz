@@ -64,7 +64,7 @@ $(document).ready(function() {
     });
     //Popup on click
     $("#notificationContainer_bell").click(function() {
-      return false;
+      return true;
     });
   });
 
@@ -83,7 +83,7 @@ $(document).ready(function() {
     });
     //Popup on click
     $("#notificationContainer_comment").click(function() {
-      return false;
+      return true;
     });
   });
 
@@ -102,7 +102,7 @@ $(document).ready(function() {
     });
     //Popup on click
     $("#notificationContainer_profile").click(function() {
-      return false;
+      return true;
     });
   });
 });
