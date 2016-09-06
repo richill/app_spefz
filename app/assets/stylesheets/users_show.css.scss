@@ -339,7 +339,6 @@
   text-decoration: underline;
 }
 
-
 .users_profile_page_section .column_left .left_container .interest_container {
   background-color: #58CDA6 !important;
   color: #fff !important;
@@ -363,6 +362,10 @@
   color: #283041 !important;
   font-size: 12px;
   text-transform: capitalize !important;
+}
+
+.users_profile_page_section .user_complete_infolink a:hover {
+  text-decoration: underline !important;
 }
 
 .users_profile_page_section .user_complete_infolink {
