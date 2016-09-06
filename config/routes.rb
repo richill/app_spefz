@@ -9,7 +9,8 @@ Rails.application.routes.draw do
     resources :socials
   end
   
-  root 'static_pages#homepg'
-  get  'landing-page',                   to: 'static_pages#landingpg'
+  root  'static_pages#homepg'
+  get   'landing-page',             to: 'static_pages#landingpg'
+  get   'tags/:tag',                to: 'users#index', as: :tag
 end
 

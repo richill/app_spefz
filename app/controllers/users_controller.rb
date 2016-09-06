@@ -3,7 +3,11 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy, :followings, :followers]
 
   def index
-    @users = User.all
+    if params[:tag]
+      @users = User.tagged_with(params[:tag])
+    else
+      @users = User.all
+    end
   end
 
 
