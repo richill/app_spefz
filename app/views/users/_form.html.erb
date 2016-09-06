@@ -6,7 +6,7 @@
     <%= f.input :firstname %>
     <%= f.input :lastname %>
     <%= f.input :profession %>
-    <%= f.text_field :tag_list, placeholder: "tags" %>
+    <%= f.text_field :tag_list, value: @user.tag_list.to_s, placeholder: "chess, jogging, dogs, skipping, gym, startups, entreprenuers, jazz..." %>
     <%= f.association :category_gender, collection: CategoryGender.all, prompt: "select a category", label: "Gender" %>
     <%= f.input :description %>
   </div>

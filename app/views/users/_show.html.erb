@@ -97,36 +97,51 @@
         <% end %>
 
         <!-- interests -->
-        <div class="medium-12 columns left_container">
-          <div class="medium-12 columns left_inner_container interest_container">
-            <div class="header"><div class="header_content"><i class="fa fa-street-view" aria-hidden="true"></i> interests</div></div>
-            <div class="content">
-              <div class="content_info">
-                <ul class="tags">
-                  <li><%= raw @user.tag_list.map { |t| link_to t, tag_path(t) }.join(" ") %></li>
-                  <li><%= link_to 'tag', '#' %></li>
-                  <li><%= link_to 'tag name', '#' %></li>
-                  <li><%= link_to 'dogs', '#' %></li>
-                  <li><%= link_to 'skipping', '#' %></li>
-                  <li><%= link_to 'gym', '#' %></li>
-                  <li><%= link_to 'startups', '#' %></li>
-                  <li><%= link_to 'entreprenuers', '#' %></li>
-                  <li><%= link_to 'jazz', '#' %></li>
-                  <li><%= link_to 'soul', '#' %></li>
-                  <li><%= link_to 'classics', '#' %></li>
-                  <li><%= link_to 'love', '#' %></li>
-                  <li><%= link_to 'travelling', '#' %></li>
-                  <li><%= link_to 'dancing', '#' %></li>
-                  <li><%= link_to 'music', '#' %></li>
-                  <li><%= link_to 'programming', '#' %></li>
-                </ul>
+        <% if !@user.tags.blank? %>
+          <div class="medium-12 columns left_container">
+            <div class="medium-12 columns left_inner_container interest_container">
+              <div class="header"><div class="header_content"><i class="fa fa-street-view" aria-hidden="true"></i> interests</div></div>
+              <div class="content">
+                <div class="content_info">
+                  <ul class="tags">
+                    <li><%= raw @user.tag_list.map { |t| link_to t, tag_path(t) }.join(" ") %></li> 
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        <% else %>
+          <div class="medium-12 columns left_container">
+            <div class="medium-12 columns left_inner_container interest_container">
+              <div class="header"><div class="header_content"><i class="fa fa-street-view" aria-hidden="true"></i> interests</div></div>
+              <div class="content">
+                <% if current_user.id == @user.id %>
+                  <div class="medium-12 columns user_complete_infolink"><%= link_to "Tell Us About Your Interests", edit_user_path(current_user) %></div>
+                <% else %>
+                  <div class="medium-12 columns user_complete_infolink"><%= "#{@user.firstname} currently has no interests" %></div>
+                <% end %>
+                <div class="content_info">
+                  <ul class="tags_fade">
+                    <li><%= 'chess' %></li>
+                    <li><%= 'jogging'  %></li>
+                    <li><%= 'dogs' %></li>
+                    <li><%= 'skipping' %></li>
+                    <li><%= 'gym' %></li>
+                    <li><%= 'startups' %></li>
+                    <li><%= 'entreprenuers' %></li>
+                    <li><%= 'jazz'  %></li>
+                    <li><%= 'soul' %></li>
+                    <li><%= 'classics' %></li>
+                    <li><%= 'love' %></li>
+                    <li><%= 'travelling' %></li>
+                    <li><%= 'dancing' %></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
       </div>
-
-
 
 
       <!-- middle column -->
@@ -193,5 +208,7 @@
   <div><%= link_to "edit profile", edit_user_path(current_user) %></div>
   <div><%= link_to "sign out", destroy_user_session_path, method: :delete  %></div>
 </div>
+
+
 
 
