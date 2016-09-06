@@ -1,5 +1,5 @@
 class StaticPagesController < ApplicationController
-  before_filter :user_not_allowed_to_view, only: [:homepg]
+  # before_filter :user_not_allowed_to_view, only: [:homepg]
 
 
   def homepg
@@ -9,7 +9,7 @@ class StaticPagesController < ApplicationController
     @signup = Signup.new
   end
 
-  def user_not_allowed_to_view
-    redirect_to root_path
-  end
+  # def user_not_allowed_to_view
+  #   redirect_to root_path
+  # end
 end
