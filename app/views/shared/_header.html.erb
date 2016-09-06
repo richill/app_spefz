@@ -51,66 +51,7 @@
     </nav>
   </header>
 </div>
-
-
-<div class="medium-12 columns nav_userr_section hide">
-  <header class="nav_userr_inner_section">
-    <nav class="nav_list">
-      <ul class="inline-list left">
-        <li class="logo_image"><%= link_to(image_tag("img-logo-five.png", :alt =>  "alt text", :class =>"#"), '#') %></li>
-        <li class="logo_title"><%= link_to(image_tag("img-logo-four.png", :alt =>  "alt text", :class =>"#"), '#') %></li>
-      </ul>
-      <ul class="inline-list right">
-        <li class="special_link view_hide"><%= link_to 'company', '#' %></li>
-        <li class="special_link view_hide"><%= link_to 'dashboard', '#' %></li>
-        <li class="special_link"><%= link_to 'create social', '#' %></li>
- 
-        <li class="link profile_image">
-          <%# if current_user.image.blank? %>
-            <%= link_to(image_tag("img-profile-default.png", :alt =>  "image", :class =>"#"), '#') %>
-          <%# else %>
-            <%# link_to(image_tag("#{current_user.image}", :alt =>  "image", :class =>"#"), '#') %>
-          <%# end %>
-        </li>
-
-     
-          <!-- dropdown menu -->
-          <li class="menu_link_section">
-            <button href="#" data-dropdown="drop1" aria-controls="drop1" aria-expanded="false" class="button dropdown">menu</button><br>
-            <ul id="drop1" data-dropdown-content class="f-dropdown dropdown_menu" aria-hidden="true">
-              <li class="credit_container">
-              
-                <div class="credit_info">subscription</div>
-                <div class="credit_info"><i class="fa fa-angle-double-right" aria-hidden="true"></i> job credits <span style="margin-left:4px; font-size:11px; text-transform:capitalize;">[5]</span> </div>
-                <div class="credit_info"><i class="fa fa-angle-double-right" aria-hidden="true"></i> cv credits <span style="margin-left:11px; font-size:11px; text-transform:capitalize;">[unlimited<%# admin.payments.last.product.cvs %>]</span></div>
-
-        
-              </li>
-              <%# if current_userr.admin_pa_management_group %>
-                <%# if current_userr.company.userrs.admins.first.subscribed?  %>
-                  <li class="payment_plan">
-                    <a href="#" data-reveal-id="myModal-products-currentplan">view current plan</a>
-                    <%# render 'shared/modal_products_current_plan' %>
-                  </li>
-                <%# else %>
-                  <li class="payment_plan"><%= link_to "get payment plan", '#' %></li>
-                <%# end %>
-              <%# end %>
-              <li><%= link_to "edit profile", edit_user_path(current_user) %></li>
-              <li><%= link_to "socials", socials_path %></li>
-              <li><%= link_to "signout", destroy_user_session_path, method: :delete %></li>
-            </ul>
-          </li>
-
-
-
-      </ul>
-    </nav>
-  </header>
-</div>
 <div class="clear"></div>
-
-
 
 
 
