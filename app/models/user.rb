@@ -18,13 +18,13 @@ class User < ActiveRecord::Base
   has_many :passive_relationships, class_name: "Relationship", foreign_key: "followed_id", dependent: :destroy
   has_many :followers, through: :passive_relationships, source: :follower
 
-  #users main_user has sent frienship request / main_user here is friender_id - main_user is the friended_id
+  #users main_user has sent frienship_request / main_user here is friender_id - main_user is the friended_id
   has_many :active_friendship_requests, class_name: "Friendship", foreign_key: "friender_id", dependent: :destroy
-  has_many :sent_friend_request, through: :active_friendship_requests, source: :friended
+  has_many :sent_friend_requests, through: :active_friendship_requests, source: :friended
 
-  #users sending friend requests to main_user / main_user here is friended_id - other_user is the friender_id
+  #users sending friend_requests to main_user / main_user here is friended_id - other_user is the friender_id
   has_many :passive_friendship_requests, class_name: "Friendship", foreign_key: "friended_id", dependent: :destroy
-  has_many :received_friend_request, through: :passive_friendship_requests, source: :friender
+  has_many :received_friend_requests, through: :passive_friendship_requests, source: :friender
 
   mount_uploader :image, ImageUploader
 
