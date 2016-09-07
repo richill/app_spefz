@@ -17,9 +17,6 @@ class User < ActiveRecord::Base
   has_many :followers, through: :passive_relationships, source: :follower
 
 
-
-
-
   has_many :active_friendships, class_name: "Friendship", foreign_key: "friender_id", dependent: :destroy
   #has_many :followings, through: :active_friendships, source: :friended
 
