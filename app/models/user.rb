@@ -10,13 +10,21 @@ class User < ActiveRecord::Base
   has_many :events, dependent: :destroy
   has_many :socials, dependent: :destroy
 
-  #active_relationships focuses on the activity/relationship of the main_user (follower_id) - who the main user is following
   has_many :active_relationships, class_name: "Relationship", foreign_key: "follower_id", dependent: :destroy
   has_many :followings, through: :active_relationships, source: :followed
   
-  #passive_relationships focuses on the activity/relationship of the other_user (followed_id) - users is following the main user
   has_many :passive_relationships, class_name: "Relationship", foreign_key: "followed_id", dependent: :destroy
   has_many :followers, through: :passive_relationships, source: :follower
+
+
+
+
+
+  has_many :active_friendships, class_name: "Friendship", foreign_key: "friender_id", dependent: :destroy
+  #has_many :followings, through: :active_friendships, source: :friended
+
+
+
 
   mount_uploader :image, ImageUploader
 
