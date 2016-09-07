@@ -43,39 +43,19 @@ class User < ActiveRecord::Base
     following.include?(other_user)
   end
 
-
-
-
-
-
-
   #friend a user (by sending a friend_request)
   def friend(other_user)
-    active_friendship_requests.create(followed_id: other_user.id)
+    active_friendship_requests.create(friended_id: other_user.id)
   end
 
   #unfriend a user (by cancelling friend_request)
   def unfriend(other_user)
-    active_friendship_requests.find_by(followed_id: other_user.id).destroy
+    active_friendship_requests.find_by(friended_id: other_user.id).destroy
   end
   
   #returns true if user has sent a friend request
   def friended?(other_user)
-    following.include?(other_user)
+    friended.include?(other_user)
   end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 end
 
