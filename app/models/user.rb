@@ -26,9 +26,6 @@ class User < ActiveRecord::Base
   has_many :passive_friendship_requests, class_name: "Friendship", foreign_key: "friended_id", dependent: :destroy
   has_many :received_friend_request, through: :passive_friendship_requests, source: :friender
 
-
-
-
   mount_uploader :image, ImageUploader
 
   #follow a user
