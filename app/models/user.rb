@@ -38,9 +38,44 @@ class User < ActiveRecord::Base
     active_relationships.find_by(followed_id: other_user.id).destroy
   end
   
-  #returns true is user is following a user
+  #returns true if user is following a user
   def following?(other_user)
     following.include?(other_user)
   end
+
+
+
+
+
+
+
+  #friend a user (by sending a friend_request)
+  def friend(other_user)
+    active_friendship_requests.create(followed_id: other_user.id)
+  end
+
+  #unfriend a user (by cancelling friend_request)
+  def unfriend(other_user)
+    active_friendship_requests.find_by(followed_id: other_user.id).destroy
+  end
+  
+  #returns true if user has sent a friend request
+  def friended?(other_user)
+    following.include?(other_user)
+  end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 end
 

@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :events
   resources :signups
   resources :relationships, only: [:create, :destroy]
+  resources :friendships,   only: [:create, :destroy]
 
   devise_for :users
   resources :users do
