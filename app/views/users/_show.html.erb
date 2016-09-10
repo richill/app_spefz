@@ -45,6 +45,15 @@
               <span class=""><%= render 'user_follow' %></span>
             <% end %>
           </li>
+
+          <li class="friend_unfriend_form">
+            <% if current_user.active_friendship_requests.present? %>
+              <span class=""><%= render 'user_unfriend' %></span>
+            <% else %>
+              <span class=""><%= render 'user_friend' %></span>
+            <% end %>
+          </li>
+
           <li class="btn btn_friend"><%= link_to "add as friend", "#" %></li>
           <li class="btn btn_invite"><%= link_to "invite to social", "#" %></li>
         <% else %>
