@@ -14,7 +14,9 @@
         <li class="link"><%= link_to 'members', users_path %></li>
         <li class="create_button"><%= link_to 'create social', new_user_social_path(current_user) %></li>
         <li class="notification_li">
-          <span id="notification_count_friendRequest">2</span>
+          <% if current_user.sent_friend_requests.present? %>
+            <span id="notification_count_friendRequest"><%= current_user.sent_friend_requests.count %></span>
+          <% end %>
           <div><%= link_to '', '#', id: "notificationLink_friendRequest", class: "fa fa-users" %></div>
           <div id="notificationContainer_friendRequest">
             <div id="notificationTitle_friendRequest">Notifications</div>
