@@ -11,7 +11,7 @@ class FriendshipsController < ApplicationController
   end
 
   def destroy
-    @user = Relationship.find(params[:id]).friended
+    @user = Friendship.find(params[:id]).friended
     current_user.unfriend(@user)
     respond_to do |format|
       format.html { redirect_to :back }
