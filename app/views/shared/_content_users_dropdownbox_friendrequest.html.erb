@@ -1,0 +1,22 @@
+<div>
+  <h1>i am the list of your friend requets</h1>
+
+
+
+
+  <ul>
+    <% @user.passive_friendship_requests.each do |user| %>
+      <li>
+        <%= link_to(image_tag(user.friender.image_url, :alt =>  "image", :class =>"#", id: ""), user) %>
+        <%= link_to "#{user.friender.firstname} #{user.friender.lastname}", user %>
+        <button class="follow_unfollow_form"><%= link_to "Cancel Request", user, method: :delete, html: { method: :delete }, remote: true %></button>
+        <button class="follow_unfollow_form"><%= link_to "Accept Request", user, method: :delete, html: { method: :delete }, remote: true %></button>
+      </li>
+    <% end %>
+  </ul>
+
+
+
+
+
+</div>
