@@ -49,11 +49,32 @@ $(document).ready(function() {
 
 // notifications
 $(document).ready(function() {
+  // [nav] notificationLink_friendRequest
+  $(document).ready(function() {
+    $("#notificationLink_friendRequest").click(function() {
+      $("#notificationContainer_friendRequest").fadeToggle(300);
+      $("#notification_count_friendRequest").fadeOut("slow");
+      $("#notificationContainer_bell").fadeOut("slow");
+      $("#notificationContainer_comment").fadeOut("slow");
+      $("#notificationContainer_profile").fadeOut("slow");
+      return false;
+    });
+    //Document Click hiding the popup 
+    $(document).click(function() {
+      $("#notificationContainer_friendRequest").hide();
+    });
+    //Popup on click
+    $("#notificationContainer_friendRequest").click(function() {
+      return true;
+    });
+  });
+
   // [nav] notificationLink_bell
   $(document).ready(function() {
     $("#notificationLink_bell").click(function() {
       $("#notificationContainer_bell").fadeToggle(300);
       $("#notification_count_bell").fadeOut("slow");
+      $("#notificationContainer_friendRequest").fadeOut("slow");
       $("#notificationContainer_comment").fadeOut("slow");
       $("#notificationContainer_profile").fadeOut("slow");
       return false;
@@ -73,6 +94,7 @@ $(document).ready(function() {
     $("#notificationLink_comment").click(function() {
       $("#notificationContainer_comment").fadeToggle(300);
       $("#notification_count_comment").fadeOut("slow");
+      $("#notificationContainer_friendRequest").fadeOut("slow");
       $("#notificationContainer_bell").fadeOut("slow");
       $("#notificationContainer_profile").fadeOut("slow");
       return false;
@@ -92,6 +114,7 @@ $(document).ready(function() {
     $("#notificationLink_profile").click(function() {
       $("#notificationContainer_profile").fadeToggle(300);
       $("#notification_count_profile").fadeOut("slow");
+      $("#notificationContainer_friendRequest").fadeOut("slow");
       $("#notificationContainer_bell").fadeOut("slow");
       $("#notificationContainer_comment").fadeOut("slow");
       return false;

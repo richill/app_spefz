@@ -13,6 +13,19 @@
         <li class="link"><%= link_to 'activity', '#' %></li>
         <li class="link"><%= link_to 'members', users_path %></li>
         <li class="create_button"><%= link_to 'create social', new_user_social_path(current_user) %></li>
+        
+
+        <li class="notification_li">
+          <span id="notification_count_friendRequest">2</span>
+          <div><%= link_to '', '#', id: "notificationLink_friendRequest", class: "fa fa-users" %></div>
+          <div id="notificationContainer_friendRequest">
+            <div id="notificationTitle_friendRequest">Notifications</div>
+            <div id="notificationsBody_friendRequest" class="notifications"><%# render 'shared/notification' %></div>
+            <!-- <div id="notificationFooter"><a href="#">See All</a></div> -->
+          </div>
+        </li>
+
+
         <li class="notification_li">
           <span id="notification_count_bell">2</span>
           <div><%= link_to '', '#', id: "notificationLink_bell", class: "fa fa-bell" %></div>
