@@ -22,3 +22,24 @@ $(document).ready(function() {
     $(".evts_upcoming_content").hide();
   });
 });
+
+
+$(document).ready(function() {
+  $(".btn_friend_request_cancel_submit").mouseenter(function() {
+    $(".btn_friend_request_cancel_submit").prop("value", "Cancel Request");
+  })
+  $(".btn_friend_request_cancel_submit").mouseleave(function() {
+    $(".btn_friend_request_cancel_submit").prop("value", "Friend Request Sent");
+  })
+});
+
+// $(document).ready(function() {
+//   $('.btn_friend_request_cancel_submit').on({
+//     'mouseenter':function(){
+//       $(".btn_friend_request_cancel_submit").prop("value", "Cancel Request");
+//     },'mouseleave':function(){
+//       $(".btn_friend_request_cancel_submit").prop("value", "Friend Request Sent");
+//     }
+//   });
+// });
+
