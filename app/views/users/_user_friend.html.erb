@@ -1,0 +1,4 @@
+<%= form_for(current_user.active_friendship_requests.build, remote: true) do |f| %>
+  <div><%= hidden_field_tag :friended_id, @user.id %></div>
+  <%= f.submit "Add as Friend_new", class: "btn btn_follow_submit" %>
+<% end %>
