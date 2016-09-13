@@ -5,7 +5,7 @@
       <ul>
         <% @user.passive_relationships.each do |user| %>
           <li>
-            <span class="img_cover"><%= link_to(image_tag(user.follower.image_url, :alt =>  "image", :class =>"#", id: ""), user) %></span>
+            <span class="img_cover"><%= link_to(image_tag(user.follower.image_url, :alt =>  "image", :class =>"#", id: ""), user.follower) %></span>
             <span class="follower_following_name"><%= link_to "#{user.follower.firstname} #{user.follower.lastname}", user %></span>
           </li>
         <% end %>
