@@ -1,7 +1,7 @@
 <div>
   <h1>i am the list of your friend requets</h1>
   <ul>
-    <% @user.passive_friendship_requests.each do |user| %>
+    <% current_user.passive_friendship_requests.each do |user| %>
       <li>
         <%= link_to(image_tag(user.friender.image_url, :alt =>  "image", :class =>"#", id: ""), user) %>
         <%= link_to "#{user.friender.firstname} #{user.friender.lastname}", user %>
