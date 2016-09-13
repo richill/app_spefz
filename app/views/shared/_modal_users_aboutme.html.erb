@@ -1,5 +1,7 @@
 <div id="myModal-users-aboutme" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
-  <h1>About Me</h1>
-  <%= @user.description %> 
-  <a class="close-reveal-modal cancel_button" aria-label="Close">&#215;</a>
+  <div class="aboutme_inner_container">
+    <div class="header">About <%= @user.firstname %></div>
+    <div class="description"><%= @user.description %></div> 
+    <a class="close-reveal-modal cancel_button" aria-label="Close">&#215;</a>
+  </div>
 </div>
