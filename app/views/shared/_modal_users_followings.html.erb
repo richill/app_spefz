@@ -1,15 +1,19 @@
 <div id="myModal-users-followings" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
-  <h1>You are following</h1>
-  <ul>
-    <% @user.active_relationships.each do |relationship| %>
-      <li>
-        <%= link_to(image_tag(relationship.followed.image_url, :alt =>  "image", :class =>"#", id: ""), relationship) %>
-        <%= link_to "#{relationship.followed.firstname} #{relationship.followed.lastname}", relationship %>
-        <button class="follow_unfollow_form"><%= link_to "unfollow", relationship, method: :delete, html: { method: :delete }, remote: true %></button>
-      </li>
-    <% end %>
-  </ul>
-  <a class="close-reveal-modal cancel_button" aria-label="Close">&#215;</a>
+  <div class="userfollowings_inner_container">
+    <div class="header">Following [<%= @user.followings.count %>]</div>
+    <div class="description">
+      <ul>
+        <% @user.active_relationships.each do |relationship| %>
+          <li>
+            <span class="img_cover"><%= link_to(image_tag(relationship.followed.image_url, :alt =>  "image", :class =>"#", id: ""), relationship) %></span>
+            <span class="follower_following_name"><%= link_to "#{relationship.followed.firstname} #{relationship.followed.lastname}", relationship %></span>
+            <span class="follow_unfollow_form btn"><%= link_to "unfollow", relationship, method: :delete, html: { method: :delete }, remote: true %></span>
+          </li>
+        <% end %>
+      </ul>
+    </div> 
+    <a class="close-reveal-modal cancel_button" aria-label="Close">&#215;</a>
+  </div>
 </div>
 
 
