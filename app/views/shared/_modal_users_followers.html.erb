@@ -5,7 +5,13 @@
       <ul>
         <% @user.passive_relationships.each do |user| %>
           <li>
-            <span class="img_cover"><%= link_to(image_tag(user.follower.image_url, :alt =>  "image", :class =>"#", id: ""), user_path(user.follower)) %></span>
+            <span class="img_cover">
+              <% if user.follower.image_url.present? %>
+                <%= link_to(image_tag(user.follower.image_url, :alt =>  "image", :class =>"#", id: ""), user_path(user.follower)) %>
+              <% else %>
+                <%= link_to(image_tag("img-profile-image-default.png", :alt =>  "image", :class =>"#", id: ""), user_path(user.follower)) %>
+              <% end %>
+            </span>
             <span class="follower_following_name"><%= link_to "#{user.follower.firstname} #{user.follower.lastname}", user_path(user.follower) %></span>
           </li>
         <% end %>
