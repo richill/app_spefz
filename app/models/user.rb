@@ -40,7 +40,7 @@ class User < ActiveRecord::Base
   
   #returns true if user is following a user
   def following?(other_user)
-    following.include?(other_user)
+    followings.include?(other_user)
   end
 
   #friend a user (by sending a friend_request)
@@ -55,7 +55,7 @@ class User < ActiveRecord::Base
   
   #returns true if user has sent a friend request
   def friended?(other_user)
-    friended.include?(other_user)
+    sent_friend_requests.include?(other_user)
   end
 end
 
