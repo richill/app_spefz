@@ -104,7 +104,7 @@
 .socials_section .feed {
   position: relative;
   // border-bottom: 1px solid rgba(225, 71, 62, 0.3) !important;
-  min-height: 345px;
+  min-height: 350px;
 }
 
 .socials_section .feed_header {
@@ -187,7 +187,7 @@
   font-weight: bold;
   color: #414249;
   text-transform: uppercase;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
   margin-top: 5px;
   line-height: 18px;
   padding: 0px 8px;
@@ -267,9 +267,11 @@
 }
 
 .socials_section .icons a {
-  color: #fff !important;
+  font-size: 12px !important;
+  // color: #fff !important;
+  color: #414249 !important;
   text-transform: uppercase;
-  padding: 10px;
+  padding: 11px 10px;
   // background-color: #E34B51;
   width: 100% !important;
   display: inline-block;
@@ -280,6 +282,7 @@
 }
 
 .socials_section .icons a:hover {
+  color: #fff !important;
   background-color: #58CDA6 !important;
   -webkit-transition: all 0.3s ease; 
   -moz-transition: all 0.3s ease; 
@@ -294,7 +297,8 @@
 .icon_list {
   // background-color: rgba(227,75,81, 0.7);
   // background-color: rgba(88, 205, 166, 0.8) !important;
-  background-color: rgba(47, 63, 91, 0.5);
+  // background-color: rgba(47, 63, 91, 0.5);
+  background-color: rgba(47, 63, 91, 0.1);
   border-bottom: 2px solid rgba(225, 71, 62, 0.3) !important;
 
 }
@@ -302,7 +306,7 @@
 .icon_list ul {
   margin: auto !important;
   list-style-type: none;
-  width: 223px;
+  width: 235px;
   height: 33px;
 }
 
