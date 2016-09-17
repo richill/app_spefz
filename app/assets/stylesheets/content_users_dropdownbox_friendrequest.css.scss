@@ -1,24 +1,17 @@
 /*=========================================
     Section: profile page
-    File: views / shared / _modal_users_followers.html.erb
+    File: views / shared / _content_users_dropdownbox_friendrequest.html.erb
     File: views / users / _show.html.erb
   =========================================*/
 
-#myModal-users-followers {
-  background: url("img_background_main.png") repeat;
-  border-radius: 0px !important;
-  border: 0px !important;
-  padding: 0px !important;
-  width: 400px !important;
-}
-
-.userfollowers_inner_container {
+.userfriendrequests_inner_container {
   background-color: #fff !important;
   font-family: 'Lato', sans-serif;
   font-weight: 300;
+  text-align: left;
 }
 
-.userfollowers_inner_container .header {
+.userfriendrequests_inner_container .header {
   padding: 5px 15px !important;
   font-size: 35px;
   border-bottom: 2px solid #58CDA6;
@@ -27,27 +20,23 @@
   background-color: #283041;
 }
 
-.userfollowers_inner_container .content_list {
-  padding: 8px !important;
+.userfriendrequests_inner_container .content_list {
   min-height: 100px;
 }
 
-.userfollowers_inner_container .cancel_button {
-  color: #fff !important;
-}
-
-.userfollowers_inner_container ul {
+.userfriendrequests_inner_container ul {
   margin: 0px;
   list-style-type: none;
+  padding: 5px !important;
 }
 
-.userfollowers_inner_container ul li {
+.userfriendrequests_inner_container ul li {
   background-color: rgba(47, 63, 91, 0.05) !important;
   padding: 5px;
   margin-bottom: 5px;
 }
 
-.userfollowers_inner_container .img_cover {
+.userfriendrequests_inner_container .img_cover {
   margin: 3px;
   padding: 4px;
   border-radius: 5px;
@@ -55,7 +44,7 @@
   display: inline-block;
 }
 
-.userfollowers_inner_container .img_cover img {
+.userfriendrequests_inner_container .img_cover img {
   height: 48px;
   width: 48px;
   border-radius: 200px;
@@ -64,7 +53,7 @@
   -o-transition: all 0.3s ease;
 }
 
-.userfollowers_inner_container .follower_following_name a {
+.userfriendrequests_inner_container .friend_request_name a {
   font-family: 'Lato', sans-serif;
   font-weight: bold;
   text-transform: capitalize;
@@ -74,21 +63,21 @@
   -o-transition: all 0.3s ease;
 }
 
-.userfollowers_inner_container .follower_following_name a:hover {
+.userfriendrequests_inner_container .friend_request_name a:hover {
   color: #E34B51 !important;
   -webkit-transition: all 0.3s ease; 
   -moz-transition: all 0.3s ease; 
   -o-transition: all 0.3s ease;
 }
 
-.userfollowers_inner_container .btn a {
+.userfriendrequests_inner_container .btn a {
   font-family: 'Lato', sans-serif;
   font-size: 13px;
   font-weight: 300;
   background: #000;
   text-transform: capitalize;
   color: #fff !important;
-  padding: 11px 25px;
+  padding: 11px 15px;
   letter-spacing: 1px;
   float: right;
   margin-top: 11px;
@@ -99,32 +88,18 @@
   -o-transition: all 0.3s ease;
 }
 
-.userfollowers_inner_container .btn a:hover {
+.userfriendrequests_inner_container .btn a:hover {
   background-color: #E34B51 !important;
   -webkit-transition: all 0.3s ease; 
   -moz-transition: all 0.3s ease; 
   -o-transition: all 0.3s ease;
 }
 
-.userfollowers_inner_container input[type="submit"]{
-    font-family: 'Lato', sans-serif;
-    font-size: 13px;
-    font-weight: 300;
-    background: #000;
-    text-transform: capitalize;
-    color: #fff !important;
-    padding: 11px 25px;
-    float: right;
-    position: absolute;
-    top: 96px;
-    right: 23px;
-    letter-spacing: 1px;
-    border: none;
-    background-color: rgba(47, 63, 91, 0.5) !important;
-    -webkit-transition: all 0.3s ease;
-    -moz-transition: all 0.3s ease;
-    -o-transition: all 0.3s ease;
+.userfriendrequests_inner_container .btn_add_friend a {
+  background-color: #58CDA6 !important;
 }
+
+
 
 
 

@@ -1,13 +1,20 @@
-<div>
-  <h1>i am the list of your friend requets</h1>
-  <ul>
-    <% current_user.passive_friendship_requests.each do |user| %>
-      <li>
-        <%= link_to(image_tag(user.friender.image_url, :alt =>  "image", :class =>"#", id: ""), user) %>
-        <%= link_to "#{user.friender.firstname} #{user.friender.lastname}", user %>
-        <button class="follow_unfollow_form"><%= link_to "Cancel Request", user, method: :delete, html: { method: :delete }, remote: true %></button>
-        <button class="follow_unfollow_form"><%= link_to "Accept Request", user, method: :delete, html: { method: :delete }, remote: true %></button>
-      </li>
-    <% end %>
-  </ul>
+<div class="userfriendrequests_inner_container">
+  <div class="content_list">
+    <ul>
+      <% current_user.passive_friendship_requests.each do |user| %>
+        <li>
+          <span class="img_cover">
+            <% if user.friender.image_url.present? %>
+              <%= link_to(image_tag(user.friender.image_url, :alt =>  "image", :class =>"#", id: ""), user_path(user.friender)) %>
+            <% else %>
+              <%= link_to(image_tag("img-profile-image-default.png", :alt =>  "image", :class =>"#", id: ""), user_path(user.friender)) %>
+            <% end %>
+          </span>
+          <span class="friend_request_name"><%= link_to "#{user.friender.firstname} #{user.friender.lastname}", user_path(user.friender) %></span>
+          <span class="btn btn_remove_friend"><%= link_to "Remove", "#" %></span>
+          <span class="btn btn_add_friend"><%= link_to "Add Friend", "#" %></span>
+        </li>
+      <% end %>
+    </ul>
+  </div>
 </div>

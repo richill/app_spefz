@@ -1,7 +1,7 @@
 <div id="myModal-users-followers" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
   <div class="userfollowers_inner_container">
     <div class="header">Followers [<%= @user.followers.count %>]</div>
-    <div class="description">
+    <div class="content_list">
       <ul>
         <% @user.passive_relationships.each do |user| %>
           <li>

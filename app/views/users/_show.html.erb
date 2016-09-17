@@ -117,7 +117,7 @@
             <div class="medium-12 columns left_inner_container interest_container">
               <div class="header"><div class="header_content"><i class="fa fa-street-view" aria-hidden="true"></i> interests</div></div>
               <div class="content">
-                <div class="content_info">
+                <div class="content_info" style="padding: 15px 8px;">
                   <ul class="tags">
                     <li><%= raw @user.tag_list.map { |t| link_to t, tag_path(t) }.join(" ") %></li> 
                   </ul>
@@ -135,7 +135,7 @@
                 <% else %>
                   <div class="medium-12 columns user_complete_infolink"><%= "#{@user.firstname} currently has no interests" %></div>
                 <% end %>
-                <div class="content_info">
+                <div class="content_info" style="padding: 15px 8px;">
                   <ul class="tags_fade">
                     <li><%= 'chess' %></li>
                     <li><%= 'jogging'  %></li>
@@ -150,6 +150,8 @@
                     <li><%= 'love' %></li>
                     <li><%= 'travelling' %></li>
                     <li><%= 'dancing' %></li>
+                    <li><%= 'polo' %></li>
+                    <li><%= 'cycling' %></li>
                   </ul>
                 </div>
               </div>
