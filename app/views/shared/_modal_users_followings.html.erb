@@ -17,8 +17,8 @@
             </div>
 
             <div class="user_info_section">
-              <div class="follower_following_name"><%= link_to "#{user.followed.firstname} #{user.followed.lastname}", user_path(user.followed) %></div>
-              <div class="user_profession"><%= user.followed.profession %></div>
+              <div class="follower_following_name"><%= link_to truncate("#{user.followed.firstname} #{user.followed.lastname}", length: 25), user_path(user.followed) %></div>
+            <div class="user_profession"><%= truncate(user.followed.profession, length: 25) %></div>
             </div>
 
             <div class="action_btn_section">         

@@ -15,8 +15,8 @@
           </div>
 
           <div class="user_info_section">
-            <div class="friend_request_name"><%= link_to "#{user.friender.firstname} #{user.friender.lastname}", user_path(user.friender) %></div>
-            <div class="user_profession"><%= user.friender.profession %></div>
+            <div class="friend_request_name"><%= link_to truncate("#{user.friender.firstname} #{user.friender.lastname}", length: 23), user_path(user.friender) %></div>
+            <div class="user_profession"><%= truncate(user.friender.profession, length: 23) %></div>
           </div>
 
           <div class="action_btn_section"> 
