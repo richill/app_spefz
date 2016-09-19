@@ -187,7 +187,6 @@
   font-weight: bold;
   color: #414249;
   text-transform: uppercase;
-  margin-bottom: 10px;
   margin-top: 5px;
   line-height: 18px;
   padding: 0px 8px;
@@ -266,6 +265,18 @@
   -o-transition: all 0.3s ease; 
 }
 
+.socials_section .icon_list {
+  background-color: rgba(47, 63, 91, 0.1);
+  border-bottom: 2px solid rgba(225, 71, 62, 0.3) !important;
+}
+
+.socials_section .icon_list ul {
+  margin: auto !important;
+  list-style-type: none;
+  width: 250px;
+  height: 33px;
+}
+
 .socials_section .icons a {
   font-size: 12px !important;
   // color: #fff !important;
@@ -289,29 +300,53 @@
   -o-transition: all 0.3s ease; 
 }
 
+
 // ---------------------------
 //   workings
 // ---------------------------
 
 
-.icon_list {
-  // background-color: rgba(227,75,81, 0.7);
-  // background-color: rgba(88, 205, 166, 0.8) !important;
-  // background-color: rgba(47, 63, 91, 0.5);
-  background-color: rgba(47, 63, 91, 0.1);
-  border-bottom: 2px solid rgba(225, 71, 62, 0.3) !important;
-
+.socials_section .attendance {
+  border-top: 1px solid #f8f8f9;
+  padding: 5px;
+  height: 45px;
 }
 
-.icon_list ul {
-  margin: auto !important;
-  list-style-type: none;
-  width: 235px;
-  height: 33px;
+.socials_section .attendance ul {
+  width: 250px;
+  margin: auto;
 }
 
+.socials_section .attendance ul li {
+  margin-bottom: 0px !important;
+  margin-right: 9px;
+}
 
+.socials_section .attendance a {
+  font-family: "Lato", sans-serif;
+  color: #fff !important;
+  text-transform: uppercase;
+  padding: 2px;
+  background-color: rgba(47, 63, 91, 0.2) !important;
+  width: 100% !important;
+  display: inline-block;
+  text-align: center;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease; 
+}
 
+.socials_section .attendance a:hover {
+  background-color: rgba(225, 71, 62, 0.4) !important;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease; 
+}
+
+.socials_section .attendance img {
+  width: 30px;
+  height: 30px;
+}
 
 
 

@@ -33,7 +33,7 @@
                       </div>
                       <div class="clear"></div>
                       <div class="feed_sub_title">
-                        <div class="feed_organizer"><%= social.user.firstname %> is organising</div>
+                        <div class="feed_organizer">dinks with <%= social.user.firstname %></div>
                         <div class="feed_title"><%= truncate(social.title, length: 40) %></div>
                       </div>
                     </div>
@@ -58,6 +58,18 @@
                     <div class="booking hide">
                       <div><%= link_to "attend", "#" %></div>
                     </div>
+                    <div class="attendance">
+                      <div>
+                        <ul>
+                          <li><%= link_to(image_tag("img_profile_02.png", :alt =>  "alt text", :class =>"#"), root_path) %></li>
+                          <li><%= link_to(image_tag("img_profile_03.png", :alt =>  "alt text", :class =>"#"), root_path) %></li>
+                          <li><%= link_to(image_tag("img_profile_08.png", :alt =>  "alt text", :class =>"#"), root_path) %></li>
+                          <li><%= link_to(image_tag("img_profile_09.png", :alt =>  "alt text", :class =>"#"), root_path) %></li>
+                          <li><%= link_to(image_tag("img_profile_10.png", :alt =>  "alt text", :class =>"#"), root_path) %></li>
+                          <li style="margin-right: 0px;"><%= link_to(image_tag("img_profile_13.png", :alt =>  "alt text", :class =>"#"), root_path) %></li>
+                        </ul>
+                      </div>
+                    </div>
                     <div class="icons">
                       <div class="icon_list">
                         <ul>
@@ -65,7 +77,7 @@
                           <li><%= link_to ' 100', '#', id: "", class: "fa fa-thumbs-o-up" %></li>
                           <li><%= link_to ' 45', '#', id: "", class: "fa fa-comments-o" %></li>
                           <li><%= link_to ' 50', '#', id: "", class: "fa fa-users" %></li>
-                          <li><%= link_to ' ', '#', id: "", class: "fa fa-bookmark-o", style:"padding:11px 15px" %></li>
+                          <li><%= link_to ' ', '#', id: "", class: "fa fa-bookmark-o", style:"padding:11px 15px;" %></li>
                         </ul>
                       </div>
                     </div>
