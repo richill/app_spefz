@@ -45,6 +45,11 @@
   background-color: rgba(47, 63, 91, 0.05) !important;
   padding: 5px;
   margin-bottom: 5px;
+  height: 74px;
+}
+
+.userfollowings_inner_container .image_section {
+  float: left;
 }
 
 .userfollowings_inner_container .img_cover {
@@ -64,6 +69,12 @@
   -o-transition: all 0.3s ease;
 }
 
+.userfollowings_inner_container .user_info_section {
+  padding: 12px;
+  float: left;
+  text-align: left;
+}
+
 .userfollowings_inner_container .follower_following_name a {
   font-family: 'Lato', sans-serif;
   font-weight: bold;
@@ -81,6 +92,19 @@
   -o-transition: all 0.3s ease;
 }
 
+.userfollowings_inner_container .user_profession {
+  font-family: 'Lato', sans-serif;
+  font-size: 12px;
+  font-weight: 300;
+  text-transform: capitalize;
+  text-align: left;
+}
+
+.userfollowings_inner_container .action_btn_section {
+  float: right;
+  padding: 22px 0px;
+}
+
 .userfollowings_inner_container .btn a {
   font-family: 'Lato', sans-serif;
   font-size: 13px;
@@ -90,7 +114,6 @@
   color: #fff !important;
   padding: 11px 25px;
   letter-spacing: 1px;
-  float: right;
   margin-top: 11px;
   margin-right: 5px;
   background-color: rgba(47, 63, 91, 0.5) !important;
@@ -107,24 +130,32 @@
 }
 
 .userfollowings_inner_container input[type="submit"]{
-    font-family: 'Lato', sans-serif;
-    font-size: 13px;
-    font-weight: 300;
-    background: #000;
-    text-transform: capitalize;
-    color: #fff !important;
-    padding: 11px 25px;
-    float: right;
-    position: absolute;
-    top: 96px;
-    right: 23px;
-    letter-spacing: 1px;
-    border: none;
-    background-color: rgba(47, 63, 91, 0.5) !important;
-    -webkit-transition: all 0.3s ease;
-    -moz-transition: all 0.3s ease;
-    -o-transition: all 0.3s ease;
+  font-family: 'Lato', sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  background: #000;
+  text-transform: capitalize;
+  color: #fff !important;
+  padding: 11px 25px;
+  float: right;
+  position: absolute;
+  top: 96px;
+  right: 23px;
+  letter-spacing: 1px;
+  border: none;
+  background-color: rgba(47, 63, 91, 0.5) !important;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
 }
+
+
+
+
+
+
+
+
 
 
 

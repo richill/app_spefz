@@ -8,7 +8,6 @@
   background-color: #fff !important;
   font-family: 'Lato', sans-serif;
   font-weight: 300;
-  text-align: left;
 }
 
 .userfriendrequests_inner_container .header {
@@ -21,19 +20,24 @@
 }
 
 .userfriendrequests_inner_container .content_list {
+  padding: 8px !important;
   min-height: 100px;
 }
 
 .userfriendrequests_inner_container ul {
   margin: 0px;
   list-style-type: none;
-  padding: 5px !important;
 }
 
 .userfriendrequests_inner_container ul li {
   background-color: rgba(47, 63, 91, 0.05) !important;
   padding: 5px;
   margin-bottom: 5px;
+  height: 74px;
+}
+
+.userfriendrequests_inner_container .image_section {
+  float: left;
 }
 
 .userfriendrequests_inner_container .img_cover {
@@ -50,6 +54,86 @@
   border-radius: 200px;
   -webkit-transition: all 0.3s ease; 
   -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease;
+}
+
+.userfriendrequests_inner_container .user_info_section {
+  padding: 12px;
+  float: left;
+  text-align: left;
+}
+
+.userfriendrequests_inner_container .friend_request_name a {
+  font-family: 'Lato', sans-serif;
+  font-weight: bold;
+  text-transform: capitalize;
+  color: #283041 !important;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease;
+}
+
+.userfriendrequests_inner_container .friend_request_name a:hover {
+  color: #E34B51 !important;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease;
+}
+
+.userfriendrequests_inner_container .user_profession {
+  font-family: 'Lato', sans-serif;
+  font-size: 12px;
+  font-weight: 300;
+  text-transform: capitalize;
+  text-align: left;
+}
+
+.userfriendrequests_inner_container .action_btn_section {
+  float: right;
+  padding: 22px 0px;
+}
+
+.userfriendrequests_inner_container .btn a {
+  font-family: 'Lato', sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  background: #000;
+  text-transform: capitalize;
+  color: #fff !important;
+  padding: 11px 25px;
+  letter-spacing: 1px;
+  margin-top: 11px;
+  margin-right: 5px;
+  background-color: rgba(47, 63, 91, 0.5) !important;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease;
+}
+
+.userfriendrequests_inner_container .btn a:hover {
+  background-color: #E34B51 !important;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease;
+}
+
+.userfriendrequests_inner_container input[type="submit"]{
+  font-family: 'Lato', sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  background: #000;
+  text-transform: capitalize;
+  color: #fff !important;
+  padding: 11px 25px;
+  float: right;
+  position: absolute;
+  top: 96px;
+  right: 23px;
+  letter-spacing: 1px;
+  border: none;
+  background-color: rgba(47, 63, 91, 0.5) !important;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
 }
 
@@ -72,14 +156,13 @@
 
 .userfriendrequests_inner_container .btn a {
   font-family: 'Lato', sans-serif;
-  font-size: 13px;
+  font-size: 10px;
   font-weight: 300;
   background: #000;
   text-transform: capitalize;
   color: #fff !important;
-  padding: 11px 15px;
+  padding: 11px 10px;
   letter-spacing: 1px;
-  float: right;
   margin-top: 11px;
   margin-right: 5px;
   background-color: rgba(47, 63, 91, 0.5) !important;
@@ -98,6 +181,19 @@
 .userfriendrequests_inner_container .btn_add_friend a {
   background-color: #58CDA6 !important;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

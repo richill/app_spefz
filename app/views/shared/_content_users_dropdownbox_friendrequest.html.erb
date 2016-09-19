@@ -3,18 +3,30 @@
     <ul>
       <% current_user.passive_friendship_requests.each do |user| %>
         <li>
-          <span class="img_cover">
-            <% if user.friender.image_url.present? %>
-              <%= link_to(image_tag(user.friender.image_url, :alt =>  "image", :class =>"#", id: ""), user_path(user.friender)) %>
-            <% else %>
-              <%= link_to(image_tag("img-profile-image-default.png", :alt =>  "image", :class =>"#", id: ""), user_path(user.friender)) %>
-            <% end %>
-          </span>
-          <span class="friend_request_name"><%= link_to "#{user.friender.firstname} #{user.friender.lastname}", user_path(user.friender) %></span>
-          <span class="btn btn_remove_friend"><%= link_to "Remove", "#" %></span>
-          <span class="btn btn_add_friend"><%= link_to "Add Friend", "#" %></span>
+
+          <div class="image_section">
+            <span class="img_cover">
+              <% if user.friender.image_url.present? %>
+                <%= link_to(image_tag(user.friender.image_url, :alt =>  "image", :class =>"#", id: ""), user_path(user.friender)) %>
+              <% else %>
+                <%= link_to(image_tag("img-profile-image-default.png", :alt =>  "image", :class =>"#", id: ""), user_path(user.friender)) %>
+              <% end %>
+            </span>
+          </div>
+
+          <div class="user_info_section">
+            <div class="friend_request_name"><%= link_to "#{user.friender.firstname} #{user.friender.lastname}", user_path(user.friender) %></div>
+            <div class="user_profession"><%= user.friender.profession %></div>
+          </div>
+
+          <div class="action_btn_section"> 
+            <span class="btn btn_add_friend"><%= link_to "Add Friend", "#" %></span> 
+            <span class="btn btn_remove_friend"><%= link_to "Remove", "#" %></span>       
+          </div>
+
         </li>
+        <div class="clear"></div>
       <% end %>
     </ul>
-  </div>
+  </div> 
 </div>
