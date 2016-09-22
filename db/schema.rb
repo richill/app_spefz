@@ -11,9 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160922133520) do
+ActiveRecord::Schema.define(version: 20160922134926) do
 
   create_table "category_ages", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "category_countries", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -80,8 +86,8 @@ ActiveRecord::Schema.define(version: 20160922133520) do
     t.float    "latitude"
     t.float    "longitude"
     t.integer  "user_id"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
     t.integer  "category_topic_id"
     t.string   "image"
     t.date     "date"
@@ -90,6 +96,7 @@ ActiveRecord::Schema.define(version: 20160922133520) do
     t.integer  "quantity"
     t.integer  "category_age_id"
     t.string   "companyname"
+    t.integer  "category_country_id"
   end
 
   create_table "taggings", force: :cascade do |t|
