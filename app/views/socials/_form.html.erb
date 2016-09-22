@@ -3,6 +3,7 @@
 
   <div class="form-inputs">
     <%= f.file_field :image %>
+    <%= f.input :companyname, label: false, placeholder: "company name" %>
     <%= f.input :title, label: "Discussion Topic", placeholder: "give a short distinct name" %>
     <%= f.input :description, label: "About Social" %>
     <%= f.association :category_topic, collection: CategoryTopic.all, prompt: "select a category", label: "Social Category" %>

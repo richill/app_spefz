@@ -33,7 +33,15 @@
                       </div>
                       <div class="clear"></div>
                       <div class="feed_sub_title">
-                        <div class="feed_organizer">drinks with <%= social.user.firstname %></div>
+                        <div class="feed_organizer">drinks with 
+                          <span>
+                            <% if social.companyname.present? %>
+                              <%= social.companyname %>
+                            <% else %>
+                              <%= social.user.firstname %>
+                            <% end %>
+                          </span>
+                        </div>
                         <div class="feed_title"><%= truncate(social.title, length: 40) %></div>
                       </div>
                     </div>
