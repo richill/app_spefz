@@ -20,7 +20,7 @@
                     <div class="feed">
                       <div class="feed_header">
                         <div class="feed_date"><i class="fa fa-calendar date"></i> <%= social.created_at.strftime("%a, %d %b %Y") %></div>
-                        <div class="feed_location"><i class="fa fa-map-pin location"></i> United Kingdom, <%= social.city %></div>
+                        <div class="feed_location"><i class="fa fa-map-pin location"></i> <%= social.category_country.name %>, <%= social.city %></div>
                         <div class="feed_price"><i class="fa fa-gbp price"></i> Free</div>
                       </div>
                       <div class="feed_img"><%= link_to(image_tag("#{social.image_url}", :alt =>  "image", :class =>"#"), user_social_path(social.user, social)) %></div>
