@@ -19,7 +19,8 @@
                   <div class="feed_inner_section">
                     <div class="feed">
                       <div class="feed_header">
-                        <div class="feed_date"><i class="fa fa-calendar date"></i> <%= social.created_at.strftime("%a, %d %b %Y") %></div>
+                        <div class="feed_date"><i class="fa fa-calendar date"></i> <%= social.date.strftime("%a, %d %b %Y") %> | <%= social.time.strftime("%I:%M %p") %></div>
+
                         <div class="feed_location"><i class="fa fa-map-pin location"></i> <%= social.category_country.name %>, <%= social.city %></div>
                         <div class="feed_price"><i class="fa fa-gbp price"></i> Free</div>
                       </div>
