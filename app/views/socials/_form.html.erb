@@ -4,6 +4,7 @@
   <div class="form-inputs">
     <%= f.input :title, label: "Discussion Topic" %>
     <%= f.input :description, label: "About Social" %>
+    <%= f.association :category_topic, collection: CategoryTopic.all, prompt: "select a category", label: "Social Category" %>
     <%= f.input :address %>
     <%= f.input :postcode %>
 
