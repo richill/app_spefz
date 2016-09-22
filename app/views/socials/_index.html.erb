@@ -22,7 +22,15 @@
                         <div class="feed_date"><i class="fa fa-calendar date"></i> <%= social.date.strftime("%a, %d %b %Y") %> | <%= social.time.strftime("%I:%M %p") %></div>
 
                         <div class="feed_location"><i class="fa fa-map-pin location"></i> <%= social.category_country.name %>, <%= social.city %></div>
-                        <div class="feed_price"><i class="fa fa-gbp price"></i> Free | Invite Only</div>
+                        <div class="feed_price"><i class="fa fa-gbp price"></i> 
+                          <span>Free</span>
+                          <% if social.category_invite_id.present? %>
+                            <% if social.category_invite.name == "just my guest" %>
+                              <span> | </span>
+                              <span class="invite_only">invite only</span> 
+                            <% end %>
+                          <% end %>
+                        </div>
                       </div>
                       <div class="feed_img"><%= link_to(image_tag("#{social.image_url}", :alt =>  "image", :class =>"#"), user_social_path(social.user, social)) %></div>
                       <div class="feed_user">
