@@ -10,6 +10,7 @@
     <%= f.input :postcode %>
     <%= f.input :date %>
     <%= f.input :time %>
+    <%= f.country_select :country, { priority_countries: ["GB", "US"], selected: "GB" } %>
 
     <!-- hidden fields -->
     <%= f.hidden_field :latitude %>
