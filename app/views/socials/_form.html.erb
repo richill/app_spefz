@@ -13,6 +13,7 @@
     <%= f.input :date %>
     <%= f.input :time %>
     <%= f.input :quantity %>
+    <%= f.association :category_age, collection: CategoryAge.all, prompt: "select a category", label: "Age Group" %>
 
 
     <!-- hidden fields -->

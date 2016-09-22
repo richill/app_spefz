@@ -6,6 +6,16 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+CategoryAge.delete_all
+ca01 = CategoryAge.create!(name:'18 - 24')
+ca02 = CategoryAge.create!(name:'25 - 34')
+ca03 = CategoryAge.create!(name:'35 - 44')
+ca04 = CategoryAge.create!(name:'45 - 54')
+ca05 = CategoryAge.create!(name:'55 - 64')
+ca06 = CategoryAge.create!(name:'65+')
+ca07 = CategoryAge.create!(name:'All Ages')
+
+
 CategoryTopic.delete_all
 ct01 = CategoryTopic.create!(name:'Auto, Boat & Air')
 ct02 = CategoryTopic.create!(name:'Business Professional')
