@@ -21,6 +21,10 @@ cc02 = CategoryCountry.create!(name:'United States')
 cc03 = CategoryCountry.create!(name:'Ghana')
 cc04 = CategoryCountry.create!(name:'Nigeria')
 
+CategoryInvite.delete_all
+ci01 = CategoryInvite.create!(name:'just my guest')
+ci02 = CategoryInvite.create!(name:'open to everyone')
+
 CategoryTopic.delete_all
 ct01 = CategoryTopic.create!(name:'Auto, Boat & Air')
 ct02 = CategoryTopic.create!(name:'Business Professional')
