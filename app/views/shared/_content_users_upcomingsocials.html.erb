@@ -11,7 +11,7 @@
           <div class="title"><%= link_to "#{social.title}", user_social_path(social.user, social) %></div>
           <div class="medium-12 columns image_content_info">
             <div class="left_evt">
-              <div class="img_cover"><%= image_tag("img_background.jpg") %></div>
+              <div class="img_cover"><%= link_to(image_tag("#{social.image_url}", :alt =>  "image", :class =>"#"), user_social_path(social.user, social)) %></div>
             </div>
             <div class="right_evt">
               <div class="info"><i class="fa fa-calendar" aria-hidden="true"></i> Friday, 1 july</div>
@@ -30,7 +30,11 @@
               <li><div class="header">attendees</div> <div class="content"><%= link_to "10", "#" %></div></li>
             </ul>
             <ul class="inline-list right_evt_info">
-              <li class="btn_attend"><%= link_to "attend", "#" %></li>
+              <% if social.category_invite_id.present? && social.category_invite.name == "just my guest" %>
+                <li class="btn_attend"><%= link_to "invite only", "#" %></li>
+              <% else %>
+                <li class="btn_attend"><%= link_to "attend", "#" %></li>
+              <% end %>
               <li class="btn_save"><%= link_to "save", "#" %></li>
             </ul>
           </div>
