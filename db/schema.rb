@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160922113729) do
+ActiveRecord::Schema.define(version: 20160922121811) do
 
   create_table "category_genders", force: :cascade do |t|
     t.string   "name"
@@ -80,6 +80,7 @@ ActiveRecord::Schema.define(version: 20160922113729) do
     t.string   "image"
     t.date     "date"
     t.time     "time"
+    t.string   "city"
   end
 
   create_table "taggings", force: :cascade do |t|
