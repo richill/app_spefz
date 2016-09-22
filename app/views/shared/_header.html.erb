@@ -12,6 +12,7 @@
         <li class="link"><%= link_to 'socials', socials_path %></li>
         <li class="link"><%= link_to 'activity', '#' %></li>
         <li class="link"><%= link_to 'members', users_path %></li>
+        <li class="link"><%= link_to 'hosts', users_path %></li>
         <li class="create_button"><%= link_to 'create social', new_user_social_path(current_user) %></li>
         <li class="notification_li">
           <% if current_user.received_friend_requests.present? %>

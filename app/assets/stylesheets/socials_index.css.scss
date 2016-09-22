@@ -90,11 +90,6 @@
 .socials_section .feed_container {
   margin: auto;
 }
-// @media only screen and (min-width: 1522px) {
-// .socials_section .feed_container {
-//     width: 1500px;
-//   }
-// }
 
 .socials_section .feed_inner_section {
   background-color: #fff;
@@ -103,7 +98,6 @@
 
 .socials_section .feed {
   position: relative;
-  // border-bottom: 1px solid rgba(225, 71, 62, 0.3) !important;
   min-height: 350px;
 }
 
@@ -114,9 +108,8 @@
   color: #fff;
   word-spacing: 3px;
   text-transform: uppercase;
-  background-color: rgba(47, 63, 91, 0.5) !important;
+  background-color: rgba(47, 63, 91, 0.6) !important;
   position: absolute;
-  // z-index: 1000;
   height: 70px;
   width: 100%;
   padding: 8px 15px;
@@ -265,47 +258,6 @@
   -o-transition: all 0.3s ease; 
 }
 
-.socials_section .icon_list {
-  background-color: rgba(47, 63, 91, 0.1);
-  border-bottom: 2px solid rgba(225, 71, 62, 0.3) !important;
-}
-
-.socials_section .icon_list ul {
-  margin: auto !important;
-  list-style-type: none;
-  width: 250px;
-  height: 33px;
-}
-
-.socials_section .icons a {
-  font-size: 13px !important;
-  // color: #fff !important;
-  color: #414249 !important;
-  text-transform: uppercase;
-  padding: 11px 10px;
-  // background-color: #E34B51;
-  width: 100% !important;
-  display: inline-block;
-  text-align: center;
-  -webkit-transition: all 0.3s ease; 
-  -moz-transition: all 0.3s ease; 
-  -o-transition: all 0.3s ease; 
-}
-
-.socials_section .icons a:hover {
-  color: #fff !important;
-  background-color: #58CDA6 !important;
-  -webkit-transition: all 0.3s ease; 
-  -moz-transition: all 0.3s ease; 
-  -o-transition: all 0.3s ease; 
-}
-
-
-// ---------------------------
-//   workings
-// ---------------------------
-
-
 .socials_section .attendance {
   border-top: 1px solid #f8f8f9;
   padding: 5px;
@@ -354,8 +306,42 @@
   height: 34px;
   width: 34px !important;
   background-color: rgba(47, 63, 91, 0.2) !important;
-  //background-color: rgba(225, 71, 62, 0.4) !important;
 }
+
+.socials_section .icon_list {
+  background-color: rgba(47, 63, 91, 0.1);
+  border-bottom: 2px solid rgba(225, 71, 62, 0.3) !important;
+}
+
+.socials_section .icon_list ul {
+  margin: auto !important;
+  list-style-type: none;
+  width: 250px;
+  height: 33px;
+}
+
+.socials_section .icons a {
+  font-size: 13px !important;
+  color: #414249 !important;
+  text-transform: uppercase;
+  padding: 11px 10px;
+  width: 100% !important;
+  display: inline-block;
+  text-align: center;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease; 
+}
+
+.socials_section .icons a:hover {
+  color: #fff !important;
+  background-color: #58CDA6 !important;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease; 
+}
+
+
 
 
 
