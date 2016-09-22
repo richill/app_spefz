@@ -15,6 +15,11 @@ ca05 = CategoryAge.create!(name:'55 - 64')
 ca06 = CategoryAge.create!(name:'65+')
 ca07 = CategoryAge.create!(name:'All Ages')
 
+CategoryCountry.delete_all
+cc01 = CategoryCountry.create!(name:'United Kingdom')
+cc02 = CategoryCountry.create!(name:'United States')
+cc03 = CategoryCountry.create!(name:'Ghana')
+cc04 = CategoryCountry.create!(name:'Nigeria')
 
 CategoryTopic.delete_all
 ct01 = CategoryTopic.create!(name:'Auto, Boat & Air')
