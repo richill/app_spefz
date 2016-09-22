@@ -15,6 +15,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'carrierwave'
 gem 'rmagick'
 gem 'acts-as-taggable-on'
+gem 'country_select'
 
 group :development, :test do
   gem 'sqlite3'
