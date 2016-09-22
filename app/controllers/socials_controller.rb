@@ -64,6 +64,6 @@ class SocialsController < ApplicationController
     end
 
     def social_params
-      params.require(:social).permit(:title, :description, :address, :postcode, :latitude, :longitude, :user_id)
+      params.require(:social).permit(:title, :description, :address, :postcode, :latitude, :longitude, :user_id, :category_topic_id)
     end
 end
