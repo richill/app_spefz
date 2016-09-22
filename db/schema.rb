@@ -11,7 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160922125950) do
+ActiveRecord::Schema.define(version: 20160922130531) do
+
+  create_table "category_ages", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "category_genders", force: :cascade do |t|
     t.string   "name"
@@ -82,6 +88,7 @@ ActiveRecord::Schema.define(version: 20160922125950) do
     t.time     "time"
     t.string   "city"
     t.integer  "quantity"
+    t.integer  "category_age_id"
   end
 
   create_table "taggings", force: :cascade do |t|
