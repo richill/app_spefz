@@ -3,7 +3,11 @@ class SocialsController < ApplicationController
   before_action :set_social, only: [:show, :edit, :update, :destroy]
 
   def index
-    @socials = Social.all
+    if params[:tag]
+      @socials = Social.tagged_with(params[:tag])
+    else
+      @socials = Social.all
+    end
   end
 
   def user_socials
@@ -64,6 +68,6 @@ class SocialsController < ApplicationController
     end
 
     def social_params
-      params.require(:social).permit(:title, :description, :address, :postcode, :latitude, :longitude, :user_id, :category_topic_id, :image, :date, :time, :city, :quantity, :category_age_id, :companyname, :category_country_id)
+      params.require(:social).permit(:title, :description, :address, :postcode, :latitude, :longitude, :user_id, :category_topic_id, :image, :date, :time, :city, :quantity, :category_age_id, :companyname, :category_country_id, :tag_list)
     end
 end

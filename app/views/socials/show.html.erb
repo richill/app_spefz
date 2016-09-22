@@ -31,6 +31,12 @@
 </p>
 
 <p>
+  <ul>
+    <li><%= raw @social.tag_list.map { |t| link_to t, social_tag_path(t) }.join(" ") %></li> 
+  </ul>
+</p>
+
+<p>
   <strong>User:</strong>
   <%= @social.user_id %>
 </p>
