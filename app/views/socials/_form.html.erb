@@ -18,6 +18,9 @@
     <%= f.input :quantity %>
     <%= f.association :category_invite, collection: CategoryInvite.all, prompt: "select a category", label: "Who's invited?" %>
     <%= f.association :category_age, collection: CategoryAge.all, prompt: "select a category", label: "Age Group" %>
+    <%= f.input :speakername, label: "speaker name" %>
+    <%= f.input :speakerlinkedin, label: "speaker's linkedin profile" %>
+
 
 
     <!-- hidden fields -->
