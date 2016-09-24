@@ -16,6 +16,7 @@ gem 'carrierwave'
 gem 'rmagick'
 gem 'acts-as-taggable-on'
 gem 'country_select'
+gem 'impressionist'
 
 group :development, :test do
   gem 'sqlite3'
