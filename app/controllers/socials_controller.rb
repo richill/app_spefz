@@ -1,6 +1,7 @@
 class SocialsController < ApplicationController
   respond_to :html, :xml, :json
   before_action :set_social, only: [:show, :edit, :update, :destroy]
+  impressionist :actions=>[:show]
 
   def index
     if params[:tag]
