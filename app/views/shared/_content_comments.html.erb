@@ -4,16 +4,22 @@
     <% @comments.each do |comment| %>
       <li>
         <div class="medium-1 columns image_name_container">
-          <div class="image"><%= link_to (image_tag(comment.user.image_url)), user_path(comment.user) %></div>
-          <div class="name"><%= link_to comment.user.firstname, user_path(comment.user) %></div>
+          <div class="image">
+            <% if comment.user.image.present? %>
+              <div><%= link_to (image_tag(comment.user.image_url)), user_path(comment.user) %></div>
+            <% else %>
+              <div class="img_default"><%= link_to(image_tag("img-profile-image-default.png", :alt =>  "alt text", :class =>"#"), user_path(comment.user)) %></div>
+            <% end %>
+          </div>
         </div>
+
         <div class="medium-11 columns comment_content_container">
+          <div class="name"><%= link_to comment.user.firstname, user_path(comment.user) %></div>
           <div class="comment"><%= comment.content %></div>
           <div class="time">Posted: <%= time_ago_in_words(comment.created_at) %> ago</div>
         </div>
         <div class="clear"></div>
-      </li>
-      <div class="clear"></div>
+      </li><br/>
     <% end %>
     </ul>
   </div>
