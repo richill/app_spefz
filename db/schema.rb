@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160926152035) do
+ActiveRecord::Schema.define(version: 20160926152509) do
 
   create_table "category_ages", force: :cascade do |t|
     t.string   "name"
@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(version: 20160926152035) do
     t.string   "role",                        default: "comments"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "social_id"
   end
 
   add_index "comments", ["commentable_id"], name: "index_comments_on_commentable_id"
