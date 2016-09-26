@@ -1,6 +1,7 @@
 class Social < ActiveRecord::Base
   acts_as_taggable
   is_impressionable
+  acts_as_commentable
   
   belongs_to :user
   belongs_to :category_topic

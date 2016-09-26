@@ -18,6 +18,9 @@ class SocialsController < ApplicationController
   end
 
   def show
+    @commentable = @social
+    @comment = Comment.new
+    @comments = @commentable.comments
   end
 
   def new
