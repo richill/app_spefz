@@ -17,6 +17,7 @@ gem 'rmagick'
 gem 'acts-as-taggable-on'
 gem 'country_select'
 gem 'impressionist'
+gem 'acts_as_commentable'
 
 group :development, :test do
   gem 'sqlite3'
