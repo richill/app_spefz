@@ -1,0 +1,20 @@
+<div class="comments_inner_section">
+  <div class="user_comment">
+    <ul>
+    <% @comments.each do |comment| %>
+      <li>
+        <div class="medium-1 columns image_name_container">
+          <div class="image"><%= image_tag(comment.user.image_url) %></div>
+          <div class="name"><%= comment.user.firstname %></div>
+        </div>
+        <div class="medium-11 columns comment_content_container">
+          <div class="comment"><%= comment.content %></div>
+          <div class="time">Posted: <%= time_ago_in_words(comment.created_at) %> ago</div>
+        </div>
+        <div class="clear"></div>
+      </li>
+      <div class="clear"></div>
+    <% end %>
+    </ul>
+  </div>
+</div>

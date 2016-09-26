@@ -10,6 +10,10 @@ Rails.application.routes.draw do
     resources :comments, only: [:create, :destroy] 
     resources :socials
   end
+
+  resources :socials do
+    resources :comments, only: [:create, :destroy] 
+  end
   
   root  'static_pages#homepg'
   get   'landing-page',             to: 'static_pages#landingpg'
