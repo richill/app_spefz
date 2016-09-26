@@ -23,8 +23,6 @@ class SocialsController < ApplicationController
     @comments = @commentable.comments
   end
 
-
-
   def new
     @user = User.find(params[:user_id])
     @social = @user.socials.build

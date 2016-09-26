@@ -4,8 +4,8 @@
     <% @comments.each do |comment| %>
       <li>
         <div class="medium-1 columns image_name_container">
-          <div class="image"><%= image_tag(comment.user.image_url) %></div>
-          <div class="name"><%= comment.user.firstname %></div>
+          <div class="image"><%= link_to (image_tag(comment.user.image_url)), user_path(comment.user) %></div>
+          <div class="name"><%= link_to comment.user.firstname, user_path(comment.user) %></div>
         </div>
         <div class="medium-11 columns comment_content_container">
           <div class="comment"><%= comment.content %></div>
