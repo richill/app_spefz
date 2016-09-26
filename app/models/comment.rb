@@ -2,7 +2,7 @@ class Comment < ActiveRecord::Base
 
   include ActsAsCommentable::Comment
 
-  validates_presence_of :comment, presence: true, message: "can't be blank"
+  # validates_presence_of :comment, presence: true, message: "can't be blank"
   belongs_to :commentable, polymorphic: true
 
   default_scope -> { order('created_at DESC') }

@@ -26,7 +26,7 @@ class CommentsController < ApplicationController
         format.html { redirect_to [@commentable], notice: 'Comment was successfully posted.' }
         format.json { render :show, status: :created, location: @comment }
       else
-        format.html { redirect_to social_path(@social), alert: 'Comment was not posted.' }
+        format.html { redirect_to company_path(@company), alert: 'Comment was not posted.' }
         format.json { render json: @comment.errors, status: :unprocessable_entity }
       end
     end
@@ -60,7 +60,7 @@ class CommentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def comment_params
-      params.require(:comment).permit(:content, :user_id, :social_id)
+      params.require(:comment).permit(:content, :user_id)
     end
 
     def load_commentable
