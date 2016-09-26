@@ -1,0 +1,13 @@
+<div class="comment_form">
+  <%= form_for [@commentable, @comment] do |f| %>
+    <%= render 'shared/content_error_messages', object: f.object %>
+
+    <div class="field">
+      <%= f.hidden_field :user_id %>
+      <%= f.text_area :content, rows: 8, placeholder: "Write a review..."  %>
+    </div>
+    <div class="actions button_section">
+      <button><%= f.submit "Post" %></button>
+    </div>
+  <% end %>
+</div>

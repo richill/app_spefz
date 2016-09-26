@@ -43,3 +43,21 @@
 
 <%= link_to 'Edit', edit_user_social_path(@social.user, @social) %> |
 <%= link_to 'Back', socials_path %>
+
+
+
+<p>
+  <div class="comments_conatiner">
+    <%# if current_user && current_user.social.comments.count > 0 %>
+      <div class="header">reviews of <%# @social.title %> <span>(<%= @social.comments.count %>)</span></div>
+    <%# end %>
+    <% if current_user %>
+      <div><%= render 'shared/content_comments_form' %></div>
+    <% end %>
+    <div><%= render 'shared/content_comments' %></div>
+  </div>
+</p>
+
+
+
+

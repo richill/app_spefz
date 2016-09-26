@@ -10,6 +10,9 @@ class User < ActiveRecord::Base
   has_many :events, dependent: :destroy
   has_many :socials, dependent: :destroy
 
+  # acts_as_commentable
+  # has_many :comments, as: :commentable, dependent: :destroy
+
   #users main_user is following / main_user here is follower_id - main_user is the followed_id
   has_many :active_relationships, class_name: "Relationship", foreign_key: "follower_id", dependent: :destroy
   has_many :followings, through: :active_relationships, source: :followed
