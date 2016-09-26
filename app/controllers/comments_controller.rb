@@ -26,7 +26,7 @@ class CommentsController < ApplicationController
         format.html { redirect_to [@commentable], notice: 'Comment was successfully posted.' }
         format.json { render :show, status: :created, location: @comment }
       else
-        format.html { redirect_to company_path(@company), alert: 'Comment was not posted.' }
+        format.html { redirect_to user_social_path(@comment.user, @comment.social), alert: 'Comment was not posted.' }
         format.json { render json: @comment.errors, status: :unprocessable_entity }
       end
     end
