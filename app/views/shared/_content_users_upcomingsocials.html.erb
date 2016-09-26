@@ -10,6 +10,11 @@
         <li class="medium-12 columns">
           <div class="title"><%= link_to "#{social.title}", user_social_path(social.user, social) %></div>
           <div class="medium-12 columns image_content_info">
+            <div class="banner">
+              <div class="ribbon-wrapper-green">
+                <div class="ribbon-green">sold out</div>
+              </div>
+            </div>
             <div class="left_evt">
               <div class="img_cover"><%= link_to(image_tag("#{social.image_url}", :alt =>  "image", :class =>"#"), user_social_path(social.user, social)) %></div>
             </div>
