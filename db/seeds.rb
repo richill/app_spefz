@@ -25,6 +25,12 @@ CategoryInvite.delete_all
 ci01 = CategoryInvite.create!(name:'just my guest')
 ci02 = CategoryInvite.create!(name:'open to everyone')
 
+CategoryQuantitygender.delete_all
+cqg01 = CategoryQuantitygender.create!(name:'only men')
+cqg02 = CategoryQuantitygender.create!(name:'only women')
+cqg03 = CategoryQuantitygender.create!(name:'both men & women')
+cqg04 = CategoryQuantitygender.create!(name:'both X men & X women')
+
 CategoryTopic.delete_all
 ct01 = CategoryTopic.create!(name:'Auto, Boat & Air')
 ct02 = CategoryTopic.create!(name:'Business Professional')
