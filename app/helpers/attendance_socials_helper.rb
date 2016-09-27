@@ -1,0 +1,2 @@
+module AttendanceSocialsHelper
+end
