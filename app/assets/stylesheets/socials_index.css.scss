@@ -366,9 +366,9 @@
   height: 33px;
 }
 
+
 .socials_section .icons a {
   font-size: 13px !important;
-  color: #414249 !important;
   text-transform: uppercase;
   padding: 11px 10px;
   width: 100% !important;
@@ -379,6 +379,10 @@
   -o-transition: all 0.3s ease; 
 }
 
+.socials_section .icons .fa-eye, .fa-comments-o, .fa-users, .fa-user-plus, .fa-bookmark-o {
+  color: #414249 !important;
+}
+
 .socials_section .icons a:hover {
   color: #fff !important;
   background-color: #58CDA6 !important;
@@ -386,6 +390,12 @@
   -moz-transition: all 0.3s ease; 
   -o-transition: all 0.3s ease; 
 }
+
+.socials_section .remove_fav a {
+  color: #E34B51 !important;
+}
+
+
 
 
 
