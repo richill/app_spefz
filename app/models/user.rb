@@ -12,6 +12,9 @@ class User < ActiveRecord::Base
   has_many :favourites, dependent: :destroy
   has_many :favourite_socials, through: :favourites, source: :favourited, source_type: 'Social', dependent: :destroy
 
+  has_many :attendances, dependent: :destroy
+  has_many :attending_socials, through: :attendances, source: :attendable, source_type: 'Social', dependent: :destroy
+
   # acts_as_commentable
   has_many :comments, as: :commentable, dependent: :destroy
 

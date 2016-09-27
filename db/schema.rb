@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160927101324) do
+ActiveRecord::Schema.define(version: 20160927114420) do
+
+  create_table "attendances", force: :cascade do |t|
+    t.integer  "attendable_id"
+    t.string   "attendable_type"
+    t.integer  "user_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  add_index "attendances", ["attendable_type", "attendable_id"], name: "index_attendances_on_attendable_type_and_attendable_id"
+  add_index "attendances", ["user_id"], name: "index_attendances_on_user_id"
 
   create_table "category_ages", force: :cascade do |t|
     t.string   "name"
