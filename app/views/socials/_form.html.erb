@@ -24,11 +24,11 @@
 
     <%= f.association :category_quantitygender, collection: CategoryQuantitygender.all, prompt: "select a category", label: "Quatity Gender Selection" %>
     
-    <div class="general_gender_quantity_content hide">
+    <div class="general_gender_quantity_content">
     <%= f.input :quantity, placeholder: "quantity men & women", label: false %>
     </div>
 
-    <div class="specific_gender_quantity_content hide">
+    <div class="specific_gender_quantity_content">
         <%= f.input :quantity_men, placeholder: "quantity men", label: false %>
         <%= f.input :quantity_women, placeholder: "quantity women", label: false %>
     </div>
