@@ -5,6 +5,8 @@ class Social < ActiveRecord::Base
 
   # acts_as_commentable
   has_many :comments, as: :commentable, dependent: :destroy
+
+  has_many :attendances, as: :attendable, dependent: :destroy
   
   belongs_to :user
   belongs_to :category_topic
