@@ -17,6 +17,14 @@ class Social < ActiveRecord::Base
 
   mount_uploader :image, ImageUploader
 
+  def selection_BothAndOnly_men_and_women
+    self.category_quantitygender.name == "only men" || self.category_quantitygender.name == "only women" || self.category_quantitygender.name == "both men & wome"
+  end
+
+  def selection_BothX_men_and_women
+    self.category_quantitygender.name == "both X men & X women"
+  end
+
   def available_places_BothAndOnly_men_and_women
     attendance = self.attendances.count
     quantity = self.quantity
