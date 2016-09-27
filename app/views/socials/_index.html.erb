@@ -118,12 +118,23 @@
                           <li><%= link_to " #{social.impressionist_count(filter: :ip_address)}", '#', id: "", class: "fa fa-eye" %></li>
                           <li><%= link_to " #{social.comments.count}", '#', id: "", class: "fa fa-comments-o" %></li>
                           <% if social.selection_BothX_men_and_women %>
-                            <li><%= link_to " #{social.attendances.count}", '#', id: "", class: "fa fa-users" %></li>
-                            <li><%# link_to " #{social.available_places_BothX_men_and_women}", '#', id: "", class: "fa fa-user-plus" %></li>
+                            <li>
+                              <span data-tooltip aria-haspopup="true" data-options="disable_for_touch:true" class="tip-right" title="<%="#{social.set_availability_BothX_men_and_women}"%> capacity">
+                              <%= link_to " #{social.set_availability_BothX_men_and_women}", '#', id: "", class: "fa fa-users" %>
+                              </span>
+                            </li>
                           <% else %>
-                            <li><%= link_to " #{social.attendances.count}", '#', id: "", class: "fa fa-users" %></li>
-                            <li><%# link_to " #{social.available_places_BothAndOnly_men_and_women}", '#', id: "", class: "fa fa-user-plus" %></li>
+                            <li>
+                              <span data-tooltip aria-haspopup="true" data-options="disable_for_touch:true" class="tip-right" title="<%="#{social.set_availability_BothAndOnly_men_and_women}"%> capacity">
+                                <%= link_to " #{social.set_availability_BothAndOnly_men_and_women}", '#', id: "", class: "fa fa-users" %>
+                              </span>
+                            </li>
                           <% end %>
+                          <li>
+                            <span data-tooltip aria-haspopup="true" data-options="disable_for_touch:true" class="tip-right" title="<%="#{social.attendances.count}"%> attending">
+                              <%= link_to " #{social.attendances.count}", '#', id: "", class: "fa fa-user-plus" %>
+                            </span>
+                          </li>
                           <li>
                             <% if user_signed_in? %>
                               <% if current_user %>
