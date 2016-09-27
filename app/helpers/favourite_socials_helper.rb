@@ -1,0 +1,2 @@
+module FavouriteSocialsHelper
+end
