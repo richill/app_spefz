@@ -1,0 +1,2 @@
+module AttendingSocialsHelper
+end

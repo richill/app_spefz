@@ -1,4 +1,4 @@
-class AttendanceSocialsController < ApplicationController
+class AttendingSocialsController < ApplicationController
   before_action :set_social
 
   def create
