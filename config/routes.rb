@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :signups
   resources :relationships, only: [:create, :destroy]
   resources :friendships,   only: [:create, :destroy]
+  resources :favourite_socials, only: [:create, :destroy]
 
   devise_for :users
   resources :users do
