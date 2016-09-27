@@ -89,8 +89,8 @@
                     <div class="attendance">
                       <div>
                         <ul>
-                          <% social.attendances.each do |attendant| %>
-                            <li><%= link_to(image_tag(attendant.user.image_url, :alt =>  "alt text", :class =>"#"), root_path) %></li> 
+                          <% social.attendances.limit(5).each do |attendant| %>
+                            <li><%= link_to(image_tag(attendant.user.image_url, :alt =>  "alt text", :class =>"#"), user_path(attendant.user)) %></li> 
                           <% end %>
                           <li class="remaining_places" style="margin-right: 0px;"><%= link_to "+5", root_path, class: "#" %></li>
                         </ul>
