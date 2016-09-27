@@ -21,18 +21,18 @@
 </p>
 
 <p>
-  <button>Attend</button>
+  <!-- <button>Attend</button> -->
   <%# link_to "Attend Event", "#" %>
   <% if user_signed_in? %>
     <% if current_user %>
       <span class="attendance">
         <% unless current_user.attending_socials.exists?(id: @social.id)  %>
           <span data-tooltip aria-haspopup="true" data-options="disable_for_touch:true" class="tip-right add_fav" title="Attend Social">
-            <%= link_to 'Main Attend Social', attending_socials_path(social_id: @social), method: :post %>
+            <button><%= link_to 'Attend', attending_socials_path(social_id: @social), method: :post %></button>
           </span>
         <% else %>
           <span data-tooltip aria-haspopup="true" data-options="disable_for_touch:true" class="tip-right remove_fav" title="Un-Attend Social">
-            <%= link_to 'Main Un-Attend Social', attending_social_path(@social), method: :delete %>
+            <button><%= link_to 'Un-Attend Social', attending_social_path(@social), method: :delete %></button>
           </span>
         <% end %>
       </span>
