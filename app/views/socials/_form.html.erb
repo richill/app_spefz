@@ -16,9 +16,9 @@
     <%= f.input :date %>
     <%= f.input :time %>
     <%= f.association :category_quantitygender, collection: CategoryQuantitygender.all, prompt: "select a category", label: "Quatity Gender Selection" %>
-    <%= f.input :quantity, placeholder: "quatity men & women", label: false %>
-    <%= f.input :quantity_men, placeholder: "quatity men", label: false %>
-    <%= f.input :quantity_women, placeholder: "quatity women", label: false %>
+    <%= f.input :quantity, placeholder: "quantity men & women", label: false %>
+    <%= f.input :quantity_men, placeholder: "quantity men", label: false %>
+    <%= f.input :quantity_women, placeholder: "quantity women", label: false %>
     <%= f.association :category_invite, collection: CategoryInvite.all, prompt: "select a category", label: "Who's invited?" %>
     <%= f.association :category_age, collection: CategoryAge.all, prompt: "select a category", label: "Age Group" %>
     <%= f.input :speakername, label: "speaker name" %>

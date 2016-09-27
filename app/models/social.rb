@@ -16,5 +16,28 @@ class Social < ActiveRecord::Base
   belongs_to :category_quantitygender
 
   mount_uploader :image, ImageUploader
+
+  def available_places_BothAndOnly_men_and_women
+    attendance = self.attendances.count
+    quantity = self.quantity
+    quantity - attendance
+  end
+
+  def set_availability_BothAndOnly_men_and_women
+    self.quantity
+  end
+
+
+  def available_places_BothX_men_and_women
+    attendance = self.attendances.count
+    quantity = self.quantity_men + self.quantity_women
+    quantity - attendance
+  end
+
+  def set_availability_BothX_men_and_women
+    men = self.quantity_men
+    women = self.quantity_women
+    men + women
+  end
 end
 
