@@ -16,42 +16,19 @@
     <%= f.input :date %>
     <%= f.input :time %>
 
-
-
-
-
-
-
-    <%= f.association :category_quantitygender, collection: CategoryQuantitygender.all, prompt: "select a category", label: "Quatity Gender Selection" %>
-    
+    <%= f.association :category_quantitygender, collection: CategoryQuantitygender.all, prompt: "select a category", label: "Quantity Gender Selection" %>
     <div class="general_gender_quantity_content">
-    <%= f.input :quantity, placeholder: "quantity men & women", label: false %>
+        <%= f.input :quantity, placeholder: "quantity", label: false %>
     </div>
-
     <div class="specific_gender_quantity_content">
-        <%= f.input :quantity_men, placeholder: "quantity men", label: false %>
-        <%= f.input :quantity_women, placeholder: "quantity women", label: false %>
+        <%= f.input :quantity_men, placeholder: "quantity men", label: "men" %>
+        <%= f.input :quantity_women, placeholder: "quantity women", label: "women" %>
     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
     <%= f.association :category_invite, collection: CategoryInvite.all, prompt: "select a category", label: "Who's invited?" %>
     <%= f.association :category_age, collection: CategoryAge.all, prompt: "select a category", label: "Age Group" %>
     <%= f.input :speakername, label: "speaker name" %>
     <%= f.input :speakerlinkedin, label: "speaker's linkedin profile" %>
-
-
 
     <!-- hidden fields -->
     <%= f.hidden_field :latitude %>
