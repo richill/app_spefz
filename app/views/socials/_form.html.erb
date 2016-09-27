@@ -15,6 +15,7 @@
     <%= f.input :postcode %>
     <%= f.input :date %>
     <%= f.input :time %>
+    <%= f.association :category_quantitygender, collection: CategoryQuantitygender.all, prompt: "select a category", label: "Quatity Gender Selection" %>
     <%= f.input :quantity, placeholder: "quatity men & women", label: false %>
     <%= f.input :quantity_men, placeholder: "quatity men", label: false %>
     <%= f.input :quantity_women, placeholder: "quatity women", label: false %>
