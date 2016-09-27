@@ -3,15 +3,15 @@ class FavouriteSocialsController < ApplicationController
   
   def create
     if Favourite.create(favourited: @social, user: current_user)
-      redirect_to @social, notice: 'Social has been Saved'
+      redirect_to :back, notice: 'Social has been Saved'
     else
-      redirect_to @social, alert: 'Something went wrong...*sad panda*'
+      redirect_to :back, alert: 'Something went wrong...*sad panda*'
     end
   end
   
   def destroy
     Favourite.where(favourited_id: @social.id, user_id: current_user.id).first.destroy
-    redirect_to @social, notice: 'Social has been removed from Saved List'
+    redirect_to :back, notice: 'Social has been removed from Saved List'
   end
   
   private

@@ -106,7 +106,23 @@
                           <li><%= link_to " #{social.comments.count}", '#', id: "", class: "fa fa-comments-o" %></li>
                           <li><%= link_to ' 50', '#', id: "", class: "fa fa-users" %></li>
                           <li><%= link_to ' 5', '#', id: "", class: "fa fa-user-plus" %></li>
-                          <li><%= link_to ' ', '#', id: "", class: "fa fa-bookmark-o", style:"padding:11px 15px;" %></li>
+                          <li>
+                            <% if user_signed_in? %>
+                              <% if current_user %>
+                                <span class="favourite">
+                                  <% unless current_user.favourite_socials.exists?(id: social.id)  %>
+                                    <span data-tooltip aria-haspopup="true" data-options="disable_for_touch:true" class="tip-left" title="Add To Favourites">
+                                      <div class="add_fav"><%= link_to '', favourite_socials_path(social_id: social), method: :post, class: "fa fa-bookmark-o" %></div>
+                                    </span>
+                                  <% else %>
+                                    <span data-tooltip aria-haspopup="true" data-options="disable_for_touch:true" class="tip-left" title="Remove from Favourites">
+                                      <div class="remove_fav"><%= link_to '', favourite_social_path(social), method: :delete, class: "fa fa-bookmark" %></div>
+                                    </span>
+                                  <% end %>
+                                </span>
+                              <% end %>
+                            <% end %>
+                          </li>
                         </ul>
                       </div>
                     </div>
