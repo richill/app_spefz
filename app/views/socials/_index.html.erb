@@ -90,28 +90,46 @@
                     </div>
                     <div class="attendance">
                       <div>
-                        <ul>
-                          <% social.attendances.limit(5).each do |attendant| %>
-                            <li>
-                              <% if attendant.user.image.present? %>
-                                <%= link_to(image_tag(attendant.user.image_url, :alt =>  "alt text", :class =>"#"), user_path(attendant.user)) %>
-                              <% else %>
-                                <%= link_to(image_tag("img-profile-image-default.png", :alt =>  "alt text", :class =>"#"), user_path(attendant.user)) %>
-                              <% end %>
-                            </li> 
-                          <% end %>
-                          <li class="remaining_places" style="margin-right: 0px;">
-                            <% if social.selection_BothX_men_and_women %>
-                              <span data-tooltip aria-haspopup="true" data-options="disable_for_touch:true" class="tip-right" title="<%="#{social.available_places_BothX_men_and_women}"%> places left">
-                                <%= link_to "+#{social.available_places_BothX_men_and_women}", root_path, class: "#" %>
-                              </span>
-                            <% elsif %>
-                              <span data-tooltip aria-haspopup="true" data-options="disable_for_touch:true" class="tip-right" title="<%="#{social.available_places_BothAndOnly_men_and_women}"%> places left">
-                                <%= link_to "+#{social.available_places_BothAndOnly_men_and_women}", root_path, class: "#" %>
-                              </span>
+
+                        <% if social.sold_out? %>
+                          <ul>
+                            <% social.attendances.limit(6).each do |attendant| %>
+                              <li>
+                                <% if attendant.user.image.present? %>
+                                  <%= link_to(image_tag(attendant.user.image_url, :alt =>  "alt text", :class =>"#"), user_path(attendant.user)) %>
+                                <% else %>
+                                  <%= link_to(image_tag("img-profile-image-default.png", :alt =>  "alt text", :class =>"#"), user_path(attendant.user)) %>
+                                <% end %>
+                              </li> 
                             <% end %>
-                          </li>
-                        </ul>
+                          </ul>
+                        <% else %>
+                          <ul>
+                            <% social.attendances.limit(5).each do |attendant| %>
+                              <li>
+                                <% if attendant.user.image.present? %>
+                                  <%= link_to(image_tag(attendant.user.image_url, :alt =>  "alt text", :class =>"#"), user_path(attendant.user)) %>
+                                <% else %>
+                                  <%= link_to(image_tag("img-profile-image-default.png", :alt =>  "alt text", :class =>"#"), user_path(attendant.user)) %>
+                                <% end %>
+                              </li> 
+                            <% end %>
+                            <li class="remaining_places" style="margin-right: 0px;">
+                              <% if social.selection_BothX_men_and_women %>
+                                <span data-tooltip aria-haspopup="true" data-options="disable_for_touch:true" class="tip-right" title="<%="#{social.available_places_BothX_men_and_women}"%> places left">
+                                  <%= link_to "+#{social.available_places_BothX_men_and_women}", user_social_path(social.user, social), class: "#" %>
+                                </span>
+                              <% elsif %>
+                                <span data-tooltip aria-haspopup="true" data-options="disable_for_touch:true" class="tip-right" title="<%="#{social.available_places_BothAndOnly_men_and_women}"%> places left">
+                                  <%= link_to "+#{social.available_places_BothAndOnly_men_and_women}", user_social_path(social.user, social), class: "#" %>
+                                </span>
+                              <% end %>
+                            </li>
+                          </ul>
+                        <% end %>
+
+
+
                       </div>
                     </div>
                     <div class="icons">
