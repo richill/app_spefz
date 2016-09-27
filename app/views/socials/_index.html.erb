@@ -107,10 +107,13 @@
                         <ul>
                           <li><%= link_to " #{social.impressionist_count(filter: :ip_address)}", '#', id: "", class: "fa fa-eye" %></li>
                           <li><%= link_to " #{social.comments.count}", '#', id: "", class: "fa fa-comments-o" %></li>
+                          
                           <li><%= link_to " #{social.attendances.count}", '#', id: "", class: "fa fa-users" %></li>
+                          <li><%= link_to ' 5', '#', id: "", class: "fa fa-user-plus" %></li>
+
+                          
                           <!-- <li><%# link_to " #{social.attendances.count}", '#', id: "", class: "fa fa-male" %></li> -->
                           <!-- <li><%# link_to " #{social.attendances.count}", '#', id: "", class: "fa fa-female" %></li> -->
-                          <li><%= link_to ' 5', '#', id: "", class: "fa fa-user-plus" %></li>
                           <li>
                             <% if user_signed_in? %>
                               <% if current_user %>
