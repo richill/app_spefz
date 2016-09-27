@@ -100,10 +100,10 @@
                           <% end %>
                           <li class="remaining_places" style="margin-right: 0px;">
                             <% if social.selection_BothX_men_and_women %>
-                              <span data-tooltip aria-haspopup="true" data-options="disable_for_touch:true" class="tip-right" title="<%="#{social.selection_BothX_men_and_women}"%> places left">
+                              <span data-tooltip aria-haspopup="true" data-options="disable_for_touch:true" class="tip-right" title="<%="#{social.available_places_BothX_men_and_women}"%> places left">
                                 <%= link_to "+#{social.available_places_BothX_men_and_women}", root_path, class: "#" %>
                               </span>
-                            <% else %>
+                            <% elsif %>
                               <span data-tooltip aria-haspopup="true" data-options="disable_for_touch:true" class="tip-right" title="<%="#{social.available_places_BothAndOnly_men_and_women}"%> places left">
                                 <%= link_to "+#{social.available_places_BothAndOnly_men_and_women}", root_path, class: "#" %>
                               </span>

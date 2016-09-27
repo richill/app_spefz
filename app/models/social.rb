@@ -21,10 +21,6 @@ class Social < ActiveRecord::Base
     self.category_quantitygender.name == "only men" || self.category_quantitygender.name == "only women" || self.category_quantitygender.name == "both men & wome"
   end
 
-  def selection_BothX_men_and_women
-    self.category_quantitygender.name == "both X men & X women"
-  end
-
   def available_places_BothAndOnly_men_and_women
     attendance = self.attendances.count
     quantity = self.quantity
@@ -35,9 +31,12 @@ class Social < ActiveRecord::Base
     self.quantity
   end
 
+  def selection_BothX_men_and_women
+    self.category_quantitygender.name == "both X men & X women"
+  end
 
   def available_places_BothX_men_and_women
-    attendance = self.attendances.count
+    attendance = self.attendances.count #0
     quantity = self.quantity_men + self.quantity_women
     quantity - attendance
   end
