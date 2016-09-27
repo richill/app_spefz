@@ -17,34 +17,44 @@ class Social < ActiveRecord::Base
 
   mount_uploader :image, ImageUploader
 
+
+  #selection
   def selection_BothAndOnly_men_and_women
-    self.category_quantitygender.name == "only men" || self.category_quantitygender.name == "only women" || self.category_quantitygender.name == "both men & wome"
-  end
-
-  def available_places_BothAndOnly_men_and_women
-    attendance = self.attendances.count
-    quantity = self.quantity
-    quantity - attendance
-  end
-
-  def set_availability_BothAndOnly_men_and_women
-    self.quantity
+    self.category_quantitygender.name == "only men" || self.category_quantitygender.name == "only women" || self.category_quantitygender.name == "both men & women"
   end
 
   def selection_BothX_men_and_women
     self.category_quantitygender.name == "both X men & X women"
   end
 
+
+  #remaining_space
+  def available_places_BothAndOnly_men_and_women
+    attendance = self.attendances.count
+    capacity = self.quantity
+    capacity - attendance
+  end
+
   def available_places_BothX_men_and_women
     attendance = self.attendances.count #0
-    quantity = self.quantity_men + self.quantity_women
-    quantity - attendance
+    capacity = self.quantity_men + self.quantity_women
+    capacity - attendance
+  end
+
+
+  #set_space
+  def set_availability_BothAndOnly_men_and_women
+    self.quantity
   end
 
   def set_availability_BothX_men_and_women
     men = self.quantity_men
     women = self.quantity_women
     men + women
+  end
+
+  def sold_out?
+    self.selection_BothAndOnly_men_and_women && self.available_places_BothAndOnly_men_and_women <= 0 || self.selection_BothX_men_and_women && self.available_places_BothX_men_and_women <= 0
   end
 end
 
