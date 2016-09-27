@@ -111,13 +111,12 @@
                               <% if current_user %>
                                 <span class="favourite">
                                   <% unless current_user.favourite_socials.exists?(id: social.id)  %>
-                                    <span data-tooltip aria-haspopup="true" data-options="disable_for_touch:true" class="tip-right" title="Save Social">
-                                      <div class="add_fav"><%= link_to '', favourite_socials_path(social_id: social), method: :post, class: "fa fa-bookmark-o" %></div>
+                                    <span data-tooltip aria-haspopup="true" data-options="disable_for_touch:true" class="tip-right add_fav" title="Save Social">
+                                      <%= link_to '', favourite_socials_path(social_id: social), method: :post, class: "fa fa-bookmark-o" %>
                                     </span>
                                   <% else %>
-                                    <span data-tooltip aria-haspopup="true" data-options="disable_for_touch:true" class="tip-right" title="Remove From Saved List">
-                                      <div class="remove_fav"><%= link_to '', favourite_social_path(social), method: :delete, class: "fa fa-bookmark" %></div>
-
+                                    <span data-tooltip aria-haspopup="true" data-options="disable_for_touch:true" class="tip-right remove_fav" title="Remove From Saved List">
+                                      <%= link_to '', favourite_social_path(social), method: :delete, class: "fa fa-bookmark" %>
                                     </span>
                                   <% end %>
                                 </span>
