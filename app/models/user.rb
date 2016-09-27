@@ -9,6 +9,8 @@ class User < ActiveRecord::Base
   belongs_to :category_gender 
   has_many :events, dependent: :destroy
   has_many :socials, dependent: :destroy
+  has_many :favourites, dependent: :destroy
+  has_many :favourite_socials, through: :favourites, source: :favourited, source_type: 'Social', dependent: :destroy
 
   # acts_as_commentable
   has_many :comments, as: :commentable, dependent: :destroy

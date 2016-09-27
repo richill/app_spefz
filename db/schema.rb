@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160926160600) do
+ActiveRecord::Schema.define(version: 20160927101324) do
 
   create_table "category_ages", force: :cascade do |t|
     t.string   "name"
@@ -70,6 +70,17 @@ ActiveRecord::Schema.define(version: 20160926160600) do
     t.datetime "updated_at",  null: false
     t.integer  "user_id"
   end
+
+  create_table "favourites", force: :cascade do |t|
+    t.integer  "favourited_id"
+    t.string   "favourited_type"
+    t.integer  "user_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  add_index "favourites", ["favourited_type", "favourited_id"], name: "index_favourites_on_favourited_type_and_favourited_id"
+  add_index "favourites", ["user_id"], name: "index_favourites_on_user_id"
 
   create_table "friendships", force: :cascade do |t|
     t.integer  "friender_id"
