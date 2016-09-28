@@ -76,24 +76,18 @@
   margin: auto;
 }
 
-
-// ------------------------
-//     workings
-// ------------------------
-
-
-.member_container {
+.members_section .member_container {
   padding: 5px;
   margin-bottom: 15px;
   margin-left: 0px !important;
 }
 
-.member_inner_container {
+.members_section .member_inner_container {
   background-color: rgba(255, 255, 255, 0.9) !important;
   padding: 8px;
 }
 
-.image_cover {
+.members_section .image_cover {
   padding: 4px;
   border-radius: 5px;
   width: 57px;
@@ -102,7 +96,7 @@
   background-color: rgba(88, 205, 166, 0.2) !important;
 }
 
-.image_cover img {
+.members_section .image_cover img {
   height: 48px;
   width: 48px;
   border-radius: 200px;
@@ -111,19 +105,19 @@
   -o-transition: all 0.3s 
 }
 
-.image_cover img:hover {
+.members_section .image_cover img:hover {
   opacity: 0.5;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
 }
 
-.user_info {
+.members_section .user_info {
   padding: 10px 0px;
   float: left;
 }
 
-.user_name a {
+.members_section .user_name a {
   font-family: 'Lato', sans-serif;
   font-weight: bold;
   text-transform: capitalize;
@@ -133,14 +127,15 @@
   -o-transition: all 0.3s ease;
 }
 
-.user_name a:hover {
+
+.members_section .user_name a:hover {
   color: #E34B51 !important;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
 }
 
-.user_profession {
+.members_section .user_profession {
   font-family: 'Lato', sans-serif;
   font-size: 12px;
   font-weight: 300;
@@ -164,6 +159,11 @@
   font-size: 15px;
   color: #fff !important;
 }
+
+
+// ------------------------
+//     workings
+// ------------------------
 
 
 
