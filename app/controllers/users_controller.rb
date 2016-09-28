@@ -8,6 +8,7 @@ class UsersController < ApplicationController
     else
       @users = User.all
     end
+    @user = current_user
   end
 
   def show

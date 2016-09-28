@@ -1,8 +1,18 @@
-
-<!-- <span id="follow_form">
-  <%# if current_user.followings(@user) && !current_user.active_relationships == nil %>
-    <li class="btn btn_unfollow_submit"><%# render 'unfollow' %></li>
-  <%# else %>
-    <li class="btn btn_follow_submit"><%# render 'follow' %></li>
-  <%# end %>
-</span> -->
+<span id="follow_form">
+<% if current_user.following?(@user) %>
+    <span class="">
+      <%# render 'user_unfollow' %>
+      <%= form_for(current_user.active_relationships.find_by(followed_id: @user.id), html: { method: :delete }, remote: true) do |f| %>
+        <%= f.submit "Unfollow", class: "btn btn_unfollow_submit" %>
+      <% end %>
+    </span>
+  <% else %>
+    <span class="">
+      <%# render 'user_follow' %>
+      <%= form_for(current_user.active_relationships.build, remote: true) do |f| %>
+        <div><%= hidden_field_tag :followed_id, @user.id %></div>
+        <%= f.submit "Follow", class: "btn btn_follow_submit" %>
+      <% end %>
+    </span>
+  <% end %>
+</span>
