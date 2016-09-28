@@ -77,12 +77,16 @@
 }
 
 
+// ------------------------
+//     workings
+// ------------------------
+
 .image_cover {
   margin: 3px;
   padding: 4px;
   border-radius: 5px;
+  width: 57px;
   background-color: rgba(88, 205, 166, 0.2) !important;
-  display: inline-block;
 }
 
 .image_cover img {
@@ -92,6 +96,17 @@
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   -o-transition: all 0.3s 
+}
+
+.member_container {
+  padding: 5px;
+  margin-bottom: 15px;
+  margin-left: 0px !important;
+}
+
+.member_inner_container {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+  padding: 5px;
 }
 
 
