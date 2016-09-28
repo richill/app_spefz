@@ -1,33 +1,53 @@
-<div>
-  <div><%= link_to "socials", socials_path %></div>
-  <div><%= link_to "profile", user_path(current_user) %></div>
+<div class="socials_section">
+  <div class="medium-12 columns socials_inner_section">
+
+    <!-- search -->
+    <div class="search_container">
+      <div class="search_inner_container"></div>
+    </div>
+    <!-- search -->
+
+    <!-- content -->
+    <div class="medium-12 columns social_content_section">
+      <div class="medium-12 columns content_container">
+        <div class="content_details">
+          <div class="feed_container">
+            <ul>
+              <!-- members -->
+              <table>
+                <thead>
+                  <tr>
+                    <th>name</th>
+                    <th>Birthday</th>
+                    <th>Gender</th>
+                    <th>Profession</th>
+                    <th>email</th>
+                    <th>Description</th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  <% @users.each do |user| %>
+                    <tr>
+                      <td><%= link_to "#{user.firstname} #{user.lastname}", user %></td>
+                      <td><%= user.birthdate %></td>
+                      <td><%= user.category_gender.name %></td>
+                      <td><%= user.profession %></td>
+                      <td><%= user.description %></td>
+                      <td><%= user.email %></td>
+                    </tr>
+                  <% end %>
+                </tbody>
+              </table>
+              <!-- members -->
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- content -->
+
+  </div>
 </div>
 
-<p id="notice"><%= notice %></p>
-<h1>Listing Users</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>name</th>
-      <th>Birthday</th>
-      <th>Gender</th>
-      <th>Profession</th>
-      <th>email</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @users.each do |user| %>
-      <tr>
-        <td><%= link_to "#{user.firstname} #{user.lastname}", user %></td>
-        <td><%= user.birthdate %></td>
-        <td><%= user.category_gender.name %></td>
-        <td><%= user.profession %></td>
-        <td><%= user.description %></td>
-        <td><%= user.email %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
