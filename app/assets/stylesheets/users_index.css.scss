@@ -3,14 +3,14 @@
     File: views / users / _index.html.erb
   =========================================*/
 
-.socials_section .socials_inner_section {
+.members_section .socials_inner_section {
   background-color: #fff !important;
   background: url("img_background_main.png") repeat;
   padding: 0px !important;
   min-height: 822px;
 }
 
-.socials_section .socials_inner_section h1 {
+.members_section .socials_inner_section h1 {
   font-family: 'Lato', sans-serif;
   font-size: 48px;
   font-weight: 200;
@@ -21,37 +21,37 @@
   word-spacing: 3px;
 }
 @media only screen and (max-width: 670px) {
-  .socials_section .socials_inner_section h1  {
+  .members_section .socials_inner_section h1  {
     font-size: 30px;
   }
 }
 
-.socials_section .search_container {
+.members_section .search_container {
   height: 65px;
   background-color: rgba(47, 63, 91, 0.1);
 }
 
-.socials_section .search_inner_container {
+.members_section .search_inner_container {
   height: 65px;
   // background-color: green;
   width: 1170px;
   margin: auto;
 }
 
-.socials_section .social_content_section {
+.members_section .social_content_section {
   padding: 0px !important;
 }
 
-.socials_section .content_container {
+.members_section .content_container {
   padding: 30px 0px !important;
   min-height: 822px;
 }
 
-.socials_section .header_section {
+.members_section .header_section {
   padding: 15px 0px;
 }
 
-.socials_section .header {
+.members_section .header {
   font-family: "Lato", sans-serif;
   font-size: 35px;
   font-weight: 300;
@@ -61,7 +61,7 @@
   padding: 0px 15px !important;
 }
 
-.socials_section .sub_header {
+.members_section .sub_header {
   font-family: "Lato", sans-serif;
   font-size: 15px;
   font-weight: 400;
@@ -71,32 +71,32 @@
   padding: 15px !important;
 }
 
-.socials_section .content_details {
+.members_section .content_details {
   padding: 15px 0px !important;
   width: 1170px;
   margin: auto;
 }
 
-.socials_section .feed_container ul {
+.members_section .feed_container ul {
   list-style-type: none;
   margin: 0px;
 }
 
-.socials_section .feed_container ul li {
+.members_section .feed_container ul li {
   margin-bottom: 15px !important;
   float: left !important;
 }
 
-.socials_section .feed_container {
+.members_section .feed_container {
   margin: auto;
 }
 
-.socials_section .feed_inner_section {
+.members_section .feed_inner_section {
   background-color: #fff;
   margin-bottom: 30px;
 }
 
-.socials_section .banner .ribbon-wrapper-green {
+.members_section .banner .ribbon-wrapper-green {
   width: 85px;
   height: 88px;
   overflow: hidden;
@@ -104,7 +104,7 @@
   z-index: 1;
 }
 
-.socials_section .banner .ribbon-green {
+.members_section .banner .ribbon-green {
   font: bold 10px Sans-Serif;
   opacity: 0.95;
   text-align: center;
@@ -125,19 +125,19 @@
   box-shadow: 0px0px3pxrgba 0, 0, 0, 0.3;
 }
 
-.socials_section .feed {
+.members_section .feed {
   position: relative;
   min-height: 350px;
 }
 
-.socials_section .feed_cover {
+.members_section .feed_cover {
   background-color: rgba(47, 63, 91, 0.2) !important;
   position: absolute;
   height: 264px;
   width: 100%;
 }
 
-.socials_section .feed_header {
+.members_section .feed_header {
   font-family: "Lato", sans-serif;
   font-size: 12px !important;
   font-weight: 300;
@@ -151,21 +151,21 @@
   padding: 6px 15px;
 }
 
-.socials_section .feed_header .date {
+.members_section .feed_header .date {
   margin-right: 5px;
 }
 
-.socials_section .feed_header .location {
+.members_section .feed_header .location {
   margin-right: 8px;
   margin-left: 2px;
 } 
 
-.socials_section .feed_header .price {
+.members_section .feed_header .price {
   margin-right: 8px;
   margin-left: 2px;
 }
 
-.socials_section .invite_only {
+.members_section .invite_only {
   background-color: #E34B51;
   font-size: 10px !important;
   padding: 2px 5px;
@@ -174,20 +174,20 @@
   border-radius: 1px;
 }
 
-.socials_section .feed_img img {
+.members_section .feed_img img {
   width: 100%;
   height: 264px;
   // height: 100%;
 }
 
-.socials_section .feed_user {
+.members_section .feed_user {
   width: 20%;
   margin: auto;
   // height: 20%;
   position: relative;
 }
 
-.socials_section .feed_user img {
+.members_section .feed_user img {
   position: absolute;
   // z-index: 1000;
   bottom: -20px;
@@ -199,19 +199,19 @@
 }
 
 
-.socials_section .feed_user img:hover {
+.members_section .feed_user img:hover {
   background-color: rgba(225, 71, 62, 0.4) !important;
   -webkit-transition: all 0.3s ease; 
   -moz-transition: all 0.3s ease; 
   -o-transition: all 0.3s ease; 
 }
 
-.socials_section .feed_sub_title {
+.members_section .feed_sub_title {
   margin-top: 25px;
   text-align: center;
 }
 
-.socials_section .feed_organizer {
+.members_section .feed_organizer {
   font-family: "Lato", sans-serif;
   font-size: 11px;
   font-weight: 400;
@@ -219,7 +219,7 @@
   text-transform: uppercase;
 }
 
-.socials_section .feed_title {
+.members_section .feed_title {
   font-family: "Lato", sans-serif;
   font-size: 13px;
   font-weight: bold;
@@ -231,59 +231,59 @@
   padding: 0px 8px;
 }
 
-.socials_section .feed_comments_container {
+.members_section .feed_comments_container {
   padding: 10px;
 }
 @media only screen and (max-width: 960px) {
-  .socials_section .feed_comments_container {
+  .members_section .feed_comments_container {
     display: none;
   }
 }
 
-.socials_section .feed_comments_container ul li {
+.members_section .feed_comments_container ul li {
   margin: 0px !important;  
 }
 
-.socials_section .feed_inner_comment_section {
+.members_section .feed_inner_comment_section {
   padding: 5px !important;
 }
 
-.socials_section .feed_comments_container img {
+.members_section .feed_comments_container img {
   border-radius: 2px;
   padding-right: 5px !important;
 }
 
-.socials_section .feed_comment_img {
+.members_section .feed_comment_img {
   padding: 0px !important;
 }
 
-.socials_section .feed_comment {
+.members_section .feed_comment {
   padding: 0px !important;
 }
 
-.socials_section .feed_comment span {
+.members_section .feed_comment span {
   font-family: "Lato", sans-serif;
   color: #283041;
   background-color: rgba(47,63,91,0.02) !important;
   padding: 5px !important;
 }
 
-.socials_section .feed_comment span b a {
+.members_section .feed_comment span b a {
   font-family: "Lato", sans-serif;
   color: #E34B51 !important;
   margin-right: 5px;
 }
 
-.socials_section .feed_comment span b a:hover {
+.members_section .feed_comment span b a:hover {
   text-decoration: underline;
 }
 
-.socials_section .booking {
+.members_section .booking {
   border-top: 1px solid #f8f8f9;
   padding: 15px;
 }
 
-.socials_section .booking a {
+.members_section .booking a {
   font-family: "Lato", sans-serif;
   color: #fff !important;
   text-transform: uppercase;
@@ -297,30 +297,30 @@
   -o-transition: all 0.3s ease; 
 }
 
-.socials_section .booking a:hover {
+.members_section .booking a:hover {
   background-color: #58CDA6 !important;
   -webkit-transition: all 0.3s ease; 
   -moz-transition: all 0.3s ease; 
   -o-transition: all 0.3s ease; 
 }
 
-.socials_section .attendance {
+.members_section .attendance {
   border-top: 1px solid #f8f8f9;
   padding: 5px;
   height: 45px;
 }
 
-.socials_section .attendance ul {
+.members_section .attendance ul {
   width: 250px;
   margin: auto;
 }
 
-.socials_section .attendance ul li {
+.members_section .attendance ul li {
   margin-bottom: 0px !important;
   margin-right: 9px;
 }
 
-.socials_section .attendance a {
+.members_section .attendance a {
   font-family: "Lato", sans-serif;
   font-size: 12px;
   letter-spacing: 1px;
@@ -335,31 +335,31 @@
   -o-transition: all 0.3s ease; 
 }
 
-.socials_section .attendance a:hover {
+.members_section .attendance a:hover {
   background-color: rgba(225, 71, 62, 0.4) !important;
   -webkit-transition: all 0.3s ease; 
   -moz-transition: all 0.3s ease; 
   -o-transition: all 0.3s ease; 
 }
 
-.socials_section .attendance img {
+.members_section .attendance img {
   width: 30px;
   height: 30px;
 }
 
-.socials_section .remaining_places a {
+.members_section .remaining_places a {
   padding: 8px 0px !important;
   height: 34px;
   width: 34px !important;
   background-color: rgba(47, 63, 91, 0.2) !important;
 }
 
-.socials_section .icon_list {
+.members_section .icon_list {
   background-color: rgba(47, 63, 91, 0.1);
   border-bottom: 2px solid rgba(225, 71, 62, 0.3) !important;
 }
 
-.socials_section .icon_list ul {
+.members_section .icon_list ul {
   margin: auto !important;
   list-style-type: none;
   width: 250px;
@@ -367,7 +367,7 @@
 }
 
 
-.socials_section .icons a {
+.members_section .icons a {
   font-size: 13px !important;
   text-transform: uppercase;
   padding: 11px 10px;
@@ -379,11 +379,11 @@
   -o-transition: all 0.3s ease; 
 }
 
-.socials_section .icons .fa-eye, .fa-comments-o, .fa-users, .fa-user-plus, .fa-bookmark-o {
+.members_section .icons .fa-eye, .fa-comments-o, .fa-users, .fa-user-plus, .fa-bookmark-o {
   color: #414249 !important;
 }
 
-.socials_section .icons a:hover {
+.members_section .icons a:hover {
   color: #fff !important;
   background-color: #58CDA6 !important;
   -webkit-transition: all 0.3s ease; 
@@ -391,7 +391,7 @@
   -o-transition: all 0.3s ease; 
 }
 
-.socials_section .remove_fav a {
+.members_section .remove_fav a {
   color: #E34B51 !important;
 }
 
