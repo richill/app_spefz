@@ -1,0 +1,22 @@
+<span class="btn_request">
+<% if current_user.friended?(user) %>
+    <span class="icon_user_times">
+      <!-- render 'user_friend_request_cancel' -->
+      <%= form_for(current_user.active_friendship_requests.find_by(friended_id: user.id), html: { method: :delete }, remote: true) do |f| %>
+        <%= button_tag type: 'submit', class: "", id: "" do %>
+          <i class="fa fa-user-times" aria-hidden="true"></i>
+        <% end %>
+      <% end %>
+    </span>
+  <% else %>
+    <span class="icon_user_plus">
+      <!-- render 'user_friend_request' -->
+      <%= form_for(current_user.active_friendship_requests.build, remote: true) do |f| %>
+        <div><%= hidden_field_tag :friended_id, user.id %></div>
+        <%= button_tag type: 'submit', class: "", id: "" do %>
+          <i class="fa fa-user-plus" aria-hidden="true"></i>
+        <% end %>
+      <% end %>
+    </span>
+  <% end %>
+</span>

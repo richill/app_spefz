@@ -147,20 +147,60 @@
   padding: 9px 0px;
 }
 
-.members_section button {
+.members_section .btn_follow .icon_user_refresh button {
   margin: 0px !important;
-  padding: 10px !important;
+  padding: 10px 12px !important;
+  float: right;
+  margin-left: 5px !important;
+  border-radius: 0px !important;
+  background-color: #2F3F5B !important;
+}
+
+.members_section .btn_follow .icon_user button {
+  margin: 0px !important;
+  padding: 10px 13px !important;
   float: right;
   margin-left: 5px !important;
   border-radius: 0px !important;
   background-color: #4BB4BF !important;
 }
 
+.members_section .btn_follow button:hover {
+  background-color: #2F3F5B !important;
+}
+
+
 .members_section .fa-user-plus {
   font-size: 15px;
   color: #fff !important;
 }
 
+.members_section .btn_request .icon_user_times button {
+  margin: 0px !important;
+  padding: 10px !important;
+  float: right;
+  margin-left: 5px !important;
+  border-radius: 0px !important;
+  background-color: #2F3F5B !important;
+}
+
+.members_section .btn_request .icon_user_plus button {
+  margin: 0px !important;
+  padding: 10px !important;
+  float: right;
+  margin-left: 5px !important;
+  border-radius: 0px !important;
+  background-color: #58CDA6 !important;
+}
+
+.members_section .btn_request button:hover {
+  background-color: #2F3F5B !important;
+}
+
+.members_section .fa-undo {
+  font-size: 15px;
+  color: #fff !important;
+}
 
 // ------------------------
 //     workings

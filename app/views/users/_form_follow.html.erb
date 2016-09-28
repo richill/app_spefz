@@ -1,18 +1,20 @@
-<span class="">
+<span class="btn_follow">
 <% if current_user.following?(user) %>
-    <span class="">
-      <%# render 'user_unfollow' %>
+    <span class="icon_user_refresh">
+      <!-- render 'user_unfollow' -->
       <%= form_for(current_user.active_relationships.find_by(followed_id: user.id), html: { method: :delete }, remote: true) do |f| %>
-        <%= f.submit "Unfollow", class: "fa fa-user-plus" %>
+        <%= button_tag type: 'submit', class: "", id: "" do %>
+          <i class="fa fa-refresh" aria-hidden="true"></i>
+        <% end %>
       <% end %>
     </span>
   <% else %>
-    <span class="">
-      <%# render 'user_follow' %>
+    <span class="icon_user">
+      <!-- render 'user_follow' -->
       <%= form_for(current_user.active_relationships.build, remote: true) do |f| %>
         <div><%= hidden_field_tag :followed_id, user.id %></div>
         <%= button_tag type: 'submit', class: "", id: "" do %>
-          <i class="fa fa-user-plus" aria-hidden="true"></i>
+          <i class="fa fa-user" aria-hidden="true"></i>
         <% end %>
       <% end %>
     </span>
