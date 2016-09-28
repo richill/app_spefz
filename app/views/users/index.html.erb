@@ -1,33 +1,10 @@
+<% provide(:title, "Members") %>
 <div>
-  <div><%= link_to "socials", socials_path %></div>
-  <div><%= link_to "profile", user_path(current_user) %></div>
+  <div>
+    <div class "desktop_view show-for-medium-up">
+        <%= render 'users/index' %>
+        <%= render 'shared/footer' %>
+    </div>
+    <!-- <div class="mobile_view show-for-small-only"><%# render 'shared/responsive_content_userr_show_userr' %></div> -->
+  </div>
 </div>
-
-<p id="notice"><%= notice %></p>
-<h1>Listing Users</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>name</th>
-      <th>Birthday</th>
-      <th>Gender</th>
-      <th>Profession</th>
-      <th>email</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @users.each do |user| %>
-      <tr>
-        <td><%= link_to "#{user.firstname} #{user.lastname}", user %></td>
-        <td><%= user.birthdate %></td>
-        <td><%= user.category_gender.name %></td>
-        <td><%= user.profession %></td>
-        <td><%= user.description %></td>
-        <td><%= user.email %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
