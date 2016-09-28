@@ -28,7 +28,7 @@
                     </div>
                     <div class="user_info">
                       <div class="user_name"><%= link_to "#{user.firstname} #{user.lastname}", user %></div>
-                      <div class="user_profession"><%= user.profession %></div>
+                      <div class="user_profession"><%= truncate(user.profession, length: 25) %></div>
                     </div>
                     <div class="action_btns">
                       <%= render partial: "follow_form", locals: { user: user } %>
