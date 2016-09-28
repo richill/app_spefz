@@ -76,19 +76,23 @@
   margin: auto;
 }
 
-// .members_section .member_container ul {
-//   list-style-type: none;
-//   margin: 0px;
-// }
 
-// .members_section .member_container ul li {
-//   margin-bottom: 15px !important;
-//   float: left !important;
-// }
+.image_cover {
+  margin: 3px;
+  padding: 4px;
+  border-radius: 5px;
+  background-color: rgba(88, 205, 166, 0.2) !important;
+  display: inline-block;
+}
 
-// .members_section .member_container {
-//   margin: auto;
-// }
+.image_cover img {
+  height: 48px;
+  width: 48px;
+  border-radius: 200px;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s 
+}
 
 
 
