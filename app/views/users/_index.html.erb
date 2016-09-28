@@ -12,45 +12,25 @@
       <div class="medium-12 columns content_container">
         <div class="content_details">
           <div class="member_container">
+            
+            <!-- members -->
+            <% @users.each do |user| %>
             <ul>
-              <!-- members -->
-              <% @users.each do |user| %>
-                <%= link_to "#{user.firstname} #{user.lastname}", user %>
-                <%= user.birthdate %>
-                <%= user.category_gender.name %>
-                <%= user.profession %>
-                <%= user.description %>
-                <%= user.email %>
-              <% end %>
-              <!-- members -->
-              <!-- members_old -->
-              <table>
-                <thead>
-                  <tr>
-                    <th>name</th>
-                    <th>Birthday</th>
-                    <th>Gender</th>
-                    <th>Profession</th>
-                    <th>email</th>
-                    <th>Description</th>
-                  </tr>
-                </thead>
-
-                <tbody>
-                  <% @users.each do |user| %>
-                    <tr>
-                      <td><%= link_to "#{user.firstname} #{user.lastname}", user %></td>
-                      <td><%= user.birthdate %></td>
-                      <td><%= user.category_gender.name %></td>
-                      <td><%= user.profession %></td>
-                      <td><%= user.description %></td>
-                      <td><%= user.email %></td>
-                    </tr>
+              <li>
+                <span>
+                  <% if user.image_url.present? %>
+                    <%= link_to(image_tag("#{user.image_url}", :alt =>  "image", :class =>"#"), user) %>
+                  <% else %>
+                    <%= link_to(image_tag("img-profile-image-default.png", :alt =>  "image", :class =>"#"), user) %>
                   <% end %>
-                </tbody>
-              </table>
-              <!-- members_old -->
-            </ul>
+                </span>
+                <%= link_to "#{user.firstname} #{user.lastname}", user %>
+                <%= user.profession %>
+              </li>
+            <ul/>
+            <div class="clear"></div>
+            <% end %>
+            <!-- members -->
           </div>
         </div>
       </div>
