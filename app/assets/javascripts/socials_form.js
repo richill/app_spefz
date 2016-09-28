@@ -17,7 +17,3 @@ $(document).ready(function() {
     }
   });
 });
-
-
-
-
