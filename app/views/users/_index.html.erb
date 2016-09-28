@@ -14,6 +14,16 @@
           <div class="member_container">
             <ul>
               <!-- members -->
+              <% @users.each do |user| %>
+                <%= link_to "#{user.firstname} #{user.lastname}", user %>
+                <%= user.birthdate %>
+                <%= user.category_gender.name %>
+                <%= user.profession %>
+                <%= user.description %>
+                <%= user.email %>
+              <% end %>
+              <!-- members -->
+              <!-- members_old -->
               <table>
                 <thead>
                   <tr>
@@ -39,7 +49,7 @@
                   <% end %>
                 </tbody>
               </table>
-              <!-- members -->
+              <!-- members_old -->
             </ul>
           </div>
         </div>
