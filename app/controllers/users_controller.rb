@@ -8,7 +8,8 @@ class UsersController < ApplicationController
     else
       @users = User.all
     end
-    @user = current_user
+    # @user = current_user
+    # @user = User.find(params[:id])
   end
 
   def show

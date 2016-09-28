@@ -31,7 +31,7 @@
                       <div class="user_profession"><%= user.profession %></div>
                     </div>
                     <div class="action_btns">
-                      <%= render 'follow_form' %>
+                      <%= render partial: "follow_form", locals: { user: user } %>
                     </div>
                     
                   </div>
