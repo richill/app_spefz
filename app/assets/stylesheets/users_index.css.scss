@@ -81,6 +81,18 @@
 //     workings
 // ------------------------
 
+
+.member_container {
+  padding: 5px;
+  margin-bottom: 15px;
+  margin-left: 0px !important;
+}
+
+.member_inner_container {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+  padding: 8px;
+}
+
 .image_cover {
   padding: 4px;
   border-radius: 5px;
@@ -99,15 +111,8 @@
   -o-transition: all 0.3s 
 }
 
-.member_container {
-  padding: 5px;
-  margin-bottom: 15px;
-  margin-left: 0px !important;
-}
-
-.member_inner_container {
-  background-color: rgba(255, 255, 255, 0.9) !important;
-  padding: 8px;
+.user_info {
+  padding: 10px 0px;
 }
 
 .user_name a {
