@@ -82,11 +82,11 @@
 // ------------------------
 
 .image_cover {
-  margin: 3px;
   padding: 4px;
   border-radius: 5px;
   width: 57px;
   float: left;
+  margin-right: 5px;
   background-color: rgba(88, 205, 166, 0.2) !important;
 }
 
@@ -107,7 +107,32 @@
 
 .member_inner_container {
   background-color: rgba(255, 255, 255, 0.9) !important;
-  padding: 5px;
+  padding: 8px;
+}
+
+.user_name a {
+  font-family: 'Lato', sans-serif;
+  font-weight: bold;
+  text-transform: capitalize;
+  color: #283041 !important;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+.user_name a:hover {
+  color: #E34B51 !important;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+.user_profession {
+  font-family: 'Lato', sans-serif;
+  font-size: 12px;
+  font-weight: 300;
+  text-transform: capitalize;
+  text-align: left;
 }
 
 

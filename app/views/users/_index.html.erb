@@ -26,8 +26,8 @@
                         <div class="image_cover"><%= link_to(image_tag("img-profile-image-default.png", :alt =>  "image", :class =>"#"), user) %></div>
                       <% end %>
                     </div>
-                    <div><%= link_to "#{user.firstname} #{user.lastname}", user %></div>
-                    <div><%= user.profession %></div>
+                    <div class="user_name"><%= link_to "#{user.firstname} #{user.lastname}", user %></div>
+                    <div class="user_profession"><%= user.profession %></div>
                   </div>
                 </li>
 
