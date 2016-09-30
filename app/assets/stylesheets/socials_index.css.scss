@@ -217,6 +217,8 @@
   font-weight: 400;
   color: #7C93A7;
   text-transform: uppercase;
+  width: 250px !important;
+  margin: auto;
 }
 
 .socials_section .feed_title {
@@ -318,6 +320,10 @@
 .socials_section .attendance ul li {
   margin-bottom: 0px !important;
   margin-right: 9px;
+}
+
+.socials_section .attendance ul li:nth-child(6) {  
+  margin-right: 0px !important;
 }
 
 .socials_section .attendance a {
