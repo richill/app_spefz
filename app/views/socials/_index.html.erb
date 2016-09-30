@@ -105,7 +105,7 @@
                           </ul>
                         <% else %>
                           <ul>
-                            <% social.attendances.limit(5).each do |attendant| %>
+                            <% social.attendances.order(created_at: :desc).limit(5).each do |attendant| %>
                               <li>
                                 <% if attendant.user.image.present? %>
                                   <%= link_to(image_tag(attendant.user.image_url, :alt =>  "alt text", :class =>"#"), user_path(attendant.user)) %>

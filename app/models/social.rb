@@ -56,5 +56,9 @@ class Social < ActiveRecord::Base
   def sold_out?
     self.selection_BothAndOnly_men_and_women && self.available_places_BothAndOnly_men_and_women <= 0 || self.selection_BothX_men_and_women && self.available_places_BothX_men_and_women <= 0
   end
+
+  def self.desc_order
+    order('created_at DESC')
+  end
 end
 

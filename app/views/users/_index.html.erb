@@ -14,7 +14,7 @@
             
             <!-- members -->
             <ul class="inline-list">
-              <% @users.each do |user| %>
+              <% @users.desc_order.each do |user| %>
                 <li class="medium-3 columns member_container">
                   <div class="medium-12 columns member_inner_container">
                     <div class="image_section">

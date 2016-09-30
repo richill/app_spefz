@@ -65,5 +65,9 @@ class User < ActiveRecord::Base
   def friended?(other_user)
     sent_friend_requests.include?(other_user)
   end
+
+  def self.desc_order
+    order('created_at DESC')
+  end
 end
 
