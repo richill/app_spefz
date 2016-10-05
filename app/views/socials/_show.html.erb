@@ -140,30 +140,26 @@
         <% else %>
           <div class="medium-12 columns left_container">
             <div class="medium-12 columns left_inner_container interest_container">
-              <div class="header"><div class="header_content"><i class="fa fa-street-view" aria-hidden="true"></i> interests</div></div>
+              <div class="header"><div class="header_content"><i class="fa fa-street-view" aria-hidden="true"></i> tags</div></div>
               <div class="content">
-                <% if current_user.id == @user.id %>
-                  <div class="medium-12 columns user_complete_infolink"><%= link_to "Tell Us About Your Interests", edit_user_path(current_user) %></div>
+                <% if current_user.id == @social.user.id %>
+                  <div class="medium-12 columns user_complete_infolink"><%= link_to "Tell Us About This Social Tags", edit_user_social_path(@social.user, @social) %></div>
                 <% else %>
-                  <div class="medium-12 columns user_complete_infolink"><%= "#{@user.firstname} currently has no interests" %></div>
+                  <div class="medium-12 columns user_complete_infolink"><%= "This Social Currently has no Tags" %></div>
                 <% end %>
                 <div class="content_info" style="padding: 15px 8px;">
                   <ul class="tags_fade">
-                    <li><%= 'chess' %></li>
-                    <li><%= 'jogging'  %></li>
-                    <li><%= 'dogs' %></li>
-                    <li><%= 'skipping' %></li>
-                    <li><%= 'gym' %></li>
+                    <li><%= 'networking' %></li>
+                    <li><%= 'management'  %></li>
+                    <li><%= 'finance' %></li>
+                    <li><%= 'startups' %></li>
+                    <li><%= 'finTech' %></li>
                     <li><%= 'startups' %></li>
                     <li><%= 'entreprenuers' %></li>
-                    <li><%= 'jazz'  %></li>
-                    <li><%= 'soul' %></li>
-                    <li><%= 'classics' %></li>
-                    <li><%= 'love' %></li>
-                    <li><%= 'travelling' %></li>
-                    <li><%= 'dancing' %></li>
-                    <li><%= 'polo' %></li>
-                    <li><%= 'cycling' %></li>
+                    <li><%= 'foodTech'  %></li>
+                    <li><%= 'development' %></li>
+                    <li><%= 'wealth management' %></li>
+                    <li><%= 'sports' %></li>
                   </ul>
                 </div>
               </div>
