@@ -44,18 +44,27 @@
         <li>
           <% if current_user %>
             <% if @social.category_invite.present? && @social.category_invite.name == "just my guest" %>
-              <div class="social_btn btn_request"> <%= link_to "request to be invited", "#" %></div>
+              <div class="social_profile_btn btn_request"> <%= link_to "request to be invited", "#" %></div>
             <% else %>
               <span class="attendance">
                 <% unless current_user.attending_socials.exists?(id: @social.id)  %>
-                    <div><%= link_to 'Attend', attending_socials_path(social_id: @social), method: :post %></div>
+                    <div class="social_profile_btn btn_social_attend"><%= link_to 'Attend', attending_socials_path(social_id: @social), method: :post %></div>
                 <% else %>
-                    <div class="social_btn btn_unattend"><%= link_to 'Un-Attend Social', attending_social_path(@social), method: :delete %></div>
+                    <div class="social_profile_btn btn_social_unattend"><%= link_to 'Un-Attend Social', attending_social_path(@social), method: :delete %></div>
                 <% end %>
               </span>
             <% end %>
           <% end %>
         </li> 
+        <li>
+          <% if current_user %>
+            <% unless current_user.favourite_socials.exists?(id: @social.id)  %>
+              <div class="social_profile_btn btn_social_save"><%= link_to 'Save', favourite_socials_path(social_id: @social), method: :post %></div>
+            <% else %>
+              <div class="social_profile_btn btn_social_unsave"><%= link_to 'Un-Save', favourite_social_path(@social), method: :delete %></div>
+            <% end %>
+          <% end %>
+        </li>
         <!-- <%# unless current_user.id == @user.id %>
           <li class="follow_unfollow_form">
             <%# if current_user.following?(@user) %>
