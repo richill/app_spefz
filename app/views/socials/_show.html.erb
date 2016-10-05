@@ -65,6 +65,11 @@
             <% end %>
           <% end %>
         </li>
+        <% if @social.user == current_user %>
+          <li>
+            <div class="social_profile_btn btn_edit"><%= link_to "edit", edit_user_social_path(@social.user, @social) %></div>
+          </li>
+        <% end %>
       </ul>
     </div>
   </div>
@@ -176,7 +181,7 @@
             <div class="header"><div class="header_content"><i class="fa fa-users" aria-hidden="true"></i> <%= link_to "location", "#" %></div></div>
             <div class="content">
               <div class="content_info">
-                <div><%= "Sky Lounge, #{@social.address}, #{@social.city}, #{@social.category_country.name}, #{@social.postcode}" %></div>
+                <div><%= "#{@social.venuename}, #{@social.address}, #{@social.city}, #{@social.category_country.name}, #{@social.postcode}" %></div>
               </div>
             </div>
           </div>

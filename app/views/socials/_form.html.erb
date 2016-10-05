@@ -8,6 +8,7 @@
     <%= f.input :description, label: "About Social" %>
     <%= f.text_field :tag_list, value: @social.tag_list.to_s, placeholder: "chess, jogging, dogs, skipping, gym, startups, entreprenuers, jazz..." %>
     <%= f.association :category_topic, collection: CategoryTopic.all, prompt: "select a category", label: "Social Category" %>
+    <%= f.input :venuename, label: "venue nam", placeholder: "sky lounge" %>
     <%= f.input :address, label: "Location", placeholder: "address" %>
     <%= f.input :city, label: false, placeholder: "city" %>
     <%= f.association :category_country, collection: CategoryCountry.all, prompt: "select a country", placeholder: "Select Country", label: false %>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160927135344) do
+ActiveRecord::Schema.define(version: 20161005221848) do
 
   create_table "attendances", force: :cascade do |t|
     t.integer  "attendable_id"
@@ -180,6 +180,7 @@ ActiveRecord::Schema.define(version: 20160927135344) do
     t.integer  "quantity_men"
     t.integer  "quantity_women"
     t.integer  "category_quantitygender_id"
+    t.string   "venuename"
   end
 
   create_table "taggings", force: :cascade do |t|
