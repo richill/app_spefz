@@ -1,72 +1,8 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @social.title %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @social.description %>
-</p>
-
-<p>
-  <strong>Address:</strong>
-  <%= @social.address %>
-</p>
-
-<p>
-  <strong>Postcode:</strong>
-  <%= @social.postcode %>
-</p>
-
-<p>
-
-  <% if current_user %>
-    <% if @social.category_invite.present? && @social.category_invite.name == "just my guest" %>
-      <button>request to be invited</button>
-    <% else %>
-      <span class="attendance">
-        <% unless current_user.attending_socials.exists?(id: @social.id)  %>
-          <span data-tooltip aria-haspopup="true" data-options="disable_for_touch:true" class="tip-right add_fav" title="Attend Social">
-            <button><%= link_to 'Attend', attending_socials_path(social_id: @social), method: :post %></button>
-          </span>
-        <% else %>
-          <span data-tooltip aria-haspopup="true" data-options="disable_for_touch:true" class="tip-right remove_fav" title="Un-Attend Social">
-            <button><%= link_to 'Un-Attend Social', attending_social_path(@social), method: :delete %></button>
-          </span>
-        <% end %>
-      </span>
-    <% end %>
-  <% end %>
-</p>
-
-<p>
-  <ul>
-    <li><%= raw @social.tag_list.map { |t| link_to t, social_tag_path(t) }.join(" ") %></li> 
-  </ul>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @social.user_id %>
-</p>
-
-<%= link_to 'Edit', edit_user_social_path(@social.user, @social) %> |
-<%= link_to 'Back', socials_path %>
-
-
-
-<p>
-  <div class="comments_conatiner">
-    <div class="header">comments <span>(<%= @social.comments.count %>)</span></div>
-    <% if current_user %>
-      <div><%= render 'shared/content_comments_form' %></div>
-    <% end %>
-    <div><%= render 'shared/content_comments' %></div>
+<% provide(:title, "Socials") %>
+<div>
+  <div class>
+      <%= render 'shared/header' %>
+      <%= render 'show' %>
+      <%= render 'shared/footer' %>
   </div>
-</p>
-
-
-
-
+</div>
