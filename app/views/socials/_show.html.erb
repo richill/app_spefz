@@ -1,9 +1,205 @@
+<div class="medium-12 columns social_profile_page_section">
 
+  <!-- upper section -->
+  <div class="medium-12 columns upper_section">
+    <div class="profile_banner">
+      <div class="profile_inner_banner">
+        <div class="header"><%= render 'shared/header' %></div>
+        <div class="upper_profile_content">
+          <div class="profile_img_main_cover">
+            <% if @social.image.present? %>
+              <div><%= image_tag(@social.image_url) %></div>
+            <% else %>
+              <div class="img_default"><%= image_tag("img-profile-image-default.png") %></div>
+            <% end %>
+          </div>
+          <div class="user_name"><%= "#{@social.title}" %></div>
+          <div class="user_location">
+            <i class="fa fa-map-pin" aria-hidden="true"></i> <span><%= "#{@social.city}" %></span>, <span><%= "#{@social.category_country.name}" %></span>
+            <%# if @user.profession? %>
+              <!-- <span class="divider">|</span>
+              <i class="fa fa-suitcase" aria-hidden="true"></i> 
+              <span><%# @user.profession %></span> -->
+            <%# end %>
+          </div>
+          <div class="clear"></div>
+          <div class="user_social_icons">
+            <%# if @user != current_user %>
+              <!-- <span class="socialicon_cover_fb"><%= link_to '', '#', class: "fa fa-envelope" %></span>  -->
+            <%# end %>
+            <span class="socialicon_cover_in"><%= link_to '', '#', class: "fa fa-linkedin" %></span> 
+            <span class="socialicon_cover_fb"><%= link_to '', '#', class: "fa fa-facebook" %></span> 
+            <span class="socialicon_cover_tt"><%= link_to '', '#', class: "fa fa-twitter" %></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
+  <!-- middle section -->
+  <div class="medium-12 columns middle_section">
+    <div class="middle_inner_section">
+      <ul class="inline-list left">
+        <li><span class="header">past socials:</span> <span class="content">15</span></li>
+        <li><span class="header">upcoming socials:</span> <span class="content">10</span></li>
+      </ul>
+      <ul class="inline-list right">
+        <!-- <%# unless current_user.id == @user.id %>
+          <li class="follow_unfollow_form">
+            <%# if current_user.following?(@user) %>
+              <span class=""><%# render 'user_unfollow' %></span>
+            <%# else %>
+              <span class=""><%# render 'user_follow' %></span>
+            <%# end %>
+          </li>
 
+          <li class="friend_unfriend_form">
+            <%# if current_user.friended?(@user) %>
+              <span class=""><%# render 'user_friend_request_cancel' %></span>
+            <%# else %>
+              <span class=""><%# render 'user_friend_request' %></span>
+            <%# end %>
+          </li>
 
+          <li class="btn btn_invite"><%# link_to "invite to social", "#" %></li>
+        <%# else %>
+          <li class="btn btn_followings_stats">
+            <a href="#" data-reveal-id="myModal-users-followings"><%# "following [#{@user.followings.count}]" %></a>
+            <span><%# render 'shared/modal_users_followings' %></span>
+          </li>
+          <li class="btn btn_followers_stats">
+            <a href="#" data-reveal-id="myModal-users-followers"><%# "followers [#{@user.followers.count}]" %></a>
+            <span><%# render 'shared/modal_users_followers' %></span>
+          </li>
+          <li class="btn btn_friend_stats"><%# link_to "friends [14]", "#" %></li>
+        <%# end %> -->
+      </ul>
+    </div>
+  </div>
 
+  <!-- lower section -->
+  <div class="medium-12 columns lower_section">
+    <div class="lower_inner_section">
+      <!-- left column -->
+      <div class="medium-3 columns column_left">
+        <!-- about social -->
+        <%# if current_user.id == @user.id %>
+          <% if @social.description? %>
+          <div class="medium-12 columns left_container">
+            <div class="medium-12 columns left_inner_container aboutme_container">
+              <div class="header"><div class="header_content"><i class="fa fa-user" aria-hidden="true"></i> about social</div></div>
+              <div class="content">
+                <div class="content_info">
+                  <%= truncate(@social.description, length: 260) %> 
+                  <span><a href="#" data-reveal-id="myModal-users-aboutme">view</a></span>
+                  <div><%= render 'shared/modal_users_aboutme' %></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <% else %>
+          <div class="medium-12 columns left_container">
+            <div class="medium-12 columns left_inner_container aboutme_container">
+              <div class="header"><div class="header_content"><i class="fa fa-user" aria-hidden="true"></i> about me</div></div>
+              <div class="content">
+                <div class="content_info">
+                  <%= link_to "Tell Us About You", edit_user_path(current_user) %>
+                </div>
+              </div>
+            </div>
+          </div>
+          <% end %>
+        <%# end %>
 
+        <!-- interests -->
+        <% if !@user.tags.blank? %>
+          <div class="medium-12 columns left_container">
+            <div class="medium-12 columns left_inner_container interest_container">
+              <div class="header"><div class="header_content"><i class="fa fa-street-view" aria-hidden="true"></i> interests</div></div>
+              <div class="content">
+                <div class="content_info" style="padding: 15px 8px;">
+                  <ul class="tags">
+                    <li><%= raw @user.tag_list.map { |t| link_to t, tag_path(t) }.join(" ") %></li> 
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% else %>
+          <div class="medium-12 columns left_container">
+            <div class="medium-12 columns left_inner_container interest_container">
+              <div class="header"><div class="header_content"><i class="fa fa-street-view" aria-hidden="true"></i> interests</div></div>
+              <div class="content">
+                <% if current_user.id == @user.id %>
+                  <div class="medium-12 columns user_complete_infolink"><%= link_to "Tell Us About Your Interests", edit_user_path(current_user) %></div>
+                <% else %>
+                  <div class="medium-12 columns user_complete_infolink"><%= "#{@user.firstname} currently has no interests" %></div>
+                <% end %>
+                <div class="content_info" style="padding: 15px 8px;">
+                  <ul class="tags_fade">
+                    <li><%= 'chess' %></li>
+                    <li><%= 'jogging'  %></li>
+                    <li><%= 'dogs' %></li>
+                    <li><%= 'skipping' %></li>
+                    <li><%= 'gym' %></li>
+                    <li><%= 'startups' %></li>
+                    <li><%= 'entreprenuers' %></li>
+                    <li><%= 'jazz'  %></li>
+                    <li><%= 'soul' %></li>
+                    <li><%= 'classics' %></li>
+                    <li><%= 'love' %></li>
+                    <li><%= 'travelling' %></li>
+                    <li><%= 'dancing' %></li>
+                    <li><%= 'polo' %></li>
+                    <li><%= 'cycling' %></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+
+      <!-- middle column -->
+      <div class="medium-6 columns column_middle">
+        <div class="left_container middle_container">
+          <div class="medium-12 columns middle_inner_container">
+            <div class="medium-12 columns header">
+              <% if @user.socials.present? %>
+                <div class="medium-4 columns header_content evts_feed">feed</div>
+                <div class="medium-4 columns header_content evts_upcoming">upcoming socials</div>
+                <div class="medium-4 columns header_content evts_past">past socials</div>
+              <% else %>
+                <div class="medium-12 columns header_content evts_feed">feed</div>
+              <% end %>
+            </div>
+            <div class="clear"></div>
+            <div class="content">
+              <div class="content_info evts_feed_content"><%= render 'shared/content_users_feed' %></div>
+              <div class="content_info evts_upcoming_content hide"><%= render 'shared/content_users_upcomingsocials' %></div>
+              <div class="content_info evts_past_content hide"><%= render 'shared/content_users_pastsocials' %></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- right column -->
+      <div class="medium-3 columns column_right">
+        <div class="medium-12 columns right_container">
+          <div class="medium-12 columns right_inner_container network_container">
+            <div class="header"><div class="header_content"><i class="fa fa-users" aria-hidden="true"></i> <%= link_to "network [114]", "#" %></div></div>
+            <div class="content">
+              <div class="content_info">
+                <div><%= render 'shared/content_users_network' %></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
 
 <div>-------------------------------------</div>
 <p id="notice"><%= notice %></p>

@@ -3,48 +3,48 @@
     File: views / users / _show.html.erb
   =========================================*/
 
-.users_profile_page_section {
+.user_profile_page_section {
   background: url("img_background_main.png") repeat;
   padding: 0px !important;
 }
 
 // ======== upper_section ========
-.users_profile_page_section .upper_section {
+.user_profile_page_section .upper_section {
   padding: 0px !important;
 }
 
-.users_profile_page_section .upper_section .profile_banner {
+.user_profile_page_section .upper_section .profile_banner {
   background: url("img_background.jpg") no-repeat;
   background-position: 0% 60%;
   background-size: cover;
 }
 
-.users_profile_page_section .upper_section .profile_inner_banner {
+.user_profile_page_section .upper_section .profile_inner_banner {
   background-color: rgba(0, 0, 0, 0.6) !important;
   text-align: center;
 }
 
-.users_profile_page_section .header .nav_user_section {
+.user_profile_page_section .header .nav_user_section {
   background-color: rgba(255, 255, 255, 0.2) !important;
 }
 
-.users_profile_page_section .header .create_button a {
+.user_profile_page_section .header .create_button a {
   background-color: #E34B51 !important;
 }
 
-.users_profile_page_section .header .create_button a:hover {
+.user_profile_page_section .header .create_button a:hover {
   background-color: #283041 !important;
 }
 
-.users_profile_page_section .header .nav_user_section .notification_li .fa {
+.user_profile_page_section .header .nav_user_section .notification_li .fa {
   color: rgba(255,255,255, 0.8) !important;
 }
 
-.users_profile_page_section .upper_section .upper_profile_content {
+.user_profile_page_section .upper_section .upper_profile_content {
   padding: 25px 0px;
 }
 
-.users_profile_page_section .upper_section .profile_img_main_cover {
+.user_profile_page_section .upper_section .profile_img_main_cover {
   background-color: rgba(255, 255, 255, 0.2) !important;
   padding: 10px;
   width: 150px;
@@ -53,18 +53,18 @@
   border-radius: 200px;
 }
 
-.users_profile_page_section .upper_section .profile_img_main_cover img {
+.user_profile_page_section .upper_section .profile_img_main_cover img {
   width: 150px;
   border-radius: 200px !important;
 }
 
-.users_profile_page_section .upper_section .profile_img_main_cover .img_default img {
+.user_profile_page_section .upper_section .profile_img_main_cover .img_default img {
   width: 150px;
   border-radius: 200px !important;
   opacity: 0.65 !important;
 }
 
-.users_profile_page_section .upper_section .user_name {
+.user_profile_page_section .upper_section .user_name {
   font-family: 'Lato', sans-serif;
   font-size: 35px;
   font-weight: 300;
@@ -75,7 +75,7 @@
   word-spacing: 3px;
 }
 
-.users_profile_page_section .upper_section .user_location {
+.user_profile_page_section .upper_section .user_location {
   font-family: 'Lato', sans-serif;
   font-size: 12px;
   font-weight: 300;
@@ -86,19 +86,19 @@
   letter-spacing: 1px;
 }
 
-.users_profile_page_section .users_profile_page_section .upper_section .divider {
+.user_profile_page_section .upper_section .divider {
   margin: 0px 8px;
 }
 
-.users_profile_page_section .upper_section .user_location i {
+.user_profile_page_section .upper_section .user_location i {
   margin-right: 2px;
 }
 
-.users_profile_page_section .upper_section .user_social_icons {
+.user_profile_page_section .upper_section .user_social_icons {
   margin-top: 10px
 }
 
-.users_profile_page_section .upper_section .user_social_icons .fa-envelope {
+.user_profile_page_section .upper_section .user_social_icons .fa-envelope {
   font-size: 15px;
   color: #fff !important; 
   padding: 16px 18px;
@@ -106,7 +106,7 @@
   margin: 0px 2px;
 }
 
-.users_profile_page_section .upper_section .user_social_icons .fa-linkedin {
+.user_profile_page_section .upper_section .user_social_icons .fa-linkedin {
   font-size: 17px;
   color: #fff !important;
   padding: 15px 19px;
@@ -114,7 +114,7 @@
   margin: 0px 2px;
 }
 
-.users_profile_page_section .upper_section .user_social_icons .fa-facebook {
+.user_profile_page_section .upper_section .user_social_icons .fa-facebook {
   font-size: 15px;
   color: #fff !important; 
   padding: 16px 20px;
@@ -122,7 +122,7 @@
   margin: 0px 2px;
 }
 
-.users_profile_page_section .upper_section .user_social_icons .fa-twitter {
+.user_profile_page_section .upper_section .user_social_icons .fa-twitter {
   font-size: 15px;
   color: #fff !important; 
   padding: 16px 18px;
@@ -130,34 +130,34 @@
   margin: 0px 2px;
 }
 
-.users_profile_page_section .upper_section .user_social_icons a:hover {
+.user_profile_page_section .upper_section .user_social_icons a:hover {
   color: #E34B51 !important; 
 }
 
 
 // ======== middle_section ========
-.users_profile_page_section .middle_section {
+.user_profile_page_section .middle_section {
   background-color: rgba(255, 255, 255, 0.7) !important;
   // background-color: #fff !important;
   padding: 8px 0px;
 }
 
-.users_profile_page_section .middle_section .middle_inner_section {
+.user_profile_page_section .middle_section .middle_inner_section {
   background-color: red;
   width: 1170px !important;
   margin: auto;
 }
 
-.users_profile_page_section .middle_section .left {
+.user_profile_page_section .middle_section .left {
   margin-top: 10px;
   margin-bottom: 10px;
 }
 
-.users_profile_page_section .middle_section .left li span {
+.user_profile_page_section .middle_section .left li span {
   float: left;
 }
 
-.users_profile_page_section .middle_section .left .header {
+.user_profile_page_section .middle_section .left .header {
   font-family: 'Lato', sans-serif;
   font-size: 14px;
   font-weight: bold;
@@ -167,18 +167,18 @@
   margin-right: 4px;
 }
 
-.users_profile_page_section .middle_section .left .content {
+.user_profile_page_section .middle_section .left .content {
   font-family: 'Lato', sans-serif;
   font-size: 14px;
   font-weight: bold;
   color: #414249;
 }
 
-.users_profile_page_section .middle_section .right {
+.user_profile_page_section .middle_section .right {
   margin-bottom: 0px;
 }
 
-.users_profile_page_section .middle_section .right .btn a {
+.user_profile_page_section .middle_section .right .btn a {
   font-family: 'Lato', sans-serif;
   font-size: 13px;
   font-weight: 300;
@@ -190,7 +190,7 @@
   letter-spacing: 1px;
 }
 
-.users_profile_page_section .btn_follow_submit {
+.user_profile_page_section .btn_follow_submit {
   font-family: 'Lato', sans-serif;
   font-size: 13px;
   font-weight: 300;
@@ -207,14 +207,14 @@
   -o-transition: all 0.3s ease; 
 }
 
-.users_profile_page_section .btn_follow_submit:hover {
+.user_profile_page_section .btn_follow_submit:hover {
   background-color: rgba(47, 63, 91, 0.5) !important;
   -webkit-transition: all 0.3s ease; 
   -moz-transition: all 0.3s ease; 
   -o-transition: all 0.3s ease; 
 }
 
-.users_profile_page_section .btn_unfollow_submit {
+.user_profile_page_section .btn_unfollow_submit {
   font-family: 'Lato', sans-serif;
   font-size: 13px;
   font-weight: 300;
@@ -231,7 +231,7 @@
   -o-transition: all 0.3s ease; 
 }
 
-.users_profile_page_section .btn_unfollow_submit:hover {
+.user_profile_page_section .btn_unfollow_submit:hover {
   background-color: #E34B51 !important;
   -webkit-transition: all 0.3s ease; 
   -moz-transition: all 0.3s ease; 
@@ -239,7 +239,7 @@
 }
 
 
-.users_profile_page_section .btn_friend_request_submit {
+.user_profile_page_section .btn_friend_request_submit {
   font-family: 'Lato', sans-serif;
   font-size: 13px;
   font-weight: 300;
@@ -256,14 +256,14 @@
   -o-transition: all 0.3s ease; 
 }
 
-.users_profile_page_section .btn_friend_request_submit:hover {
+.user_profile_page_section .btn_friend_request_submit:hover {
   background-color: rgba(47, 63, 91, 0.5) !important;
   -webkit-transition: all 0.3s ease; 
   -moz-transition: all 0.3s ease; 
   -o-transition: all 0.3s ease; 
 }
 
-.users_profile_page_section .btn_friend_request_cancel_submit {
+.user_profile_page_section .btn_friend_request_cancel_submit {
   font-family: 'Lato', sans-serif;
   font-size: 13px;
   font-weight: 300;
@@ -281,49 +281,49 @@
   -o-transition: all 0.3s ease; 
 }
 
-.users_profile_page_section .btn_friend_request_cancel_submit:hover {
+.user_profile_page_section .btn_friend_request_cancel_submit:hover {
   background-color: rgba(47, 63, 91, 0.5) !important;
   -webkit-transition: all 0.3s ease; 
   -moz-transition: all 0.3s ease; 
   -o-transition: all 0.3s ease; 
 }
 
-.users_profile_page_section .middle_section .right .btn a:hover {
+.user_profile_page_section .middle_section .right .btn a:hover {
   background-color: rgba(47, 63, 91, 0.5) !important;
   -webkit-transition: all 0.3s ease; 
   -moz-transition: all 0.3s ease; 
   -o-transition: all 0.3s ease; 
 }
 
-.users_profile_page_section .middle_section .right .btn_friend a {
+.user_profile_page_section .middle_section .right .btn_friend a {
   background-color: #58CDA6 !important;
   -webkit-transition: all 0.3s ease; 
   -moz-transition: all 0.3s ease; 
   -o-transition: all 0.3s ease; 
 }
 
-.users_profile_page_section .middle_section .right .btn_invite a {
+.user_profile_page_section .middle_section .right .btn_invite a {
   background-color: #4BB4BF !important;
   -webkit-transition: all 0.3s ease; 
   -moz-transition: all 0.3s ease; 
   -o-transition: all 0.3s ease; 
 }
 
-.users_profile_page_section .middle_section .right .btn_followings_stats a {
+.user_profile_page_section .middle_section .right .btn_followings_stats a {
   background-color: #4BB4BF !important;
   -webkit-transition: all 0.3s ease; 
   -moz-transition: all 0.3s ease; 
   -o-transition: all 0.3s ease; 
 }
 
-.users_profile_page_section .middle_section .right .btn_followers_stats a {
+.user_profile_page_section .middle_section .right .btn_followers_stats a {
   background-color: #E34B51 !important;
   -webkit-transition: all 0.3s ease; 
   -moz-transition: all 0.3s ease; 
   -o-transition: all 0.3s ease; 
 }
 
-.users_profile_page_section .middle_section .right .btn_friend_stats a {
+.user_profile_page_section .middle_section .right .btn_friend_stats a {
   background-color: #58CDA6 !important;
   -webkit-transition: all 0.3s ease; 
   -moz-transition: all 0.3s ease; 
@@ -332,26 +332,26 @@
 
 
 // ======== lower_section ========
-.users_profile_page_section .lower_section {
+.user_profile_page_section .lower_section {
   padding: 15px 0px;
 }
 
-.users_profile_page_section .lower_section .lower_inner_section {
+.user_profile_page_section .lower_section .lower_inner_section {
   width: 1170px !important;
   margin: auto;
   height: 400px;
 }
 
 // -------- column_left --------
-.users_profile_page_section .column_left {
+.user_profile_page_section .column_left {
   padding: 0px !important;
 }
 
-.users_profile_page_section .column_left .left_container {
+.user_profile_page_section .column_left .left_container {
   padding: 5px;
 }
 
-.users_profile_page_section .column_left .left_container .left_inner_container {
+.user_profile_page_section .column_left .left_container .left_inner_container {
   font-family: 'Lato', sans-serif;
   font-size: 13px;
   font-weight: 300;
@@ -359,89 +359,89 @@
   background-color: #fff;
 }
 
-.users_profile_page_section .column_left .left_container .header {
+.user_profile_page_section .column_left .left_container .header {
   text-transform: uppercase;
   font-weight: bold;
   border-bottom: 1px solid #7C93A7;
 }
 
-.users_profile_page_section .column_left .left_container .header .header_content {
+.user_profile_page_section .column_left .left_container .header .header_content {
   padding: 9px 0px;
   text-align: center;
 }
 
-.users_profile_page_section .column_left .left_container .content .content_info {
+.user_profile_page_section .column_left .left_container .content .content_info {
   padding: 15px;
 }
 
-.users_profile_page_section .column_left .left_container .aboutme_container {
+.user_profile_page_section .column_left .left_container .aboutme_container {
   background-color: #4BB4BF !important;
   color: #fff !important;
   padding: 0px !important;
 }
 
-.users_profile_page_section .column_left .left_container .aboutme_container .header {
+.user_profile_page_section .column_left .left_container .aboutme_container .header {
   border-bottom: 1px solid #fff !important;
   letter-spacing: 1px !important;
 }
 
-.users_profile_page_section .column_left .left_container .aboutme_container .content_info {
+.user_profile_page_section .column_left .left_container .aboutme_container .content_info {
   word-spacing: 3px !important;
 }
 
-.users_profile_page_section .aboutme_container a {
+.user_profile_page_section .aboutme_container a {
   color: #283041 !important;
   font-size: 12px;
 }
 
-.users_profile_page_section .aboutme_container a:hover {
+.user_profile_page_section .aboutme_container a:hover {
   text-decoration: underline;
 }
 
-.users_profile_page_section .column_left .left_container .interest_container {
+.user_profile_page_section .column_left .left_container .interest_container {
   background-color: #58CDA6 !important;
   color: #fff !important;
   padding: 0px 0px 10px !important;
   max-height: 254px !important;
 }
 
-.users_profile_page_section .column_left .left_container .interest_container .header {
+.user_profile_page_section .column_left .left_container .interest_container .header {
   border-bottom: 1px solid #fff !important;
   letter-spacing: 1px !important;
 }
 
-.users_profile_page_section .column_left .left_container .interest_container .content {
+.user_profile_page_section .column_left .left_container .interest_container .content {
   background-color: #58CDA6 !important;
   padding: 0px !important;
   height: 187px;
   overflow: scroll;
 }
 
-.users_profile_page_section .user_complete_infolink a {
+.user_profile_page_section .user_complete_infolink a {
   color: #283041 !important;
   font-size: 12px;
   text-transform: capitalize !important;
 }
 
-.users_profile_page_section .user_complete_infolink a:hover {
+.user_profile_page_section .user_complete_infolink a:hover {
   text-decoration: underline !important;
 }
 
-.users_profile_page_section .user_complete_infolink {
+.user_profile_page_section .user_complete_infolink {
   color: #283041 !important;
   font-size: 12px;
   text-transform: capitalize !important;
   padding: 15px 27px 10px !important;
 }
 
-.users_profile_page_section .column_left .left_container .interest_container .content_info .tags {
+.user_profile_page_section .column_left .left_container .interest_container .content_info .tags {
   margin: 0;
   padding: 0;
   right: 24px;
   list-style: none;
 }
 
-.users_profile_page_section .column_left .left_container .interest_container .content_info .tags li, .tags a {
+.user_profile_page_section .column_left .left_container .interest_container .content_info .tags li, .tags a {
   float: left;
   height: 24px;
   line-height: 24px;
@@ -450,7 +450,7 @@
   margin-bottom: 5px;
 }
 
-.users_profile_page_section .column_left .left_container .interest_container .content_info .tags a {
+.user_profile_page_section .column_left .left_container .interest_container .content_info .tags a {
   font-family: 'Lato', sans-serif;
   font-size: 12px;
   font-weight: 300;
@@ -462,7 +462,7 @@
   text-decoration: none;  
 }
 
-.users_profile_page_section .column_left .left_container .interest_container .content_info .tags a:before {
+.user_profile_page_section .column_left .left_container .interest_container .content_info .tags a:before {
   content: "";
   float: left;
   position: absolute;
@@ -475,7 +475,7 @@
   border-width: 12px 12px 12px 0;    
 }
 
-.users_profile_page_section .column_left .left_container .interest_container .content_info .tags a:after{
+.user_profile_page_section .column_left .left_container .interest_container .content_info .tags a:after{
   content: "";
   position: absolute;
   top: 10px;
@@ -492,23 +492,23 @@
   box-shadow: -1px -1px 2px #004977;
 }
 
-.users_profile_page_section .column_left .left_container .interest_container .content_info .tags a:hover {
+.user_profile_page_section .column_left .left_container .interest_container .content_info .tags a:hover {
   text-decoration: underline;
   background: #2B3547 !important;
 } 
 
-.users_profile_page_section .column_left .left_container .interest_container .content_info .tags a:hover:before {
+.user_profile_page_section .column_left .left_container .interest_container .content_info .tags a:hover:before {
   border-color:transparent #2B3547 transparent transparent;
 }
 
-.users_profile_page_section .column_left .left_container .interest_container .content_info .tags_fade {
+.user_profile_page_section .column_left .left_container .interest_container .content_info .tags_fade {
   margin: 0;
   padding: 0;
   right: 24px;
   list-style: none;
 }
 
-.users_profile_page_section .column_left .left_container .interest_container .content_info .tags_fade li {
+.user_profile_page_section .column_left .left_container .interest_container .content_info .tags_fade li {
   float: left;
   height: 24px;
   line-height: 24px;
@@ -517,7 +517,7 @@
   margin-bottom: 5px;
 }
 
-.users_profile_page_section .column_left .left_container .interest_container .content_info .tags_fade li {
+.user_profile_page_section .column_left .left_container .interest_container .content_info .tags_fade li {
   font-family: 'Lato', sans-serif;
   font-size: 12px;
   font-weight: 300;
@@ -530,7 +530,7 @@
   opacity: 0.3 !important; 
 }
 
-.users_profile_page_section .column_left .left_container .interest_container .content_info .tags_fade li:before {
+.user_profile_page_section .column_left .left_container .interest_container .content_info .tags_fade li:before {
   content: "";
   float: left;
   position: absolute;
@@ -543,7 +543,7 @@
   border-width: 12px 12px 12px 0;    
 }
 
-.users_profile_page_section .column_left .left_container .interest_container .content_info .tags_fade li:after{
+.user_profile_page_section .column_left .left_container .interest_container .content_info .tags_fade li:after{
   content: "";
   position: absolute;
   top: 10px;
@@ -560,25 +560,25 @@
   box-shadow: -1px -1px 2px #004977;
 }
 
-.users_profile_page_section .column_left .left_container .interest_container .content_info .tags_fade li:hover {
+.user_profile_page_section .column_left .left_container .interest_container .content_info .tags_fade li:hover {
   background: #2B3547 !important;
 } 
 
-.users_profile_page_section .column_left .left_container .interest_container .content_info .tags_fade li:hover:before {
+.user_profile_page_section .column_left .left_container .interest_container .content_info .tags_fade li:hover:before {
   border-color:transparent #2B3547 transparent transparent;
 }
 
 
 // -------- column_middle --------
-.users_profile_page_section .column_middle {
+.user_profile_page_section .column_middle {
   padding: 0px !important;
 }
 
-.users_profile_page_section .column_middle .middle_container {
+.user_profile_page_section .column_middle .middle_container {
   padding: 5px;
 }
 
-.users_profile_page_section .column_middle .middle_container .middle_inner_container {
+.user_profile_page_section .column_middle .middle_container .middle_inner_container {
   font-family: 'Lato', sans-serif;
   font-size: 13px;
   font-weight: 300;
@@ -587,7 +587,7 @@
   padding: 0px !important;
 }
 
-.users_profile_page_section .column_middle .middle_container .header {
+.user_profile_page_section .column_middle .middle_container .header {
   color: #fff;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -596,7 +596,7 @@
   text-align: center;
 }
 
-.users_profile_page_section .column_middle .middle_container .header .header_content {
+.user_profile_page_section .column_middle .middle_container .header .header_content {
   background-color: #283041;
   padding: 9px !important;
   border-bottom: 2px solid #E34B51;
@@ -605,7 +605,7 @@
   -o-transition: all 0.3s ease;
 }
 
-.users_profile_page_section .evts_feed:hover {
+.user_profile_page_section .evts_feed:hover {
   background-color: #E34B51 !important;
   cursor: pointer;
   -webkit-transition: all 0.3s ease; 
@@ -613,12 +613,12 @@
   -o-transition: all 0.3s ease;
 }
 
-.users_profile_page_section .evts_upcoming {
+.user_profile_page_section .evts_upcoming {
   border-left: 1px solid #fff;
   border-right: 1px solid #fff;
 }
 
-.users_profile_page_section .evts_upcoming:hover {
+.user_profile_page_section .evts_upcoming:hover {
   background-color: #E34B51 !important;
   cursor: pointer;
   -webkit-transition: all 0.3s ease; 
@@ -626,7 +626,7 @@
   -o-transition: all 0.3s ease;
 }
 
-.users_profile_page_section .evts_past:hover {
+.user_profile_page_section .evts_past:hover {
   background-color: #E34B51 !important;
   cursor: pointer;
   -webkit-transition: all 0.3s ease; 
@@ -634,21 +634,21 @@
   -o-transition: all 0.3s ease;
 }
 
-.users_profile_page_section .column_middle .middle_container .content .content_info {
+.user_profile_page_section .column_middle .middle_container .content .content_info {
   padding: 15px;
 }
 
 
 // -------- column_right --------
-.users_profile_page_section .column_right {
+.user_profile_page_section .column_right {
   padding: 0px !important;
 }
 
-.users_profile_page_section .column_right .right_container {
+.user_profile_page_section .column_right .right_container {
   padding: 5px;
 }
 
-.users_profile_page_section .column_right .right_container .right_inner_container {
+.user_profile_page_section .column_right .right_container .right_inner_container {
   font-family: 'Lato', sans-serif;
   font-size: 13px;
   font-weight: 300;
@@ -657,46 +657,46 @@
   min-height: 254px !important;
 }
 
-.users_profile_page_section .column_right .right_container .network_container {
+.user_profile_page_section .column_right .right_container .network_container {
   background-color: rgba(47, 63, 91, 0.1);
   padding: 0px !important;
 }
 
-.users_profile_page_section .column_right .right_container .network_container .header {
+.user_profile_page_section .column_right .right_container .network_container .header {
   border-bottom: 1px solid #fff !important;
   letter-spacing: 1px !important;
 }
 
-.users_profile_page_section .column_right .right_container .network_container .content_info {
+.user_profile_page_section .column_right .right_container .network_container .content_info {
   word-spacing: 3px !important;
 }
 
-.users_profile_page_section .column_right .right_container .header {
+.user_profile_page_section .column_right .right_container .header {
   text-transform: uppercase;
   font-weight: bold;
   border-bottom: 1px solid #7C93A7;
 }
 
-.users_profile_page_section .column_right .right_container .header .header_content {
+.user_profile_page_section .column_right .right_container .header .header_content {
   padding: 9px 0px;
   text-align: center;
 }
 
-.users_profile_page_section .column_right .right_container .header .header_content a {
+.user_profile_page_section .column_right .right_container .header .header_content a {
   color: #414249 !important;
   -webkit-transition: all 0.3s ease; 
   -moz-transition: all 0.3s ease; 
   -o-transition: all 0.3s ease;
 }
 
-.users_profile_page_section .column_right .right_container .header .header_content a:hover {
+.user_profile_page_section .column_right .right_container .header .header_content a:hover {
   color: #E34B51 !important;
   -webkit-transition: all 0.3s ease; 
   -moz-transition: all 0.3s ease; 
   -o-transition: all 0.3s ease;
 }
 
-.users_profile_page_section .column_right .right_container .content .content_info {
+.user_profile_page_section .column_right .right_container .content .content_info {
   padding: 15px;
 }
 
