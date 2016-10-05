@@ -1,0 +1,32 @@
+/*=========================================
+    Section: social profile page
+    File: views / socials / _show.html.erb
+    File: views / socials / _content_users_attendees.html.erb
+  =========================================*/
+
+.socials_attendees_section ul {
+  margin: 0px;
+}
+
+.socials_attendees_section ul li {
+  margin: 3px;
+  padding: 4px;
+  border-radius: 5px;
+  background-color: rgba(88, 205, 166, 0.2) !important;
+}
+
+.socials_attendees_section ul li img {
+  height: 48px;
+  width: 48px;
+  border-radius: 200px;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease;
+}
+
+.socials_attendees_section ul li img:hover {
+  opacity: 0.5;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease;
+}

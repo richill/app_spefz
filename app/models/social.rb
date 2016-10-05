@@ -17,7 +17,6 @@ class Social < ActiveRecord::Base
 
   mount_uploader :image, ImageUploader
 
-
   #selection
   def selection_BothAndOnly_men_and_women
     self.category_quantitygender.name == "only men" || self.category_quantitygender.name == "only women" || self.category_quantitygender.name == "both men & women"

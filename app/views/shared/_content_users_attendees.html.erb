@@ -1,0 +1,16 @@
+<div class="socials_attendees_section">
+  <div>
+    <ul class="inline-list">
+      <% @social.attendances.each do |attendant| %>
+        <li>
+          <% if attendant.user.image.present? %>
+            <%= link_to(image_tag(attendant.user.image_url, :alt =>  "alt text", :class =>"#"), user_path(attendant.user)) %>
+          <% else %>
+            <%= link_to(image_tag("img-profile-image-default.png", :alt =>  "alt text", :class =>"#"), user_path(attendant.user)) %>
+          <% end %>
+        </li> 
+      <% end %>
+    </ul>
+  </div>
+</div>
+

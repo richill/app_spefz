@@ -152,7 +152,7 @@
           <div class="medium-12 columns middle_inner_container">
             <div class="medium-12 columns header">
               <% if @social.user.socials.present? %>
-                <div class="medium-4 columns header_content evts_feed">feed</div>
+                <div class="medium-4 columns header_content evts_feed">wall</div>
                 <div class="medium-4 columns header_content evts_upcoming">upcoming socials</div>
                 <div class="medium-4 columns header_content evts_past">past socials</div>
               <% else %>
@@ -161,7 +161,7 @@
             </div>
             <div class="clear"></div>
             <div class="content">
-              <div class="content_info evts_feed_content"><%= render 'shared/content_socials_feed' %></div>
+              <div class="content_info evts_feed_content"><%= render 'shared/content_socials_wall' %></div>
               <div class="content_info evts_upcoming_content hide"><%= render 'shared/content_socials_upcomingsocials' %></div>
               <div class="content_info evts_past_content hide"><%= render 'shared/content_users_pastsocials' %></div>
             </div>
@@ -171,12 +171,23 @@
 
       <!-- right column -->
       <div class="medium-3 columns column_right">
-        <div class="medium-12 columns right_container">
-          <div class="medium-12 columns right_inner_container network_container">
-            <div class="header"><div class="header_content"><i class="fa fa-users" aria-hidden="true"></i> <%= link_to "attending [114]", "#" %></div></div>
+        <div class="medium-12 columns right_container_location">
+          <div class="medium-12 columns right_inner_container location_container">
+            <div class="header"><div class="header_content"><i class="fa fa-users" aria-hidden="true"></i> <%= link_to "location", "#" %></div></div>
             <div class="content">
               <div class="content_info">
-                <div><%= render 'shared/content_users_network' %></div>
+                <div><%= "Sky Lounge, #{@social.address}, #{@social.city}, #{@social.category_country.name}, #{@social.postcode}" %></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="medium-12 columns right_container">
+          <div class="medium-12 columns right_inner_container attendee_container">
+            <div class="header"><div class="header_content"><i class="fa fa-users" aria-hidden="true"></i> <%= link_to "attending [#{@social.attendances.count}]", "#" %></div></div>
+            <div class="content">
+              <div class="content_info">
+                <div><%= render 'shared/content_users_attendees' %></div>
               </div>
             </div>
           </div>
@@ -186,75 +197,6 @@
     </div>
   </div>
 </div>
-
-<div>-------------------------------------</div>
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @social.title %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @social.description %>
-</p>
-
-<p>
-  <strong>Address:</strong>
-  <%= @social.address %>
-</p>
-
-<p>
-  <strong>Postcode:</strong>
-  <%= @social.postcode %>
-</p>
-
-<p>
-  <% if current_user %>
-    <% if @social.category_invite.present? && @social.category_invite.name == "just my guest" %>
-      <button>request to be invited</button>
-    <% else %>
-      <span class="attendance">
-        <% unless current_user.attending_socials.exists?(id: @social.id)  %>
-          <span data-tooltip aria-haspopup="true" data-options="disable_for_touch:true" class="tip-right add_fav" title="Attend Social">
-            <button><%= link_to 'Attend', attending_socials_path(social_id: @social), method: :post %></button>
-          </span>
-        <% else %>
-          <span data-tooltip aria-haspopup="true" data-options="disable_for_touch:true" class="tip-right remove_fav" title="Un-Attend Social">
-            <button><%= link_to 'Un-Attend Social', attending_social_path(@social), method: :delete %></button>
-          </span>
-        <% end %>
-      </span>
-    <% end %>
-  <% end %>
-</p>
-
-<p>
-  <ul>
-    <li><%= raw @social.tag_list.map { |t| link_to t, social_tag_path(t) }.join(" ") %></li> 
-  </ul>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @social.user_id %>
-</p>
-
-<%= link_to 'Edit', edit_user_social_path(@social.user, @social) %> |
-<%= link_to 'Back', socials_path %>
-
-
-
-<p>
-  <div class="comments_conatiner">
-    <div class="header">comments <span>(<%= @social.comments.count %>)</span></div>
-    <% if current_user %>
-      <div><%= render 'shared/content_comments_form' %></div>
-    <% end %>
-    <div><%= render 'shared/content_comments' %></div>
-  </div>
-</p>
 
 
 

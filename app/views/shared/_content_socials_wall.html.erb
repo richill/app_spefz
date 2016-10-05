@@ -1,0 +1,13 @@
+<div>
+  <b>Wall</b> my name is Social Feed and Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.
+
+  <p>
+    <div class="comments_conatiner">
+      <div class="header">comments <span>(<%= @social.comments.count %>)</span></div>
+      <% if current_user %>
+        <div><%= render 'shared/content_comments_form' %></div>
+      <% end %>
+      <div><%= render 'shared/content_comments' %></div>
+    </div>
+  </p>
+</div>
