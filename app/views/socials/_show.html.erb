@@ -92,7 +92,7 @@
                 <div class="content_info">
                   <%= truncate(@social.description, length: 260) %> 
                   <span><a href="#" data-reveal-id="myModal-users-aboutme">view</a></span>
-                  <div><%= render 'shared/modal_users_aboutme' %></div>
+                  <div><%= render 'shared/modal_socials_aboutme' %></div>
                 </div>
               </div>
             </div>
@@ -112,14 +112,14 @@
         <%# end %>
 
         <!-- interests -->
-        <% if !@user.tags.blank? %>
+        <% if !@social.tags.blank? %>
           <div class="medium-12 columns left_container">
             <div class="medium-12 columns left_inner_container interest_container">
-              <div class="header"><div class="header_content"><i class="fa fa-street-view" aria-hidden="true"></i> interests</div></div>
+              <div class="header"><div class="header_content"><i class="fa fa-street-view" aria-hidden="true"></i> tags</div></div>
               <div class="content">
                 <div class="content_info" style="padding: 15px 8px;">
                   <ul class="tags">
-                    <li><%= raw @user.tag_list.map { |t| link_to t, tag_path(t) }.join(" ") %></li> 
+                    <li><%= raw @social.tag_list.map { |t| link_to t, social_tag_path(t) }.join(" ") %></li> 
                   </ul>
                 </div>
               </div>
@@ -165,7 +165,7 @@
         <div class="left_container middle_container">
           <div class="medium-12 columns middle_inner_container">
             <div class="medium-12 columns header">
-              <% if @user.socials.present? %>
+              <% if @social.user.socials.present? %>
                 <div class="medium-4 columns header_content evts_feed">feed</div>
                 <div class="medium-4 columns header_content evts_upcoming">upcoming socials</div>
                 <div class="medium-4 columns header_content evts_past">past socials</div>
@@ -175,8 +175,8 @@
             </div>
             <div class="clear"></div>
             <div class="content">
-              <div class="content_info evts_feed_content"><%= render 'shared/content_users_feed' %></div>
-              <div class="content_info evts_upcoming_content hide"><%= render 'shared/content_users_upcomingsocials' %></div>
+              <div class="content_info evts_feed_content"><%= render 'shared/content_socials_feed' %></div>
+              <div class="content_info evts_upcoming_content hide"><%= render 'shared/content_socials_upcomingsocials' %></div>
               <div class="content_info evts_past_content hide"><%= render 'shared/content_users_pastsocials' %></div>
             </div>
           </div>
@@ -187,7 +187,7 @@
       <div class="medium-3 columns column_right">
         <div class="medium-12 columns right_container">
           <div class="medium-12 columns right_inner_container network_container">
-            <div class="header"><div class="header_content"><i class="fa fa-users" aria-hidden="true"></i> <%= link_to "network [114]", "#" %></div></div>
+            <div class="header"><div class="header_content"><i class="fa fa-users" aria-hidden="true"></i> <%= link_to "attending [114]", "#" %></div></div>
             <div class="content">
               <div class="content_info">
                 <div><%= render 'shared/content_users_network' %></div>
