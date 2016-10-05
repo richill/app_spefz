@@ -5,7 +5,6 @@
 
 .users_profile_page_section {
   background: url("img_background_main.png") repeat;
-  // height: 800px;
   padding: 0px !important;
 }
 
@@ -333,16 +332,12 @@
 }
 
 
-
-
 // ======== lower_section ========
 .users_profile_page_section .lower_section {
   padding: 15px 0px;
-  // background-color: blue; //////////////////////////////comment out
 }
 
 .users_profile_page_section .lower_section .lower_inner_section {
-  // background-color: green; //////////////////////////////comment out
   width: 1170px !important;
   margin: auto;
   height: 400px;
@@ -350,7 +345,6 @@
 
 // -------- column_left --------
 .users_profile_page_section .column_left {
-  // background-color: red; //////////////////////////////comment out
   padding: 0px !important;
 }
 
@@ -383,7 +377,6 @@
 
 .users_profile_page_section .column_left .left_container .aboutme_container {
   background-color: #4BB4BF !important;
-  //background-color: #3c88b5 !important;
   color: #fff !important;
   padding: 0px !important;
 }
@@ -579,7 +572,6 @@
 
 // -------- column_middle --------
 .users_profile_page_section .column_middle {
-  // background-color: red; //////////////////////////////comment out
   padding: 0px !important;
 }
 
@@ -650,7 +642,6 @@
 
 // -------- column_right --------
 .users_profile_page_section .column_right {
-  // background-color: red; //////////////////////////////comment out
   padding: 0px !important;
 }
 
@@ -705,7 +696,6 @@
   -moz-transition: all 0.3s ease; 
   -o-transition: all 0.3s ease;
 }
-
 
 .users_profile_page_section .column_right .right_container .content .content_info {
   padding: 15px;
