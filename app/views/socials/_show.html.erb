@@ -16,11 +16,9 @@
           <div class="user_name"><%= "#{@social.title}" %></div>
           <div class="user_location">
             <i class="fa fa-map-pin" aria-hidden="true"></i> <span><%= "#{@social.city}" %></span>, <span><%= "#{@social.category_country.name}" %></span>
-            <%# if @user.profession? %>
-              <!-- <span class="divider">|</span>
+              <span class="divider">|</span>
               <i class="fa fa-suitcase" aria-hidden="true"></i> 
-              <span><%# @user.profession %></span> -->
-            <%# end %>
+              <span><%= @social.category_topic.name %></span>
           </div>
           <div class="clear"></div>
           <div class="user_social_icons">
