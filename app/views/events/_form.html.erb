@@ -1,4 +1,4 @@
-<%= simple_form_for(@event) do |f| %>
+<%= simple_form_for [@user, @event] do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
@@ -6,8 +6,12 @@
     <%= f.input :description %>
     <%= f.input :address %>
     <%= f.input :postcode %>
-    <%= f.input :latitude %>
-    <%= f.input :longitude %>
+
+    <!-- hidden fields -->
+    <%= f.hidden_field :latitude %>
+    <%= f.hidden_field :longitude %>
+    <%= f.hidden_field :user_id %>
+    <!-- hidden fields -->
   </div>
 
   <div class="form-actions">
