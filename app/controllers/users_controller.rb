@@ -22,6 +22,9 @@ class UsersController < ApplicationController
     redirect_to @user
   end
 
+  def dashboard
+  end
+
   private
     def set_user
       @user = User.find(params[:id])

@@ -12,6 +12,9 @@ Rails.application.routes.draw do
     resources :comments, only: [:create, :destroy] 
     resources :socials
     resources :events
+    member do
+      get 'dashboard'
+    end
   end
 
   resources :socials do
