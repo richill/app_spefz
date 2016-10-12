@@ -15,13 +15,15 @@
             <ul>
               <!-- speed-events -->
               <% @events.each do |event| %>
-                <li><%= event.title %></li>
-                <li><%= event.description %></li>
-                <li><%= event.address %></li>
-                <li><%= event.postcode %></li>
-                <li><%= link_to 'Show', event %></li>
-                <li><%= link_to 'Edit', edit_event_path(event) %></li>
-                <li><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+              <li>
+                <div><%= event.title %></div>
+                <div><%= event.description %></div>
+                <div><%= event.address %></div>
+                <div><%= event.postcode %></div>
+                <div><%= link_to 'Show', event %></div>
+                <div><%= link_to 'Edit', edit_event_path(event) %></div>
+                <div><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+              </li>
               <% end %>
               <!-- speed-events -->
             </ul>
