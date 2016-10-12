@@ -3,21 +3,6 @@
     File: views / events / _index.html.erb
   =========================================*/
 
-
-// --------------------------
-//     clean
-// --------------------------
-
-
-
-
-// --------------------------
-//     clean
-// --------------------------
-
-
-
-
 .events_section .events_inner_section {
   background-color: #fff !important;
   background: url("img_background_main.png") repeat;
@@ -61,28 +46,6 @@
   min-height: 822px;
 }
 
-.events_section .header_section {
-  padding: 15px 0px;
-}
-
-.events_section .header {
-  font-family: "Lato", sans-serif;
-  font-size: 35px;
-  font-weight: 300;
-  letter-spacing: 1px;
-  text-transform: capitalize;
-}
-
-.events_section .sub_header {
-  font-family: "Lato", sans-serif;
-  font-size: 15px;
-  font-weight: 400;
-  letter-spacing: 1px;
-  text-transform: capitalize;
-  text-align: center;
-  padding: 15px !important;
-}
-
 .events_section .content_details {
   padding: 15px 0px !important;
   width: 1170px;
@@ -94,19 +57,9 @@
   margin: 0px;
 }
 
-// .events_section .event_container ul li {
-//   margin-bottom: 15px !important;
-//   float: left !important;
-// }
-
 .events_section .event_container {
   margin: auto;
 }
-
-// --------------------------
-//     workings
-// --------------------------
-
 
 .events_section .event_container ul {
   font-family: 'Lato', sans-serif;
@@ -118,7 +71,6 @@
 .events_section .event_container ul li {
   list-style-type: none;
   margin-bottom: 30px;
-  // background-color: rgba(47, 63, 91, 0.03);
   background-color: #fff;
   padding: 0px !important;
 }
@@ -162,7 +114,7 @@
   box-shadow: 0px0px3pxrgba 0, 0, 0, 0.3;
 }
 
-
+// ------ left_evt -------
 .events_section .left_evt {
   float: left;
 }
@@ -186,6 +138,8 @@
   height: 250px;
 }
 
+
+// ------ right_evt -------
 .events_section .right_evt {
   padding: 15px;
 }
@@ -217,7 +171,7 @@
   letter-spacing: 1px;
 }
 
-.events_section .right_evt i {
+.events_section .info i {
   font-size: 14px;
   margin-right: 5px;
 }
@@ -241,11 +195,41 @@
   margin: 20px 0px;
 }
 
-.events_section .right_evt .description {
-  color: #7C93A7;
-  font-weight: 300;
-  letter-spacing: 1px;
-}
+// .events_section .right_evt .description {
+//   color: #7C93A7;
+//   font-weight: 300;
+//   letter-spacing: 1px;
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// --------------------------
+//     workings
+// --------------------------
+
+
+
+
+
+
+
 
 .events_section .info_action_container ul {
   margin: 0px !important;
