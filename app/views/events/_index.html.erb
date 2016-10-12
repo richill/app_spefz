@@ -1,3 +1,36 @@
+<div class="socials_section">
+  <div class="medium-12 columns socials_inner_section">
+
+    <!-- search -->
+    <div class="search_container">
+      <div class="search_inner_container"></div>
+    </div>
+    <!-- search -->
+
+    <!-- content -->
+    <div class="medium-12 columns social_content_section">
+      <div class="medium-12 columns content_container">
+        <div class="content_details">
+          <div class="feed_container">
+            <ul>
+              <!-- speed-events -->
+              <% @events.each do |event| %>
+                <li><%= event.title %></li>
+                <li><%= event.description %></li>
+                <li><%= event.address %></li>
+                <li><%= event.postcode %></li>
+              <% end %>
+              <!-- speed-events -->
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- content -->
+
+  </div>
+</div>
+
 
 
 

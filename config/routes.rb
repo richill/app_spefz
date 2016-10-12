@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   resources :users do
     resources :comments, only: [:create, :destroy] 
     resources :socials
+    resources :events
   end
 
   resources :socials do
