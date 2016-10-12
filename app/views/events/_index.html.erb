@@ -35,10 +35,18 @@
                     <!-- <div class="description"><%# truncate(event.description, length: 100) %></div> -->
                     <div>
                       <ul class="inline-list left_evt_info">
-                        <li><div class="header">price</div> <div class="content_header">£20.99</div></li>
-                        <li><div class="header">age group</div> <div class="content">28 -38</div></li>
-                        <li><div class="header">space</div> <div class="content"><%= link_to "15", "#" %></div></li>
-                        <li><div class="header">attendees</div> <div class="content"><%= link_to "10", "#" %></div></li>
+                        <li><div class="header">price</div> <div class="content_header" style="margin-top:7px;">£20.99</div></li>
+                        <li><div class="header">age group</div> <div class="content" style="margin-top:7px;">28 -38</div></li>
+                        <li>
+                          <div class="header">space</div> 
+                          <div class="content">
+                            <span class="content_gender"><i class="fa fa-male" aria-hidden="true"></i></span>
+                            <span class="content_available">available</span>
+                            <span class="content_divider">|</span>
+                            <span class="content_gender"><i class="fa fa-female" aria-hidden="true"></i></span> 
+                            <span class="content_soldout">sold out</span>
+                          </div>
+                        </li>
                       </ul>
                     </div>
                   </div>

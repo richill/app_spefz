@@ -155,7 +155,7 @@
 .events_section .left_evt .img_cover {
   width: 250px;
   height: 250px;
-  margin-right: 15px;
+  margin-right: 20px;
   background-color: rgba(40, 48, 45, 0.1) !important;
 }
 
@@ -247,12 +247,34 @@
   color: #E34B51;
   margin-top: 5px;
   font-size: 18px;
+  font-weight: bold;
 }
 
 .events_section .left_evt_info .content {
   margin-top: 5px;
   font-size: 18px;
 }
+
+.content_gender i {
+  font-size: 22px !important;
+}
+
+.content_available {
+  color: #58CDA6;
+  font-weight: bold;
+  margin-top: 4px;
+}
+
+.content_divider {
+  margin: 0px 10px;
+}
+
+.content_soldout {
+  color: #E34B51;
+  font-weight: bold;
+  margin-top: 4px;
+}
+
 
 .events_section .left_evt_info .content a {
   margin-top: 5px;
@@ -328,6 +350,8 @@
   -moz-transition: all 0.3s ease; 
   -o-transition: all 0.3s ease;
 }
+
+
 
 
 
