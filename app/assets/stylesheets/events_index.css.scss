@@ -238,17 +238,25 @@
 }
 
 .events_section .left_evt_info .header {
-  font-size: 10px !important;
+  font-size: 15px !important;
+  font-weight: bold;
   color: #414249 !important;
 }
 
 .events_section .left_evt_info .content_header {
   color: #E34B51;
-  font-weight: bold;
+  margin-top: 5px;
+  font-size: 18px;
+}
+
+.events_section .left_evt_info .content {
+  margin-top: 5px;
+  font-size: 18px;
 }
 
 .events_section .left_evt_info .content a {
-  font-size: 12px !important;
+  margin-top: 5px;
+  font-size: 18px !important;
   color: #414249 !important;
   text-align: center !important;
 }
