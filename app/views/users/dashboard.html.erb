@@ -1,1 +1,8 @@
-<h1>i am the dashboard for the admin</h1>
+<% provide(:title, "Admin Panel") %>
+<div>
+  <div class>
+      <%= render 'shared/header' %>
+      <%= render 'dashboard' %>
+      <%= render 'shared/footer' %>
+  </div>
+</div>
