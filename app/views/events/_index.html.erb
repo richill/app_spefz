@@ -24,7 +24,7 @@
                     </div>
                   </div>
                   <div class="left_evt">
-                    <div class="img_cover"><%= link_to(image_tag("#{event.image_url}", :alt =>  "image", :class =>"#"), user_event_path(event.user, event)) %></div>
+                    <div class="img_cover"><%= link_to(image_tag("img_feed_07.png", :alt =>  "image", :class =>"#"), user_event_path(event.user, event)) %></div>
                   </div>
                   <div class="right_evt">
                     <div class="info"><i class="fa fa-calendar" aria-hidden="true"></i> Friday, 1 july</div>
@@ -42,14 +42,14 @@
                     <li><div class="header">space</div> <div class="content"><%= link_to "15", "#" %></div></li>
                     <li><div class="header">attendees</div> <div class="content"><%= link_to "10", "#" %></div></li>
                   </ul>
-                  <ul class="inline-list right_evt_info">
-                    <% if event.category_invite_id.present? && event.category_invite.name == "just my guest" %>
-                      <li class="btn_attend"><%= link_to "invite only", "#" %></li>
-                    <% else %>
-                      <li class="btn_attend"><%= link_to "attend", "#" %></li>
-                    <% end %>
-                    <li class="btn_save"><%= link_to "save", "#" %></li>
-                  </ul>
+                  <!-- <ul class="inline-list right_evt_info">
+                    <%# if event.category_invite_id.present? && event.category_invite.name == "just my guest" %>
+                      <li class="btn_attend"><%# link_to "invite only", "#" %></li>
+                    <%# else %>
+                      <li class="btn_attend"><%# link_to "attend", "#" %></li>
+                    <%# end %>
+                    <li class="btn_save"><%# link_to "save", "#" %></li>
+                  </ul> -->
                 </div>
               </li>
               <li class="hide">
