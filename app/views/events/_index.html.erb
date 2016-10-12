@@ -16,7 +16,6 @@
               <!-- events -->
               <% @events.each do |event| %>
               <li class="medium-12 columns">
-                <div class="title"><%= link_to "#{event.title}", user_event_path(event.user, event) %></div>
                 <div class="medium-12 columns image_content_info">
                   <div class="banner">
                     <div class="ribbon-wrapper-green">
@@ -27,6 +26,7 @@
                     <div class="img_cover"><%= link_to(image_tag("img_feed_07.png", :alt =>  "image", :class =>"#"), user_event_path(event.user, event)) %></div>
                   </div>
                   <div class="right_evt">
+                    <div class="title"><%= link_to "#{event.title}", user_event_path(event.user, event) %></div>
                     <div class="info"><i class="fa fa-calendar" aria-hidden="true"></i> Friday, 1 july</div>
                     <div class="info"><i class="fa fa-clock-o" aria-hidden="true"></i> 18:00h - 19:00h</div>
                     <div class="info city_country"><i class="fa fa-map-pin" aria-hidden="true"></i> london, united kingdom</div>
