@@ -23,7 +23,10 @@
                     </div>
                   </div>
                   <div class="left_evt">
+                    <%= link_to user_event_path(event.user, event) do %>
+                    <div class="img_shade_cover"></div>
                     <div class="img_cover"><%= link_to(image_tag("img_feed_07.png", :alt =>  "image", :class =>"#"), user_event_path(event.user, event)) %></div>
+                    <% end %>
                   </div>
                   <div class="right_evt">
                     <div class="title"><%= link_to "#{event.title}", user_event_path(event.user, event) %></div>

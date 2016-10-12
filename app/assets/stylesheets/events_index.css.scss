@@ -152,6 +152,13 @@
   float: left;
 }
 
+.img_shade_cover {
+  background-color: rgba(47, 63, 91, 0.2) !important;
+  position: absolute;
+  width: 250px;
+  height: 250px;
+}
+
 .events_section .left_evt .img_cover {
   width: 250px;
   height: 250px;
