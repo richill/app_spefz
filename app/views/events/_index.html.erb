@@ -29,7 +29,6 @@
                     <div class="img_cover"><%= link_to(image_tag("img_feed_07.png", :alt =>  "image", :class =>"#"), user_event_path(event.user, event)) %></div>
                     <% end %>
                   </div>
-                  <!-- left_evt content -->
 
                   <!-- middle_evt content -->
                   <div class="middle_evt">
@@ -57,13 +56,19 @@
                       </ul>
                     </div>
                   </div>
-                  <!-- middle_evt content -->
 
                   <!-- right_evt content -->
-                  <div class="right_evt">hello</div>
+                  <div class="right_evt">
+                    <div class="right_evt_container">
+                      <div><i class="fa fa-calendar" aria-hidden="true"></i></div>
+                      <div class="date">01</div>
+                      <div class="month">july</div>
+                      <div class="btn_booknow"><%= link_to "book now", "#" %></div>
+                      <div class="btn_save"><%= link_to "save", "#" %></div>
+                    </div>
+                  </div>
                   <!-- right_evt content -->
                 </div>
-
                 <div class="clear"></div>
 
 
