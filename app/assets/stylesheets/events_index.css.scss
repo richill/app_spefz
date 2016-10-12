@@ -56,7 +56,6 @@
   font-weight: 300;
   letter-spacing: 1px;
   text-transform: capitalize;
-  text-align: center;
 }
 
 .events_section .sub_header {
@@ -103,14 +102,14 @@
 
 .events_section .event_container ul li {
   list-style-type: none;
-  margin-bottom: 15px;
+  margin-bottom: 30px;
   // background-color: rgba(47, 63, 91, 0.03);
   background-color: #fff;
-  padding: 15px;
+  padding: 0px !important;
 }
 
 .events_section .image_content_info {
-  font-size: 11px;
+  font-size: 15px;
   font-weight: bold;
   padding: 0px !important;
 }
@@ -162,11 +161,11 @@
 }
 
 .events_section .right_evt {
-  margin-left: 160px;
+  padding: 15px;
 }
 
 .events_section .event_container .title {
-  margin-bottom: 5px;
+  margin-bottom: 12px;
 }
 
 .events_section .event_container .title a {
@@ -188,7 +187,7 @@
 }
 
 .events_section .right_evt .info {
-  margin-bottom: 2px;
+  margin-bottom: 8px;
   letter-spacing: 1px;
 }
 
@@ -197,10 +196,17 @@
   margin-right: 5px;
 }
 
+.events_section .right_evt .fa-map-marker {
+  margin-right: 8px;
+  font-size: 19px;
+}
+
 .events_section .right_evt .fa-map-pin {
   margin-left: 3px;
   margin-right: 8px;
 }
+
+
 
 .events_section .right_evt .city_country {
   text-transform: capitalize;
@@ -208,7 +214,7 @@
 
 .events_section .right_evt .divider {
   border-top: 1px solid #ededf3;
-  margin: 7px 0px;
+  margin: 20px 0px;
 }
 
 .events_section .right_evt .description {
