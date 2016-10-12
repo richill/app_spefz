@@ -70,32 +70,6 @@
                   <!-- right_evt content -->
                 </div>
                 <div class="clear"></div>
-
-
-                <div class="info_action_container old_content">
-                  <!-- <ul class="inline-list left_evt_info">
-                    <li><div class="header">price</div> <div class="content_header">£20.99</div></li>
-                    <li><div class="header">space</div> <div class="content"><%= link_to "15", "#" %></div></li>
-                    <li><div class="header">attendees</div> <div class="content"><%= link_to "10", "#" %></div></li>
-                  </ul> -->
-                  <!-- <ul class="inline-list action_info">
-                    <%# if event.category_invite_id.present? && event.category_invite.name == "just my guest" %>
-                      <li class="btn_attend"><%# link_to "invite only", "#" %></li>
-                    <%# else %>
-                      <li class="btn_attend"><%# link_to "attend", "#" %></li>
-                    <%# end %>
-                    <li class="btn_save"><%# link_to "save", "#" %></li>
-                  </ul> -->
-                </div>
-              </li>
-              <li class="hide old_content">
-                <div><%= event.title %></div>
-                <div><%= event.description %></div>
-                <div><%= event.address %></div>
-                <div><%= event.postcode %></div>
-                <div><%= link_to 'Show', user_event_path(event.user, event) %></div>
-                <div><%= link_to 'Edit', edit_user_event_path(event.user, event) %></div>
-                <div><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></div>
               </li>
               <% end %>
               <!-- events -->

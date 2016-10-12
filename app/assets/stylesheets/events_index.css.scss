@@ -54,7 +54,9 @@
 
 .events_section .event_container ul {
   list-style-type: none;
-  margin: 0px;
+  // margin: 0px;
+  width: 1140px;
+  margin: auto !important;
 }
 
 .events_section .event_container {
@@ -144,8 +146,7 @@
   padding: 15px;
   float: left;
   margin-right: 8px; 
-  width: 685px;
-  // background-color: green;
+  width: 655px;
 }
 
 .events_section .event_container .title {
@@ -198,12 +199,6 @@
   border-top: 1px solid #ededf3;
   margin: 20px 0px;
 }
-
-// .events_section .middle_evt .description {
-//   color: #7C93A7;
-//   font-weight: 300;
-//   letter-spacing: 1px;
-// }
 
 .events_section .middle_evt_bottom_info li {
   font-size: 12px;
@@ -266,40 +261,38 @@
 }
 
 // ------ right_evt -------
-.right_evt {
+.events_section .right_evt {
   padding: 5px 1px 5px 5px;
-  // float: left;
-  // background-color: blue;
   text-align: center;
   float: left;
   width: 215px;
 }
 
-.right_evt_container {
+.events_section .right_evt .right_evt_container {
   background-color: rgba(47, 63, 91, 0.03) !important;
   padding: 30px 20px 10px 20px;
 }
 
-.right_evt i {
+.events_section .right_evt i {
   font-size: 25px;
   margin-bottom: 25px;
 }
 
-.date {
+.events_section .right_evt .date {
   font-family: 'Lato', sans-serif;
   font-size: 50px;
   color: #414249 !important;
   margin-bottom: 18px;
 }
 
-.month {
+.events_section .right_evt .month {
   font-family: 'Lato', sans-serif;
   font-size: 18px;
   color: #414249 !important;
   margin-bottom: 15px;
 }
 
-.btn_booknow a {
+.events_section .right_evt .btn_booknow a {
   font-family: 'Lato', sans-serif;
   font-size: 13px;
   color: #fff !important;
@@ -316,7 +309,7 @@
   -o-transition: all 0.3s ease;
 }
 
-.btn_save a {
+.events_section .right_evt .btn_save a {
   font-family: 'Lato', sans-serif;
   font-size: 13px;
   color: #fff !important;
@@ -331,115 +324,6 @@
   -moz-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
 }
-
-
-// --------------------------
-//     workings
-// --------------------------
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// --------------------------
-//     old_content
-// --------------------------
-.events_section .info_action_container ul {
-  margin: 0px !important;
-  display: inline-block;
-}
-
-.events_section .right_evt_info {
-  float: right;
-}
-
-.events_section .right_evt_info li {
-  font-size: 12px;
-  text-transform: capitalize;
-  margin: 0px !important;
-  padding: 0px !important;
-  background-color: transparent !important;
-}
-
-.events_section .right_evt_info .btn_attend a {
-  font-family: 'Lato', sans-serif;
-  font-size: 13px;
-  font-weight: 300;
-  color: #fff !important;
-  letter-spacing: 1px;
-  background-color: #E34B51;
-  margin-right: 8px !important;
-  padding: 5px 25px;
-  -webkit-transition: all 0.3s ease; 
-  -moz-transition: all 0.3s ease; 
-  -o-transition: all 0.3s ease;
-}
-
-.events_section .right_evt_info .btn_attend a:hover {
-  background-color: #eeaa02 !important;
-  -webkit-transition: all 0.3s ease; 
-  -moz-transition: all 0.3s ease; 
-  -o-transition: all 0.3s ease;
-}
-
-.events_section .right_evt_info .btn_save a {
-  font-family: 'Lato', sans-serif;
-  font-size: 13px;
-  font-weight: 300;
-  color: #fff !important;
-  letter-spacing: 1px;
-  background-color: rgba(47, 63, 91, 0.5) !important;
-  padding: 5px 25px;
-  -webkit-transition: all 0.3s ease; 
-  -moz-transition: all 0.3s ease; 
-  -o-transition: all 0.3s ease;
-}
-
-.events_section .right_evt_info .btn_save a:hover {
-  background-color: #eeaa02 !important;
-  -webkit-transition: all 0.3s ease; 
-  -moz-transition: all 0.3s ease; 
-  -o-transition: all 0.3s ease;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
