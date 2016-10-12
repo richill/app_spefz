@@ -31,17 +31,23 @@
                     <div class="info"><i class="fa fa-clock-o" aria-hidden="true"></i> 18:00h - 19:00h</div>
                     <div class="info city_country"><i class="fa fa-map-pin" aria-hidden="true"></i> london, united kingdom</div>
                     <div class="divider"></div>
-                    <div class="description"><%= truncate(event.description, length: 100) %></div>
+                    <!-- <div class="description"><%# truncate(event.description, length: 100) %></div> -->
+                    <div>
+                      <ul class="inline-list left_evt_info">
+                        <li><div class="header">price</div> <div class="content_header">£20.99</div></li>
+                        <li><div class="header">space</div> <div class="content"><%= link_to "15", "#" %></div></li>
+                        <li><div class="header">attendees</div> <div class="content"><%= link_to "10", "#" %></div></li>
+                      </ul>
+                    </div>
                   </div>
                 </div>
                 <div class="clear"></div>
                 <div class="info_action_container">
-                  <ul class="inline-list left_evt_info">
-                    <!-- <li><div class="header">price</div> <div class="content">£14.99</div></li> -->
-                    <li><div class="header">price</div> <div class="content_header">Free</div></li>
+                  <!-- <ul class="inline-list left_evt_info">
+                    <li><div class="header">price</div> <div class="content_header">£20.99</div></li>
                     <li><div class="header">space</div> <div class="content"><%= link_to "15", "#" %></div></li>
                     <li><div class="header">attendees</div> <div class="content"><%= link_to "10", "#" %></div></li>
-                  </ul>
+                  </ul> -->
                   <!-- <ul class="inline-list right_evt_info">
                     <%# if event.category_invite_id.present? && event.category_invite.name == "just my guest" %>
                       <li class="btn_attend"><%# link_to "invite only", "#" %></li>
