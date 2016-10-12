@@ -13,7 +13,7 @@
         <div class="content_details">
           <div class="event_container">
             <ul>
-              <!-- speed-events -->
+              <!-- events -->
               <% @events.each do |event| %>
               <li>
                 <div><%= event.title %></div>
@@ -25,7 +25,7 @@
                 <div><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></div>
               </li>
               <% end %>
-              <!-- speed-events -->
+              <!-- events -->
             </ul>
           </div>
         </div>
