@@ -22,12 +22,16 @@
                       <div class="ribbon-green">sold out</div>
                     </div>
                   </div>
+                  <!-- left_evt content -->
                   <div class="left_evt">
                     <%= link_to user_event_path(event.user, event) do %>
                     <div class="img_shade_cover"></div>
                     <div class="img_cover"><%= link_to(image_tag("img_feed_07.png", :alt =>  "image", :class =>"#"), user_event_path(event.user, event)) %></div>
                     <% end %>
                   </div>
+                  <!-- left_evt content -->
+
+                  <!-- middle_evt content -->
                   <div class="middle_evt">
                     <div class="title"><%= link_to "#{event.title}", user_event_path(event.user, event) %></div>
                     <div class="info"><i class="fa fa-map-marker" aria-hidden="true"></i> Eclipse (South Kensington) (London)</div>
@@ -53,10 +57,17 @@
                       </ul>
                     </div>
                   </div>
+                  <!-- middle_evt content -->
+
+                  <!-- right_evt content -->
                   <div class="right_evt">hello</div>
+                  <!-- right_evt content -->
                 </div>
+
                 <div class="clear"></div>
-                <div class="info_action_container">
+
+
+                <div class="info_action_container old_content">
                   <!-- <ul class="inline-list left_evt_info">
                     <li><div class="header">price</div> <div class="content_header">£20.99</div></li>
                     <li><div class="header">space</div> <div class="content"><%= link_to "15", "#" %></div></li>
