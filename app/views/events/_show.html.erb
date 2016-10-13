@@ -70,7 +70,19 @@
       <div class="medium-3 columns column_left">left column</div>
 
       <!-- middle column -->
-      <div class="medium-6 columns column_middle">middle column</div>
+      <div class="medium-6 columns column_middle">
+        <div class="left_container middle_container">
+          <div class="medium-12 columns middle_inner_container">
+            <div class="medium-12 columns header">
+              <div class="medium-12 columns header_content event_itinerary">event details</div>
+            </div>
+            <div class="clear"></div>
+            <div class="content">
+              <div class="content_info event_itinerary_content"><%= render 'shared/content_event_itinerary' %></div>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <!-- right column -->
       <div class="medium-3 columns column_right">right column</div>
