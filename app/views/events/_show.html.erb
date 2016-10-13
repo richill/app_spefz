@@ -67,7 +67,33 @@
   <div class="medium-12 columns lower_section">
     <div class="lower_inner_section">
       <!-- left column -->
-      <div class="medium-3 columns column_left">left column</div>
+      <div class="medium-3 columns column_left">
+        <!-- about social -->
+        <div class="medium-12 columns left_container">
+          <div class="medium-12 columns left_inner_container aboutme_container">
+            <div class="header"><div class="header_content"><i class="fa fa-user" aria-hidden="true"></i> location</div></div>
+            <div class="content">
+              <div class="content_info">
+                <div><%= image_tag('img_map.png') %></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- interests -->
+        <div class="medium-12 columns left_container">
+          <div class="medium-12 columns left_inner_container interest_container">
+            <div class="header"><div class="header_content"><i class="fa fa-street-view" aria-hidden="true"></i> tags</div></div>
+            <div class="content">
+              <div class="content_info" style="padding: 15px 8px;">
+                <ul class="tags">
+                  <li><%# raw @social.tag_list.map { |t| link_to t, social_tag_path(t) }.join(" ") %></li> 
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <!-- middle column -->
       <div class="medium-6 columns column_middle">

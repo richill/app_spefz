@@ -535,7 +535,7 @@
 }
 
 .events_show_inner_section .column_left .left_container .content .content_info {
-  padding: 15px;
+  padding: 1px;
 }
 
 .events_show_inner_section .column_left .left_container .aboutme_container {
@@ -547,6 +547,7 @@
 .events_show_inner_section .column_left .left_container .aboutme_container .header {
   border-bottom: 1px solid #fff !important;
   letter-spacing: 1px !important;
+  background-color: transparent !important;
 }
 
 .events_show_inner_section .column_left .left_container .aboutme_container .content_info {
@@ -572,6 +573,7 @@
 .events_show_inner_section .column_left .left_container .interest_container .header {
   border-bottom: 1px solid #fff !important;
   letter-spacing: 1px !important;
+  background-color: transparent !important;
 }
 
 .events_show_inner_section .column_left .left_container .interest_container .content {
