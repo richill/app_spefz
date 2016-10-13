@@ -938,6 +938,7 @@
   color: #fff;
   text-transform: capitalize;
   word-spacing: 3px;
+  margin-bottom: 5px;
 }
 
 .right_evt_details .info {
@@ -968,6 +969,7 @@
 
 .right_evt_details .city_country {
   text-transform: capitalize;
+  margin-bottom: 20px;
 }
 
 .right_evt_details .divider {
@@ -982,6 +984,18 @@
   padding: 0px !important;
   margin-right: 35px !important;
   background-color: transparent !important;
+}
+
+.price {
+  font-family: 'Lato', sans-serif;
+  font-size: 35px;
+  font-weight: 300;
+  color: #fff !important;
+  padding: 5px 15px;
+  text-align: center;
+  width: 270px;
+  background-color: rgba(255, 255, 255, 0.2) !important;
+  border-bottom: 2px solid rgba(225, 71, 62, 0.3) !important;
 }
 
 
