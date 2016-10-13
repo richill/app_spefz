@@ -901,10 +901,24 @@
 // ---------------------------
 
 
+
+// ----- left_evt_details -----
 .left_evt_details {
-  background-color: green;
+  padding: 0px !important;
 }
 
+.evt_details_cover {
+  background-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+.image_cover img {
+  height: 277px;
+  background-color: rgba(255, 255, 255, 0.2) !important;
+  padding: 15px;
+}
+
+
+// ----- right_evt_details -----
 .right_evt_details {
   background-color: blue;
 }
