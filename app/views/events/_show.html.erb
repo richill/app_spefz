@@ -85,7 +85,19 @@
       </div>
 
       <!-- right column -->
-      <div class="medium-3 columns column_right">right column</div>
+      <div class="medium-3 columns column_right">
+        <div class="medium-12 columns right_container">
+          <div class="medium-12 columns right_inner_container attendee_container">
+            <div class="header"><div class="header_content"><i class="fa fa-user" aria-hidden="true"></i> <%= link_to "host", "#" %></div></div>
+            <div class="content">
+              <div class="content_info">
+                <div><%= render 'shared/content_events_about_host' %></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </div>
   </div>
 </div>
