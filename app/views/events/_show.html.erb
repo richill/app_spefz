@@ -13,7 +13,7 @@
         <div class="content_details">
           <div class="event_container">
             <!-- event details -->
-            <div>speed-event</div>
+            <div>event</div>
             <!-- events details -->
           </div>
         </div>
@@ -50,15 +50,5 @@
   <%= @event.postcode %>
 </p>
 
-<p>
-  <strong>Latitude:</strong>
-  <%= @event.latitude %>
-</p>
 
-<p>
-  <strong>Longitude:</strong>
-  <%= @event.longitude %>
-</p>
-
-<%# link_to 'Edit', edit_event_path(@event) %> |
-<%# link_to 'Back', events_path %>
+<%= link_to 'Back', events_path %>
