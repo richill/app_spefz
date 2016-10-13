@@ -55,93 +55,14 @@
   background-color: rgba(0, 0, 0, 0.6) !important;
 }
 
-.events_show_inner_section .upper_section .profile_img_main_cover {
-  background-color: rgba(255, 255, 255, 0.2) !important;
-  padding: 10px;
-  width: 150px;
-  height: 150px;
+.events_show_inner_section .evt_details_cover {
+  background-color: rgba(255, 255, 255, 0.09) !important;
+}
+
+.events_show_inner_section .evt_details_container {
+  padding: 0px !important;
+  width: 1170px;
   margin: auto;
-}
-
-.events_show_inner_section .upper_section .profile_img_main_cover img {
-  width: 150px;
-  height: 130px;
-}
-
-.events_show_inner_section .upper_section .profile_img_main_cover .img_default img {
-  width: 150px;
-  border-radius: 200px !important;
-  opacity: 0.65 !important;
-}
-
-.events_show_inner_section .upper_section .user_name {
-  font-family: 'Lato', sans-serif;
-  font-size: 35px;
-  font-weight: 300;
-  text-align: center;
-  margin: 0px;
-  color: #fff;
-  text-transform: capitalize;
-  word-spacing: 3px;
-}
-
-.events_show_inner_section .upper_section .user_location {
-  font-family: 'Lato', sans-serif;
-  font-size: 12px;
-  font-weight: 300;
-  text-align: center;
-  margin: 0px;
-  color: #fff;
-  text-transform: capitalize;
-  letter-spacing: 1px;
-}
-
-.events_show_inner_section .upper_section .divider {
-  margin: 0px 8px;
-}
-
-.events_show_inner_section .upper_section .user_location i {
-  margin-right: 2px;
-}
-
-.events_show_inner_section .upper_section .user_social_icons {
-  margin-top: 10px
-}
-
-.events_show_inner_section .upper_section .user_social_icons .fa-envelope {
-  font-size: 15px;
-  color: #fff !important; 
-  padding: 16px 18px;
-  background-color: rgba(255,255,255, 0.2) !important;
-  margin: 0px 2px;
-}
-
-.events_show_inner_section .upper_section .user_social_icons .fa-linkedin {
-  font-size: 17px;
-  color: #fff !important;
-  padding: 15px 19px;
-  background-color: rgba(255, 255, 255, 0.2) !important;
-  margin: 0px 2px;
-}
-
-.events_show_inner_section .upper_section .user_social_icons .fa-facebook {
-  font-size: 15px;
-  color: #fff !important; 
-  padding: 16px 20px;
-  background-color: rgba(255,255,255, 0.2) !important;
-  margin: 0px 2px;
-}
-
-.events_show_inner_section .upper_section .user_social_icons .fa-twitter {
-  font-size: 15px;
-  color: #fff !important; 
-  padding: 16px 18px;
-  background-color: rgba(255,255,255, 0.2) !important;
-  margin: 0px 2px;
-}
-
-.events_show_inner_section .upper_section .user_social_icons a:hover {
-  color: #E34B51 !important; 
 }
 
 
@@ -907,11 +828,7 @@
   padding: 0px !important;
 }
 
-.evt_details_cover {
-  background-color: rgba(255, 255, 255, 0.09) !important;
-}
-
-.image_cover img {
+.left_evt_details .image_cover img {
   height: 277px;
   background-color: rgba(255, 255, 255, 0.2) !important;
   padding: 15px;
@@ -924,13 +841,7 @@
   color: #fff !important;
 }
 
-.evt_details_container {
-  padding: 0px !important;
-  width: 1170px;
-  margin: auto;
-}
-
-.title {
+.right_evt_details .title {
   font-family: 'Lato', sans-serif;
   font-size: 35px;
   font-weight: 300;
@@ -986,7 +897,7 @@
   background-color: transparent !important;
 }
 
-.price {
+.right_evt_details .price {
   font-family: 'Lato', sans-serif;
   font-size: 35px;
   font-weight: 300;
