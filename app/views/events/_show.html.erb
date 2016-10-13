@@ -48,35 +48,8 @@
         </li>
       </ul>
       <ul class="inline-list right">
-        <li>
-          <%# if current_user %>
-            <%# if @social.category_invite.present? && @social.category_invite.name == "just my guest" %>
-              <div class="social_profile_btn btn_request"> <%# link_to "request to be invited", "#" %></div>
-            <%# else %>
-              <span class="attendance">
-                <%# unless current_user.attending_socials.exists?(id: @social.id)  %>
-                    <div class="social_profile_btn btn_social_attend"><%# link_to 'Attend', attending_socials_path(social_id: @social), method: :post %></div>
-                <%# else %>
-                    <div class="social_profile_btn btn_social_unattend"><%# link_to 'Un-Attend Social', attending_social_path(@social), method: :delete %></div>
-                <%# end %>
-              </span>
-            <%# end %>
-          <%# end %>
-        </li> 
-        <li>
-          <%# if current_user %>
-            <%# unless current_user.favourite_socials.exists?(id: @social.id)  %>
-              <div class="social_profile_btn btn_social_save"><%# link_to 'Save', favourite_socials_path(social_id: @social), method: :post %></div>
-            <%# else %>
-              <div class="social_profile_btn btn_social_unsave"><%# link_to 'Un-Save', favourite_social_path(@social), method: :delete %></div>
-            <%# end %>
-          <%# end %>
-        </li>
-        <%# if @social.user == current_user %>
-          <li>
-            <div class="social_profile_btn btn_edit"><%# link_to "edit", edit_user_social_path(@social.user, @social) %></div>
-          </li>
-        <%# end %>
+        <li><span><div class="social_profile_btn btn_social_attend"><%= link_to 'Book Now!', "#" %></div></span></li>
+        <li><div class="social_profile_btn btn_social_save"><%= link_to 'Save', "#" %></div></li>
       </ul>
     </div>
   </div>
