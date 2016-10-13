@@ -4,3 +4,33 @@
     File: views / events / _show.html.erb
   =========================================*/
 
+.event_itinerary_section b {
+  text-transform: capitalize;
+  font-size: 15px !important;
+}
+
+.event_itinerary_section p {
+  font-family: 'Lato', sans-serif;
+  font-weight: 300 !important;
+}
+
+.event_itinerary_section ul {
+  list-style-type: none;
+  margin: 0px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300 !important;
+}
+
+.event_itinerary_section .event_schedule {
+  margin-bottom: 25px;
+}
+
+.event_itinerary_section .sub-header {
+  font-weight: bold;
+  color: #7C93A7;
+}
+
+.event_itinerary_section .divider {
+  border-top: 1px solid #ededf3;
+  margin: 20px 0px;
+}
