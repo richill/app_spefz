@@ -11,12 +11,12 @@
     <div class="medium-12 columns social_content_section">
       <div class="medium-12 columns content_container">
         <div class="content_details">
-          <div class="feed_container">
+          <div class="social_main_container">
             <ul>
               <!-- socials -->
               <% @socials.all.each do |social| %>
                 <li class="medium-3 columns">
-                  <div class="feed_inner_section">
+                  <div class="social_inner_section">
                     <% if social.sold_out? %>
                       <div class="banner">
                         <div class="ribbon-wrapper-green">
@@ -27,12 +27,12 @@
                     <div class="feed">
                       
                       <%= link_to user_social_path(social.user, social) do %>
-                        <div class="feed_cover">
-                          <div class="feed_header">
-                            <div class="feed_date"><i class="fa fa-calendar date"></i> <%= social.date.strftime("%a, %d %b %Y") %> | <%= social.time.strftime("%I:%M %p") %></div>
+                        <div class="social_cover">
+                          <div class="social_header">
+                            <div class="social_date"><i class="fa fa-calendar date"></i> <%= social.date.strftime("%a, %d %b %Y") %> | <%= social.time.strftime("%I:%M %p") %></div>
 
-                            <div class="feed_location"><i class="fa fa-map-pin location"></i> <%= social.category_country.name %>, <%= social.city %></div>
-                            <div class="feed_price"><i class="fa fa-gbp price"></i> 
+                            <div class="social_location"><i class="fa fa-map-pin location"></i> <%= social.category_country.name %>, <%= social.city %></div>
+                            <div class="social_price"><i class="fa fa-gbp price"></i> 
                               <span>Free</span>
                               <% if social.category_invite_id.present? %>
                                 <% if social.category_invite.name == "just my guest" %>
@@ -45,8 +45,8 @@
                         </div>
                       <% end %>
 
-                      <div class="feed_img"><%= link_to(image_tag("#{social.image_url}", :alt =>  "image", :class =>"#"), user_social_path(social.user, social)) %></div>
-                      <div class="feed_user">
+                      <div class="social_img"><%= link_to(image_tag("#{social.image_url}", :alt =>  "image", :class =>"#"), user_social_path(social.user, social)) %></div>
+                      <div class="social_user">
                         <% if social.user.image.present? %>
                           <div><%= link_to(image_tag(social.user.image_url), user_path(social.user)) %></div>
                         <% else %>
@@ -54,8 +54,8 @@
                         <% end %>
                       </div>
                       <div class="clear"></div>
-                      <div class="feed_sub_title">
-                        <div class="feed_organizer">drinks with 
+                      <div class="social_sub_title">
+                        <div class="social_organizer">drinks with 
                           <span>
                             <% if social.companyname.present? %>
                               <%= social.companyname %>
@@ -64,29 +64,26 @@
                             <% end %>
                           </span>
                         </div>
-                        <div class="feed_title"><%= truncate(social.title, length: 40) %></div>
+                        <div class="social_title"><%= truncate(social.title, length: 40) %></div>
                       </div>
                     </div>
-                    <div class="feed_comments_container hide">
+                    <div class="social_comments_container hide">
                       <ul>
                         <!-- first comment -->
                         <li>
-                          <ul class="inline-list feed_inner_comment_section">
-                            <li class="medium-2 columns feed_comment_img"><%= link_to(image_tag("img_profile_05.png", :alt =>  "alt text", :class =>"#"), root_path) %></li>
-                            <li class="medium-10 columns feed_comment"><span><b><%= link_to "michael", "#" %></b>looking fwd to your chicken and veg dinner. You always organise the best events after work</span></li>
+                          <ul class="inline-list social_inner_comment_section">
+                            <li class="medium-2 columns social_feed_comment_img"><%= link_to(image_tag("img_profile_05.png", :alt =>  "alt text", :class =>"#"), root_path) %></li>
+                            <li class="medium-10 columns social_feed_comment"><span><b><%= link_to "michael", "#" %></b>looking fwd to your chicken and veg dinner. You always organise the best events after work</span></li>
                           </ul>
                         </li>
                         <!-- second comment -->
                         <li>
-                          <ul class="inline-list feed_inner_comment_section">
-                            <li class="medium-2 columns feed_comment_img"><%= link_to(image_tag("img_profile_02.png", :alt =>  "alt text", :class =>"#"), root_path) %></li>
-                            <li class="medium-10 columns feed_comment"><span><b><%= link_to "emma", "#" %></b>yessss!!! will definitely be there. You must tell me the secret recipe to your grilled chicken</span></li>
+                          <ul class="inline-list social_inner_comment_section">
+                            <li class="medium-2 columns social_feed_comment_img"><%= link_to(image_tag("img_profile_02.png", :alt =>  "alt text", :class =>"#"), root_path) %></li>
+                            <li class="medium-10 columns social_feed_comment"><span><b><%= link_to "emma", "#" %></b>yessss!!! will definitely be there. You must tell me the secret recipe to your grilled chicken</span></li>
                           </ul>
                         </li>
                       </ul>
-                    </div>
-                    <div class="booking hide">
-                      <div><%= link_to "attend", "#" %></div>
                     </div>
                     <div class="attendance">
                       <div>
