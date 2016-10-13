@@ -3,6 +3,17 @@
     File: views / events / _show.html.erb
   =========================================*/
 
+// --------------------------
+//     testiing
+// --------------------------
+
+
+
+// --------------------------
+//     testiing
+// --------------------------
+
+
 .events_show_section .events_show_inner_section {
   background-color: #fff !important;
   background: url("img_background_main.png") repeat;
@@ -79,13 +90,18 @@
 // --------------------------
 
 .evt_details_container {
-  background-color: red;
-  // height: 300px;
+  padding: 0px !important;
+  // background-color: red;
 }
 
 // ------ left_evt_details -------
 .left_evt_details {
-  background-color: green;
+  padding: 0px !important;
+  // background-color: green;
+}
+
+.left_evt_details img {
+  width: 100%;
 }
 
 

@@ -1,3 +1,83 @@
+<div class="medium-12 columns social_profile_page_section">
+
+  <!-- upper section -->
+  <div class="medium-12 columns upper_section">
+    <div class="profile_banner">
+      <div class="profile_inner_banner">
+        <div class="header"><%= render 'shared/header' %></div>
+        <div class="upper_profile_content">
+          <div>content</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- middle section -->
+  <div class="medium-12 columns middle_section">
+    <div class="middle_inner_section">
+      <ul class="inline-list left">
+        <li><span class="header">past socials:</span> <span class="content">15</span></li>
+        <li><span class="header">upcoming socials:</span> <span class="content">10</span></li>
+      </ul>
+      <ul class="inline-list right">
+        <li>
+          <%# if current_user %>
+            <%# if @social.category_invite.present? && @social.category_invite.name == "just my guest" %>
+              <div class="social_profile_btn btn_request"> <%# link_to "request to be invited", "#" %></div>
+            <%# else %>
+              <span class="attendance">
+                <%# unless current_user.attending_socials.exists?(id: @social.id)  %>
+                    <div class="social_profile_btn btn_social_attend"><%# link_to 'Attend', attending_socials_path(social_id: @social), method: :post %></div>
+                <%# else %>
+                    <div class="social_profile_btn btn_social_unattend"><%# link_to 'Un-Attend Social', attending_social_path(@social), method: :delete %></div>
+                <%# end %>
+              </span>
+            <%# end %>
+          <%# end %>
+        </li> 
+        <li>
+          <%# if current_user %>
+            <%# unless current_user.favourite_socials.exists?(id: @social.id)  %>
+              <div class="social_profile_btn btn_social_save"><%# link_to 'Save', favourite_socials_path(social_id: @social), method: :post %></div>
+            <%# else %>
+              <div class="social_profile_btn btn_social_unsave"><%# link_to 'Un-Save', favourite_social_path(@social), method: :delete %></div>
+            <%# end %>
+          <%# end %>
+        </li>
+        <%# if @social.user == current_user %>
+          <li>
+            <div class="social_profile_btn btn_edit"><%# link_to "edit", edit_user_social_path(@social.user, @social) %></div>
+          </li>
+        <%# end %>
+      </ul>
+    </div>
+  </div>
+
+  <!-- lower section -->
+  <div class="medium-12 columns lower_section">
+    <div class="lower_inner_section">
+      <!-- left column -->
+      <div class="medium-3 columns column_left">left column</div>
+
+      <!-- middle column -->
+      <div class="medium-6 columns column_middle">middle column</div>
+
+      <!-- right column -->
+      <div class="medium-3 columns column_right">right column</div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+<div>------------------------------------------</div>
 <div class="events_show_section">
   <div class="medium-12 columns events_show_inner_section">
 
@@ -15,10 +95,10 @@
 
             <!-- event details -->
             <div class="medium-12 columns evt_details_container">
-              <div class="medium-8 columns left_evt_details">
-                <span><%= image_tag("img_feed_07.png") %></span>
+              <div class="medium-6 columns left_evt_details">
+                <span><%= image_tag("img_feed_06.png") %></span>
               </div>
-              <div class="medium-4 columns right_evt_details">right</div>
+              <div class="medium-6 columns right_evt_details">right</div>
             </div>
             <!-- event details -->
 
