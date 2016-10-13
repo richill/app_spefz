@@ -15,12 +15,18 @@
               </div>
 
               <!-- right_evt_details -->
-              <div class="medium-9 columns right_evt_details">right</div>
+              <div class="medium-9 columns right_evt_details">
+                <div class="title"><%= @event.title %></div>
+                <div class="info"><i class="fa fa-map-marker" aria-hidden="true"></i> Eclipse (South Kensington) (London)</div>
+                <div class="info"><i class="fa fa-calendar" aria-hidden="true"></i> Friday, 1 july</div>
+                <div class="info"><i class="fa fa-clock-o" aria-hidden="true"></i> 18:00h - 19:00h</div>
+                <div class="info city_country"><i class="fa fa-map-pin" aria-hidden="true"></i> london, united kingdom</div>
+              </div>
+
+
+
             </div>
           </div>
-
-
-
         </div>
       </div>
     </div>
@@ -90,68 +96,3 @@
 
 
 
-
-
-
-<div>------------------------------------------</div>
-<div class="events_show_section">
-  <div class="medium-12 columns events_show_main_inner_section_testing">
-
-    <!-- search -->
-    <div class="search_container">
-      <div class="search_inner_container"></div>
-    </div>
-    <!-- search -->
-
-    <!-- content -->
-    <div class="medium-12 columns event_show_content_section">
-      <div class="medium-12 columns content_container">
-        <div class="content_details">
-          <div class="event_container">
-
-            <!-- event details -->
-            <div class="medium-12 columns evt_details_container">
-              <div class="medium-6 columns left_evt_details">
-                <span><%= image_tag("img_feed_06.png") %></span>
-              </div>
-              <div class="medium-6 columns right_evt_details">right</div>
-            </div>
-            <!-- event details -->
-
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- content -->
-
-  </div>
-</div>
-
-
-
-
-<div>------------------------------------------</div>
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @event.title %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @event.description %>
-</p>
-
-<p>
-  <strong>Address:</strong>
-  <%= @event.address %>
-</p>
-
-<p>
-  <strong>Postcode:</strong>
-  <%= @event.postcode %>
-</p>
-
-
-<%= link_to 'Back', events_path %>
