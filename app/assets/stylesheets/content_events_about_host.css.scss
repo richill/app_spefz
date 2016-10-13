@@ -45,24 +45,23 @@
   -o-transition: all 0.3s ease;
 }
 
-
-.host_details {
+.event_host_section .host_details {
   font-family: 'Lato', sans-serif;
   font-weight: 300 !important;
   text-transform: capitalize;
   padding: 15px 0px;
 }
 
-.host_name a {
+.event_host_section .host_name a {
   color: #283041 !important;
   font-weight: bold;
 }
 
-.host_name a:hover {
+.event_host_section .host_name a:hover {
   color: #E34B51 !important
 }
 
-.introduction {
+.event_host_section .introduction {
   font-family: 'Lato', sans-serif;
   font-weight: 300 !important;
 }
