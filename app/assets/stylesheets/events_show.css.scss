@@ -535,12 +535,16 @@
 }
 
 .events_show_inner_section .column_left .left_container .content .content_info {
-  padding: 0px;
+  padding: 5px;
+}
+
+.events_show_inner_section .column_left .left_container .content .specific_location {
+  padding: 10px 15px;
 }
 
 .events_show_inner_section .column_left .left_container .aboutme_container {
-  background-color: #4BB4BF !important;
-  color: #fff !important;
+  background-color: rgba(47, 63, 91, 0.1);
+  color: #283041!important;
   padding: 0px !important;
 }
 

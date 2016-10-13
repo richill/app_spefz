@@ -32,8 +32,6 @@
   </div>
 
 
-
-
   <!-- middle section -->
   <div class="medium-12 columns middle_section">
     <div class="middle_inner_section">
@@ -61,8 +59,6 @@
   </div>
 
 
-
-
   <!-- lower section -->
   <div class="medium-12 columns lower_section">
     <div class="lower_inner_section">
@@ -74,7 +70,7 @@
             <div class="header"><div class="header_content"><i class="fa fa-user" aria-hidden="true"></i> location</div></div>
             <div class="content">
               <div class="content_info">
-                <div><%= "#{@event.address}, " %></div>
+                <div class="specific_location"><%= "#{@event.address}, london, United Kingdom, #{@event.postcode}" %></div>
                 <div><%= image_tag('img_map.png') %></div>
               </div>
             </div>
