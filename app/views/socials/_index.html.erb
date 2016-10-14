@@ -58,13 +58,13 @@
                         <div class="social_organizer">drinks with 
                           <span>
                             <% if social.companyname.present? %>
-                              <%= social.companyname %>
+                              <%= truncate(social.companyname, length: 20) %>
                             <% else %>
-                              <%= social.user.firstname %>
+                              <%= truncate(social.user.firstname, length: 20) %>
                             <% end %>
                           </span>
                         </div>
-                        <div class="social_title"><%= truncate(social.title, length: 60) %></div>
+                        <div class="social_title"><%= truncate(social.title, length: 55) %></div>
                       </div>
                     </div>
                     <div class="social_comments_container hide">

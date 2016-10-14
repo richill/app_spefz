@@ -4,9 +4,9 @@
   <div class="form-inputs">
     <%= f.file_field :image %>
     <%= f.input :companyname, label: false, placeholder: "HSBC Private Bank" %>
-    <div>*maximum word count: 30</div>
+    <div>*maximum word count: 20</div>
     <%= f.input :title, label: "Discussion Topic", placeholder: "give a short distinct name" %>
-    <div>*minmum word count: 40</div> 
+    <div>*minmum word count: 40 | max: 55</div> 
     <%= f.input :description, label: "About Social" %>
     <%= f.text_field :tag_list, value: @social.tag_list.to_s, placeholder: "chess, jogging, dogs, skipping, gym, startups, entreprenuers, jazz..." %>
     <%= f.association :category_topic, collection: CategoryTopic.all, prompt: "select a category", label: "Social Category" %>
