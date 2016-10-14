@@ -32,25 +32,42 @@ cqg03 = CategoryQuantitygender.create!(name:'both men & women')
 cqg04 = CategoryQuantitygender.create!(name:'both X men & X women')
 
 CategoryTopic.delete_all
-ct01 = CategoryTopic.create!(name:'Auto, Boat & Air')
-ct02 = CategoryTopic.create!(name:'Business Professional')
-ct03 = CategoryTopic.create!(name:'Charity & Causes')
-ct04 = CategoryTopic.create!(name:'Community & Culture')
-ct05 = CategoryTopic.create!(name:'Family & Education')
-ct06 = CategoryTopic.create!(name:'Fashion & Beauty')
-ct07 = CategoryTopic.create!(name:'Film, Media & Entertainment')
-ct08 = CategoryTopic.create!(name:'Food & Drink')
-ct09 = CategoryTopic.create!(name:'Fundraising')
-ct10 = CategoryTopic.create!(name:'Government & Politics')
-ct11 = CategoryTopic.create!(name:'Health & Wellness')
-ct12 = CategoryTopic.create!(name:'Hobbies & Special Interest')
-ct13 = CategoryTopic.create!(name:'Home & Lifestyle')
-ct14 = CategoryTopic.create!(name:'Music')
-ct15 = CategoryTopic.create!(name:'Performing & Visual Arts')
-ct16 = CategoryTopic.create!(name:'Religion & Spirituality')
-ct17 = CategoryTopic.create!(name:'Science & Technology')
-ct18 = CategoryTopic.create!(name:'Social Impact')
-ct19 = CategoryTopic.create!(name:'Sports & Fitness')
-ct20 = CategoryTopic.create!(name:'Travel & Outdoors')
-ct21 = CategoryTopic.create!(name:'Tech Stories')
-ct22 = CategoryTopic.create!(name:'Other')
+ct01 = CategoryTopic.create!(name:'Activity Social')
+ct02 = CategoryTopic.create!(name:'Auto, Boat & Air')
+ct03 = CategoryTopic.create!(name:'Business Professional')
+ct04 = CategoryTopic.create!(name:'Charity & Causes')
+ct05 = CategoryTopic.create!(name:'Community & Culture')
+ct06 = CategoryTopic.create!(name:'Family & Education')
+ct07 = CategoryTopic.create!(name:'Fashion & Beauty')
+ct08 = CategoryTopic.create!(name:'Film, Media & Entertainment')
+ct09 = CategoryTopic.create!(name:'Food & Drink')
+ct10 = CategoryTopic.create!(name:'Fundraising')
+ct11 = CategoryTopic.create!(name:'Government & Politics')
+ct12 = CategoryTopic.create!(name:'Health & Wellness')
+ct13 = CategoryTopic.create!(name:'Hobbies & Special Interest')
+ct14 = CategoryTopic.create!(name:'Home & Lifestyle')
+ct15 = CategoryTopic.create!(name:'Key and Lock Parties')
+ct16 = CategoryTopic.create!(name:'Music')
+ct17 = CategoryTopic.create!(name:'Performing & Visual Arts')
+ct18 = CategoryTopic.create!(name:'Race & Culture')
+ct19 = CategoryTopic.create!(name:'Religion & Spirituality')
+ct20 = CategoryTopic.create!(name:'Science & Technology')
+ct21 = CategoryTopic.create!(name:'Social Impact')
+ct22 = CategoryTopic.create!(name:'Special Social Event')
+ct23 = CategoryTopic.create!(name:'Sports & Fitness')
+ct24 = CategoryTopic.create!(name:'Travel & Outdoors')
+ct25 = CategoryTopic.create!(name:'Tech Stories')
+ct26 = CategoryTopic.create!(name:'Valentines Social')
+
+
+
+
+
+
+
+
+
+
+
+
+
