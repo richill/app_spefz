@@ -2,10 +2,28 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :title %>
-    <%= f.input :description %>
-    <%= f.input :address %>
+    <%= f.input :title, label: "Event Name", placeholder: "Speed Social - Graduate Professionals" %>
+    <%= f.input :description, label: "Description" %>
+    <%= f.association :category_topic, collection: CategoryTopic.all, prompt: "select a category", label: "Event Category" %>
+    <%= f.input :venuename, label: "venue name", placeholder: "Eclipse (South Kensington) (London)" %>
+    <%= f.input :address, label: "Location", placeholder: "address" %>
+    <%= f.input :city, label: false, placeholder: "city" %>
+    <%= f.association :category_country, collection: CategoryCountry.all, prompt: "select a country", placeholder: "Select Country", label: false %>
     <%= f.input :postcode %>
+    <%= f.input :date %>
+    <%= f.input :time %>
+
+    <%= f.association :category_quantitygender, collection: CategoryQuantitygender.all, prompt: "select a category", label: "Quantity Gender Selection", input_html: { class: 'category_select' } %>
+    <div class="general_gender_quantity_content">
+        <%= f.input :quantity, placeholder: "quantity", label: false %>
+    </div>
+    <div class="specific_gender_quantity_content">
+        <%= f.input :quantity_men, placeholder: "quantity men", label: "men" %>
+        <%= f.input :quantity_women, placeholder: "quantity women", label: "women" %>
+    </div>
+
+    <%= f.association :category_age, collection: CategoryAge.all, prompt: "select a category", label: "Age Group" %>
+
 
     <!-- hidden fields -->
     <%= f.hidden_field :latitude %>
