@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161005221848) do
+ActiveRecord::Schema.define(version: 20161014123325) do
 
   create_table "attendances", force: :cascade do |t|
     t.integer  "attendable_id"
@@ -83,9 +83,22 @@ ActiveRecord::Schema.define(version: 20161005221848) do
     t.string   "postcode"
     t.float    "latitude"
     t.float    "longitude"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
     t.integer  "user_id"
+    t.integer  "category_topic_id"
+    t.string   "image"
+    t.date     "date"
+    t.time     "time"
+    t.string   "city"
+    t.integer  "quantity"
+    t.integer  "category_age_id"
+    t.integer  "category_country_id"
+    t.integer  "quantity_men"
+    t.integer  "quantity_women"
+    t.integer  "category_quantitygender_id"
+    t.string   "venuename"
+    t.decimal  "price"
   end
 
   create_table "favourites", force: :cascade do |t|
