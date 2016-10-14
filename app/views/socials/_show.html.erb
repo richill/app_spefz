@@ -178,10 +178,12 @@
       <div class="medium-3 columns column_right">
         <div class="medium-12 columns right_container_location">
           <div class="medium-12 columns right_inner_container location_container">
-            <div class="header"><div class="header_content"><i class="fa fa-users" aria-hidden="true"></i> <%= link_to "location", "#" %></div></div>
+            <div class="header"><div class="header_content"><i class="fa fa-map-marker" aria-hidden="true"></i> <%= link_to "location", "#" %></div></div>
             <div class="content">
               <div class="content_info">
-                <div><%= "#{@social.venuename}, #{@social.address}, #{@social.city}, #{@social.category_country.name}, #{@social.postcode}" %></div>
+                <div><%= "Venue: #{@social.venuename}, #{@social.address}, #{@social.city}, #{@social.category_country.name}, #{@social.postcode}" %></div>
+                <div class="divider"></div>
+                <div><%= @social.date.strftime("%a, %d %b %Y") %> | <%= @social.time.strftime("%I:%M %p") %> </div>
               </div>
             </div>
           </div>
