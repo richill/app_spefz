@@ -88,7 +88,7 @@
             <div class="content">
               <div class="content_info" style="padding: 15px 8px;">
                 <ul class="tags">
-                  <li><%# raw @social.tag_list.map { |t| link_to t, social_tag_path(t) }.join(" ") %></li> 
+                  <li><%= raw @event.tag_list.map { |t| link_to t, event_tag_path(t) }.join(" ") %></li> 
                 </ul>
               </div>
             </div>
