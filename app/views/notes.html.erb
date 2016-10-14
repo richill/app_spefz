@@ -14,11 +14,11 @@ subies  :  £15/mth ---- £25/mth
 
 48 attendees | 24 men 24 women - 120min [2hr]| ie. I spoke to 24 people [5min each] in 02hr
 
+------------------------------------------------
 
+w:https://www.originaldating.com/london-events-list/
 
-
-
-
+------------------------------------------------
 
 table: host
 user_id
@@ -32,3 +32,18 @@ user has_many events throught host
 with this you can't assign a host to more than event
 event has_many hosts 
 host belongs_event
+
+------------------------------------------------
+
+table: card
+event_id
+
+card belongs_to an event
+event has_one card
+
+------------------------------------------------
+
+
+
+
+
