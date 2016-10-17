@@ -18,6 +18,7 @@ gem 'acts-as-taggable-on'
 gem 'country_select'
 gem 'impressionist'
 gem 'acts_as_commentable'
+gem 'geocoder'
 
 group :development, :test do
   gem 'sqlite3'
