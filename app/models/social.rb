@@ -17,6 +17,13 @@ class Social < ActiveRecord::Base
 
   mount_uploader :image, ImageUploader
 
+  geocoded_by :location                                    # can also be an IP address
+  after_validation :geocode, if: :address_changed?         # auto-fetch coordinates
+
+  def location
+    [address, city, category_country_id].compact.join(', ')
+  end
+
   #selection
   def selection_BothAndOnly_men_and_women
     self.category_quantitygender.name == "only men" || self.category_quantitygender.name == "only women" || self.category_quantitygender.name == "both men & women"
