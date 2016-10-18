@@ -50,7 +50,6 @@ class Social < ActiveRecord::Base
     capacity - attendance
   end
 
-
   #set_space
   def set_availability_BothAndOnly_men_and_women
     self.quantity
