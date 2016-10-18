@@ -20,6 +20,10 @@ class Social < ActiveRecord::Base
   geocoded_by :location                                    # can also be an IP address
   after_validation :geocode, if: :address_changed?         # auto-fetch coordinates
 
+  scope :expired_socials, -> {where(['date < ?', Date.current])}
+
+  scope :live_socials, -> {where(['date >= ?', Date.current])}
+
   def location
     [address, city, category_country_id].compact.join(', ')
   end
@@ -32,7 +36,6 @@ class Social < ActiveRecord::Base
   def selection_BothX_men_and_women
     self.category_quantitygender.name == "both X men & X women"
   end
-
 
   #remaining_space
   def available_places_BothAndOnly_men_and_women
@@ -64,7 +67,11 @@ class Social < ActiveRecord::Base
   end
 
   def self.desc_order
-    order('created_at DESC')
+    order('date DESC')
+  end
+
+  def self.asc_order
+    order('date ASC')
   end
 end
 

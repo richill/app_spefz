@@ -9,8 +9,12 @@ class Event < ActiveRecord::Base
 
   mount_uploader :image, ImageUploader
 
-  geocoded_by :location                         # can also be an IP address
-  after_validation :geocode, if: :address_changed?         # auto-fetch coordinates
+  geocoded_by :location                               # can also be an IP address
+  after_validation :geocode, if: :address_changed?    # auto-fetch coordinates
+
+  scope :expired_events, -> {where(['date < ?', Date.current])}
+
+  scope :live_events, -> {where(['date >= ?', Date.current])}
 
   def location
     [address, city, category_country_id].compact.join(', ')
@@ -18,5 +22,13 @@ class Event < ActiveRecord::Base
 
   def google_map(center)
     "https://maps.googleapis.com/maps/api/staticmap?center=#{center}&size=300x300&zoom=17"
+  end
+
+  def self.desc_order
+    order('date DESC')
+  end
+
+  def self.asc_order
+    order('date ASC')
   end
 end
