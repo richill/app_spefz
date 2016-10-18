@@ -77,7 +77,7 @@
                 <div class="specific_location"><%= "#{@event.venuename}, #{@event.address}, london, United Kingdom, #{@event.postcode}" %></div>
                 <div><%# image_tag('img_map.png') %></div>HELLO
                 <div><%# image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@event.latitude}%2C#{@event.longitude}" %></div>
-                <div><%= image_tag google_map(center: @event.full_street_address) %></div>
+                <div><%# image_tag google_map(center: @event.full_street_address) %></div>
                 <div><%# image_tag google_map(center: [ @event.latitude, @event.longitude ].join(',')) %></div>
                 <div><%# image_tag "https://maps.googleapis.com/maps/api/staticmap?{@event.latitude}%2C#{@event.longitude}&size=300x300&zoom=17" %></div>
               </div>
