@@ -38,6 +38,13 @@
     <div class="middle_inner_section">
       <ul class="inline-list left">
         <li>
+          <% if @social.category_quantitygender.name == "only men" %>
+            <span><i class="fa fa-male" aria-hidden="true"></i></span>
+          <% elsif @social.category_quantitygender.name == "only women" %>
+            <span><i class="fa fa-female" aria-hidden="true"></i></span>
+          <% else @social.category_quantitygender.name == "both men & women" %>
+            <span><i class="fa fa-users" aria-hidden="true"></i></span>
+          <% end %>
         </li>
         <li><span class="header">past socials:</span> <span class="content">15</span></li>
         <li><span class="header">upcoming socials:</span> <span class="content">10</span></li>
