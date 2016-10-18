@@ -24,8 +24,6 @@ class Social < ActiveRecord::Base
 
   scope :live_socials, -> {where(['date >= ?', Date.current])}
 
-  scope :female_attendance, ->() { joins(:category_gender).where('category_genders.name' => "Female") } 
-
   def location
     [address, city, category_country_id].compact.join(', ')
   end
