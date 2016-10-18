@@ -17,3 +17,11 @@ $(document).ready(function() {
     }
   });
 });
+
+
+// hiding the option 'both X men & X women' in the category 'CategoryQuantitygender'
+$(document).ready(function() {
+  $('#social_category_quantitygender_id option:last').addClass("hide");
+});
+
+
