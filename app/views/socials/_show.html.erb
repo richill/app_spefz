@@ -38,14 +38,32 @@
     <div class="middle_inner_section">
       <ul class="inline-list left">
         <li>
+          <!-- male -->
           <% if @social.category_quantitygender.name == "only men" %>
             <span><i class="fa fa-male" aria-hidden="true"></i></span>
+            <span>[only men]----</span>
+            <span>capacity:<%= @social.quantity %>----</span>
+            <span>attending:<%= @social.attendances.male_attendance.count %>----</span>
+            <span>space:<%= @social.available_male_places %></span>
+
+          <!-- female -->
           <% elsif @social.category_quantitygender.name == "only women" %>
             <span><i class="fa fa-female" aria-hidden="true"></i></span>
-            <span>[only women]</span>
+            <span>[only women]----</span>
+            <span>capacity:<%= @social.quantity %>----</span>
+            <span>attending:<%= @social.attendances.female_attendance.count %>----</span>
+            <span>space:<%= @social.available_female_places %></span>
+            
+
+          <!-- male & female -->
           <% else @social.category_quantitygender.name == "both men & women" %>
             <span><i class="fa fa-users" aria-hidden="true"></i></span>
+            <span>[both men and women]----</span>
+            <span>capacity:<%= @social.quantity %>----</span>
+            <span>attending:<%= @social.attendances.count %>----</span>
+            <span>space:<%= @social.available_places_BothAndOnly_men_and_women %></span>
           <% end %>
+
         </li>
         <li><span class="header">past socials:</span> <span class="content">15</span></li>
         <li><span class="header">upcoming socials:</span> <span class="content">10</span></li>

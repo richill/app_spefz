@@ -61,6 +61,20 @@ class Social < ActiveRecord::Base
     men + women
   end
 
+  #remaining_space_female
+  def available_female_places
+    capacity = self.quantity
+    female_attendance = self.attendances.female_attendance.count
+    capacity - female_attendance
+  end
+
+  #remaining_space_male
+  def available_male_places
+    capacity = self.quantity
+    male_attendance = self.attendances.male_attendance.count
+    capacity - male_attendance
+  end
+
   def sold_out?
     self.selection_BothAndOnly_men_and_women && self.available_places_BothAndOnly_men_and_women <= 0 || self.selection_BothX_men_and_women && self.available_places_BothX_men_and_women <= 0
   end
