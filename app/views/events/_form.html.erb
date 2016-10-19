@@ -11,6 +11,7 @@
     <%= f.input :city, label: false, placeholder: "city" %>
     <%= f.association :category_country, collection: CategoryCountry.all, prompt: "select a country", placeholder: "Select Country", label: false %>
     <%= f.input :postcode %>
+    <%= f.input :maplink %>
     <%= f.input :date %>
     <%= f.input :time, label: "Sart Time" %>
     <%= f.input :time_end, label: "End Time" %>

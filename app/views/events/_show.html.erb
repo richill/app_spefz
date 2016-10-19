@@ -74,7 +74,12 @@
             <div class="header"><div class="header_content"><i class="fa fa-map-marker" aria-hidden="true"></i> location</div></div>
             <div class="content">
               <div class="content_info">
-                <div class="specific_location"><%= "#{@event.venuename}, #{@event.address}, london, United Kingdom, #{@event.postcode}" %></div>
+                <%= link_to "#{@event.maplink}", target:"_blank" do %>
+                <div class="specific_location">
+                  <b><%= "#{@event.venuename}" %></b>
+                  <div><%= "#{@event.address}, london, United Kingdom, #{@event.postcode}" %></div>
+                </div>
+                <% end %>
                 <div><%= image_tag('img_map.png') %></div>
                 <div><%# image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@event.latitude}%2C#{@event.longitude}" %></div>
                 <div><%# image_tag google_map(center: @event.full_street_address) %></div>
