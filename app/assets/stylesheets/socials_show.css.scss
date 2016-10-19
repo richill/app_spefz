@@ -41,7 +41,7 @@
 }
 
 .social_profile_page_section .upper_section .upper_profile_content {
-  padding: 33px 0px;
+  padding: 25px 0px;
 }
 
 .social_profile_page_section .upper_section .profile_img_main_cover {
@@ -137,13 +137,12 @@
 // ======== middle_section ========
 .social_profile_page_section .middle_section {
   background-color: rgba(255, 255, 255, 0.7) !important;
-  // background-color: #fff !important;
   padding: 8px 0px;
 }
 
 .social_profile_page_section .middle_section .middle_inner_section {
   background-color: red;
-  width: 1170px !important;
+  width: 1160px !important;
   margin: auto;
 }
 
@@ -222,6 +221,10 @@
 
 .social_profile_page_section .middle_section .right {
   margin-bottom: 0px;
+}
+
+.social_profile_page_section .middle_section .right li {
+  margin: 0px !important;
 }
 
 .social_profile_page_section .middle_section .right .btn a {
@@ -408,7 +411,6 @@
 
 .social_profile_page_section .btn_social_attend a {
   padding: 10px 25px;
-  margin-left: -15px;
   display: inline-block;
   background-color: #E34B51 !important;
   -webkit-transition: all 0.3s ease;
@@ -418,7 +420,6 @@
 
 .social_profile_page_section .btn_social_attend a:hover {
   padding: 10px 25px;
-  margin-left: -15px;
   display: inline-block;
   background-color: rgba(47, 63, 91, 0.5) !important;
   -webkit-transition: all 0.3s ease;
@@ -428,7 +429,6 @@
 
 .social_profile_page_section .btn_social_unattend a {
   padding: 10px 25px;
-  margin-left: -15px;
   display: inline-block;
   background-color: rgba(47, 63, 91, 0.5) !important;
   -webkit-transition: all 0.3s ease;
@@ -438,7 +438,6 @@
 
 .social_profile_page_section .btn_social_unattend a:hover {
   padding: 10px 25px;
-  margin-left: -15px;
   display: inline-block;
   background-color: #E34B51 !important;
   -webkit-transition: all 0.3s ease;
@@ -458,7 +457,7 @@
 
 .social_profile_page_section .btn_social_save a {
   padding: 10px 25px;
-  margin-left: -15px;
+  margin-left: 8px;
   display: inline-block;
   background-color: #eeaa02 !important;
   -webkit-transition: all 0.3s ease;
@@ -468,7 +467,6 @@
 
 .social_profile_page_section .btn_social_save a:hover {
   padding: 10px 25px;
-  margin-left: -15px;
   display: inline-block;
   background-color: rgba(47, 63, 91, 0.5) !important;
   -webkit-transition: all 0.3s ease;
@@ -478,7 +476,7 @@
 
 .social_profile_page_section .btn_social_unsave a {
   padding: 10px 25px;
-  margin-left: -15px;
+  margin-left: 8px;
   display: inline-block;
   background-color: rgba(47, 63, 91, 0.5) !important;
   -webkit-transition: all 0.3s ease;
@@ -488,7 +486,6 @@
 
 .social_profile_page_section .btn_social_unsave a:hover {
   padding: 10px 25px;
-  margin-left: -15px;
   display: inline-block;
   background-color: #eeaa02 !important;
   -webkit-transition: all 0.3s ease;
@@ -498,7 +495,7 @@
 
 .social_profile_page_section .btn_edit a {
   padding: 10px 25px;
-  margin-left: -15px;
+  margin-left: 8px;
   display: inline-block;
   background-color: #4BB4BF !important;
   -webkit-transition: all 0.3s ease;
@@ -508,7 +505,6 @@
 
 .social_profile_page_section .btn_edit a:hover {
   padding: 10px 25px;
-  margin-left: -15px;
   display: inline-block;
   background-color: rgba(47, 63, 91, 0.5) !important;
   -webkit-transition: all 0.3s ease;
