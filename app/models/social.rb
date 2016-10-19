@@ -28,6 +28,11 @@ class Social < ActiveRecord::Base
     [address, city, category_country_id].compact.join(', ')
   end
 
+  #checks if current user is attending social
+  def current_user_attending?(user)
+    self.attendances.exists?(user: user)
+  end
+
   #selection
   def selection_BothAndOnly_men_and_women
     self.category_quantitygender.name == "only men" || self.category_quantitygender.name == "only women" || self.category_quantitygender.name == "both men & women"
@@ -100,5 +105,6 @@ class Social < ActiveRecord::Base
   def self.asc_order
     order('date ASC')
   end
+
 end
 

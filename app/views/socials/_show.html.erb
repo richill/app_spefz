@@ -132,7 +132,7 @@
       <!-- left column -->
       <div class="medium-3 columns column_left">
         <!-- location -->
-        <%# if @social.attendances.user_id.present? %>
+        <% if @social.current_user_attending?(current_user) %>
           <div class="medium-12 columns left_container_location">
             <div class="medium-12 columns left_inner_container location_container">
               <div class="header"><div class="header_content"><i class="fa fa-map-marker" aria-hidden="true"></i> <%= link_to "location", "#" %></div></div>
@@ -145,7 +145,7 @@
               </div>
             </div>
           </div>
-        <%# end %>
+        <% end %>
 
         <!-- about -->
         <% if @social.description? %>
