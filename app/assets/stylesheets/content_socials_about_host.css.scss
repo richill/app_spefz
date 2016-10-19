@@ -1,0 +1,70 @@
+/*=========================================
+    Section: events show page
+    File: views / events / _content_events_about_host.html.erb
+    File: views / events / _show.html.erb
+  =========================================*/
+
+.social_host_section .divider {
+  border-top: 1px solid #fff;
+  margin: 20px 0px;
+}
+
+.social_host_section ul {
+  margin: 0px;
+  list-style-type: none;
+}
+
+.social_host_section ul li .host {
+  margin: 3px;
+  padding: 4px;
+  width: 58px;
+  border-radius: 5px;
+  float: left;
+  margin-right: 8px;
+  background-color: rgba(88, 205, 166, 0.2) !important;
+}
+
+.social_host_section ul li .host img {
+  height: 48px;
+  width: 48px;
+  border-radius: 200px;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease;
+}
+
+.social_host_section ul li .host img:hover {
+  opacity: 0.5;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease;
+}
+
+.social_host_section .host_details {
+  font-family: 'Lato', sans-serif;
+  font-weight: 300 !important;
+  text-transform: capitalize;
+  padding: 15px 0px;
+}
+
+.social_host_section .host_name a {
+  color: #283041 !important;
+  font-weight: bold;
+}
+
+.social_host_section .host_name a:hover {
+  color: #E34B51 !important
+}
+
+.social_host_section .introduction {
+  font-family: 'Lato', sans-serif;
+  font-weight: 300 !important;
+}
+
+
+
+
+
+
+
+

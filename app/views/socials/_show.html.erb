@@ -241,6 +241,29 @@
           </div>
         </div>
 
+
+        <div class="medium-12 columns right_container_location">
+          <div class="medium-12 columns right_inner_container location_container">
+            <div class="header"><div class="header_content"><i class="fa fa-user" aria-hidden="true"></i> <%= link_to "host", "#" %></div></div>
+            <div class="content">
+              <div class="content_info">
+                <div><%= render 'shared/content_socials_about_host' %></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- <div class="medium-12 columns right_container">
+          <div class="medium-12 columns right_inner_container host_container">
+            <div class="header"><div class="header_content"><i class="fa fa-user" aria-hidden="true"></i> <%= link_to "host", "#" %></div></div>
+            <div class="content">
+              <div class="content_info">
+                <div><%# render 'shared/content_socials_about_host' %></div>
+              </div>
+            </div>
+          </div>
+        </div> -->
+
         <div class="medium-12 columns right_container">
           <div class="medium-12 columns right_inner_container attendee_container">
             <div class="header"><div class="header_content"><i class="fa fa-users" aria-hidden="true"></i> <%= link_to "attending [#{@social.attendances.count}]", "#" %></div></div>
