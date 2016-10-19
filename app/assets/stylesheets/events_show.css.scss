@@ -542,6 +542,15 @@
   padding: 10px 15px;
 }
 
+.events_show_inner_section .column_left .left_container .content .specific_location a {
+  font-size: 13px !important;
+}
+
+.events_show_inner_section .column_left .left_container .content .specific_location a:hover {
+  color: #E34B51 !important;
+  text-decoration: none !important;
+}
+
 .events_show_inner_section .column_left .left_container .location_container {
   background-color: rgba(47, 63, 91, 0.1);
   color: #283041!important;
