@@ -65,14 +65,28 @@ class Social < ActiveRecord::Base
   def available_female_places
     capacity = self.quantity
     female_attendance = self.attendances.female_attendance.count
-    capacity - female_attendance
+    exception_for_male_attendance = self.attendances.male_attendance.count
+    capacity - (female_attendance + exception_for_male_attendance)
+  end
+
+  def total_attendance_to_female_only_social
+    female_attendance = self.attendances.female_attendance.count
+    exception_for_male_attendance = self.attendances.male_attendance.count
+    female_attendance + exception_for_male_attendance
   end
 
   #remaining_space_male
   def available_male_places
     capacity = self.quantity
     male_attendance = self.attendances.male_attendance.count
-    capacity - male_attendance
+    exception_for_female_attendance = self.attendances.female_attendance.count
+    capacity - (male_attendance + exception_for_female_attendance)
+  end
+
+  def total_attendance_to_male_only_social
+    male_attendance = self.attendances.male_attendance.count
+    exception_for_female_attendance = self.attendances.female_attendance.count
+    male_attendance + exception_for_female_attendance
   end
 
   def sold_out?

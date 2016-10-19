@@ -43,7 +43,7 @@
             <span><i class="fa fa-male" aria-hidden="true"></i></span>
             <span>[only men]----</span>
             <span>capacity:<%= @social.quantity %>----</span>
-            <span>attending:<%= @social.attendances.male_attendance.count %>----</span>
+            <span>attending:<%= @social.total_attendance_to_male_only_social %>----</span>
             <span>space:<%= @social.available_male_places %></span>
 
           <!-- female -->
@@ -51,7 +51,7 @@
             <span><i class="fa fa-female" aria-hidden="true"></i></span>
             <span>[only women]----</span>
             <span>capacity:<%= @social.quantity %>----</span>
-            <span>attending:<%= @social.attendances.female_attendance.count %>----</span>
+            <span>attending:<%= @social.total_attendance_to_female_only_social %>----</span>
             <span>space:<%= @social.available_female_places %></span>
             
 
