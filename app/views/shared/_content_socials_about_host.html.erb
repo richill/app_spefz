@@ -2,10 +2,16 @@
   <div class="listed_hosts">
     <ul>
       <li>
-        <span class="host"><%= link_to (image_tag("img_profile_13.png")), "#" %></span>
+        <span class="host">
+          <% if @social.user.image.present? %>
+            <%= link_to(image_tag(@social.user.image_url, :alt =>  "alt text", :class =>"#"), user_path(@social.user)) %>
+          <% else %>
+            <%= link_to(image_tag("img-profile-image-default.png", :alt =>  "alt text", :class =>"#"), user_path(@social.user)) %>
+          <% end %>
+        </span>
         <div class="host_details">
           <div>Meet your host</div>
-          <div class="host_name"><%= link_to "Ian Gallaper", "#" %></div>
+          <div class="host_name"><%= link_to "#{@social.user.firstname}", "#" %></div>
         </div>
       </li>
     </ul>
