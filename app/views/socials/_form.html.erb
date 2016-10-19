@@ -16,6 +16,7 @@
     <%= f.association :category_country, collection: CategoryCountry.all, prompt: "select a country", placeholder: "Select Country", label: false %>
     <%# f.country_select :country, { priority_countries: ["GB", "US"], selected: "GB" } %>
     <%= f.input :postcode %>
+    <%= f.input :maplink %>
     <%= f.input :date %>
     <%= f.input :time %>
 

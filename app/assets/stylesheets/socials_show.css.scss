@@ -446,7 +446,6 @@
   -o-transition: all 0.3s ease;
 }
 
-
 .social_profile_page_section .btn_social_attendance_restrictions a {
   padding: 10px 25px;
   margin-left: -15px;
@@ -456,8 +455,6 @@
   -moz-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
 }
-
-
 
 .social_profile_page_section .btn_social_save a {
   padding: 10px 25px;
@@ -572,6 +569,14 @@
   font-weight: 300;
   color: #414249;
   background-color: #fff;
+}
+
+.social_profile_page_section .column_left .left_container_location .location_address a {
+  color: #283041 !important;
+}
+
+.social_profile_page_section .column_left .left_container_location .location_address a:hover {
+  color: #E34B51 !important;
 }
 
 .social_profile_page_section .column_left .left_container_location .location_container {
@@ -1016,7 +1021,6 @@
 .social_profile_page_section .column_right .right_container .content .content_info {
   padding: 15px;
 }
-
 
 
 
