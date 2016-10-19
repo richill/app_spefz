@@ -41,15 +41,7 @@
           <!-- male -->
           <% if @social.category_quantitygender.name == "only men" %>
             <span><i class="fa fa-male" aria-hidden="true"></i></span>
-            <span>[only men]----</span>
-            <span>capacity:<%= @social.quantity %>----</span>
-            <span>attending:<%= @social.total_attendance_to_male_only_social %>----</span>
-            <span>space:<%= @social.available_male_places %></span>
-
-          <!-- female -->
-          <% elsif @social.category_quantitygender.name == "only women" %>
-            <span class="content_gender"><i class="fa fa-female" aria-hidden="true"></i></span>
-            <span class="content_text">[only women]</span>
+            <span class="content_text">[men only]</span>
             <span>
               <% if @social.sold_out? %>
                 <span class="content_soldout">sold out</span>
@@ -57,24 +49,34 @@
                 <span class="content_available">available</span>
               <% end %>
             </span>
-            <div class="content_hide info">
-              <span>[only women]----</span>
-              <span>capacity:<%= @social.quantity %>----</span>
-              <span>attending:<%= @social.total_attendance_to_female_only_social %>----</span>
-              <span>space:<%= @social.available_female_places %></span>
-            </div>
+
+          <!-- female -->
+          <% elsif @social.category_quantitygender.name == "only women" %>
+            <span class="content_gender"><i class="fa fa-female" aria-hidden="true"></i></span>
+            <span class="content_text">[women only]</span>
+            <span>
+              <% if @social.sold_out? %>
+                <span class="content_soldout">sold out</span>
+              <% else %>
+                <span class="content_available">available</span>
+              <% end %>
+            </span>
             
           <!-- male & female -->
           <% else @social.category_quantitygender.name == "both men & women" %>
-            <span><i class="fa fa-users" aria-hidden="true"></i></span>
-            <span>[both men and women]----</span>
-            <span>capacity:<%= @social.quantity %>----</span>
-            <span>attending:<%= @social.attendances.count %>----</span>
-            <span>space:<%= @social.available_places_BothAndOnly_men_and_women %></span>
+            <span class="content_gender"><i class="fa fa-users" aria-hidden="true"></i></span>
+            <span class="content_text">[both men & women]</span>
+            <span>
+              <% if @social.sold_out? %>
+                <span class="content_soldout">sold out</span>
+              <% else %>
+                <span class="content_available">available</span>
+              <% end %>
+            </span>
           <% end %>
 
         </li>
-        <li><span class="header">past socials:</span> <span class="content">15</span></li>
+        <li><span class="divider">|</span></li>
         <li><span class="header">upcoming socials:</span> <span class="content">10</span></li>
       </ul>
       <ul class="inline-list right">
