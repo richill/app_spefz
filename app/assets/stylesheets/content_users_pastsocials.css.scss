@@ -4,25 +4,33 @@
     File: views / socials / _content_users_pastsocials.html.erb
   =========================================*/
 
-.socials_pastsocials_section .event_container ul {
+.users_pastsocials_header {
+  background-color: rgba(225, 71, 62, 0.15) !important;
+  letter-spacing: 1px;
+  padding: 6px 15px;
+  text-transform: capitalize;
+  margin-bottom: 5px;
+}
+
+.users_pastsocials_section .event_container ul {
   font-family: 'Lato', sans-serif;
   font-weight: 300;
   color: #414249;
   margin: 0px !important;
 }
 
-.socials_pastsocials_section .event_container ul li {
+.users_pastsocials_section .event_container ul li {
   list-style-type: none;
   margin-bottom: 15px;
   background-color: rgba(47, 63, 91, 0.03);
   padding: 15px;
 }
 
-.socials_pastsocials_section .event_container .title {
+.users_pastsocials_section .event_container .title {
   margin-bottom: 5px;
 }
 
-.socials_pastsocials_section .event_container .title a {
+.users_pastsocials_section .event_container .title a {
   font-family: 'Lato', sans-serif;
   font-size: 15px;
   color: #414249 !important;
@@ -33,20 +41,20 @@
   -o-transition: all 0.3s ease;
 }
 
-.socials_pastsocials_section .event_container .title a:hover {
+.users_pastsocials_section .event_container .title a:hover {
   color: #E34B51 !important;
   -webkit-transition: all 0.3s ease; 
   -moz-transition: all 0.3s ease; 
   -o-transition: all 0.3s ease;
 }
 
-.socials_pastsocials_section .image_content_info {
+.users_pastsocials_section .image_content_info {
   font-size: 11px;
   font-weight: bold;
   padding: 0px !important;
 }
 
-.socials_pastsocials_section .banner .ribbon-wrapper-green {
+.users_pastsocials_section .banner .ribbon-wrapper-green {
   width: 85px;
   height: 88px;
   overflow: hidden;
@@ -54,7 +62,7 @@
   z-index: 1;
 }
 
-.socials_pastsocials_section .banner .ribbon-green {
+.users_pastsocials_section .banner .ribbon-green {
   font: bold 10px Sans-Serif;
   opacity: 0.95;
   text-align: center;
@@ -76,90 +84,90 @@
 }
 
 
-.socials_pastsocials_section .left_evt {
+.users_pastsocials_section .left_evt {
   float: left;
 }
 
-.socials_pastsocials_section .left_evt .img_cover {
+.users_pastsocials_section .left_evt .img_cover {
   width: 150px;
       background-color: rgba(40, 48, 45, 0.1) !important;
 }
 
-.socials_pastsocials_section .left_evt img {
+.users_pastsocials_section .left_evt img {
   width: 150px;
   height: 105px;
 }
 
-.socials_pastsocials_section .right_evt {
+.users_pastsocials_section .right_evt {
   margin-left: 160px;
 }
 
-.socials_pastsocials_section .right_evt .info {
+.users_pastsocials_section .right_evt .info {
   margin-bottom: 2px;
   letter-spacing: 1px;
 }
 
-.socials_pastsocials_section .right_evt i {
+.users_pastsocials_section .right_evt i {
   font-size: 14px;
   margin-right: 5px;
 }
 
-.socials_pastsocials_section .right_evt .fa-map-pin {
+.users_pastsocials_section .right_evt .fa-map-pin {
   margin-left: 3px;
   margin-right: 8px;
 }
 
-.socials_pastsocials_section .right_evt .city_country {
+.users_pastsocials_section .right_evt .city_country {
   text-transform: capitalize;
 }
 
-.socials_pastsocials_section .right_evt .divider {
+.users_pastsocials_section .right_evt .divider {
   border-top: 1px solid #ededf3;
   margin: 7px 0px;
 }
 
-.socials_pastsocials_section .right_evt .description {
+.users_pastsocials_section .right_evt .description {
   color: #7C93A7;
   font-weight: 300;
   letter-spacing: 1px;
 }
 
-.socials_pastsocials_section .info_action_container {
+.users_pastsocials_section .info_action_container {
   margin-top: 10px;
 }
 
-.socials_pastsocials_section .info_action_container ul {
+.users_pastsocials_section .info_action_container ul {
   margin: 0px !important;
   display: inline-block;
 }
 
 
-.socials_pastsocials_section .left_evt_info {
+.users_pastsocials_section .left_evt_info {
   float: left;
 }
 
-.socials_pastsocials_section .left_evt_info .header {
+.users_pastsocials_section .left_evt_info .header {
   font-size: 10px !important;
   color: #414249 !important;
 }
 
-.socials_pastsocials_section .left_evt_info .content_header {
+.users_pastsocials_section .left_evt_info .content_header {
   color: #E34B51;
   font-weight: bold;
 }
 
-.socials_pastsocials_section .left_evt_info .content a {
+.users_pastsocials_section .left_evt_info .content a {
   font-size: 12px !important;
   color: #414249 !important;
   text-align: center !important;
 }
 
-.socials_pastsocials_section .left_evt_info .content a:hover {
+.users_pastsocials_section .left_evt_info .content a:hover {
   color: #E34B51 !important;
   font-weight: bold;
 }
 
-.socials_pastsocials_section .left_evt_info li {
+.users_pastsocials_section .left_evt_info li {
   font-size: 12px;
   text-transform: capitalize;
   margin: 0px !important;
@@ -169,11 +177,11 @@
 }
 
 
-.socials_pastsocials_section .right_evt_info {
+.users_pastsocials_section .right_evt_info {
   float: right;
 }
 
-.socials_pastsocials_section .right_evt_info li {
+.users_pastsocials_section .right_evt_info li {
   font-size: 12px;
   text-transform: capitalize;
   margin: 0px !important;
@@ -181,7 +189,7 @@
   background-color: transparent !important;
 }
 
-.socials_pastsocials_section .right_evt_info .btn_attend a {
+.users_pastsocials_section .right_evt_info .btn_attend a {
   font-family: 'Lato', sans-serif;
   font-size: 13px;
   font-weight: 300;
@@ -195,14 +203,14 @@
   -o-transition: all 0.3s ease;
 }
 
-.socials_pastsocials_section .right_evt_info .btn_attend a:hover {
+.users_pastsocials_section .right_evt_info .btn_attend a:hover {
   background-color: #eeaa02 !important;
   -webkit-transition: all 0.3s ease; 
   -moz-transition: all 0.3s ease; 
   -o-transition: all 0.3s ease;
 }
 
-.socials_pastsocials_section .right_evt_info .btn_save a {
+.users_pastsocials_section .right_evt_info .btn_save a {
   font-family: 'Lato', sans-serif;
   font-size: 13px;
   font-weight: 300;
@@ -215,7 +223,7 @@
   -o-transition: all 0.3s ease;
 }
 
-.socials_pastsocials_section .right_evt_info .btn_save a:hover {
+.users_pastsocials_section .right_evt_info .btn_save a:hover {
   background-color: #eeaa02 !important;
   -webkit-transition: all 0.3s ease; 
   -moz-transition: all 0.3s ease; 
