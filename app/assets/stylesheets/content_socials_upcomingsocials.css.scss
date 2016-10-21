@@ -4,6 +4,14 @@
     File: views / socials / _content_socials_upcomingsocials.html.erb
   =========================================*/
 
+.socials_upcomingevents_header {
+  background-color: rgba(225, 71, 62, 0.15) !important;
+  letter-spacing: 1px;
+  padding: 6px 15px;
+  text-transform: capitalize;
+  margin-bottom: 5px;
+}
+
 .socials_upcomingevents_section .event_container ul {
   font-family: 'Lato', sans-serif;
   font-weight: 300;
@@ -221,6 +229,12 @@
   -moz-transition: all 0.3s ease; 
   -o-transition: all 0.3s ease;
 }
+
+
+
+// ----------------------------
+// workings
+// ----------------------------
 
 
 
