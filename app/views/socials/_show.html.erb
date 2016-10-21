@@ -77,7 +77,7 @@
 
         </li>
         <li><span class="divider">|</span></li>
-        <li><span class="header">upcoming socials:</span> <span class="content">10</span></li>
+        <li><span class="header">upcoming socials:</span> <span class="content"><%= @social.user.socials.live_socials.count %></span></li>
       </ul>
       <ul class="inline-list right">
         <li>
@@ -238,8 +238,8 @@
             <div class="medium-12 columns header">
               <% if @social.user.socials.present? %>
                 <div class="medium-4 columns header_content evts_feed">wall</div>
-                <div class="medium-4 columns header_content evts_upcoming">upcoming socials</div>
-                <div class="medium-4 columns header_content evts_past">past socials</div>
+                <div class="medium-4 columns header_content evts_upcoming">upcoming socials [<%= @social.user.socials.live_socials.count %>]</div>
+                <div class="medium-4 columns header_content evts_past">past socials [<%= @social.user.socials.expired_socials.count %>]</div>
               <% else %>
                 <div class="medium-12 columns header_content evts_feed">feed</div>
               <% end %>
@@ -248,7 +248,7 @@
             <div class="content">
               <div class="content_info evts_feed_content"><%= render 'shared/content_socials_wall' %></div>
               <div class="content_info evts_upcoming_content hide"><%= render 'shared/content_socials_upcomingsocials' %></div>
-              <div class="content_info evts_past_content hide"><%= render 'shared/content_users_pastsocials' %></div>
+              <div class="content_info evts_past_content hide"><%= render 'shared/content_socials_pastsocials' %></div>
             </div>
           </div>
         </div>
