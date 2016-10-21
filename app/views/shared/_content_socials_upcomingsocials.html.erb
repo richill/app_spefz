@@ -31,7 +31,6 @@
           <div class="clear"></div>
           <div class="info_action_container">
             <ul class="inline-list left_evt_info">
-              <!-- <li><div class="header">price</div> <div class="content">£14.99</div></li> -->
               <li><div class="header">price</div> <div class="content_header">Free</div></li>
               <li>
                 <div class="header">space</div> 
@@ -71,7 +70,6 @@
               <li>
                 <div class="header">attendees</div> 
                 <div class="content">
-
                   <!-- male -->
                   <% if social.category_quantitygender.name == "only men" %>
                     <span><%= social.total_attendance_to_male_only_social %></span>
@@ -84,7 +82,6 @@
                   <% else social.category_quantitygender.name == "both men & women" %>
                     <span><%= social.attendances.count %></span>
                   <% end %>
-
                 </div>
               </li>
             </ul>
@@ -92,9 +89,44 @@
               <% if social.category_invite_id.present? && social.category_invite.name == "just my guest" %>
                 <li class="btn_attend"><%= link_to "invite only", "#" %></li>
               <% else %>
-                <li class="btn_attend"><%= link_to "attend", "#" %></li>
+                <li class="btn_attend">
+                  <!-- attend button -->
+                  <% if social.category_quantitygender.name == "only women" && current_user.category_gender.name == "Female" || 
+                        social.category_quantitygender.name == "only men" && current_user.category_gender.name == "Male" %>
+                    <% unless current_user.attending_socials.exists?(id: social.id) %>
+                      <% unless social.sold_out? %> <!-- note: if ticket is sold out do not display attend button -->
+                        <div class="social_profile_btn btn_social_attend"><%= link_to 'Attend', attending_socials_path(social_id: social), method: :post %></div>
+                      <% end %>
+                    <% else %>
+                      <div class="social_profile_btn btn_social_unattend"><%= link_to 'Un-Attend Social', attending_social_path(social), method: :delete %></div>
+                    <% end %>
+                  <% elsif social.category_quantitygender.name == "both men & women" && current_user.category_gender.name == "Male" || social.category_quantitygender.name == "both men & women" && current_user.category_gender.name == "Female" %>
+                    <% unless current_user.attending_socials.exists?(id: social.id)  %>
+                      <% unless social.sold_out? %> <!-- note: if ticket is sold out do not display attend button -->
+                        <div class="social_profile_btn btn_social_attend"><%= link_to 'Attend', attending_socials_path(social_id: social), method: :post %></div>
+                      <% end %>
+                    <% else %>
+                        <div class="social_profile_btn btn_social_unattend"><%= link_to 'Un-Attend Social', attending_social_path(social), method: :delete %></div>
+                    <% end %>
+                  <% else  %>
+                    <% unless social.sold_out? %> <!-- note: if ticket is sold out do not display attend button -->
+                      <div class="social_profile_btn btn_social_attendance_restrictions"><%= link_to 'Attendance Restriction', social_path(social) %></div>
+                    <% end %>
+                  <% end %>
+                  <!-- attend button -->
+                </li>
               <% end %>
-              <li class="btn_save"><%= link_to "save", "#" %></li>
+              <li class="btn_save">
+                <!-- save button -->
+                <% if current_user %>
+                  <% unless current_user.favourite_socials.exists?(id: social.id)  %>
+                    <div class="social_profile_btn btn_social_save"><%= link_to 'Save', favourite_socials_path(social_id: social), method: :post %></div>
+                  <% else %>
+                    <div class="social_profile_btn btn_social_unsave"><%= link_to 'Un-Save', favourite_social_path(social), method: :delete %></div>
+                  <% end %>
+                <% end %>
+                <!-- save button -->
+              </li>
             </ul>
           </div>
         </li>
