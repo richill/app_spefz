@@ -1,6 +1,5 @@
 <div>
   <div class="comments_conatiner">
-    <div class="header">comments <span>(<%= @social.comments.count %>)</span></div>
     <% if current_user %>
       <div><%= render 'shared/content_comments_form' %></div>
     <% end %>

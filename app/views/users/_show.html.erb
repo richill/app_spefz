@@ -168,8 +168,8 @@
             <div class="medium-12 columns header">
               <% if @user.socials.present? %>
                 <div class="medium-4 columns header_content evts_feed">feed</div>
-                <div class="medium-4 columns header_content evts_upcoming">upcoming socials [<%= @user.socials.live_socials.count %>]</div>
-                <div class="medium-4 columns header_content evts_past">past socials [<%= @user.socials.expired_socials.count %>]</div>
+                <div class="medium-4 columns header_content evts_upcoming">upcoming socials <%= "#{[@user.socials.live_socials.count]}" %></div>
+                <div class="medium-4 columns header_content evts_past">past socials <%= "#{[@user.socials.expired_socials.count]}" %></div>
               <% else %>
                 <div class="medium-12 columns header_content evts_feed">feed</div>
               <% end %>

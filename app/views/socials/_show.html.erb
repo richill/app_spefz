@@ -239,9 +239,9 @@
           <div class="medium-12 columns middle_inner_container">
             <div class="medium-12 columns header">
               <% if @social.user.socials.present? %>
-                <div class="medium-4 columns header_content evts_feed">wall</div>
-                <div class="medium-4 columns header_content evts_upcoming">upcoming socials [<%= @social.user.socials.live_socials.count %>]</div>
-                <div class="medium-4 columns header_content evts_past">past socials [<%= @social.user.socials.expired_socials.count %>]</div>
+                <div class="medium-4 columns header_content evts_feed">wall <%= "#{[@social.comments.count]}" %></div>
+                <div class="medium-4 columns header_content evts_upcoming">upcoming socials <%= "#{[@social.user.socials.live_socials.count]}" %></div>
+                <div class="medium-4 columns header_content evts_past">past socials <%= "#{[@social.user.socials.expired_socials.count]}" %></div>
               <% else %>
                 <div class="medium-12 columns header_content evts_feed">feed</div>
               <% end %>
