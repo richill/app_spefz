@@ -1,0 +1,53 @@
+<div>
+  <b>past socials</b> my name is richill and Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.
+</div>
+
+<% if @social.user.socials.present? %>
+<div class="socials_pastsocials_section">
+  <div class="socials_pastsocials_inner_section">
+    <div class="event_container">
+      <% @social.user.socials.expired_socials.all.each do |social| %>
+      <ul>
+        <li class="medium-12 columns">
+          <div class="title"><%= link_to "#{social.title}", user_social_path(social.user, social) %></div>
+          <div class="medium-12 columns image_content_info">
+            <div class="banner">
+              <div class="ribbon-wrapper-green">
+                <div class="ribbon-green">sold out</div>
+              </div>
+            </div>
+            <div class="left_evt">
+              <div class="img_cover"><%= link_to(image_tag("#{social.image_url}", :alt =>  "image", :class =>"#"), user_social_path(social.user, social)) %></div>
+            </div>
+            <div class="right_evt">
+              <div class="info"><i class="fa fa-calendar" aria-hidden="true"></i> Friday, 1 july</div>
+              <div class="info"><i class="fa fa-clock-o" aria-hidden="true"></i> 18:00h - 19:00h</div>
+              <div class="info city_country"><i class="fa fa-map-pin" aria-hidden="true"></i> london, united kingdom</div>
+              <div class="divider"></div>
+              <div class="description"><%= truncate(social.description, length: 100) %></div>
+            </div>
+          </div>
+          <div class="clear"></div>
+          <div class="info_action_container">
+            <ul class="inline-list left_evt_info">
+              <!-- <li><div class="header">price</div> <div class="content">£14.99</div></li> -->
+              <li><div class="header">price</div> <div class="content_header">Free</div></li>
+              <li><div class="header">space</div> <div class="content"><%= link_to "15", "#" %></div></li>
+              <li><div class="header">attendees</div> <div class="content"><%= link_to "10", "#" %></div></li>
+            </ul>
+            <ul class="inline-list right_evt_info">
+              <% if social.category_invite_id.present? && social.category_invite.name == "just my guest" %>
+                <li class="btn_attend"><%= link_to "invite only", "#" %></li>
+              <% else %>
+                <li class="btn_attend"><%= link_to "attend", "#" %></li>
+              <% end %>
+              <li class="btn_save"><%= link_to "save", "#" %></li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+      <% end %>
+    </div>
+  </div>
+</div>
+<% end %>
