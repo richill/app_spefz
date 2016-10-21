@@ -83,7 +83,6 @@
   box-shadow: 0px0px3pxrgba 0, 0, 0, 0.3;
 }
 
-
 .socials_pastsocials_section .left_evt {
   float: left;
 }
@@ -176,6 +175,15 @@
   background-color: transparent !important;
 }
 
+.socials_pastsocials_section .left_evt_info .content_soldout {
+  color:#E34B51;
+  font-weight:bold;
+}
+
+.socials_pastsocials_section .left_evt_info .content_available {
+  color:#58CDA6;
+  font-weight:bold;
+}
 
 .socials_pastsocials_section .right_evt_info {
   float: right;
@@ -196,8 +204,7 @@
   color: #fff !important;
   letter-spacing: 1px;
   background-color: #E34B51;
-  margin-right: 8px !important;
-  padding: 5px 25px;
+  padding: 5px 15px !important;
   -webkit-transition: all 0.3s ease; 
   -moz-transition: all 0.3s ease; 
   -o-transition: all 0.3s ease;
@@ -205,6 +212,7 @@
 
 .socials_pastsocials_section .right_evt_info .btn_attend a:hover {
   background-color: #eeaa02 !important;
+  padding: 5px 15px !important;
   -webkit-transition: all 0.3s ease; 
   -moz-transition: all 0.3s ease; 
   -o-transition: all 0.3s ease;
@@ -225,11 +233,11 @@
 
 .socials_pastsocials_section .right_evt_info .btn_save a:hover {
   background-color: #eeaa02 !important;
+  padding: 5px 25px !important;
   -webkit-transition: all 0.3s ease; 
   -moz-transition: all 0.3s ease; 
   -o-transition: all 0.3s ease;
 }
-
 
 
 
