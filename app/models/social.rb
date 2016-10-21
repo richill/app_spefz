@@ -25,11 +25,11 @@ class Social < ActiveRecord::Base
   scope :live_socials, -> {where(['date >= ?', Date.current])}
 
   def expired_social
-    appdeadline < Date.current
+    self.date < Date.current
   end
 
   def live_social
-    self.appdeadline >= Date.current
+    self.date >= Date.current
   end
 
   def location
