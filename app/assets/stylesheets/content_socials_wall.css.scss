@@ -72,3 +72,44 @@
   -o-transition: all 0.3s ease;
 }
 
+
+// ------------ comments ------------
+.comments_list_inner_section ul {
+  margin: 0px !important;
+  list-style-type: none;
+}
+
+.image_name_container {
+  padding: 0px !important;
+}
+
+.image_cover {
+  width: 48px;
+  height: 48px;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: rgba(88, 205, 166, 0.2) !important;
+}
+
+.image_cover img {
+  border-radius: 200px;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+.image_cover img:hover {
+  opacity: 0.5;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+
+
+
+
+
+
+
+
