@@ -7,7 +7,7 @@
 .users_wall_section .comment_form {
   background-color: rgba(47, 63, 91, 0.1);
   padding: 15px;
-  margin-bottom: 10px;
+  margin-bottom: 25px;
 }
 
 .users_wall_section #comment_content {
@@ -49,7 +49,7 @@
   font-size: 13px;
   color: #fff !important;
   text-align: center;
-  margin-bottom: 15px;
+  margin-bottom: 25px;
   font-weight: 300;
   background: #000;
   text-transform: capitalize;
@@ -74,16 +74,16 @@
 
 
 // ------------ comments ------------
-.comments_list_inner_section ul {
+.users_wall_section .comments_list_inner_section ul {
   margin: 0px !important;
   list-style-type: none;
 }
 
-.image_name_container {
+.users_wall_section .comments_list_inner_section .image_name_container {
   padding: 0px !important;
 }
 
-.image_cover {
+.users_wall_section .comments_list_inner_section .image_cover {
   width: 48px;
   height: 48px;
   padding: 5px;
@@ -91,19 +91,58 @@
   background-color: rgba(88, 205, 166, 0.2) !important;
 }
 
-.image_cover img {
+.users_wall_section .comments_list_inner_section .image_cover img {
   border-radius: 200px;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
 }
 
-.image_cover img:hover {
+.users_wall_section .comments_list_inner_section .image_cover img:hover {
   opacity: 0.5;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
 }
+
+.users_wall_section .comments_list_inner_section .comment_content_container {
+  padding-right: 0px !important;
+}
+
+.users_wall_section .comments_list_inner_section .name_comment {
+  font-family: 'Lato', sans-serif;
+  color: #283041 !important;
+  padding: 10px;
+  min-height: 45px;
+  background-color: rgba(47, 63, 91, 0.05);
+}
+
+.users_wall_section .comments_list_inner_section .name a {
+  font-family: 'Lato', sans-serif;
+  color: #283041 !important;
+  font-weight: bold;
+  text-transform: capitalize;
+  margin-right: 3px;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+.users_wall_section .comments_list_inner_section .name a:hover {
+  color: #E34B51 !important;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+.users_wall_section .comments_list_inner_section .time {
+  font-family: 'Lato', sans-serif;
+  color: #283041 !important;
+  font-size: 10px;
+  text-align: right;
+}
+
+
 
 
 
