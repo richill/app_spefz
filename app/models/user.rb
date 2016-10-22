@@ -69,5 +69,10 @@ class User < ActiveRecord::Base
   def self.desc_order
     order('created_at DESC')
   end
+
+  #checks if current user is attending social
+  # def current_user_attending?(social)
+  #   self.socials.exists?(social: social)
+  # end
 end
 
