@@ -1,7 +1,8 @@
-<div>
+<div class="users_wall_section">
   <div class="comments_conatiner">
     <% if current_user %>
-      <div><%= render 'shared/content_comments_form' %></div>
+      <div class="comment_form_container hide"><%= render 'shared/content_comments_form' %></div>
+      <div><%= link_to "write a comment", "#", class: "display_commentbox_btn" %></div>
     <% end %>
     <div><%= render 'shared/content_comments' %></div>
   </div>

@@ -3,6 +3,7 @@
     File: views / users / _show.html.erb
   =========================================*/
 
+// display of section when header is clicked
 $(document).ready(function() {
   $('.evts_feed').click(function() {
     $(".evts_feed_content").show();
@@ -24,6 +25,7 @@ $(document).ready(function() {
 });
 
 
+//change of text when hovered and clicked
 $(document).ready(function() {
   $(".btn_friend_request_cancel_submit").mouseenter(function() {
     $(".btn_friend_request_cancel_submit").prop("value", "Cancel Request");
@@ -42,4 +44,12 @@ $(document).ready(function() {
 //     }
 //   });
 // });
+
+// display of comment box
+$(document).ready(function() {
+  $(".display_commentbox_btn").click(function() {
+    $(".comment_form_container").slideToggle();
+    $(".display_commentbox_btn").hide();
+  });
+});
 

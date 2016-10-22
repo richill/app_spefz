@@ -7,7 +7,7 @@
       <%= f.text_area :content, rows: 8, placeholder: "Write a comment..."  %>
     </div>
     <div class="actions button_section">
-      <button><%= f.submit "Post" %></button>
+      <%= f.submit "Post", class: 'comment_submit_btn' %>
     </div>
   <% end %>
 </div>
