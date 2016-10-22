@@ -248,7 +248,13 @@
             </div>
             <div class="clear"></div>
             <div class="content">
-              <div class="content_info evts_feed_content"><%= render 'shared/content_socials_wall' %></div>
+              <div>
+                <% if @social.current_user_attending?(current_user) || @social.user == current_user %>
+                  <div class="content_info evts_feed_content"><%= render 'shared/content_socials_wall' %></div>
+                <% else %>
+                  <div>must be attending to comment</div>
+                <% end %>
+              </div>
               <div class="content_info evts_upcoming_content hide"><%= render 'shared/content_socials_upcomingsocials' %></div>
               <div class="content_info evts_past_content hide"><%= render 'shared/content_socials_pastsocials' %></div>
             </div>
