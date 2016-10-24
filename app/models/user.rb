@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   acts_as_taggable
+  acts_as_messageable
 
   belongs_to :category_gender 
   has_many :events, dependent: :destroy
@@ -36,6 +37,14 @@ class User < ActiveRecord::Base
   has_many :received_friend_requests, through: :passive_friendship_requests, source: :friender
 
   mount_uploader :image, ImageUploader
+
+  def mailboxer_name
+    self.name
+  end
+
+  def mailboxer_email(object)
+    self.email
+  end
 
   #follow a user
   def follow(other_user)
