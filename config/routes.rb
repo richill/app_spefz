@@ -29,5 +29,11 @@ Rails.application.routes.draw do
   get   'tags/:tag',                to: 'users#index', as: :tag
   get   'socialtags/:tag',          to: 'socials#index', as: :social_tag
   get   'eventtags/:tag',           to: 'events#index', as: :event_tag
+
+
+  # massage folder routes
+  get "message/inbox"               to: "message#inbox", as: :message_inbox
+  get "message/sent"                to: "message#sent",  as: :message_sent
+  get "message/trash"               to: "message#trash", as: :message_trash
 end
 
