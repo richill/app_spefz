@@ -19,6 +19,7 @@ gem 'country_select'
 gem 'impressionist'
 gem 'acts_as_commentable'
 gem 'geocoder'
+gem 'mailboxer'
 
 group :development, :test do
   gem 'sqlite3'
