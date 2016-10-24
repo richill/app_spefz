@@ -39,7 +39,7 @@ class User < ActiveRecord::Base
   mount_uploader :image, ImageUploader
 
   def mailboxer_name
-    self.name
+    self.firstname
   end
 
   def mailboxer_email(object)

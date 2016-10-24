@@ -23,7 +23,7 @@
           <div id="notificationContainer_friendRequest">
             <div id="notificationTitle_friendRequest">Friend Requests</div>
             <div id="notificationsBody_friendRequest" class="notifications">
-              <%= render 'shared/content_users_dropdownbox_friendrequest' %>
+              <%= render 'shared/content_dropdownbox_friendrequest' %>
             </div>
             <!-- <div id="notificationFooter"><a href="#">See All</a></div> -->
           </div>
@@ -41,8 +41,10 @@
           <span id="notification_count_comment">4</span>
           <div><%= link_to '', '#', id: "notificationLink_comment", class: "fa fa-comment" %></div>
           <div id="notificationContainer_comment">
-            <div id="notificationTitle_comment">Notifications</div>
-            <div id="notificationsBody_comment" class="notifications"><%# render 'shared/notification' %></div>
+            <div id="notificationTitle_comment">Messages</div>
+            <div id="notificationsBody_comment" class="notifications">
+              <%= render 'shared/content_dropdownbox_messages' %>
+            </div>
             <!-- <div id="notificationFooter"><a href="#">See All</a></div> -->
           </div>
         </li>
@@ -57,7 +59,7 @@
           <div id="notificationContainer_profile">
             <div id="notificationTitle_profile">Notifications</div>
             <div id="notificationsBody_profile" class="notifications">
-              <%= render 'shared/content_users_dropdownbox_profile' %>
+              <%= render 'shared/content_dropdownbox_users_profile' %>
             </div>
             <!-- <div id="notificationFooter"><a href="#">See All</a></div> -->
           </div>

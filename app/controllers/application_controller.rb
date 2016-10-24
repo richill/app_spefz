@@ -26,6 +26,10 @@ class ApplicationController < ActionController::Base
   private
 
   def message
-    @message ||= current_user.message
+    @message ||= current_user.messages
   end
+
+  # def mailbox
+  #   @mailbox ||= current_user.mailbox
+  # end
 end
