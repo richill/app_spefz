@@ -1,6 +1,6 @@
 <div id="myModal-socials-aboutme" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
   <div class="aboutsocial_inner_container">
-    <div class="header">About <%= @social.title %></div>
+    <div class="header"><%= truncate(@social.title, length: 55) %> </div>
     <div class="description"><%= @social.description %></div> 
     <a class="close-reveal-modal cancel_button" aria-label="Close">&#215;</a>
   </div>
