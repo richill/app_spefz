@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
   has_many :socials, dependent: :destroy
   has_many :favourites, dependent: :destroy
   has_many :favourite_socials, through: :favourites, source: :favourited, source_type: 'Social', dependent: :destroy
+  has_many :favourite_events, through: :favourites, source: :favourited, source_type: 'Event', dependent: :destroy
 
   has_many :attendances, dependent: :destroy
   has_many :attending_socials, through: :attendances, source: :attendable, source_type: 'Social', dependent: :destroy
