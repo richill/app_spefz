@@ -2,17 +2,17 @@ class MessagesController < ApplicationController
   #before_action :authenticate_user!
 
   def inbox
-    @inbox = messages.inbox
+    @inbox = message.inbox
     @active = :inbox
   end
 
   def sent
-    @sent = messages.sentbox
+    @sent = message.sentbox
     @active = :sent
   end
 
   def trash
-    @trash = messages.trash
+    @trash = message.trash
     @active = :trash
   end
 end
