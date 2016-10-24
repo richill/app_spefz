@@ -7,6 +7,9 @@ Rails.application.routes.draw do
   resources :favourite_socials, only: [:create, :destroy]
   resources :attending_socials, only: [:create, :destroy]
 
+  resources :favourite_events, only: [:create, :destroy]
+  resources :attending_events, only: [:create, :destroy]
+
   devise_for :users
   resources :users do
     resources :comments, only: [:create, :destroy] 
