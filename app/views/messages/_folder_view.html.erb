@@ -1,24 +1,24 @@
-<div>
-
-  <div class="medium-12 columns">
+<div class="medium-12 columns messages_page_section">
+  <div class="medium-12 columns upper_section">
     <div>
       <!-- we'll configure this to compose new conversations later -->
-      <%= link_to "Compose", "#", class: "btn btn-success" %>
+      <%= link_to "Compose hello", "#", class: "btn btn-success" %>
     </div>
   </div>
 
-  <div class="medium-1 columns">
+  <!-- left_section -->
+  <div class="medium-1 columns left_section">
     <div>
       <%= render 'messages/folders' %>
     </div>
   </div>
 
-  <div class="medium-11 columns">
+  <!-- right_section -->
+  <div class="medium-11 columns right_section">
     <div>
       <!-- individual conversations will show here -->
     </div>
   </div>
-
 </div>
 
 

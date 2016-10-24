@@ -1,2 +1,6 @@
-
-<%= render partial: 'messages/folder_view' %>
+<% provide(:title, "Messages | Sent Messages") %>
+<div>
+    <%= render 'shared/header' %>
+    <%= render partial: 'messages/folder_view' %>
+    <%= render 'shared/footer' %>
+</div>
