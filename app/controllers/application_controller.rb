@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   before_filter :configure_permitted_parameters, if: :devise_controller?
-  helper_method :message
+  helper_method :messages
 
   def after_sign_up_path_for(resources)
     socials_path
@@ -25,8 +25,8 @@ class ApplicationController < ActionController::Base
 
   private
 
-  def message
-    @message ||= current_user.messages
+  def messages
+    @messages ||= current_user.messages
   end
 
   # def mailbox
