@@ -213,6 +213,10 @@
   margin-bottom: 0px;
 }
 
+.events_show_inner_section .middle_section .right li {
+  margin: 0px !important;
+}
+
 .events_show_inner_section .middle_section .right .btn a {
   font-family: 'Lato', sans-serif;
   font-size: 13px;
@@ -417,7 +421,6 @@
 
 .events_show_inner_section .btn_social_unattend a {
   padding: 10px 55px;
-  margin-left: -15px;
   display: inline-block;
   background-color: rgba(47, 63, 91, 0.5) !important;
   -webkit-transition: all 0.3s ease;
@@ -427,7 +430,6 @@
 
 .events_show_inner_section .btn_social_unattend a:hover {
   padding: 10px 55px;
-  margin-left: -15px;
   display: inline-block;
   background-color: #E34B51 !important;
   -webkit-transition: all 0.3s ease;
@@ -437,7 +439,7 @@
 
 .events_show_inner_section .btn_event_save a {
   padding: 10px 55px;
-  margin-left: -15px;
+  margin-left: 8px;
   display: inline-block;
   background-color: #eeaa02 !important;
   -webkit-transition: all 0.3s ease;
@@ -447,7 +449,6 @@
 
 .events_show_inner_section .btn_event_save a:hover {
   padding: 10px 55px;
-  margin-left: -15px;
   display: inline-block;
   background-color: rgba(47, 63, 91, 0.5) !important;
   -webkit-transition: all 0.3s ease;
@@ -455,9 +456,9 @@
   -o-transition: all 0.3s ease;
 }
 
-.events_show_inner_section .btn_social_unsave a {
-  padding: 10px 25px;
-  margin-left: -15px;
+.events_show_inner_section .btn_event_unsave a {
+  padding: 10px 55px;
+  margin-left: 8px;
   display: inline-block;
   background-color: rgba(47, 63, 91, 0.5) !important;
   -webkit-transition: all 0.3s ease;
@@ -465,9 +466,8 @@
   -o-transition: all 0.3s ease;
 }
 
-.events_show_inner_section .btn_social_unsave a:hover {
-  padding: 10px 25px;
-  margin-left: -15px;
+.events_show_inner_section .btn_event_unsave a:hover {
+  padding: 10px 55px;
   display: inline-block;
   background-color: #eeaa02 !important;
   -webkit-transition: all 0.3s ease;

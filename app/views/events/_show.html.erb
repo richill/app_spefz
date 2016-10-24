@@ -57,7 +57,19 @@
       </ul>
       <ul class="inline-list right">
         <li><span><div class="event_show_btn btn_event_booknow"><%= link_to 'Book Now!', "#" %></div></span></li>
-        <li><div class="event_show_btn btn_event_save"><%= link_to 'Save', "#" %></div></li>
+        <li>
+          <div class="event_show_btn">
+            <%# link_to 'Save', "#" %>
+
+            <% if current_user %>
+              <% unless current_user.favourite_events.exists?(id: @event.id)  %>
+                <div class="btn_event_save"><%= link_to 'Save', favourite_events_path(event_id: @event), method: :post %></div>
+              <% else %>
+                <div class="btn_event_unsave"><%= link_to 'Un-Save', favourite_event_path(@event), method: :delete %></div>
+              <% end %>
+            <% end %>
+          </div>
+        </li>
       </ul>
     </div>
   </div>

@@ -69,7 +69,15 @@
                       <div class="date"><%= event.date.strftime("%d") %></div>
                       <div class="month"><span><%= event.date.strftime("%b") %></span> <span class="divider">|</span> <span><%= event.date.strftime("%a") %></span></div>
                       <div class="btn_booknow"><%= link_to "book now", user_event_path(event.user, event) %></div>
-                      <div class="btn_save"><%= link_to "save", "#" %></div>
+                      <div class="btn_save_unsave_section">
+                        <% if current_user %>
+                          <% unless current_user.favourite_events.exists?(id: event.id)  %>
+                            <div class="btn_save"><%= link_to 'Save', favourite_events_path(event_id: event), method: :post %></div>
+                          <% else %>
+                            <div class="btn_unsave"><%= link_to 'Un-Save', favourite_event_path(event), method: :delete %></div>
+                          <% end %>
+                        <% end %>
+                      </div>
                     </div>
                   </div>
                   <!-- right_evt content -->
