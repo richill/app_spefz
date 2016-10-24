@@ -32,8 +32,8 @@ Rails.application.routes.draw do
 
 
   # massage folder routes
-  get "message/inbox"               to: "message#inbox", as: :message_inbox
-  get "message/sent"                to: "message#sent",  as: :message_sent
-  get "message/trash"               to: "message#trash", as: :message_trash
+  get "messages/inbox",              to: "messages#inbox", as: :message_inbox
+  get "messages/sent",               to: "messages#sent",  as: :message_sent
+  get "messages/trash",              to: "messages#trash", as: :message_trash
 end
 
