@@ -31,7 +31,7 @@ Rails.application.routes.draw do
   get   'eventtags/:tag',           to: 'events#index', as: :event_tag
 
 
-  # massage folder routes
+  # massages folder routes
   get "messages/inbox",              to: "messages#inbox", as: :message_inbox
   get "messages/sent",               to: "messages#sent",  as: :message_sent
   get "messages/trash",              to: "messages#trash", as: :message_trash
