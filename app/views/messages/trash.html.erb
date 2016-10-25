@@ -1,6 +1,6 @@
 <% provide(:title, "Trash") %>
 <div>
     <%= render 'shared/header' %>
-    <%= render partial: 'messages/folder_view' %>
+    <%= render partial: 'messages/folder_view', locals: { is_conversation: false } %>
     <%= render 'shared/footer' %>
 </div>

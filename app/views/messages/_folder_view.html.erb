@@ -2,7 +2,7 @@
   <div class="messages_inner_container">
     <div class="medium-12 columns upper_section">
       <div>
-        <%= link_to "Compose", "#", class: "btn btn-success" %>
+        <%= link_to "Compose", new_conversation_path, class: "btn btn-success" %>
       </div>
     </div>
 
@@ -16,7 +16,12 @@
     <!-- right_section -->
     <div class="medium-10 columns right_section">
       <div>
-        hello there<!-- individual conversations will show here -->
+        <!-- individual conversations will show here -->
+        <% if is_conversation %>
+            <%= render 'conversations/form' %>
+        <% else %>
+          <!-- TODO -->
+        <% end %>
       </div>
     </div>
   </div>
