@@ -1,0 +1,23 @@
+<div class="medium-12 columns messages_page_section">
+  <div class="messages_inner_container">
+    <div class="medium-12 columns upper_section">
+      <div>
+        <%= link_to "Compose", new_conversation_path, class: "btn btn-success" %>
+      </div>
+    </div>
+
+    <!-- left_section -->
+    <div class="medium-2 columns left_section">
+      <div>
+        <%= render 'messages/folders' %>
+      </div>
+    </div>
+
+    <!-- right_section -->
+    <div class="medium-10 columns right_section">
+      <div>
+        <%= render partial: 'messages' %>
+      </div>
+    </div>
+  </div>
+</div>
