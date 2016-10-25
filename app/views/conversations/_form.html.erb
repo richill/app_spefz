@@ -3,7 +3,7 @@
 
   <div class="form-inputs">
     <%= f.label :recipients %>
-    <%= f.select(:recipients, User.all.collect {|p| [ p.firstname, p.id ] }, {}, { multiple: true , class: "form-control" })%>
+    <%= f.select(:recipients, User.all.collect {|p| [ p.firstname, p.id ] }, {}, { multiple: true , class: "chosen-select form-control" })%>
 
     <%= f.label :subject %>
     <%= f.text_field :subject, placeholder: "Subject", class: "form-control" %>

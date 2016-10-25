@@ -20,6 +20,7 @@ gem 'impressionist'
 gem 'acts_as_commentable'
 gem 'geocoder'
 gem 'mailboxer'
+gem 'chosen-rails'
 
 group :development, :test do
   gem 'sqlite3'
