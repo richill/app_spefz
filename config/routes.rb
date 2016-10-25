@@ -23,6 +23,15 @@ Rails.application.routes.draw do
   resources :socials do
     resources :comments, only: [:create, :destroy] 
   end
+
+  #conversations
+  resources :conversations do
+    member do
+      post :reply
+      post :trash
+      post :untrash
+    end
+  end
   
   root  'static_pages#homepg'
   get   'landing-page',             to: 'static_pages#landingpg'
@@ -30,8 +39,7 @@ Rails.application.routes.draw do
   get   'socialtags/:tag',          to: 'socials#index', as: :social_tag
   get   'eventtags/:tag',           to: 'events#index', as: :event_tag
 
-
-  # massages folder routes
+  #massages folder routes
   get "messages/inbox",              to: "messages#inbox", as: :message_inbox
   get "messages/sent",               to: "messages#sent",  as: :message_sent
   get "messages/trash",              to: "messages#trash", as: :message_trash
