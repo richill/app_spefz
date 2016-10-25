@@ -1,0 +1,22 @@
+<div class="old_content">
+  <div class="media-left">
+    <%= link_to(image_tag("#{conversation.originator.image_url}", alt: "image", :class =>"#", size: "64x64"), user_path(conversation.originator)) %>
+  </div>
+  <div class="media-body">
+    <h4 class="media-heading">
+      <div><%= conversation.originator.firstname %></div>
+      <div><small><%= time_ago_in_words(conversation.messages.last.created_at) %> ago</small></div>
+      <small><b>Subject: </b><%= conversation.subject %></small><br>
+      <small><b>Date: </b><%= conversation.messages.last.created_at.strftime("%A, %b %d, %Y at %I:%M%p") %></small>
+    </h4>
+    <span><%= conversation.messages.last.sender.firstname %>: <%= truncate conversation.messages.last.body, length: 145 %></span>
+    <%= link_to "View", conversation_path(conversation)  %>
+  </div>
+  <span>
+    <% if conversation.is_trashed?(current_user) %>
+      <%= link_to 'Untrash', untrash_conversation_path(conversation), class: 'btn btn-info', method: :post %>
+    <% else %>
+      <%= link_to 'Move to trash', trash_conversation_path(conversation), class: 'btn btn-danger', method: :post, data: {confirm: 'Are you sure?'} %>
+    <% end %>
+  </span><br/><br/>
+</div>
