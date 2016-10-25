@@ -38,7 +38,9 @@
           </div>
         </li>
         <li class="notification_li">
-          <span id="notification_count_comment">4</span>
+          <% if unread_messages_count > 0 %>
+            <span id="notification_count_comment"><%= unread_messages_count %></span>
+          <% end %>
           <div><%= link_to '', '#', id: "notificationLink_comment", class: "fa fa-comment" %></div>
           <div id="notificationContainer_comment">
             <div id="notificationTitle_comment">Messages</div>
