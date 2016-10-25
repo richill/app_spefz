@@ -1,6 +1,6 @@
 <% provide(:title, "Sent Messages") %>
 <div>
     <%= render 'shared/header' %>
-    <%= render partial: 'messages/folder_view_sent', locals: { is_conversation: false, messages: @sent } %>
+    <%= render partial: 'messages/folder_view', locals: { is_conversation: false, messages: @sent } %>
     <%= render 'shared/footer' %>
 </div>
