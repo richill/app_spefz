@@ -1,6 +1,7 @@
 <% provide(:title, "Inbox") %>
 <div>
     <%= render 'shared/header' %>
-    <%= render partial: 'messages/folder_view', locals: { is_conversation: false } %>
+    <%= render partial: 'messages/folder_view', locals: { is_conversation: false, messages: @inbox } %>
     <%= render 'shared/footer' %>
 </div>
+

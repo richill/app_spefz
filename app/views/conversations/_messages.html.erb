@@ -3,9 +3,7 @@
     <div class="media">
       <div class="media-left">
         <!-- user avators can go here -->
-        <a href="#">
-          <img class="media-object" src="http://placehold.it/64x64" alt="...">
-        </a>
+        <%= link_to(image_tag("#{message.sender.image_url}", alt: "image", :class =>"#", size: "64x64"), user_path(message.sender)) %>
       </div>
       <div class="media-body">
         <h4 class="media-heading">
@@ -13,9 +11,11 @@
           <small><b>Subject: </b><%= message.subject %></small><br>
           <small><b>Date: </b><%= message.created_at.strftime("%A, %b %d, %Y at %I:%M%p") %></small>
         </h4>
-        <%= message.body %>
+        <%= message.body %><br/><br/><br/><br/>
       </div>
     </div>
 <% end %>
+
+
 
 

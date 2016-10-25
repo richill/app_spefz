@@ -5,6 +5,14 @@ module MessagesHelper
     # using mailboxer
     message.inbox(unread: true).count(:id, distinct: true)
   end
+
+  def sent_messages_count
+    message.sentbox.count(:id, distinct: true)
+  end
+
+  def trashed_messages_count
+    message.trash.count(:id, distinct: true)
+  end
 end
 
 

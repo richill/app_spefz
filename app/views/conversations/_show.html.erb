@@ -18,6 +18,17 @@
       <div>
         <%= render partial: 'messages' %>
       </div>
+
+      <div>
+        <!-- Reply Form -->
+        <%= simple_form_for :messages, url: reply_conversation_path(conversation) do |f| %>
+            <%= f.text_area :body, placeholder: "Reply Message", rows: 4, class: "form-control" %>
+            <%= f.button :submit, "Reply", class: 'btn' %>
+        <% end %>
+        <div class="clearfix"></div>
+      </div>
+
+
     </div>
   </div>
 </div>
