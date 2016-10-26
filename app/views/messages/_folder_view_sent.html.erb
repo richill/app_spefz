@@ -1,9 +1,0 @@
-<div class="old_content">
-<ul>
-  <% current_user.mailbox.sentbox.each do |message| %>
-  <li><%= message.originator.firstname %></li>
-  <li><%= time_ago_in_words(message.messages.last.created_at) %> ago</li>
-    
-  <% end %>
-</ul>
-</div>
