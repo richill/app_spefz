@@ -1,23 +1,26 @@
 <div class="medium-12 columns messages_page_section">
   <div class="messages_inner_container">
     <div class="medium-12 columns upper_section">
-      <div>
-        <span><%= link_to "Trash", new_conversation_path, class: "btn btn-success" %></span> |
-        <span><%= link_to "Inbox", new_conversation_path, class: "btn btn-success" %></span> |
-        <span><%= link_to "Compose", new_conversation_path, class: "btn btn-success" %></span>
+      <!-- listed actions -->
+      <div class="listed_actions_container">
+        <div class="listed_actions_inner_container"> 
+          <span><%= link_to "Trash", new_conversation_path, class: "btn btn-success" %></span> |
+          <span><%= link_to "Inbox", new_conversation_path, class: "btn btn-success" %></span> |
+          <span><%= link_to "Compose", new_conversation_path, class: "btn btn-success" %></span>
+        </div>
       </div>
-
+      <!-- listed actions -->
     </div>
 
     <!-- left_section -->
-    <div class="medium-12 columns left_section">
+    <!-- <div class="medium-12 columns left_section">
       <div>
         <%= render 'messages/folders' %>
       </div>
-    </div>
+    </div> -->
 
     <!-- right_section -->
-    <div class="medium-12 columns right_section">
+    <div class="medium-12 columns lower_section">
       <div>
         <!-- individual conversations will show here -->
         <% if is_conversation %>

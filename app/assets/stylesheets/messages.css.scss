@@ -13,24 +13,43 @@
   =========================================*/
 
 .messages_page_section {
+  background-color: #fff !important;
   background: url("img_background_main.png") repeat;
+  padding: 0px !important;
+  min-height: 822px;
 }
 
-.messages_inner_container {
+
+// --------upper_section--------
+.upper_section {
+  padding: 0px !important;
+}
+
+.listed_actions_container {
+  height: 65px;
+  background-color: rgba(47, 63, 91, 0.1);
+}
+
+.listed_actions_inner_container {
   height: 65px;
   width: 1170px;
   margin: auto;
 }
 
 
-// --------left_section--------
-.left_section {
-  background-color: #E34B51;
+// --------lower_section--------
+.lower_section {
+  height: 65px;
+  width: 1170px;
+  margin: auto;
 }
 
 
 
-// --------right_section--------
-.right_section {
-  background-color: #58CDA6;
-}
+// ------------------------
+// workings
+// ------------------------
+
+
+
+
