@@ -20,7 +20,7 @@
                     <div class="name_info">
                       <div class="name"><%= "#{conversation.messages.second.sender.firstname} #{conversation.messages.second.sender.lastname}" %></div>
                       <div class="subject">subject: <%= conversation.subject %></div>
-                      <div class="info"><i class="fa fa-arrow-left" aria-hidden="true"></i> <%= truncate conversation.messages.last.body, length: 145 %></div>
+                      <div class="info"><i class="fa fa-arrow-left" aria-hidden="true"></i> <%= conversation.messages.last.sender.firstname %>: <%= truncate conversation.messages.last.body, length: 145 %></div>
                     </div>
                     <div class="time"><%= time_ago_in_words(conversation.messages.last.created_at) %> ago | <%= conversation.messages.last.created_at.strftime("%A, %b %d, %Y at %I:%M%p") %></div>
                   </div>
@@ -59,52 +59,40 @@
 
   <% else action_name == 'sent'%>
 
-    <div class="media hide">
-      <div class="media-left">
-        <div><%= link_to(image_tag("#{conversation.originator.image_url}", alt: "image", :class =>"#", size: "64x64"), user_path(conversation.originator)) %></div>
-        <div><h4><%= conversation.originator.firstname %></h4></div>
-        <div><%= time_ago_in_words(conversation.messages.last.created_at) %> ago</div>
-        <div><b>Subject:</b> <%= conversation.subject %></div>
-        <div><b>Date:</b> <%= conversation.messages.last.created_at.strftime("%A, %b %d, %Y at %I:%M%p") %></div>
-        <div><span><i class="fa fa-arrow-left" aria-hidden="true"></i> <%# conversation.messages.last.sender.firstname %> <%= truncate conversation.messages.first.body, length: 145 %></span> | <span><%= link_to "View", conversation_path(conversation)  %></span></div>
-
-        <span>
-          <% if conversation.is_trashed?(current_user) %>
-            <%= link_to 'Untrash', untrash_conversation_path(conversation), class: 'btn btn-info', method: :post %>
-          <% else %>
-            <%= link_to 'Move to trash', trash_conversation_path(conversation), class: 'btn btn-danger', method: :post, data: {confirm: 'Are you sure?'} %>
-          <% end %>
-        </span><br/><br/>
-      </div>
-    </div>
-
-    <div class="messages_partial_inner_section">
-      <!-- <div class="subject"><%# @receipts.first.message.subject %></div> -->
-      <div class="user_interaction">
-        <ul>
-          <li>
-            <div class="medium-1 columns image_name_container">
-              <div class="image_cover">
-                <% if conversation.originator.image.present? %>
-                  <div><%= link_to(image_tag("#{conversation.originator.image_url}", alt: "image", :class =>"#"), user_path(conversation.originator)) %></div>
-                <% else %>
-                  <div><%= link_to(image_tag("img-profile-image-default.png", alt: "image", :class =>"#"), user_path(conversation.originator)) %></div>
-                <% end %>
-              </div>
+    <div class="user_interaction">
+      <ul>
+        <%= link_to conversation_path(conversation) do %>
+        <li>
+          <div class="medium-1 columns image_name_container">
+            <div class="image_cover">
+              <% if conversation.originator.image.present? %>
+                <div><%= image_tag("#{conversation.originator.image_url}", alt: "image", :class =>"#") %></div>
+              <% else %>
+                <div><%= image_tag("img-profile-image-default.png", alt: "image", :class =>"#") %></div>
+              <% end %>
             </div>
+          </div>
 
-            <div class="medium-11 columns additional_info_content_container">
-              <div class="name_info">
-                <span class="name"><%= link_to conversation.originator.firstname, user_path(conversation.originator) %></span>
-                <span class="info"><i class="fa fa-arrow-left" aria-hidden="true"></i> </span>
-              </div>
-              <div class="time">Posted: <%= time_ago_in_words(conversation.messages.last.created_at) %> ago | <%= conversation.messages.last.created_at.strftime("%A, %b %d, %Y at %I:%M%p") %></div>
+          <div class="medium-11 columns additional_info_content_container">
+            <div class="name_info">
+              <div class="name"><%= conversation.originator.firstname %></div>
+              <div class="subject">subject: <%= conversation.subject %></div>
+              <div class="info"><span><i class="fa fa-arrow-left" aria-hidden="true"></i> <%= conversation.messages.last.sender.firstname %>: <%= truncate conversation.messages.last.body, length: 145 %></span></div>
             </div>
-            <div class="clear"></div>
-          </li><br/><br/>
-        </ul>
-      </div>
+            <div class="time"><%= time_ago_in_words(conversation.messages.last.created_at) %> ago | <%= conversation.messages.last.created_at.strftime("%A, %b %d, %Y at %I:%M%p") %></div>
+          </div>
+          <div class="clear"></div>
+        </li>
+        <% end %>
+      </ul>
     </div>
+    <span>
+      <% if conversation.is_trashed?(current_user) %>
+        <%= link_to 'Untrash', untrash_conversation_path(conversation), class: 'untrash_can_link', method: :post %>
+      <% else %>
+        <%= link_to 'Move to trash', trash_conversation_path(conversation), class: 'trash_can_link', method: :post, data: {confirm: 'Are you sure?'} %>
+      <% end %>
+    </span><br/><br/>
   <% end %>
 </div>
 

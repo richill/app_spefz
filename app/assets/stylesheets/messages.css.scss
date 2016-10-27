@@ -90,6 +90,17 @@
   -o-transition: all 0.3s ease;
 }
 
+.messages_page_section .listed_conversations_inner_container .header {
+  font-family: 'Lato', sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 15px;
+  background-color: rgba(47, 63, 91, 0.05);
+  margin-bottom: 40px;
+  border-bottom: 3px solid rgba(88, 205, 166, 0.15);
+}
+
 /*=========================================
     lower_section - messages: inbox / sent / trash
     File: views / conversations / _conversation.html.erb
@@ -105,17 +116,6 @@
   padding: 17px 25px 6px 0px !important;
   border-radius: 5px;
 }
-
-// .messages_page_section .conversation_partial_inner_section .subject {
-//   font-family: 'Lato', sans-serif;
-//   font-size: 16px;
-//   font-weight: bold;
-//   text-transform: uppercase;
-//   padding: 15px;
-//   background-color: rgba(47, 63, 91, 0.05);
-//   margin-bottom: 40px;
-//   border-bottom: 3px solid rgba(88, 205, 166, 0.15);
-// }
 
 .messages_page_section .conversation_partial_inner_section .image_name_container {
   padding: 0px !important;
@@ -224,7 +224,26 @@
   -o-transition: all 0.3s ease;
 }
 
+.messages_page_section .conversation_partial_inner_section .untrash_can_link {
+  text-align: left !important;
+  font-family: 'Lato', sans-serif;
+  font-size: 12px;
+  float: right;
+  margin-right: 26px;
+  text-transform: capitalize;
+  color: #4BB4BF !important;
+  margin-top: 2px;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
 
+.messages_page_section .conversation_partial_inner_section .untrash_can_link:hover {
+  color: #E34B51 !important;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
 
 
 
