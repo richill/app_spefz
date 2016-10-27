@@ -21,28 +21,30 @@
 
 
 // --------upper_section--------
-.upper_section {
+.messages_page_section .upper_section {
   padding: 0px !important;
-}
-
-.listed_actions_container {
   height: 65px;
   background-color: rgba(47, 63, 91, 0.1);
 }
 
-.listed_actions_inner_container {
-  height: 65px;
+.messages_page_section .listed_actions_inner_container {
   width: 1170px;
   margin: auto;
 }
 
 
 // --------lower_section--------
-.lower_section {
-  height: 65px;
+.messages_page_section .lower_section {
+  padding: 0px !important;
+  background-color: green;
+}
+
+.messages_page_section .listed_conversations_inner_container {
+  // height: 65px;
   width: 1170px;
   margin: auto;
 }
+
 
 
 
