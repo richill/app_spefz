@@ -1,20 +1,33 @@
-<% @receipts.each do |receipt| %>
-    <% message = receipt.message %>
-    <div class="media">
-      <div class="media-left">
-        <!-- user avators can go here -->
-        <%= link_to(image_tag("#{message.sender.image_url}", alt: "image", :class =>"#", size: "64x64"), user_path(message.sender)) %>
-      </div>
-      <div class="media-body">
-        <h4 class="media-heading">
-          <%= message.sender.firstname %> <br>
-          <small><b>Subject: </b><%= message.subject %></small><br>
-          <small><b>Date: </b><%= message.created_at.strftime("%A, %b %d, %Y at %I:%M%p") %></small>
-        </h4>
-        <%= message.body %><br/><br/><br/><br/>
-      </div>
-    </div>
-<% end %>
+<div class="comments_list_inner_section">
+  <div class="subject"><%= @receipts.first.message.subject %></div>
+  <div class="user_comment">
+    <ul>
+    <% @receipts.each do |receipt| %>
+      <% message = receipt.message %>
+      <li>
+        <div class="medium-1 columns image_name_container">
+          <div class="image_cover">
+            <% if message.sender.image.present? %>
+              <div><%= link_to(image_tag("#{message.sender.image_url}", alt: "image", :class =>"#"), user_path(message.sender)) %></div>
+            <% else %>
+              <div><%= link_to(image_tag("img-profile-image-default.png", alt: "image", :class =>"#"), user_path(message.sender)) %></div>
+            <% end %>
+          </div>
+        </div>
+
+        <div class="medium-11 columns comment_content_container">
+          <div class="name_comment">
+            <span class="name"><%= link_to message.sender.firstname, user_path(message.sender) %></span>
+            <span class="comment"><%= message.body %></span>
+          </div>
+          <div class="time">Posted: <%= time_ago_in_words(message.created_at) %> ago</div>
+        </div>
+        <div class="clear"></div>
+      </li><br/>
+    <% end %>
+    </ul>
+  </div>
+</div>
 
 
 
