@@ -10,8 +10,27 @@
     <div class="medium-12 columns upper_section">
       <div class="listed_actions_container">
         <div class="listed_actions_inner_container"> 
-          <span><%= link_to "Trash", new_conversation_path, class: "btn btn-success" %></span> |
-          <span><%= link_to "Inbox", new_conversation_path, class: "btn btn-success" %></span> |
+          <span>
+            <%= link_to message_trash_path do %>
+              <span class="label label-danger pull-right"><%= trashed_messages_count %></span>
+              <em class="fa fa-trash-o fa-lg"></em>
+              <span>Trash</span>
+            <% end %>
+          </span> |
+          <span>
+            <%= link_to message_inbox_path do  %>
+              <span class="label label-danger pull-right"><%= unread_messages_count %></span>
+              <em class="fa fa-inbox fa-lg"></em>
+              <span>Inbox</span>
+            <% end %>
+          </span> |
+          <span>
+            <%= link_to message_sent_path do %>
+              <span class="label label-danger pull-right"><%= sent_messages_count %></span>
+              <em class="fa fa-paper-plane-o fa-lg"></em>
+              <span>Sent</span>
+            <% end %>
+          </span> |
           <span><%= link_to "Compose", new_conversation_path, class: "btn btn-success" %></span>
         </div>
       </div>
