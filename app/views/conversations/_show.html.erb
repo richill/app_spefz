@@ -1,34 +1,47 @@
+<!-- =========================================
+       display details of conversation within message betweeen reciever & sender
+     ========================================= -->
+
 <div class="medium-12 columns messages_page_section">
   <div class="messages_inner_container">
+
+
+    <!-- upper_section: listed actions -->
     <div class="medium-12 columns upper_section">
-      <div>
-        <%= link_to "Compose", new_conversation_path, class: "btn btn-success" %>
+      <div class="listed_actions_container">
+        <div class="listed_actions_inner_container"> 
+          <span><%= link_to "Trash", new_conversation_path, class: "btn btn-success" %></span> |
+          <span><%= link_to "Inbox", new_conversation_path, class: "btn btn-success" %></span> |
+          <span><%= link_to "Compose", new_conversation_path, class: "btn btn-success" %></span>
+        </div>
       </div>
     </div>
+    <!-- upper_section: listed actions -->
 
-    <!-- left_section -->
-    <div class="medium-2 columns left_section">
-      <div>
-        <%= render 'messages/folders' %>
-      </div>
-    </div>
 
-    <!-- right_section -->
-    <div class="medium-10 columns right_section">
-      <div>
-        <%= render partial: 'messages' %>
-      </div>
 
-      <div>
-        <!-- Reply Form -->
-        <%= simple_form_for :messages, url: reply_conversation_path(conversation) do |f| %>
+    <div><%# render 'messages/folders' %></div>
+
+
+
+    <!-- lower_section: conversations -->
+    <div class="medium-12 columns lower_section">
+      <div class="listed_conversations_container">
+        <div class="listed_conversations_inner_container">
+          <!-- Previous conversations -->
+          <div><%= render partial: 'messages' %></div>
+          <!-- Reply Form -->
+          <%= simple_form_for :messages, url: reply_conversation_path(conversation) do |f| %>
             <%= f.text_area :body, placeholder: "Reply Message", rows: 4, class: "form-control" %>
             <%= f.button :submit, "Reply", class: 'btn' %>
-        <% end %>
-        <div class="clearfix"></div>
+          <% end %>
+          <div class="clearfix"></div>
+        </div>
       </div>
-
-
     </div>
+    <!-- lower_section: conversations -->
+
+
+
   </div>
 </div>

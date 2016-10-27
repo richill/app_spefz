@@ -12,6 +12,7 @@
     File: views / messages / trash.html.erb
   =========================================*/
 
+
 .messages_page_section {
   background-color: #fff !important;
   background: url("img_background_main.png") repeat;
@@ -34,6 +35,12 @@
 
 
 // --------lower_section--------
+
+/*=========================================
+    messages: inbox / sent / trash
+  =========================================*/
+
+
 .messages_page_section .lower_section {
   padding: 30px 0px !important;
   background-color: green;
@@ -43,6 +50,17 @@
   width: 1170px;
   margin: auto;
 }
+
+
+
+/*=========================================
+    messages: conversation
+  =========================================*/
+
+
+
+
+
 
 
 

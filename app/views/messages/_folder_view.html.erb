@@ -1,5 +1,10 @@
+<!-- =========================================
+       display message summary view betweeen reciever & sender for inbox | sent & trash
+     ========================================= -->
+
 <div class="medium-12 columns messages_page_section">
   <div class="messages_inner_container">
+
 
     <!-- upper_section: listed actions -->
     <div class="medium-12 columns upper_section">
@@ -11,32 +16,30 @@
         </div>
       </div>
     </div>
+    <!-- upper_section: listed actions -->
 
-    
 
-    <!-- left_section -->
-    <!-- <div class="medium-12 columns left_section">
-      <div>
-        <%# render 'messages/folders' %>
-      </div>
-    </div> -->
+
+    <div><%# render 'messages/folders' %></div>
+
+
 
     <!-- lower_section: conversations -->
     <div class="medium-12 columns lower_section">
       <div class="listed_conversations_container">
         <div class="listed_conversations_inner_container">
-
           <!-- individual conversations will show here -->
           <% if is_conversation %>
               <%= render 'conversations/form' %>
           <% else %>
             <%= render partial: 'conversations/conversation', collection: messages %>
           <% end %><br/> <br/>
-
-
         </div>
       </div>
     </div>
+    <!-- lower_section: conversations -->
+
+
   </div>
 </div>
 
