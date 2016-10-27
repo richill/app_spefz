@@ -57,6 +57,7 @@
   margin: auto;
   background-color: #fff;
   padding: 35px;
+  border-bottom: 3px solid rgba(88, 205, 166, 0.15);
 }
 
 .message_reply_form_section #messages_body {
@@ -156,8 +157,8 @@
 }
 
 .messages_page_section .conversation_partial_inner_section .info {
-    background-color: rgba(225, 71, 62, 0.05);
-    padding: 8px;
+  background-color: rgba(225, 71, 62, 0.05);
+  padding: 8px;
 }
 
 
@@ -202,6 +203,26 @@
   margin-top: 5px;
 }
 
+.messages_page_section .conversation_partial_inner_section .trash_can_link {
+  text-align: left !important;
+  font-family: 'Lato', sans-serif;
+  font-size: 12px;
+  float: right;
+  margin-right: 26px;
+  text-transform: capitalize;
+  color: #4BB4BF !important;
+  margin-top: 2px;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+.messages_page_section .conversation_partial_inner_section .trash_can_link:hover {
+  color: #E34B51 !important;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
 
 
 
@@ -296,8 +317,57 @@
 
 
 
+/*=========================================
+    lower_section - messages: form
+    File: views / conversations / _form.html.erb
+  =========================================*/
 
+.compose_messages_page_section .header {
+  font-family: 'Lato', sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 15px;
+  background-color: rgba(47, 63, 91, 0.05);
+  margin-bottom: 40px;
+  border-bottom: 3px solid rgba(88, 205, 166, 0.15);
+}
 
+.compose_messages_page_section label {
+  font-family: 'Lato', sans-serif;
+  color: #283041 !important;
+  margin-top: 20px;
+}
+
+.compose_messages_page_section #conversation_body {
+  font-family: "Lato", sans-serif;
+}
+
+.compose_messages_page_section .send_message_btn {
+  font-family: 'Lato', sans-serif;
+  font-size: 13px;
+  color: #fff !important;
+  font-weight: 300;
+  background: #000;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+  padding: 10px 25px;
+  width: 100%;
+  border: none;
+  display: inline-block;
+  margin-bottom: 0px !important;
+  background-color: #4BB4BF !important;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+.compose_messages_page_section .send_message_btn:hover {
+  background-color: #E34B51 !important;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
 
 
 // ------------------------

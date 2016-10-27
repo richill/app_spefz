@@ -1,21 +1,24 @@
-<%= simple_form_for :conversation, url: :conversations, html: { class: "" } do |f| %>
-  <%= f.error_notification %>
+<div class="compose_messages_page_section">
+  <div class="header">compose a message</div>
+  <%= simple_form_for :conversation, url: :conversations, html: { class: "" } do |f| %>
+    <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.label :recipients %>
-    <%= f.select(:recipients, User.all.collect {|p| [ p.firstname, p.id ] }, {}, { multiple: true , class: "chosen-select form-control" })%>
+    <div class="form-inputs">
+      <%= f.label :recipients %>
+      <%= f.select(:recipients, User.all.collect {|p| [ "#{p.firstname} #{p.lastname}", p.id ] }, {}, { multiple: true , class: "chosen-select form-control" })%>
 
-    <%= f.label :subject %>
-    <%= f.text_field :subject, placeholder: "Subject", class: "form-control" %>
+      <%= f.label :subject %>
+      <%= f.text_field :subject, placeholder: "Subject", class: "form-control" %>
 
-    <%= f.label :message %>
-    <%= f.text_area :body, class: 'form-control',placeholder: "Type your message here", rows: 4  %>
-  </div>
+      <%= f.label :message %>
+      <%= f.text_area :body, class: 'form-control',placeholder: "Type your message here", rows: 4  %>
+    </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Send Message", class: "btn" %>
-  </div>
-<% end %>
+    <div class="form-actions">
+      <%= f.button :submit, "Send Message", class: "send_message_btn" %>
+    </div>
+  <% end %>
+</div>
 
 
 
