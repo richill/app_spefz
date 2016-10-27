@@ -20,7 +20,7 @@
             <span class="name"><%= link_to message.sender.firstname, user_path(message.sender) %></span>
             <span class="info"><%= message.body %></span>
           </div>
-          <div class="time">Posted: <%= time_ago_in_words(message.created_at) %> ago | <%= message.created_at.strftime("%A, %b %d, %Y at %I:%M%p") %></div>
+          <div class="time"><%= time_ago_in_words(message.created_at) %> ago | <%= message.created_at.strftime("%A, %b %d, %Y at %I:%M%p") %></div>
         </div>
         <div class="clear"></div>
       </li><br/><br/>

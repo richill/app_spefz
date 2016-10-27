@@ -3,32 +3,32 @@
     <div class="media">
       <div class="media-left">
         <% if conversation.originator.firstname == current_user.firstname && conversation.messages.last.sender.firstname == current_user.firstname %>
-            <div class="user_interaction">
-              <ul>
-                <%= link_to conversation_path(conversation) do %>
-                <li>
-                  <div class="medium-1 columns image_name_container">
-                    <div class="image_cover">
-                      <% if conversation.messages.second.sender.image.present? %>
-                        <div><%= image_tag("#{conversation.messages.second.sender.image_url}", alt: "image", :class =>"#") %></div>
-                      <% else %>
-                        <div><%= image_tag("img-profile-image-default.png", alt: "image", :class =>"#") %></div>
-                      <% end %>
-                    </div>
+          <div class="user_interaction">
+            <ul>
+              <%= link_to conversation_path(conversation) do %>
+              <li>
+                <div class="medium-1 columns image_name_container">
+                  <div class="image_cover">
+                    <% if conversation.messages.second.sender.image.present? %>
+                      <div><%= image_tag("#{conversation.messages.second.sender.image_url}", alt: "image", :class =>"#") %></div>
+                    <% else %>
+                      <div><%= image_tag("img-profile-image-default.png", alt: "image", :class =>"#") %></div>
+                    <% end %>
                   </div>
-                  <div class="medium-11 columns additional_info_content_container">
-                    <div class="name_info">
-                      <div class="name"><%= "#{conversation.messages.second.sender.firstname} #{conversation.messages.second.sender.lastname}" %></div>
-                      <div class="subject">subject: <%= conversation.subject %></div>
-                      <div class="info"><i class="fa fa-arrow-left" aria-hidden="true"></i> <%= conversation.messages.last.sender.firstname %>: <%= truncate conversation.messages.last.body, length: 145 %></div>
-                    </div>
-                    <div class="time"><%= time_ago_in_words(conversation.messages.last.created_at) %> ago | <%= conversation.messages.last.created_at.strftime("%A, %b %d, %Y at %I:%M%p") %></div>
+                </div>
+                <div class="medium-11 columns additional_info_content_container">
+                  <div class="name_info">
+                    <div class="name"><%= "#{conversation.messages.second.sender.firstname} #{conversation.messages.second.sender.lastname}" %></div>
+                    <div class="subject">subject: <%= conversation.subject %></div>
+                    <div class="info"><i class="fa fa-arrow-left" aria-hidden="true"></i> <%= conversation.messages.last.sender.firstname %>: <%= truncate conversation.messages.last.body, length: 145 %></div>
                   </div>
-                  <div class="clear"></div>
-                </li>
-                <% end %>
-              </ul>
-            </div>
+                  <div class="time"><%= time_ago_in_words(conversation.messages.last.created_at) %> ago | <%= conversation.messages.last.created_at.strftime("%A, %b %d, %Y at %I:%M%p") %></div>
+                </div>
+                <div class="clear"></div>
+              </li>
+              <% end %>
+            </ul>
+          </div>
 
 
 
