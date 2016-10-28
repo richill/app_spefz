@@ -252,7 +252,7 @@
                 <% if @social.current_user_attending?(current_user) || @social.user == current_user %>
                   <div class="content_info evts_feed_content"><%= render 'shared/content_socials_wall' %></div>
                 <% else %>
-                  <div class="unattendace_comment_info_display">Must be attending social to view comments or to comment</div>
+                  <div class="unattendace_comment_info_display evts_feed_content">Must be attending social to view comments or to comment</div>
                 <% end %>
               </div>
               <div class="content_info evts_upcoming_content hide"><%= render 'shared/content_socials_upcomingsocials' %></div>
