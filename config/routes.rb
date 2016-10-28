@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :subscriptions
+
   resources :socials
   resources :events
   resources :signups
