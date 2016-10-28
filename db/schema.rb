@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161028135013) do
+ActiveRecord::Schema.define(version: 20161028141821) do
 
   create_table "attendances", force: :cascade do |t|
     t.integer  "attendable_id"
@@ -207,6 +207,15 @@ ActiveRecord::Schema.define(version: 20161028135013) do
 
   add_index "mailboxer_receipts", ["notification_id"], name: "index_mailboxer_receipts_on_notification_id"
   add_index "mailboxer_receipts", ["receiver_id", "receiver_type"], name: "index_mailboxer_receipts_on_receiver_id_and_receiver_type"
+
+  create_table "payments", force: :cascade do |t|
+    t.string   "email"
+    t.integer  "user_id"
+    t.integer  "subscription_id"
+    t.string   "reference"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
 
   create_table "relationships", force: :cascade do |t|
     t.integer  "follower_id"
