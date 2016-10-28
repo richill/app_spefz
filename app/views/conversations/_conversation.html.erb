@@ -37,7 +37,7 @@
               <li>
                 <div class="medium-1 columns image_name_container">
                   <div class="image_cover">
-                    <% if conversation.messages.second.sender.image.present? %>
+                    <% if conversation.originator.image.present? %>
                       <div><%= image_tag("#{conversation.originator.image_url}", alt: "image", class: "#") %></div>
                     <% else %>
                       <div><%= image_tag("img-profile-image-default.png", alt: "image", class: "#") %></div>
@@ -135,16 +135,3 @@
     </span><br/><br/>
   <% end %>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
