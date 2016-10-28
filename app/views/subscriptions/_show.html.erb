@@ -24,10 +24,10 @@
         <div class="absolute_inner_content">
           <div class="absolute_content_pricing_info">
 
-            <!-- PAYMENT plan -->
+            <!-- subscription payment plan -->
             <div class="left_section">
               <div class="pricing_body left_inner_section">
-                <% if @subscription.title == "plus" %>
+                <% if @subscription.title == "premium" %>
                   <div class="text first_content" style="background-color: #6ebd63;">
                     <div class="recommended">recommended</div>
                     <span class="currency">$</span>
@@ -49,11 +49,13 @@
                     <div class="period">per month</div>
                   </div>
                 <% end %>
+
+
                 <div class="text second_content">Post
                   <% if @subscription.price.blank? %> 
                     <span class="figure"><%= "0" %></span> Job Ads
                   <% else %>
-                    <span class="figure"><%= @subscription.adverts %></span> Job Ads
+                    <span class="figure"><%# @subscription.adverts %></span> Job Ads
                   <% end %>
                 </div>
                 <div class="text second_content">
@@ -68,20 +70,20 @@
                   <div class="database">search through our CV database</div>
                 </div>
                 <div class="text fifth_content">
-                  <% if current_userr.admin_pa_management_group || current_userr.admin_client_group %>
-                    <% if current_userr.subscribed? %>
+                  <%# if current_user.admin_pa_management_group || current_user.admin_client_group %>
+                    <%# if current_user.subscribed? %>
 
-                      <%# link_to 'UPGRADE PLAN', new_payment_path(product_id: @subscription.id, userr: current_userr.id), target:"_blank" %>
+                      <%# link_to 'UPGRADE PLAN', new_payment_path(product_id: @subscription.id, userr: current_user.id), target:"_blank" %>
                       <a href="#" data-reveal-id="myModal-userr-upgrade-plan-info">UPGRADE PLAN</a>
-                      <div><%= render 'shared/modal_userr_upgrade_plan_info' %></div>
+                      <div><%# render 'shared/modal_userr_upgrade_plan_info' %></div>
                     
-                    <% else %>
-                      <%= link_to 'GET PLAN', new_payment_path(product_id: @subscription.id, userr: current_userr.id), target:"_blank" %>
-                    <% end %>
-                  <% else %>
+                    <%# else %>
+                      <%= link_to 'GET PLAN', new_payment_path(product_id: @subscription.id, userr: current_user.id), target:"_blank" %>
+                    <%# end %>
+                  <%# else %>
                     <a href="#" data-reveal-id="myModal-userr-payment-info">GET PLAN</a>
-                    <div><%= render 'shared/modal_userr_payment_info' %></div>
-                  <% end %>
+                    <div><%# render 'shared/modal_userr_payment_info' %></div>
+                  <%# end %>
                 </div>
               </div>
             </div>
@@ -89,30 +91,10 @@
             <!-- PAYMENT plan benifits -->
             <div class="benifit_content">
               <div class="medium-12 columns benifit_title"><%= @subscription.title %> benifits</div>
-              <% if @subscription.title == "basic" %>
-                <div class="basic_listed_benifits">
-                  <ul>
-                    <li><i class="fa fa-check"></i> BASIC offers a postage of <%= @subscription.adverts %> job adverts</li>
-                    <li><i class="fa fa-check"></i> Access to a range of dashboard statistics</li>
-                    <li><i class="fa fa-check"></i> Access to a range of hiring analytics</li>
-                    <li><i class="fa fa-check"></i> View candidates application forms, profiles & resume</li>
-                    <li><i class="fa fa-check"></i> Unlimited view and search through our CV database </li>
-                  </ul>
-                </div>
-              <% elsif @subscription.title == "plus" %>
-                <div class="plus_listed_benifits">
-                  <ul>
-                    <li><i class="fa fa-check"></i> PLUS offers a postage of <%= @subscription.adverts %> job adverts</li>
-                    <li><i class="fa fa-check"></i> Access to a range of dashboard statistics</li>
-                    <li><i class="fa fa-check"></i> Access to a range of hiring analytics</li>
-                    <li><i class="fa fa-check"></i> View candidates application forms, profiles & resume</li>
-                    <li><i class="fa fa-check"></i> Unlimited view and search through our CV database </li>
-                  </ul>
-                </div>
-              <% elsif @subscription.title == "premium" %>
+              <% if @subscription.title == "premium" %>
                 <div class="premium_listed_benifits">
                   <ul>
-                    <li><i class="fa fa-check"></i> PREMIUM offers a postage of <%= @subscription.adverts %> job adverts</li>
+                    <li><i class="fa fa-check"></i> PREMIUM offers a postage of <%# @subscription.adverts %> job adverts</li>
                     <li><i class="fa fa-check"></i> Access to a range of dashboard statistics</li>
                     <li><i class="fa fa-check"></i> Access to a range of hiring analytics</li>
                     <li><i class="fa fa-check"></i> View candidates application forms, profiles & resume</li>
@@ -120,15 +102,15 @@
                   </ul>
                 </div>
               <% end %>
-              <%# if current_userr.admin_pa_management_group || current_userr.admin_client_group %>
-              <% if @userr.admin_pa_management_group && @userr.subscribed? || @userr.admin_client_group && @userr.subscribed? %>
+              <%# if current_user.admin_pa_management_group || current_user.admin_client_group %>
+              <%# if @userr.admin_pa_management_group && @userr.subscribed? || @userr.admin_client_group && @userr.subscribed? %>
                 <div class="btn_third"><a href="#" data-reveal-id="myModal-userr-upgrade-plan-info"><%= "UPGRADE TO #{@subscription.title} PLAN NOW!" %></div>
-                <div><%= render 'shared/modal_userr_upgrade_plan_info' %></div>
-              <% elsif @userr.admin_pa_management_group && !@userr.subscribed? || @userr.admin_client_group && !@userr.subscribed? %>
-                <div class="btn_third"><%= link_to "GET #{@subscription.title} PLAN NOW!", new_payment_path(product_id: @subscription.id, userr: current_userr.id), target:"_blank" %></div>
-              <% else %>
-                <div class="btn_third"><%= link_to "VIEW ALL PLAN", pricing_products_path %></div>
-              <% end %>
+                <div><%# render 'shared/modal_userr_upgrade_plan_info' %></div>
+              <%# elsif @userr.admin_pa_management_group && !@userr.subscribed? || @userr.admin_client_group && !@userr.subscribed? %>
+                <div class="btn_third"><%= link_to "GET #{@subscription.title} PLAN NOW!", new_payment_path(product_id: @subscription.id, userr: current_user.id), target:"_blank" %></div>
+              <%# else %>
+                <div class="btn_third"><%= link_to "VIEW ALL PLAN", "#" %></div>
+              <%# end %>
             </div>
             
           </div>
