@@ -54,20 +54,7 @@
 
 
                 <div class="text second_content">
-                  <%# if current_user.admin_pa_management_group || current_user.admin_client_group %>
-                    <%# if current_user.subscribed? %>
-
-                      <%# link_to 'UPGRADE PLAN', new_payment_path(product_id: @subscription.id, userr: current_user.id), target:"_blank" %>
-                      <a href="#" data-reveal-id="myModal-userr-upgrade-plan-info">UPGRADE PLAN</a>
-                      <div><%# render 'shared/modal_userr_upgrade_plan_info' %></div>
-                    
-                    <%# else %>
-                      <%= link_to 'GET PLAN', new_payment_path(product_id: @subscription.id, userr: current_user.id), target:"_blank" %>
-                    <%# end %>
-                  <%# else %>
-                    <a href="#" data-reveal-id="myModal-userr-payment-info">GET PLAN</a>
-                    <div><%# render 'shared/modal_userr_payment_info' %></div>
-                  <%# end %>
+                  <%= link_to 'GET PLAN', new_payment_path(product_id: @subscription.id, userr: current_user.id), target:"_blank" %>
                 </div>
               </div>
             </div>
