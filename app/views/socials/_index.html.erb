@@ -3,7 +3,7 @@
 
     <!-- search -->
     <div class="search_container">
-      <div class="search_inner_container"> Total socials:<%= @socials.count %> | Expired socials: <%= @socials.expired_socials.count %> | Live socials: <%= @socials.live_socials.count %></div>
+      <div class="search_inner_container"> Total socials:<%= @socials.count %> | Expired socials: <%= @socials.expired_socials.count %> | Live socials: <%= @socials.live_socials.count %> | <%= link_to "SUBSCRIPTION", subscription_path(@premium_plan) %></div>
     </div>
     <!-- search -->
 

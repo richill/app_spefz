@@ -9,6 +9,7 @@ class SocialsController < ApplicationController
     else
       @socials = Social.all
     end
+    @premium_plan = Subscription.find_by(title:"premium")
   end
 
   def user_socials
