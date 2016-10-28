@@ -18,8 +18,63 @@
         <div class="absolute_inner_content">
           <div class="absolute_content_pricing_info">
 
+
             <!-- subscription payment plan -->
             <div class="left_section">
+              <div class="pricing_body left_inner_section">
+                <div class="text first_content" style="background-color: #6ebd63;">
+                  <span class="currency">$</span>
+                  <span class="price">
+                    <% if @subscription.price.blank? %>
+                      <span><%= number_with_precision("0.00", precision: 0) %></span>
+                    <% else %>
+                      <span><%= number_with_precision(@subscription.price, precision: 0) %></span>
+                    <% end %>
+                    <div class="period">per month</div>
+                  </span>
+                </div>
+
+
+                <div class="text second_content">Post
+                  <% if @subscription.price.blank? %> 
+                    <span class="figure"><%= "0" %></span> Job Ads
+                  <% else %>
+                    <span class="figure"><%# @subscription.adverts %></span> Job Ads
+                  <% end %>
+                </div>
+                <div class="text second_content">
+                  <div><span class="figure"><%= "dashboard" %></span> & <span class="figure"><%= "analytics" %></span></div>
+                </div>
+                <div class="text third_content">view 
+                  <% if @subscription.price.blank? %> 
+                    <span class="figure"><%= "0" %></span> CVs
+                  <% else %>
+                    <span class="figure"><%# @subscription.cvs %>unlimited</span> CVs
+                  <% end %> 
+                  <div class="database">search through our CV database</div>
+                </div>
+                <div class="text fifth_content">
+                  <%# if current_user.admin_pa_management_group || current_user.admin_client_group %>
+                    <%# if current_user.subscribed? %>
+
+                      <%# link_to 'UPGRADE PLAN', new_payment_path(product_id: @subscription.id, userr: current_user.id), target:"_blank" %>
+                      <a href="#" data-reveal-id="myModal-userr-upgrade-plan-info">UPGRADE PLAN</a>
+                      <div><%# render 'shared/modal_userr_upgrade_plan_info' %></div>
+                    
+                    <%# else %>
+                      <%= link_to 'GET PLAN', new_payment_path(product_id: @subscription.id, userr: current_user.id), target:"_blank" %>
+                    <%# end %>
+                  <%# else %>
+                    <a href="#" data-reveal-id="myModal-userr-payment-info">GET PLAN</a>
+                    <div><%# render 'shared/modal_userr_payment_info' %></div>
+                  <%# end %>
+                </div>
+              </div>
+            </div>
+            <!-- subscription payment plan -->
+
+            <!-- subscription payment plan old_content -->
+            <div class="left_section hide">
               <div class="pricing_body left_inner_section">
                 <% if @subscription.title == "premium" %>
                   <div class="text first_content" style="background-color: #6ebd63;">
@@ -81,6 +136,7 @@
                 </div>
               </div>
             </div>
+            <!-- subscription payment plan old_content -->
 
             <!-- PAYMENT plan benifits -->
             <div class="benifit_content">
