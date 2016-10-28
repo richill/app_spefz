@@ -10,21 +10,21 @@
     <div class="medium-12 columns upper_section">
       <div class="listed_actions_container">
         <div class="listed_actions_inner_container"> 
-          <span>
+          <span class="<%= active_page(:trash) %>">
             <%= link_to message_trash_path do %>
               <em class="fa fa-trash-o fa-lg"></em>
               <span>Trash</span>
               <span>[<%= trashed_messages_count %>]</span>
             <% end %>
           </span> |
-          <span>
+          <span class="<%= active_page(:inbox) %>">
             <%= link_to message_inbox_path do  %>
               <em class="fa fa-inbox fa-lg"></em>
               <span>Inbox</span>
               <span>[<%= unread_messages_count %>]</span>
             <% end %>
           </span> |
-          <span>
+          <span class="<%= active_page(:sent) %>">
             <%= link_to message_sent_path do %>
               <em class="fa fa-paper-plane-o fa-lg"></em>
               <span>Sent</span>
