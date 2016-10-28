@@ -35,25 +35,25 @@
                 </div>
 
 
-                <div class="text second_content">Post
-                  <% if @subscription.price.blank? %> 
-                    <span class="figure"><%= "0" %></span> Job Ads
-                  <% else %>
-                    <span class="figure"><%# @subscription.adverts %></span> Job Ads
-                  <% end %>
-                </div>
+            
+
+
                 <div class="text second_content">
-                  <div><span class="figure"><%= "dashboard" %></span> & <span class="figure"><%= "analytics" %></span></div>
+                  <div><span class="figure"><%= "attend unlimited socials" %></span></div>
                 </div>
-                <div class="text third_content">view 
-                  <% if @subscription.price.blank? %> 
-                    <span class="figure"><%= "0" %></span> CVs
-                  <% else %>
-                    <span class="figure"><%# @subscription.cvs %>unlimited</span> CVs
-                  <% end %> 
-                  <div class="database">search through our CV database</div>
+
+                <div class="text second_content">
+                  <div><span class="figure"><%= "host unlimited socials" %></span></div>
                 </div>
-                <div class="text fifth_content">
+
+                <div class="text second_content">
+                  <div><span class="figure"><%= "unlimited messages" %></span></div>
+                </div>
+
+         
+
+
+                <div class="text second_content">
                   <%# if current_user.admin_pa_management_group || current_user.admin_client_group %>
                     <%# if current_user.subscribed? %>
 
