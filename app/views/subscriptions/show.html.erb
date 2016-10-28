@@ -1,14 +1,6 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @subscription.title %>
-</p>
-
-<p>
-  <strong>Price:</strong>
-  <%= @subscription.price %>
-</p>
-
-<%= link_to 'Edit', edit_subscription_path(@subscription) %> |
-<%= link_to 'Back', subscriptions_path %>
+<% provide(:title, "Subscription Plan") %>
+<div>
+  <%= render 'shared/header' %>
+  <%= render 'show' %>
+  <%= render 'shared/footer' %>
+</div>
