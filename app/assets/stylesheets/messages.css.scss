@@ -27,9 +27,10 @@
 /*=========================================
     upper_section - messages: conversation deatils
     File: views / conversations / _show.html.erb
+    File: views / messages / _folder_view.html.erb
   =========================================*/
 .messages_page_section .upper_section {
-  padding: 0px !important;
+  padding: 13px 0px !important;
   height: 65px;
   background-color: rgba(47, 63, 91, 0.1);
 }
@@ -37,6 +38,69 @@
 .messages_page_section .listed_actions_inner_container {
   width: 1170px;
   margin: auto;
+}
+
+.messages_page_section .listed_actions_inner_container .left_section {
+  margin: 0px !important;
+}
+
+.messages_page_section .listed_actions_inner_container .left_section li {
+  margin: 0px !important;
+  margin-right: 15px !important;
+  background-color: #4BB4BF !important;
+}
+
+.messages_page_section .listed_actions_inner_container .left_section li a {
+  background-color: #4BB4BF !important;
+  color: #fff !important;
+  font-family: 'Lato', sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  text-transform: capitalize;
+  padding: 10px 25px;
+  letter-spacing: 1px;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+.messages_page_section .listed_actions_inner_container .left_section li a:hover {
+  background-color: #eeaa02 !important;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+.messages_page_section .listed_actions_inner_container .right_section {
+  margin: 0px !important;
+}
+
+.messages_page_section .listed_actions_inner_container .right_section li {
+  margin: 0px !important;
+  background-color: #E34B51 !important;
+}
+
+.messages_page_section .listed_actions_inner_container .right_section li a {
+  background-color: #E34B51 !important;
+  color: #fff !important;
+  font-family: 'Lato', sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  text-transform: capitalize;
+  padding: 10px 25px;
+  letter-spacing: 1px;
+  width: 200px;
+  text-align: center;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+.messages_page_section .listed_actions_inner_container .right_section li a:hover {
+  background-color: #eeaa02 !important;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
 }
 
 
@@ -392,6 +456,18 @@
 // ------------------------
 // workings
 // ------------------------
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

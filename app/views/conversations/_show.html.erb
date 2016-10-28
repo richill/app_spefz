@@ -3,35 +3,39 @@
      ========================================= -->
 
 <div class="medium-12 columns messages_page_section">
-  <div class="messages_inner_container">
+  <div class="messages_page_inner_container">
 
 
     <!-- upper_section: listed actions -->
     <div class="medium-12 columns upper_section">
       <div class="listed_actions_container">
         <div class="listed_actions_inner_container"> 
-          <span class="<%= active_page(:trash) %>">
-            <%= link_to message_trash_path do %>
-              <em class="fa fa-trash-o fa-lg"></em>
-              <span>Trash</span>
-              <span>[<%= trashed_messages_count %>]</span>
-            <% end %>
-          </span> |
-          <span class="<%= active_page(:inbox) %>">
-            <%= link_to message_inbox_path do  %>
-              <em class="fa fa-inbox fa-lg"></em>
-              <span>Inbox</span>
-              <span>[<%= unread_messages_count %>]</span>
-            <% end %>
-          </span> |
-          <span class="<%= active_page(:sent) %>">
-            <%= link_to message_sent_path do %>
-              <em class="fa fa-paper-plane-o fa-lg"></em>
-              <span>Sent</span>
-              <span>[<%= sent_messages_count %>]</span>
-            <% end %>
-          </span> |
-          <span><%= link_to "Compose", new_conversation_path, class: "btn btn-success" %></span>
+          <ul class="left_section inline-list left">
+            <!-- <li class="<%# active_page(:trash) %>">
+              <%# link_to message_trash_path do %>
+                <em class="fa fa-trash-o fa-lg"></em>
+                <span>Trash</span>
+                <span>[<%= trashed_messages_count %>]</span>
+              <%# end %>
+            </li> -->
+            <li class="<%= active_page(:sent) %>">
+              <%= link_to message_sent_path do %>
+                <em class="fa fa-paper-plane-o fa-lg"></em>
+                <span>Sent</span>
+                <span>[<%= sent_messages_count %>]</span>
+              <% end %>
+            </li>
+            <li class="<%= active_page(:inbox) %>">
+              <%= link_to message_inbox_path do  %>
+                <em class="fa fa-inbox fa-lg"></em>
+                <span>Inbox</span>
+                <span>[<%= unread_messages_count %>]</span>
+              <% end %>
+            </li>
+          </ul>
+          <ul class="right_section inline-list right">
+            <li><%= link_to "Compose", new_conversation_path, class: "btn btn-success" %></li>
+          </ul>
         </div>
       </div>
     </div>
