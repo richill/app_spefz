@@ -13,7 +13,7 @@
                 <div class="btn_first"> <%= link_to "get current plan", new_payment_path(product_id: @subscription.id, userr: current_user.id) %></div>
               </li>
               
-              <li><div class="btn_second"><%= link_to "view all plan", pricing_products_path %></div></li>
+              <li><div class="btn_second"><%= link_to "view all plan", "#" %></div></li>
             </ul>
           </div>
         </div>
@@ -27,43 +27,43 @@
             <!-- PAYMENT plan -->
             <div class="left_section">
               <div class="pricing_body left_inner_section">
-                <% if @product.title == "plus" %>
+                <% if @subscription.title == "plus" %>
                   <div class="text first_content" style="background-color: #6ebd63;">
                     <div class="recommended">recommended</div>
                     <span class="currency">$</span>
-                    <% if @product.price.blank? %>
+                    <% if @subscription.price.blank? %>
                       <span><%= number_with_precision("0.00", precision: 0) %></span>
                     <% else %>
-                      <span><%= number_with_precision(@product.price, precision: 0) %></span>
+                      <span><%= number_with_precision(@subscription.price, precision: 0) %></span>
                     <% end %>
                     <div class="period">per month</div>
                   </div>
                 <% else %>
                   <div class="text first_content">
                     <span class="currency">$</span>
-                    <% if @product.price.blank? %>
+                    <% if @subscription.price.blank? %>
                       <span><%= number_with_precision("0.00", precision: 0) %></span>
                     <% else %>
-                      <span><%= number_with_precision(@product.price, precision: 0) %></span>
+                      <span><%= number_with_precision(@subscription.price, precision: 0) %></span>
                     <% end %>
                     <div class="period">per month</div>
                   </div>
                 <% end %>
                 <div class="text second_content">Post
-                  <% if @product.price.blank? %> 
+                  <% if @subscription.price.blank? %> 
                     <span class="figure"><%= "0" %></span> Job Ads
                   <% else %>
-                    <span class="figure"><%= @product.adverts %></span> Job Ads
+                    <span class="figure"><%= @subscription.adverts %></span> Job Ads
                   <% end %>
                 </div>
                 <div class="text second_content">
                   <div><span class="figure"><%= "dashboard" %></span> & <span class="figure"><%= "analytics" %></span></div>
                 </div>
                 <div class="text third_content">view 
-                  <% if @product.price.blank? %> 
+                  <% if @subscription.price.blank? %> 
                     <span class="figure"><%= "0" %></span> CVs
                   <% else %>
-                    <span class="figure"><%# @product.cvs %>unlimited</span> CVs
+                    <span class="figure"><%# @subscription.cvs %>unlimited</span> CVs
                   <% end %> 
                   <div class="database">search through our CV database</div>
                 </div>
@@ -71,12 +71,12 @@
                   <% if current_userr.admin_pa_management_group || current_userr.admin_client_group %>
                     <% if current_userr.subscribed? %>
 
-                      <%# link_to 'UPGRADE PLAN', new_payment_path(product_id: @product.id, userr: current_userr.id), target:"_blank" %>
+                      <%# link_to 'UPGRADE PLAN', new_payment_path(product_id: @subscription.id, userr: current_userr.id), target:"_blank" %>
                       <a href="#" data-reveal-id="myModal-userr-upgrade-plan-info">UPGRADE PLAN</a>
                       <div><%= render 'shared/modal_userr_upgrade_plan_info' %></div>
                     
                     <% else %>
-                      <%= link_to 'GET PLAN', new_payment_path(product_id: @product.id, userr: current_userr.id), target:"_blank" %>
+                      <%= link_to 'GET PLAN', new_payment_path(product_id: @subscription.id, userr: current_userr.id), target:"_blank" %>
                     <% end %>
                   <% else %>
                     <a href="#" data-reveal-id="myModal-userr-payment-info">GET PLAN</a>
@@ -88,31 +88,31 @@
 
             <!-- PAYMENT plan benifits -->
             <div class="benifit_content">
-              <div class="medium-12 columns benifit_title"><%= @product.title %> benifits</div>
-              <% if @product.title == "basic" %>
+              <div class="medium-12 columns benifit_title"><%= @subscription.title %> benifits</div>
+              <% if @subscription.title == "basic" %>
                 <div class="basic_listed_benifits">
                   <ul>
-                    <li><i class="fa fa-check"></i> BASIC offers a postage of <%= @product.adverts %> job adverts</li>
+                    <li><i class="fa fa-check"></i> BASIC offers a postage of <%= @subscription.adverts %> job adverts</li>
                     <li><i class="fa fa-check"></i> Access to a range of dashboard statistics</li>
                     <li><i class="fa fa-check"></i> Access to a range of hiring analytics</li>
                     <li><i class="fa fa-check"></i> View candidates application forms, profiles & resume</li>
                     <li><i class="fa fa-check"></i> Unlimited view and search through our CV database </li>
                   </ul>
                 </div>
-              <% elsif @product.title == "plus" %>
+              <% elsif @subscription.title == "plus" %>
                 <div class="plus_listed_benifits">
                   <ul>
-                    <li><i class="fa fa-check"></i> PLUS offers a postage of <%= @product.adverts %> job adverts</li>
+                    <li><i class="fa fa-check"></i> PLUS offers a postage of <%= @subscription.adverts %> job adverts</li>
                     <li><i class="fa fa-check"></i> Access to a range of dashboard statistics</li>
                     <li><i class="fa fa-check"></i> Access to a range of hiring analytics</li>
                     <li><i class="fa fa-check"></i> View candidates application forms, profiles & resume</li>
                     <li><i class="fa fa-check"></i> Unlimited view and search through our CV database </li>
                   </ul>
                 </div>
-              <% elsif @product.title == "premium" %>
+              <% elsif @subscription.title == "premium" %>
                 <div class="premium_listed_benifits">
                   <ul>
-                    <li><i class="fa fa-check"></i> PREMIUM offers a postage of <%= @product.adverts %> job adverts</li>
+                    <li><i class="fa fa-check"></i> PREMIUM offers a postage of <%= @subscription.adverts %> job adverts</li>
                     <li><i class="fa fa-check"></i> Access to a range of dashboard statistics</li>
                     <li><i class="fa fa-check"></i> Access to a range of hiring analytics</li>
                     <li><i class="fa fa-check"></i> View candidates application forms, profiles & resume</li>
@@ -122,10 +122,10 @@
               <% end %>
               <%# if current_userr.admin_pa_management_group || current_userr.admin_client_group %>
               <% if @userr.admin_pa_management_group && @userr.subscribed? || @userr.admin_client_group && @userr.subscribed? %>
-                <div class="btn_third"><a href="#" data-reveal-id="myModal-userr-upgrade-plan-info"><%= "UPGRADE TO #{@product.title} PLAN NOW!" %></div>
+                <div class="btn_third"><a href="#" data-reveal-id="myModal-userr-upgrade-plan-info"><%= "UPGRADE TO #{@subscription.title} PLAN NOW!" %></div>
                 <div><%= render 'shared/modal_userr_upgrade_plan_info' %></div>
               <% elsif @userr.admin_pa_management_group && !@userr.subscribed? || @userr.admin_client_group && !@userr.subscribed? %>
-                <div class="btn_third"><%= link_to "GET #{@product.title} PLAN NOW!", new_payment_path(product_id: @product.id, userr: current_userr.id), target:"_blank" %></div>
+                <div class="btn_third"><%= link_to "GET #{@subscription.title} PLAN NOW!", new_payment_path(product_id: @subscription.id, userr: current_userr.id), target:"_blank" %></div>
               <% else %>
                 <div class="btn_third"><%= link_to "VIEW ALL PLAN", pricing_products_path %></div>
               <% end %>
