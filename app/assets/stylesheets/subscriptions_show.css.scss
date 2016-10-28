@@ -264,7 +264,27 @@
   -o-transition: all 0.3s ease;
 }
 
+// ---------------------------------
+//     workings
+// ---------------------------------
 
+.banner_img_cover {
+  background: url("img_background_banner.jpg")  no-repeat;
+  height: 200px;
+  background-size: cover;
+  background-position: 40% 0%;
+}
+
+.banner_text {
+  font-family: "Lato", sans-serif !important;
+  color: #fff !important;
+  font-size: 25px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  text-align: center;
+  text-transform: capitalize;
+  padding: 60px 5px;
+}
 
 
 

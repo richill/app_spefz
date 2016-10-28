@@ -2,13 +2,22 @@
   <div class="pricing_detail_inner_container">
     <div class="pricing_detail_info_content">
       
+      <!-- banner_content -->
+      <div class="banner_img_cover">
+        <div class="banner_text"> 
+          <div>we are so confident you'll meet like minded people</div>
+          <div>and share great times</div>
+        </div>
+      </div>
+      <!-- banner_content -->
+
       <!-- upper_content -->
       <div class="upper_content">
         <div class="upper_content_pricing_info">
           <div class="pricing_title"><%= @subscription.title %> plan</div>
           <div class="pricing_subtitle">Get access to a pool of talented skilled individuals & start hiring today!</div>
           <div class="btn_container">
-            <div class="btn_first"> <%= link_to "get current plan", new_payment_path(product_id: @subscription.id, userr: current_user.id) %></div>
+            <div class="btn_first"> <%= link_to "get current plan", new_payment_path(subcription_id: @subscription.id, user: current_user.id) %></div>
           </div>
         </div>
       </div>
@@ -47,7 +56,7 @@
                 </div>
 
                 <div class="text third_content middle_lower_content">
-                  <%= link_to 'GET PLAN', new_payment_path(product_id: @subscription.id, user: current_user.id), target:"_blank" %>
+                  <%= link_to 'GET PLAN', new_payment_path(subcription_id: @subscription.id, user: current_user.id), target:"_blank" %>
                 </div>
               </div>
             </div>
@@ -72,7 +81,7 @@
                 <div class="btn_third"><a href="#" data-reveal-id="myModal-userr-upgrade-plan-info"><%= "UPGRADE TO #{@subscription.title} PLAN NOW!" %></div>
                 <div><%# render 'shared/modal_userr_upgrade_plan_info' %></div>
               <%# elsif @userr.admin_pa_management_group && !@userr.subscribed? || @userr.admin_client_group && !@userr.subscribed? %>
-                <div class="btn_third"><%= link_to "GET #{@subscription.title} PLAN NOW!", new_payment_path(product_id: @subscription.id, userr: current_user.id), target:"_blank" %></div>
+                <div class="btn_third"><%= link_to "GET #{@subscription.title} PLAN NOW!", new_payment_path(subcription_id: @subscription.id, user: current_user.id), target:"_blank" %></div>
               <%# else %>
                 <div class="btn_third"><%= link_to "VIEW ALL PLAN", "#" %></div>
               <%# end %>
