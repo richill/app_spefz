@@ -8,13 +8,7 @@
           <div class="pricing_title"><%= @subscription.title %> plan</div>
           <div class="pricing_subtitle">Get access to a pool of talented skilled individuals & start hiring today!</div>
           <div class="btn_container">
-            <ul class="inline-list">
-              <li>
-                <div class="btn_first"> <%= link_to "get current plan", new_payment_path(product_id: @subscription.id, userr: current_user.id) %></div>
-              </li>
-              
-              <li><div class="btn_second"><%= link_to "view all plan", "#" %></div></li>
-            </ul>
+            <div class="btn_first"> <%= link_to "get current plan", new_payment_path(product_id: @subscription.id, userr: current_user.id) %></div>
           </div>
         </div>
       </div>
