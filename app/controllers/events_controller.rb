@@ -7,6 +7,7 @@ class EventsController < ApplicationController
     else
       @events = Event.all
     end
+    @premium_plan = Subscription.find_by(title:"premium")
   end
 
   def show

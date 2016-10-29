@@ -3,7 +3,7 @@
 
     <!-- search -->
     <div class="search_container">
-      <div class="search_inner_container"> Total events:<%= @events.count %> | Expired events: <%= @events.expired_events.count %> | Live events: <%= @events.live_events.count %></div>
+      <div class="search_inner_container"> Total events:<%= @events.count %> | Expired events: <%= @events.expired_events.count %> | Live events: <%= @events.live_events.count %> | <%= link_to "SUBSCRIPTION", subscription_path(@premium_plan) %></div>
     </div>
     <!-- search -->
 

@@ -56,7 +56,8 @@
         </li>
       </ul>
       <ul class="inline-list right">
-        <li><span><div class="event_show_btn btn_event_booknow"><%= link_to 'Book Now!', "#" %></div></span></li>
+        <li><span><div class="event_show_btn btn_event_booknow"><%= link_to 'Book Now!', new_payment_path(event_id: @event.id, user: current_user.id), target:"_blank" %></div></span></li>
+        <!-- <li><span><div class="event_show_btn btn_event_booknow"><%# link_to 'Book Now!', "#" %></div></span></li> -->
         <li>
           <div class="event_show_btn">
             <%# link_to 'Save', "#" %>

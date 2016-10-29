@@ -94,15 +94,15 @@
 }
 
 .subscription_detail_info_section .btn_first a:hover {
-  background-color: rgba(88, 205, 166, 0.5) !important;
+  background-color: #eeaa02 !important;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
 }
 
 .subscription_detail_info_section .absolute_inner_content {
-  // background-color: red;
-  // height: 100px;
+  //background-color: red;
+  height: 600px;
   width: 660px !important;
   margin: auto;
   position: relative;
@@ -172,6 +172,25 @@
   font-weight: 400 !important;
 }
 
+.subscription_detail_info_section .pricing_body .text {
+  font-family: "Lato", sans-serif !important;
+  color: #283041;
+  text-align: center;
+  background-color: #fff !important;
+  // background-color: rgba(0, 0, 0, 0.1) !important;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+  border-bottom: 1px solid rgba(40,48,65, 0.1);
+}
+
+.subscription_detail_info_section .pricing_body .text_bottom {
+  font-family: "Lato", sans-serif !important;
+  color: #283041;
+  text-align: center;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+}
+
 .subscription_detail_info_section .pricing_body .third_content a {
   font-family: "Lato", sans-serif !important;
   font-size: 20px !important;
@@ -180,7 +199,9 @@
   display: inline-block;
   width: 100%;
   padding: 14px 0px;
-  background-color: rgba(47, 63, 91, 0.7) !important;
+  background-color: #E34B51 !important;
+  // background-color: #eeaa02 !important;
+  border-bottom: 1px solid #eeaa02;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
@@ -188,37 +209,30 @@
 
 .subscription_detail_info_section .pricing_body .third_content a:hover {
   color: #283041;
-  background-color: #E34B51 !important;
+  background-color: #eeaa02 !important;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
-}
-
-
-.subscription_detail_info_section .pricing_body .text {
-  font-family: "Lato", sans-serif !important;
-  color: #283041;
-  text-align: center;
-  background-color: rgba(88, 205, 166, 0.5);
-  text-transform: capitalize;
-  letter-spacing: 1px;
-  border-bottom: 1px solid rgba(40,48,65, 0.1);
 }
 
 .subscription_detail_info_section .benifit_content {
   margin-top: 45px;
   background-color: rgba(0, 0, 0, 0.1) !important;
   padding: 15px;
+  border-bottom: 1px solid #eeaa02;
 }
 
 .subscription_detail_info_section .benifit_title {
   font-family: "Lato", sans-serif !important;
   font-size: 45px !important;
-  color: #2F3F5B;
+  font-weight: 300;
+  color: #414249;
   text-transform: capitalize;
   text-align: center;
   line-height: 45px;
-  margin-bottom: 15px;
+  text-align: center;
+  line-height: 45px;
+  margin-bottom: 5px;
 }
 
 .subscription_detail_info_section .benifit_content ul {
@@ -235,7 +249,7 @@
 .subscription_detail_info_section .benifit_content ul li i {
   margin-right: 5px;
   color: #fff;
-  background: #8ABFA1;
+  background: #eeaa02;
   padding: 5px;
   border-radius: 200px;
 }
@@ -272,7 +286,8 @@
   background: url("img_background_banner.jpg")  no-repeat;
   height: 200px;
   background-size: cover;
-  background-position: 40% 0%;
+  background-position: 50% 0%;
+  border-bottom: 2px solid #eeaa02;
 }
 
 .banner_text {
