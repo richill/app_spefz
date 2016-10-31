@@ -21,6 +21,7 @@ gem 'acts_as_commentable'
 gem 'geocoder'
 gem 'mailboxer'
 gem 'chosen-rails'
+gem "ransack"
 
 group :development, :test do
   gem 'sqlite3'
