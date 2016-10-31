@@ -5,7 +5,9 @@ class SocialsController < ApplicationController
 
   def index
     if params[:tag]
-      @socials = Social.tagged_with(params[:tag])
+      # @socials = Social.tagged_with(params[:tag])
+      @search = Social.search(params[:q])
+      @socials = @search.result(distinct: true).tagged_with(params[:tag])
     else
       @socials = Social.all
     end
