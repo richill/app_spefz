@@ -3,15 +3,14 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 jQuery ->
-  $('#q_category_topic_id').parent().hide()
-  topics = $('#q_category_topic_id').html()
+  topics = $('#q_category_topic_id_eq').html()
   $('#q_category_country_id_eq').change ->
     country = $('#q_category_country_id_eq :selected').text()
     escaped_country = country.replace(/([ #;&,.+*~\':"!^$[\]()=>|\/@])/g, '\\$1')
     options = $(topics).filter("optgroup[label='#{escaped_country}']").html()
     if options
-      $('#q_category_topic_id').html(options)
-      $('#q_category_topic_id').parent().show()
+      $('#q_category_topic_id_eq').html(options)
+      $('#q_category_topic_id_eq').parent().show()
     else
-      $('#q_category_topic_id').empty()
-      $('#q_category_topic_id').parent().hide()
+      $('#q_category_topic_id_eq').empty()
+      $('#q_category_topic_id_eq').parent().hide()
