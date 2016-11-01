@@ -27,9 +27,9 @@
 }
 
 .socials_section .search_container {
-  // height: 65px;
-  // background-color: rgba(47, 63, 91, 0.1);
-  background-color: green;
+  height: 65px;
+  background-color: rgba(47, 63, 91, 0.1);
+  // background-color: green;
 }
 
 .socials_section .search_inner_container {
@@ -377,6 +377,39 @@
 }
 
 
+
+// ---------------------------------
+//   workings
+// ---------------------------------
+
+.search_fields_left, .search_fields_right {
+  margin: 0px !important;
+  list-style-type: none;
+}
+
+.field select, input[type="text"] {
+  font-family: "Lato", sans-serif;
+  box-shadow: none !important;
+  padding: 0px 15px !important;
+  border: none !important;
+  height: 40px;
+  color: #454d53;
+  font-size: 15px;
+}
+
+
+.search_fields_left li {
+  width: 185px;
+  float: left;
+  margin: 0px !important;
+  margin-right: 5px !important;
+}
+
+.search_fields_right li {
+  width: 185px;
+  float: right;
+  margin: 0px !important;
+}
 
 
 
