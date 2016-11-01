@@ -14,3 +14,18 @@ jQuery ->
     else
       $('#q_category_topic_id_eq').empty()
       $('#q_category_topic_id_eq').parent().hide()
+
+
+
+jQuery ->
+  ages = $('#q_category_age_id_eq').html()
+  $('#q_category_topic_id_eq').change ->
+    country = $('#q_category_topic_id_eq :selected').text()
+    escaped_country = country.replace(/([ #;&,.+*~\':"!^$[\]()=>|\/@])/g, '\\$1')
+    options = $(ages).filter("optgroup[label='#{escaped_country}']").html()
+    if options
+      $('#q_category_age_id_eq').html(options)
+      $('#q_category_age_id_eq').parent().show()
+    else
+      $('#q_category_age_id_eq').empty()
+      $('#q_category_age_id_eq').parent().hide()
