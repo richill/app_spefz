@@ -13,8 +13,6 @@ class SocialsController < ApplicationController
       @socials = @search.result(distinct: true)
     end
     @premium_plan = Subscription.find_by(title:"premium") 
-    @age = Social.find_by_sql("SELECT category_age_id FROM socials GROUP BY category_age_id").map &:category_age_id
-    @test_age = Social.find_by_sql("SELECT category_age_id FROM socials GROUP BY category_age_id").map &:category_age_id
   end
 
   def user_socials
