@@ -30,178 +30,182 @@
     <!-- temp_content -->
 
     <!-- content -->
-    <div class="medium-12 columns social_content_section">
-      <div class="medium-12 columns content_container">
-        <div class="content_details">
-          <div class="social_main_container">
-            <ul>
-              <!-- socials -->
-              <% @socials.asc_order.live_socials.each do |social| %>
-                <li class="medium-3 columns">
-                  <div class="social_inner_section">
-                    <% if social.sold_out? %>
-                      <div class="banner">
-                        <div class="ribbon-wrapper-green">
-                          <div class="ribbon-green">sold out</div>
-                        </div>
-                      </div>
-                    <% end %>
-                    <div class="feed">
-                      
-                      <%= link_to user_social_path(social.user, social) do %>
-                        <div class="social_cover">
-                          <div class="social_header">
-                            <div class="social_date"><i class="fa fa-calendar date"></i> <%= social.date.strftime("%a, %d %b %Y") %> | <%= social.time.strftime("%I:%M %p") %></div>
-                            <div class="social_location"><i class="fa fa-map-pin location"></i> <%= social.category_country.name %>, <%= social.city %></div>
-                            <div class="social_age"><i class="fa fa-male age" aria-hidden="true"></i> 
-                              <span>Age: <%= social.category_age.name %></span>
-                              <% if social.category_invite_id.present? %>
-                                <% if social.category_invite.name == "just my guest" %>
-                                  <span> | </span>
-                                  <span class="invite_only">invite only</span> 
-                                <% end %>
-                              <% end %>
-                            </div>
+    <% if @socials.blank? %>
+      <div><%= render 'shared/content_search_no_result' %></div>
+    <% else %>
+      <div class="medium-12 columns social_content_section">
+        <div class="medium-12 columns content_container">
+          <div class="content_details">
+            <div class="social_main_container">
+              <ul>
+                <!-- socials -->
+                <% @socials.asc_order.live_socials.each do |social| %>
+                  <li class="medium-3 columns">
+                    <div class="social_inner_section">
+                      <% if social.sold_out? %>
+                        <div class="banner">
+                          <div class="ribbon-wrapper-green">
+                            <div class="ribbon-green">sold out</div>
                           </div>
                         </div>
                       <% end %>
-
-                      <div class="social_img"><%= link_to(image_tag("#{social.image_url}", :alt =>  "image", :class =>"#"), user_social_path(social.user, social)) %></div>
-                      <div class="social_user">
-                        <% if social.user.image.present? %>
-                          <div><%= link_to(image_tag(social.user.image_url), user_path(social.user)) %></div>
-                        <% else %>
-                          <div class="img_default"><%= link_to(image_tag("img-profile-image-default.png", :alt =>  "alt text", :class =>"#"), user_path(social.user)) %></div>
-                        <% end %>
-                      </div>
-                      <div class="clear"></div>
-                      <div class="social_sub_title">
-                        <div class="social_organizer">drinks with 
-                          <span>
-                            <% if social.companyname.present? %>
-                              <%= truncate(social.companyname, length: 20) %>
-                            <% else %>
-                              <%= truncate(social.user.firstname, length: 20) %>
-                            <% end %>
-                          </span>
-                        </div>
-                        <div class="social_title"><%= truncate(social.title, length: 55) %></div>
-                      </div>
-                    </div>
-                    <div class="social_comments_container hide">
-                      <ul>
-                        <!-- first comment -->
-                        <li>
-                          <ul class="inline-list social_inner_comment_section">
-                            <li class="medium-2 columns social_feed_comment_img"><%= link_to(image_tag("img_profile_05.png", :alt =>  "alt text", :class =>"#"), root_path) %></li>
-                            <li class="medium-10 columns social_feed_comment"><span><b><%= link_to "michael", "#" %></b>looking fwd to your chicken and veg dinner. You always organise the best events after work</span></li>
-                          </ul>
-                        </li>
-                        <!-- second comment -->
-                        <li>
-                          <ul class="inline-list social_inner_comment_section">
-                            <li class="medium-2 columns social_feed_comment_img"><%= link_to(image_tag("img_profile_02.png", :alt =>  "alt text", :class =>"#"), root_path) %></li>
-                            <li class="medium-10 columns social_feed_comment"><span><b><%= link_to "emma", "#" %></b>yessss!!! will definitely be there. You must tell me the secret recipe to your grilled chicken</span></li>
-                          </ul>
-                        </li>
-                      </ul>
-                    </div>
-                    <div class="attendance">
-                      <div>
-
-                        <% if social.sold_out? %>
-                          <ul>
-                            <% social.attendances.limit(6).each do |attendant| %>
-                              <li>
-                                <% if attendant.user.image.present? %>
-                                  <%= link_to(image_tag(attendant.user.image_url, :alt =>  "alt text", :class =>"#"), user_path(attendant.user)) %>
-                                <% else %>
-                                  <%= link_to(image_tag("img-profile-image-default.png", :alt =>  "alt text", :class =>"#"), user_path(attendant.user)) %>
-                                <% end %>
-                              </li> 
-                            <% end %>
-                          </ul>
-                        <% else %>
-                          <ul>
-                            <% social.attendances.order(created_at: :desc).limit(5).each do |attendant| %>
-                              <li>
-                                <% if attendant.user.image.present? %>
-                                  <%= link_to(image_tag(attendant.user.image_url, :alt =>  "alt text", :class =>"#"), user_path(attendant.user)) %>
-                                <% else %>
-                                  <%= link_to(image_tag("img-profile-image-default.png", :alt =>  "alt text", :class =>"#"), user_path(attendant.user)) %>
-                                <% end %>
-                              </li> 
-                            <% end %>
-                            <li class="remaining_places" style="margin-right: 0px;">
-                              <%# if social.selection_BothX_men_and_women %>
-                                <!-- <span data-tooltip aria-haspopup="true" data-options="disable_for_touch:true" class="tip-right" title="<%#{}"#{social.available_places_BothX_men_and_women}"%> places left">
-                                  <%# link_to "+#{social.available_places_BothX_men_and_women}", user_social_path(social.user, social), class: "#" %>
-                                </span> -->
-                              <%# elsif %>
-                              <span data-tooltip aria-haspopup="true" data-options="disable_for_touch:true" class="tip-right" title="<%="#{social.available_places_BothAndOnly_men_and_women}"%> places left">
-                                <%= link_to "+#{social.available_places_BothAndOnly_men_and_women}", user_social_path(social.user, social), class: "#" %>
-                              </span>
-                              <%# end %>
-                            </li>
-                          </ul>
-                        <% end %>
-
-
-
-                      </div>
-                    </div>
-                    <div class="icons">
-                      <div class="icon_list">
-                        <ul>
-                          <li><%= link_to " #{social.impressionist_count(filter: :ip_address)}", '#', id: "", class: "fa fa-eye" %></li>
-                          <li><%= link_to " #{social.comments.count}", '#', id: "", class: "fa fa-comments-o" %></li>
-                          <% if social.selection_BothX_men_and_women %>
-                            <li>
-                              <span data-tooltip aria-haspopup="true" data-options="disable_for_touch:true" class="tip-right" title="<%="#{social.set_availability_BothX_men_and_women}"%> capacity">
-                              <%= link_to " #{social.set_availability_BothX_men_and_women}", '#', id: "", class: "fa fa-users" %>
-                              </span>
-                            </li>
-                          <% else %>
-                            <li>
-                              <span data-tooltip aria-haspopup="true" data-options="disable_for_touch:true" class="tip-right" title="<%="#{social.set_availability_BothAndOnly_men_and_women}"%> capacity">
-                                <%= link_to " #{social.set_availability_BothAndOnly_men_and_women}", '#', id: "", class: "fa fa-users" %>
-                              </span>
-                            </li>
-                          <% end %>
-                          <li>
-                            <span data-tooltip aria-haspopup="true" data-options="disable_for_touch:true" class="tip-right" title="<%="#{social.attendances.count}"%> attending">
-                              <%= link_to " #{social.attendances.count}", '#', id: "", class: "fa fa-user-plus" %>
-                            </span>
-                          </li>
-                          <li>
-                            <% if user_signed_in? %>
-                              <% if current_user %>
-                                <span class="favourite">
-                                  <% unless current_user.favourite_socials.exists?(id: social.id)  %>
-                                    <span data-tooltip aria-haspopup="true" data-options="disable_for_touch:true" class="tip-right add_fav" title="Save Social">
-                                      <%= link_to '', favourite_socials_path(social_id: social), method: :post, class: "fa fa-bookmark-o" %>
-                                    </span>
-                                  <% else %>
-                                    <span data-tooltip aria-haspopup="true" data-options="disable_for_touch:true" class="tip-right remove_fav" title="Remove From Saved List">
-                                      <%= link_to '', favourite_social_path(social), method: :delete, class: "fa fa-bookmark" %>
-                                    </span>
+                      <div class="feed">
+                        
+                        <%= link_to user_social_path(social.user, social) do %>
+                          <div class="social_cover">
+                            <div class="social_header">
+                              <div class="social_date"><i class="fa fa-calendar date"></i> <%= social.date.strftime("%a, %d %b %Y") %> | <%= social.time.strftime("%I:%M %p") %></div>
+                              <div class="social_location"><i class="fa fa-map-pin location"></i> <%= social.category_country.name %>, <%= social.city %></div>
+                              <div class="social_age"><i class="fa fa-male age" aria-hidden="true"></i> 
+                                <span>Age: <%= social.category_age.name %></span>
+                                <% if social.category_invite_id.present? %>
+                                  <% if social.category_invite.name == "just my guest" %>
+                                    <span> | </span>
+                                    <span class="invite_only">invite only</span> 
                                   <% end %>
-                                </span>
+                                <% end %>
+                              </div>
+                            </div>
+                          </div>
+                        <% end %>
+
+                        <div class="social_img"><%= link_to(image_tag("#{social.image_url}", :alt =>  "image", :class =>"#"), user_social_path(social.user, social)) %></div>
+                        <div class="social_user">
+                          <% if social.user.image.present? %>
+                            <div><%= link_to(image_tag(social.user.image_url), user_path(social.user)) %></div>
+                          <% else %>
+                            <div class="img_default"><%= link_to(image_tag("img-profile-image-default.png", :alt =>  "alt text", :class =>"#"), user_path(social.user)) %></div>
+                          <% end %>
+                        </div>
+                        <div class="clear"></div>
+                        <div class="social_sub_title">
+                          <div class="social_organizer">drinks with 
+                            <span>
+                              <% if social.companyname.present? %>
+                                <%= truncate(social.companyname, length: 20) %>
+                              <% else %>
+                                <%= truncate(social.user.firstname, length: 20) %>
                               <% end %>
-                            <% end %>
+                            </span>
+                          </div>
+                          <div class="social_title"><%= truncate(social.title, length: 55) %></div>
+                        </div>
+                      </div>
+                      <div class="social_comments_container hide">
+                        <ul>
+                          <!-- first comment -->
+                          <li>
+                            <ul class="inline-list social_inner_comment_section">
+                              <li class="medium-2 columns social_feed_comment_img"><%= link_to(image_tag("img_profile_05.png", :alt =>  "alt text", :class =>"#"), root_path) %></li>
+                              <li class="medium-10 columns social_feed_comment"><span><b><%= link_to "michael", "#" %></b>looking fwd to your chicken and veg dinner. You always organise the best events after work</span></li>
+                            </ul>
+                          </li>
+                          <!-- second comment -->
+                          <li>
+                            <ul class="inline-list social_inner_comment_section">
+                              <li class="medium-2 columns social_feed_comment_img"><%= link_to(image_tag("img_profile_02.png", :alt =>  "alt text", :class =>"#"), root_path) %></li>
+                              <li class="medium-10 columns social_feed_comment"><span><b><%= link_to "emma", "#" %></b>yessss!!! will definitely be there. You must tell me the secret recipe to your grilled chicken</span></li>
+                            </ul>
                           </li>
                         </ul>
                       </div>
+                      <div class="attendance">
+                        <div>
+
+                          <% if social.sold_out? %>
+                            <ul>
+                              <% social.attendances.limit(6).each do |attendant| %>
+                                <li>
+                                  <% if attendant.user.image.present? %>
+                                    <%= link_to(image_tag(attendant.user.image_url, :alt =>  "alt text", :class =>"#"), user_path(attendant.user)) %>
+                                  <% else %>
+                                    <%= link_to(image_tag("img-profile-image-default.png", :alt =>  "alt text", :class =>"#"), user_path(attendant.user)) %>
+                                  <% end %>
+                                </li> 
+                              <% end %>
+                            </ul>
+                          <% else %>
+                            <ul>
+                              <% social.attendances.order(created_at: :desc).limit(5).each do |attendant| %>
+                                <li>
+                                  <% if attendant.user.image.present? %>
+                                    <%= link_to(image_tag(attendant.user.image_url, :alt =>  "alt text", :class =>"#"), user_path(attendant.user)) %>
+                                  <% else %>
+                                    <%= link_to(image_tag("img-profile-image-default.png", :alt =>  "alt text", :class =>"#"), user_path(attendant.user)) %>
+                                  <% end %>
+                                </li> 
+                              <% end %>
+                              <li class="remaining_places" style="margin-right: 0px;">
+                                <%# if social.selection_BothX_men_and_women %>
+                                  <!-- <span data-tooltip aria-haspopup="true" data-options="disable_for_touch:true" class="tip-right" title="<%#{}"#{social.available_places_BothX_men_and_women}"%> places left">
+                                    <%# link_to "+#{social.available_places_BothX_men_and_women}", user_social_path(social.user, social), class: "#" %>
+                                  </span> -->
+                                <%# elsif %>
+                                <span data-tooltip aria-haspopup="true" data-options="disable_for_touch:true" class="tip-right" title="<%="#{social.available_places_BothAndOnly_men_and_women}"%> places left">
+                                  <%= link_to "+#{social.available_places_BothAndOnly_men_and_women}", user_social_path(social.user, social), class: "#" %>
+                                </span>
+                                <%# end %>
+                              </li>
+                            </ul>
+                          <% end %>
+
+
+
+                        </div>
+                      </div>
+                      <div class="icons">
+                        <div class="icon_list">
+                          <ul>
+                            <li><%= link_to " #{social.impressionist_count(filter: :ip_address)}", '#', id: "", class: "fa fa-eye" %></li>
+                            <li><%= link_to " #{social.comments.count}", '#', id: "", class: "fa fa-comments-o" %></li>
+                            <% if social.selection_BothX_men_and_women %>
+                              <li>
+                                <span data-tooltip aria-haspopup="true" data-options="disable_for_touch:true" class="tip-right" title="<%="#{social.set_availability_BothX_men_and_women}"%> capacity">
+                                <%= link_to " #{social.set_availability_BothX_men_and_women}", '#', id: "", class: "fa fa-users" %>
+                                </span>
+                              </li>
+                            <% else %>
+                              <li>
+                                <span data-tooltip aria-haspopup="true" data-options="disable_for_touch:true" class="tip-right" title="<%="#{social.set_availability_BothAndOnly_men_and_women}"%> capacity">
+                                  <%= link_to " #{social.set_availability_BothAndOnly_men_and_women}", '#', id: "", class: "fa fa-users" %>
+                                </span>
+                              </li>
+                            <% end %>
+                            <li>
+                              <span data-tooltip aria-haspopup="true" data-options="disable_for_touch:true" class="tip-right" title="<%="#{social.attendances.count}"%> attending">
+                                <%= link_to " #{social.attendances.count}", '#', id: "", class: "fa fa-user-plus" %>
+                              </span>
+                            </li>
+                            <li>
+                              <% if user_signed_in? %>
+                                <% if current_user %>
+                                  <span class="favourite">
+                                    <% unless current_user.favourite_socials.exists?(id: social.id)  %>
+                                      <span data-tooltip aria-haspopup="true" data-options="disable_for_touch:true" class="tip-right add_fav" title="Save Social">
+                                        <%= link_to '', favourite_socials_path(social_id: social), method: :post, class: "fa fa-bookmark-o" %>
+                                      </span>
+                                    <% else %>
+                                      <span data-tooltip aria-haspopup="true" data-options="disable_for_touch:true" class="tip-right remove_fav" title="Remove From Saved List">
+                                        <%= link_to '', favourite_social_path(social), method: :delete, class: "fa fa-bookmark" %>
+                                      </span>
+                                    <% end %>
+                                  </span>
+                                <% end %>
+                              <% end %>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                </li>
-              <% end %>
-              <!-- socials -->
-            </ul>
+                  </li>
+                <% end %>
+                <!-- socials -->
+              </ul>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    <% end %>
     <!-- content -->
 
   </div>
