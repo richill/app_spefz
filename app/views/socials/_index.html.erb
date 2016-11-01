@@ -18,7 +18,11 @@
           <%# end %>
         </div> -->
 
-        <%= f.select :category_age_name_eq, @age %>
+        <%= f.select :category_age_id_eq, @age %>
+
+        <%# f.select :category_age_name_eq, options_from_collection_for_select(CategoryAge.all, "id", "name", @search.category_age_id_eq) %>
+
+
 
 
 
@@ -28,7 +32,6 @@
 
 
           <%# f.select :project_id_eq, options_from_collection_for_select(Project.all, "id", "name", @search.project_id_eq) %>
-          <%= f.text_field  :title_cont, placeholder: "title" %>
           <%= f.text_field  :title_cont, placeholder: "title" %>
           <%= f.submit 'search' %>
         <% end %>
