@@ -5,9 +5,9 @@
     <div class="search_container">
       <div class="search_inner_container">
         <div>Total socials:<%= @socials.count %> | Expired socials: <%= @socials.expired_socials.count %> | Live socials: <%= @socials.live_socials.count %> | <%= link_to "SUBSCRIPTION", subscription_path(@premium_plan) %></div>
+        
         <%= search_form_for(@search) do |f| %>
-          <%= f.label :title_cont %>
-          <%= f.text_field  :title_cont %>
+          <%= f.text_field  :title_cont, placeholder: "title" %>
           <%= f.submit 'search' %>
         <% end %>
       </div>

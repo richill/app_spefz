@@ -5,13 +5,15 @@ class SocialsController < ApplicationController
 
   def index
     if params[:tag]
-      # @socials = Social.tagged_with(params[:tag])
+      @socials = Social.tagged_with(params[:tag])
       @search = Social.search(params[:q])
-      @socials = @search.result(distinct: true).tagged_with(params[:tag])
+      @listed_socials = @search.result(distinct: true)
     else
-      @socials = Social.all
+      @search = Social.search(params[:q])
+      @socials = @search.result(distinct: true)
     end
     @premium_plan = Subscription.find_by(title:"premium")
+    
   end
 
   def user_socials
