@@ -131,6 +131,17 @@ $(document).ready(function() {
   });
 });
 
+// jquery-ui datepicker 
+$(document).ready(function() {
+  $('.datepicker').datepicker({ dateFormat: 'MM dd, yy' }); 
+});
+
+$(document).on('ready page:change', function() {
+    $('.requiredskill_info').on('cocoon:after-insert', function() {
+       $('.datepicker').datepicker();
+    })
+})
+
 
 
 

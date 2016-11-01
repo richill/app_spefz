@@ -154,3 +154,46 @@ button input {
 small {
   color: #E1473E;
 }
+
+/*----------------------------------------
+    datepicker CSS
+----------------------------------------*/
+.ui-datepicker .ui-datepicker-header {
+  background: #2F3F5B !important;
+  color: #fff !important;
+  border: 0px !important;
+  border-radius: 0px !important;
+}
+
+.ui-datepicker th {
+  color: #2F3F5B !important;
+}
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+  color: #2F3F5B !important;
+}
+
+.ui-datepicker table {
+  border: 0px !important;
+}
+
+.ui-datepicker {
+  border-radius: 0px !important;
+}
+
+.ui-datepicker .ui-datepicker-prev, .ui-datepicker .ui-datepicker-next {
+  position: absolute;
+  top: 9px !important;
+  background-color: #fff !important;
+  border-radius: 18px !important;
+  height: 20px !important;
+  width: 20px !important;
+}
+
+.ui-datepicker .ui-datepicker-prev {
+  left: 5px !important;
+}
+
+.ui-datepicker .ui-datepicker-next {
+  left: 265px !important
+}
