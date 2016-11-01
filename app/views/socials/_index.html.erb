@@ -2,14 +2,8 @@
   <div class="medium-12 columns socials_inner_section">
 
     <!-- search -->
-    <div class="search_container">
-      <div class="search_inner_container">
-        <!-- <div>Total socials:<%= @socials.count %> | 
-          Expired socials: <%= @socials.expired_socials.count %> | 
-          Live socials: <%= @socials.live_socials.count %> | 
-          <%= link_to "SUBSCRIPTION", subscription_path(@premium_plan) %>
-        </div><br/> -->
-        
+    <div class="medium-12 columns search_container">
+      <div class="search_inner_container">        
         <%= search_form_for(@search) do |f| %>
         <ul class="search_fields_left">
           <li class="field select_country"><%= f.select :category_age_id_eq, @age, prompt: "Select Country" %></li>
@@ -26,6 +20,14 @@
       </div>
     </div>
     <!-- search -->
+
+    <!-- temp_content -->
+    <div>Total socials:<%= @socials.count %> | 
+      Expired socials: <%= @socials.expired_socials.count %> | 
+      Live socials: <%= @socials.live_socials.count %> | 
+      <%= link_to "SUBSCRIPTION", subscription_path(@premium_plan) %>
+    </div>
+    <!-- temp_content -->
 
     <!-- content -->
     <div class="medium-12 columns social_content_section">
