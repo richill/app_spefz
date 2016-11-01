@@ -14,6 +14,8 @@
 //= require jquery_ujs
 //= require foundation
 //= require chosen-jquery
+//= require jquery-ui
+//= require foundation-datetimepicker
 //= require turbolinks
 //= require_tree .
 
@@ -135,12 +137,6 @@ $(document).ready(function() {
 $(document).ready(function() {
   $('.datepicker').datepicker({ dateFormat: 'MM dd, yy' }); 
 });
-
-$(document).on('ready page:change', function() {
-    $('.requiredskill_info').on('cocoon:after-insert', function() {
-       $('.datepicker').datepicker();
-    })
-})
 
 
 

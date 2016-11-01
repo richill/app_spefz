@@ -22,6 +22,7 @@ gem 'geocoder'
 gem 'mailboxer'
 gem 'chosen-rails'
 gem 'foundation-datetimepicker-rails'
+gem 'jquery-ui-rails'
 gem "ransack"
 
 group :development, :test do
