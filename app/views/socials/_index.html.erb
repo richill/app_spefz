@@ -4,26 +4,27 @@
     <!-- search -->
     <div class="search_container">
       <div class="search_inner_container">
-        <div>Total socials:<%= @socials.count %> | Expired socials: <%= @socials.expired_socials.count %> | Live socials: <%= @socials.live_socials.count %> | <%= link_to "SUBSCRIPTION", subscription_path(@premium_plan) %></div>
+        <div>Total socials:<%= @socials.count %> | Expired socials: <%= @socials.expired_socials.count %> | Live socials: <%= @socials.live_socials.count %> | <%= link_to "SUBSCRIPTION", subscription_path(@premium_plan) %></div><br/>
         
         <%= search_form_for(@search) do |f| %>
 
-        <%= f.select :category_age_id_eq, @age %>
+        <div>
+          <span><%= f.select :category_age_id_eq, @age %></span>
+          <span><%= f.select :category_age_id_eq, @age %></span>
+          <span><%= f.select :category_age_id_eq, @age %></span>
+          <span>
+            <span><%= f.text_field :created_at_gteq, placeholder: "Date Start", class: "datepicker" %></span>
+            <span><%= f.text_field :created_at_lteq, placeholder: "Date End", class: "datepicker" %></span>
+          </span>
+          <span><%= f.submit 'search' %></span>
+        </div>
 
-        <%# f.select :category_age_name_eq, options_from_collection_for_select(CategoryAge.all, "id", "name", @search.category_age_id_eq) %>
 
 
 
 
 
-
-
-
-
-
-          <%# f.select :project_id_eq, options_from_collection_for_select(Project.all, "id", "name", @search.project_id_eq) %>
-          <%= f.text_field  :title_cont, placeholder: "title" %>
-          <%= f.submit 'search' %>
+          
         <% end %>
       </div>
     </div>
