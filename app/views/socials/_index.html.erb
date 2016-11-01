@@ -9,12 +9,12 @@
         <%= search_form_for(@search) do |f| %>
 
         <div>
-          <span><%= f.select :category_age_id_eq, @age, prompt: "Select Country" %></span>
-          <span><%= f.select :category_age_id_eq, @age, prompt: "Social Type" %></span>
-          <span><%= f.select :category_age_id_eq, @age, prompt: "Age Group" %></span>
-          <span>
-            <span><%= f.text_field :created_at_gteq, placeholder: "Date Start", class: "datepicker" %></span>
-            <span><%= f.text_field :created_at_lteq, placeholder: "Date End", class: "datepicker" %></span>
+          <span class="selector select_country"><%= f.select :category_age_id_eq, @age, prompt: "Select Country" %></span>
+          <span class="selector select_type"><%= f.select :category_age_id_eq, @age, prompt: "Social Type" %></span>
+          <span class="selector select_age"><%= f.select :category_age_id_eq, @age, prompt: "Age Group" %></span>
+          <span class="select_date">
+            <span class="selector select_startdate"><%= f.text_field :created_at_gteq, placeholder: "Date Start", class: "datepicker" %></span>
+            <span class="selector select_enddate"><%= f.text_field :created_at_lteq, placeholder: "Date End", class: "datepicker" %></span>
           </span>
           <span><%= f.submit 'search' %></span>
         </div>
