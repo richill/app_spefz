@@ -4,10 +4,13 @@
     <!-- search -->
     <div class="search_container">
       <div class="search_inner_container">
-        <div>Total socials:<%= @socials.count %> | Expired socials: <%= @socials.expired_socials.count %> | Live socials: <%= @socials.live_socials.count %> | <%= link_to "SUBSCRIPTION", subscription_path(@premium_plan) %></div><br/>
+        <!-- <div>Total socials:<%= @socials.count %> | 
+          Expired socials: <%= @socials.expired_socials.count %> | 
+          Live socials: <%= @socials.live_socials.count %> | 
+          <%= link_to "SUBSCRIPTION", subscription_path(@premium_plan) %>
+        </div><br/> -->
         
         <%= search_form_for(@search) do |f| %>
-
         <div>
           <span class="selector select_country"><%= f.select :category_age_id_eq, @age, prompt: "Select Country" %></span>
           <span class="selector select_type"><%= f.select :category_age_id_eq, @age, prompt: "Social Type" %></span>
@@ -17,14 +20,7 @@
             <span class="selector select_enddate"><%= f.text_field :created_at_lteq, placeholder: "Date End", class: "datepicker" %></span>
           </span>
           <span><%= f.submit 'search' %></span>
-        </div>
-
-
-
-
-
-
-          
+        </div>          
         <% end %>
       </div>
     </div>
