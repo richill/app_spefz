@@ -9,9 +9,9 @@
         <%= search_form_for(@search) do |f| %>
 
         <div>
-          <span><%= f.select :category_age_id_eq, @age %></span>
-          <span><%= f.select :category_age_id_eq, @age %></span>
-          <span><%= f.select :category_age_id_eq, @age %></span>
+          <span><%= f.select :category_age_id_eq, @age, prompt: "Select Country" %></span>
+          <span><%= f.select :category_age_id_eq, @age, prompt: "Social Type" %></span>
+          <span><%= f.select :category_age_id_eq, @age, prompt: "Age Group" %></span>
           <span>
             <span><%= f.text_field :created_at_gteq, placeholder: "Date Start", class: "datepicker" %></span>
             <span><%= f.text_field :created_at_lteq, placeholder: "Date End", class: "datepicker" %></span>
