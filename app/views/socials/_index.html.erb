@@ -7,6 +7,28 @@
         <div>Total socials:<%= @socials.count %> | Expired socials: <%= @socials.expired_socials.count %> | Live socials: <%= @socials.live_socials.count %> | <%= link_to "SUBSCRIPTION", subscription_path(@premium_plan) %></div>
         
         <%= search_form_for(@search) do |f| %>
+
+
+
+
+       <!--  <div>
+          <%# CategoryAge.all.each do |age| %>
+            <%# select_tag('q[category_age_name_cont_any]', age.name) %>
+            <%# age.name %>
+          <%# end %>
+        </div> -->
+
+        <%= f.select :category_age_name_eq, @age %>
+
+
+
+
+
+
+
+
+          <%# f.select :project_id_eq, options_from_collection_for_select(Project.all, "id", "name", @search.project_id_eq) %>
+          <%= f.text_field  :title_cont, placeholder: "title" %>
           <%= f.text_field  :title_cont, placeholder: "title" %>
           <%= f.submit 'search' %>
         <% end %>

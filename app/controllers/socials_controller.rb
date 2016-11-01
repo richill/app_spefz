@@ -12,8 +12,9 @@ class SocialsController < ApplicationController
       @search = Social.search(params[:q])
       @socials = @search.result(distinct: true)
     end
-    @premium_plan = Subscription.find_by(title:"premium")
-    
+    @premium_plan = Subscription.find_by(title:"premium") 
+    @age = Social.find_by_sql("SELECT category_age_id FROM socials GROUP BY category_age_id").map &:category_age_id
+    #@lang = Job.find_by_sql("SELECT languages FROM jobs GROUP BY languages").map &:languages  
   end
 
   def user_socials
