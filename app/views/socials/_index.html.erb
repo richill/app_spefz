@@ -8,16 +8,6 @@
         
         <%= search_form_for(@search) do |f| %>
 
-
-
-
-       <!--  <div>
-          <%# CategoryAge.all.each do |age| %>
-            <%# select_tag('q[category_age_name_cont_any]', age.name) %>
-            <%# age.name %>
-          <%# end %>
-        </div> -->
-
         <%= f.select :category_age_id_eq, @age %>
 
         <%# f.select :category_age_name_eq, options_from_collection_for_select(CategoryAge.all, "id", "name", @search.category_age_id_eq) %>
