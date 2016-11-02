@@ -202,18 +202,11 @@
   color: #fff !important;
 }
 
-
-
-// ------------------------
-//     workings
-// ------------------------
-
-
-.user_roles .fa-user {
+.members_section .user_roles .fa-user {
   margin-right: 5px;
 }
 
-.members_section .user_roles {
+.members_section .members_section .user_roles {
   font-family: 'Lato', sans-serif;
   font-size: 12px;
   font-weight: 300;
@@ -224,9 +217,10 @@
   border-bottom: 1px solid rgba(88, 205, 166, 0.3) !important;
 }
 
-.user_roles .divider {
+.members_section .user_roles .divider {
   margin: 5px;
 }
+
 
 
 
