@@ -57,8 +57,9 @@
             <li class="listed_content">#.] <span class="listed_content_header">comments_controller:</span>
               <ul>
                 <li><u><b>can</b> action</u>: can create</li>
+                <li><u><b>can</b> view</u>: can view index </li>
                 <li><u><b>cannot</b> action</u>: cannot edit / update / destroy </li>
-                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+                <li><u><b>cannot</b> view</u>: cannot view show </li>
               </ul>
             </li>
             <!-- conversations_controller -->
@@ -291,8 +292,9 @@
             <li class="listed_content">#.] <span class="listed_content_header">comments_controller:</span>
               <ul>
                 <li><u><b>can</b> action</u>: can create</li>
+                <li><u><b>can</b> view</u>: can view index </li>
                 <li><u><b>cannot</b> action</u>: cannot edit / update / destroy </li>
-                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+                <li><u><b>cannot</b> view</u>: cannot view show </li>
               </ul>
             </li>
             <!-- conversations_controller -->
@@ -393,7 +395,7 @@
     </div>
     <!-- end PRIMARY-ADMIN mgt_group -->
 
-    <!-- PRIMARY-ADMIN mgt_group - group_D -->
+    <!-- PRIMARY-ADMIN event_mgt_group - group_D -->
     <div class="medium-3 columns pa_adm_group">
       <div>
         <div class="groups"><u>Groups D</u>: Event Management Group</div>
@@ -425,7 +427,8 @@
             <li class="listed_content">#.] <span class="listed_content_header">events_controller:</span>
               <ul>
                 <li><u><b>can</b> view</u>: can view index / show </li>
-                <li><u><b>cannot</b> action</u>: cannot edit / create / update /destroy</li>
+                <li><u><b>can</b> action</u>: can edit / create / update</li>
+                <li><u><b>cannot</b> action</u>: cannot destroy</li> <!-- cannot destroy but can close an event [boolean] -->
               </ul>
             </li>
             <!-- favourite_events_controller -->
@@ -472,15 +475,15 @@
               <ul>
                 <li><u><b>can</b> action</u>: can create </li>
                 <li><u><b>can</b> view</u>: can view index / show</li>
-                <li><u><b>can</b> action</u>: can edit / update </li>
-                <li><u><b>cannot</b> action</u>: cannot destroy </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / update / destroy</li>
               </ul>
             </li>
             <!-- socials_controller -->
             <li class="listed_content">#.] <span class="listed_content_header">socials_controller:</span>
               <ul>
                 <li><u><b>can</b> view</u>: can view index / show </li>
-                <li><u><b>cannot</b> action</u>: cannot edit / create / update /destroy</li>
+                <li><u><b>can</b> action</u>: can edit / create / update</li>
+                <li><u><b>cannot</b> action</u>: cannot destroy</li> <!-- cannot destroy but can close a social [boolean] -->
               </ul>
             </li>
             <!-- static_pages_controller -->
@@ -510,7 +513,7 @@
         </div>
       </div>
     </div>
-    <!-- end PRIMARY-ADMIN mgt_group -->
+    <!-- end PRIMARY-ADMIN event_mgt_group -->
 
    
 
