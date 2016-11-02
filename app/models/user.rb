@@ -43,7 +43,31 @@ class User < ActiveRecord::Base
 
   # ---- roles & groups -----
   scope :admins, ->() { joins(:category_role).where('category_roles.name' => "Admin") }                                                                                       
-  # all userrs in admin role
+  # all users in admin role
+
+  scope :primary_admins, ->() { joins(:category_role).where('category_roles.name' => "Primary Admin") }                                                                                       
+  # all users in primary_admin role
+
+  scope :clients, ->() { joins(:category_role).where('category_roles.name' => "Client") }                                                                                       
+  # all users in client role
+
+  scope :account_group, ->() { joins(:category_managementgroup).where('category_managementgroups.name' => "Account Group") }                                                                                       
+  # all users in account_group
+
+  scope :adminstration_group, ->() { joins(:category_managementgroup).where('category_managementgroups.name' => "Administration Group") }                                                                                       
+  # all users in adminstration_group
+
+  scope :client_group, ->() { joins(:category_managementgroup).where('category_managementgroups.name' => "Client Group") }                                                                                       
+  # all users in client_group
+
+  scope :development_group, ->() { joins(:category_managementgroup).where('category_managementgroups.name' => "Development Group") }                                                                                       
+  # all users in development_group
+
+  scope :event_mgt_group, ->() { joins(:category_managementgroup).where('category_managementgroups.name' => "Event Management Group") }                                                                                       
+  # all users in event_mgt_group
+
+  scope :management_group, ->() { joins(:category_managementgroup).where('category_managementgroups.name' => "Management Group") }                                                                                       
+  # all users in management_group
 
 
 
