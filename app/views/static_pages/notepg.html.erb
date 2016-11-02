@@ -1,1 +1,2121 @@
 <div>i am the notes page</div>
+
+<% provide(:title, "Notes") %>
+
+<!-- authentication_section -->
+<div class="medium-12 columns authentication_section" style="margin-top: 15px;">
+  <div class="medium-12 columns main_section_header">
+  ============================================================================
+  <h2><strong>Notes: Authentication</strong></h2>
+  ============================================================================
+  </div>
+  
+  <div class="medium-12 columns roles_department_groups">
+    <div class="main_headers">Roles, Departments & Groups</div>
+    <div class="medium-4 columns">
+      <b>CategoryRole</b>
+      <div class="header_subtitle">*note: main upper groups on site</div>
+      <ul>
+      <li>Admin</li>
+      <li>Primary Admin</li>
+      </ul>
+    </div>
+
+    <div class="medium-4 columns">
+      <b>CategoryManagementrole</b>
+      <div class="header_subtitle">*note: Groups allows only Africanjober Team to categories all users of the website into categories</div>
+      <ul>
+        <li>Management Group</li>
+        <li>Administration Group</li>
+        <li>Development Group</li>
+        <li>Account Group</li>
+        <li>Sales/Marketing Group</li>
+        <li>Client Group</li>
+      </ul>
+    </div>
+
+    <div class="medium-4 columns">
+      <b>CategoryDepartment</b>
+      <div class="header_subtitle">*note: Departments allows the Admin to categorise Primary Admins into categories</div>
+      <ul>
+        <li>Partner/Owner</li>
+        <li>Management</li>
+        <li>Administration</li>
+        <li>Human Resource</li>
+        <li>Finance</li>
+        <li>Purchasing</li>
+        <li>Support</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- admins -->
+  <div class="medium-12 columns admins">
+    <div class="main_headers">Admins</div>
+
+    <!-- ADMIN management/administration/development/account/sales_group - group_A -->
+    <div class="medium-6 columns admin_mgt_adm_dev_acct_sales_froup">
+      <div>
+        <div class="groups"><u>Groups A</u>: Management Group | Administration Group | Development Group | Account Group | Sales/Marketing Group</div>
+        <div>
+          <div class="auth_header">[authentication] can & cannot actions</div>
+          <ul>
+            <!-- adverts_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">adverts_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can edit / create / update / destroy </li>
+                <li><u><b>can</b> view</u>: can view index (userrs created ads) / show / rabbit / searchjob / search / careers</li>
+              </ul>
+            </li>
+            <!-- benifits_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">benifits_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can edit / create / update / destroy </li>
+                <li><u><b>can</b> view</u>: can view index / show </li>
+              </ul>
+            </li>
+            <!-- blogs_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">blogs_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can edit / create / update / destroy </li>
+                <li><u><b>can</b> view</u>: can view index / show </li>
+              </ul>
+            </li>
+            <!-- comments_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">comments_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can read & view comments in company show</li>
+                <li><u><b>cannot</b> action</u>: cannot edit / create / update / destroy </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / create / update / destroy comments in company show </li>
+              </ul>
+            </li>
+            <!-- companies_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">companies_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can edit / create / update / destroy </li>
+                <li><u><b>can</b> action</u>: can read & view comments in show</li>
+                <li><u><b>can</b> view</u>: can view index / show / analytics / companyadverts / recruiters</li>
+                <li><u><b>cannot</b> action</u>: cannot edit / create / update / destroy comments </li>
+              </ul>
+            </li>
+            <!-- contacts_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">contacts_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can create / </li>
+                <li><u><b>can</b> view</u>: can view index </li>
+                <li><u><b>cannot</b> view</u>: cannot view show </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / update /destroy </li>
+              </ul>
+            </li>
+            <!-- customerreviews_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">customerreviews_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can edit / create / update / destroy </li>
+                <li><u><b>can</b> view</u>: can view index / show </li>
+              </ul>
+            </li>
+            <!-- duties_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">duties_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can edit / create / update / destroy </li>
+                <li><u><b>can</b> view</u>: can view index / show </li>
+              </ul>
+            </li>
+            <!-- emailfriends_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">emailfriends_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can create</li>
+                <li><u><b>can</b> view</u>: can view index </li>
+                <li><u><b>cannot</b> view</u>: cannot view show </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / update / destroy </li>
+              </ul>
+            </li>
+            <!-- employments_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">employments_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can edit / create / update / destroy </li>
+                <li><u><b>can</b> view</u>: can view index / show </li>
+              </ul>
+            </li>
+            <!-- favouriteAdverts_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">favouriteAdverts_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can create / destroy </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / update </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+              </ul>
+            </li>
+            <!-- favouriteCompanies_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">favouriteCompanies_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can create / destroy </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / update </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+              </ul>
+            </li>
+            <!-- favouriteforms_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">favouriteforms_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can create / destroy </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / update </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+              </ul>
+            </li>
+            <!-- favouriteUserjs_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">favouriteUserjs_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can create / destroy </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / update </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+              </ul>
+            </li>
+            <!-- favouriteUserrs_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">favouriteUserrs_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can create / destroy </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / update </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+              </ul>
+            </li>
+            <!-- feedbacks_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">feedbacks_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can create / destroy </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / update </li>
+                <li><u><b>can</b> view</u>: cann view index / show </li>
+              </ul>
+            </li>
+            <!-- forms_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">forms_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can edit / create / update / destroy </li>
+                <li><u><b>can</b> view</u>: can view index / show </li>
+              </ul>
+            </li>
+            <!-- invitejobers_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">invitejobers_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can create </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / update / destroy </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+              </ul>
+            </li>
+            <!-- invites_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">invites_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can create </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / update / destroy </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+              </ul>
+            </li>
+            <!-- languages_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">languages_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can edit / create / update / destroy </li>
+                <li><u><b>can</b> view</u>: can view index / show </li>
+              </ul>
+            </li>
+            <!-- notes_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">notes_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can edit / create / update / destroy </li>
+                <li><u><b>can</b> view</u>: can view index / show </li>
+              </ul>
+            </li>
+            <!-- payments_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">payments_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can edit / create / update / destroy </li>
+                <li><u><b>can</b> view</u>: can view index / show / invoice</li>
+              </ul>
+            </li>
+            <!-- products_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">products_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can edit / create / update / destroy </li>
+                <li><u><b>can</b> view</u>: can view index / show / pricing</li>
+              </ul>
+            </li>
+            <!-- qualifications_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">qualifications_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can edit / create / update / destroy </li>
+                <li><u><b>can</b> view</u>: can view index / show </li>
+              </ul>
+            </li>
+            <!-- reports_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">reports_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can create </li>
+                <li><u><b>can</b> view</u>: can view index / show </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / update / destroy </li>
+              </ul>
+            </li>
+            <!-- requiredskills_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">requiredskills_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can edit / create / update / destroy </li>
+                <li><u><b>can</b> view</u>: can view index / show </li>
+              </ul>
+            </li>
+            <!-- resumes_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">resumes_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can edit / create / update / destroy </li>
+                <li><u><b>can</b> view</u>: can view index / show </li>
+              </ul>
+            </li>
+            <!-- reviews_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">reviews_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can edit / create / update / destroy </li>
+                <li><u><b>can</b> view</u>: can view index / show</li>
+              </ul>
+            </li>
+            <!-- signups_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">signups_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can edit / create / update / destroy </li>
+                <li><u><b>can</b> view</u>: can view index / show</li>
+              </ul>
+            </li>
+            <!-- stories_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">stories_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: create </li>
+                <li><u><b>can</b> action</u>: can edit / update / destroy </li>
+                <li><u><b>can</b> view</u>: can view index / show</li>
+              </ul>
+            </li>
+            <!-- subscribers_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">subscribers_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can edit / create / update / destroy / subscription_sent / unsubscribe</li> 
+                <li><u><b>can</b> view</u>: can view index / show </li>
+              </ul>
+            </li>
+            <!-- timelines_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">timelines_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can edit / create / update / destroy </li>
+                <li><u><b>can</b> view</u>: can view index / show </li>
+              </ul>
+            </li>
+            <!-- userjs_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">userjs_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can edit / create / update / destroy </li>
+                <li><u><b>can</b> view</u>: can view index / show / dashboard</li>
+              </ul>
+            </li>
+            <!-- userrs_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">userrs_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can edit / create / update / destroy </li>
+                <li><u><b>can</b> view</u>: can view index / show / dashboard / management / applications / applicants</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- end ADMIN management/administration/development/account/sales_group -->
+
+    <!-- ADMIN client_group - group_B -->
+    <div class="medium-6 columns admin_client_group">
+      <div>
+        <div class="groups"><u>Groups B</u>: Client Group</div>
+        <div>
+          <div class="auth_header">[authentication] can & cannot actions</div>
+          <ul>
+            <!-- adverts_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">adverts_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can edit / create / update </li>
+                <li><u><b>can</b> view</u>: can view index / show / rabbit / searchjob / search / careers</li>
+                <li><u><b>cannot</b> action</u>: cannot destroy </li>
+              </ul>
+            </li>
+            <!-- benifits_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">benifits_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can edit / create / update / destroy </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+              </ul>
+            </li>
+            <!-- blogs_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">blogs_controller:</span>
+              <ul>
+                <li><u><b>can</b> view</u>: can view show </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / create / update / destroy </li>
+                <li><u><b>cannot</b> view</u>: cannot view index </li>
+              </ul>
+            </li>
+            <!-- comments_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">comments_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can read & view comments in company show</li>
+                <li><u><b>cannot</b> action</u>: cannot edit / create / update / destroy </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / create / update / destroy comments in company show </li>
+              </ul>
+            </li>
+            <!-- companies_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">companies_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can edit / create / update </li>
+                <li><u><b>can</b> action</u>: can read & view comments in show</li>
+                <li><u><b>can</b> view</u>: can view index / show / analytics / companyadverts / recruiters</li>
+                <li><u><b>cannot</b> action</u>: cannot destroy </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / create / update / destroy comments </li>
+              </ul>
+            </li>
+            <!-- contacts_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">contacts_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can create</li>
+                <li><u><b>cannot</b> action</u>: cannot edit / update / destroy </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+              </ul>
+            </li>
+            <!-- customerreviews_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">customerreviews_controller:</span>
+              <ul>
+                <li><u><b>can</b> view</u>: can view index </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / create / update / destroy </li>
+                <li><u><b>cannot</b> view</u>: cannot view show </li>
+              </ul>
+            </li>
+            <!-- duties_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">duties_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can create / edit / update </li>
+                <li><u><b>cannot</b> action</u>: cannot destroy </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+              </ul>
+            </li>
+            <!-- emailfriends_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">emailfriends_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can create</li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / update / destroy </li>
+              </ul>
+            </li>
+            <!-- employments_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">employments_controller:</span>
+              <ul>
+                <li><u><b>cannot</b> action</u>: cannot edit / create / update / destroy </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+              </ul>
+            </li>
+            <!-- favouriteAdverts_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">favouriteAdverts_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can create / destroy </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / update </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+              </ul>
+            </li>
+            <!-- favouriteCompanies_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">favouriteCompanies_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can create / destroy </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / update </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+              </ul>
+            </li>
+            <!-- favouriteforms_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">favouriteforms_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can create / destroy </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / update </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+              </ul>
+            </li>
+            <!-- favouriteUserjs_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">favouriteUserjs_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can create / destroy </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / update </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+              </ul>
+            </li>
+            <!-- favouriteUserrs_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">favouriteUserrs_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can create / destroy </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / update </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+              </ul>
+            </li>
+            <!-- feedbacks_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">feedbacks_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can create </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / update / destroy </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+              </ul>
+            </li>
+            <!-- forms_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">forms_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: update </li>
+                <li><u><b>can</b> view</u>: can view show </li>
+                <li><u><b>cannot</b> view</u>: cannot view index </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / create / destroy </li>
+              </ul>
+            </li>
+            <!-- invitejobers_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">invitejobers_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can create </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / update / destroy </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+              </ul>
+            </li>
+            <!-- invites_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">invites_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can create </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / update / destroy </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+              </ul>
+            </li>
+             <!-- languages_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">languages_controller:</span>
+              <ul>
+                <li><u><b>cannot</b> action</u>: cannot edit / create / update / destroy </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+              </ul>
+            </li>
+             <!-- notes_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">notes_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can create </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / update / destroy </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+              </ul>
+            </li>
+            <!-- payments_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">payments_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can create </li>
+                <li><u><b>can</b> view</u>: can view invoice</li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show</li>
+                <li><u><b>cannot</b> action</u>: cannot edit / update / destroy </li>
+              </ul>
+            </li>
+            <!-- products_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">products_controller:</span>
+              <ul>
+                <li><u><b>can</b> view</u>: can view show / pricing</li>
+                <li><u><b>cannot</b> action</u>: cannot edit / create / update / destroy </li>
+                <li><u><b>cannot</b> view</u>: cannot view index </li>
+              </ul>
+            </li>
+            <!-- qualifications_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">qualifications_controller:</span>
+              <ul>
+                <li><u><b>cannot</b> action</u>: cannot edit / create / update / destroy </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+              </ul>
+            </li>
+            <!-- reports_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">reports_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can create </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / update / destroy </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+              </ul>
+            </li>
+            <!-- requiredskills_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">requiredskills_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can edit / create / update / destroy </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+              </ul>
+            </li>
+            <!-- resumes_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">resumes_controller:</span>
+              <ul>
+                <li><u><b>cannot</b> action</u>: cannot edit / create / update / destroy </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+              </ul>
+            </li>
+            <!-- reviews_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">reviews_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can create </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / update / destroy </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show</li>
+              </ul>
+            </li>
+            <!-- signups_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">signups_controller:</span>
+              <ul>
+                <li><u><b>cannot</b> action</u>: cannot edit / create / update / destroy </li>
+                <li><u><b>canot</b> view</u>: cannot view index / show</li>
+              </ul>
+            </li>
+            <!-- stories_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">stories_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: create </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / update / destroy </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show</li>
+              </ul>
+            </li>
+            <!-- subscribers_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">subscribers_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can create / destroy / subscription_sent / unsubscribe </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / update</li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+              </ul>
+            </li>
+            <!-- timelines_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">timelines_controller:</span>
+              <ul>
+                <li><u><b>cannot</b> action</u>: cannot edit / create / update / destroy </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+              </ul>
+            </li>
+            <!-- userjs_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">userjs_controller:</span>
+              <ul>
+                <li><u><b>can</b> view</u>: can view index / show</li>
+                <li><u><b>cannot</b> action</u>: cannot edit / create / update / destroy </li>
+                <li><u><b>cannot</b> view</u>: cannot view dashboard</li>
+              </ul>
+            </li>
+            <!-- userrs_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">userrs_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can edit / update </li>
+                <li><u><b>can</b> view</u>: can view show / dashboard / applications / applicants</li>
+                <li><u><b>cannot</b> action</u>: cannot create / destroy </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / management </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- ADMIN client_group -->
+
+  </div>
+  <!-- end admins -->
+
+
+
+
+  <!-- primary admins -->
+  <div class="medium-12 columns primary_admins">
+    <div class="main_headers">Primary Admins</div>
+
+    <!-- PRIMARY-ADMIN mgt_group - group_C -->
+    <div class="medium-3 columns pa_mgt_group">
+      <div>
+        <div class="groups"><u>Groups C</u>: Management Group </div>
+        <div>
+          <div class="auth_header">[authentication] can & cannot actions</div>
+          <ul>
+            <!-- adverts_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">adverts_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can edit / create / update / destroy </li>
+                <li><u><b>can</b> view</u>: can view index / show / rabbit / searchjob / search / careers</li>
+              </ul>
+            </li>
+            <!-- benifits_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">benifits_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can edit / create / update / destroy </li>
+                <li><u><b>can</b> view</u>: can view index / show </li>
+              </ul>
+            </li>
+            <!-- blogs_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">blogs_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can edit / create / update / destroy </li>
+                <li><u><b>can</b> view</u>: can view index / show </li>
+              </ul>
+            </li>
+            <!-- comments_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">comments_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can read & view comments in company show</li>
+                <li><u><b>cannot</b> action</u>: cannot edit / create / update / destroy </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / create / update / destroy comments in company show </li>
+              </ul>
+            </li>
+            <!-- companies_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">companies_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can edit / create / update / destroy </li>
+                <li><u><b>can</b> action</u>: can read & view comments in show</li>
+                <li><u><b>can</b> view</u>: can view index / show / analytics / companyadverts / recruiters</li>
+                <li><u><b>cannot</b> action</u>: cannot edit / create / update / destroy comments </li>
+              </ul>
+            </li>
+            <!-- contacts_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">contacts_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can create / </li>
+                <li><u><b>can</b> view</u>: can view index </li>
+                <li><u><b>cannot</b> view</u>: cannot view show </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / update /destroy </li>
+              </ul>
+            </li>
+            <!-- customerreviews_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">customerreviews_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can edit / create / update / destroy </li>
+                <li><u><b>can</b> view</u>: can view index / show </li>
+              </ul>
+            </li>
+            <!-- duties_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">duties_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can edit / create / update / destroy </li>
+                <li><u><b>can</b> view</u>: can view index / show </li>
+              </ul>
+            </li>
+            <!-- emailfriends_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">emailfriends_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can create</li>
+                <li><u><b>can</b> view</u>: can view index </li>
+                <li><u><b>cannot</b> view</u>: cannot view show </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / update / destroy </li>
+              </ul>
+            </li>
+            <!-- employments_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">employments_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can edit / create / update / destroy </li>
+                <li><u><b>can</b> view</u>: can view index / show </li>
+              </ul>
+            </li>
+            <!-- favouriteAdverts_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">favouriteAdverts_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can create / destroy </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / update </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+              </ul>
+            </li>
+            <!-- favouriteCompanies_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">favouriteCompanies_controller:</span>
+              <ul>
+                <li><u><b>cannot</b> action</u>: cannot edit / create / update / destroy </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+              </ul>
+            </li>
+            <!-- favouriteforms_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">favouriteforms_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can create / destroy </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / update </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+              </ul>
+            </li>
+            <!-- favouriteUserjs_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">favouriteUserjs_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can create / destroy </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / update </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+              </ul>
+            </li>
+            <!-- favouriteUserrs_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">favouriteUserrs_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can create / destroy </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / update </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+              </ul>
+            </li>
+            <!-- feedbacks_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">feedbacks_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can create / destroy </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / update </li>
+                <li><u><b>can</b> view</u>: can view index / show </li>
+              </ul>
+            </li>
+            <!-- forms_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">forms_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can edit / create / update / destroy </li>
+                <li><u><b>can</b> view</u>: can view index / show </li>
+              </ul>
+            </li>
+            <!-- invitejobers_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">invitejobers_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can create </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / update / destroy </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+              </ul>
+            </li>
+            <!-- invites_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">invites_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can create </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / update / destroy </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+              </ul>
+            </li>
+             <!-- languages_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">languages_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can edit / create / update / destroy </li>
+                <li><u><b>can</b> view</u>: can view index / show </li>
+              </ul>
+            </li>
+             <!-- notes_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">notes_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can edit / create / update / destroy </li>
+                <li><u><b>can</b> view</u>: can view index / show </li>
+              </ul>
+            </li>
+            <!-- payments_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">payments_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can edit / create / update / destroy </li>
+                <li><u><b>can</b> view</u>: can view index / show / invoice</li>
+              </ul>
+            </li>
+
+            <!-- products_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">products_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can edit / create / update / destroy </li>
+                <li><u><b>can</b> view</u>: can view index / show / pricing </li>
+              </ul>
+            </li>
+            <!-- qualifications_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">qualifications_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can edit / create / update / destroy </li>
+                <li><u><b>can</b> view</u>: can view index / show </li>
+              </ul>
+            </li>
+            <!-- reports_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">reports_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can create </li>
+                <li><u><b>can</b> view</u>: can view index / show </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / update / destroy </li>
+              </ul>
+            </li>
+            <!-- requiredskills_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">requiredskills_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can edit / create / update / destroy </li>
+                <li><u><b>can</b> view</u>: can view index / show </li>
+              </ul>
+            </li>
+            <!-- resumes_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">resumes_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can edit / create / update / destroy </li>
+                <li><u><b>can</b> view</u>: can view index / show </li>
+              </ul>
+            </li>
+            <!-- reviews_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">reviews_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can edit / create / update / destroy </li>
+                <li><u><b>can</b> view</u>: can view index / show</li>
+              </ul>
+            </li>
+            <!-- signups_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">signups_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can edit / create / update / destroy </li>
+                <li><u><b>can</b> view</u>: can view index / show</li>
+              </ul>
+            </li>
+            <!-- stories_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">stories_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: create </li>
+                <li><u><b>can</b> action</u>: can edit / update / destroy </li>
+                <li><u><b>can</b> view</u>: can view index / show</li>
+              </ul>
+            </li>
+            <!-- subscribers_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">subscribers_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can edit / create / update / destroy / subscription_sent / unsubscribe</li>
+                <li><u><b>can</b> view</u>: can view index / show </li>
+              </ul>
+            </li>
+            <!-- timelines_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">timelines_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can edit / create / update / destroy </li>
+                <li><u><b>can</b> view</u>: can view index / show </li>
+              </ul>
+            </li>
+            <!-- userjs_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">userjs_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can edit / create / update / destroy </li>
+                <li><u><b>can</b> view</u>: can view index / show / dashboard</li>
+              </ul>
+            </li>
+            <!-- userrs_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">userrs_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can edit / create / update / destroy </li>
+                <li><u><b>can</b> view</u>: can view index / show / dashboard / management / applications / applicants</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- end PRIMARY-ADMIN mgt_group -->
+
+    <!-- PRIMARY-ADMIN admin_group - group_D -->
+    <div class="medium-3 columns pa_adm_group">
+      <div>
+        <div class="groups"><u>Groups D</u>: Administration Group</div>
+        <div>
+          <div class="auth_header">[authentication] can & cannot actions</div>
+          <ul>
+            <!-- adverts_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">adverts_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can edit / create / update </li>
+                <li><u><b>can</b> view</u>: can view index / show / rabbit / searchjob / search / careers</li>
+                <li><u><b>cannot</b> action</u>: cannot action destroy </li>
+              </ul>
+            </li>
+            <!-- benifits_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">benifits_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can edit / create / update / destroy </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+              </ul>
+            </li>
+            <!-- blogs_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">blogs_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can edit / create / update / destroy </li>
+                <li><u><b>can</b> view</u>: can view index / show </li>
+              </ul>
+            </li>
+            <!-- comments_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">comments_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can read & view comments in company show</li>
+                <li><u><b>cannot</b> action</u>: cannot edit / create / update / destroy </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / create / update / destroy comments in company show </li>
+              </ul>
+            </li>
+            <!-- companies_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">companies_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can edit / update </li>
+                <li><u><b>can</b> action</u>: can read & view comments in show</li>
+                <li><u><b>can</b> view</u>: can view index / show / companyadverts / recruiters</li>
+                <li><u><b>cannot</b> action</u>: cannot create / destroy </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / create / update / destroy comments </li>
+                <li><u><b>cannot</b> view</u>: cannot view analytics </li>
+              </ul>
+            </li>
+            <!-- contacts_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">contacts_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can create</li>
+                <li><u><b>cannot</b> action</u>: cannot edit / update / destroy </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+              </ul>
+            </li>
+            <!-- customerreviews_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">customerreviews_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can edit / create / update / destroy </li>
+                <li><u><b>can</b> view</u>: can view index / show </li>
+              </ul>
+            </li>
+            <!-- duties_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">duties_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can create / edit / update </li>
+                <li><u><b>cannot</b> action</u>: cannot destroy </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+              </ul>
+            </li>
+            <!-- emailfriends_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">emailfriends_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can create</li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / update / destroy </li>
+              </ul>
+            </li>
+            <!-- employments_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">employments_controller:</span>
+              <ul>
+                <li><u><b>cannot</b> action</u>: cannot edit / create / update / destroy </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+              </ul>
+            </li>
+            <!-- favouriteAdverts_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">favouriteAdverts_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can create / destroy </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / update </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+              </ul>
+            </li>
+            <!-- favouriteCompanies_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">favouriteCompanies_controller:</span>
+              <ul>
+                <li><u><b>cannot</b> action</u>: cannot edit / create / update / destroy </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+              </ul>
+            </li>
+            <!-- favouriteforms_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">favouriteforms_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can create / destroy </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / update </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+              </ul>
+            </li>
+            <!-- favouriteUserjs_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">favouriteUserjs_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can create / destroy </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / update </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+              </ul>
+            </li>
+            <!-- favouriteUserrs_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">favouriteUserrs_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can create / destroy </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / update </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+              </ul>
+            </li>
+            <!-- feedbacks_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">feedbacks_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can create </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / update / destroy </li>
+                <li><u><b>can</b> view</u>: can view index / show </li>
+              </ul>
+            </li>
+            <!-- forms_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">forms_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: update </li>
+                <li><u><b>can</b> view</u>: can view show </li>
+                <li><u><b>cannot</b> view</u>: cannot view index </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / create / destroy </li>
+              </ul>
+            </li>
+            <!-- invitejobers_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">invitejobers_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can create </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / update / destroy </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+              </ul>
+            </li>
+            <!-- invites_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">invites_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can create </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / update / destroy </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+              </ul>
+            </li>
+            <!-- languages_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">languages_controller:</span>
+              <ul>
+                <li><u><b>cannot</b> action</u>: cannot edit / create / update / destroy </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+              </ul>
+            </li>
+            <!-- notes_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">notes_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can create </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / update / destroy </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+              </ul>
+            </li>
+            <!-- payments_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">payments_controller:</span>
+              <ul>
+                <li><u><b>can</b> view</u>: can view index / show / invoice</li>
+                <li><u><b>cannot</b> action</u>: cannot edit / create / update / destroy </li>
+              </ul>
+            </li>
+            <!-- products_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">products_controller:</span>
+              <ul>
+                <li><u><b>can</b> view</u>: can view show / pricing</li>
+                <li><u><b>cannot</b> action</u>: cannot edit / create / update / destroy </li>
+                <li><u><b>cannot</b> view</u>: cannot view index </li>
+              </ul>
+            </li>
+            <!-- qualifications_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">qualifications_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can edit / create / update / destroy </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+              </ul>
+            </li>
+            <!-- reports_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">reports_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can create / update </li>
+                <li><u><b>can</b> view</u>: can view index / show </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / destroy </li>
+              </ul>
+            </li>
+            <!-- requiredskills_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">requiredskills_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can edit / create / update / destroy </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+              </ul>
+            </li>
+            <!-- resumes_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">resumes_controller:</span>
+              <ul>
+                <li><u><b>cannot</b> action</u>: cannot edit / create / update / destroy </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+              </ul>
+            </li>
+            <!-- reviews_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">reviews_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can create </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / update / destroy </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show</li>
+              </ul>
+            </li>
+            <!-- signups_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">signups_controller:</span>
+              <ul>
+                <li><u><b>cannot</b> action</u>: cannot edit / create / update / destroy </li>
+                <li><u><b>canot</b> view</u>: cannot view index / show</li>
+              </ul>
+            </li>
+            <!-- stories_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">stories_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: create </li>
+                <li><u><b>can</b> action</u>: can edit / update / destroy </li>
+                <li><u><b>can</b> view</u>: can view index / show</li>
+              </ul>
+            </li>
+            <!-- subscribers_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">subscribers_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can edit / create / update / destroy / subscription_sent / unsubscribe </li>
+                <li><u><b>can</b> view</u>: can view index / show </li>
+              </ul>
+            </li>
+            <!-- timelines_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">timelines_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can edit / create / update / destroy </li>
+                <li><u><b>can</b> view</u>: can view index / show </li>
+              </ul>
+            </li>
+            <!-- userjs_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">userjs_controller:</span>
+              <ul>
+                <li><u><b>can</b> view</u>: can view index / show</li>
+                <li><u><b>cannot</b> action</u>: cannot edit / create / update / destroy </li>
+                <li><u><b>cannot</b> view</u>: cannot view dashboard</li>
+              </ul>
+            </li>
+            <!-- userrs_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">userrs_controller:</span>
+              <ul>
+                <li><u><b>can</b> view</u>: can view show / dashboard / applications / applicants</li>
+                <li><u><b>cannot</b> action</u>: cannot edit / create / update / destroy </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / management </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- end PRIMARY-ADMIN admin_group -->
+
+    <!-- PRIMARY-ADMIN dev/acct/sales_group - group_E -->
+    <div class="medium-3 columns pa_dev_acct_sales_group">
+      <div>
+        <div class="groups"><u>Groups E</u>: Development Group | Account Group | Sales/Marketing Group</div>
+        <div>
+          <div class="auth_header">[authentication] can & cannot actions</div>
+          <ul>
+            <!-- adverts_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">adverts_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can edit / create / update </li>
+                <li><u><b>can</b> view</u>: can view index / show / rabbit / searchjob / search / careers</li>
+                <li><u><b>cannot</b> action</u>: cannot action destroy </li>
+              </ul>
+            </li>
+            <!-- benifits_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">benifits_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can edit / create / update / destroy </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+              </ul>
+            </li>
+            <!-- blogs_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">blogs_controller:</span>
+              <ul>
+                <li><u><b>can</b> view</u>: can view show </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / create / update / destroy </li>
+                <li><u><b>cannot</b> view</u>: cannot view index </li>
+              </ul>
+            </li>
+            <!-- comments_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">comments_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can read & view comments in company show</li>
+                <li><u><b>cannot</b> action</u>: cannot edit / create / update / destroy </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / create / update / destroy comments in company show </li>
+              </ul>
+            </li>
+            <!-- companies_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">companies_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can read & view comments in show</li>
+                <li><u><b>can</b> view</u>: can view index / show / companyadverts / recruiters</li>
+                <li><u><b>cannot</b> action</u>: cannot edit / create / update / destroy </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / create / update / destroy comments </li>
+                <li><u><b>cannot</b> view</u>: cannot view analytics </li>
+              </ul>
+            </li>
+            <!-- contacts_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">contacts_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can create</li>
+                <li><u><b>cannot</b> action</u>: cannot edit / update / destroy </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+              </ul>
+            </li>
+            <!-- customerreviews_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">customerreviews_controller:</span>
+              <ul>
+                <li><u><b>can</b> view</u>: can view index </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / create / update / destroy </li>
+                <li><u><b>cannot</b> view</u>: cannot view show </li>
+              </ul>
+            </li>
+            <!-- duties_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">duties_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can create / edit / update </li>
+                <li><u><b>cannot</b> action</u>: cannot destroy </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+              </ul>
+            </li>
+            <!-- emailfriends_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">emailfriends_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can create</li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / update / destroy </li>
+              </ul>
+            </li>
+            <!-- employments_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">employments_controller:</span>
+              <ul>
+                <li><u><b>cannot</b> action</u>: cannot edit / create / update / destroy </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+              </ul>
+            </li>
+            <!-- favouriteAdverts_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">favouriteAdverts_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can create / destroy </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / update </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+              </ul>
+            </li>
+            <!-- favouriteCompanies_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">favouriteCompanies_controller:</span>
+              <ul>
+                <li><u><b>cannot</b> action</u>: cannot edit / create / update / destroy </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+              </ul>
+            </li>
+            <!-- favouriteforms_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">favouriteforms_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can create / destroy </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / update </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+              </ul>
+            </li>
+            <!-- favouriteUserjs_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">favouriteUserjs_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can create / destroy </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / update </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+              </ul>
+            </li>
+            <!-- favouriteUserrs_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">favouriteUserrs_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can create / destroy </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / update </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+              </ul>
+            </li>
+            <!-- feedbacks_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">feedbacks_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can create </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / update / destroy </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+              </ul>
+            </li>
+            <!-- forms_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">forms_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: update </li>
+                <li><u><b>can</b> view</u>: can view show </li>
+                <li><u><b>cannot</b> view</u>: cannot view index </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / create / destroy </li>
+              </ul>
+            </li>
+            <!-- invitejobers_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">invitejobers_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can create </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / update / destroy </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+              </ul>
+            </li>
+            <!-- invites_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">invites_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can create </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / update / destroy </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+              </ul>
+            </li>
+            <!-- languages_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">languages_controller:</span>
+              <ul>
+                <li><u><b>cannot</b> action</u>: cannot edit / create / update / destroy </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+              </ul>
+            </li>
+            <!-- notes_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">notes_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can create </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / update / destroy </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+              </ul>
+            </li>
+            <!-- payments_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">payments_controller:</span>
+              <ul>
+                <li><u><b>cannot</b> view</u>: cannot view index / show / invoice [*account_group can]</li>
+                <li><u><b>cannot</b> action</u>: cannot edit / create / update / destroy </li>
+              </ul>
+            </li>
+            <!-- products_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">products_controller:</span>
+              <ul>
+                <li><u><b>can</b> view</u>: can view show / pricing</li>
+                <li><u><b>cannot</b> view</u>: cannot view index </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / create / update / destroy </li>
+              </ul>
+            </li>
+            <!-- qualifications_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">qualifications_controller:</span>
+              <ul>
+                <li><u><b>cannot</b> action</u>: cannot edit / create / update / destroy </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+              </ul>
+            </li>
+            <!-- reports_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">reports_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can create </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / update / destroy </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+              </ul>
+            </li>
+            <!-- requiredskills_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">requiredskills_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can edit / create / update / destroy </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+              </ul>
+            </li>
+            <!-- resumes_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">resumes_controller:</span>
+              <ul>
+                <li><u><b>cannot</b> action</u>: cannot edit / create / update / destroy </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+              </ul>
+            </li>
+            <!-- reviews_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">reviews_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can create </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / update / destroy </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show</li>
+              </ul>
+            </li>
+            <!-- signups_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">signups_controller:</span>
+              <ul>
+                <li><u><b>cannot</b> action</u>: cannot edit / create / update / destroy </li>
+                <li><u><b>canot</b> view</u>: cannot view index / show</li>
+              </ul>
+            </li>
+            <!-- stories_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">stories_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: create </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / update / destroy </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show</li>
+              </ul>
+            </li>
+            <!-- subscribers_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">subscribers_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can create / destroy / subscription_sent / unsubscribe </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / update</li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+              </ul>
+            </li>
+            <!-- timelines_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">timelines_controller:</span>
+              <ul>
+                <li><u><b>cannot</b> action</u>: cannot edit / create / update / destroy </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+              </ul>
+            </li>
+            <!-- userjs_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">userjs_controller:</span>
+              <ul>
+                <li><u><b>can</b> view</u>: can view index / show</li>
+                <li><u><b>cannot</b> action</u>: cannot edit / create / update / destroy </li>
+                <li><u><b>cannot</b> view</u>: cannot view dashboard</li>
+              </ul>
+            </li>
+            <!-- userrs_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">userrs_controller:</span>
+              <ul>
+                <li><u><b>can</b> view</u>: can view show / dashboard / applications / applicants</li>
+                <li><u><b>cannot</b> action</u>: cannot edit / create / update / destroy </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / management </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- end PRIMARY-ADMIN dev/acct/sales_group -->
+
+    <!-- PRIMARY-ADMIN client_group - group_F -->
+    <div class="medium-3 columns pa_client_group">
+      <div>
+        <div class="groups"><u>Groups F</u>: Client Group</div>
+        <div>
+          <div class="auth_header">[authentication] can & cannot actions</div>
+          <ul>
+            <!-- adverts_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">adverts_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can edit / create / update </li>
+                <li><u><b>can</b> view</u>: can view index / show / rabbit / searchjob / search / careers</li>
+                <li><u><b>cannot</b> action</u>: cannot action destroy </li>
+              </ul>
+            </li>
+            <!-- benifits_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">benifits_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can edit / create / update / destroy </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+              </ul>
+            </li>
+            <!-- blogs_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">blogs_controller:</span>
+              <ul>
+                <li><u><b>can</b> view</u>: can view show </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / create / update / destroy </li>
+                <li><u><b>cannot</b> view</u>: cannot view index </li>
+              </ul>
+            </li>
+            <!-- comments_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">comments_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can read & view comments in company show</li>
+                <li><u><b>cannot</b> action</u>: cannot edit / create / update / destroy </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / create / update / destroy comments in company show </li>
+              </ul>
+            </li>
+            <!-- companies_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">companies_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can read & view comments in show</li>
+                <li><u><b>can</b> view</u>: can view index / show / companyadverts / recruiters</li>
+                <li><u><b>cannot</b> action</u>: cannot edit / create / update / destroy </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / create / update / destroy comments </li>
+                <li><u><b>cannot</b> view</u>: cannot view analytics </li>
+              </ul>
+            </li>
+            <!-- contacts_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">contacts_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can create</li>
+                <li><u><b>cannot</b> action</u>: cannot edit / update / destroy </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+              </ul>
+            </li>
+            <!-- customerreviews_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">customerreviews_controller:</span>
+              <ul>
+                <li><u><b>can</b> view</u>: can view index </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / create / update / destroy </li>
+                <li><u><b>cannot</b> view</u>: cannot view show </li>
+              </ul>
+            </li>
+            <!-- duties_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">duties_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can create / edit / update </li>
+                <li><u><b>cannot</b> action</u>: cannot destroy </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+              </ul>
+            </li>
+            <!-- emailfriends_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">emailfriends_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can create</li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / update / destroy </li>
+              </ul>
+            </li>
+            <!-- employments_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">employments_controller:</span>
+              <ul>
+                <li><u><b>cannot</b> action</u>: cannot edit / create / update / destroy </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+              </ul>
+            </li>
+            <!-- favouriteAdverts_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">favouriteAdverts_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can create / destroy </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / update </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+              </ul>
+            </li>
+            <!-- favouriteCompanies_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">favouriteCompanies_controller:</span>
+              <ul>
+                <li><u><b>cannot</b> action</u>: cannot edit / create / update / destroy </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+              </ul>
+            </li>
+            <!-- favouriteforms_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">favouriteforms_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can create / destroy </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / update </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+              </ul>
+            </li>
+            <!-- favouriteUserjs_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">favouriteUserjs_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can create / destroy </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / update </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+              </ul>
+            </li>
+            <!-- favouriteUserrs_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">favouriteUserrs_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can create / destroy </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / update </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+              </ul>
+            </li>
+            <!-- feedbacks_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">feedbacks_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can create </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / update / destroy </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+              </ul>
+            </li>
+            <!-- forms_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">forms_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: update </li>
+                <li><u><b>can</b> view</u>: can view show </li>
+                <li><u><b>cannot</b> view</u>: cannot view index </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / create / destroy </li>
+              </ul>
+            </li>
+            <!-- invitejobers_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">invitejobers_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can create </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / update / destroy </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+              </ul>
+            </li>
+            <!-- invites_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">invites_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can create </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / update / destroy </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+              </ul>
+            </li>
+            <!-- languages_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">languages_controller:</span>
+              <ul>
+                <li><u><b>cannot</b> action</u>: cannot edit / create / update / destroy </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+              </ul>
+            </li>
+            <!-- notes_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">notes_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can create </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / update / destroy </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+              </ul>
+            </li>
+            <!-- payments_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">payments_controller:</span>
+              <ul>
+                <li><u><b>cannot</b> view</u>: cannot view index / show / invoice</li>
+                <li><u><b>cannot</b> action</u>: cannot edit / create / update / destroy </li>
+              </ul>
+            </li>
+            <!-- products_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">products_controller:</span>
+              <ul>
+                <li><u><b>can</b> view</u>: can view show / pricing</li>
+                <li><u><b>cannot</b> view</u>: cannot view index </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / create / update / destroy </li>
+              </ul>
+            </li>
+            <!-- qualifications_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">qualifications_controller:</span>
+              <ul>
+                <li><u><b>cannot</b> action</u>: cannot edit / create / update / destroy </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+              </ul>
+            </li>
+            <!-- reports_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">reports_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can create </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / update / destroy </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+              </ul>
+            </li>
+            <!-- requiredskills_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">requiredskills_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can edit / create / update / destroy </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+              </ul>
+            </li>
+            <!-- resumes_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">resumes_controller:</span>
+              <ul>
+                <li><u><b>cannot</b> action</u>: cannot edit / create / update / destroy </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+              </ul>
+            </li>
+            <!-- reviews_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">reviews_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can create </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / update / destroy </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show</li>
+              </ul>
+            </li>
+            <!-- signups_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">signups_controller:</span>
+              <ul>
+                <li><u><b>cannot</b> action</u>: cannot edit / create / update / destroy </li>
+                <li><u><b>canot</b> view</u>: cannot view index / show</li>
+              </ul>
+            </li>
+            <!-- stories_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">stories_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: create </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / update / destroy </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show</li>
+              </ul>
+            </li>
+            <!-- subscribers_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">subscribers_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can create / destroy / subscription_sent / unsubscribe </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / update</li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+              </ul>
+            </li>
+            <!-- timelines_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">timelines_controller:</span>
+              <ul>
+                <li><u><b>cannot</b> action</u>: cannot edit / create / update / destroy </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+              </ul>
+            </li>
+            <!-- userjs_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">userjs_controller:</span>
+              <ul>
+                <li><u><b>can</b> view</u>: can view index / show</li>
+                <li><u><b>cannot</b> action</u>: cannot edit / create / update / destroy </li>
+                <li><u><b>cannot</b> view</u>: cannot view dashboard</li>
+              </ul>
+            </li>
+            <!-- userrs_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">userrs_controller:</span>
+              <ul>
+                <li><u><b>can</b> view</u>: can view show / dashboard / applications / applicants</li>
+                <li><u><b>cannot</b> action</u>: cannot edit / create / update / destroy </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / management </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- end PRIMARY-ADMIN client_group -->
+  </div>
+  <!-- end primary admins -->
+
+
+
+  <!-- jobseekers - group_G -->
+  <div class="medium-12 columns jobseekers">
+    <div class="main_headers">Jobseekers</div>
+    <div class="medium-12 columns">
+      <div>
+        <div class="groups"><u>Groups G</u>: n/a</div>
+        <div>
+          <div class="auth_header">[authentication] can & cannot actions</div>
+          <ul>
+            <!-- adverts_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">adverts_controller:</span>
+              <ul>
+                <li><u><b>can</b> view</u>: can view show / searchjob / search / careers</li>
+                <li><u><b>cannot</b> action</u>: cannot edit / create / update / destroy </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / rabbit</li>
+              </ul>
+            </li>
+            <!-- benifits_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">benifits_controller:</span>
+              <ul>
+                <li><u><b>cannot</b> action</u>: cannot edit / create / update / destroy </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+              </ul>
+            </li>
+            <!-- blogs_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">blogs_controller:</span>
+              <ul>
+                <li><u><b>can</b> view</u>: can view show </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / create / update / destroy </li>
+                <li><u><b>cannot</b> view</u>: cannot view index </li>
+              </ul>
+            </li>
+            <!-- comments_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">comments_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can read & view comments in company show</li>
+                <li><u><b>can</b> action</u>: can create comments in company show </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / update / destroy </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / update / destroy comments in company show </li>
+              </ul>
+            </li>
+            <!-- companies_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">companies_controller:</span>
+              <ul>
+                <li><u><b>can</b> view</u>: can view index / show</li>
+                <li><u><b>can</b> action</u>: can create comments </li>
+                <li><u><b>cannot</b> view</u>: cannot view analytics / companyadverts / recruiters</li>
+                <li><u><b>cannot</b> action</u>: cannot edit / create / update / destroy </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / update / destroy comments </li>
+              </ul>
+            </li>
+            <!-- contacts_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">contacts_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can create</li>
+                <li><u><b>cannot</b> action</u>: cannot edit / update / destroy </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+              </ul>
+            </li>
+            <!-- customerreviews_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">customerreviews_controller:</span>
+              <ul>
+                <li><u><b>can</b> view</u>: can view index </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / create / update / destroy </li>
+                <li><u><b>cannot</b> view</u>: cannot view show </li>
+              </ul>
+            </li>
+            <!-- duties_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">duties_controller:</span>
+              <ul>
+                <li><u><b>cannot</b> action</u>: cannot edit / create / update / destroy </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+              </ul>
+            </li>
+            <!-- emailfriends_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">emailfriends_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can create</li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / update / destroy </li>
+              </ul>
+            </li>
+            <!-- employments_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">employments_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can create / edit / update / destroy </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+              </ul>
+            </li>
+            <!-- favouriteAdverts_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">favouriteAdverts_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can create / destroy </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / update </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+              </ul>
+            </li>
+            <!-- favouriteCompanies_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">favouriteCompanies_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can create / destroy </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / update </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+              </ul>
+            </li>
+            <!-- favouriteforms_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">favouriteforms_controller:</span>
+              <ul>
+                <li><u><b>cannot</b> action</u>: cannot edit / create / update / destroy</li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+              </ul>
+            </li>
+            <!-- favouriteUserjs_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">favouriteUserjs_controller:</span>
+              <ul>
+                <li><u><b>cannot</b> action</u>: cannot edit / create / update / destroy</li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+              </ul>
+            </li>
+            <!-- favouriteUserrs_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">favouriteUserrs_controller:</span>
+              <ul>
+                <li><u><b>cannot</b> action</u>: cannot edit / create / update / destroy</li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+              </ul>
+            </li>
+            <!-- feedbacks_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">feedbacks_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can create </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / update / destroy </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+              </ul>
+            </li>
+            <!-- forms_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">forms_controller:</span>
+              <ul>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / create / update / destroy </li>
+              </ul>
+            </li>
+            <!-- invitejobers_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">invitejobers_controller:</span>
+              <ul>
+                <li><u><b>cannot</b> action</u>: cannot edit / create / update / destroy </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+              </ul>
+            </li>
+            <!-- invites_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">invites_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can create </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / update / destroy </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+              </ul>
+            </li>
+            <!-- languages_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">languages_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can edit / create / update / destroy </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+              </ul>
+            </li>
+            <!-- notes_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">notes_controller:</span>
+              <ul>
+                <li><u><b>cannot</b> action</u>: cannot edit / create / update / destroy </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+              </ul>
+            </li>
+            <!-- payments_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">payments_controller:</span>
+              <ul>
+                <li><u><b>cannot</b> view</u>: cannot view index / show / invoice</li>
+                <li><u><b>cannot</b> action</u>: cannot edit / create / update / destroy </li>
+              </ul>
+            </li>
+            <!-- products_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">products_controller:</span>
+              <ul>
+                <li><u><b>can</b> view</u>: can view show / pricing</li>
+                <li><u><b>cannot</b> view</u>: cannot view index </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / create / update / destroy </li>
+              </ul>
+            </li>
+            <!-- qualifications_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">qualifications_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can edit / create / update / destroy </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+              </ul>
+            </li>
+            <!-- reports_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">reports_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can create </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / update / destroy </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+              </ul>
+            </li>
+            <!-- requiredskills_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">requiredskills_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can edit / create / update / destroy </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+              </ul>
+            </li>
+            <!-- resumes_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">resumes_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can edit / create / update / destroy</li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+              </ul>
+            </li>
+            <!-- reviews_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">reviews_controller:</span>
+              <ul>
+                <li><u><b>cannot</b> action</u>: cannot edit / create / update / destroy </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show</li>
+              </ul>
+            </li>
+            <!-- signups_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">signups_controller:</span>
+              <ul>
+                <li><u><b>cannot</b> action</u>: cannot edit / create / update / destroy </li>
+                <li><u><b>canot</b> view</u>: cannot view index / show</li>
+              </ul>
+            </li>
+            <!-- stories_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">stories_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: create </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / update / destroy </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show</li>
+              </ul>
+            </li>
+            <!-- subscribers_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">subscribers_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can create / destroy / subscription_sent / unsubscribe </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / update</li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+              </ul>
+            </li>
+            <!-- timelines_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">timelines_controller:</span>
+              <ul>
+                <li><u><b>cannot</b> action</u>: cannot edit / create / update / destroy </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+              </ul>
+            </li>
+            <!-- userjs_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">userjs_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can edit / create / update </li>
+                <li><u><b>can</b> view</u>: can view show / dashboard</li>
+                <li><u><b>cannot</b> view</u>: cannot view index </li>
+                <li><u><b>cannot</b> action</u>: cannot destroy </li>
+              </ul>
+            </li>
+            <!-- userrs_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">userrs_controller:</span>
+              <ul>
+                <li><u><b>cannot</b> action</u>: cannot edit / create / update / destroy </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show / dashboard / management / applications / applicants</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end jobseekers -->
+</div>
+<!-- end authentication_section -->
+
+
+
+
+
+<!-- development_section -->
+<div class="medium-12 columns authentication_section" style="margin-top: 15px;">
+  <div class="medium-12 columns main_section_header">
+  ============================================================================
+  <h2><strong>Notes: Additional Developments</strong></h2>
+  ============================================================================
+  </div>
+  
+  <!-- developments -->
+  <div class="medium-12 columns development_list listed_content">
+    <div class="main_headers">Development List</div>
+    <div class="medium-4 columns">
+      <b>Critical</b>
+      <div class="header_subtitle">*note: main upper groups on site</div>
+      <ul>
+        <li>#.] amazon aws</li>
+        <li>#.] twillo</li>
+        <li>#.] email me similar jobs - weekly/daily</li>
+        <li>#.] validations for forms in modals</li>
+      </ul>
+    </div>
+
+    <div class="medium-4 columns">
+      <b>Moderate</b>
+      <div class="header_subtitle">*note: main upper groups on site</div>
+      <ul>
+        <li>Management Group</li>
+        <li>Administration Group</li>
+        <li>Development Group</li>
+        <li>Account Group</li>
+        <li>Sales/Marketing Group</li>
+        <li>Client Group</li>
+      </ul>
+    </div>
+
+    <div class="medium-4 columns">
+      <b>Minor</b>
+      <div class="header_subtitle">*note: main upper groups on site</div>
+      <ul>
+        <li>Partner/Owner</li>
+        <li>Management</li>
+        <li>Administration</li>
+        <li>Human Resource</li>
+        <li>Finance</li>
+        <li>Purchasing</li>
+        <li>Support</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- analytics -->
+  <div class="medium-12 columns analytics_list listed_content">
+    <div class="main_headers">Analytics List</div>
+    <div class="medium-3 columns">
+      <b>Dashboard Userj</b>
+      <div class="header_subtitle">*section: overview</div>
+      <ul>
+        <li>#.] jobs applied to</li>
+        <li>#.] recieved invites</li>
+        <li>#.] favourited jobs</li>
+      </ul>
+      <div class="header_subtitle">*section: activity</div>
+    </div>
+
+    <div class="medium-3 columns">
+      <b>Dashboard Userr</b>
+      <div class="header_subtitle">*section: overview</div>
+      <ul>
+        <li>#.] created adverts by userr</li>
+        <li>#.] created adverts by company</li>
+        <li>#.] favourited adverts</li>
+        <li>#.] favourited userjs</li>
+        <li>#.] shortlisted/rejected/accepted/pending/interview</li>
+      </ul>
+      <!-- <div class="header_subtitle">*section: applicants</div> -->
+      <!-- <div class="header_subtitle">*section: analytics</div> -->
+      <div class="header_subtitle">*section: activity</div>
+    </div>
+
+    <div class="medium-3 columns dashboard_mgt">
+      <b>Dashboard Mgt Userr</b>
+      <div class="header_subtitle">*section: overview</div>
+      <ul>
+        <li>#.] userjs seeking outsource work</li>
+        <li>#.] userjs doing outsource work</li>
+      </ul>
+      <div class="header_subtitle">*section: africanjober</div>
+      <ul>
+        <li>#.] Lorem ipsum dolor sit amet</li>
+        <li>#.] Lorem ipsum dolor sit amet</li>
+      </ul>
+      <div class="header_subtitle">*section: companies</div>
+      <div class="header_subtitle">*section: recruiters</div>
+      <div class="header_subtitle">*section: applicants</div>
+      <div class="header_subtitle">*section: price rates</div>
+      <div class="header_subtitle">*section: payments</div>
+      <div class="header_subtitle">*section: feedback</div>
+    </div>
+
+    <div class="medium-3 columns">
+      <b>Dashboard Company</b>
+      <div class="header_subtitle">*section: overview</div>     
+      <ul>
+        #.] created adverts by company
+        <li>Management</li>
+      </ul>
+      <div class="header_subtitle">*section: recruiters</div>
+      <div class="header_subtitle">*section: adverts</div>
+      <div class="header_subtitle">*section: payments</div>
+      <div class="header_subtitle">*section: activity</div>
+    </div>
+  </div>
+</div>
+
+

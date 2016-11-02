@@ -1,0 +1,111 @@
+/*=========================================
+    Section: notes page
+    File: views / static_pages / notepg.html.erb
+  =========================================*/
+
+.authentication_section {
+  font-family: "Lato", sans-serif;
+  color: #2F3F5B;
+  background: url("img_map.png") no-repeat;
+  background-size: cover;
+}
+
+.main_section_header {
+  // background-color: rgba(47, 63, 91, 0.1) !important;
+  background-color: rgba(138, 191, 161, 0.3) !important;
+  margin-bottom: 15px;
+}
+
+.authentication_section h2 strong {
+  font-family: "Lato", sans-serif;
+  color: #2F3F5B;
+}
+
+.main_headers {
+  font-size: 2.75rem;
+}
+
+.header_subtitle {
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.groups {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.auth_header {
+  font-weight: bold;
+  font-size: 14px;
+  margin-top: 5px !important;
+}
+
+.listed_content {
+  margin-bottom: 15px !important;
+}
+
+.listed_content_header {
+  background-color: rgba(225, 71, 62, 0.1) !important;
+  padding: 3px;
+}
+
+.listed_content ul li {
+  font-size: 12px !important;
+}
+
+
+// ------------------------------
+//     roles_departemsnt_groups
+// ------------------------------
+.roles_department_groups {
+  background-color: rgba(47, 63, 91, 0.1) !important;
+  margin-bottom: 15px;
+}
+ 
+
+// ------------------------------
+//     admins
+// ------------------------------
+.admins {
+  padding: 15px !important;
+  background-color: rgba(47, 63, 91, 0.1) !important;
+  margin-bottom: 15px;
+} 
+
+
+// ------------------------------
+//     primary_admins
+// ------------------------------
+.primary_admins {
+  padding: 15px !important;
+  background-color: rgba(47, 63, 91, 0.1) !important;
+  margin-bottom: 15px;
+} 
+
+
+// ------------------------------
+//     jobseekers
+// ------------------------------
+.jobseekers {
+  padding: 15px !important;
+  background-color: rgba(47, 63, 91, 0.1) !important;
+  margin-bottom: 15px;
+} 
+
+// ------------------------------
+//     dvelopment_list
+// ------------------------------
+.development_list {
+  background-color: rgba(47, 63, 91, 0.1) !important;
+  margin-bottom: 15px;
+}
+
+// ------------------------------
+//     analytics_list
+// ------------------------------
+.analytics_list {
+  background-color: rgba(47, 63, 91, 0.1) !important;
+  margin-bottom: 15px;
+}
+
