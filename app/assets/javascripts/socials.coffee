@@ -18,8 +18,6 @@ jQuery ->
       $('#q_category_topic_id_eq').parent().hide()
 
 
-
-
 jQuery ->
   $('#q_category_age_id_eq').find("optgroup[label]").hide()
   ages = $('#q_category_age_id_eq').html()
