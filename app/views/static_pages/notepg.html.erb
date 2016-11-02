@@ -39,7 +39,7 @@
   <!-- admins -->
   <div class="medium-12 columns admins">
     <div class="main_headers">Admins</div>
-    <!-- ADMIN management/administration/development/account/sales_group.client_group - group_A -->
+    <!-- ADMIN management/administration/development/account/sales_group/client_group - group_A -->
     <div class="medium-6 columns admin_mgt_adm_dev_acct_sales_froup">
       <div>
         <div class="groups"><u>Groups A</u>: Management Group | Administration Group | Development Group | Account Group | Sales/Marketing Group | Client Group</div>
@@ -167,7 +167,7 @@
         </div>
       </div>
     </div>
-    <!-- end ADMIN management/administration/development/account/sales_group -->
+    <!-- end ADMIN management/administration/development/account/sales_group/client_group -->
   </div>
   <!-- end admins -->
 
@@ -1289,5 +1289,137 @@
 
 
   <!-- clients -->
-  <!-- clients -->
+  <div class="medium-12 columns admins">
+    <div class="main_headers">Clients</div>
+    <!-- CLIENTS management/administration/development/account/sales_group/client_group - group_F -->
+    <div class="medium-6 columns admin_mgt_adm_dev_acct_sales_froup">
+      <div>
+        <div class="groups"><u>Groups F</u>: Management Group | Administration Group | Development Group | Account Group | Sales/Marketing Group | Client Group</div>
+        <div>
+          <div class="auth_header">[authentication] can & cannot actions</div>
+          <ul>
+            <!-- attending_socials_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">attending_socials_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can edit / create / update / destroy </li>
+                <li><u><b>can</b> view</u>: can view index (userrs created ads) / show / rabbit / searchjob / search / careers</li>
+              </ul>
+            </li>
+            <!-- comments_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">comments_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can read & view comments in company show</li>
+                <li><u><b>cannot</b> action</u>: cannot edit / create / update / destroy </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / create / update / destroy comments in company show </li>
+              </ul>
+            </li>
+            <!-- conversations_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">conversations_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can edit / create / update / destroy </li>
+                <li><u><b>can</b> action</u>: can read & view comments in show</li>
+                <li><u><b>can</b> view</u>: can view index / show / analytics / companyadverts / recruiters</li>
+                <li><u><b>cannot</b> action</u>: cannot edit / create / update / destroy comments </li>
+              </ul>
+            </li>
+            <!-- events_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">events_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can create / </li>
+                <li><u><b>can</b> view</u>: can view index </li>
+                <li><u><b>cannot</b> view</u>: cannot view show </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / update /destroy </li>
+              </ul>
+            </li>
+            <!-- favourite_events_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">favourite_events_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can edit / create / update / destroy </li>
+                <li><u><b>can</b> view</u>: can view index / show </li>
+              </ul>
+            </li>
+            <!-- favourite_socials_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">favourite_socials_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can edit / create / update / destroy </li>
+                <li><u><b>can</b> view</u>: can view index / show </li>
+              </ul>
+            </li>
+            <!-- friendships_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">friendships_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can create</li>
+                <li><u><b>can</b> view</u>: can view index </li>
+                <li><u><b>cannot</b> view</u>: cannot view show </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / update / destroy </li>
+              </ul>
+            </li>
+            <!-- messages_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">messages_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can edit / create / update / destroy </li>
+                <li><u><b>can</b> view</u>: can view index / show </li>
+              </ul>
+            </li>
+            <!-- payments_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">payments_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can edit / create / update / destroy </li>
+                <li><u><b>can</b> view</u>: can view index / show / invoice</li>
+              </ul>
+            </li>
+            <!-- relationships_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">relationships_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can create / destroy </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / update </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+              </ul>
+            </li>
+            <!-- signups_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">signups_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can edit / create / update / destroy </li>
+                <li><u><b>can</b> view</u>: can view index / show</li>
+              </ul>
+            </li>
+            <!-- socialss_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">socialss_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can create / destroy </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / update </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+              </ul>
+            </li>
+            <!-- static_pages_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">static_pages_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can create / destroy </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / update </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
+              </ul>
+            </li>
+            <!-- subscriptions_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">subscriptions_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can create / destroy </li>
+                <li><u><b>cannot</b> action</u>: cannot edit / update </li>
+                <li><u><b>can</b> view</u>: cann view index / show </li>
+              </ul>
+            </li>
+            <!-- users_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">users_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can edit / create / update / destroy </li>
+                <li><u><b>can</b> view</u>: can view index / show / dashboard</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- end CLIENTS management/administration/development/account/sales_group/client_group -->
+  </div>
+  <!-- end clients -->
 
