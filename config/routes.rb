@@ -39,6 +39,7 @@ Rails.application.routes.draw do
   
   root  'static_pages#homepg'
   get   'landing-page',             to: 'static_pages#landingpg'
+  get   'notes',                    to: 'static_pages#notepg'
   get   'tags/:tag',                to: 'users#index', as: :tag
   get   'socialtags/:tag',          to: 'socials#index', as: :social_tag
   get   'eventtags/:tag',           to: 'events#index', as: :event_tag

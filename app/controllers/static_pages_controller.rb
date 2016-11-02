@@ -9,6 +9,9 @@ class StaticPagesController < ApplicationController
     @signup = Signup.new
   end
 
+  def notepg 
+  end
+
   # def user_not_allowed_to_view
   #   redirect_to root_path
   # end
