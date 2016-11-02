@@ -7,7 +7,6 @@
       <div class="search_inner_container">        
         <%= search_form_for(@search) do |f| %>
         <ul class="search_fields_left">
-          <li class="field select_country"><%# f.select :category_country_id_eq, options_from_collection_for_select(CategoryCountry.all, "id", "name", @search.category_country_id_eq), prompt: "Select Country" %></li>
           <li class="field select_role"><%= f.select :category_role_id_eq, options_from_collection_for_select(CategoryRole.all, "id", "name", @search.category_role_id_eq), prompt: "Role" %></li>
           <li class="field select_mgtgroup"><%= f.select :category_managementgroup_id_eq, options_from_collection_for_select(CategoryManagementgroup.all, "id", "name", @search.category_managementgroup_id_eq), prompt: "Group" %></li>
         </ul>   
