@@ -4,7 +4,6 @@
 
 
 jQuery ->
-  $('#q_category_topic_id_eq').find("optgroup[label]").hide()
   topics = $('#q_category_topic_id_eq').html()
   $('#q_category_country_id_eq').change ->
     country = $('#q_category_country_id_eq :selected').text()
