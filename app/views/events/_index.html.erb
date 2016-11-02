@@ -7,8 +7,14 @@
         <%= search_form_for(@search) do |f| %>
         <ul class="search_fields_left">
           <li class="field select_country"><%= f.select :category_country_id_eq, options_from_collection_for_select(CategoryCountry.all, "id", "name", @search.category_country_id_eq), prompt: "Select Country" %></li>
-          <li class="field select_type"><%= f.grouped_collection_select :category_topic_id_eq, CategoryCountry.order(:name), :category_topics, :name, :id, :name, include_blank: false, prompt: "Event Type" %></li>
-          <li class="field select_type"><%= f.grouped_collection_select :category_age_id_eq, CategoryTopic.order(:name), :category_ages, :name, :id, :name, include_blank: false, prompt: "Age Group" %></li>
+          <li class="field select_type"><%= f.select :category_topic_id_eq, options_from_collection_for_select(CategoryTopic.all, "id", "name", @search.category_topic_id_eq), prompt: "Event Type" %></li>
+          <li class="field select_age"><%= f.select :category_age_id_eq, options_from_collection_for_select(CategoryAge.all, "id", "name", @search.category_age_id_eq), prompt: "Age Group" %></li>
+
+
+
+          <li class="field select_country"><%# f.select :category_country_id_eq, options_from_collection_for_select(CategoryCountry.all, "id", "name", @search.category_country_id_eq), prompt: "Select Country" %></li>
+          <li class="field select_type"><%# f.grouped_collection_select :category_topic_id_eq, CategoryCountry.order(:name), :category_topics, :name, :id, :name, include_blank: false, prompt: "Event Type" %></li>
+          <li class="field select_age"><%# f.grouped_collection_select :category_age_id_eq, CategoryTopic.order(:name), :category_ages, :name, :id, :name, include_blank: false, prompt: "Age Group" %></li>
           <li class="field select_age"><%# f.select :category_age_id_eq, options_from_collection_for_select(CategoryAge.all, "id", "name", @search.category_age_id_eq), prompt: "Age Group" %></li>
         </ul>   
 

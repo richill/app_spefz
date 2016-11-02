@@ -20,6 +20,11 @@ w:https://www.originaldating.com/london-events-list/
 
 ------------------------------------------------
 
+
+
+------------------------------------------------
+creating host table in SCHEMA
+------------------------------------------------
 table: host
 user_id
 event_id
@@ -33,16 +38,24 @@ with this you can't assign a host to more than event
 event has_many hosts 
 host belongs_event
 
-------------------------------------------------
 
+
+------------------------------------------------
+creating card table in SCHEMA
+------------------------------------------------
 table: card
 event_id
 
 card belongs_to an event
 event has_one card
 
-------------------------------------------------
 
+
+
+
+------------------------------------------------
+details regarding STRIPE implementation contact
+------------------------------------------------
 ---------- Forwarded message ----------
 From: Alex Seleska <alex@razoredge-media.co.uk>
 Date: 12 September 2016 at 13:16
@@ -59,8 +72,6 @@ Thank you for you call.
  
 Kind Regards
  
- 
- 
 Alex Seleska
 Director
 Razor Edge Media Ltd
@@ -71,15 +82,47 @@ W: www.razoredge-media.co.uk
 
 
 ------------------------------------------------
-
+details regarding STRIPE usage
+------------------------------------------------
 Can I use the same Stripe account for multiple websites or businesses?
 https://support.stripe.com/questions/stripe-account-for-multiple-projects
 
 Answer: No, we’d highly recommend avoiding this
 
+
+
+
+
 ------------------------------------------------
+javascript coding for filters
+------------------------------------------------
+jQuery ->
+  topics = $('#q_category_topic_id_eq').html()
+  $('#q_category_country_id_eq').change ->
+    country = $('#q_category_country_id_eq :selected').text()
+    escaped_country = country.replace(/([ #;&,.+*~\':"!^$[\]()=>|\/@])/g, '\\$1')
+    options = $(topics).filter("optgroup[label='#{escaped_country}']").html()
+    if options
+      $('#q_category_topic_id_eq').html(options)
+      $('#q_category_topic_id_eq').parent().show()
+    else
+      $('#q_category_topic_id_eq').empty()
+      $('#q_category_topic_id_eq').parent().hide()
 
 
+jQuery ->
+  $('#q_category_age_id_eq').find("optgroup[label]").hide()
+  ages = $('#q_category_age_id_eq').html()
+  $('#q_category_topic_id_eq').change ->
+    topic = $('#q_category_topic_id_eq :selected').text()
+    escaped_topic = topic.replace(/([ #;&,.+*~\':"!^$[\]()=>|\/@])/g, '\\$1')
+    options = $(ages).filter("optgroup[label='#{escaped_topic}']").html()
+    if options
+      $('#q_category_age_id_eq').html(options)
+      $('#q_category_age_id_eq').parent().show()
+    else
+      $('#q_category_age_id_eq').empty()
+      $('#q_category_age_id_eq').parent().hide()
 
 
 
