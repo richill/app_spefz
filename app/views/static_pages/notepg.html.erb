@@ -123,7 +123,7 @@
             <li class="listed_content">#.] <span class="listed_content_header">socials_controller:</span>
               <ul>
                 <li><u><b>can</b> action</u>: can edit / create / update / destroy </li>
-                <li><u><b>cannot</b> view</u>: cannot view index / user_socials / show </li>
+                <li><u><b>can</b> view</u>: can view index / user_socials / show </li>
               </ul>
             </li>
             <!-- static_pages_controller -->
@@ -1334,8 +1334,9 @@
             <!-- payments_controller -->
             <li class="listed_content">#.] <span class="listed_content_header">payments_controller:</span>
               <ul>
-                <li><u><b>can</b> action</u>: can edit / create / update / destroy </li>
+                <li><u><b>can</b> action</u>: can create </li>
                 <li><u><b>can</b> view</u>: can view index / show</li>
+                <li><u><b>cannot</b> action</u>: cannot edit / update / destroy </li>
               </ul>
             </li>
             <!-- relationships_controller -->
@@ -1347,35 +1348,40 @@
             <!-- signups_controller -->
             <li class="listed_content">#.] <span class="listed_content_header">signups_controller:</span>
               <ul>
-                <li><u><b>can</b> action</u>: can edit / create / update / destroy </li>
-                <li><u><b>can</b> view</u>: can view index / show</li>
+                <li><u><b>can</b> action</u>: can create </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show</li>
+                <li><u><b>cannot</b> action</u>: cannot edit / update / destroy </li>
               </ul>
             </li>
             <!-- socials_controller -->
             <li class="listed_content">#.] <span class="listed_content_header">socials_controller:</span>
               <ul>
                 <li><u><b>can</b> action</u>: can edit / create / update / destroy </li>
-                <li><u><b>cannot</b> view</u>: cannot view index / user_socials / show </li>
+                <li><u><b>can</b> view</u>: can view index / user_socials / show </li>
               </ul>
             </li>
             <!-- static_pages_controller -->
             <li class="listed_content">#.] <span class="listed_content_header">static_pages_controller:</span>
               <ul>
-                <li><u><b>can</b> view</u>: can view homepg / landingpg / notepg </li>
+                <li><u><b>can</b> view</u>: can view homepg </li>
+                <li><u><b>cannot</b> view</u>: cannot view landingpg / notepg </li>
               </ul>
             </li>
             <!-- subscriptions_controller -->
             <li class="listed_content">#.] <span class="listed_content_header">subscriptions_controller:</span>
               <ul>
-                <li><u><b>can</b> action</u>: can create / edit / update / destroy </li>
-                <li><u><b>can</b> view</u>: can view index / show </li>
+                <li><u><b>can</b> view</u>: can view show </li>
+                <li><u><b>cannot</b> view</u>: cannot view index </li>
+                <li><u><b>cannot</b> action</u>: cannot create / edit / update / destroy </li>
               </ul>
             </li>
             <!-- users_controller -->
             <li class="listed_content">#.] <span class="listed_content_header">users_controller:</span>
               <ul>
-                <li><u><b>can</b> action</u>: can edit / create / update / destroy </li>
-                <li><u><b>can</b> view</u>: can view index / show / dashboard</li>
+                <li><u><b>can</b> action</u>: can edit / create / update </li>
+                <li><u><b>can</b> view</u>: can view show / dashboard</li>
+                <li><u><b>cannot</b> view</u>: cannot view index </li>
+                <li><u><b>cannot</b> action</u>: cannot destroy </li>
               </ul>
             </li>
           </ul>
