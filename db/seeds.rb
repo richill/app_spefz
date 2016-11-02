@@ -63,6 +63,21 @@ ct24 = CategoryTopic.create!(name:'Travel & Outdoors')
 ct25 = CategoryTopic.create!(name:'Tech Stories')
 ct26 = CategoryTopic.create!(name:'Valentines Social')
 
+CategoryRole.delete_all
+cr01 = CategoryRole.create!(name:'Admin')
+cr02 = CategoryRole.create!(name:'Primary Admin')
+cr02 = CategoryRole.create!(name:'Client')
+
+CategoryManagementgroup.delete_all
+cmr01 = CategoryManagementgroup.create!(name:'Account Group')
+cmr02 = CategoryManagementgroup.create!(name:'Administration Group')
+cmr03 = CategoryManagementgroup.create!(name:'Client Group')
+cmr04 = CategoryManagementgroup.create!(name:'Development Group')
+cmr05 = CategoryManagementgroup.create!(name:'Management Group')
+cmr06 = CategoryManagementgroup.create!(name:'Sales/Marketing Group')
+
+
+
 
 
 
