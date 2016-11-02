@@ -202,14 +202,31 @@
   color: #fff !important;
 }
 
+
+
 // ------------------------
 //     workings
 // ------------------------
 
 
+.user_roles .fa-user {
+  margin-right: 5px;
+}
 
+.members_section .user_roles {
+  font-family: 'Lato', sans-serif;
+  font-size: 12px;
+  font-weight: 300;
+  text-transform: capitalize;
+  text-align: left;
+  background-color: rgba(88, 205, 166, 0.2) !important;
+  padding: 5px;
+  border-bottom: 1px solid rgba(88, 205, 166, 0.5) !important;
+}
 
-
+.user_roles .divider {
+  margin: 5px;
+}
 
 
 
