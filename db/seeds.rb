@@ -73,8 +73,9 @@ cmr01 = CategoryManagementgroup.create!(name:'Account Group')
 cmr02 = CategoryManagementgroup.create!(name:'Administration Group')
 cmr03 = CategoryManagementgroup.create!(name:'Client Group')
 cmr04 = CategoryManagementgroup.create!(name:'Development Group')
-cmr05 = CategoryManagementgroup.create!(name:'Management Group') #superior group
-cmr06 = CategoryManagementgroup.create!(name:'Sales/Marketing Group')
+cmr05 = CategoryManagementgroup.create!(name:'Event Management Group')
+cmr06 = CategoryManagementgroup.create!(name:'Management Group') #superior group
+cmr07 = CategoryManagementgroup.create!(name:'Sales/Marketing Group')
 
 
 
