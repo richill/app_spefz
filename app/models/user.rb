@@ -87,17 +87,17 @@ class User < ActiveRecord::Base
     self.category_role.name == "Admin" && self.category_managementgroup.name == "Management Group" || 
     self.category_role.name == "Admin" && self.category_managementgroup.name == "Sales/Marketing Group" || 
     self.category_role.name == "Primary Admin" && self.category_managementgroup.name == "Management Group"
-    # admins & primary_admins in management_group
+    # Group_A & Group_B | admins & primary_admins in management_group
   end
 
   def pa_administration_group
     self.category_role.name == "Primary Admin" && self.category_managementgroup.name == "Administration Group"
-    # primary_admins in administration_group
+    # Group_C | primary_admins in administration_group
   end
 
   def pa_event_mgt_group
     self.category_role.name == "Primary Admin" && self.category_managementgroup.name == "Event Management Group"
-    # primary_admins in event_mgt_group
+    # Group_D | primary_admins in event_mgt_group
   end
 
   def pa_acct_client_dev_sales_group
@@ -105,9 +105,19 @@ class User < ActiveRecord::Base
     self.category_role.name == "Primary Admin" && self.category_managementgroup.name == "Client Group" ||
     self.category_role.name == "Primary Admin" && self.category_managementgroup.name == "Development Group" ||
     self.category_role.name == "Primary Admin" && self.category_managementgroup.name == "Sales/Marketing Group"
-    # primary_admins in account, client development & sales group
+    # Group_E | primary_admins in account, client development & sales group
   end
 
+  def client_group
+    self.category_role.name == "Client" && self.category_managementgroup.name == "Account Group" ||
+    self.category_role.name == "Client" && self.category_managementgroup.name == "Administration Group" ||
+    self.category_role.name == "Client" && self.category_managementgroup.name == "Client Group" ||
+    self.category_role.name == "Client" && self.category_managementgroup.name == "Development Group" ||
+    self.category_role.name == "Client" && self.category_managementgroup.name == "Event Management Group" ||
+    self.category_role.name == "Client" && self.category_managementgroup.name == "Management Group" ||
+    self.category_role.name == "Client" && self.category_managementgroup.name == "Sales/Marketing Group"
+    # Group_F | client in account, adminstration, client, development, event mgt, management, sales group
+  end
 
 
   def mailboxer_name
