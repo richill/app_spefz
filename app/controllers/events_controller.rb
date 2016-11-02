@@ -4,8 +4,11 @@ class EventsController < ApplicationController
   def index
     if params[:tag]
       @events = Event.tagged_with(params[:tag])
+      @search = Event.search(params[:q])
+      @listed_events = @search.result(distinct: true)
     else
-      @events = Event.all
+      @search = Event.search(params[:q])
+      @events = @search.result(distinct: true)
     end
     @premium_plan = Subscription.find_by(title:"premium")
   end
