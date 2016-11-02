@@ -41,6 +41,12 @@ class User < ActiveRecord::Base
 
   mount_uploader :image, ImageUploader
 
+
+  # ---- gender -----
+  scope :males, ->() { joins(:category_gender).where('category_genders.name' => "Male") } 
+  scope :females, ->() { joins(:category_gender).where('category_genders.name' => "Female") } 
+
+
   # ---- roles & groups -----
   scope :admins, ->() { joins(:category_role).where('category_roles.name' => "Admin") }                                                                                       
   # all users in admin role
