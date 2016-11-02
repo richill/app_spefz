@@ -45,6 +45,9 @@ class User < ActiveRecord::Base
   scope :admins, ->() { joins(:category_role).where('category_roles.name' => "Admin") }                                                                                       
   # all userrs in admin role
 
+
+
+
   def mailboxer_name
     self.firstname
   end
