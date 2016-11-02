@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
   acts_as_messageable
 
   belongs_to :category_gender 
+  belongs_to :category_role 
   has_many :events, dependent: :destroy
   has_many :socials, dependent: :destroy
   has_many :favourites, dependent: :destroy
