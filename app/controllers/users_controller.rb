@@ -6,11 +6,10 @@ class UsersController < ApplicationController
     if params[:tag]
       @users = User.tagged_with(params[:tag])
       @search = User.search(params[:q])
-      @listed_userss = @search.result(distinct: true)
+      @listed_users = @search.result(distinct: true)
     else
-      @users = User.all
       @search = User.search(params[:q])
-      @events = @search.result(distinct: true)
+      @users = @search.result(distinct: true)
     end
   end
 
