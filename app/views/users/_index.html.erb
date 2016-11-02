@@ -2,8 +2,21 @@
   <div class="medium-12 columns socials_inner_section">
 
     <!-- search -->
-    <div class="search_container">
-      <div class="search_inner_container"></div>
+    <div class="medium-12 columns search_container">
+      <div class="search_inner_container">        
+        <%= search_form_for(@search) do |f| %>
+        <ul class="search_fields_left">
+          <li class="field select_country"><%# f.select :category_country_id_eq, options_from_collection_for_select(CategoryCountry.all, "id", "name", @search.category_country_id_eq), prompt: "Select Country" %></li>
+          <li class="field select_role"><%= f.select :category_role_id_eq, options_from_collection_for_select(CategoryRole.all, "id", "name", @search.category_role_id_eq), prompt: "Role" %></li>
+          <li class="field select_mgtgroup"><%= f.select :category_managementgroup_id_eq, options_from_collection_for_select(CategoryManagementgroup.all, "id", "name", @search.category_managementgroup_id_eq), prompt: "Management Group" %></li>
+      </ul>   
+
+        <ul class="search_fields_right">
+          <li><%= f.submit 'search' %></li>
+          <li class="field select_user_name"><%= f.text_field :firstname_or_lastname_cont, placeholder: 'search firstname or lastname eg: kofi'%></li>
+        </ul>        
+        <% end %>
+      </div>
     </div>
     <!-- search -->
 

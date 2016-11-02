@@ -27,14 +27,74 @@
 }
 
 .members_section .search_container {
-  height: 65px;
+  padding: 18px 0px;
   background-color: rgba(47, 63, 91, 0.1);
+  border-bottom: 1px solid rgba(238, 170, 2, 0.3) !important;
 }
 
 .members_section .search_inner_container {
-  height: 65px;
   width: 1170px;
   margin: auto;
+}
+
+.members_section .search_fields_left, .search_fields_right {
+  margin: 0px !important;
+  list-style-type: none;
+}
+
+.members_section .field select, input[type="text"] {
+  font-family: "Lato", sans-serif;
+  font-weight: 300 !important;
+  box-shadow: none !important;
+  padding: 0px 15px !important;
+  border: none !important;
+  height: 40px;
+  color: #454d53;
+  font-size: 15px;
+  margin-bottom: 0px !important;
+}
+
+.members_section .search_fields_left li {
+  width: 185px;
+  float: left;
+  margin: 0px !important;
+  margin-right: 8px !important;
+}
+
+.members_section .search_fields_right li {
+  width: 185px;
+  float: right;
+  margin: 0px !important;
+  margin-left: 8px !important;
+}
+
+.members_section .search_fields_right .select_user_name {
+  width: 370px !important;
+}
+
+.members_section .search_fields_right li input[type="submit"] {
+  font-family: 'Lato', sans-serif;
+  font-size: 13px;
+  color: #fff !important;
+  font-weight: 300;
+  background: #000;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+  padding: 12px 25px;
+  width: 100%;
+  border: none;
+  display: inline-block;
+  background-color: #4BB4BF !important;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+.members_section .search_fields_right li input[type="submit"]:hover {
+  background-color: #eeaa02 !important;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
 }
 
 .members_section .member_content_section {
@@ -206,14 +266,14 @@
   margin-right: 5px;
 }
 
-.members_section .members_section .user_roles {
+.members_section .user_roles {
   font-family: 'Lato', sans-serif;
   font-size: 12px;
   font-weight: 300;
   text-transform: capitalize;
   text-align: left;
   background-color: rgba(88, 205, 166, 0.15) !important;
-  padding: 5px;
+  padding: 5px 10px;
   border-bottom: 1px solid rgba(88, 205, 166, 0.3) !important;
 }
 
