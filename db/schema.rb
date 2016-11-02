@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161102152702) do
+ActiveRecord::Schema.define(version: 20161102152825) do
 
   create_table "attendances", force: :cascade do |t|
     t.integer  "attendable_id"
@@ -43,6 +43,12 @@ ActiveRecord::Schema.define(version: 20161102152702) do
   end
 
   create_table "category_invites", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "category_managementgroups", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
