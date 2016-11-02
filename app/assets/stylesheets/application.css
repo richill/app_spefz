@@ -156,3 +156,48 @@ small {
   color: #E1473E;
 }
 
+
+/*----------------------------------------
+    datepicker CSS
+----------------------------------------*/
+.ui-datepicker .ui-datepicker-header {
+  font-family: "Lato", sans-serif !important;
+  font-weight: 300 !important;
+  color: #4BB4BF !important;
+  border: 0px !important;
+  border-radius: 0px !important;
+  border-bottom: 1px solid #414249;
+}
+
+.ui-datepicker th {
+  color: #4BB4BF !important;
+}
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+  color: #2F3F5B !important;
+}
+
+.ui-datepicker table {
+  border: 0px !important;
+}
+
+.ui-datepicker {
+  border-radius: 0px !important;
+}
+
+.ui-datepicker .ui-datepicker-prev, .ui-datepicker .ui-datepicker-next {
+  position: absolute;
+  top: 6px !important;
+  background-color: #fff !important;
+  height: 20px !important;
+  width: 20px !important;
+}
+
+.ui-datepicker .ui-datepicker-prev {
+  left: 5px !important;
+}
+
+.ui-datepicker .ui-datepicker-next {
+  right: 5px !important;
+}
+

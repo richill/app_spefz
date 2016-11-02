@@ -24,4 +24,3 @@ $(document).ready(function() {
   $('#social_category_quantitygender_id').find("option[value='4']").addClass("hide")
 });
 
-
