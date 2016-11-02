@@ -28,9 +28,9 @@
     File: views / messages / _folder_view.html.erb
   =========================================*/
 .messages_page_section .upper_section {
-  padding: 13px 0px !important;
-  height: 65px;
+  padding: 18px 0px !important;
   background-color: rgba(47, 63, 91, 0.1);
+  border-bottom: 1px solid rgba(238, 170, 2, 0.3) !important;
 }
 
 .messages_page_section .listed_actions_inner_container {
