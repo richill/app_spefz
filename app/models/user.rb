@@ -75,6 +75,9 @@ class User < ActiveRecord::Base
   scope :management_group, ->() { joins(:category_managementgroup).where('category_managementgroups.name' => "Management Group") }                                                                                       
   # all users in management_group
 
+  scope :management_group, ->() { joins(:category_managementgroup).where('category_managementgroups.name' => "Sales/Marketing Group") }                                                                                       
+  # all users in sales_marketing_group
+
   def admin_pa_management_group
     self.category_role.name == "Admin" && self.category_managementgroup.name == "Account Group" || 
     self.category_role.name == "Admin" && self.category_managementgroup.name == "Administration Group" || 
@@ -85,6 +88,24 @@ class User < ActiveRecord::Base
     self.category_role.name == "Admin" && self.category_managementgroup.name == "Sales/Marketing Group" || 
     self.category_role.name == "Primary Admin" && self.category_managementgroup.name == "Management Group"
     # admins & primary_admins in management_group
+  end
+
+  def pa_administration_group
+    self.category_role.name == "Primary Admin" && self.category_managementgroup.name == "Administration Group"
+    # primary_admins in administration_group
+  end
+
+  def pa_event_mgt_group
+    self.category_role.name == "Primary Admin" && self.category_managementgroup.name == "Event Management Group"
+    # primary_admins in event_mgt_group
+  end
+
+  def pa_acct_client_dev_sales_group
+    self.category_role.name == "Primary Admin" && self.category_managementgroup.name == "Account Group" ||
+    self.category_role.name == "Primary Admin" && self.category_managementgroup.name == "Client Group" ||
+    self.category_role.name == "Primary Admin" && self.category_managementgroup.name == "Development Group" ||
+    self.category_role.name == "Primary Admin" && self.category_managementgroup.name == "Sales/Marketing Group"
+    # primary_admins in account, client development & sales group
   end
 
 
