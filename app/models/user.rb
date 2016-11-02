@@ -75,6 +75,17 @@ class User < ActiveRecord::Base
   scope :management_group, ->() { joins(:category_managementgroup).where('category_managementgroups.name' => "Management Group") }                                                                                       
   # all users in management_group
 
+  def admin_pa_management_group
+    self.category_role.name == "Admin" && self.category_managementrole.name == "Account Group" || 
+    self.category_role.name == "Admin" && self.category_managementrole.name == "Administration Group" || 
+    self.category_role.name == "Admin" && self.category_managementrole.name == "Client Group" || 
+    self.category_role.name == "Admin" && self.category_managementrole.name == "Development Group" || 
+    self.category_role.name == "Admin" && self.category_managementrole.name == "Event Management Group" || 
+    self.category_role.name == "Admin" && self.category_managementrole.name == "Management Group" || 
+    self.category_role.name == "Admin" && self.category_managementrole.name == "Sales/Marketing Group" || 
+    self.category_role.name == "Primary Admin" && self.category_managementrole.name == "Management Group"
+    # admins & primary_admins in management_group
+  end
 
 
 
