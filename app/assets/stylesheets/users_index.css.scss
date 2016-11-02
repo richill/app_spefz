@@ -72,6 +72,10 @@
   width: 370px !important;
 }
 
+.members_section .search_fields_right .btn_all {
+  width: 50px !important;
+}
+
 .members_section .search_fields_right li input[type="submit"] {
   font-family: 'Lato', sans-serif;
   font-size: 13px;
@@ -96,6 +100,37 @@
   -moz-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
 }
+
+.members_section .search_fields_right .btn_all .fa-users {
+  color: #fff !important;
+}
+
+.members_section .search_fields_right .btn_all a {
+  font-family: 'Lato', sans-serif;
+  font-size: 13px;
+  text-align: center;
+  color: #fff !important;
+  font-weight: 300;
+  background: #000;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+  padding: 11px 14px;
+  width: 100%;
+  border: none;
+  display: inline-block;
+  background-color: #4BB4BF !important;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+ }
+
+.members_section .search_fields_right .btn_all a:hover {
+  background-color: #eeaa02 !important;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
 
 .members_section .member_content_section {
   padding: 0px !important;
@@ -138,7 +173,7 @@
 
 .members_section .member_container {
   padding: 5px;
-  margin-bottom: 15px;
+  margin-bottom: 25px;
   margin-left: 0px !important;
 }
 

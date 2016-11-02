@@ -12,7 +12,13 @@
       </ul>   
 
         <ul class="search_fields_right">
-          <li><%= f.submit 'search' %></li>
+          <li><%= f.submit 'search' %></li> 
+          <!-- <li class="field btn_all"><%# link_to "display all", users_path %></li> -->
+          <li class="field btn_all">
+            <%= link_to users_path do %>
+              <i class="fa fa-users" aria-hidden="true"></i>
+            <% end %>
+          </li>
           <li class="field select_user_name"><%= f.text_field :firstname_or_lastname_cont, placeholder: 'search firstname or lastname eg: kofi'%></li>
         </ul>        
         <% end %>
