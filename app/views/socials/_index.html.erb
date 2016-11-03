@@ -29,7 +29,7 @@
     <div>Total socials:<%= @socials.count %> | 
       Expired socials: <%= @socials.expired_socials.count %> | 
       Live socials: <%= @socials.live_socials.count %> | 
-      <%= link_to "SUBSCRIPTION", subscription_path(@premium_plan) %>
+      <%= link_to "SUBSCRIPTION", subscription_path(@premium_plan), target: "_blank" %>
     </div>
     <!-- temp_content -->
 
