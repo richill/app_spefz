@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161102153056) do
+ActiveRecord::Schema.define(version: 20161103142317) do
 
   create_table "attendances", force: :cascade do |t|
     t.integer  "attendable_id"
@@ -227,6 +227,7 @@ ActiveRecord::Schema.define(version: 20161102153056) do
     t.string   "reference"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.integer  "event_id"
   end
 
   create_table "relationships", force: :cascade do |t|
