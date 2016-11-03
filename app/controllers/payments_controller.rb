@@ -9,8 +9,13 @@ class PaymentsController < ApplicationController
   end
 
   def new
-    @subscription = Subscription.find(params[:subcription_id])
-    @subcription_id = params[:subcription_id]
+    if @subscription.present?
+      @subscription = Subscription.find(params[:subcription_id])
+      @subcription_id = params[:subcription_id]
+    elsif @event.present?
+      @event = Event.find(params[:event_id])
+      @event_id = params[:event_id]
+    end
     @payment = Payment.new
   end
 
