@@ -1,59 +1,59 @@
 <div class="paymentsform_main_section">
-<% if @subscription_id.present? %>
-  <!-- payment_form_subscription -->
-  <div class="payment_subscription_form">
-    <h1>New Payment: Subscription</h1>
-    <ul>
-      <li><%= @subscription.id %></li>
-      <li><%= @subscription.title %> plan</li>
-    </ul>
+  <% if @subscription_id.present? %>
+    <!-- payment_form_subscription -->
+    <div class="payment_subscription_form">
+      <h1>New Payment: Subscription</h1>
+      <ul>
+        <li><%= @subscription.id %></li>
+        <li><%= @subscription.title %> plan</li>
+      </ul>
 
-    <%= simple_form_for(@payment) do |f| %>
-      <%= f.error_notification %>
+      <%= simple_form_for(@payment) do |f| %>
+        <%= f.error_notification %>
 
-      <div class="form-inputs">
-        <%= f.input :user_id %>
-        <%= f.input :email, placeholder: "#{current_user.email}" %>
-        <%= f.input :subscription_id, value: @subscription_id %>
-        <%= f.input :reference %>
-      </div>
+        <div class="form-inputs">
+          <%= f.input :user_id %>
+          <%= f.input :email, placeholder: "#{current_user.email}" %>
+          <%= f.input :subscription_id, value: @subscription_id %>
+          <%= f.input :reference %>
+        </div>
 
-      <div class="form-actions">
-        <%= f.button :submit %>
-      </div>
-    <% end %>
-  </div>
-  <!-- payment_form_subscription -->
-
-
+        <div class="form-actions">
+          <%= f.button :submit %>
+        </div>
+      <% end %>
+    </div>
+    <!-- payment_form_subscription -->
 
 
-<% elsif @event_id.present? %>
-  <!-- payment_form_event -->
-  <div class="payment_event_form">
-    <h1>New Payment: Event</h1>
-    <ul>
-      <li><%= @event.id %></li>
-      <li><%= @event.title %></li>
-    </ul>
 
-    <%= simple_form_for(@payment) do |f| %>
-      <%= f.error_notification %>
 
-      <div class="form-inputs">
-        <%= f.input :user_id %>
-        <%= f.input :email, placeholder: "#{current_user.email}" %>
-        <%= f.input :event_id, value: @event_id %>
-        <%= f.input :reference %>
-      </div>
+  <% elsif @event_id.present? %>
+    <!-- payment_form_event -->
+    <div class="payment_event_form">
+      <h1>New Payment: Event</h1>
+      <ul>
+        <li><%= @event.id %></li>
+        <li><%= @event.title %></li>
+      </ul>
 
-      <div class="form-actions">
-        <%= f.button :submit %>
-      </div>
-    <% end %>
-  </div>
-  <!-- payment_form_event -->
-<% end %>
+      <%= simple_form_for(@payment) do |f| %>
+        <%= f.error_notification %>
+
+        <div class="form-inputs">
+          <%= f.input :user_id %>
+          <%= f.input :email, placeholder: "#{current_user.email}" %>
+          <%= f.input :event_id, value: @event_id %>
+          <%= f.input :reference %>
+        </div>
+
+        <div class="form-actions">
+          <%= f.button :submit %>
+        </div>
+      <% end %>
+    </div>
+    <!-- payment_form_event -->
+  <% end %>
 </div>
 
 
