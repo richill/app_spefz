@@ -15,7 +15,7 @@ class PaymentsController < ApplicationController
     if @subcription_id.present?
       @subscription = Subscription.find(params[:subcription_id])
     elsif @event_id.present?
-     @event = Event.find(params[:event_id])
+      @event = Event.find(params[:event_id])
     end
   end
 
