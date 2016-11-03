@@ -17,7 +17,7 @@
           <div class="pricing_title"><%= @subscription.title %> plan</div>
           <div class="pricing_subtitle">find lots of interesting socials, events & discussion and meet like minded people today!</div>
           <div class="btn_container">
-            <div class="btn_payment"> <%= link_to "get premium plan", new_payment_path(subcription_id: @subscription.id, user: current_user.id) %></div>
+            <div class="btn_payment"> <%= link_to "get premium plan", new_payment_path(subcription_id: @subscription.id, user: current_user.id), target: "_blank" %></div>
           </div>
         </div>
       </div>
