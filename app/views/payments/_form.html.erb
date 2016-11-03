@@ -1,41 +1,19 @@
-<% if @subscription.present? %>
-  <div class="subscription_payment">
-    <h1>New Subscription Payment</h1>
-    <div>ID: <%= @subscription.id %> | <%= @subscription.title %> subscription plan</div>
-    <%= simple_form_for(@payment) do |f| %>
-      <%= f.error_notification %>
+<%= simple_form_for(@payment) do |f| %>
+  <%= f.error_notification %>
 
-      <div class="form-inputs">
-        <%= f.input :email %>
-        <%= f.input :user_id %>
-        <%= f.input :subscription_id %>
-        <%= f.input :reference %>
-      </div>
-
-      <div class="form-actions">
-        <%= f.button :submit %>
-      </div>
-    <% end %>
+  <%= @subcription_id %>
+  <%= @event.title %>
+  <div class="form-inputs">
+    <%= f.input :email %>
+    <%= f.input :user_id %>
+    <%= f.input :subscription_id %>
+    <%= f.input :reference %>
   </div>
 
-
-<% elsif @event.present? %>
-  <div class="event_payment">
-    <h1>New Event Payment</h1>
-    <div>ID: <%= @event.id %> | <%= @event.title %></div>
-    <%= simple_form_for(@payment) do |f| %>
-      <%= f.error_notification %>
-
-      <div class="form-inputs">
-        <%= f.input :email %>
-        <%= f.input :user_id %>
-        <%= f.input :subscription_id %>
-        <%= f.input :reference %>
-      </div>
-
-      <div class="form-actions">
-        <%= f.button :submit %>
-      </div>
-    <% end %>
+  <div class="form-actions">
+    <%= f.button :submit %>
   </div>
 <% end %>
+
+
+

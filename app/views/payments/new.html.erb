@@ -1,8 +1,4 @@
-<% if @subscription.present? %>
-  <% provide(:title, "Subscription") %>
-<% elsif @event.present? %>
-  <% provide(:title, "Payment") %>
-<% end %>
+<% provide(:title, "Payment") %>
 <div>
   <%= render 'shared/header' %>
   <%= render 'new' %>
