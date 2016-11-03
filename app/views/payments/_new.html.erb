@@ -7,17 +7,31 @@
           <div class="medium-12 columns payment_main_container">
 
             <!-- image -->
-            <div class="medium-5 columns pymt_image_section">
-              <div class="pymt_image_cover">
-                <div class="text_cover pymt_text_content">
-                  <div><i class="fa fa-map-marker" aria-hidden="true"></i> Grace (London)</div>
-                  <div><i class="fa fa-calendar" aria-hidden="true"></i> Friday, 18 Nov <span class="divider">|</span> 18:00h - 21:00h</div>
-                  <div><i class="fa fa-map-pin" aria-hidden="true"></i> London, United Kingdom</div>
-                  <div><i class="fa fa-male" aria-hidden="true"></i> 35 -45</div>
+            <% if @subscription_id.present? %>
+              <div class="medium-5 columns pymt_image_section">
+                <div class="pymt_image_cover">
+                  <div class="text_cover pymt_text_content">
+                    <div><i class="fa fa-map-marker" aria-hidden="true"></i> Grace (London)</div>
+                    <div><i class="fa fa-calendar" aria-hidden="true"></i> Friday, 18 Nov <span class="divider">|</span> 18:00h - 21:00h</div>
+                    <div><i class="fa fa-map-pin" aria-hidden="true"></i> London, United Kingdom</div>
+                    <div><i class="fa fa-male" aria-hidden="true"></i> 35 -45</div>
+                  </div>
                 </div>
+                <div><%= image_tag("img_feed_11.png") %></div>
               </div>
-              <div><%= image_tag("img_feed_11.png") %></div>
-            </div>
+            <% elsif @event_id.present? %>
+              <div class="medium-5 columns pymt_image_section">
+                <div class="pymt_image_cover">
+                  <div class="text_cover pymt_text_content">
+                    <div><i class="fa fa-map-marker" aria-hidden="true"></i> Grace (London)</div>
+                    <div><i class="fa fa-calendar" aria-hidden="true"></i> Friday, 18 Nov <span class="divider">|</span> 18:00h - 21:00h</div>
+                    <div><i class="fa fa-map-pin" aria-hidden="true"></i> London, United Kingdom</div>
+                    <div><i class="fa fa-male" aria-hidden="true"></i> 35 -45</div>
+                  </div>
+                </div>
+                <div><%= image_tag("#{@event.image_url}") %></div>
+              </div>
+            <% end %>
             <!-- image -->
 
             <!-- form -->
