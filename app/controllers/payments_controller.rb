@@ -9,13 +9,10 @@ class PaymentsController < ApplicationController
   end
 
   def new
-    if @subscription.present?
-      @subscription = Subscription.find(params[:subcription_id])
-      @subcription_id = params[:subcription_id]
-    elsif @event.present?
-      @event = Event.find(params[:event_id])
-      @event_id = params[:event_id]
-    end
+    @subscription = Subscription.find(params[:subcription_id])
+    @subcription_id = params[:subcription_id]
+    # @event = Event.find(params[:event_id])
+    # @event_id = params[:event_id]
     @payment = Payment.new
   end
 
@@ -54,6 +51,10 @@ class PaymentsController < ApplicationController
       format.html { redirect_to payments_url, notice: 'Payment was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def is_path?(*paths)
+    paths.include?(request.path)
   end
 
   private
