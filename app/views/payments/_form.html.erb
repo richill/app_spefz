@@ -3,7 +3,7 @@
     <!-- payment_form_subscription -->
     <div class="payment_subscription_form">
       <div class="upper_section">
-        <div class="header"><%= @subscription.title %> subscription plan | <%= @subscription.id %></div>
+        <div class="header"><%= @subscription.title %> subscription plan</div>
         <div class="payment_table">
           <table style="border: 1px solid #DDDDE4; border-collapse: collapse;">
             <thead style="border: 1px solid #DDDDE4;">
@@ -60,7 +60,7 @@
                     <div class="form-row">
                       <label class="">
                         <span>subscription_id & userr_id</span>
-                        <input type="text" id="payment_subscription_id" name="payment[subscription_id]" value=<%="#{@subscription_id}"%> data-stripe=""><br/>
+                        <input type="text" id="payment_subscription_id" name="payment[subscription_id]" value=<%="#{@subscription_id}"%> data-stripe="">
                         <input type="text" id="payment_userr_id" name="payment[current_user.id]" value=<%="#{current_user.id}"%> data-stripe="">
                       </label>
                     </div>
@@ -91,7 +91,7 @@
                   <div class="clear"></div>
 
                   <div class="form-actions">
-                    <input class="button" name="commit" type="submit" value="Pay Now!">
+                    <input class="button" name="commit" type="submit" value="Subscribe Now!">
                   </div>
                 </form>
               </div>
@@ -119,7 +119,7 @@
     <!-- payment_form_event -->
     <div class="payment_event_form">
       <div class="upper_section">
-        <div class="header"><%= @event.title %> | <%= @event.id %></div>
+        <div class="header"><%= @event.title %></div>
         <div class="payment_table">
           <table style="border: 1px solid #DDDDE4; border-collapse: collapse;">
             <thead style="border: 1px solid #DDDDE4;">
@@ -183,7 +183,7 @@
                     <div class="form-row">
                       <label class="">
                         <span>event_id & userr_id</span>
-                        <input type="text" id="payment_product_id" name="payment[event_id]" value=<%="#{@event_id}"%> data-stripe=""><br/>
+                        <input type="text" id="payment_event_id" name="payment[event_id]" value=<%="#{@event_id}"%> data-stripe="">
                         <input type="text" id="payment_userr_id" name="payment[current_user.id]" value=<%="#{current_user.id}"%> data-stripe="">
                       </label>
                     </div>
