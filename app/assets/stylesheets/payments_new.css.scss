@@ -82,12 +82,7 @@
   width: 100%;
 }
 
-// -------------------------------
-//     workings
-// -------------------------------
-
-
-.pymt_form_section {
+.payments_new_section .pymt_form_section {
   background-color: #fff;
   padding: 15px;
   // height: 467px;
@@ -130,7 +125,6 @@
   letter-spacing: 1px;
 }
 
-
 .payments_new_section input[type="text"] {
   font-family: "Lato", sans-serif;
   font-weight: 300 !important;
@@ -145,6 +139,10 @@
   margin-bottom: 15px !important;
 }
 
+
+// -------------------------------
+//     workings
+// -------------------------------
 
 
 
