@@ -33,6 +33,35 @@
     <div class="payment_event_form">
       <div class="upper_section">
         <div class="header"><%= @event.title %> | <%= @event.id %></div>
+        <div class="payment_table">
+          <table style="border: 1px solid #2F3F5B; border-collapse: collapse;">
+            <thead style="border: 1px solid #2F3F5B;">
+              <tr>
+                <th>plan</th>
+                <th>description</th>
+                <th>tickets</th>
+                <th>(£)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="payment_details">
+                <td><%= @event.title %> plan</td>
+                <td>
+                  <div><i class="fa fa-angle-double-right" aria-hidden="true"></i> <%# @product.adverts %> job ads</div>
+                  <div><i class="fa fa-angle-double-right" aria-hidden="true"></i> <%# @product.cvs %>unlimited cv database search</div>
+                </td>
+                <td>1</td>
+                <td>$<%= @event.price %></td>
+              </tr>
+              <tr>
+                <td class="payment_vat">total VAT (inclusive)</td>
+                <td></td>
+                <td></td>
+                <td>$<%= @event.price %></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
 
       <div class="lower_section">
@@ -54,6 +83,9 @@
     </div>
     <!-- payment_form_event -->
   <% end %>
+
+  <!-- payment_form_paypal -->
+  <!-- payment_form_paypal -->
 </div>
 
 
