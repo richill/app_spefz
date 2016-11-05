@@ -4,6 +4,22 @@
     <div class="payment_subscription_form">
       <div class="upper_section">
         <div class="header"><%= @subscription.title %> subscription plan | <%= @subscription.id %></div>
+        <div class="payment_table">
+          <table style="border: 1px solid #DDDDE4; border-collapse: collapse;">
+            <thead style="border: 1px solid #DDDDE4;">
+              <tr>
+                <th>subscription</th>
+                <th style="text-align:right;">amt (£)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="payment_details">
+                <td><%= @subscription.title %> plan</td>
+                <td style="text-align:right;">$<%= @subscription.price %></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
 
       <div class="lower_section">
@@ -11,10 +27,10 @@
           <%= f.error_notification %>
 
           <div class="form-inputs">
-            <%= f.input :user_id %>
+            <%= f.hidden_field :user_id %>
             <%= f.input :email, placeholder: "#{current_user.email}" %>
-            <%= f.input :subscription_id, value: @subscription_id %>
-            <%= f.input :reference %>
+            <%= f.hidden_field :subscription_id, value: @subscription_id %>
+            <%= f.hidden_field :reference %>
           </div>
 
           <div class="form-actions">
@@ -39,19 +55,19 @@
               <tr>
                 <th>event</th>
                 <th style="text-align:center;">tickets</th>
-                <th>amt (£)</th>
+                <th style="text-align:right;">amt (£)</th>
               </tr>
             </thead>
             <tbody>
               <tr class="payment_details">
                 <td><%= @event.title %> plan</td>
                 <td style="text-align: center;">1</td>
-                <td>$<%= @event.price %></td>
+                <td style="text-align:right;">$<%= @event.price %></td>
               </tr>
               <tr>
                 <td class="payment_vat">total price</td>
                 <td></td>
-                <td>$<%= @event.price %></td>
+                <td style="text-align:right;">$<%= @event.price %></td>
               </tr>
             </tbody>
           </table>
