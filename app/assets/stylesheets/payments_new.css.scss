@@ -23,8 +23,10 @@
 }
 
 .payments_new_section .payment_main_container {
-  background-color: rgba(47, 63, 91, 0.2) !important;
-  padding: 10px !important;
+  // background-color: rgba(47, 63, 91, 0.2) !important;
+  // padding: 10px !important;
+  background-color: rgba(225, 71, 62, 0.1) !important;
+  padding: 25px !important;
 }
 
 .payments_new_section .pymt_image_section {
@@ -33,7 +35,7 @@
 }
 
 .payments_new_section .pymt_image_cover {
-  background-color: rgba(47, 63, 91, 0.2) !important;
+  background-color: rgba(47, 63, 91, 0.3) !important;
   position: absolute;
   height: 100%;
   width: 100%;
@@ -88,7 +90,7 @@
 .pymt_form_section {
   background-color: #fff;
   padding: 15px;
-  height: 479px;
+  height: 467px;
 }
 
 .payments_new_section .header {
@@ -108,13 +110,16 @@
 }
 
 .payments_new_section th {
+  font-family: "Lato", sans-serif;
   font-size: 12px !important;
+  letter-spacing: 1px;
   text-transform: uppercase !important;
   font-weight: bold !important;
   color: #414249 !important; 
 }
 
 .payments_new_section td {
+  font-family: "Lato", sans-serif;
   font-size: 12px !important;
   text-transform: capitalize !important;
   color: #414249 !important;
@@ -122,6 +127,7 @@
 
 .payments_new_section .payment_details td {
   height: 80px; 
+  letter-spacing: 1px;
 }
 
 
