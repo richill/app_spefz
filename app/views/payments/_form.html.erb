@@ -38,7 +38,6 @@
             <thead style="border: 1px solid #2F3F5B;">
               <tr>
                 <th>plan</th>
-                <th>description</th>
                 <th>tickets</th>
                 <th>(£)</th>
               </tr>
@@ -46,16 +45,11 @@
             <tbody>
               <tr class="payment_details">
                 <td><%= @event.title %> plan</td>
-                <td>
-                  <div><i class="fa fa-angle-double-right" aria-hidden="true"></i> <%# @product.adverts %> job ads</div>
-                  <div><i class="fa fa-angle-double-right" aria-hidden="true"></i> <%# @product.cvs %>unlimited cv database search</div>
-                </td>
                 <td>1</td>
                 <td>$<%= @event.price %></td>
               </tr>
               <tr>
                 <td class="payment_vat">total VAT (inclusive)</td>
-                <td></td>
                 <td></td>
                 <td>$<%= @event.price %></td>
               </tr>
