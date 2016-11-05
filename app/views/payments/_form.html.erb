@@ -34,22 +34,22 @@
       <div class="upper_section">
         <div class="header"><%= @event.title %> | <%= @event.id %></div>
         <div class="payment_table">
-          <table style="border: 1px solid #2F3F5B; border-collapse: collapse;">
-            <thead style="border: 1px solid #2F3F5B;">
+          <table style="border: 1px solid #DDDDE4; border-collapse: collapse;">
+            <thead style="border: 1px solid #DDDDE4;">
               <tr>
-                <th>plan</th>
-                <th>tickets</th>
-                <th>(£)</th>
+                <th>event</th>
+                <th style="text-align:center;">tickets</th>
+                <th>amt (£)</th>
               </tr>
             </thead>
             <tbody>
               <tr class="payment_details">
                 <td><%= @event.title %> plan</td>
-                <td>1</td>
+                <td style="text-align: center;">1</td>
                 <td>$<%= @event.price %></td>
               </tr>
               <tr>
-                <td class="payment_vat">total VAT (inclusive)</td>
+                <td class="payment_vat">total price</td>
                 <td></td>
                 <td>$<%= @event.price %></td>
               </tr>
@@ -63,10 +63,10 @@
           <%= f.error_notification %>
 
           <div class="form-inputs">
-            <%= f.input :user_id %>
+            <%= f.hidden_field :user_id %>
             <%= f.input :email, placeholder: "#{current_user.email}" %>
-            <%= f.input :event_id, value: @event_id %>
-            <%= f.input :reference %>
+            <%= f.hidden_field :event_id, value: @event_id %>
+            <%= f.hidden_field :reference %>
           </div>
 
           <div class="form-actions">

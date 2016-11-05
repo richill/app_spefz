@@ -88,6 +88,7 @@
 .pymt_form_section {
   background-color: #fff;
   padding: 15px;
+  height: 479px;
 }
 
 .payments_new_section .header {
@@ -97,11 +98,31 @@
   letter-spacing: 1px;
   text-transform: capitalize;
   background-color: rgba(88, 205, 166, 0.2);
+  border-bottom: 1px solid #DDDDE4;
   padding: 10px;
   margin-bottom: 15px;
 }
 
+.payments_new_section table {
+  width: 100%;
+}
 
+.payments_new_section th {
+  font-size: 12px !important;
+  text-transform: uppercase !important;
+  font-weight: bold !important;
+  color: #414249 !important; 
+}
+
+.payments_new_section td {
+  font-size: 12px !important;
+  text-transform: capitalize !important;
+  color: #414249 !important;
+}
+
+.payments_new_section .payment_details td {
+  height: 80px; 
+}
 
 
 
