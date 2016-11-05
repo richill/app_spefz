@@ -90,7 +90,7 @@
 .pymt_form_section {
   background-color: #fff;
   padding: 15px;
-  height: 467px;
+  // height: 467px;
 }
 
 .payments_new_section .header {
@@ -131,7 +131,18 @@
 }
 
 
-
+.payments_new_section input[type="text"] {
+  font-family: "Lato", sans-serif;
+  font-weight: 300 !important;
+  box-shadow: none !important;
+  padding: 0px 15px !important;
+  border: none !important;
+  height: 40px;
+  color: #454d53;
+  font-size: 15px;
+  margin-bottom: 0px !important;
+  background-color: #F7F7F7 !important;
+}
 
 
 

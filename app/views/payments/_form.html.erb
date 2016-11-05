@@ -22,21 +22,92 @@
         </div>
       </div>
 
-      <div class="lower_section">
-        <%= simple_form_for(@payment) do |f| %>
-          <%= f.error_notification %>
+      <div class="lower_section main_pymt_section">
+        <div class="medium-12 columns main_pymt_inner_section online_payments">
+          <div class="pymt_cover">
+            <div class="pymt_header">online payments</div>
+            <div class="pymt_content">
+              
+              <ul>
+                <li>Pay using Stripe or Paypal</li>
+                <li>Paypal accepts Visa or MasterCards</li>
+                <li>Payment with Paypal requires a Paypal account. Accepts any cards</li>
+              </ul>
 
-          <div class="form-inputs">
-            <%= f.hidden_field :user_id %>
-            <%= f.input :email, placeholder: "#{current_user.email}" %>
-            <%= f.hidden_field :subscription_id, value: @subscription_id %>
-            <%= f.hidden_field :reference %>
-          </div>
+              <div class="payment_card_type">
+                <form action="">
+                  <input type="radio" name="card" value="visa" class="payment_visa" alt="visa card" checked="checked">
+                    <%= image_tag("img_card_visa_01.png") %>
+                    <%= image_tag("img_card_mc_01.png") %>
+                    <%= image_tag("img_card_amex_01.png") %>
+                  <input type="radio" name="card" value="paypal" class="payment_paypal" alt="paypal">
+                    <%= image_tag("img_card_paypal_01.png") %>
+                  <br>
+                </form>
+              </div>
 
-          <div class="form-actions">
-            <%= f.button :submit, "Subscribe Now!" %>
+              <div class="payment_form_stripe">
+                <form accept-charset="UTF-8" action="/payments" class="simple_form new_payment" method="post" id="payment-form" id="new_payment" novalidate="novalidate">
+                  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+                  <span class="payment-errors"></span>
+                  <div class="form-inputs">
+                    <div class="form-row">
+                      <label class="">
+                        <span>Email</span>
+                        <input type="email" id="payment_email" name="payment[email]" value=<%="#{current_user.email}"%> data-stripe="">
+                      </label>
+                    </div>
+                    <div class="form-row">
+                      <label class="">
+                        <span>subscription_id & userr_id</span>
+                        <input type="text" id="payment_subscription_id" name="payment[subscription_id]" value=<%="#{@subscription_id}"%> data-stripe=""><br/>
+                        <input type="text" id="payment_userr_id" name="payment[current_user.id]" value=<%="#{current_user.id}"%> data-stripe="">
+                      </label>
+                    </div>
+                    <div class="form-row">
+                      <label>
+                        <span class="card_title">*Card Number</span>
+                        <input <% if Rails.env.development? %> class= "card_number" value="4242 4242 4242 4242"<% end %> type="text" size="20" data-stripe="number" placeholder="*Card number">
+                      </label>
+                    </div>
+                    <div class="form-row">
+                      <label>
+                        <span class="card_title">*CVV</span><span data-tooltip aria-haspopup="true" class="tip-right" title="The CVV number is a 3 or 4 digit security code printed on the front or back of your card."><i class="fa fa-info-circle cvv_icon" aria-hidden="true"></i></span>
+                        <input <% if Rails.env.development? %> class= "cvc_number" value="123"<% end %> type="text" size="4" data-stripe="cvc" placeholder="*CVV">
+                      </label>
+                    </div>
+                    <div class="form-row">
+                      <label>
+                        <div class="card_title">*Expiration (MM/YYYY)</div>
+                        <div class="exp_date_container">
+                          <input <% if Rails.env.development? %>value="12"<% end %> type="text" size="2" data-stripe="exp_month" class="exp_mth" placeholder="MM"> 
+                          <span class="exp_divider"> / </span>
+                          <input <% if Rails.env.development? %>value="2020"<% end %> type="text" size="2" data-stripe="exp_year" class="exp_yr" placeholder="YYYY">
+                        </div>
+                      </label>
+                    </div>
+                  </div>
+
+                  <div class="clear"></div>
+
+                  <div class="form-actions">
+                    <input class="button" name="commit" type="submit" value="Pay Now!">
+                  </div>
+                </form>
+              </div>
+
+              <!-- payment_form_paypal -->
+              <div class="payment_form_paypal hide">
+                <div class="paypal_content"><i class="fa fa-info-circle" aria-hidden="true"></i> When you click <b>The Paypal Icon</b> We'll take you to Paypal's site to set up your billing information.</div>
+                <div class="paypal_img_container">
+                  <%= link_to image_tag("img_card_paypal_02.png"), "#" %>
+                </div>
+              </div>
+              <!-- payment_form_paypal -->
+
+            </div>
           </div>
-        <% end %>
+        </div>
       </div>
     </div>
     <!-- payment_form_subscription -->
@@ -74,28 +145,98 @@
         </div>
       </div>
 
-      <div class="lower_section">
-        <%= simple_form_for(@payment) do |f| %>
-          <%= f.error_notification %>
+      <div class="lower_section main_pymt_section">
+        <div class="medium-12 columns main_pymt_inner_section online_payments">
+          <div class="pymt_cover">
+            <div class="pymt_header">online payments</div>
+            <div class="pymt_content">
+              
+              <ul>
+                <li>Pay using Stripe or Paypal</li>
+                <li>Paypal accepts Visa or MasterCards</li>
+                <li>Payment with Paypal requires a Paypal account. Accepts any cards</li>
+              </ul>
 
-          <div class="form-inputs">
-            <%= f.hidden_field :user_id %>
-            <%= f.input :email, placeholder: "#{current_user.email}" %>
-            <%= f.hidden_field :event_id, value: @event_id %>
-            <%= f.hidden_field :reference %>
-          </div>
+              <div class="payment_card_type">
+                <form action="">
+                  <input type="radio" name="card" value="visa" class="payment_visa" alt="visa card" checked="checked">
+                    <%= image_tag("img_card_visa_01.png") %>
+                    <%= image_tag("img_card_mc_01.png") %>
+                    <%= image_tag("img_card_amex_01.png") %>
+                  <input type="radio" name="card" value="paypal" class="payment_paypal" alt="paypal">
+                    <%= image_tag("img_card_paypal_01.png") %>
+                  <br>
+                </form>
+              </div>
 
-          <div class="form-actions">
-            <%= f.button :submit, "Pay Now!" %>
+              <div class="payment_form_stripe">
+                <form accept-charset="UTF-8" action="/payments" class="simple_form new_payment" method="post" id="payment-form" id="new_payment" novalidate="novalidate">
+                  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+                  <span class="payment-errors"></span>
+                  <div class="form-inputs">
+                    <div class="form-row">
+                      <label class="">
+                        <span>Email</span>
+                        <input type="email" id="payment_email" name="payment[email]" value=<%="#{current_user.email}"%> data-stripe="">
+                      </label>
+                    </div>
+                    <div class="form-row">
+                      <label class="">
+                        <span>event_id & userr_id</span>
+                        <input type="text" id="payment_product_id" name="payment[event_id]" value=<%="#{@event_id}"%> data-stripe=""><br/>
+                        <input type="text" id="payment_userr_id" name="payment[current_user.id]" value=<%="#{current_user.id}"%> data-stripe="">
+                      </label>
+                    </div>
+                    <div class="form-row">
+                      <label>
+                        <span class="card_title">*Card Number</span>
+                        <input <% if Rails.env.development? %> class= "card_number" value="4242 4242 4242 4242"<% end %> type="text" size="20" data-stripe="number" placeholder="*Card number">
+                      </label>
+                    </div>
+                    <div class="form-row">
+                      <label>
+                        <span class="card_title">*CVV</span><span data-tooltip aria-haspopup="true" class="tip-right" title="The CVV number is a 3 or 4 digit security code printed on the front or back of your card."><i class="fa fa-info-circle cvv_icon" aria-hidden="true"></i></span>
+                        <input <% if Rails.env.development? %> class= "cvc_number" value="123"<% end %> type="text" size="4" data-stripe="cvc" placeholder="*CVV">
+                      </label>
+                    </div>
+                    <div class="form-row">
+                      <label>
+                        <div class="card_title">*Expiration (MM/YYYY)</div>
+                        <div class="exp_date_container">
+                          <input <% if Rails.env.development? %>value="12"<% end %> type="text" size="2" data-stripe="exp_month" class="exp_mth" placeholder="MM"> 
+                          <span class="exp_divider"> / </span>
+                          <input <% if Rails.env.development? %>value="2020"<% end %> type="text" size="2" data-stripe="exp_year" class="exp_yr" placeholder="YYYY">
+                        </div>
+                      </label>
+                    </div>
+                  </div>
+
+                  <div class="clear"></div>
+
+                  <div class="form-actions">
+                    <input class="button" name="commit" type="submit" value="Pay Now!">
+                  </div>
+                </form>
+              </div>
+
+              <!-- payment_form_paypal -->
+              <div class="payment_form_paypal hide">
+                <div class="paypal_content"><i class="fa fa-info-circle" aria-hidden="true"></i> When you click <b>The Paypal Icon</b> We'll take you to Paypal's site to set up your billing information.</div>
+                <div class="paypal_img_container">
+                  <%= link_to image_tag("img_card_paypal_02.png"), "#" %>
+                </div>
+              </div>
+              <!-- payment_form_paypal -->
+
+            </div>
           </div>
-        <% end %>
+        </div>
       </div>
     </div>
     <!-- payment_form_event -->
   <% end %>
 
-  <!-- payment_form_paypal -->
-  <!-- payment_form_paypal -->
+
 </div>
 
 
