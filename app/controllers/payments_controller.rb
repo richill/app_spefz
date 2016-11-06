@@ -96,22 +96,6 @@ class PaymentsController < ApplicationController
     #     end
     #   end
     # end
-
-
-
-
-
-
-
-    # respond_to do |format|
-    #   if @payment.save
-    #     format.html { redirect_to @payment, notice: 'Payment was successfully created.' }
-    #     format.json { render :show, status: :created, location: @payment }
-    #   else
-    #     format.html { render :new }
-    #     format.json { render json: @payment.errors, status: :unprocessable_entity }
-    #   end
-    # end
   end
 
   def update
