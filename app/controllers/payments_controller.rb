@@ -23,11 +23,12 @@ class PaymentsController < ApplicationController
   end
 
   def create
-    @subscription_id = params[:subscription_id]
-    @event_id = params[:event_id]
+    @subscription_id = @payment.subscription_id
+    @event_id = @payment.event_id
+    # @payment = Payment.new(payment_params)
     
     # ------- PAYMENT_SUBSCRIPTION -------
-    #if @subscription_id.present?
+    # if @subscription_id.present?
       @user = current_user
       @payment = Payment.new(payment_params)
       @subscription = @payment.subscription_id
@@ -58,7 +59,7 @@ class PaymentsController < ApplicationController
 
       respond_to do |format|
         if @payment.save
-          format.html { redirect_to dashboard_user_path(current_user), notice: 'Your Payment was successful.' }
+          format.html { redirect_to dashboard_user_path(current_user), notice: 'Your Subscription Payment was successful.' }
           format.json { render :show, status: :created, location: @payment }
         else
           format.html { redirect_to new_payment_path(subscription_id: @subscription.id), alert: 'Ensure all fields are completed'}
@@ -86,9 +87,19 @@ class PaymentsController < ApplicationController
     #     currency: 'gbp'
     #   )
 
+    # current_user.update(
+    #   stripe_id: customer.id,
+    #   stripe_event_pymt_id: payment.id,
+    #   card_last4: params[:card_last4],
+    #   card_exp_month: params[:card_exp_month],
+    #   card_exp_year: params[:card_exp_year],
+    #   card_type: params[:card_brand],
+    #   recent_event_pymt_date: DateTime.now
+    # )
+
     #   respond_to do |format|
     #     if @payment.save
-    #       format.html { redirect_to dashboard_user_path(current_user), notice: 'Your Payment was successful.' }
+    #       format.html { redirect_to dashboard_user_path(current_user), notice: 'Your Booking Payment was successful.' }
     #       format.json { render :show, status: :created, location: @payment }
     #     else
     #       format.html { redirect_to new_payment_path(event_id: @event.id), alert: 'Ensure all fields are completed'}
