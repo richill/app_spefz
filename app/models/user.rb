@@ -119,6 +119,9 @@ class User < ActiveRecord::Base
     # Group_F | client in account, adminstration, client, development, event mgt, management, sales group
   end
 
+  def subscribed?
+    stripe_subscription_payment_id?
+  end
 
   def mailboxer_name
     self.firstname

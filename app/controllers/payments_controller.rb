@@ -48,7 +48,7 @@ class PaymentsController < ApplicationController
 
       current_userr.update(
         stripe_id: customer.id,
-        stripe_payment_id: payment.id,
+        stripe_subscription_pymt_id: payment.id,
         card_last4: params[:card_last4],
         card_exp_month: params[:card_exp_month],
         card_exp_year: params[:card_exp_year],
@@ -94,11 +94,18 @@ class PaymentsController < ApplicationController
   end
 
   def destroy
-    @payment.destroy
-    respond_to do |format|
-      format.html { redirect_to payments_url, notice: 'Payment was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    #destroy here represents unsubscribe
+    customer = Stripe::Customer.retrieve(current_user.stripe_id)
+    customer.subscriptions.retrieve(current_userr.stripe_subscription_pymt_id).delete
+    current_userr.update(stripe_subscription_pymt_id: nil)
+    current_userr.update(recent_subscription_pymt_date: nil)
+
+    redirect_to userr_path(current_userr), notice: "Payment Plan Successfully Cancelled"
+    # @payment.destroy
+    # respond_to do |format|
+    #   format.html { redirect_to payments_url, notice: 'Payment was successfully destroyed.' }
+    #   format.json { head :no_content }
+    # end
   end
 
   def is_path?(*paths)
