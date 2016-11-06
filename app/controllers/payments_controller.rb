@@ -61,7 +61,7 @@ class PaymentsController < ApplicationController
           format.html { redirect_to dashboard_user_path(current_user), notice: 'Your Payment was successful.' }
           format.json { render :show, status: :created, location: @payment }
         else
-          format.html { render :new }
+          format.html { redirect_to new_payment_path(subscription_id: @subscription.id), alert: 'Ensure all fields are completed'}
           format.json { render json: @payment.errors, status: :unprocessable_entity }
         end
       end
@@ -91,7 +91,7 @@ class PaymentsController < ApplicationController
           format.html { redirect_to dashboard_user_path(current_user), notice: 'Your Payment was successful.' }
           format.json { render :show, status: :created, location: @payment }
         else
-          format.html { render :new }
+          format.html { redirect_to new_payment_path(event_id: @event.id), alert: 'Ensure all fields are completed'}
           format.json { render json: @payment.errors, status: :unprocessable_entity }
         end
       end
