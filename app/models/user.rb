@@ -120,7 +120,11 @@ class User < ActiveRecord::Base
   end
 
   def subscribed?
-    stripe_subscription_payment_id?
+    stripe_subscription_pymt_id?
+  end
+
+  def paid?
+    stripe_event_pymt_id?
   end
 
   def mailboxer_name
