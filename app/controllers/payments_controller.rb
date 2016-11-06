@@ -27,10 +27,10 @@ class PaymentsController < ApplicationController
     @event_id = params[:event_id]
     
     # ------- PAYMENT_SUBSCRIPTION -------
-    if @subscription_id.present?
+    #if @subscription_id.present?
       @user = current_user
       @payment = Payment.new(payment_params)
-      @subscription = @payment.subscription
+      @subscription = @payment.subscription_id
       @payment.user_id = current_user.id
 
       if current_user.stripe_id?
@@ -41,7 +41,7 @@ class PaymentsController < ApplicationController
 
       payment = customer.subscriptions.create(
         source: params[:stripeToken],
-        plan: @subscription.id
+        plan: @subscription
         # the subscription.id is the database id
         # the plan.id in stripe uses the same id as that of the subscription.id in the database in order to select the right subsciption in stripe
       )
@@ -67,35 +67,35 @@ class PaymentsController < ApplicationController
       end
 
     # ------- PAYMENT_EVENT -------
-    elsif @event_id.present?
-      @user = current_user
-      @payment = Payment.new(payment_params)
-      @event = @payment.event
-      @payment.user_id = current_user.id
+    # elsif @event_id.present?
+    #   @user = current_user
+    #   @payment = Payment.new(payment_params)
+    #   @event = @payment.event
+    #   @payment.user_id = current_user.id
 
-      if current_user.stripe_id?
-        customer = Stripe::Customer.retrieve(current_user.stripe_id)
-      else
-        customer = Stripe::Customer.create(email: current_user.email)
-      end
+    #   if current_user.stripe_id?
+    #     customer = Stripe::Customer.retrieve(current_user.stripe_id)
+    #   else
+    #     customer = Stripe::Customer.create(email: current_user.email)
+    #   end
 
-      charge = Stripe::Charge.create(
-        source: params[:stripeToken],
-        amount: @event.price,
-        description: @event.title,
-        currency: 'gbp'
-      )
+    #   charge = Stripe::Charge.create(
+    #     source: params[:stripeToken],
+    #     amount: @event.price,
+    #     description: @event.title,
+    #     currency: 'gbp'
+    #   )
 
-      respond_to do |format|
-        if @payment.save
-          format.html { redirect_to dashboard_user_path(current_user), notice: 'Your Payment was successful.' }
-          format.json { render :show, status: :created, location: @payment }
-        else
-          format.html { redirect_to new_payment_path(event_id: @event.id), alert: 'Ensure all fields are completed'}
-          format.json { render json: @payment.errors, status: :unprocessable_entity }
-        end
-      end
-    end
+    #   respond_to do |format|
+    #     if @payment.save
+    #       format.html { redirect_to dashboard_user_path(current_user), notice: 'Your Payment was successful.' }
+    #       format.json { render :show, status: :created, location: @payment }
+    #     else
+    #       format.html { redirect_to new_payment_path(event_id: @event.id), alert: 'Ensure all fields are completed'}
+    #       format.json { render json: @payment.errors, status: :unprocessable_entity }
+    #     end
+    #   end
+    # end
 
 
 
