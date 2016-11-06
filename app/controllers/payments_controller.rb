@@ -62,6 +62,14 @@ class PaymentsController < ApplicationController
       @payment = Payment.new(payment_params)
       @event = @payment.event
       @payment.user_id = current_user.id
+
+      if current_user.stripe_id?
+        customer = Stripe::Customer.retrieve(current_user.stripe_id)
+      else
+        customer = Stripe::Customer.create(email: current_user.email)
+      end
+
+      
     end
 
 
