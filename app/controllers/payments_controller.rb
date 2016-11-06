@@ -28,7 +28,7 @@ class PaymentsController < ApplicationController
     
     # ------- PAYMENT_SUBSCRIPTION -------
     if @subscription_id.present?
-      @userr = current_userr
+      @user = current_user
       @payment = Payment.new(payment_params)
       @subscription = @payment.subscription
       @payment.user_id = current_user.id
@@ -46,7 +46,7 @@ class PaymentsController < ApplicationController
         # the plan.id in stripe uses the same id as that of the subscription.id in the database in order to select the right subsciption in stripe
       )
 
-      current_userr.update(
+      current_user.update(
         stripe_id: customer.id,
         stripe_subscription_pymt_id: payment.id,
         card_last4: params[:card_last4],
@@ -56,9 +56,19 @@ class PaymentsController < ApplicationController
         recent_subscription_pymt_date: DateTime.now
       )
 
+      respond_to do |format|
+        if @payment.save
+          format.html { redirect_to dashboard_user_path(current_user), notice: 'Your Payment was successful.' }
+          format.json { render :show, status: :created, location: @payment }
+        else
+          format.html { render :new }
+          format.json { render json: @payment.errors, status: :unprocessable_entity }
+        end
+      end
+
     # ------- PAYMENT_EVENT -------
     elsif @event_id.present?
-      @userr = current_userr
+      @user = current_user
       @payment = Payment.new(payment_params)
       @event = @payment.event
       @payment.user_id = current_user.id
@@ -69,24 +79,39 @@ class PaymentsController < ApplicationController
         customer = Stripe::Customer.create(email: current_user.email)
       end
 
-      
-    end
+      charge = Stripe::Charge.create(
+        source: params[:stripeToken],
+        amount: @event.price,
+        description: @event.title,
+        currency: 'usd'
+      )
 
-
-
-
-
-
-
-    respond_to do |format|
-      if @payment.save
-        format.html { redirect_to @payment, notice: 'Payment was successfully created.' }
-        format.json { render :show, status: :created, location: @payment }
-      else
-        format.html { render :new }
-        format.json { render json: @payment.errors, status: :unprocessable_entity }
+      respond_to do |format|
+        if @payment.save
+          format.html { redirect_to dashboard_user_path(current_user), notice: 'Your Payment was successful.' }
+          format.json { render :show, status: :created, location: @payment }
+        else
+          format.html { render :new }
+          format.json { render json: @payment.errors, status: :unprocessable_entity }
+        end
       end
     end
+
+
+
+
+
+
+
+    # respond_to do |format|
+    #   if @payment.save
+    #     format.html { redirect_to @payment, notice: 'Payment was successfully created.' }
+    #     format.json { render :show, status: :created, location: @payment }
+    #   else
+    #     format.html { render :new }
+    #     format.json { render json: @payment.errors, status: :unprocessable_entity }
+    #   end
+    # end
   end
 
   def update
@@ -104,11 +129,11 @@ class PaymentsController < ApplicationController
   def destroy
     #destroy here represents unsubscribe
     customer = Stripe::Customer.retrieve(current_user.stripe_id)
-    customer.subscriptions.retrieve(current_userr.stripe_subscription_pymt_id).delete
-    current_userr.update(stripe_subscription_pymt_id: nil)
-    current_userr.update(recent_subscription_pymt_date: nil)
+    customer.subscriptions.retrieve(current_user.stripe_subscription_pymt_id).delete
+    current_user.update(stripe_subscription_pymt_id: nil)
+    current_user.update(recent_subscription_pymt_date: nil)
 
-    redirect_to userr_path(current_userr), notice: "Payment Plan Successfully Cancelled"
+    redirect_to user_path(current_user), notice: "Payment Plan Successfully Cancelled"
     # @payment.destroy
     # respond_to do |format|
     #   format.html { redirect_to payments_url, notice: 'Payment was successfully destroyed.' }
