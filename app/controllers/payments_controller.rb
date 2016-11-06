@@ -83,7 +83,7 @@ class PaymentsController < ApplicationController
         source: params[:stripeToken],
         amount: @event.price,
         description: @event.title,
-        currency: 'usd'
+        currency: 'gbp'
       )
 
       respond_to do |format|
