@@ -37,6 +37,8 @@ Rails.application.routes.draw do
   end
   
   root  'static_pages#homepg'
+  get   'error',                    to: 'static_pages#errorpg'
+  get   'errorpermission',          to: 'static_pages#errorpermissionpg'
   get   'landing-page',             to: 'static_pages#landingpg'
   get   'notes',                    to: 'static_pages#notepg'
   get   'tags/:tag',                to: 'users#index', as: :tag
