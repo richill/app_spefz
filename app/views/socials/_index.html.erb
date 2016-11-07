@@ -215,23 +215,21 @@
                           </div>
                         <% end %>
                         <div class="feed subscribed">
-                          <%# link_to user_social_path(social.user, social) do %>
-                            <div class="social_cover">
-                              <div class="social_header">
-                                <div class="social_date"><i class="fa fa-calendar date"></i> <%= social.date.strftime("%a, %d %b %Y") %> | <%= social.time.strftime("%I:%M %p") %></div>
-                                <div class="social_location"><i class="fa fa-map-pin location"></i> <%= social.category_country.name %>, <%= social.city %></div>
-                                <div class="social_age"><i class="fa fa-male age" aria-hidden="true"></i> 
-                                  <span>Age: <%= social.category_age.name %></span>
-                                  <% if social.category_invite_id.present? %>
-                                    <% if social.category_invite.name == "just my guest" %>
-                                      <span> | </span>
-                                      <span class="invite_only">invite only</span> 
-                                    <% end %>
+                          <div class="social_cover">
+                            <div class="social_header">
+                              <div class="social_date"><i class="fa fa-calendar date"></i> <%= social.date.strftime("%a, %d %b %Y") %> | <%= social.time.strftime("%I:%M %p") %></div>
+                              <div class="social_location"><i class="fa fa-map-pin location"></i> <%= social.category_country.name %>, <%= social.city %></div>
+                              <div class="social_age"><i class="fa fa-male age" aria-hidden="true"></i> 
+                                <span>Age: <%= social.category_age.name %></span>
+                                <% if social.category_invite_id.present? %>
+                                  <% if social.category_invite.name == "just my guest" %>
+                                    <span> | </span>
+                                    <span class="invite_only">invite only</span> 
                                   <% end %>
-                                </div>
+                                <% end %>
                               </div>
                             </div>
-                          <%# end %>
+                          </div>
 
                           <div class="social_img"><%= image_tag("#{social.image_url}", :alt =>  "image", :class =>"#") %></div>
                           <div class="social_user">
