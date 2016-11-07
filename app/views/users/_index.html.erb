@@ -37,36 +37,71 @@
             <% else %>
               <ul class="inline-list">
                 <% @users.desc_order.each do |user| %>
-                  <li class="medium-3 columns member_container">
-                    <div class="medium-12 columns member_inner_container">
-                      <div class="image_section">
-                        <% if user.image_url.present? %>
-                          <div class="image_cover"><%= link_to(image_tag("#{user.image_url}", :alt =>  "image", :class =>"#"), user) %></div>
-                        <% else %>
-                          <div class="image_cover"><%= link_to(image_tag("img-profile-image-default.png", :alt =>  "image", :class =>"#"), user) %></div>
-                        <% end %>
+                  <% if current_user.subscribed? %>
+                    <li class="medium-3 columns member_container user_subscribed">
+                      <div class="medium-12 columns member_inner_container">
+                        <div class="image_section">
+                          <% if user.image_url.present? %>
+                            <div class="image_cover"><%= link_to(image_tag("#{user.image_url}", :alt =>  "image", :class =>"#"), user) %></div>
+                          <% else %>
+                            <div class="image_cover"><%= link_to(image_tag("img-profile-image-default.png", :alt =>  "image", :class =>"#"), user) %></div>
+                          <% end %>
+                        </div>
+                        <div class="user_info">
+                          <div class="user_name"><%= link_to "#{user.firstname} #{user.lastname}", user %></div>
+                          <div class="user_profession"><%= truncate(user.profession, length: 25) %></div>
+                        </div>
+                        <div class="action_btns">
+                          <% if user != current_user %>
+                          <%= render partial: "form_request", locals: { user: user } %>
+                          <%= render partial: "form_follow", locals: { user: user } %>
+                          <% end %>
+                        </div>
                       </div>
-                      <div class="user_info">
-                        <div class="user_name"><%= link_to "#{user.firstname} #{user.lastname}", user %></div>
-                        <div class="user_profession"><%= truncate(user.profession, length: 25) %></div>
+                      <div class="clear"></div>
+                      <% if current_user.admin_pa_management_group || current_user.pa_administration_group %>
+                      <div class="user_roles">
+                        <span><i class="fa fa-user" aria-hidden="true"></i></span>
+                        <span><%= truncate(user.category_role.name, length: 25) %></span>
+                        <span class="divider"> | </span>
+                        <span><%= truncate(user.category_managementgroup.name, length: 25) %></span>
                       </div>
-                      <div class="action_btns">
-                        <% if user != current_user %>
-                        <%= render partial: "form_request", locals: { user: user } %>
-                        <%= render partial: "form_follow", locals: { user: user } %>
-                        <% end %>
+                      <% end %>
+                    </li>
+                  <% else %>
+                    <li class="medium-3 columns member_container user_unsubscribed">
+                      <div class="medium-12 columns member_inner_container">
+                        <div class="image_section">
+                          <% if user.image_url.present? %>
+                            <div class="image_cover"><%= link_to(image_tag("#{user.image_url}", :alt =>  "image", :class =>"#"), subscription_path(@premium_plan)) %></div>
+                          <% else %>
+                            <div class="image_cover"><%= link_to(image_tag("img-profile-image-default.png", :alt =>  "image", :class =>"#"), subscription_path(@premium_plan)) %></div>
+                          <% end %>
+                        </div>
+                        <div class="user_info">
+                          <div class="user_name"><%= link_to "#{user.firstname} #{user.lastname}", subscription_path(@premium_plan) %></div>
+                          <div class="user_profession"><%= truncate(user.profession, length: 25) %></div>
+                        </div>
+                        <div class="action_btns">
+                          <%= link_to subscription_path(@premium_plan) do  %>
+                            <% if user != current_user %>
+                            <%= render partial: "form_request", locals: { user: user } %>
+                            <%= render partial: "form_follow", locals: { user: user } %>
+                            <% end %>
+                          <% end %>
+                        </div>
                       </div>
-                    </div>
-                    <div class="clear"></div>
-                    <% if current_user.admin_pa_management_group || current_user.pa_administration_group %>
-                    <div class="user_roles">
-                      <span><i class="fa fa-user" aria-hidden="true"></i></span>
-                      <span><%= truncate(user.category_role.name, length: 25) %></span>
-                      <span class="divider"> | </span>
-                      <span><%= truncate(user.category_managementgroup.name, length: 25) %></span>
-                    </div>
-                    <% end %>
-                  </li>
+                      <div class="clear"></div>
+                      <% if current_user.admin_pa_management_group || current_user.pa_administration_group %>
+                      <div class="user_roles">
+                        <span><i class="fa fa-user" aria-hidden="true"></i></span>
+                        <span><%= truncate(user.category_role.name, length: 25) %></span>
+                        <span class="divider"> | </span>
+                        <span><%= truncate(user.category_managementgroup.name, length: 25) %></span>
+                      </div>
+                      <% end %>
+                    </li>
+                  <% end %>
                 <% end %>
               <ul/>
             <% end %>

@@ -11,6 +11,7 @@ class UsersController < ApplicationController
       @search = User.search(params[:q])
       @users = @search.result(distinct: true)
     end
+     @premium_plan = Subscription.find_by(title:"premium") 
   end
 
   def show
