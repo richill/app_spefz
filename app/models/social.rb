@@ -24,6 +24,10 @@ class Social < ActiveRecord::Base
 
   scope :live_socials, -> {where(['date >= ?', Date.current])}
 
+  def subscribed?
+    self.user.stripe_subscription_pymt_id?
+  end
+
   def expired_social
     self.date < Date.current
   end

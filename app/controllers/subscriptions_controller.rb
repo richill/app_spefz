@@ -10,7 +10,6 @@ class SubscriptionsController < ApplicationController
   # GET /subscriptions/1
   # GET /subscriptions/1.json
   def show
-    @premium_plan = Subscription.find_by(title:"premium") 
   end
 
   # GET /subscriptions/new

@@ -21,10 +21,15 @@ class SocialsController < ApplicationController
     respond_with(@socials)
   end
 
-  def show
-    @commentable = @social
-    @comment = Comment.new
-    @comments = @commentable.comments
+  def show 
+    if !current_user.subscribed?
+      @premium_plan = Subscription.find_by(title:"premium")
+      redirect_to subscription_path(@premium_plan)
+    else
+      @commentable = @social
+      @comment = Comment.new
+      @comments = @commentable.comments
+    end
   end
 
   def new
