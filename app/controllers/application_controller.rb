@@ -22,7 +22,6 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:email, :firstname, :lastname, :birthdate, :password, :category_gender_id) }
   end
 
-
   private
 
   def message

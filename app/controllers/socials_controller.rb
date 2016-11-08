@@ -22,7 +22,7 @@ class SocialsController < ApplicationController
   end
 
   def show 
-    unless current_user.subscribed? || current_user.email == @social.user.email || current_user.admin_pa_management_group
+    unless current_user.subscribed_social_access?(@social)
       @premium_plan = Subscription.find_by(title:"premium")
       redirect_to subscription_path(@premium_plan)
     else

@@ -14,7 +14,7 @@
         <li class="link"><%= link_to 'activity', '#' %></li>
         <!-- <li class="link"><%# link_to 'members', users_path %></li> -->
         <!-- <li class="link"><%# link_to 'hosts', users_path %></li> -->
-        <% if current_user.subscribed? || current_user.admin_pa_management_group %>
+        <% if current_user.subscribed_access? %>
           <li class="create_button"><%= link_to 'create social', new_user_social_path(current_user) %></li>
         <% end %>
         <li class="notification_li">

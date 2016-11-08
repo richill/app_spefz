@@ -123,6 +123,20 @@ class User < ActiveRecord::Base
     stripe_subscription_pymt_id?
   end
 
+  def subscribed_access?
+    self.subscribed? || self.admin_pa_management_group || self.pa_event_mgt_group
+  end
+
+  def subscribed_social_access?(social_id)
+    social = Social.find(social_id)
+    self.subscribed? || self.id == social.user.id || self.admin_pa_management_group || self.pa_event_mgt_group
+    # eg: give access to certain pages if [eg: give access to current_user to view a social page]:
+    # current_user has subscribed
+    # current_user created the event [eg: current_user can only view socials they've created if they are not subscribed]
+    # current_user belongs to the admin_pa_management_group
+    # current_user belongs to the pa_event_mgt_group
+  end
+
   def paid?
     stripe_event_pymt_id?
   end
