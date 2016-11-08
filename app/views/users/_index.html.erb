@@ -37,7 +37,7 @@
             <% else %>
               <ul class="inline-list">
                 <% @users.desc_order.each do |user| %>
-                  <% if current_user.subscribed? || current_user.admin_pa_management_group %>
+                  <% if current_user.subscribed_access? %>
                     <li class="medium-3 columns member_container user_subscribed">
                       <div class="medium-12 columns member_inner_container">
                         <div class="image_section">
