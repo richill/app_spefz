@@ -31,7 +31,7 @@ $(document).ready(function() {
     $(".btn_friend_request_cancel_submit").prop("value", "Cancel Request");
   })
   $(".btn_friend_request_cancel_submit").mouseleave(function() {
-    $(".btn_friend_request_cancel_submit").prop("value", "Friend Request Sent");
+    $(".btn_friend_request_cancel_submit").prop("value", "Request Sent");
   })
 });
 
@@ -40,7 +40,7 @@ $(document).ready(function() {
 //     'mouseenter':function(){
 //       $(".btn_friend_request_cancel_submit").prop("value", "Cancel Request");
 //     },'mouseleave':function(){
-//       $(".btn_friend_request_cancel_submit").prop("value", "Friend Request Sent");
+//       $(".btn_friend_request_cancel_submit").prop("value", "Request Sent");
 //     }
 //   });
 // });
