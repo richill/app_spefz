@@ -8,10 +8,14 @@ class UsersController < ApplicationController
       @search = User.search(params[:q])
       @listed_users = @search.result(distinct: true)
     else
-      @search = User.search(params[:q])
-      @users = @search.result(distinct: true)
+      if current_user.admin_pa_management_group
+        @search = User.search(params[:q])
+        @users = @search.result(distinct: true)
+      else
+        redirect_to errorpermission_path
+      end
     end
-     @premium_plan = Subscription.find_by(title:"premium") 
+    @premium_plan = Subscription.find_by(title:"premium") 
   end
 
   def show
