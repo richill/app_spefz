@@ -2,6 +2,10 @@ class ConversationsController < ApplicationController
   before_action :authenticate_user!
 
   def new
+    unless current_user.subscribed_access?
+      @premium_plan = Subscription.find_by(title:"premium") 
+      redirect_to subscription_path(@premium_plan)
+    end
   end
 
   def create
@@ -13,9 +17,14 @@ class ConversationsController < ApplicationController
   end
 
   def show
-    @receipts = conversation.receipts_for(current_user)
-    # mark conversation as read
-    conversation.mark_as_read(current_user)
+    if current_user.subscribed_access?
+      @receipts = conversation.receipts_for(current_user)
+      # mark conversation as read
+      conversation.mark_as_read(current_user)
+    else
+      @premium_plan = Subscription.find_by(title:"premium") 
+      redirect_to subscription_path(@premium_plan)
+    end
   end
 
   def reply
