@@ -136,10 +136,6 @@ class PaymentsController < ApplicationController
     # end
   end
 
-  def is_path?(*paths)
-    paths.include?(request.path)
-  end
-
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_payment
