@@ -17,8 +17,13 @@ class MessagesController < ApplicationController
   end
 
   def trash
-    @trash = message.trash
-    @active = :trash
+    if current_user.subscribed_access?
+      @trash = message.trash
+      @active = :trash
+    else
+      @premium_plan = Subscription.find_by(title:"premium") 
+      redirect_to subscription_path(@premium_plan)
+    end
   end
 end
 

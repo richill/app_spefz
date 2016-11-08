@@ -9,11 +9,16 @@ class ConversationsController < ApplicationController
   end
 
   def create
-    recipients = User.where(id: conversation_params[:recipients])
-    conversation = current_user.send_message(recipients, conversation_params[:body], conversation_params[:subject]).conversation
-    flash[:success] = "Your message was successfully sent!"
-    redirect_to conversation_path(conversation)
-    # redirect_to message_sent_path
+    if current_user.subscribed_access?
+      recipients = User.where(id: conversation_params[:recipients])
+      conversation = current_user.send_message(recipients, conversation_params[:body], conversation_params[:subject]).conversation
+      flash[:success] = "Your message was successfully sent!"
+      redirect_to conversation_path(conversation)
+      # redirect_to message_sent_path
+    else
+      @premium_plan = Subscription.find_by(title:"premium") 
+      redirect_to subscription_path(@premium_plan)
+    end
   end
 
   def show
@@ -28,9 +33,14 @@ class ConversationsController < ApplicationController
   end
 
   def reply
-    current_user.reply_to_conversation(conversation, message_params[:body])
-    flash[:notice] = "Your reply message was successfully sent!"
-    redirect_to conversation_path(conversation)
+    if current_user.subscribed_access?
+      current_user.reply_to_conversation(conversation, message_params[:body])
+      flash[:notice] = "Your reply message was successfully sent!"
+      redirect_to conversation_path(conversation)
+    else
+      @premium_plan = Subscription.find_by(title:"premium") 
+      redirect_to subscription_path(@premium_plan)
+    end
   end
 
   def trash
