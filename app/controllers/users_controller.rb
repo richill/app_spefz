@@ -3,6 +3,7 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy, :followings, :followers]
 
   def index
+    @premium_plan = Subscription.find_by(title:"premium")
     if params[:tag]
       @users = User.tagged_with(params[:tag])
       @search = User.search(params[:q])
@@ -14,8 +15,7 @@ class UsersController < ApplicationController
       else
         redirect_to errorpermission_path
       end
-    end
-    @premium_plan = Subscription.find_by(title:"premium") 
+    end 
   end
 
   def show
