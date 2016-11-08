@@ -44,7 +44,7 @@
               <ul>
                 <!-- socials -->
                 <% @socials.asc_order.live_socials.each do |social| %>
-                  <% if current_user.subscribed? %>
+                  <% if current_user.subscribed? || current_user.admin_pa_management_group %>
                     <li class="medium-3 columns user_subscribed">
                       <div class="social_inner_section">
                         <% if social.sold_out? %>
