@@ -1,0 +1,53 @@
+<% if activity.trackable %>
+  <div class="activity_feed">
+    <div class="medium-1 columns image_content">
+      <!-- <div class="activity_feed_img_cover"><%# link_to(image_tag(activity.trackable.userr.image), "#") %></div> -->
+      <div class="activity_feed_img_cover"><%= link_to(image_tag(activity.owner.image), "#") %></div>
+    </div>
+    <div class="medium-11 columns activity_content">
+      <div class="activity_action">
+        <span class="highlighted_info header"><%= link_to activity.owner.firstname, activity.owner if activity.owner %></span>
+        <span class="highlighted_action">created the advert</span>
+        <span class="highlighted_info"><%= link_to activity.trackable.title, userr_advert_path(activity.trackable.userr, activity.trackable), target:"_blank" %></span>
+      </div>
+      <div class="advert_main_details_container">
+        <div class="advert_sub_header_sector">
+          <span class="content_header"><%= link_to activity.trackable.title, userr_advert_path(activity.trackable.userr, activity.trackable), target:"_blank" %></span>
+          <span class="divider">|</span>
+          <span class="first_category"><%= activity.trackable.category_advert.name %></span>
+          <span><i class="fa fa-circle"></i></span>
+          <span class="second_category"><%= activity.trackable.category_advertskill.name %></span>
+        </div>
+        <div class="advert_sub_details">
+          <span><span class="minor_header">posted:</span> <%= activity.trackable.created_at.strftime("%b %d, %Y") %></span>
+          <span class="divider">|</span>
+          <span><span class="minor_header">location:</span> <%= activity.trackable.category_country.name %>, <%= activity.trackable.city %></span>
+          <span class="divider">|</span>
+          <span><span class="minor_header">salary:</span> <%= activity.trackable.currency %><%= activity.trackable.category_price.name %> <%= activity.trackable.category_period.name %></span>
+        </div>
+      </div>
+    </div>
+    <div class="medium-11 columns activity_date_container">
+      <div class="activity_date_inner">date: <%= activity.created_at.to_s %></div>
+    </div>
+  </div>
+<% else %>
+  <div class="activity_feed">
+    <div class="medium-1 columns image_content">
+      <div class="activity_feed_img_cover"><%= link_to(image_tag(activity.owner.image), "#") %></div>
+    </div>
+    <div class="medium-11 columns activity_content">
+      <div class="activity_action">
+        <span class="highlighted_info header"><%= link_to activity.owner.firstname, activity.owner if activity.owner %></span>
+        <span class="highlighted_action">created an advert which has now been removed</span>
+      </div>
+      <div class="advert_main_details_container">
+        <div class="deleted_activity_info">job advert removed</div>
+      </div>
+    </div>
+    <div class="medium-11 columns activity_date_container">
+      <div class="activity_date_inner">date: <%= activity.created_at.to_s %></div>
+    </div>
+  </div>
+<% end %>
+<div class="clear"></div>

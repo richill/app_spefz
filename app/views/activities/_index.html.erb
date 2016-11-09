@@ -1,0 +1,16 @@
+<h1>Activities Page</h1>
+<p>Find me in app/views/activities/index.html.erb</p>
+
+<%# @activities.each do |activity| %>
+  <%# activity.inspect %>
+<%# end %>
+
+<div>
+  <% @activities.each do |activity| %>
+    <ul>
+      <li>
+        <%= render_activity activity %>
+      </li>
+    </ul>
+  <% end %>
+</div>

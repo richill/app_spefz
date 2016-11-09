@@ -1,6 +1,8 @@
-<h1>Activities Page</h1>
-<p>Find me in app/views/activities/index.html.erb</p>
-
-<% @activities.each do |activity| %>
-  <%= activity.inspect %>
-<% end %>
+<% provide(:title, "Activities") %>
+<div>
+  <div class>
+      <%= render 'shared/header' %>
+      <%= render 'index' %>
+      <%= render 'shared/footer' %>
+  </div>
+</div>
