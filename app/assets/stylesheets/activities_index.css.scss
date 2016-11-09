@@ -1,0 +1,15 @@
+/*=========================================
+    Section: activities page
+    File: views / activities / _index.html.erb
+    File: views / activities / _activity.html.erb
+    File: views / public_activity / _create.html.erb
+  =========================================*/
+
+.userfriendrequests_inner_container {
+  background-color: #fff !important;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  min-height: 89px !important;
+  max-height: 325px !important;
+  overflow: scroll;
+}
