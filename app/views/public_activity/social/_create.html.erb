@@ -1,5 +1,18 @@
 
-<div class="new_content">
+<div class="cd-timeline-block">
+  <div class="cd-timeline-img cd-picture">
+    <%= image_tag("img-aboutpg-cd-icon-location.svg", alt: "Location") %>
+  </div>
+  <div class="cd-timeline-content">
+    <h2><%= link_to(image_tag(activity.owner.image), "#") %></h2>
+    <p><%= link_to activity.owner.firstname, activity.owner if activity.owner %></p>
+    <span class="cd-date"><%= activity.trackable.created_at.strftime("%b %d, %Y") %></span><br/>
+    <div class="cd-posted">posted by <%= activity.trackable.created_at.strftime("%b %d, %Y") %></div>
+  </div>
+</div>
+
+
+<div class="old_content">
   <% if activity.trackable %>
     <div class="activity_feed">
       <div class="medium-1 columns image_content">
