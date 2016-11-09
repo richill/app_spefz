@@ -1,6 +1,8 @@
 class Social < ActiveRecord::Base
   include PublicActivity::Model
-  tracked owner: -> (controller, model) { controller && controller.current_user }
+  # tracked only: [:update, :create], owner: -> (controller, model) { controller && controller.current_user }
+  tracked only: [:create], owner: -> (controller, model) { controller && controller.current_user }
+
   
   acts_as_taggable
   is_impressionable
