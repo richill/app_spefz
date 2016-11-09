@@ -25,6 +25,7 @@ gem 'foundation-datetimepicker-rails'
 gem 'jquery-ui-rails'
 gem "ransack"
 gem 'stripe'
+gem 'public_activity'
 
 group :development, :test do
   gem 'sqlite3'
