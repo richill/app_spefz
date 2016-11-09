@@ -1,7 +1,8 @@
 <div>
   <% @activities.each do |activity| %>
-    <ul>
+    <ul class="inline-list">
       <li><%= render_activity activity %></li>
     </ul>
   <% end %>
+  <div class="clear"></div>
 </div>

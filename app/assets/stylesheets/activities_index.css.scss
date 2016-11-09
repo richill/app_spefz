@@ -5,11 +5,201 @@
     File: views / public_activity / _create.html.erb
   =========================================*/
 
-.userfriendrequests_inner_container {
+.activities_section .activities_inner_section {
   background-color: #fff !important;
-  font-family: 'Lato', sans-serif;
-  font-weight: 300;
-  min-height: 89px !important;
-  max-height: 325px !important;
-  overflow: scroll;
+  background: url("img_background_main.png") repeat;
+  padding: 0px !important;
+  min-height: 822px;
 }
+
+.activities_section .activities_inner_section h1 {
+  font-family: 'Lato', sans-serif;
+  font-size: 48px;
+  font-weight: 200;
+  text-align: center;
+  margin: 0px;
+  color: #fff;
+  text-transform: capitalize;
+  word-spacing: 3px;
+}
+@media only screen and (max-width: 670px) {
+  .activities_section .activities_inner_section h1  {
+    font-size: 30px;
+  }
+}
+
+.activities_section .search_container {
+  padding: 18px 0px;
+  background-color: rgba(47, 63, 91, 0.1);
+  border-bottom: 1px solid rgba(238, 170, 2, 0.3) !important;
+}
+
+.activities_section .search_inner_container {
+  width: 1170px;
+  margin: auto;
+}
+
+.activities_section .search_fields_left, .search_fields_right {
+  margin: 0px !important;
+  list-style-type: none;
+}
+
+.activities_section .field select, input[type="text"] {
+  font-family: "Lato", sans-serif;
+  font-weight: 300 !important;
+  box-shadow: none !important;
+  padding: 0px 15px !important;
+  border: none !important;
+  height: 40px;
+  color: #454d53;
+  font-size: 15px;
+  margin-bottom: 0px !important;
+}
+
+.activities_section .search_fields_left li {
+  width: 215px;
+  float: left;
+  margin: 0px !important;
+  margin-right: 8px !important;
+}
+
+.activities_section .search_fields_right li {
+  width: 185px;
+  float: right;
+  margin: 0px !important;
+  margin-left: 8px !important;
+}
+
+.activities_section .search_fields_right .select_user_name {
+  width: 370px !important;
+}
+
+.activities_section .search_fields_right .btn_all {
+  width: 50px !important;
+}
+
+.activities_section .search_fields_right li input[type="submit"] {
+  font-family: 'Lato', sans-serif;
+  font-size: 13px;
+  color: #fff !important;
+  font-weight: 300;
+  height: 40px;
+  background: #000;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+  padding: 12px 25px;
+  width: 100%;
+  border: none;
+  display: inline-block;
+  background-color: #4BB4BF !important;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+.activities_section .search_fields_right li input[type="submit"]:hover {
+  background-color: #eeaa02 !important;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+.activities_section .search_fields_right .btn_all .fa-users {
+  color: #fff !important;
+}
+
+.activities_section .search_fields_right .btn_all a {
+  font-family: 'Lato', sans-serif;
+  font-size: 13px;
+  text-align: center;
+  color: #fff !important;
+  font-weight: 300;
+  background: #000;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+  padding: 11px 14px;
+  width: 100%;
+  border: none;
+  display: inline-block;
+  background-color: #4BB4BF !important;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+ }
+
+.activities_section .search_fields_right .btn_all a:hover {
+  background-color: #eeaa02 !important;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+
+.activities_section .activity_content_section {
+  padding: 0px !important;
+}
+
+.activities_section .content_container {
+  padding: 30px 0px !important;
+  min-height: 822px;
+}
+
+.activities_section .header_section {
+  padding: 15px 0px;
+}
+
+.activities_section .header {
+  font-family: "Lato", sans-serif;
+  font-size: 35px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+  text-align: center;
+  padding: 0px 15px !important;
+}
+
+.activities_section .sub_header {
+  font-family: "Lato", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+  text-align: center;
+  padding: 15px !important;
+}
+
+.activities_section .content_details {
+  padding: 15px 0px !important;
+  width: 1170px;
+  margin: auto;
+}
+
+.activities_section .content_details ul {
+  margin: 0px !important;
+}
+
+.activities_section .member_container {
+  padding: 5px;
+  margin-bottom: 25px;
+  margin-left: 0px !important;
+}
+
+
+// -------------------------------
+//   workings
+// -------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
