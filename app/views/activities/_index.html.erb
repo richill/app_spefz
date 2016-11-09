@@ -5,12 +5,4 @@
   <%# activity.inspect %>
 <%# end %>
 
-<div>
-  <% @activities.each do |activity| %>
-    <ul>
-      <li>
-        <%= render_activity activity %>
-      </li>
-    </ul>
-  <% end %>
-</div>
+<div><%= render 'activities/activity' %></div>
