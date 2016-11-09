@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :activities
   resources :subscriptions
   resources :payments
   resources :socials
