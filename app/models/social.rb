@@ -1,4 +1,7 @@
 class Social < ActiveRecord::Base
+  include PublicActivity::Model
+  tracked
+  
   acts_as_taggable
   is_impressionable
   # acts_as_commentable
