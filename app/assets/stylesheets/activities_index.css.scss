@@ -776,12 +776,6 @@ Aboutpg CSS
 Timline CSS
 -------------------------------- */
 
-.activities_section .cd-container {
-  width: 87%;
-  max-width: 1170px;
-  margin: 0 auto;
-}
-
 .activities_section .cd-container::after {
   content: '';
   display: table;
@@ -833,6 +827,7 @@ Timline CSS
   height: 40px;
   border-radius: 50%;
   box-shadow: 0 0 0 4px white, inset 0 2px 0 rgba(0, 0, 0, 0.08), 0 3px 0 4px rgba(0, 0, 0, 0.05);
+  // box-shadow: 0 0 0 4px white, inset 0 2px 0 rgba(0, 0, 0, 0.08), 0 3px 0 4px rgba(0, 0, 0, 0.05);
 }
 
 .cd-timeline-img i {
@@ -882,7 +877,8 @@ Timline CSS
 .cd-timeline-content {
   position: relative;
   margin-left: 60px;
-  background: #f1f1f1;
+  background: #fff;
+  // background: #f1f1f1;
   border-radius: 0.25em;
   padding: 1em;
   box-shadow: 0 3px 0 #d7e4ed;
@@ -921,7 +917,7 @@ Timline CSS
   height: 0;
   width: 0;
   border: 7px solid transparent;
-  border-right: 7px solid #f1f1f1;
+  border-right: 7px solid #fff;
 }
 
 
