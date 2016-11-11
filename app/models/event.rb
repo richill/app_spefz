@@ -1,4 +1,6 @@
 class Event < ActiveRecord::Base
+  include PublicActivity::Model
+  tracked only: [:create], owner: -> (controller, model) { controller && controller.current_user }
   acts_as_taggable
   
   belongs_to :user
