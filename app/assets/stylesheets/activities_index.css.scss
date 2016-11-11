@@ -908,7 +908,27 @@ Timline CSS
 // ------------------------------
 
 
+.activity_feed_img_cover {
+  width: 48px;
+  height: 48px;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: rgba(88, 205, 166, 0.2) !important;
+}
 
+.activity_feed_img_cover img {
+border-radius: 200px;
+-webkit-transition: all 0.3s ease;
+-moz-transition: all 0.3s ease;
+-o-transition: all 0.3s ease;
+}
+
+.activity_feed_img_cover img:hover {
+  opacity: 0.5;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
 
 
 
