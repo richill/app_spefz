@@ -20,6 +20,7 @@ class UsersController < ApplicationController
 
   def show
     @events = Event.all
+    @activities_user = PublicActivity::Activity.order("created_at desc").where(owner_id: @user)
   end
 
   def edit

@@ -1,0 +1,14 @@
+<div class="cd-timeline-block">
+  <div class="cd-timeline-img cd-star">
+    <i class="fa fa-calendar"></i>
+  </div> 
+  <div class="cd-timeline-content">
+    <h2><%= link_to activity.trackable.title, user_social_path(activity.trackable.user, activity.trackable) %></h2>
+    <div><%= link_to(image_tag(activity.owner.image), user_path(activity.owner)) %></div>
+    <div><%= link_to activity.owner.firstname, activity.owner if activity.owner %></div>
+    <p><%= truncate("AfricanJober was founded in October 2015 by Richill ARTLoe. The passion was to develop a platform that made recruitment and outsourcing effective and efficient in Africa (initially starting with Ghana & Nigeria), this in order to create many opportunities for africans overseas looking to move back home and also for africans back home looking to work remotely with local and international leading companies. The mission for AfricanJober is to create great opportunities for the Smartest, Talented, Skillful and Innovative Individuals from the african continent.", length: 208) %>
+    </p>
+    <span class="cd-date">February 14, 2016 | 04:33 PM</span><br/>
+    <div class="cd-posted">posted by richill</div>
+  </div>
+</div>
