@@ -23,9 +23,10 @@
             <div class="social_event_content">
               <div class="image_cover"><%= link_to(image_tag(activity.trackable.image), user_path(activity.owner)) %></div>
               <div class="social_event_details">
-                <div class="info"><i class="fa fa-calendar" aria-hidden="true"></i> <%= activity.trackable.date.strftime("%A, %d %b") %></div>
-                <div class="info"><i class="fa fa-clock-o" aria-hidden="true"></i> <%= activity.trackable.time.strftime("%I:%M %p") %></div>
+                <div class="info"><i class="fa fa-calendar" aria-hidden="true"></i> <%= activity.trackable.date.strftime("%A, %d %b") %> <span class="mid_divider">|</span> <%= activity.trackable.time.strftime("%I:%M %p") %></div>
+                <!-- <div class="info"><i class="fa fa-clock-o" aria-hidden="true"></i> <%# activity.trackable.time.strftime("%I:%M %p") %></div> -->
                 <div class="info"><i class="fa fa-map-pin" aria-hidden="true"></i> <%= activity.trackable.city %>, <%= activity.trackable.category_country.name %></div>
+                <div class="info"><i class="fa fa-male" aria-hidden="true"></i> <%= activity.trackable.category_age.name %></div>
                 <div class="divider"></div>
                 <div class="description"><%= activity.trackable.description %><%# truncate(activity.trackable.description, length: 100) %></div>
               </div>

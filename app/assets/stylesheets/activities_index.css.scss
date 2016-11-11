@@ -923,7 +923,7 @@ Timline CSS
   margin-right: 15px;
 }
 
-.activity_feed_img_cover {
+.activity_list .activity_feed_img_cover {
   width: 48px;
   height: 48px;
   padding: 5px;
@@ -931,14 +931,14 @@ Timline CSS
   background-color: rgba(88, 205, 166, 0.2) !important;
 }
 
-.activity_feed_img_cover img {
+.activity_list .activity_feed_img_cover img {
 border-radius: 200px;
 -webkit-transition: all 0.3s ease;
 -moz-transition: all 0.3s ease;
 -o-transition: all 0.3s ease;
 }
 
-.activity_feed_img_cover img:hover {
+.activity_list .activity_feed_img_cover img:hover {
   opacity: 0.5;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
@@ -962,6 +962,10 @@ border-radius: 200px;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
+}
+
+.activity_list .social_event_content {
+  padding: 5px 0px;
 }
 
 .activity_list .social_event_content .image_cover {
@@ -992,9 +996,15 @@ border-radius: 200px;
   margin-right: 8px;
 }
 
-.activity_list .divider {
+.activity_list .social_event_details .divider {
   border-top: 1px solid #ededf3;
   margin: 7px 0px;
+}
+
+.activity_list .social_event_details .mid_divider {
+  color: #ededf3 !important;
+  font-weight: 300 !important;
+  margin: 0px 5px !important;
 }
 
 
