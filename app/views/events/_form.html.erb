@@ -3,6 +3,7 @@
 
   <div class="form-inputs">
     <%= f.file_field :image %>
+    <%= f.input :close, label: 'Close Event' %>
     <%= f.input :title, label: "Event Name", placeholder: "Speed Social - Graduate Professionals" %>
     <%= f.input :description, label: "Description" %>
     <%= f.association :category_topic, collection: CategoryTopic.all, prompt: "select a category", label: "Event Category" %>
