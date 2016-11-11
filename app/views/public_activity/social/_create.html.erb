@@ -8,6 +8,8 @@
       <div class="medium-1 columns image_content left_side">
         <div class="activity_feed_img_cover"><%= link_to(image_tag(activity.owner.image), user_path(activity.owner)) %></div>
       </div>
+      <!-- activity_left_side -->
+
       <!-- activity_right_side -->
       <div class="medium-11 columns image_content right_side">
         <h2><%= link_to activity.trackable.title, user_social_path(activity.trackable.user, activity.trackable) %></h2>
@@ -17,6 +19,7 @@
         <span class="cd-date">February 14, 2016 | 04:33 PM</span><br/>
         <div class="cd-posted">posted by richill</div>
       </div>
+      <!-- activity_right_side -->
     </div>
   </div>
 </div>
