@@ -21,6 +21,8 @@ class Event < ActiveRecord::Base
 
   scope :closed_events, -> {where(close: true)}
 
+  scope :open_events, -> {where(['close = ? OR close IS ?', false, nil])}
+
   def location
     [address, city, category_country_id].compact.join(', ')
   end

@@ -30,18 +30,7 @@ class Social < ActiveRecord::Base
 
   scope :closed_socials, -> {where(close: true)}
 
-
-
-
-  scope :closed_expired_socials, -> {where(close: true)}
-
-  scope :opend_socials, -> {where(close: true)}
-
-  scope :opend_live_socials, -> {where(close: true)}
-
-
-
-
+  scope :open_socials, -> {where(['close = ? OR close IS ?', false, nil])}
 
 
   def subscribed?
