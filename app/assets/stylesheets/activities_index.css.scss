@@ -964,26 +964,26 @@ border-radius: 200px;
   -o-transition: all 0.3s ease;
 }
 
-.content_details .image_cover {
+.activity_list .content_details .image_cover {
   float: left;
   margin-right: 10px;
 }
 
-.content_details .image_cover img {
+.activity_list .content_details .image_cover img {
   width: 150px;
   height: 105px;
 }
 
-.info {
+.activity_list .info {
   font-family: 'Lato', sans-serif;
   color: #414249 !important;
   margin-bottom: 2px;
   letter-spacing: 1px;
 }
 
-.social_event_details .info i {
-    font-size: 14px;
-    margin-right: 5px;
+.activity_list .social_event_details .info i {
+  font-size: 14px;
+  margin-right: 5px;
 }
 
 
