@@ -28,7 +28,49 @@
                 <div class="info"><i class="fa fa-map-pin" aria-hidden="true"></i> <%= activity.trackable.city %>, <%= activity.trackable.category_country.name %></div>
                 <div class="info"><i class="fa fa-male" aria-hidden="true"></i> <%= activity.trackable.category_age.name %></div>
                 <div class="divider"></div>
-                <div class="description"><%= activity.trackable.description %><%# truncate(activity.trackable.description, length: 100) %></div>
+                <div class="description">
+                  <%= activity.trackable.description %><%# truncate(activity.trackable.description, length: 100) %>
+                </div>
+                <div class="attendance">
+                  <div>
+                    <% if activity.trackable.sold_out? %>
+                      <ul>
+                        <% activity.trackable.attendances.limit(6).each do |attendant| %>
+                          <li>
+                            <% if attendant.user.image.present? %>
+                              <%= link_to(image_tag(attendant.user.image_url, :alt =>  "alt text", :class =>"#"), user_path(attendant.user)) %>
+                            <% else %>
+                              <%= link_to(image_tag("img-profile-image-default.png", :alt =>  "alt text", :class =>"#"), user_path(attendant.user)) %>
+                            <% end %>
+                          </li> 
+                        <% end %>
+                      </ul>
+                    <% else %>
+                      <ul>
+                        <% activity.trackable.attendances.order(created_at: :desc).limit(5).each do |attendant| %>
+                          <li>
+                            <% if attendant.user.image.present? %>
+                              <%= link_to(image_tag(attendant.user.image_url, :alt =>  "alt text", :class =>"#"), user_path(attendant.user)) %>
+                            <% else %>
+                              <%= link_to(image_tag("img-profile-image-default.png", :alt =>  "alt text", :class =>"#"), user_path(attendant.user)) %>
+                            <% end %>
+                          </li> 
+                        <% end %>
+                        <li class="remaining_places" style="margin-right: 0px;">
+                          <%# if social.selection_BothX_men_and_women %>
+                            <!-- <span data-tooltip aria-haspopup="true" data-options="disable_for_touch:true" class="tip-right" title="<%#{}"#{social.available_places_BothX_men_and_women}"%> places left">
+                              <%# link_to "+#{social.available_places_BothX_men_and_women}", user_social_path(social.user, social), class: "#" %>
+                            </span> -->
+                          <%# elsif %>
+                          <span data-tooltip aria-haspopup="true" data-options="disable_for_touch:true" class="tip-right" title="<%="#{activity.trackable.available_places_BothAndOnly_men_and_women}"%> places left">
+                            <%= link_to "+#{activity.trackable.available_places_BothAndOnly_men_and_women}", user_social_path(activity.trackable.user, activity.trackable), class: "#" %>
+                          </span>
+                          <%# end %>
+                        </li>
+                      </ul>
+                    <% end %>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
