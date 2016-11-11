@@ -776,6 +776,20 @@ Aboutpg CSS
 Timline CSS
 -------------------------------- */
 
+.activities_section h2 a {
+  color: #283041 !important;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+.activities_section h2 a:hover {
+  color: #E34B51 !important;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
 .activities_section .cd-container::after {
   content: '';
   display: table;
@@ -794,32 +808,28 @@ Timline CSS
   content: '';
   position: absolute;
   top: 0;
-  left: 18px;
+  left: 23px;
   height: 100%;
   width: 4px;
   background: #d7e4ed;
 }
 
-.cd-timeline-block {
+.activities_section .cd-timeline-block {
   position: relative;
-  margin: 2em 0;
+  margin: 4px 0px 25px 5px !important;
 }
 
-.cd-timeline-block:after {
+.activities_section .cd-timeline-block:after {
   content: "";
   display: table;
   clear: both;
 }
 
-.cd-timeline-block:first-child {
-  margin-top: 0;
-}
-
-.cd-timeline-block:last-child {
+.activities_section .cd-timeline-block:last-child {
   margin-bottom: 0;
 }
 
-.cd-timeline-img {
+.activities_section .cd-timeline-img {
   position: absolute;
   top: 0;
   left: 0;
@@ -827,70 +837,41 @@ Timline CSS
   height: 40px;
   border-radius: 50%;
   box-shadow: 0 0 0 4px white, inset 0 2px 0 rgba(0, 0, 0, 0.08), 0 3px 0 4px rgba(0, 0, 0, 0.05);
-  // box-shadow: 0 0 0 4px white, inset 0 2px 0 rgba(0, 0, 0, 0.08), 0 3px 0 4px rgba(0, 0, 0, 0.05);
 }
 
-.cd-timeline-img i {
-  font-size: 30px;
+.activities_section .cd-timeline-img i {
+  font-size: 18px;
   color: #fff;
   display: block;
   width: 24px;
   height: 24px;
   position: relative;
-  left: 47%;
-  top: 45%;
+  left: 59%;
+  top: 57%;
   margin-left: -12px;
   margin-top: -12px;
 }
 
-.cd-timeline-img img {
-  display: block;
-  width: 24px;
-  height: 24px;
-  position: relative;
-  left: 50%;
-  top: 50%;
-  margin-left: -12px;
-  margin-top: -12px;
+.activities_section .cd-star {
+  background: #283041;
 }
 
-.cd-trophy {
-  background: #8ABFA1;
-}
-
-.cd-picture {
-  background: #8ABFA1;
-}
-
-.cd-timeline-img .cd-movie {
-  background: #c03b44;
-}
-
-.cd-star {
-  background: #c03b44;
-}
-
-.cd-timeline-img.cd-location {
-  background: #f0ca45;
-}
-
-.cd-timeline-content {
+.activities_section .cd-timeline-content {
   position: relative;
   margin-left: 60px;
   background: #fff;
-  // background: #f1f1f1;
   border-radius: 0.25em;
   padding: 1em;
   box-shadow: 0 3px 0 #d7e4ed;
 }
 
-.cd-timeline-content:after {
+.activities_section .cd-timeline-content:after {
   content: "";
   display: table;
   clear: both;
 }
 
-.cd-timeline-content h2 {
+.activities_section .cd-timeline-content h2 {
   font-family: 'Lato', sans-serif;
   font-size: 25px;
   color: #2F3F5B;
@@ -898,18 +879,18 @@ Timline CSS
   text-transform: capitalize;
 }
 
-.cd-timeline-content p {
+.activities_section .cd-timeline-content p {
   margin-top: 5px !important;
 }
 
-.cd-timeline-content p, .cd-timeline-content .cd-read-more, .cd-timeline-content .cd-date {
+.activities_section .cd-timeline-content p, .cd-timeline-content .cd-read-more, .cd-timeline-content .cd-date {
   font-family: 'Lato', sans-serif;
   font-weight: 400;
   color: #2F3F5B;
   line-height: 25px;
 }
 
-.cd-timeline-content::before {
+.activities_section .cd-timeline-content::before {
   content: '';
   position: absolute;
   top: 16px;
