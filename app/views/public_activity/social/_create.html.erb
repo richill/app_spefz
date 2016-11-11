@@ -27,7 +27,7 @@
                 <div class="info"><i class="fa fa-clock-o" aria-hidden="true"></i> <%= activity.trackable.time.strftime("%I:%M %p") %></div>
                 <div class="info city_country"><i class="fa fa-map-pin" aria-hidden="true"></i> <%= activity.trackable.city %>, <%= activity.trackable.category_country.name %></div>
                 <div class="divider"></div>
-                <div class="description"><%# truncate(activity.trackable.description, length: 100) %></div>
+                <div class="description"><%= activity.trackable.description %><%# truncate(activity.trackable.description, length: 100) %></div>
               </span>
             </div>
           </div>
