@@ -49,7 +49,7 @@ class Social < ActiveRecord::Base
   end
 
   def open_social
-    self.close = false || self.close = nil
+    self.close == false || self.close == nil
   end
 
   def location
