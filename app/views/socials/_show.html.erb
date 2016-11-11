@@ -81,7 +81,7 @@
         <li><span class="divider">|</span></li>
         <li><span class="header">upcoming socials:</span> <span class="content"><%= @social.user.socials.live_socials.count %></span></li>
       </ul>
-      <% if @social.live_social %>
+      <% if @social.live_social && @social.open_social  %>
         <ul class="inline-list right">
           <li>
             <% if current_user %>
@@ -242,8 +242,8 @@
             <div class="medium-12 columns header">
               <% if @social.user.socials.present? %>
                 <div class="medium-4 columns header_content evts_feed">wall <%= "#{[@social.comments.count]}" %></div>
-                <div class="medium-4 columns header_content evts_upcoming">upcoming socials <%= "#{[@social.user.socials.live_socials.count]}" %></div>
-                <div class="medium-4 columns header_content evts_past">past socials <%= "#{[@social.user.socials.expired_socials.count]}" %></div>
+                <div class="medium-4 columns header_content evts_upcoming">upcoming socials <%= "#{[@social.user.socials.live_socials.open_socials.count]}" %></div>
+                <div class="medium-4 columns header_content evts_past">past socials <%= "#{[@social.user.socials.expired_or_closed_socials.count]}" %></div>
               <% else %>
                 <div class="medium-12 columns header_content evts_feed">feed</div>
               <% end %>
@@ -259,11 +259,11 @@
               </div>
               <div class="content_info evts_upcoming_content hide"><%= render 'shared/content_socials_upcomingsocials' %></div>
               <div>
-                <% if @socials.present? %>
+                <%# if @socials.present? %>
                   <div class="content_info evts_past_content hide"><%= render 'shared/content_socials_pastsocials' %></div>
-                <% else %>
-                  <div class="comment_info_display evts_past_content hide">Currently no past socials</div>
-                <% end %>
+                <%# else %>
+                  <!-- <div class="comment_info_display evts_past_content hide">Currently no past socials</div> -->
+                <%# end %>
               </div>
             </div>
           </div>

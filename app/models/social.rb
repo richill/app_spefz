@@ -26,12 +26,15 @@ class Social < ActiveRecord::Base
 
   scope :expired_socials, -> {where(['date < ?', Date.current])}
 
+  scope :expired_or_closed_socials, -> {where(['close = ?', true] || ['date < ?', Date.current])}
+
   scope :live_socials, -> {where(['date >= ?', Date.current])}
 
   scope :closed_socials, -> {where(close: true)}
 
   scope :open_socials, -> {where(['close = ? OR close IS ?', false, nil])}
 
+  #scope :expired_closed_socials, -> {where(['close = ? OR close IS ?', true] || ['date < ?', Date.current])}
 
   def subscribed?
     self.user.stripe_subscription_pymt_id?
@@ -43,6 +46,10 @@ class Social < ActiveRecord::Base
 
   def live_social
     self.date >= Date.current
+  end
+
+  def open_social
+    self.close = false || self.close = nil
   end
 
   def location

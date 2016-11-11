@@ -43,7 +43,7 @@
             <div class="social_main_container">
               <ul>
                 <!-- socials -->
-                <% @socials.asc_order.live_socials.each do |social| %>
+                <% @socials.asc_order.each do |social| %>
                   <li class="medium-3 columns">
                     <div class="social_inner_section">
                       <% if social.sold_out? %>

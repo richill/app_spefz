@@ -40,6 +40,7 @@ class User < ActiveRecord::Base
   has_many :received_friend_requests, through: :passive_friendship_requests, source: :friender
 
   mount_uploader :image, ImageUploader
+  before_destroy :delete_activities
 
 
   # ---- gender -----
@@ -181,6 +182,12 @@ class User < ActiveRecord::Base
 
   def self.desc_order
     order('created_at DESC')
+  end
+
+  def delete_activities
+    acts = PublicActivity::Activity.where(owner_id: self.id, owner_type: "User")
+    acts.delete_all
+    # when a user deletes their account all their activities also gets deleted.
   end
 
   #checks if current user is attending social

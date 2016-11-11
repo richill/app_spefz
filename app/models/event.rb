@@ -17,11 +17,17 @@ class Event < ActiveRecord::Base
 
   scope :expired_events, -> {where(['date < ?', Date.current])}
 
+  scope :expired_or_closed_events, -> {where(['close = ?', true] || ['date < ?', Date.current])}
+
   scope :live_events, -> {where(['date >= ?', Date.current])}
 
-  scope :closed_events, -> {where(close: true)}
+  #scope :closed_events, -> {where(close: true)}
+
+  scope :closed_events, -> {where(['close = ? OR close IS ?', true])}
 
   scope :open_events, -> {where(['close = ? OR close IS ?', false, nil])}
+
+  #scope :expired_or_closed_events, -> {where(['close = ? OR close IS ?', true] || ['date < ?', Date.current])}
 
   def location
     [address, city, category_country_id].compact.join(', ')

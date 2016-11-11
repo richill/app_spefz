@@ -5,7 +5,7 @@
 <div class="socials_pastsocials_section">
   <div class="socials_pastsocials_inner_section">
     <div class="event_container">
-      <% @social.user.socials.expired_socials.each do |social| %>
+      <% @social.user.socials.expired_or_closed_socials.each do |social| %>
       <ul>
         <li class="medium-12 columns">
           <div class="title"><%= link_to "#{social.title}", user_social_path(social.user, social) %></div>
@@ -85,7 +85,7 @@
                 </div>
               </li>
             </ul>
-            <% if social.live_social %>
+            <% if social.live_social && social.open_social %>
               <ul class="inline-list right_evt_info">
                 <% if social.category_invite_id.present? && social.category_invite.name == "just my guest" %>
                   <li class="btn_attend"><%= link_to "invite only", "#" %></li>
