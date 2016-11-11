@@ -30,6 +30,20 @@ class Social < ActiveRecord::Base
 
   scope :closed_socials, -> {where(close: true)}
 
+
+
+
+  scope :closed_expired_socials, -> {where(close: true)}
+
+  scope :opend_socials, -> {where(close: true)}
+
+  scope :opend_live_socials, -> {where(close: true)}
+
+
+
+
+
+
   def subscribed?
     self.user.stripe_subscription_pymt_id?
   end
