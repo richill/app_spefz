@@ -2,7 +2,7 @@
   <div class="background_main">
     <section id="cd-timeline" class="cd-container">
       <% @activities.each do |activity| %>
-        <ul class="inline-list">
+        <ul style="list-style-type:none;">
           <li><%= render_activity activity %></li>
         </ul>
       <% end %>
