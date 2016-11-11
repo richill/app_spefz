@@ -4,22 +4,27 @@
       <i class="fa fa-calendar"></i>
     </div> 
     <div class="cd-timeline-content medium-12 columns">
-      <!-- activity_left_side -->
-      <div class="medium-1 columns image_content left_side">
-        <div class="activity_feed_img_cover"><%= link_to(image_tag(activity.owner.image), user_path(activity.owner)) %></div>
-      </div>
-      <!-- activity_left_side -->
-
-      <!-- activity_right_side -->
-      <div class="medium-11 columns image_content right_side">
-        <h2><%= link_to activity.trackable.title, user_social_path(activity.trackable.user, activity.trackable) %></h2>
-        <div><%= link_to activity.owner.firstname, activity.owner if activity.owner %></div>
-        <p><%= truncate("AfricanJober was founded in October 2015 by Richill ARTLoe. The passion was to develop a platform that made recruitment and outsourcing effective and efficient in Africa (initially starting with Ghana & Nigeria), this in order to create many opportunities for africans overseas looking to move back home and also for africans back home looking to work remotely with local and international leading companies. The mission for AfricanJober is to create great opportunities for the Smartest, Talented, Skillful and Innovative Individuals from the african continent.", length: 208) %>
-        </p>
-        <span class="cd-date">February 14, 2016 | 04:33 PM</span><br/>
-        <div class="cd-posted">posted by richill</div>
-      </div>
-      <!-- activity_right_side -->
+      <ul>
+        <li class="left_side">
+          <!-- activity_left_side -->
+          <div class="image_content right_side_content">
+            <div class="activity_feed_img_cover"><%= link_to(image_tag(activity.owner.image), user_path(activity.owner)) %></div>
+          </div>
+          <!-- activity_left_side -->
+        </li>
+        <li class="right_side">
+          <!-- activity_right_side -->
+          <div class="right_side_content">
+            <h2><%= link_to activity.trackable.title, user_social_path(activity.trackable.user, activity.trackable) %></h2>
+            <div><%= link_to activity.owner.firstname, activity.owner if activity.owner %></div>
+            <p><%= truncate("AfricanJober was founded in October 2015 by Richill ARTLoe. The passion was to develop a platform that made recruitment and outsourcing effective and efficient in Africa (initially starting with Ghana & Nigeria), this in order to create many opportunities for africans overseas looking to move back home and also for africans back home looking to work remotely with local and international leading companies. The mission for AfricanJober is to create great opportunities for the Smartest, Talented, Skillful and Innovative Individuals from the african continent.", length: 208) %>
+            </p>
+            <span class="cd-date">February 14, 2016 | 04:33 PM</span><br/>
+            <div class="cd-posted">posted by richill</div>
+          </div>
+          <!-- activity_right_side -->
+        </li>
+      </ul>
     </div>
   </div>
 </div>

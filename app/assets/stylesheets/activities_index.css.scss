@@ -907,6 +907,20 @@ Timline CSS
 //     workings
 // ------------------------------
 
+// ------activity_left_side------
+// .activities_section .left_side {
+//   padding: 0px !important;
+// }
+
+.activity_list ul {
+  list-style-type: none;
+}
+
+.activity_list ul .left_side {
+  float: left !important;
+  background-color: red;
+  height: 200px;
+}
 
 .activity_feed_img_cover {
   width: 48px;
