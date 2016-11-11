@@ -5,7 +5,7 @@
 <div class="users_upcomingevents_section">
   <div class="users_upcomingevents_inner_section">
     <div class="event_container">
-      <% @user.socials.asc_order.live_socials.each do |social| %>
+      <% @user.socials.asc_order.live_socials.open_socials.each do |social| %>
       <ul>
         <li class="medium-12 columns">
           <div class="title"><%= link_to "#{social.title}", user_social_path(social.user, social) %></div>
