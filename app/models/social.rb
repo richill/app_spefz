@@ -28,6 +28,8 @@ class Social < ActiveRecord::Base
 
   scope :live_socials, -> {where(['date >= ?', Date.current])}
 
+  scope :closed_socials, -> {where(close: true)}
+
   def subscribed?
     self.user.stripe_subscription_pymt_id?
   end

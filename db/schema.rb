@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161109142355) do
+ActiveRecord::Schema.define(version: 20161111151506) do
 
   create_table "activities", force: :cascade do |t|
     t.integer  "trackable_id"
@@ -130,6 +130,7 @@ ActiveRecord::Schema.define(version: 20161109142355) do
     t.decimal  "price"
     t.time     "time_end"
     t.text     "maplink"
+    t.boolean  "close"
   end
 
   create_table "favourites", force: :cascade do |t|
@@ -292,6 +293,7 @@ ActiveRecord::Schema.define(version: 20161109142355) do
     t.integer  "category_quantitygender_id"
     t.string   "venuename"
     t.text     "maplink"
+    t.boolean  "close"
   end
 
   create_table "subscriptions", force: :cascade do |t|

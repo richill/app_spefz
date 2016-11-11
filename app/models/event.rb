@@ -19,6 +19,8 @@ class Event < ActiveRecord::Base
 
   scope :live_events, -> {where(['date >= ?', Date.current])}
 
+  scope :closed_events, -> {where(close: true)}
+
   def location
     [address, city, category_country_id].compact.join(', ')
   end
