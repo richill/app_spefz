@@ -15,10 +15,20 @@
         <li class="right_side">
           <!-- activity_right_side -->
           <div class="right_side_content">
-            <div class="title"><%= link_to activity.trackable.title, user_social_path(activity.trackable.user, activity.trackable) %></div class="header">
+            <div class="title"><%= link_to activity.trackable.title, user_social_path(activity.trackable.user, activity.trackable) %></div>
             <div class="host">
               <span>Hosted by</span>
               <span><%= link_to activity.owner.firstname, activity.owner if activity.owner %></span>
+            </div>
+            <div class="content_details">
+              <span class="image_cover"><%= link_to(image_tag(activity.trackable.image), user_path(activity.owner)) %></span>
+              <span class="right_evt">
+                <div class="info"><i class="fa fa-calendar" aria-hidden="true"></i> <%# social.date.strftime("%A, %d %b") %></div>
+                <div class="info"><i class="fa fa-clock-o" aria-hidden="true"></i> <%# social.time.strftime("%I:%M %p") %></div>
+                <div class="info city_country"><i class="fa fa-map-pin" aria-hidden="true"></i> <%# social.city %>, <%# social.category_country.name %></div>
+                <div class="divider"></div>
+                <div class="description"><%# truncate(social.description, length: 100) %></div>
+              </span>
             </div>
             <div><%= truncate("AfricanJober was founded in October 2015 by Richill ARTLoe. The passion was to develop a platform that made recruitment and outsourcing effective and efficient in Africa (initially starting with Ghana & Nigeria), this in order to create many opportunities for africans overseas looking to move back home and also for africans back home looking to work remotely with local and international leading companies. The mission for AfricanJober is to create great opportunities for the Smartest, Talented, Skillful and Innovative Individuals from the african continent.", length: 208) %></div>
             <span class="cd-date">February 14, 2016 | 04:33 PM</span><br/>

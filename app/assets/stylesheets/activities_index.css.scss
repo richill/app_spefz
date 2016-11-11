@@ -964,9 +964,15 @@ border-radius: 200px;
   -o-transition: all 0.3s ease;
 }
 
-// .right_side {
-//   width: 1018px;
-// }
+.content_details .image_cover {
+  float: left;
+  margin-right: 10px;
+}
+
+.content_details .image_cover img {
+  width: 150px;
+  height: 105px;
+}
 
 
 
