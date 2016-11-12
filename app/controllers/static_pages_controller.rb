@@ -10,6 +10,9 @@ class StaticPagesController < ApplicationController
   def homepg
   end
 
+  def imagepg
+  end
+
   def landingpg
     @signup = Signup.new
   end

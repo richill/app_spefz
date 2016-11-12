@@ -41,6 +41,7 @@ Rails.application.routes.draw do
   get   'error',                    to: 'static_pages#errorpg'
   get   'errorpermission',          to: 'static_pages#errorpermissionpg'
   get   'landing-page',             to: 'static_pages#landingpg'
+  get   'image-restriction-page',   to: 'static_pages#imagepg'
   get   'notes',                    to: 'static_pages#notepg'
   get   'tags/:tag',                to: 'users#index', as: :tag
   get   'socialtags/:tag',          to: 'socials#index', as: :social_tag

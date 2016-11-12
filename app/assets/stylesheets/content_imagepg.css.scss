@@ -1,0 +1,162 @@
+/*=========================================
+    Section: image restriction page
+    File: views / shared / _content_imagepg.html.erb 
+  =========================================*/
+
+.image_restriction_page_section {
+  min-height: 950px;
+  padding: 15px !important;
+  background: url("img_background_main.png") repeat;
+}
+@media only screen and (max-width: 520px) {
+  .image_restriction_page_section {
+    background-position: 48% 277px;
+  }
+}
+
+.image_restriction_page_section .error_inner_container {
+  margin: 30px auto;
+}
+@media only screen and (min-width: 1025px) {
+  .image_restriction_page_section .error_inner_container {
+    width: 960px;
+  }
+}
+
+// -----------------------------------
+//  error_content_section section
+// -----------------------------------
+
+.image_restriction_page_section .error_content_section {
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.1) !important;
+  border-bottom: 2px solid rgba(238, 170, 2, 0.3);
+  padding: 35px 50px;
+}
+@media only screen and (max-width: 520px) {
+  .image_restriction_page_section .error_content_section {
+    padding: 15px !important;
+  }
+}
+
+.image_restriction_page_section .search_content_list {
+  overflow: visible !important;
+}
+
+.image_restriction_page_section .header {
+  font-family: "Lato", sans-serif;
+  font-size: 50px;
+  color: #283041;
+  text-align: center;
+}
+@media only screen and (max-width: 520px) {
+  .image_restriction_page_section .header {
+    font-size: 22px;
+  }
+}
+
+.image_restriction_page_section .subtitle {
+  background-color: #283041;
+  padding: 15px;
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  color: #fff;
+  letter-spacing: 1px;
+  margin-bottom: 20px !important;
+  text-align: center;
+  border-bottom: 2px solid rgba(238, 170, 2, 1);
+}
+@media only screen and (max-width: 520px) {
+  .image_restriction_page_section .subtitle {
+    font-size: 12px;
+  }
+}
+
+.error_content_inner_section .fa-user-times {
+  font-size: 125px;
+  padding: 15px 0px;
+  opacity: 0.8;
+  color: #283041 !important;
+}
+
+.image_restriction_page_section .error_content_inner_section {
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.7) !important;
+  border-bottom: 2px solid #D4D4D4;
+  padding: 15px;
+}
+
+.image_restriction_page_section .error_content_inner_section h1 {
+  font-family: "Lato", sans-serif !important;
+  color: #283041 !important;
+  text-transform: capitalize;
+  font-weight: bold !important;
+  font-size: 70px;
+  line-height: 85px;
+  margin: 0px;
+}
+@media only screen and (max-width: 520px) {
+  .image_restriction_page_section .error_content_inner_section h1 {
+    font-size: 45px;
+  }
+}
+
+.image_restriction_page_section .error_content_inner_section h2 {
+  font-family: "Lato", sans-serif !important;
+  color: #283041 !important;
+  margin: 0px;
+}
+@media only screen and (max-width: 520px) {
+  .image_restriction_page_section .error_content_inner_section h2  {
+    font-size: 22px !important;
+  }
+}
+
+.image_restriction_page_section .sub_content {
+  font-family: "Lato", sans-serif !important;
+  font-weight: 300;
+  color: #283041 !important;
+  margin-bottom: 25px !important; 
+}
+@media only screen and (max-width: 520px) {
+  .image_restriction_page_section .sub_content {
+    font-size: 12px;
+  }
+}
+
+.image_restriction_page_section .error_btn button {
+  width: 100%;
+  background-color: #8ABFA1 !important;
+}
+
+.image_restriction_page_section .error_btn button:hover {
+  background-color: #283041 !important;
+}
+
+.image_restriction_page_section .error_btn a {
+  font-family: 'Lato', sans-serif !important;
+  font-weight: 300;
+  width: 100% !important;
+  background-color: #E34B51 !important;
+  font-size: 17px;
+  margin-bottom: 10px;
+  padding: 14px 0px !important;
+  height: 55px;
+  display: inline-block;
+  text-align: center;
+  border-radius: 2px !important;
+  color: #fff !important;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+.image_restriction_page_section .error_btn a:hover {
+  background-color: #58CDA6 !important;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+
+
