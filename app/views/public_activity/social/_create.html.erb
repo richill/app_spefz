@@ -26,7 +26,12 @@
                 <div class="social_event_details">
                   <div class="info"><i class="fa fa-calendar" aria-hidden="true"></i> <%= activity.trackable.date.strftime("%A, %d %b") %> <span class="mid_divider">|</span> <%= activity.trackable.time.strftime("%I:%M %p") %></div>
                   <div class="info"><i class="fa fa-map-pin" aria-hidden="true"></i> <%= activity.trackable.city %>, <%= activity.trackable.category_country.name %></div>
-                  <div class="info"><i class="fa fa-male" aria-hidden="true"></i> <%= activity.trackable.category_age.name %></div>
+                  <div class="info">
+                    <span><i class="fa fa-male" aria-hidden="true"></i> <%= activity.trackable.category_age.name %></span>
+                    <span class="mid_divider">|</span>
+                    <span class="category">Category:</span> 
+                    <span class="category_info"><%= link_to activity.trackable.category_topic.name, user_social_path(activity.trackable.user, activity.trackable) %></span> 
+                  </div>
                   <div class="divider"></div>
                   <div class="description"><%= truncate(activity.trackable.description, length: 200) %></div>
                   <div class="attendance">

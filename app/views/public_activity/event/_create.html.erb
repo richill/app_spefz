@@ -9,7 +9,7 @@
           <li class="left_side">
             <!-- activity_left_side -->
             <div class="image_content right_side_content">
-              <div class="activity_feed_img_cover"><%= link_to(image_tag("img-logo-five.png"), user_path(activity.owner)) %></div>
+              <div class="activity_feed_img_cover spefz_img_cover"><%= link_to(image_tag("img-logo-five.png"), user_path(activity.owner)) %></div>
             </div>
             <!-- activity_left_side -->
           </li>
@@ -26,7 +26,15 @@
                 <div class="social_event_details">
                   <div class="info"><i class="fa fa-calendar" aria-hidden="true"></i> <%= activity.trackable.date.strftime("%A, %d %b") %> <span class="mid_divider">|</span> <%= activity.trackable.time.strftime("%I:%M %p") %></div>
                   <div class="info"><i class="fa fa-map-pin" aria-hidden="true"></i> <%= activity.trackable.city %>, <%= activity.trackable.category_country.name %></div>
-                  <div class="info"><i class="fa fa-male" aria-hidden="true"></i> <%= activity.trackable.category_age.name %></div>
+                  <div class="info">
+                    <span><i class="fa fa-male" aria-hidden="true"></i> <%= activity.trackable.category_age.name %></span>
+                    <span class="mid_divider">|</span>
+                    <span class="category">Category:</span> 
+                    <span class="category_info"><%= link_to activity.trackable.category_topic.name, user_social_path(activity.trackable.user, activity.trackable) %></span>  
+                    <span class="mid_divider">|</span> 
+                    <span class="price">Price:</span>
+                    <span class="price_figure">£<%= number_with_precision(activity.trackable.price, precision: 2) %></span>
+                  </div>
                   <div class="divider"></div>
                   <div class="description"><%= truncate(activity.trackable.description, length: 200) %></div>
                 </div>

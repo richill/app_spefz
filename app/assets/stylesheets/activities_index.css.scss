@@ -925,6 +925,10 @@ Timline CSS
   background-color: rgba(88, 205, 166, 0.2) !important;
 }
 
+.activities_section .activity_list .spefz_img_cover {
+  background-color: rgba(225, 71, 62, 0.1)!important;
+}
+
 .activities_section .activity_list .activity_feed_img_cover img {
 border-radius: 200px;
 -webkit-transition: all 0.3s ease;
@@ -995,6 +999,19 @@ border-radius: 200px;
 .activities_section .activity_list .fa-male {
   margin-left: 3px;
   margin-right: 8px;
+}
+
+.category_info a {
+  color: rgba(225, 71, 62, 0.7) !important;
+}
+
+.category_info a:hover {
+  color: rgba(88, 205, 166, 0.5) !important;
+}
+
+.activities_section .activity_list .price_figure {
+  color: #E34B51 !important;
+  font-size: 14px !important;
 }
 
 .activities_section .activity_list .social_event_details .divider {
@@ -1096,7 +1113,6 @@ border-radius: 200px;
   -moz-transition: all 0.3s ease; 
   -o-transition: all 0.3s ease; 
 }
-
 
 .activities_section .activity_list .remove_fav a {
   color: #E34B51 !important;
