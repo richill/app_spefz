@@ -2,11 +2,11 @@
   <div class="background_main">
     <section id="cd-timeline" class="cd-container">
       <% @activities_user.each do |activity| %>
-        <%# if activity.key == "social.create" %>
+        <% if activity.key == "social.create" %>
         <ul class="inline-list">
           <li style="width:100%;"><%= render partial: "shared/content_users_feed_activities", locals: { activity: activity } %></li>
         </ul>
-        <%# end %>
+        <% end %>
       <% end %>
 
       <% if current_user.id == @user.id %>
