@@ -26,7 +26,7 @@
     <!-- search -->
 
     <!-- temp_content -->
-    <div>Total events:<%= @events.count %> | 
+    <div class="hide">Total events:<%= @events.count %> | 
       Expired events: <%= @events.expired_events.count %> | 
       Live events: <%= @events.live_events.count %> | 
       <%= link_to "SUBSCRIPTION", subscription_path(@premium_plan) %>
