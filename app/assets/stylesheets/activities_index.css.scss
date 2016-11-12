@@ -815,7 +815,7 @@ Timline CSS
   left: 23px;
   height: 100%;
   width: 4px;
-  background: #d7e4ed;
+  background-color: rgba(47, 63, 91, 0.1);
 }
 
 .activities_section .cd-timeline-block {
@@ -866,7 +866,7 @@ Timline CSS
   background: #fff;
   border-radius: 0.25em;
   padding: 1em;
-  box-shadow: 0 3px 0 #d7e4ed;
+  box-shadow: 0 3px 0 rgba(47, 63, 91, 0.1);
 }
 
 .activities_section .cd-timeline-content:after {
@@ -1013,6 +1013,103 @@ border-radius: 200px;
   font-weight: 300 !important;
   margin: 0px 5px !important;
 }
+
+
+.activity_list .description {
+  font-family: "Lato", sans-serif;
+  font-size: 12px;
+  color: #7C93A7;
+  font-weight: 300;
+  letter-spacing: 1px;
+  margin-bottom: 5px;
+}
+
+
+
+.activity_list .attendance ul li {
+  margin-bottom: 0px !important;
+  margin-right: 9px;
+  float: left;
+}
+
+.activity_list .attendance ul li:nth-child(6) {  
+  margin-right: 0px !important;
+}
+
+.activity_list .attendance a {
+  font-family: "Lato", sans-serif;
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: #fff !important;
+  text-transform: uppercase;
+  padding: 2px;
+  background-color: rgba(47, 63, 91, 0.2) !important;
+  display: inline-block;
+  text-align: center;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease; 
+}
+
+.activity_list .attendance a:hover {
+  background-color: rgba(225, 71, 62, 0.4) !important;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease; 
+}
+
+.activity_list .attendance img {
+  width: 30px;
+  height: 30px;
+}
+
+.activity_list .remaining_places a {
+  padding: 8px 0px !important;
+  height: 34px;
+  width: 34px !important;
+  background-color: rgba(238, 170, 2, 0.6) !important;
+}
+
+.activity_list .icon_list {
+  background-color: rgba(47, 63, 91, 0.1);
+  border-bottom: 1px solid rgba(225, 71, 62, 0.3) !important;
+}
+
+.activity_list .icon_list ul {
+  margin: auto !important;
+  list-style-type: none;
+  width: 250px;
+  height: 33px;
+}
+
+.activity_list .icons a {
+  font-size: 13px !important;
+  text-transform: uppercase;
+  padding: 11px 10px;
+  width: 100% !important;
+  display: inline-block;
+  text-align: center;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease; 
+}
+
+.activity_list .icons .fa-eye, .fa-comments-o, .fa-users, .fa-user-plus, .fa-bookmark-o {
+  color: #414249 !important;
+}
+
+.activity_list .icons a:hover {
+  color: #fff !important;
+  background-color: #58CDA6 !important;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease; 
+}
+
+.activity_list .remove_fav a {
+  color: #E34B51 !important;
+}
+
 
 
 
