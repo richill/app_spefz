@@ -120,17 +120,22 @@ class User < ActiveRecord::Base
     # Group_F | client in account, adminstration, client, development, event mgt, management, sales group
   end
 
+  def client_guest_group
+    self.category_role.name == "Client" && self.category_managementgroup.name == "Client Guest Group"
+    # Group_G | clients in client guest group: users here do not have to subscribe to fully use the site - this acts as a free subscription for users
+  end
+
   def subscribed?
     stripe_subscription_pymt_id?
   end
 
   def subscribed_access?
-    self.subscribed? || self.admin_pa_management_group || self.pa_event_mgt_group
+    self.subscribed? || self.admin_pa_management_group || self.pa_event_mgt_group || self.client_guest_group
   end
 
   def subscribed_social_access?(social_id)
     social = Social.find(social_id)
-    self.subscribed? || self.id == social.user.id || self.admin_pa_management_group || self.pa_event_mgt_group
+    self.subscribed? || self.id == social.user.id || self.admin_pa_management_group || self.pa_event_mgt_group || self.client_guest_group
     # eg: give access to certain pages if [eg: give access to current_user to view a social page]:
     # current_user has subscribed
     # current_user created the event [eg: current_user can only view socials they've created if they are not subscribed]
