@@ -3,3 +3,338 @@
     File: views / shared / _content_users_feed.html.erb
     File: views / shared / _content_users_feed_activities.html.erb
   =========================================*/
+
+/* -------------------------------- 
+Timline CSS
+-------------------------------- */
+
+// .user_activity_inner_section ul {
+//   margin: 0px !important;
+// }
+
+.user_activity_inner_section .title a {
+  font-family: 'Lato', sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: capitalize;
+  color: #283041 !important;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+.user_activity_inner_section .title a:hover {
+  color: #E34B51 !important;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+.user_activity_inner_section .cd-container::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.user_activity_inner_section #cd-timeline {
+  position: relative;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  padding-bottom: 100px !important;
+  border-bottom: 1px solid rgba(47, 63, 91, 0.1);
+}
+
+.user_activity_inner_section #cd-timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 23px;
+  height: 100%;
+  width: 4px;
+  background-color: rgba(47, 63, 91, 0.1);
+}
+
+.user_activity_inner_section .cd-timeline-block {
+  position: relative;
+  margin: 4px 0px 25px 5px !important;
+}
+
+.user_activity_inner_section .cd-timeline-block:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.user_activity_inner_section .cd-timeline-block:last-child {
+  margin-bottom: 0;
+}
+
+.user_activity_inner_section .cd-timeline-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px white, inset 0 2px 0 rgba(0, 0, 0, 0.08), 0 3px 0 4px rgba(0, 0, 0, 0.05);
+}
+
+.user_activity_inner_section .cd-timeline-img i {
+  font-size: 18px;
+  color: #fff;
+  display: block;
+  width: 24px;
+  height: 24px;
+  position: relative;
+  left: 59%;
+  top: 57%;
+  margin-left: -12px;
+  margin-top: -12px;
+}
+
+.user_activity_inner_section .cd-star {
+  background: #283041;
+}
+
+.user_activity_inner_section .cd-timeline-content {
+  position: relative;
+  margin-left: 60px;
+  background-color: rgba(47, 63, 91, 0.03);
+  border-radius: 0.25em;
+  padding: 1em;
+  box-shadow: 0 3px 0 rgba(47, 63, 91, 0.1);
+}
+
+.user_activity_inner_section .cd-timeline-content ul {
+  margin: 0px !important;
+}
+
+.user_activity_inner_section .cd-timeline-content:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.user_activity_inner_section .cd-timeline-content h2 {
+  font-family: 'Lato', sans-serif;
+  font-size: 25px;
+  color: #2F3F5B;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.user_activity_inner_section .cd-timeline-content p {
+  margin-top: 5px !important;
+}
+
+.user_activity_inner_section .cd-timeline-content p, .cd-timeline-content .cd-read-more, .cd-timeline-content .cd-date {
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  color: #2F3F5B;
+  line-height: 25px;
+}
+
+.user_activity_inner_section .cd-timeline-content::before {
+  content: '';
+  position: absolute;
+  top: 16px;
+  right: 100%;
+  height: 0;
+  width: 0;
+  border: 7px solid transparent;
+  border-right: 7px solid rgba(47, 63, 91, 0.03);
+}
+
+// ------activity_left_side------
+.user_activity_inner_section .activity_list ul {
+  list-style-type: none;
+}
+
+.user_activity_inner_section .activity_list ul .left_side {
+  float: left !important;
+  margin-right: 15px;
+}
+
+.user_activity_inner_section .activity_list .activity_feed_img_cover {
+  width: 48px;
+  height: 48px;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: rgba(88, 205, 166, 0.2) !important;
+}
+
+.user_activity_inner_section .activity_list .activity_feed_img_cover img {
+border-radius: 200px;
+-webkit-transition: all 0.3s ease;
+-moz-transition: all 0.3s ease;
+-o-transition: all 0.3s ease;
+}
+
+.user_activity_inner_section .activity_list .activity_feed_img_cover img:hover {
+  opacity: 0.5;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+
+// ------activity_right_side------
+.user_activity_inner_section .activity_list .host {
+  font-family: 'Lato', sans-serif;
+  font-size: 12px;
+  font-weight: 300;
+  padding: 2px 0px;
+}
+
+.user_activity_inner_section .activity_list .host a {
+  font-family: 'Lato', sans-serif;
+  color: #E34B51 !important;
+  font-weight: bold;
+  text-transform: capitalize;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+.user_activity_inner_section .activity_list .social_event_content {
+  padding: 5px 0px;
+}
+
+.user_activity_inner_section .activity_list .social_event_content .image_cover {
+  float: left;
+  margin-right: 10px;
+  background-color: rgba(47, 63, 91, 0.08);
+  padding: 5px;
+}
+
+.user_activity_inner_section .activity_list .social_event_content .image_cover img {
+  width: 150px;
+  height: 105px;
+}
+
+.user_activity_inner_section .activity_list .info {
+  font-family: 'Lato', sans-serif;
+  color: #414249 !important;
+  margin-bottom: 2px;
+  letter-spacing: 1px;
+  font-size: 12px !important;
+  font-weight: bold;
+}
+
+.user_activity_inner_section .activity_list .info i {
+  margin-right: 5px;
+}
+
+.user_activity_inner_section .activity_list .fa-map-pin {
+  margin-left: 3px;
+  margin-right: 8px;
+}
+
+.user_activity_inner_section .activity_list .fa-male {
+  margin-left: 3px;
+  margin-right: 8px;
+}
+
+.user_activity_inner_section .activity_list .social_event_details .divider {
+  border-top: 1px solid #ededf3;
+  margin: 7px 0px;
+}
+
+.user_activity_inner_section .activity_list .social_event_details .mid_divider {
+  color: #ededf3 !important;
+  font-weight: 300 !important;
+  margin: 0px 5px !important;
+}
+
+.user_activity_inner_section .activity_list .description {
+  font-family: "Lato", sans-serif;
+  font-size: 12px;
+  color: #7C93A7;
+  font-weight: 300;
+  letter-spacing: 1px;
+  margin-bottom: 5px;
+}
+
+.user_activity_inner_section .activity_list .attendance ul li {
+  margin-bottom: 0px !important;
+  margin-right: 9px;
+  float: left;
+}
+
+.user_activity_inner_section .activity_list .attendance ul li:nth-child(6) {  
+  margin-right: 0px !important;
+}
+
+.user_activity_inner_section .activity_list .attendance a {
+  font-family: "Lato", sans-serif;
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: #fff !important;
+  text-transform: uppercase;
+  padding: 2px;
+  background-color: rgba(47, 63, 91, 0.2) !important;
+  display: inline-block;
+  text-align: center;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease; 
+}
+
+.user_activity_inner_section .activity_list .attendance a:hover {
+  background-color: rgba(225, 71, 62, 0.4) !important;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease; 
+}
+
+.user_activity_inner_section .activity_list .attendance img {
+  width: 30px;
+  height: 30px;
+}
+
+.user_activity_inner_section .activity_list .remaining_places a {
+  padding: 8px 0px !important;
+  height: 34px;
+  width: 34px !important;
+  background-color: rgba(238, 170, 2, 0.6) !important;
+}
+
+.user_activity_inner_section .activity_list .icon_list {
+  background-color: rgba(47, 63, 91, 0.1);
+  border-bottom: 1px solid rgba(225, 71, 62, 0.3) !important;
+}
+
+.user_activity_inner_section .activity_list .icon_list ul {
+  margin: auto !important;
+  list-style-type: none;
+  width: 250px;
+  height: 33px;
+}
+
+.user_activity_inner_section .activity_list .icons a {
+  font-size: 13px !important;
+  text-transform: uppercase;
+  padding: 11px 10px;
+  width: 100% !important;
+  display: inline-block;
+  text-align: center;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease; 
+}
+
+.user_activity_inner_section .activity_list .icons .fa-eye, .fa-comments-o, .fa-users, .fa-user-plus, .fa-bookmark-o {
+  color: #414249 !important;
+}
+
+.user_activity_inner_section .activity_list .icons a:hover {
+  color: #fff !important;
+  background-color: #58CDA6 !important;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease; 
+}
+
+.user_activity_inner_section .activity_list .remove_fav a {
+  color: #E34B51 !important;
+}

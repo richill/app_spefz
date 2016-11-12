@@ -1,135 +1,74 @@
 <div class="activity_list">
-  <div class="cd-timeline-block">
-    <div class="cd-timeline-img cd-star">
-      <i class="fa fa-calendar"></i>
-    </div> 
-    <div class="cd-timeline-content">
-      <ul>
-        <li class="left_side">
-          <!-- activity_left_side -->
-          <div class="image_content right_side_content">
-            <div class="activity_feed_img_cover"><%= link_to(image_tag(activity.owner.image), user_path(activity.owner)) %></div>
-          </div>
-          <!-- activity_left_side -->
-        </li>
-        <li class="right_side">
-          <!-- activity_right_side -->
-          <div class="right_side_content">
-            <div class="title"><%= link_to activity.trackable.title, user_social_path(activity.trackable.user, activity.trackable) %></div>
-            <div class="host">
-              <span>Hosted by</span>
-              <span><%= link_to activity.owner.firstname, activity.owner if activity.owner %></span>
+  <% if activity.trackable %>
+    <div class="cd-timeline-block">
+      <div class="cd-timeline-img cd-star">
+        <i class="fa fa-calendar"></i>
+      </div> 
+      <div class="cd-timeline-content">
+        <ul>
+          <li class="left_side">
+            <!-- activity_left_side -->
+            <div class="image_content right_side_content">
+              <div class="activity_feed_img_cover"><%= link_to(image_tag(activity.owner.image), user_path(activity.owner)) %></div>
             </div>
-            <div class="social_event_content">
-              <div class="image_cover"><%= link_to(image_tag(activity.trackable.image), user_social_path(activity.trackable.user, activity.trackable)) %></div>
-              <div class="social_event_details">
-                <div class="info"><i class="fa fa-calendar" aria-hidden="true"></i> <%= activity.trackable.date.strftime("%A, %d %b") %> <span class="mid_divider">|</span> <%= activity.trackable.time.strftime("%I:%M %p") %></div>
-                <!-- <div class="info"><i class="fa fa-clock-o" aria-hidden="true"></i> <%# activity.trackable.time.strftime("%I:%M %p") %></div> -->
-                <div class="info"><i class="fa fa-map-pin" aria-hidden="true"></i> <%= activity.trackable.city %>, <%= activity.trackable.category_country.name %></div>
-                <div class="info"><i class="fa fa-male" aria-hidden="true"></i> <%= activity.trackable.category_age.name %></div>
-                <div class="divider"></div>
-                <div class="description">
-                  <%= truncate(activity.trackable.description, length: 200) %>
-                </div>
-                <div class="attendance">
-                  <div>
-                    <% if activity.trackable.sold_out? %>
-                      <ul>
-                        <% activity.trackable.attendances.limit(6).each do |attendant| %>
-                          <li>
-                            <% if attendant.user.image.present? %>
-                              <%= link_to(image_tag(attendant.user.image_url, :alt =>  "alt text", :class =>"#"), user_path(attendant.user)) %>
-                            <% else %>
-                              <%= link_to(image_tag("img-profile-image-default.png", :alt =>  "alt text", :class =>"#"), user_path(attendant.user)) %>
-                            <% end %>
-                          </li> 
-                        <% end %>
-                      </ul>
-                    <% else %>
-                      <ul>
-                        <% activity.trackable.attendances.order(created_at: :desc).limit(5).each do |attendant| %>
-                          <li>
-                            <% if attendant.user.image.present? %>
-                              <%= link_to(image_tag(attendant.user.image_url, :alt =>  "alt text", :class =>"#"), user_path(attendant.user)) %>
-                            <% else %>
-                              <%= link_to(image_tag("img-profile-image-default.png", :alt =>  "alt text", :class =>"#"), user_path(attendant.user)) %>
-                            <% end %>
-                          </li> 
-                        <% end %>
-                        <li class="remaining_places" style="margin-right: 0px;">
-                          <%# if social.selection_BothX_men_and_women %>
-                            <!-- <span data-tooltip aria-haspopup="true" data-options="disable_for_touch:true" class="tip-right" title="<%#{}"#{social.available_places_BothX_men_and_women}"%> places left">
-                              <%# link_to "+#{social.available_places_BothX_men_and_women}", user_social_path(social.user, social), class: "#" %>
-                            </span> -->
-                          <%# elsif %>
-                          <span data-tooltip aria-haspopup="true" data-options="disable_for_touch:true" class="tip-right" title="<%="#{activity.trackable.available_places_BothAndOnly_men_and_women}"%> places left">
-                            <%= link_to "+#{activity.trackable.available_places_BothAndOnly_men_and_women}", user_social_path(activity.trackable.user, activity.trackable), class: "#" %>
-                          </span>
-                          <%# end %>
-                        </li>
-                      </ul>
-                    <% end %>
+            <!-- activity_left_side -->
+          </li>
+          <li class="right_side">
+            <!-- activity_right_side -->
+            <div class="right_side_content">
+              <div class="title"><%= link_to activity.trackable.title, user_social_path(activity.trackable.user, activity.trackable) %></div>
+              <div class="host">
+                <span>Hosted by</span>
+                <span><%= link_to activity.owner.firstname, activity.owner if activity.owner %></span>
+              </div>
+              <div class="social_event_content">
+                <div class="image_cover"><%= link_to(image_tag(activity.trackable.image), user_social_path(activity.trackable.user, activity.trackable)) %></div>
+                <div class="social_event_details">
+                  <div class="info"><i class="fa fa-calendar" aria-hidden="true"></i> <%= activity.trackable.date.strftime("%A, %d %b") %> <span class="mid_divider">|</span> <%= activity.trackable.time.strftime("%I:%M %p") %></div>
+                  <div class="info"><i class="fa fa-map-pin" aria-hidden="true"></i> <%= activity.trackable.city %>, <%= activity.trackable.category_country.name %></div>
+                  <div class="info"><i class="fa fa-male" aria-hidden="true"></i> <%= activity.trackable.category_age.name %></div>
+                  <div class="divider"></div>
+                  <div class="description"><%= truncate(activity.trackable.description, length: 200) %></div>
+                  <div class="attendance">
+                    <div>
+                      <% if activity.trackable.sold_out? %>
+                        <ul>
+                          <% activity.trackable.attendances.limit(6).each do |attendant| %>
+                            <li>
+                              <% if attendant.user.image.present? %>
+                                <%= link_to(image_tag(attendant.user.image_url, :alt =>  "alt text", :class =>"#"), user_path(attendant.user)) %>
+                              <% else %>
+                                <%= link_to(image_tag("img-profile-image-default.png", :alt =>  "alt text", :class =>"#"), user_path(attendant.user)) %>
+                              <% end %>
+                            </li> 
+                          <% end %>
+                        </ul>
+                      <% else %>
+                        <ul>
+                          <% activity.trackable.attendances.order(created_at: :desc).limit(5).each do |attendant| %>
+                            <li>
+                              <% if attendant.user.image.present? %>
+                                <%= link_to(image_tag(attendant.user.image_url, :alt =>  "alt text", :class =>"#"), user_path(attendant.user)) %>
+                              <% else %>
+                                <%= link_to(image_tag("img-profile-image-default.png", :alt =>  "alt text", :class =>"#"), user_path(attendant.user)) %>
+                              <% end %>
+                            </li> 
+                          <% end %>
+                          <li class="remaining_places" style="margin-right: 0px;">
+                            <span data-tooltip aria-haspopup="true" data-options="disable_for_touch:true" class="tip-right" title="<%="#{activity.trackable.available_places_BothAndOnly_men_and_women}"%> places left">
+                              <%= link_to "+#{activity.trackable.available_places_BothAndOnly_men_and_women}", user_social_path(activity.trackable.user, activity.trackable), class: "#" %>
+                            </span>
+                          </li>
+                        </ul>
+                      <% end %>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-          <!-- activity_right_side -->
-        </li>
-      </ul>
-    </div>
-  </div>
-</div>
-
-<div class="old_content hide">
-  <% if activity.trackable %>
-    <div class="activity_feed">
-      <div class="medium-1 columns image_content">
-        <div class="activity_feed_img_cover"><%= link_to(image_tag(activity.owner.image), "#") %></div>
-      </div>
-      <div class="medium-11 columns activity_content">
-        <div class="activity_action">
-          <span class="highlighted_info header"><%= link_to activity.owner.firstname, activity.owner if activity.owner %></span>
-          <span class="highlighted_action">created the social</span>
-          <span class="highlighted_info"><%= link_to activity.trackable.title, user_social_path(activity.trackable.user, activity.trackable), target:"_blank" %></span>
-        </div>
-        <div class="advert_main_details_container">
-          <div class="advert_sub_header_sector">
-            <span class="content_header"><%= link_to activity.trackable.title, user_social_path(activity.trackable.user, activity.trackable), target:"_blank" %></span>
-            <span class="divider">|</span>
-            <span class="first_category"><%= activity.trackable.category_topic.name %></span>
-            <span><i class="fa fa-circle"></i></span>
-            <span class="second_category"><%# activity.trackable.category_advertskill.name %></span>
-          </div>
-          <div class="advert_sub_details">
-            <span><span class="minor_header">created:</span> <%= activity.trackable.created_at.strftime("%b %d, %Y") %></span>
-            <span class="divider">|</span>
-            <span><span class="minor_header">location:</span> <%= activity.trackable.category_country.name %>, <%= activity.trackable.city %></span>
-            <span class="divider">|</span>
-            <span><span class="minor_header">salary:</span> <%# activity.trackable.currency %><%# activity.trackable.category_price.name %> <%# activity.trackable.category_period.name %></span>
-          </div>
-        </div>
-      </div>
-      <div class="medium-11 columns activity_date_container">
-        <div class="activity_date_inner">date: <%= activity.created_at.to_s %></div>
-      </div>
-    </div>
-  <% else %>
-    <div class="activity_feed">
-      <div class="medium-1 columns image_content">
-        <div class="activity_feed_img_cover"><%= link_to(image_tag(activity.owner.image), "#") %></div>
-      </div>
-      <div class="medium-11 columns activity_content">
-        <div class="activity_action">
-          <span class="highlighted_info header"><%= link_to activity.owner.firstname, activity.owner if activity.owner %></span>
-          <span class="highlighted_action">created an advert which has now been removed</span>
-        </div>
-        <div class="advert_main_details_container">
-          <div class="deleted_activity_info">job advert removed</div>
-        </div>
-      </div>
-      <div class="medium-11 columns activity_date_container">
-        <div class="activity_date_inner">date: <%= activity.created_at.to_s %></div>
+            <!-- activity_right_side -->
+          </li>
+        </ul>
       </div>
     </div>
   <% end %>
