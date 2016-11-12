@@ -143,7 +143,11 @@ class User < ActiveRecord::Base
     # current_user belongs to the pa_event_mgt_group
   end
 
-  def paid?
+  def profile_image?
+    self.image?
+  end
+
+  def event_paid?
     stripe_event_pymt_id?
   end
 
