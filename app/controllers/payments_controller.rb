@@ -42,7 +42,8 @@ class PaymentsController < ApplicationController
 
       payment = customer.subscriptions.create(
         source: params[:stripeToken],
-        plan: @subscription
+        plan: @subscription,
+        description: "Spefz Premium Plan"
         # the subscription.id is the database id
         # the plan.id in stripe uses the same id as that of the subscription.id in the database in order to select the right subsciption in stripe
       )
