@@ -172,6 +172,8 @@
               <div class="payment_form_stripe">
                 <form accept-charset="UTF-8" action="/payments" class="simple_form new_payment" method="post" id="payment-form" id="new_payment" novalidate="novalidate">
                   <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+                  <%= hidden_field_tag(:event_price, "#{@event.price}") %>
+                  <%= hidden_field_tag(:event_title, "#{@event.title}") %>
                   <span class="payment-errors"></span>
                   <div class="form-inputs">
                     <div class="form-row">

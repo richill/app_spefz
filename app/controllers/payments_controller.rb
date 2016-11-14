@@ -71,7 +71,8 @@ class PaymentsController < ApplicationController
     elsif @event_id.present?
       @user = current_user
       @payment = Payment.new(payment_params)
-      @event = @payment.event
+      @event_id = params[:event_id]
+      @event = @payment.event_id
       @payment.user_id = current_user.id
 
       if current_user.stripe_id?
@@ -80,22 +81,35 @@ class PaymentsController < ApplicationController
         customer = Stripe::Customer.create(email: current_user.email)
       end
 
+      amount = (params[:event_price].to_i) * 100
       charge = Stripe::Charge.create(
         source: params[:stripeToken],
-        amount: @event.price,
-        description: @event.title,
+        amount: amount,
+        description: params[:event_title],
         currency: 'gbp'
       )
 
-    current_user.update(
-      stripe_id: customer.id,
-      stripe_event_pymt_id: payment.id,
-      card_last4: params[:card_last4],
-      card_exp_month: params[:card_exp_month],
-      card_exp_year: params[:card_exp_year],
-      card_type: params[:card_brand],
-      recent_event_pymt_date: DateTime.now
-    )
+      # begin
+      #   charge = Stripe::Charge.create(
+      #     source: params[:stripeToken],
+      #     amount: params[:event_price],
+      #     description: params[:event_title],
+      #     currency: 'gbp'
+      #   )
+      # rescue Stripe::CardError => e
+      #   # The card has been declined
+      # end
+
+
+      current_user.update(
+        stripe_id: customer.id,
+        stripe_event_pymt_id: payment.id,
+        card_last4: params[:card_last4],
+        card_exp_month: params[:card_exp_month],
+        card_exp_year: params[:card_exp_year],
+        card_type: params[:card_brand],
+        recent_event_pymt_date: DateTime.now
+      )
 
       respond_to do |format|
         if @payment.save
