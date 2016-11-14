@@ -59,7 +59,7 @@ class PaymentsController < ApplicationController
 
       respond_to do |format|
         if @payment.save
-          format.html { redirect_to dashboard_user_path(current_user), notice: 'Your Subscription Payment was successful.' }
+          format.html { redirect_to user_path(current_user), notice: 'Your Subscription Payment was successful.' }
           format.json { render :show, status: :created, location: @payment }
         else
           format.html { redirect_to new_payment_path(subscription_id: @subscription.id), alert: 'Ensure all fields are completed'}
