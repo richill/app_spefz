@@ -100,7 +100,6 @@ class PaymentsController < ApplicationController
       #   # The card has been declined
       # end
 
-
       current_user.update(
         stripe_id: customer.id,
         stripe_event_pymt_id: payment.id,
