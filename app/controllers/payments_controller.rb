@@ -71,7 +71,6 @@ class PaymentsController < ApplicationController
     elsif @event_id.present?
       @user = current_user
       @payment = Payment.new(payment_params)
-      @event_id = params[:event_id]
       @event = @payment.event_id
       @payment.user_id = current_user.id
 
@@ -102,7 +101,7 @@ class PaymentsController < ApplicationController
 
       current_user.update(
         stripe_id: customer.id,
-        stripe_event_pymt_id: payment.id,
+        stripe_event_pymt_id: charge.id,
         card_last4: params[:card_last4],
         card_exp_month: params[:card_exp_month],
         card_exp_year: params[:card_exp_year],
