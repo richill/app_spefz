@@ -28,7 +28,7 @@ class PaymentsController < ApplicationController
     @event_id = @payment.event_id
     
     # ------- PAYMENT_SUBSCRIPTION -------
-    # if @subscription_id.present?
+    if @subscription_id.present?
       @user = current_user
       @payment = Payment.new(payment_params)
       @subscription = @payment.subscription_id
@@ -68,45 +68,45 @@ class PaymentsController < ApplicationController
       end
 
     # ------- PAYMENT_EVENT -------
-    # elsif @event_id.present?
-    #   @user = current_user
-    #   @payment = Payment.new(payment_params)
-    #   @event = @payment.event
-    #   @payment.user_id = current_user.id
+    elsif @event_id.present?
+      @user = current_user
+      @payment = Payment.new(payment_params)
+      @event = @payment.event
+      @payment.user_id = current_user.id
 
-    #   if current_user.stripe_id?
-    #     customer = Stripe::Customer.retrieve(current_user.stripe_id)
-    #   else
-    #     customer = Stripe::Customer.create(email: current_user.email)
-    #   end
+      if current_user.stripe_id?
+        customer = Stripe::Customer.retrieve(current_user.stripe_id)
+      else
+        customer = Stripe::Customer.create(email: current_user.email)
+      end
 
-    #   charge = Stripe::Charge.create(
-    #     source: params[:stripeToken],
-    #     amount: @event.price,
-    #     description: @event.title,
-    #     currency: 'gbp'
-    #   )
+      charge = Stripe::Charge.create(
+        source: params[:stripeToken],
+        amount: @event.price,
+        description: @event.title,
+        currency: 'gbp'
+      )
 
-    # current_user.update(
-    #   stripe_id: customer.id,
-    #   stripe_event_pymt_id: payment.id,
-    #   card_last4: params[:card_last4],
-    #   card_exp_month: params[:card_exp_month],
-    #   card_exp_year: params[:card_exp_year],
-    #   card_type: params[:card_brand],
-    #   recent_event_pymt_date: DateTime.now
-    # )
+    current_user.update(
+      stripe_id: customer.id,
+      stripe_event_pymt_id: payment.id,
+      card_last4: params[:card_last4],
+      card_exp_month: params[:card_exp_month],
+      card_exp_year: params[:card_exp_year],
+      card_type: params[:card_brand],
+      recent_event_pymt_date: DateTime.now
+    )
 
-    #   respond_to do |format|
-    #     if @payment.save
-    #       format.html { redirect_to dashboard_user_path(current_user), notice: 'Your Booking Payment was successful.' }
-    #       format.json { render :show, status: :created, location: @payment }
-    #     else
-    #       format.html { redirect_to new_payment_path(event_id: @event.id), alert: 'Ensure all fields are completed'}
-    #       format.json { render json: @payment.errors, status: :unprocessable_entity }
-    #     end
-    #   end
-    # end
+      respond_to do |format|
+        if @payment.save
+          format.html { redirect_to dashboard_user_path(current_user), notice: 'Your Booking Payment was successful.' }
+          format.json { render :show, status: :created, location: @payment }
+        else
+          format.html { redirect_to new_payment_path(event_id: @event.id), alert: 'Ensure all fields are completed'}
+          format.json { render json: @payment.errors, status: :unprocessable_entity }
+        end
+      end
+    end
   end
 
   def update
