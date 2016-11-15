@@ -89,6 +89,11 @@ class PaymentsController < ApplicationController
         currency: 'gbp'
       )
 
+      # TODO: charge.paid or charge["paid"]
+      # if charge["paid"] == true
+      #  #Save customer to the db
+      # end
+
       # begin
       #   charge = Stripe::Charge.create(
       #     source: params[:stripeToken],
