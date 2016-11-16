@@ -42,8 +42,7 @@ class PaymentsController < ApplicationController
 
       payment = customer.subscriptions.create(
         source: params[:stripeToken],
-        plan: @subscription,
-        description: "Spefz Premium Plan"
+        plan: @subscription
         # the subscription.id is the database id
         # the plan.id in stripe uses the same id as that of the subscription.id in the database in order to select the right subsciption in stripe
       )
@@ -58,9 +57,9 @@ class PaymentsController < ApplicationController
         recent_subscription_pymt_date: DateTime.now
       )
 
-      # TODO: charge.paid or charge["paid"]
+      # TODO: invoice.paid or invoice["paid"]
       # if payment is true/successful save the below params under payments table
-      if charge["paid"] == true
+      if payment.present?
         @payment.update(
           stripe_customer_id: customer.id,
           stripe_subscription_id: payment.id,

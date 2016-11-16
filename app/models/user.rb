@@ -43,6 +43,7 @@ class User < ActiveRecord::Base
   mount_uploader :image, ImageUploader
   before_destroy :delete_activities
   before_create :generate_reference_number
+  before_create :assign_user_to_role_and_group
 
 
   # ---- gender -----
@@ -150,6 +151,11 @@ class User < ActiveRecord::Base
       reference_length = 6
       self.reference = "SPz_" + Devise.friendly_token.first(reference_length)
     end while self.class.exists?(reference: reference)
+  end
+
+  def assign_user_to_role_and_group
+    self.category_role = CategoryRole.where(name: 'Client').first
+    self.category_managementgroup = CategoryManagementgroup.where(name: 'Client Group').first
   end
 
   def profile_image?

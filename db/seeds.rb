@@ -66,7 +66,7 @@ ct26 = CategoryTopic.create!(name:'Valentines Social')
 CategoryRole.delete_all
 cr01 = CategoryRole.create!(name:'Admin')
 cr02 = CategoryRole.create!(name:'Primary Admin')
-cr02 = CategoryRole.create!(name:'Client')
+cr03 = CategoryRole.create!(name:'Client')
 
 CategoryManagementgroup.delete_all
 cmr01 = CategoryManagementgroup.create!(name:'Account Group')
