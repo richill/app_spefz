@@ -5,6 +5,7 @@
 <table>
   <thead>
     <tr>
+      <th>type</th>
       <th>firstname</th>
       <th>lastname</th>
       <th colspan="2">gender</th>
@@ -29,7 +30,7 @@
 
   <tbody>
     <!-- example -->
-    <tr>
+    <!-- <tr>
       <td>richill</td>
       <td>artloe</td>
       <td>female</td> <td>[2]</td>
@@ -50,10 +51,17 @@
       <td>card_exp_month: 12</td>
       <td>card_exp_year: 2020</td>
       <td>succeeded</td>
-    </tr>
+    </tr> -->
     <!-- example -->
     <% @payments.each do |payment| %>
       <tr>
+        <td>
+          <% if payment.event_id? %>
+            <%= "payment" %>
+          <% elsif payment.subscription_id? %>
+            <%= "subscription" %>
+          <% end %>
+        </td>
         <td><%= payment.user.firstname %></td>
         <td><%= payment.user.lastname %></td> 
         <td><%= payment.user.category_gender.name %></td> <td>[<%= payment.user.category_gender_id %>]</td>
