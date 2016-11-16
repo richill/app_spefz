@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
   belongs_to :category_role 
   belongs_to :category_managementgroup 
 
+  has_many :payments
   has_many :events, dependent: :destroy
   has_many :socials, dependent: :destroy
   has_many :favourites, dependent: :destroy

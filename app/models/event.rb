@@ -3,6 +3,8 @@ class Event < ActiveRecord::Base
   tracked only: [:create], owner: -> (controller, model) { controller && controller.current_user }
   
   acts_as_taggable
+
+  has_many :payments
   
   belongs_to :user
   belongs_to :category_topic
