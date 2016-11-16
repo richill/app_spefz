@@ -2,7 +2,7 @@ class PaymentsController < ApplicationController
   before_action :set_payment, only: [:show, :edit, :update, :destroy]
 
   def index
-    @payments = Payment.all
+    @payments = Payment.order("created_at desc")
   end
 
   def show
@@ -58,6 +58,36 @@ class PaymentsController < ApplicationController
         recent_subscription_pymt_date: DateTime.now
       )
 
+      # TODO: charge.paid or charge["paid"]
+      # if payment is true/successful save the below params under payments table
+      if charge["paid"] == true
+        @payment.update(
+          stripe_customer_id: customer.id,
+          stripe_subscription_id: payment.id,
+          stripe_payment_id: "none",
+          subscription_payment_date: DateTime.now,
+          event_payment_date: "none",
+          user_card_type: params[:card_brand],
+          user_card_last4: params[:card_last4],
+          user_card_exp_month: params[:card_exp_month],
+          user_card_exp_year:params[:card_exp_year],
+          status: "success"
+        )
+      else
+        @payment.update(
+          stripe_customer_id: customer.id,
+          stripe_subscription_id: payment.id,
+          stripe_payment_id: "none",
+          subscription_payment_date: DateTime.now,
+          event_payment_date: "none",
+          user_card_type: params[:card_brand],
+          user_card_last4: params[:card_last4],
+          user_card_exp_month: params[:card_exp_month],
+          user_card_exp_year:params[:card_exp_year],
+          status: "fail"
+        )
+      end
+
       respond_to do |format|
         if @payment.save
           format.html { redirect_to user_path(current_user), notice: 'Your Subscription Payment was successful.' }
@@ -100,6 +130,7 @@ class PaymentsController < ApplicationController
       )
 
       # TODO: charge.paid or charge["paid"]
+      # if payment is true/successful save the below params under payments table
       if charge["paid"] == true
         @payment.update(
           stripe_customer_id: customer.id,
