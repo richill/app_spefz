@@ -212,6 +212,11 @@
   -o-transition: all 0.3s ease;
 }
 
+.members_section .user_info_adj {
+  padding: 0px;
+  float: left;
+}
+
 .members_section .user_info {
   padding: 10px 0px;
   float: left;
@@ -240,6 +245,15 @@
   font-weight: 300;
   text-transform: capitalize;
   text-align: left;
+}
+
+.members_section .user_ref {
+  font-family: 'Lato', sans-serif;
+  font-size: 10px;
+  font-weight: 300;
+  text-transform: capitalize;
+  text-align: left;
+  color: #E34B51 !important;
 }
 
 .members_section .action_btns {
