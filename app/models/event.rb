@@ -13,6 +13,7 @@ class Event < ActiveRecord::Base
   belongs_to :category_quantitygender
 
   mount_uploader :image, ImageUploader
+  before_create :generate_reference_number
 
   geocoded_by :location                               # can also be an IP address
   after_validation :geocode, if: :address_changed?    # auto-fetch coordinates
@@ -26,6 +27,13 @@ class Event < ActiveRecord::Base
   scope :closed_events, -> {where(['close = ? OR close IS ?', true])}
 
   scope :open_events, -> {where(['close = ? OR close IS ?', false, nil])}
+
+  def generate_reference_number
+    begin
+      reference_length = 6
+      self.reference = "SPz_" + Devise.friendly_token.first(reference_length)
+    end while self.class.exists?(reference: reference)
+  end
 
   def expired_event
     self.date < Date.current

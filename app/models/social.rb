@@ -20,6 +20,7 @@ class Social < ActiveRecord::Base
   belongs_to :category_quantitygender
 
   mount_uploader :image, ImageUploader
+  before_create :generate_reference_number
 
   geocoded_by :location                                    # can also be an IP address
   after_validation :geocode, if: :address_changed?         # auto-fetch coordinates
@@ -54,6 +55,13 @@ class Social < ActiveRecord::Base
 
   def location
     [address, city, category_country_id].compact.join(', ')
+  end
+
+  def generate_reference_number
+    begin
+      reference_length = 6
+      self.reference = "SPz_" + Devise.friendly_token.first(reference_length)
+    end while self.class.exists?(reference: reference)
   end
 
   #checks if current user is attending social
