@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161116122404) do
+ActiveRecord::Schema.define(version: 20161116132030) do
 
   create_table "activities", force: :cascade do |t|
     t.integer  "trackable_id"
@@ -247,16 +247,6 @@ ActiveRecord::Schema.define(version: 20161116122404) do
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
     t.integer  "event_id"
-    t.string   "user_firstname"
-    t.string   "user_lastname"
-    t.string   "user_gender"
-    t.integer  "user_gender_id"
-    t.string   "spefz_user_ref"
-    t.string   "spefz_payment_ref"
-    t.string   "spefz_event_ref"
-    t.string   "spefz_subscription_ref"
-    t.string   "product"
-    t.decimal  "product_price"
     t.string   "stripe_customer_id"
     t.string   "stripe_subscription_id"
     t.string   "stripe_payment_id"

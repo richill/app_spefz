@@ -123,7 +123,7 @@ class PaymentsController < ApplicationController
           user_card_type: params[:card_brand],
           user_card_last4: params[:card_last4],
           user_card_exp_month: params[:card_exp_month],
-          user_card_exp_year:params[:card_exp_year],
+          user_card_exp_year: params[:card_exp_year],
           staus: "fail"
         )
       end
