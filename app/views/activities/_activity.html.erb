@@ -7,16 +7,17 @@
         </ul>
       <% end %>
 
-      <div class="cd-timeline-block hide">
+      <div class="cd-timeline-block">
         <div class="cd-timeline-img cd-star">
           <i class="fa fa-star"></i>
         </div> 
         <div class="cd-timeline-content">
-          <h2>The Beginning | Welcome to Spefz!</h2>
-          <p><%= truncate("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", length: 208) %>
-          </p>
-          <span class="cd-date">February 14, 2016 | 04:33 PM</span><br/>
-          <div class="cd-posted">posted by richill</div>
+          <h2>Welcome to Spefz!</h2>
+          <p>
+            Hi <%= current_user.firstname %>! we are excited to welcome you to spefz! We are passionate about connecting people like you via experiences. Explore new socials & discussions, connect with like minded people and Discover new places. Get connected and re-discover your surroundings…
+            </p>
+          <span class="cd-date"><%= current_user.created_at.strftime("%B %d, %Y") %>  | <%= current_user.created_at.strftime("%I:%M %p") %></span><br/>
+            <div class="cd-posted">The Spefz Team</div>
         </div>
       </div>
     </section> 
