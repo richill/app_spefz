@@ -6,6 +6,7 @@
   <thead>
     <tr>
       <th>type</th>
+      <th>payment/subscription date</th>
       <th>firstname</th>
       <th>lastname</th>
       <th colspan="2">gender</th>
@@ -29,30 +30,6 @@
   </thead>
 
   <tbody>
-    <!-- example -->
-    <!-- <tr>
-      <td>richill</td>
-      <td>artloe</td>
-      <td>female</td> <td>[2]</td>
-      <td>richill@gmail.com</td>
-      <td>Spefz_7ETHDBJE</td> <td>[4]</td>
-      <td>Spefz_134JXILS</td> <td>[2]</td>
-      <td>Spefz_7EIEKMSN</td> <td>[7]</td>
-      <td>Spefz_56UEJENG</td> <td>[1]</td>
-      <td>Speed Social - Graduate Professionals</td>
-      <td>£35.00</td>
-      <td>cus_9YuZZAniFCZVxn</td>
-      <td>sub_9Vtt85gAMsmLlV</td>
-      <td>ch_19FmjvAAe71J3vK0jPNI3ejy</td>
-      <td>Sun, 06 Nov 2016 14:57:35</td>
-      <td>Mon, 14 Nov 2016 15:51:27</td>
-      <td>Visa</td>
-      <td>card_last4: 4242</td>
-      <td>card_exp_month: 12</td>
-      <td>card_exp_year: 2020</td>
-      <td>succeeded</td>
-    </tr> -->
-    <!-- example -->
     <% @payments.each do |payment| %>
       <tr>
         <td>
@@ -62,6 +39,7 @@
             <%= "subscription" %>
           <% end %>
         </td>
+        <td><%= payment.created_at %></td>
         <td><%= payment.user.firstname %></td>
         <td><%= payment.user.lastname %></td> 
         <td><%= payment.user.category_gender.name %></td> <td>[<%= payment.user.category_gender_id %>]</td>

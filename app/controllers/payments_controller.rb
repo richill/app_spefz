@@ -101,7 +101,7 @@ class PaymentsController < ApplicationController
 
       # TODO: charge.paid or charge["paid"]
       if charge["paid"] == true
-        payment.update(
+        @payment.update(
           stripe_customer_id: customer.id,
           stripe_subscription_id: "none",
           stripe_payment_id: charge.id,
@@ -111,10 +111,10 @@ class PaymentsController < ApplicationController
           user_card_last4: params[:card_last4],
           user_card_exp_month: params[:card_exp_month],
           user_card_exp_year:params[:card_exp_year],
-          staus: "success"
+          status: "success"
         )
       else
-        payment.update(
+        @payment.update(
           stripe_customer_id: customer.id,
           stripe_subscription_id: "none",
           stripe_payment_id: charge.id,
@@ -124,7 +124,7 @@ class PaymentsController < ApplicationController
           user_card_last4: params[:card_last4],
           user_card_exp_month: params[:card_exp_month],
           user_card_exp_year: params[:card_exp_year],
-          staus: "fail"
+          status: "fail"
         )
       end
 
@@ -138,8 +138,6 @@ class PaymentsController < ApplicationController
       # rescue Stripe::CardError => e
       #   # The card has been declined
       # end
-
-      
 
       respond_to do |format|
         if @payment.save
