@@ -89,10 +89,44 @@ class PaymentsController < ApplicationController
         currency: 'gbp'
       )
 
+      current_user.update(
+        stripe_id: customer.id,
+        stripe_event_pymt_id: charge.id,
+        card_last4: params[:card_last4],
+        card_exp_month: params[:card_exp_month],
+        card_exp_year: params[:card_exp_year],
+        card_type: params[:card_brand],
+        recent_event_pymt_date: DateTime.now
+      )
+
       # TODO: charge.paid or charge["paid"]
-      # if charge["paid"] == true
-      #  #Save customer to the db
-      # end
+      if charge["paid"] == true
+        payment.update(
+          stripe_customer_id: customer.id,
+          stripe_subscription_id: "none",
+          stripe_payment_id: charge.id,
+          subscription_payment_date: "none",
+          event_payment_date: DateTime.now,
+          user_card_type: params[:card_brand],
+          user_card_last4: params[:card_last4],
+          user_card_exp_month: params[:card_exp_month],
+          user_card_exp_year:params[:card_exp_year],
+          staus: "success"
+        )
+      else
+        payment.update(
+          stripe_customer_id: customer.id,
+          stripe_subscription_id: "none",
+          stripe_payment_id: charge.id,
+          subscription_payment_date: "none",
+          event_payment_date: DateTime.now,
+          user_card_type: params[:card_brand],
+          user_card_last4: params[:card_last4],
+          user_card_exp_month: params[:card_exp_month],
+          user_card_exp_year:params[:card_exp_year],
+          staus: "fail"
+        )
+      end
 
       # begin
       #   charge = Stripe::Charge.create(
@@ -105,15 +139,7 @@ class PaymentsController < ApplicationController
       #   # The card has been declined
       # end
 
-      current_user.update(
-        stripe_id: customer.id,
-        stripe_event_pymt_id: charge.id,
-        card_last4: params[:card_last4],
-        card_exp_month: params[:card_exp_month],
-        card_exp_year: params[:card_exp_year],
-        card_type: params[:card_brand],
-        recent_event_pymt_date: DateTime.now
-      )
+      
 
       respond_to do |format|
         if @payment.save

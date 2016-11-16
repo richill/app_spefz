@@ -61,29 +61,79 @@
   </thead>
 
   <tbody>
-    <%# @payments.each do |payment| %>
+    <!-- example -->
+    <tr>
+      <td>richill</td>
+      <td>artloe</td>
+      <td>female</td> <td>[2]</td>
+      <td>richill@gmail.com</td>
+      <td>Spefz_7ETHDBJE</td> <td>[4]</td>
+      <td>Spefz_134JXILS</td> <td>[2]</td>
+      <td>Spefz_7EIEKMSN</td> <td>[7]</td>
+      <td>Spefz_56UEJENG</td> <td>[1]</td>
+      <td>Speed Social - Graduate Professionals</td>
+      <td>£35.00</td>
+      <td>cus_9YuZZAniFCZVxn</td>
+      <td>sub_9Vtt85gAMsmLlV</td>
+      <td>ch_19FmjvAAe71J3vK0jPNI3ejy</td>
+      <td>Sun, 06 Nov 2016 14:57:35</td>
+      <td>Mon, 14 Nov 2016 15:51:27</td>
+      <td>Visa</td>
+      <td>card_last4: 4242</td>
+      <td>card_exp_month: 12</td>
+      <td>card_exp_year: 2020</td>
+      <td>succeeded</td>
+    </tr>
+    <!-- example -->
+    <% @payments.each do |payment| %>
       <tr>
-        <td>richill</td>
-        <td>artloe</td>
-        <td>female</td> <td>[2]</td>
-        <td>richill@gmail.com</td>
-        <td>Spefz_7ETHDBJE</td> <td>[4]</td>
-        <td>Spefz_134JXILS</td> <td>[2]</td>
-        <td>Spefz_7EIEKMSN</td> <td>[7]</td>
-        <td>Spefz_56UEJENG</td> <td>[1]</td>
-        <td>Speed Social - Graduate Professionals</td>
-        <td>£35.00</td>
-        <td>cus_9YuZZAniFCZVxn</td>
-        <td>sub_9Vtt85gAMsmLlV</td>
-        <td>ch_19FmjvAAe71J3vK0jPNI3ejy</td>
-        <td>Sun, 06 Nov 2016 14:57:35</td>
-        <td>Mon, 14 Nov 2016 15:51:27</td>
-        <td>Visa</td>
-        <td>card_last4: 4242</td>
-        <td>card_exp_month: 12</td>
-        <td>card_exp_year: 2020</td>
-        <td>succeeded</td>
+        <td><%# payment.user_firstname %><%= payment.user.firstname %></td>
+        <td><%# payment.user_lastname %><%= payment.user.lastname %></td> 
+        <td><%# payment.user_gender %><%= payment.user.category_gender.name %></td> <td>[<%# payment.user_gender_id %><%= payment.user.category_gender_id %>]</td>
+        <td><%= payment.email %></td>
+        <td><%# payment.spefz_user_ref %><%= payment.user.reference %></td> <td>[<%= payment.user_id %>]</td>
+        <td><%= payment.reference %></td> <td>[<%= payment.id %>]</td>
+        <td>
+          <% if payment.event_id? %>
+          <%# payment.spefz_event_ref %>
+          <%= payment.event.reference %>
+          <% else %>
+            <%= "-" %>
+          <% end %>
+        </td> <td>[<%= payment.event_id %>]</td>
+        <td>
+          <% if payment.subscription_id? %>
+            <%# payment.spefz_subscription_ref %>
+            <%= payment.subscription.reference %>
+          <% else %>
+            <%= "-" %>
+          <% end %>
+        </td> <td>[<%= payment.subscription_id %>]</td>
+        <td>
+          <% if payment.event_id? %>
+            <%= payment.event.title %>
+          <% elsif payment.subscription_id? %>
+            <%= payment.subscription.title %> plan
+          <% end %>
+        </td>
+        <td>
+          <% if payment.event_id? %>
+            <%= payment.event.price %>
+          <% elsif payment.subscription_id? %>
+            <%= payment.subscription.price %>
+          <% end %>
+        </td>
+        <td><%= payment.stripe_customer_id %></td>
+        <td><%= payment.stripe_subscription_id %></td>
+        <td><%= payment.stripe_payment_id %></td>
+        <td><%= payment.subscription_payment_date %></td>
+        <td><%= payment.event_payment_date %></td>
+        <td><%= payment.user_card_type %></td>
+        <td><%= payment.user_card_last4 %></td>
+        <td><%= payment.user_card_exp_month %></td>
+        <td><%= payment.user_card_exp_year %></td>
+        <td><%= payment.staus %></td>
       </tr>
-    <%# end %>
+    <% end %>
   </tbody>
 </table>

@@ -1,6 +1,7 @@
 class Payment < ActiveRecord::Base
   belongs_to :user
   belongs_to :event
+  belongs_to :subscription
 
   before_create :generate_reference_number
 

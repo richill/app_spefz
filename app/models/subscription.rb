@@ -1,4 +1,6 @@
 class Subscription < ActiveRecord::Base
+  has_many :payments
+  
   before_create :generate_reference_number
 
   def generate_reference_number
