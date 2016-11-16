@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161116132030) do
+ActiveRecord::Schema.define(version: 20161116132520) do
 
   create_table "activities", force: :cascade do |t|
     t.integer  "trackable_id"
@@ -256,7 +256,7 @@ ActiveRecord::Schema.define(version: 20161116132030) do
     t.string   "user_card_last4"
     t.integer  "user_card_exp_month"
     t.integer  "user_card_exp_year"
-    t.string   "staus"
+    t.string   "status"
   end
 
   create_table "relationships", force: :cascade do |t|
