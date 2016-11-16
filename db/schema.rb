@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161114142258) do
+ActiveRecord::Schema.define(version: 20161116112545) do
 
   create_table "activities", force: :cascade do |t|
     t.integer  "trackable_id"
@@ -365,6 +365,7 @@ ActiveRecord::Schema.define(version: 20161114142258) do
     t.datetime "recent_subscription_pymt_date"
     t.string   "stripe_event_pymt_id"
     t.datetime "recent_event_pymt_date"
+    t.string   "reference"
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true

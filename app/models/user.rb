@@ -42,6 +42,7 @@ class User < ActiveRecord::Base
 
   mount_uploader :image, ImageUploader
   before_destroy :delete_activities
+  before_create :generate_reference_number
 
 
   # ---- gender -----
@@ -142,6 +143,13 @@ class User < ActiveRecord::Base
     # current_user created the event [eg: current_user can only view socials they've created if they are not subscribed]
     # current_user belongs to the admin_pa_management_group
     # current_user belongs to the pa_event_mgt_group
+  end
+
+  def generate_reference_number
+    begin
+      reference_length = 6
+      self.reference = "SPz_" + Devise.friendly_token.first(reference_length)
+    end while self.class.exists?(reference: reference)
   end
 
   def profile_image?
