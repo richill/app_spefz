@@ -97,7 +97,13 @@
                         <div><i class="fa fa-calendar" aria-hidden="true"></i></div>
                         <div class="date"><%= event.date.strftime("%d") %></div>
                         <div class="month"><span><%= event.date.strftime("%b") %></span> <span class="divider">|</span> <span><%= event.date.strftime("%a") %></span></div>
-                        <div class="btn_booknow"><%= link_to "book now", user_event_path(event.user, event) %></div>
+                        
+                        <% if event.current_user_attending_paid?(current_user) %>
+                          <div class="btn_booked"><%= link_to "booked!", user_event_path(event.user, event) %></div>
+                        <% else %>
+                          <div class="btn_booknow"><%= link_to "book now!", user_event_path(event.user, event) %></div>
+                        <% end %>
+                        
                         <div class="btn_save_unsave_section">
                           <% if current_user %>
                             <% unless current_user.favourite_events.exists?(id: event.id)  %>
