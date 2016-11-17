@@ -39,6 +39,19 @@
                 <% @users.desc_order.each do |user| %>
                   <% if current_user.subscribed_access? %>
                     <li class="medium-3 columns member_container user_subscribed">
+                      <!-- dummy banner -->
+                      <div class="banner_wrapper_container_index">
+                        <div class="banner_wrapper_index">
+                          <% if current_user.admin_pa_management_group %>
+                            <% if user.category_managementgroup.name == "Dummy Group" %>
+                              <div class="banner_ribbon_wrapper_green_index">
+                                <div class="banner_ribbon_name_index">DUMMY</div>
+                              </div>
+                            <% end %>
+                          <% end %>
+                        </div>​
+                      </div>
+                      <!-- dummy banner -->
                       <div class="medium-12 columns member_inner_container">
                         <div class="image_section">
                           <% if user.image_url.present? %>
@@ -78,6 +91,19 @@
                     </li>
                   <% else %>
                     <li class="medium-3 columns member_container user_unsubscribed">
+                      <!-- dummy banner -->
+                      <div class="banner_wrapper_container_index">
+                        <div class="banner_wrapper_index">
+                          <% if current_user.admin_pa_management_group %>
+                            <% if user.category_managementgroup.name == "Dummy Group" %>
+                              <div class="banner_ribbon_wrapper_green_index">
+                                <div class="banner_ribbon_name_index">DUMMY</div>
+                              </div>
+                            <% end %>
+                          <% end %>
+                        </div>​
+                      </div>
+                      <!-- dummy banner -->
                       <div class="medium-12 columns member_inner_container">
                         <div class="image_section">
                           <% if user.image_url.present? %>

@@ -201,3 +201,50 @@ small {
   right: 5px !important;
 }
 
+/*----------------------------------------
+    Dummy banner - User Index
+----------------------------------------*/
+.banner_wrapper_container_index {
+  height: 0px !important;
+  position: relative;
+}
+
+.banner_wrapper_index {
+  position: absolute;
+}
+
+.banner_ribbon_wrapper_green_index {
+  width: 65px;
+  height: 65px;
+  overflow: hidden;
+  position: absolute;
+  z-index: 1;
+}
+
+.banner_ribbon_name_index {
+  font: bold 10px Sans-Serif;
+  color: #333;
+  text-align: center;
+  text-shadow: rgba(255,255,255,0.5) 0px 1px 0px;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  position: relative;
+  padding: 5px 0;
+  left: -32px;
+  top: 9px;
+  width: 103px;
+  background-color: #BFDC7A;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#BFDC7A), to(#8EBF45));
+  background-image: -webkit-linear-gradient(top, #BFDC7A, #8EBF45);
+  background-image: -moz-linear-gradient(top, #BFDC7A, #8EBF45);
+  background-image: -ms-linear-gradient(top, #BFDC7A, #8EBF45);
+  background-image: -o-linear-gradient(top, #BFDC7A, #8EBF45);
+  color: #6a6340;
+  -webkit-box-shadow: 0px 0px 3px rgba(0,0,0,0.3);
+  -moz-box-shadow: 0px 0px 3px rgba(0,0,0,0.3);
+  box-shadow: 0px0px3pxrgba(0,0,0,0.3);
+  opacity: 0.4;
+}
+
