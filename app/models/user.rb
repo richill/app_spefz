@@ -70,7 +70,13 @@ class User < ActiveRecord::Base
   scope :client_group, ->() { joins(:category_managementgroup).where('category_managementgroups.name' => "Client Group") }                                                                                       
   # all users in client_group
 
+  scope :client_guest_group, ->() { joins(:category_managementgroup).where('category_managementgroups.name' => "Client Guest Group") }                                                                                       
+  # all users in client_group
+
   scope :development_group, ->() { joins(:category_managementgroup).where('category_managementgroups.name' => "Development Group") }                                                                                       
+  # all users in development_group
+
+  scope :dummy_group, ->() { joins(:category_managementgroup).where('category_managementgroups.name' => "Dummy Group") }                                                                                       
   # all users in development_group
 
   scope :event_mgt_group, ->() { joins(:category_managementgroup).where('category_managementgroups.name' => "Event Management Group") }                                                                                       
@@ -126,6 +132,11 @@ class User < ActiveRecord::Base
   def client_guest_group
     self.category_role.name == "Client" && self.category_managementgroup.name == "Client Guest Group"
     # Group_G | clients in client guest group: users here do not have to subscribe to fully use the site - this acts as a free subscription for users
+  end
+
+  def dummy_group
+    self.category_role.name == "Client" && self.category_managementgroup.name == "Dummy Group"
+    # Group_H | clients in dummy guest group: users here have the same rights as client_group
   end
 
   def subscribed?
