@@ -399,6 +399,27 @@
   -o-transition: all 0.3s ease;
 }
 
+.events_show_inner_section .attendants a {
+  padding: 10px 15px;
+  font-size: 14px;
+  margin-right: 8px;
+  background-color: #4BB4BF !important;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+.events_show_inner_section .attendants i {
+  color: #fff !important;
+}
+
+.events_show_inner_section .attendants a:hover {
+  background-color: #eeaa02 !important;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
 .events_show_inner_section .btn_event_booknow a {
   padding: 10px 55px;
   margin-left: -15px;
@@ -947,8 +968,9 @@
 
 
 
-
-
+// -----------------------
+//   workings
+// -----------------------
 
 
 

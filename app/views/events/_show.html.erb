@@ -56,6 +56,11 @@
         </li>
       </ul>
       <ul class="inline-list right">
+        <li class="field attendants">
+          <%= link_to attendants_event_path(@event) do %>
+            <i class="fa fa-users" aria-hidden="true"></i>
+          <% end %>
+        </li>
         <% if @event.current_user_attending_paid?(current_user) %>
           <li><span><div class="event_show_btn btn_event_booked"><%= link_to 'Booked!', user_event_path(@event.user, @event) %></div></span></li>
         <% else %>

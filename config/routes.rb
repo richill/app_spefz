@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   resources :subscriptions
   resources :payments
   resources :socials
-  resources :events
   resources :signups
   resources :relationships, only: [:create, :destroy]
   resources :friendships,   only: [:create, :destroy]
@@ -21,6 +20,12 @@ Rails.application.routes.draw do
     resources :events
     member do
       get 'dashboard'
+    end
+  end
+
+  resources :events do
+    member do
+      get 'attendants'
     end
   end
 
