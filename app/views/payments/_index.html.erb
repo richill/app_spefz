@@ -40,10 +40,10 @@
           <% end %>
         </td>
         <td><%= payment.created_at %></td>
-        <td><%= payment.user.firstname %></td>
-        <td><%= payment.user.lastname %></td> 
+        <td><%= link_to "#{payment.user.firstname}", user_path(payment.user) %></td>
+        <td><%= link_to "#{payment.user.lastname}", user_path(payment.user) %></td> 
         <td><%= payment.user.category_gender.name %></td> <td>[<%= payment.user.category_gender_id %>]</td>
-        <td><%= payment.email %></td>
+        <td><%= link_to "#{payment.email}", user_path(payment.user) %></td>
         <td><%= payment.user.reference %></td> <td>[<%= payment.user_id %>]</td>
         <td><%= payment.reference %></td> <td>[<%= payment.id %>]</td>
         <td>
