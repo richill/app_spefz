@@ -74,6 +74,11 @@ class Event < ActiveRecord::Base
     self.category_quantitygender.name == "both X men & X women"
   end
 
+  #attendance [female + male] for selection: both_Xmen_and_Xwomen [selection_BothX_men_and_women]
+  def total_attendance_BothX_men_and_women
+    attendance = self.payments.by_females.count + self.payments.by_males.count
+  end
+
   #remaining_space [female + male] for selection: both_Xmen_and_Xwomen [selection_BothX_men_and_women]
   def total_available_places_BothX_men_and_women
     attendance = self.payments.by_females.count + self.payments.by_males.count
