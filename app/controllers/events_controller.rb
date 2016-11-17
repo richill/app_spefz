@@ -61,7 +61,11 @@ class EventsController < ApplicationController
   end
 
   def attendants
-    @event = Event.find(params[:id]) 
+    if current_user.admin_pa_management_group || current_user.pa_event_mgt_group 
+      @event = Event.find(params[:id]) 
+    else
+      redirect_to errorpermission_path
+    end
   end
 
   private
