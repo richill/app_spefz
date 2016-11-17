@@ -118,7 +118,7 @@ class User < ActiveRecord::Base
     # Group_E | primary_admins in account, client development & sales group
   end
 
-  def client_and_dummy_group
+  def client_group
     self.category_role.name == "Client" && self.category_managementgroup.name == "Account Group" ||
     self.category_role.name == "Client" && self.category_managementgroup.name == "Administration Group" ||
     self.category_role.name == "Client" && self.category_managementgroup.name == "Client Group" ||
