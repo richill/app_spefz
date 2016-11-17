@@ -1,1 +1,117 @@
-<h1>attendants</h1>
+<div class="members_section">
+  <div class="medium-12 columns socials_inner_section">
+
+    <!-- search -->
+
+    <!-- search -->
+
+    <!-- content -->
+    <div class="medium-12 columns member_content_section">
+      <div class="medium-12 columns content_container">
+        <div class="content_details">
+            
+            <!-- members -->
+            <%# if @users.blank? %>
+              <div><%# render 'shared/content_search_no_result' %></div>
+            <%# else %>
+              <ul class="inline-list">
+                <% @event.payments.each do |attendant| %>
+                  <% if current_user.subscribed_access? %>
+                    <li class="medium-3 columns member_container user_subscribed">
+                      <!-- dummy banner -->
+                      <div class="banner_wrapper_container_index">
+                        <div class="banner_wrapper_index">
+                          <% if current_user.admin_pa_management_group %>
+                            <% if attendant.user.category_managementgroup.name == "Dummy Group" %>
+                              <div class="banner_ribbon_wrapper_green_index">
+                                <div class="banner_ribbon_name_index">DUMMY</div>
+                              </div>
+                            <% end %>
+                          <% end %>
+                        </div>​
+                      </div>
+                      <!-- dummy banner -->
+                      <div class="medium-12 columns member_inner_container">
+                        <div class="image_section">
+                          <% if attendant.user.image_url.present? %>
+                            <div class="image_cover"><%= link_to(image_tag("#{attendant.user.image_url}", :alt =>  "image", :class =>"#"), user_path(attendant.user)) %></div>
+                          <% else %>
+                            <div class="image_cover"><%= link_to(image_tag("img-profile-image-default.png", :alt =>  "image", :class =>"#"), user_path(attendant.user)) %></div>
+                          <% end %>
+                        </div>
+                        <% if current_user.admin_pa_management_group %>
+                          <div class="user_info_adj">
+                            <div class="user_name"><%= link_to "#{attendant.user.firstname} #{attendant.user.lastname}", user_path(attendant.user) %></div>
+                            <div class="user_profession"><%= truncate(attendant.user.profession, length: 25) %></div>
+                            <div class="user_ref"><%= attendant.user.reference %></div>
+                          </div>
+                        <% else %>
+                          <div class="user_info">
+                            <div class="user_name"><%= link_to "#{attendant.user.firstname} #{attendant.user.lastname}", user_path(attendant.user) %></div>
+                            <div class="user_profession"><%= truncate(attendant.user.profession, length: 25) %></div>
+                          </div>
+                        <% end %>
+                      </div>
+                      <div class="clear"></div>
+                      <% if current_user.admin_pa_management_group || current_user.pa_administration_group %>
+                      <div class="user_roles">
+                        <span><i class="fa fa-user" aria-hidden="true"></i></span>
+                        <span><%= truncate(attendant.user.category_role.name, length: 25) %></span>
+                        <span class="divider"> | </span>
+                        <span><%= truncate(attendant.user.category_managementgroup.name, length: 25) %></span>
+                      </div>
+                      <% end %>
+                    </li>
+                  <% else %>
+                    <li class="medium-3 columns member_container user_unsubscribed">
+                      <!-- dummy banner -->
+                      <div class="banner_wrapper_container_index">
+                        <div class="banner_wrapper_index">
+                          <% if current_user.admin_pa_management_group %>
+                            <% if attendant.user.category_managementgroup.name == "Dummy Group" %>
+                              <div class="banner_ribbon_wrapper_green_index">
+                                <div class="banner_ribbon_name_index">DUMMY</div>
+                              </div>
+                            <% end %>
+                          <% end %>
+                        </div>​
+                      </div>
+                      <!-- dummy banner -->
+                      <div class="medium-12 columns member_inner_container">
+                        <div class="image_section">
+                          <% if attendant.user.image_url.present? %>
+                            <div class="image_cover"><%= link_to(image_tag("#{attendant.user.image_url}", :alt =>  "image", :class =>"#"), user_path(attendant.user)) %></div>
+                          <% else %>
+                            <div class="image_cover"><%= link_to(image_tag("img-profile-image-default.png", :alt =>  "image", :class =>"#"), user_path(attendant.user)) %></div>
+                          <% end %>
+                        </div>
+                        <div class="user_info">
+                          <div class="user_name"><%= link_to "#{attendant.user.firstname} #{attendant.user.lastname}", user_path(attendant.user) %></div>
+                          <div class="user_profession"><%= truncate(attendant.user.profession, length: 25) %></div>
+                        </div>
+                      </div>
+                      <div class="clear"></div>
+                      <% if current_user.admin_pa_management_group || current_user.pa_administration_group %>
+                      <div class="user_roles">
+                        <span><i class="fa fa-user" aria-hidden="true"></i></span>
+                        <span><%= truncate(attendant.user.category_role.name, length: 25) %></span>
+                        <span class="divider"> | </span>
+                        <span><%= truncate(attendant.user.category_managementgroup.name, length: 25) %></span>
+                      </div>
+                      <% end %>
+                    </li>
+                  <% end %>
+                <% end %>
+              <ul/>
+            <%# end %>
+            <div class="clear"></div>
+            <!-- members -->
+        </div>
+      </div>
+    </div>
+    <!-- content -->
+
+  </div>
+</div>
+
+
