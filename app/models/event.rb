@@ -64,4 +64,81 @@ class Event < ActiveRecord::Base
   def self.asc_order
     order('date ASC')
   end
+
+  #selection
+  def selection_BothAndOnly_men_and_women
+    self.category_quantitygender.name == "only men" || self.category_quantitygender.name == "only women" || self.category_quantitygender.name == "both men & women"
+  end
+
+  def selection_BothX_men_and_women
+    self.category_quantitygender.name == "both X men & X women"
+  end
+
+  #remaining_space [female + male] for selection: both_Xmen_and_Xwomen [selection_BothX_men_and_women]
+  def total_available_places_BothX_men_and_women
+    attendance = self.payments.by_females.count + self.payments.by_males.count
+    capacity   = self.quantity_women +  self.quantity_women
+    capacity - attendance
+  end
+
+  #remaining_space [female] for selection: both_Xmen_and_Xwomen [selection_BothX_men_and_women]
+  def available_places_Xwomen
+    attendance = self.payments.by_females.count
+    capacity   = self.quantity_women
+    capacity - attendance
+  end
+
+  #remaining_space [male] for selection: both_Xmen_and_Xwomen [selection_BothX_men_and_women]
+  def available_places_Xmen
+    attendance = self.payments.by_males.count
+    capacity   = self.quantity_men
+    capacity - attendance 
+  end
+
+
+  #remaining_space [female + women] for selection: both_men_and_women [selection_BothAndOnly_men_and_women]
+  def total_available_places_BothAndOnly_men_and_women
+    attendance = self.payments.by_females.count + self.payments.by_males.count 
+    capacity   = self.quantity 
+    capacity - attendance 
+  end
+
+  #remaining_space [female] for selection: only_women [selection_BothAndOnly_men_and_women]
+  def available_places_women
+    attendance = self.payments.by_females.count
+    capacity   = self.quantity
+    capacity - attendance
+  end
+
+  #remaining_space [male] for selection: only_men [selection_BothAndOnly_men_and_women]
+  def available_places_men
+    attendance = self.payments.by_males.count                                    
+    capacity   = self.quantity                                                  
+    capacity - attendance                                                        
+  end
+
+
+
+
+
+
+  # def sold_out?
+  #   self.selection_BothX_men_and_women && self.available_places_men <= 0 || self.available_places_men <= 0
+  # end
+
+
+
+
+  #only_male        | quantity
+  #only_women       | quantity
+  #both_male_women  | quantity
+  #Xmale_Xwomen     | quantiy_men & quantity_women
+
+
 end
+
+
+
+
+
+
