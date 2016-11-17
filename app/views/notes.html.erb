@@ -99,6 +99,34 @@ https://support.stripe.com/questions/stripe-account-for-multiple-projects
 Answer: No, we’d highly recommend avoiding this
 
 
+------------------------------------------------
+checking space at event
+------------------------------------------------
+only_men               | 10space        [quantity]
+only_women             | 10space        [quantity]
+both_men_and_women     | 10space        [quantity]
+bothX_men_and_women    | 5men 5women    [quantity_men and quantity_women]
+
+
+#selection
+def selection_BothAndOnly_men_and_women
+  self.category_quantitygender.name == "only men" || 
+  self.category_quantitygender.name == "only women" || 
+  self.category_quantitygender.name == "both men & women"
+end
+
+def selection_BothX_men_and_women
+  self.category_quantitygender.name == "both X men & X women"
+end
+
+#count number of users attending the event
+def listed_users_attending
+end
+
+#count number of users that are male attending the event
+
+#count number of users that are female attending the event
+
 
 
 
