@@ -231,6 +231,14 @@ class User < ActiveRecord::Base
     now.year - birthdate.year - (birthdate.to_date.change(:year => now.year) > now ? 1 : 0)
   end
 
+  # user can attend certains events depending on their age and event age group || no complete
+  # def age_limit(event_id)
+  #   event = Event.find(event_id)
+  #   if event.category_age.name == "18 - 24" && self.age >= 18 && self.age <= 24
+  #     true
+  #   end
+  # end
+
   #checks if current user is attending social
   # def current_user_attending?(social)
   #   self.socials.exists?(social: social)

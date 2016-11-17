@@ -28,6 +28,7 @@ class Event < ActiveRecord::Base
 
   scope :open_events, -> {where(['close = ? OR close IS ?', false, nil])}
 
+
   def generate_reference_number
     begin
       reference_length = 6

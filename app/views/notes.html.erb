@@ -120,7 +120,9 @@ def selection_BothX_men_and_women
 end
 
 #count number of users attending the event
-def listed_users_attending
+def listed_users_attending(event_id)
+  event = Event.find(event_id)
+  event.payments
 end
 
 #count number of users that are male attending the event
@@ -136,7 +138,7 @@ stackoverflow question
 i have a user (richill@gmail) with the user_id:4
 user_payments: displays the payments user_id:4 has made to attend events
 i also have an event (Networking Professionals) with the event_id:7
-event_payments: displays the of payments made by users to attend the event_id:7
+event_payments: displays the payments made by users to attend the event_id:7
 
 
 my user_id:4 has paid to attend the event_id:7
