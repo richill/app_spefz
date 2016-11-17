@@ -226,14 +226,14 @@ class User < ActiveRecord::Base
     # when a user deletes their account all their activities also gets deleted.
   end
 
+  def age
+    now = Time.now.utc.to_date
+    now.year - birthdate.year - (birthdate.to_date.change(:year => now.year) > now ? 1 : 0)
+  end
+
   #checks if current user is attending social
   # def current_user_attending?(social)
   #   self.socials.exists?(social: social)
-  # end
-
-  # # checks if current_user has paid to attend the event
-  # def current_user_paid?(event)
-  #   self.payments.exists?(event: event)
   # end
 end
 
