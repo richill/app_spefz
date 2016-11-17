@@ -2,7 +2,12 @@ class PaymentsController < ApplicationController
   before_action :set_payment, only: [:show, :edit, :update, :destroy]
 
   def index
-    @payments = Payment.order("created_at desc")
+    if current_user.admin_pa_management_group
+      @search = Payment.order("created_at desc").search(params[:q])
+      @payments = @search.result(distinct: true)
+    else
+      redirect_to errorpermission_path
+    end
   end
 
   def show
