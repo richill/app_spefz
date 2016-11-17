@@ -35,8 +35,8 @@ class Event < ActiveRecord::Base
     end while self.class.exists?(reference: reference)
   end
 
-  #checks if current user had paid to attend event
-  def current_user_attending?(user)
+  #checks if current user has paid to attend event
+  def current_user_attending_paid?(user)
     self.payments.exists?(user: user)
   end
 
