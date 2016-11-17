@@ -230,5 +230,10 @@ class User < ActiveRecord::Base
   # def current_user_attending?(social)
   #   self.socials.exists?(social: social)
   # end
+
+  # # checks if current_user has paid to attend the event
+  # def current_user_paid?(event)
+  #   self.payments.exists?(event: event)
+  # end
 end
 

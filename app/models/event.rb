@@ -35,6 +35,11 @@ class Event < ActiveRecord::Base
     end while self.class.exists?(reference: reference)
   end
 
+  #checks if current user had paid to attend event
+  def current_user_attending?(user)
+    self.payments.exists?(user: user)
+  end
+
   def expired_event
     self.date < Date.current
   end

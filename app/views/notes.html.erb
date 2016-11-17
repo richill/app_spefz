@@ -103,113 +103,94 @@ Answer: No, we’d highly recommend avoiding this
 
 
 ------------------------------------------------
-javascript coding for filters
+stackoverflow question
 ------------------------------------------------
-jQuery ->
-  topics = $('#q_category_topic_id_eq').html()
-  $('#q_category_country_id_eq').change ->
-    country = $('#q_category_country_id_eq :selected').text()
-    escaped_country = country.replace(/([ #;&,.+*~\':"!^$[\]()=>|\/@])/g, '\\$1')
-    options = $(topics).filter("optgroup[label='#{escaped_country}']").html()
-    if options
-      $('#q_category_topic_id_eq').html(options)
-      $('#q_category_topic_id_eq').parent().show()
-    else
-      $('#q_category_topic_id_eq').empty()
-      $('#q_category_topic_id_eq').parent().hide()
+i have a user (richill@gmail) with the user_id:4
+user_payments: displays the payments user_id:4 has made to attend events
+i also have an event (Networking Professionals) with the event_id:7
+event_payments: displays the of payments made by users to attend the event_id:7
 
 
-jQuery ->
-  $('#q_category_age_id_eq').find("optgroup[label]").hide()
-  ages = $('#q_category_age_id_eq').html()
-  $('#q_category_topic_id_eq').change ->
-    topic = $('#q_category_topic_id_eq :selected').text()
-    escaped_topic = topic.replace(/([ #;&,.+*~\':"!^$[\]()=>|\/@])/g, '\\$1')
-    options = $(ages).filter("optgroup[label='#{escaped_topic}']").html()
-    if options
-      $('#q_category_age_id_eq').html(options)
-      $('#q_category_age_id_eq').parent().show()
-    else
-      $('#q_category_age_id_eq').empty()
-      $('#q_category_age_id_eq').parent().hide()
+my user_id:4 has paid to attend the event_id:7
+user.payment.find(6) == event.payment.find(6)
+
+
+could one kindly advise me how i check within the event_payments that the payment made by user_id:4 exist
+
+2.3.0 :053 > ap user_payments
+[
+    [0] #<Payment:0x007fea73bcfb50> {
+                               :id => 5,
+                            :email => "richill@gmail.com",
+                          :user_id => 4,
+                        :reference => "SPz_YSQud-",
+                       :created_at => Mon, 14 Nov 2016 15:51:27 UTC +00:00,
+                       :updated_at => Wed, 16 Nov 2016 12:01:15 UTC +00:00,
+                         :event_id => 5,
+               :stripe_customer_id => "cus_9YuZZAniFCZVxn",
+                :stripe_payment_id => "ch_15BRanHHg52K5vK0aj1gKmn4",
+               :event_payment_date => Wed, 16 Nov 2016 13:52:23 UTC +00:00,
+                           :status => "success"
+    }
+    [1] #<Payment:0x007fea73bcfb50> {
+                               :id => 5,
+                            :email => "richill@gmail.com",
+                          :user_id => 4,
+                        :reference => "SPz_YSQud-",
+                       :created_at => Mon, 14 Nov 2016 15:51:27 UTC +00:00,
+                       :updated_at => Wed, 16 Nov 2016 12:01:15 UTC +00:00,
+                         :event_id => 5,
+               :stripe_customer_id => "cus_9YuZZAniFCZVxn",
+                :stripe_payment_id => "ch_15BRanHHg52K5vK0aj1gKmn4",
+               :event_payment_date => Wed, 16 Nov 2016 13:52:23 UTC +00:00,
+                           :status => "success"
+    }
+    [2] #<Payment:0x007fea73bcf5b0> {
+                               :id => 6,
+                            :email => "richill@gmail.com",
+                          :user_id => 4,
+                        :reference => "SPz_ruZ5om",
+                       :created_at => Wed, 16 Nov 2016 13:52:23 UTC +00:00,
+                       :updated_at => Wed, 16 Nov 2016 13:52:23 UTC +00:00,
+                         :event_id => 7,
+               :stripe_customer_id => "cus_9YuZZAniFCZVxn",
+                :stripe_payment_id => "ch_19GTpnAAe71J3vK0aj1gKryO",
+               :event_payment_date => Wed, 16 Nov 2016 13:52:23 UTC +00:00,
+                           :status => "success"
+    }
+]
 
 
 
-------------------------------------------------
-payment_controller.rb original content
-------------------------------------------------
-class PaymentsController < ApplicationController
-  before_action :set_payment, only: [:show, :edit, :update, :destroy]
-
-  def index
-    @payments = Payment.all
-  end
-
-  def show
-  end
-
-  def new
-    @subscription_id = params[:subscription_id]
-    @event_id = params[:event_id]
-    @payment = Payment.new
-    if @subscription_id.present?
-      @subscription = Subscription.find(params[:subscription_id])
-    elsif @event_id.present?
-      @event = Event.find(params[:event_id])
-    end
-  end
-
-  def edit
-  end
-
-  def create
-    @payment = Payment.new(payment_params)
-
-    respond_to do |format|
-      if @payment.save
-        format.html { redirect_to @payment, notice: 'Payment was successfully created.' }
-        format.json { render :show, status: :created, location: @payment }
-      else
-        format.html { render :new }
-        format.json { render json: @payment.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  def update
-    respond_to do |format|
-      if @payment.update(payment_params)
-        format.html { redirect_to @payment, notice: 'Payment was successfully updated.' }
-        format.json { render :show, status: :ok, location: @payment }
-      else
-        format.html { render :edit }
-        format.json { render json: @payment.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  def destroy
-    @payment.destroy
-    respond_to do |format|
-      format.html { redirect_to payments_url, notice: 'Payment was successfully destroyed.' }
-      format.json { head :no_content }
-    end
-  end
-
-  def is_path?(*paths)
-    paths.include?(request.path)
-  end
-
-  private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_payment
-      @payment = Payment.find(params[:id])
-    end
-
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def payment_params
-      params.require(:payment).permit(:email, :user_id, :subscription_id, :reference, :event_id)
-    end
-end
 
 
+
+2.3.0 :054 > event_payments
+[
+    [0] #<Payment:0x007fea72ac5b70> {
+                               :id => 6,
+                            :email => "richill@gmail.com",
+                          :user_id => 4,
+                        :reference => "SPz_ruZ5om",
+                       :created_at => Wed, 16 Nov 2016 13:52:23 UTC +00:00,
+                       :updated_at => Wed, 16 Nov 2016 13:52:23 UTC +00:00,
+                         :event_id => 7,
+               :stripe_customer_id => "cus_9YuZZAniFCZVxn",
+                :stripe_payment_id => "ch_19GTpnAAe71J3vK0aj1gKryO",
+               :event_payment_date => Wed, 16 Nov 2016 13:52:23 UTC +00:00,
+                           :status => "success"
+    }
+    [1] #<Payment:0x007fea72ac5b70> {
+                               :id => 7,
+                            :email => "peter@gmail.com",
+                          :user_id => 5,
+                        :reference => "SPz_mnX4ul",
+                       :created_at => Wed, 16 Nov 2016 13:52:23 UTC +00:00,
+                       :updated_at => Wed, 16 Nov 2016 13:52:23 UTC +00:00,
+                         :event_id => 7,
+               :stripe_customer_id => "cus_6FhLLMotYCCYvn",
+                :stripe_payment_id => "ch_20GTunDDt87J3vK1sp4gPry9",
+               :event_payment_date => Wed, 16 Nov 2016 13:52:23 UTC +00:00,
+                           :status => "success"
+    }
+]
