@@ -118,25 +118,21 @@ class User < ActiveRecord::Base
     # Group_E | primary_admins in account, client development & sales group
   end
 
-  def client_group
+  def client_and_dummy_group
     self.category_role.name == "Client" && self.category_managementgroup.name == "Account Group" ||
     self.category_role.name == "Client" && self.category_managementgroup.name == "Administration Group" ||
     self.category_role.name == "Client" && self.category_managementgroup.name == "Client Group" ||
     self.category_role.name == "Client" && self.category_managementgroup.name == "Development Group" ||
     self.category_role.name == "Client" && self.category_managementgroup.name == "Event Management Group" ||
     self.category_role.name == "Client" && self.category_managementgroup.name == "Management Group" ||
-    self.category_role.name == "Client" && self.category_managementgroup.name == "Sales/Marketing Group"
+    self.category_role.name == "Client" && self.category_managementgroup.name == "Sales/Marketing Group" ||
+    self.category_role.name == "Client" && self.category_managementgroup.name == "Dummy Group"
     # Group_F | client in account, adminstration, client, development, event mgt, management, sales group
   end
 
   def client_guest_group
     self.category_role.name == "Client" && self.category_managementgroup.name == "Client Guest Group"
     # Group_G | clients in client guest group: users here do not have to subscribe to fully use the site - this acts as a free subscription for users
-  end
-
-  def dummy_group
-    self.category_role.name == "Client" && self.category_managementgroup.name == "Dummy Group"
-    # Group_H | clients in dummy guest group: users here have the same rights as client_group
   end
 
   def subscribed?
