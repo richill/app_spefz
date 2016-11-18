@@ -176,7 +176,7 @@ class PaymentsController < ApplicationController
 
       respond_to do |format|
         if @payment.save
-          format.html { redirect_to dashboard_user_path(current_user), notice: 'Your Booking Payment was successful.' }
+          format.html { redirect_to user_event_path(@payment.user, @payment.event), notice: 'Your Booking Payment was successful.' }
           format.json { render :show, status: :created, location: @payment }
         else
           format.html { redirect_to new_payment_path(event_id: @event.id), alert: 'Ensure all fields are completed'}
