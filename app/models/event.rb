@@ -91,10 +91,7 @@ class Event < ActiveRecord::Base
   def total_available_places_BothX_men_and_women
     attendance = self.payments.by_females.count + self.payments.by_males.count
     capacity   = self.quantity_women +  self.quantity_men
-    availability = capacity - attendance
-    # if availability <= 0
-    #   0
-    # end 
+    capacity - attendance
   end
 
   #remaining_space [female] for selection: both_Xmen_and_Xwomen [selection_BothX_men_and_women]
@@ -115,10 +112,7 @@ class Event < ActiveRecord::Base
   def total_available_places_BothAndOnly_men_and_women
     attendance = self.payments.by_females.count + self.payments.by_males.count 
     capacity   = self.quantity 
-    availability = capacity - attendance
-    # if availability <= 0
-    #   0
-    # end  
+    capacity - attendance 
   end
 
   #remaining_space [female] for selection: only_women [selection_BothAndOnly_men_and_women]
