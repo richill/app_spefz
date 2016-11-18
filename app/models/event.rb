@@ -79,6 +79,14 @@ class Event < ActiveRecord::Base
     attendance = self.payments.by_females.count + self.payments.by_males.count
   end
 
+  def attendance_Xmen
+    attendance = self.payments.by_males.count
+  end
+
+  def attendance_Xwomen
+    attendance = self.payments.by_females.count
+  end
+
   #remaining_space [female + male] for selection: both_Xmen_and_Xwomen [selection_BothX_men_and_women]
   def total_available_places_BothX_men_and_women
     attendance = self.payments.by_females.count + self.payments.by_males.count
