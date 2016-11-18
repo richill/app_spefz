@@ -40,15 +40,34 @@
             </div>
           </li>
           <li><span class="divider"></span></li>
+
+          <!-- workings -->
           <li>
-            <% if current_user.admin_pa_management_group %>
-              <div class="attendance">
-                <div>
-                  <span class="event_header">Attendance</span>
+            <% if @event.selection_BothX_men_and_women %>
+              <% if current_user.admin_pa_management_group %>
+                <div class="capacity">
+                  <span class="event_header">Capacity</span>
                   <i class="fa fa-university" aria-hidden="true"></i>: 
                   <span><%= (@event.quantity_men) +  (@event.quantity_women) %></span>
                   <span>-</span>
                   <span>£<%= ((@event.quantity_men) + (@event.quantity_women)) * (@event.price).to_i %></span>
+                  <span class="divider">|</span>
+                  <i class="fa fa-male" aria-hidden="true"></i>: 
+                  <span><%= @event.quantity_men %></span>
+                  <span>-</span>
+                  <span>£<%= (@event.quantity_men) * (@event.price).to_i %></span>
+                  <span class="divider">|</span>
+                  <i class="fa fa-female" aria-hidden="true"></i>: 
+                  <span><%= @event.quantity_women %></span>
+                  <span>-</span>
+                  <span>£<%= (@event.quantity_women) * (@event.price).to_i %></span>
+                </div>
+                <div class="attendance">
+                  <span class="event_header">Attendance</span>
+                  <i class="fa fa-users" aria-hidden="true"></i>: 
+                  <span><%= @event.total_attendance_BothX_men_and_women %></span>
+                  <span>-</span>
+                  <span>£<%= (@event.total_attendance_BothX_men_and_women)  * (@event.price).to_i %></span>
                   <span class="divider">|</span>
                   <i class="fa fa-male" aria-hidden="true"></i>: 
                   <span><%= @event.payments.by_males.count %></span>
@@ -59,85 +78,83 @@
                   <span><%= @event.payments.by_females.count %></span>
                   <span>-</span>
                   <span>£<%= (@event.payments.by_females.count) * (@event.price).to_i %></span>
-                  <span class="divider">|</span>
-                  <i class="fa fa-users" aria-hidden="true"></i>: 
-                  <span><%= @event.total_attendance_BothX_men_and_women %></span>
-                  <span>-</span>
-                  <span>£<%= (@event.total_attendance_BothX_men_and_women)  * (@event.price).to_i %></span>
                 </div>
-              </div>
-              <div class="availability">
-                <div>
-                  <span class="event_header">Availability</span>
-                  <i class="fa fa-university" aria-hidden="true"></i>: 
-                  <span><%= @event.total_available_places_BothX_men_and_women %></span>
-                  <span>-</span>
-                  <span>£<%= (@event.total_available_places_BothX_men_and_women)  * (@event.price).to_i %></span>
-                  <span class="divider">|</span>
-                  <i class="fa fa-male" aria-hidden="true"></i>: 
-                  <span><%= @event.available_places_Xmen %></span>
-                  <span>-</span>
-                  <span>£<%= (@event.available_places_Xmen) * (@event.price).to_i %></span>
-                  <span class="divider">|</span>
-                  <i class="fa fa-female" aria-hidden="true"></i>: 
-                  <span><%= @event.available_places_Xwomen %></span>
-                  <span>-</span>
-                  <span>£<%= (@event.available_places_Xwomen) * (@event.price).to_i %></span>
-                </div>
-              </div>
-            <% end %>
-            <div class="profit_loss">
-              <% if ((@event.total_attendance_BothX_men_and_women)  * (@event.price).to_i) > (((@event.quantity_men) + (@event.quantity_women)) * (@event.price).to_i) %>
-                <div class="profit">
-                  <span><%= "profit" %></span>
-                  <span class="divider"> || </span>
-                  <i class="fa fa-university" aria-hidden="true"></i>: 
-                  <span><%= (@event.quantity_men) +  (@event.quantity_women) %> [capacity]</span>
-                  <span class="divider">|</span>
-                  <i class="fa fa-male" aria-hidden="true"></i>: 
-                  <span><%= @event.payments.by_males.count %></span>
-                  <span class="divider">|</span>
-                  <i class="fa fa-female" aria-hidden="true"></i>: 
-                  <span><%= @event.payments.by_females.count %></span>
-                  <span class="divider">|</span>
-                  <i class="fa fa-users" aria-hidden="true"></i>: 
-                  <span><%= @event.total_attendance_BothX_men_and_women %> [total attendance]</span>
-                </div>
-              <% elsif ((@event.total_attendance_BothX_men_and_women)  * (@event.price).to_i) == (((@event.quantity_men) + (@event.quantity_women)) * (@event.price).to_i)  %>
-                <div class="break_even">
-                  <span><%= "break-even" %></span>
-                  <span class="divider"> || </span>
-                  <i class="fa fa-university" aria-hidden="true"></i>: 
-                  <span><%= (@event.quantity_men) +  (@event.quantity_women) %> [capacity]</span>
-                  <span class="divider">|</span>
-                  <i class="fa fa-male" aria-hidden="true"></i>: 
-                  <span><%= @event.payments.by_males.count %></span>
-                  <span class="divider">|</span>
-                  <i class="fa fa-female" aria-hidden="true"></i>: 
-                  <span><%= @event.payments.by_females.count %></span>
-                  <span class="divider">|</span>
-                  <i class="fa fa-users" aria-hidden="true"></i>: 
-                  <span><%= @event.total_attendance_BothX_men_and_women %> [total attendance]</span>
-                </div>
-              <% elsif ((@event.total_attendance_BothX_men_and_women)  * (@event.price).to_i) < (((@event.quantity_men) + (@event.quantity_women)) * (@event.price).to_i)  %>
-                <div class="loss">
-                  <span><%= "loss" %></span>
-                  <span class="divider"> || </span>
-                  <i class="fa fa-university" aria-hidden="true"></i>: 
-                  <span><%= (@event.quantity_men) +  (@event.quantity_women) %> [capacity]</span>
-                  <span class="divider">|</span>
-                  <i class="fa fa-male" aria-hidden="true"></i>: 
-                  <span><%= @event.payments.by_males.count %></span>
-                  <span class="divider">|</span>
-                  <i class="fa fa-female" aria-hidden="true"></i>: 
-                  <span><%= @event.payments.by_females.count %></span>
-                  <span class="divider">|</span>
-                  <i class="fa fa-users" aria-hidden="true"></i>: 
-                  <span><%= @event.total_attendance_BothX_men_and_women %> [total attendance]</span>
+                <div class="availability">
+                  <div>
+                    <span class="event_header">Availability</span>
+                    <i class="fa fa-university" aria-hidden="true"></i>: 
+                    <span><%= @event.total_available_places_BothX_men_and_women %></span>
+                    <span>-</span>
+                    <span>£<%= (@event.total_available_places_BothX_men_and_women)  * (@event.price).to_i %></span>
+                    <span class="divider">|</span>
+                    <i class="fa fa-male" aria-hidden="true"></i>: 
+                    <span><%= @event.available_places_Xmen %></span>
+                    <span>-</span>
+                    <span>£<%= (@event.available_places_Xmen) * (@event.price).to_i %></span>
+                    <span class="divider">|</span>
+                    <i class="fa fa-female" aria-hidden="true"></i>: 
+                    <span><%= @event.available_places_Xwomen %></span>
+                    <span>-</span>
+                    <span>£<%= (@event.available_places_Xwomen) * (@event.price).to_i %></span>
+                  </div>
                 </div>
               <% end %>
-            </div>
+              <div class="profit_loss">
+                <% if ((@event.total_attendance_BothX_men_and_women)  * (@event.price).to_i) > (((@event.quantity_men) + (@event.quantity_women)) * (@event.price).to_i) %>
+                  <div class="profit">
+                    <span><%= "profit" %></span>
+                    <span class="divider"> || </span>
+                    <i class="fa fa-university" aria-hidden="true"></i>: 
+                    <span><%= (@event.quantity_men) +  (@event.quantity_women) %> [capacity]</span>
+                    <span class="divider">|</span>
+                    <i class="fa fa-male" aria-hidden="true"></i>: 
+                    <span><%= @event.payments.by_males.count %></span>
+                    <span class="divider">|</span>
+                    <i class="fa fa-female" aria-hidden="true"></i>: 
+                    <span><%= @event.payments.by_females.count %></span>
+                    <span class="divider">|</span>
+                    <i class="fa fa-users" aria-hidden="true"></i>: 
+                    <span><%= @event.total_attendance_BothX_men_and_women %> [total attendance]</span>
+                  </div>
+                <% elsif ((@event.total_attendance_BothX_men_and_women)  * (@event.price).to_i) == (((@event.quantity_men) + (@event.quantity_women)) * (@event.price).to_i)  %>
+                  <div class="break_even">
+                    <span><%= "break-even" %></span>
+                    <span class="divider"> || </span>
+                    <i class="fa fa-university" aria-hidden="true"></i>: 
+                    <span><%= (@event.quantity_men) +  (@event.quantity_women) %> [capacity]</span>
+                    <span class="divider">|</span>
+                    <i class="fa fa-male" aria-hidden="true"></i>: 
+                    <span><%= @event.payments.by_males.count %></span>
+                    <span class="divider">|</span>
+                    <i class="fa fa-female" aria-hidden="true"></i>: 
+                    <span><%= @event.payments.by_females.count %></span>
+                    <span class="divider">|</span>
+                    <i class="fa fa-users" aria-hidden="true"></i>: 
+                    <span><%= @event.total_attendance_BothX_men_and_women %> [total attendance]</span>
+                  </div>
+                <% elsif ((@event.total_attendance_BothX_men_and_women)  * (@event.price).to_i) < (((@event.quantity_men) + (@event.quantity_women)) * (@event.price).to_i)  %>
+                  <div class="loss">
+                    <span><%= "loss" %></span>
+                    <span class="divider"> || </span>
+                    <i class="fa fa-university" aria-hidden="true"></i>: 
+                    <span><%= (@event.quantity_men) +  (@event.quantity_women) %> [capacity]</span>
+                    <span class="divider">|</span>
+                    <i class="fa fa-male" aria-hidden="true"></i>: 
+                    <span><%= @event.payments.by_males.count %></span>
+                    <span class="divider">|</span>
+                    <i class="fa fa-female" aria-hidden="true"></i>: 
+                    <span><%= @event.payments.by_females.count %></span>
+                    <span class="divider">|</span>
+                    <i class="fa fa-users" aria-hidden="true"></i>: 
+                    <span><%= @event.total_attendance_BothX_men_and_women %> [total attendance]</span>
+                  </div>
+                <% end %>
+              </div>
+            <% elsif @event.selection_BothAndOnly_men_and_women %>
+              <%= "do something" %>
+            <% end %>
           </li>
+          <!-- workings -->
         </ul>
       </div>
     </div>
