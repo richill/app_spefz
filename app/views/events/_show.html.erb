@@ -41,6 +41,7 @@
       <span>capacity: <%= (@event.quantity_men) + (@event.quantity_women) %></span> |
       <span>capacity [men]: <%= @event.quantity_men %></span> |
       <span>capacity [women]: <%= @event.quantity_women %></span> |
+      
       <span>space: <%= @event.total_available_places_BothX_men_and_women %></span> | 
       <span>space [men]: <%= @event.available_places_Xmen %></span> | 
       <span>space [women]: <%= @event.available_places_Xwomen %></span> |
@@ -61,7 +62,7 @@
         <% if @event.selection_BothX_men_and_women %>
           <li>
             <span class="content_gender"><i class="fa fa-male" aria-hidden="true"></i> </span>
-            <% if @event.sold_out_BothX_men_and_women? %>
+            <% if @event.sold_out_Xmen? %>
               <span class="content content_soldout">sold out</span>
             <% else %>
               <span class="content content_available">available</span>
@@ -70,7 +71,7 @@
           <li><span>|</span></li>
           <li>
             <span class="content_gender"><i class="fa fa-female" aria-hidden="true"></i> </span>
-            <% if @event.sold_out_BothX_men_and_women? %>
+            <% if @event.sold_out_Xwomen? %>
               <span class="content content_soldout">sold out</span>
             <% else %>
               <span class="content content_available">available</span>
