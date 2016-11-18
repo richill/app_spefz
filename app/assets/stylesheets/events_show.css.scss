@@ -211,6 +211,7 @@
 
 .events_show_inner_section .middle_section .right {
   margin-bottom: 0px;
+  padding: 0px 5px !important;
 }
 
 .events_show_inner_section .middle_section .right li {
@@ -402,7 +403,7 @@
 .events_show_inner_section .attendants a {
   padding: 10px 15px;
   font-size: 14px;
-  margin-right: 8px;
+  margin-left: 8px;
   background-color: #4BB4BF !important;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
@@ -414,7 +415,7 @@
 }
 
 .events_show_inner_section .attendants a:hover {
-  background-color: #eeaa02 !important;
+  background-color: rgba(47, 63, 91, 0.5) !important;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
@@ -515,7 +516,6 @@
 
 .events_show_inner_section .btn_edit a:hover {
   padding: 10px 25px;
-  margin-left: -15px;
   display: inline-block;
   background-color: rgba(47, 63, 91, 0.5) !important;
   -webkit-transition: all 0.3s ease;

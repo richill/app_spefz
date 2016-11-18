@@ -69,13 +69,6 @@
         </li>
       </ul>
       <ul class="inline-list right">
-        <% if current_user.admin_pa_management_group || current_user.pa_event_mgt_group  %>
-          <li class="field attendants">
-            <%= link_to attendants_event_path(@event) do %>
-              <i class="fa fa-users" aria-hidden="true"></i>
-            <% end %>
-          </li>
-        <% end %>
         <% if @event.current_user_attending_paid?(current_user) %>
           <li><span><div class="event_show_btn btn_event_booked"><%= link_to 'Booked!', user_event_path(@event.user, @event) %></div></span></li>
         <% else %>
@@ -92,6 +85,13 @@
             <% end %>
           </div>
         </li>
+        <% if current_user.admin_pa_management_group || current_user.pa_event_mgt_group  %>
+          <li class="field attendants">
+            <%= link_to attendants_event_path(@event) do %>
+              <i class="fa fa-users" aria-hidden="true"></i>
+            <% end %>
+          </li>
+        <% end %>
         <% if current_user.admin_pa_management_group || current_user.pa_event_mgt_group %>
           <li>
             <div class="event_show_btn btn_edit"><%= link_to "edit", edit_user_event_path(@event.user, @event) %></div>
