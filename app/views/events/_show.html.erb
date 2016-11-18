@@ -44,7 +44,7 @@
     </div>
   </div>
 
-  
+
   <!-- middle section -->
   <div class="medium-12 columns middle_section">
     <div class="middle_inner_section">
@@ -95,13 +95,23 @@
         </li>
       </ul>
       <ul class="inline-list right">
+
+
         <% if @event.current_user_attending_paid?(current_user) %>
           <li><span><div class="event_show_btn btn_event_booked"><%= link_to 'Booked!', user_event_path(@event.user, @event) %></div></span></li>
         <% else %>
           <% unless @event.sold_out? %>
-            <li><span><div class="event_show_btn btn_event_booknow"><%= link_to 'Book Now!', new_payment_path(event_id: @event.id, user: current_user.id), target:"_blank" %></div></span></li>
+            <%# if @event.category_quantitygender.name == "only women" && current_user.category_gender.name == "Female" || 
+              @event.category_quantitygender.name == "only men" && current_user.category_gender.name == "Male" %>
+              <!-- <li><span><div class="event_show_btn btn_social_attendance_restrictions"><%= link_to 'Attendance Restriction!', "#" %></div></span></li> -->
+            <%# else %>
+              <li><span><div class="event_show_btn btn_event_booknow"><%= link_to 'Book Now!', new_payment_path(event_id: @event.id, user: current_user.id), target:"_blank" %></div></span></li>
+            <%# end %>
           <% end %>
         <% end %>
+
+
+
         <li>
           <div class="event_show_btn">
             <% if current_user %>
