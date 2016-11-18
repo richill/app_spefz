@@ -10,9 +10,9 @@
             <div class="event_details">
               <div>
                 <% if @event.image.present? %>
-                  <div class="image_cover"><%= link_to(image_tag("#{@event.image_url}", :alt =>  "image", :class =>"#"), user_event_path(@event.user, @event)) %></div>
+                  <div class="image_cover event_image_cover"><%= link_to(image_tag("#{@event.image_url}", :alt =>  "image", :class =>"#"), user_event_path(@event.user, @event)) %></div>
                 <% else %>
-                  <div class="image_cover"><%= link_to(image_tag("img_feed_07.png", :alt =>  "image", :class =>"#"), "#") %></div>
+                  <div class="image_cover event_image_cover"><%= link_to(image_tag("img_feed_07.png", :alt =>  "image", :class =>"#"), "#") %></div>
                 <% end %>
               </div>        
               <div><%= link_to @event.title, user_event_path(@event.user, @event)  %></div>

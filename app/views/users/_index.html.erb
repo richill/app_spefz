@@ -57,7 +57,7 @@
                           <% if user.image_url.present? %>
                             <div class="image_cover"><%= link_to(image_tag("#{user.image_url}", :alt =>  "image", :class =>"#"), user) %></div>
                           <% else %>
-                            <div class="image_cover"><%= link_to(image_tag("img-profile-image-default.png", :alt =>  "image", :class =>"#"), user) %></div>
+                            <div class="image_cover" style="border-radius:0px;"><%= link_to(image_tag("img-profile-image-default.png", :alt =>  "image", :class =>"#"), user) %></div>
                           <% end %>
                         </div>
                         <% if current_user.admin_pa_management_group %>

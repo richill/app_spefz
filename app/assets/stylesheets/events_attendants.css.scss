@@ -355,6 +355,10 @@
   -o-transition: all 0.3s ease;
 }
 
+.attendants_section .event_image_cover img {
+  border-radius: 0px !important;
+}
+
 .attendants_section .user_info_adj {
   padding: 0px;
   float: left;
