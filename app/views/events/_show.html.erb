@@ -46,7 +46,7 @@
 
 
   <!-- notes -->
-    <div>
+    <div class="selection_BothX_men_and_women">
       <span>capacity: <%= (@event.quantity_men) + (@event.quantity_women) %></span> |
       <span>capacity [men]: <%= @event.quantity_men %></span> |
       <span>capacity [women]: <%= @event.quantity_women %></span> |
@@ -58,6 +58,12 @@
       <span>attendance: <%= @event.total_attendance_BothX_men_and_women %></span> | 
       <span>attendance [men]: <%= @event.attendance_Xmen %></span> | 
       <span>attendance [women]: <%= @event.attendance_Xwomen %></span>
+    </div>
+
+    <div class="selection_BothAndOnly_men_and_women">
+      <span>capacity: <%= @event.quantity %></span> |
+      <span>space: <%= @event.total_available_places_BothAndOnly_men_and_women %></span> | 
+      <span>attendance: <%= @event.total_attendance_BothAndOnly_men_and_women %></span> |
     </div>
   <!-- notes -->
   <!-- middle section -->

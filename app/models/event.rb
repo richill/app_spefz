@@ -129,6 +129,11 @@ class Event < ActiveRecord::Base
     capacity - attendance                                                        
   end
 
+  #attendance [female + women] for selection: both_men_and_women [selection_BothAndOnly_men_and_women]
+  def total_attendance_BothAndOnly_men_and_women
+    attendance = self.payments.by_females.count + self.payments.by_males.count
+  end
+
   def sold_out?
     self.selection_BothX_men_and_women && self.total_available_places_BothX_men_and_women <= 0
   end
