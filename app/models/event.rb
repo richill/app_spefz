@@ -135,7 +135,8 @@ class Event < ActiveRecord::Base
   end
 
   def sold_out?
-    self.selection_BothX_men_and_women && self.total_available_places_BothX_men_and_women <= 0
+    self.selection_BothX_men_and_women && self.total_available_places_BothX_men_and_women <= 0 ||
+    self.selection_BothAndOnly_men_and_women && self.total_available_places_BothAndOnly_men_and_women <= 0
   end
 
   def sold_out_Xmen?
