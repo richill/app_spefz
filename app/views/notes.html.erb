@@ -100,36 +100,34 @@ Answer: No, we’d highly recommend avoiding this
 
 
 ------------------------------------------------
-checking space at event
+very important for event page
 ------------------------------------------------
 only_men               | 10space        [quantity]
 only_women             | 10space        [quantity]
 both_men_and_women     | 10space        [quantity]
 bothX_men_and_women    | 5men 5women    [quantity_men and quantity_women]
 
+<div class="ref_notes hide">
+  <div class="selection_BothX_men_and_women">
+    <span>capacity: <%= (@event.quantity_men) + (@event.quantity_women) %></span> |
+    <span>capacity [men]: <%= @event.quantity_men %></span> |
+    <span>capacity [women]: <%= @event.quantity_women %></span> |
 
-#selection
-def selection_BothAndOnly_men_and_women
-  self.category_quantitygender.name == "only men" || 
-  self.category_quantitygender.name == "only women" || 
-  self.category_quantitygender.name == "both men & women"
-end
+    <span>space: <%= @event.total_available_places_BothX_men_and_women %></span> | 
+    <span>space [men]: <%= @event.available_places_Xmen %></span> | 
+    <span>space [women]: <%= @event.available_places_Xwomen %></span> |
 
-def selection_BothX_men_and_women
-  self.category_quantitygender.name == "both X men & X women"
-end
+    <span>attendance: <%= @event.total_attendance_BothX_men_and_women %></span> | 
+    <span>attendance [men]: <%= @event.attendance_Xmen %></span> | 
+    <span>attendance [women]: <%= @event.attendance_Xwomen %></span>
+  </div>
 
-#count number of users attending the event
-def listed_users_attending(event_id)
-  event = Event.find(event_id)
-  event.payments
-end
-
-#count number of users that are male attending the event
-
-#count number of users that are female attending the event
-
-
+  <div class="selection_BothAndOnly_men_and_women">
+    <span>capacity: <%= @event.quantity %></span> |
+    <span>space: <%= @event.total_available_places_BothAndOnly_men_and_women %></span> | 
+    <span>attendance: <%= @event.total_attendance_BothAndOnly_men_and_women %></span>
+  </div>
+</div>
 
 
 ------------------------------------------------
