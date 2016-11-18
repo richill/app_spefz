@@ -32,12 +32,13 @@
                 <span class="price_figure">£<%= number_with_precision(@event.price, precision: 2) %></span>
               </div>
               <div class="event_hosts">
-                <span>Event Hosts: </span>
-                <span><%= link_to "Ian Gallaper", "#" %></span>
-                <span> & </span>
-                <span><%= link_to "Emma Watson", "#" %></span>
-                <span class="divider">|</span>
-                <span>Type: <%= @event.category_quantitygender.name %></span>
+                <div>
+                  <span>Event Hosts: </span>
+                  <span><%= link_to "Ian Gallaper", "#" %></span>
+                  <span> & </span>
+                  <span><%= link_to "Emma Watson", "#" %></span>
+                </div>
+                <div class="event_gender_type">Event Type: <%= link_to @event.category_quantitygender.name, "#" %></div>
               </div>
             </div>
           </li>
@@ -180,9 +181,21 @@
                 <div class="availability">
                   <span class="event_header">Availability</span>
                   <i class="fa fa-university" aria-hidden="true"></i>: 
-                  <span><%= @event.total_available_places_BothAndOnly_men_and_women %></span>
+                  <span>
+                    <% if @event.total_available_places_BothAndOnly_men_and_women <= 0 %>
+                      0
+                    <% else %>
+                      <%= @event.total_available_places_BothAndOnly_men_and_women %>
+                    <% end %>
+                  </span>
                   <span>-</span>
-                  <span>£<%= (@event.total_available_places_BothAndOnly_men_and_women) * (@event.price).to_i %></span>
+                  <span>
+                    <% if ((@event.total_available_places_BothAndOnly_men_and_women) * (@event.price).to_i) <= 0 %>
+                      £0
+                    <% else %>
+                      £<%= (@event.total_available_places_BothAndOnly_men_and_women) * (@event.price).to_i %>
+                    <% end %>
+                  </span>
                   <% if @event.category_quantitygender.name == "only men" %>
                     <span class="divider">|</span>
                     <i class="fa fa-male" aria-hidden="true"></i>: 
@@ -195,12 +208,12 @@
                     <span><%= @event.available_places_women %></span>
                     <span>-</span>
                     <span>£<%= (@event.available_places_women) * (@event.price).to_i %></span>
-                  <% elsif @event.category_quantitygender.name == "both men & women" %>
-                    <span class="divider">|</span>
+                  <%# elsif @event.category_quantitygender.name == "both men & women" %>
+                    <!-- <span class="divider">|</span>
                     <i class="fa fa-users" aria-hidden="true"></i>: 
                     <span><%= @event.total_available_places_BothAndOnly_men_and_women %></span>
                     <span>-</span>
-                    <span>£<%= (@event.total_available_places_BothAndOnly_men_and_women) * (@event.price).to_i %></span>
+                    <span>£<%= (@event.total_available_places_BothAndOnly_men_and_women) * (@event.price).to_i %></span> -->
                   <% end %>
                 </div>
               <% end %>
