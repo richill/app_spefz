@@ -19,8 +19,12 @@ class UsersController < ApplicationController
   end
 
   def show
-    @events = Event.live_events.open_events
-    @activities_user = PublicActivity::Activity.order("created_at desc").where(owner_id: @user)
+    if current_user.image?
+      @events = Event.live_events.open_events
+      @activities_user = PublicActivity::Activity.order("created_at desc").where(owner_id: @user)
+    else
+      redirect_to image_restriction_page_path
+    end
   end
 
   def edit

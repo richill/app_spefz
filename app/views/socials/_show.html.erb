@@ -94,7 +94,11 @@
                         @social.category_quantitygender.name == "only men" && current_user.category_gender.name == "Male" %>
                     <% unless current_user.attending_socials.exists?(id: @social.id) %>
                       <% unless @social.sold_out? %> <!-- note: if ticket is sold out do not display attend button -->
-                        <div class="social_profile_btn btn_social_attend"><%= link_to 'Attend', attending_socials_path(social_id: @social), method: :post %></div>
+                        <% if current_user.image? %>
+                          <div class="social_profile_btn btn_social_attend"><%= link_to 'Attend', attending_socials_path(social_id: @social), method: :post %></div>
+                        <% else %>
+                          <div class="social_profile_btn btn_social_attend"><%= link_to 'Attend', image_restriction_page_path %></div>
+                        <% end %>
                       <% end %>
                     <% else %>
                       <div class="social_profile_btn btn_social_unattend"><%= link_to 'Un-Attend Social', attending_social_path(@social), method: :delete %></div>
@@ -102,7 +106,11 @@
                   <% elsif @social.category_quantitygender.name == "both men & women" && current_user.category_gender.name == "Male" || @social.category_quantitygender.name == "both men & women" && current_user.category_gender.name == "Female" %>
                     <% unless current_user.attending_socials.exists?(id: @social.id)  %>
                       <% unless @social.sold_out? %> <!-- note: if ticket is sold out do not display attend button -->
-                        <div class="social_profile_btn btn_social_attend"><%= link_to 'Attend', attending_socials_path(social_id: @social), method: :post %></div>
+                        <% if current_user.image? %>
+                          <div class="social_profile_btn btn_social_attend"><%= link_to 'Attend', attending_socials_path(social_id: @social), method: :post %></div>
+                        <% else %>
+                          <div class="social_profile_btn btn_social_attend"><%= link_to 'Attend', image_restriction_page_path %></div>
+                        <% end %>
                       <% end %>
                     <% else %>
                         <div class="social_profile_btn btn_social_unattend"><%= link_to 'Un-Attend Social', attending_social_path(@social), method: :delete %></div>
