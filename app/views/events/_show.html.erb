@@ -11,6 +11,15 @@
 
               <!-- left_evt_details -->
               <div class="medium-3 columns left_evt_details">
+                <!-- sold out -->
+                <% if @event.sold_out? %>
+                  <div class="banner">
+                    <div class="ribbon-wrapper-green">
+                      <div class="ribbon-green">sold out</div>
+                    </div>
+                  </div>
+                <% end %>
+                <!-- sold out -->
                 <% if @event.image.present? %>
                   <div class="image_cover"><%= image_tag("#{@event.image_url}") %></div>
                 <% else %>
@@ -41,7 +50,7 @@
       <span>capacity: <%= (@event.quantity_men) + (@event.quantity_women) %></span> |
       <span>capacity [men]: <%= @event.quantity_men %></span> |
       <span>capacity [women]: <%= @event.quantity_women %></span> |
-      
+
       <span>space: <%= @event.total_available_places_BothX_men_and_women %></span> | 
       <span>space [men]: <%= @event.available_places_Xmen %></span> | 
       <span>space [women]: <%= @event.available_places_Xwomen %></span> |

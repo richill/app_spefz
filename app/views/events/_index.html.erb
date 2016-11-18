@@ -46,11 +46,15 @@
                 <% @events.asc_order.live_events.each do |event| %>
                 <li class="medium-12 columns listed_events">
                   <div class="medium-12 columns image_content_info">
-                    <div class="banner">
-                      <div class="ribbon-wrapper-green">
-                        <div class="ribbon-green">sold out</div>
+                    <!-- sold out -->
+                    <% if event.sold_out? %>
+                      <div class="banner">
+                        <div class="ribbon-wrapper-green">
+                          <div class="ribbon-green">sold out</div>
+                        </div>
                       </div>
-                    </div>
+                    <% end %>
+                    <!-- sold out -->
                     <!-- left_evt content -->
                     <div class="left_evt">
                       <%= link_to user_event_path(event.user, event) do %>
