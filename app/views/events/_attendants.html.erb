@@ -182,7 +182,7 @@
                   <i class="fa fa-university" aria-hidden="true"></i>: 
                   <span><%= @event.total_available_places_BothAndOnly_men_and_women %></span>
                   <span>-</span>
-                  <span>£<%= (@event.total_available_places_BothAndOnly_men_and_women)  * (@event.price).to_i %></span>
+                  <span>£<%= (@event.total_available_places_BothAndOnly_men_and_women) * (@event.price).to_i %></span>
                   <% if @event.category_quantitygender.name == "only men" %>
                     <span class="divider">|</span>
                     <i class="fa fa-male" aria-hidden="true"></i>: 
