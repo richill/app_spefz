@@ -44,20 +44,24 @@
 
 
         <!-- workings -->
-        <li>
-          <span class="content_gender"><i class="fa fa-male" aria-hidden="true"></i> </span>
-          <span class="content content_available">available</span>
-        </li>
-        <li><span>|</span></li>
-        <li>
-          <span class="content_gender"><i class="fa fa-female" aria-hidden="true"></i> </span>
-          <span class="content content_soldout">sold out</span>
-        </li>
+        <% if @event.selection_BothX_men_and_women %>
+          <li>
+            <span class="content_gender"><i class="fa fa-male" aria-hidden="true"></i> </span>
+            <span class="content content_available">available</span>
+          </li>
+          <li><span>|</span></li>
+          <li>
+            <span class="content_gender"><i class="fa fa-female" aria-hidden="true"></i> </span>
+            <span class="content content_soldout">sold out</span>
+          </li>
+        <% elsif @event.selection_BothAndOnly_men_and_women %>
+          <%= "do something here for this selection" %>
+        <% end %>
         <!-- workings -->
 
 
 
-        
+
         <li><span>|</span></li>
         <li>
           <span class="header">Age Group:</span>
@@ -88,6 +92,11 @@
             <% end %>
           </div>
         </li>
+        <% if current_user.admin_pa_management_group || current_user.pa_event_mgt_group %>
+          <li>
+            <div class="event_show_btn btn_edit"><%= link_to "edit", edit_user_event_path(@event.user, @event) %></div>
+          </li>
+        <% end %>
       </ul>
     </div>
   </div>
