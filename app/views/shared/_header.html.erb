@@ -14,9 +14,9 @@
         <li class="link">
           <% if current_user.image? %>
             <%= link_to 'activity', activities_path %>
-          <% end %>
-            <%= link_to 'activity', image_restriction_page_path %>
           <% else %>
+            <%= link_to 'activity', image_restriction_page_path %>
+          <% end %>
         </li>
         <% if current_user.subscribed_access? %>
           <% if current_user.image? %>
