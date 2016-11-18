@@ -47,7 +47,7 @@
 
       <span>attendance: <%= @event.total_attendance_BothX_men_and_women %></span> | 
       <span>attendance [men]: <%= @event.attendance_Xmen %></span> | 
-      <span>attendance [women]: <%= @event.attendance_Xwomen %></span> |
+      <span>attendance [women]: <%= @event.attendance_Xwomen %></span>
     </div>
   <!-- notes -->
   <!-- middle section -->
@@ -61,12 +61,20 @@
         <% if @event.selection_BothX_men_and_women %>
           <li>
             <span class="content_gender"><i class="fa fa-male" aria-hidden="true"></i> </span>
-            <span class="content content_available">available</span>
+            <% if @event.sold_out_BothX_men_and_women? %>
+              <span class="content content_soldout">sold out</span>
+            <% else %>
+              <span class="content content_available">available</span>
+            <% end %>
           </li>
           <li><span>|</span></li>
           <li>
             <span class="content_gender"><i class="fa fa-female" aria-hidden="true"></i> </span>
-            <span class="content content_soldout">sold out</span>
+            <% if @event.sold_out_BothX_men_and_women? %>
+              <span class="content content_soldout">sold out</span>
+            <% else %>
+              <span class="content content_available">available</span>
+            <% end %>
           </li>
         <% elsif @event.selection_BothAndOnly_men_and_women %>
           <%= "do something here for this selection" %>

@@ -130,6 +130,10 @@ class Event < ActiveRecord::Base
     capacity - attendance                                                        
   end
 
+  def sold_out_BothX_men_and_women?
+    self.available_places_Xmen <= 0 || self.available_places_Xwomen <= 0
+  end
+
 
 
 
