@@ -133,7 +133,11 @@
                         <% if event.current_user_attending_paid?(current_user) %>
                           <div class="btn_booked"><%= link_to "booked!", user_event_path(event.user, event) %></div>
                         <% else %>
-                          <div class="btn_booknow"><%= link_to "book now!", user_event_path(event.user, event) %></div>
+                          <% if event.sold_out? %>
+                            <div class="btn_soldout"><%= link_to "sold out!", user_event_path(event.user, event) %></div>
+                          <% else %>
+                            <div class="btn_booknow"><%= link_to "book now!", user_event_path(event.user, event) %></div>
+                          <% end %>
                         <% end %>
                         
                         <div class="btn_save_unsave_section">

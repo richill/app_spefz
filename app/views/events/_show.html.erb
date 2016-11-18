@@ -44,7 +44,7 @@
     </div>
   </div>
   <!-- notes -->
-  <div class="ref_notes">
+  <div class="ref_notes hide">
     <div class="selection_BothX_men_and_women">
       <span>capacity: <%= (@event.quantity_men) + (@event.quantity_women) %></span> |
       <span>capacity [men]: <%= @event.quantity_men %></span> |
@@ -119,7 +119,9 @@
         <% if @event.current_user_attending_paid?(current_user) %>
           <li><span><div class="event_show_btn btn_event_booked"><%= link_to 'Booked!', user_event_path(@event.user, @event) %></div></span></li>
         <% else %>
-          <li><span><div class="event_show_btn btn_event_booknow"><%= link_to 'Book Now!', new_payment_path(event_id: @event.id, user: current_user.id), target:"_blank" %></div></span></li>
+          <% unless @event.sold_out? %>
+            <li><span><div class="event_show_btn btn_event_booknow"><%= link_to 'Book Now!', new_payment_path(event_id: @event.id, user: current_user.id), target:"_blank" %></div></span></li>
+          <% end %>
         <% end %>
         <li>
           <div class="event_show_btn">

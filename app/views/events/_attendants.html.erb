@@ -15,7 +15,12 @@
                   <div class="image_cover event_image_cover"><%= link_to(image_tag("img_feed_07.png", :alt =>  "image", :class =>"#"), "#") %></div>
                 <% end %>
               </div>        
-              <div><%= link_to @event.title, user_event_path(@event.user, @event)  %></div>
+              <div>
+                <span><%= link_to @event.title, user_event_path(@event.user, @event) %></span>
+                <% if @event.sold_out? %>
+                  <span class="mini_sold_out">[sold out!]</span>
+                <% end %>
+              </div>
               <div>
                 <span><i class="fa fa-calendar" aria-hidden="true"></i> <%= @event.date.strftime("%A, %d %b") %></span>
                 <span class="mid_divider">|</span> 
