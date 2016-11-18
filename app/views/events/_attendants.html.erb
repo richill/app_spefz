@@ -303,6 +303,12 @@
                         <div>
                           <span class="user_ref"><%= attendant.user.reference %></span>
                           <span class="divider">|</span>
+                          <% if attendant.user.category_gender.name == "Male" %>
+                            <span class="user_gender"><i class="fa fa-male" aria-hidden="true"></i> <%= "M" %></span>
+                          <% elsif attendant.user.category_gender.name == "Female" %>
+                            <span class="user_gender"><i class="fa fa-female" aria-hidden="true"></i> <%= "W" %></span>
+                          <% end %>
+                          <span class="divider">|</span>
                           <span class="user_age">Age:  <%= attendant.user.age %></span>
                         </div>
                       </div>
