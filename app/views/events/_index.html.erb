@@ -86,14 +86,26 @@
                             <div class="content">
 
 
-                              
+
 
                               <!-- workings -->
-                              <span class="content_gender"><i class="fa fa-male" aria-hidden="true"></i></span>
-                              <span class="content_available">available</span>
-                              <span class="content_divider">|</span>
-                              <span class="content_gender"><i class="fa fa-female" aria-hidden="true"></i></span> 
-                              <span class="content_soldout">sold out</span>
+                              <% if event.selection_BothX_men_and_women %>
+                                <span class="content_gender"><i class="fa fa-male" aria-hidden="true"></i></span>
+                                <% if event.sold_out_Xmen? %>
+                                  <span class="content_soldout">sold out</span>
+                                <% else %>
+                                  <span class="content_available">available</span>
+                                <% end %>
+                                <span class="content_divider">|</span>
+                                <span class="content_gender"><i class="fa fa-female" aria-hidden="true"></i></span> 
+                                <% if event.sold_out_Xwomen? %>
+                                  <span class="content_soldout">sold out</span>
+                                <% else %>
+                                  <span class="content_available">available</span>
+                                <% end %>
+                              <% elsif event.selection_BothAndOnly_men_and_women %>
+                                <%= "do something here for this selection" %>
+                              <% end %>
                               <!-- workings -->
 
 
