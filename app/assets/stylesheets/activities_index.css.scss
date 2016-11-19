@@ -30,7 +30,7 @@
 
 .activities_section .search_container {
   padding: 18px 0px;
-  background-color: rgba(47, 63, 91, 0.1);
+  background-color: rgba(47, 63, 91, 0.1) !important;
   border-bottom: 1px solid rgba(238, 170, 2, 0.3) !important;
 }
 
@@ -56,11 +56,49 @@
   margin-bottom: 0px !important;
 }
 
+.activities_section .search_fields_left li a {
+  font-family: 'Lato', sans-serif;
+  font-size: 13px;
+  color: #fff !important;
+  font-weight: 300;
+  background: #000;
+  text-transform: capitalize;
+  text-align: center;
+  letter-spacing: 1px;
+  padding: 12px 25px;
+  width: 100%;
+  border: none;
+  display: inline-block;
+  height: 40px;
+  background-color: rgba(40, 48, 45, 0.5) !important;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+.activities_section .search_fields_left li a i {
+  color: #fff !important;
+}
+
+.activities_section .search_fields_left li a:hover {
+  background-color: rgba(238, 170, 2, 0.6) !important;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+.activities_section .search_fields_left .active a {
+  background-color: rgba(225, 71, 62, 0.5) !important;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
 .activities_section .search_fields_left li {
-  width: 215px;
+  width: 200px;
   float: left;
   margin: 0px !important;
-  margin-right: 8px !important;
+  margin-right: 15px !important;
 }
 
 .activities_section .search_fields_right li {
@@ -184,30 +222,9 @@
   margin-left: 0px !important;
 }
 
-// .activities_section .activity_feed ul li {
-//   margin: 0px;
-//   width: 100%;
-//   background-color: #fff !important;
-// }
-
-
-// -------------------------------
-//   workings
-// -------------------------------
-
 .activities_section .hide {
   display: none;
 }
-
-
-/*=========================================
-    Page: about us
-    File: views/shared/_content_aboutpg.html.erb.html
-  =========================================*/
-
-/* -------------------------------- 
-Aboutpg CSS
--------------------------------- */
 
 .activities_section .banner_activities_section {
   background-color: green;
@@ -285,12 +302,6 @@ Aboutpg CSS
   }
 }
 
-.activities_section .search_container {
-  background-color: rgba(255, 255, 255, 0.2) !important;
-  padding: 15px 0px;
-  margin-top: 30px
-}
-
 .activities_section .search_container button {
   margin: 0px auto;
   padding: 0px;
@@ -298,16 +309,6 @@ Aboutpg CSS
 
 .activities_section .search_container ul {
   margin: 0px;
-}
-
-.activities_section .search_container ul li {
-  width: 680px;
-}
-@media only screen and (max-width: 980px) {
-  .activities_section .search_container ul li  {
-    width: 100%;
-    padding-right: 45px;
-  }
 }
 
 .activities_section .search_container ul li input {
@@ -771,7 +772,6 @@ Aboutpg CSS
 }
 
 
-
 /* -------------------------------- 
 Timline CSS
 -------------------------------- */
@@ -1117,14 +1117,6 @@ border-radius: 200px;
 .activities_section .activity_list .remove_fav a {
   color: #E34B51 !important;
 }
-
-
-// ------------------------------
-//     workings
-// ------------------------------
-
-
-
 
 
 

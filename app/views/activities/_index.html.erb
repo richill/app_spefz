@@ -1,17 +1,40 @@
 <div class="activities_section">
   <div class="medium-12 columns activities_inner_section">
 
+    <!-- search -->
+    <div class="medium-12 columns search_container">
+      <div class="search_inner_container">     
+        <ul class="search_fields_left">
+          <li class="active"> 
+            <%= link_to "#" do %>
+              <i class="fa fa-server" aria-hidden="true"></i>
+              <span>Feed</span>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to "#" do %>
+              <i class="fa fa-users" aria-hidden="true"></i>
+              <span>feed network</span>
+            <% end %>
+          </li>
+        </ul>   
+
+        <!-- <ul class="search_fields_right">
+          <li>i am to the right</li>
+        </ul>  -->     
+      </div>
+    </div>
+    <!-- search -->
+
     <!-- content -->
     <div class="medium-12 columns activity_content_section">
       <div class="medium-12 columns content_container">
         <div class="content_details">
-      
           <!-- activity -->
             <div class="activity_feed">
               <%= render 'activities/activity' %>
             </div>
           <!-- activity -->
-          
         </div>
       </div>
     </div>
