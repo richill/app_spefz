@@ -457,6 +457,12 @@
   color: #fff !important;
 }
 
+.events_show_inner_section .attendants i .attendance_count {
+  font-family: 'Lato', sans-serif;
+  font-size: 12px;
+  font-weight: bold !important;
+}
+
 .events_show_inner_section .attendants a:hover {
   background-color: rgba(47, 63, 91, 0.5) !important;
   -webkit-transition: all 0.3s ease;

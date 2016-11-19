@@ -6,7 +6,7 @@
       <div class="error_content_inner_section">
         <h1>Oops!</h1>
         <div><i class="fa fa-user-times" aria-hidden="true"></i></div>
-        <h2>Hi <%= current_user.firstname %>! you must have a profile picture to proceed</h2>
+        <h2>Hi <span class="user_name"><%= current_user.firstname %></span> ! you must have a profile picture to proceed</h2>
         <div class="sub_content"></div>
         <div class="error_btn">
           <div><%= link_to "Update Profile", edit_user_path(current_user) %></div>
