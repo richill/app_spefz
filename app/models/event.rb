@@ -26,8 +26,6 @@ class Event < ActiveRecord::Base
 
   scope :closed_events, -> {where(['close = ?', true])}
 
-  # scope :closed_events, -> {where(['close = ? OR close IS ?', true])}
-
   scope :open_events, -> {where(['close = ? OR close IS ?', false, nil])}
 
 
