@@ -19,12 +19,13 @@ class UsersController < ApplicationController
   end
 
   def show
-    if current_user.image? 
+    if current_user.image? || current_user == @user
       @events = Event.live_events.open_events
       @activities_user = PublicActivity::Activity.order("created_at desc").where(owner_id: @user)
     else
       redirect_to image_restriction_page_path
     end
+    # allows current_user to only see their profile page and not other memebers if they do not have a profile image
   end
 
   def edit

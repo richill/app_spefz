@@ -39,6 +39,19 @@
                 <% @users.desc_order.each do |user| %>
                   <% if current_user.subscribed_access? %>
                     <li class="medium-3 columns member_container user_subscribed">
+                      <!-- subscribed banner -->
+                      <div class="subie_banner_wrapper_container_index">
+                        <div class="subie_banner_wrapper_index">
+                          <% if current_user.admin_pa_management_group %>
+                            <% if user.subscribed? %>
+                              <div class="subie_banner_ribbon_wrapper_red_index">
+                                <div class="subie_banner_ribbon_name_index"></div>
+                              </div>
+                            <% end %>
+                          <% end %>
+                        </div>​
+                      </div>
+                      <!-- subscribed banner -->
                       <!-- dummy banner -->
                       <div class="banner_wrapper_container_index">
                         <div class="banner_wrapper_index">
