@@ -5,19 +5,19 @@
     <div class="medium-12 columns search_container">
       <div class="search_inner_container">     
         <ul class="search_fields_left">
-          <li class="active"> 
+          <li> 
             <%= link_to activities_path do %>
               <i class="fa fa-server" aria-hidden="true"></i>
               <span>Feed</span>
             <% end %>
           </li>
-          <li>
+          <li class="active">
             <%= link_to networks_activities_path do %>
               <i class="fa fa-users" aria-hidden="true"></i>
               <span>feed network</span>
             <% end %>
           </li>
-        </ul>     
+        </ul>    
       </div>
     </div>
     <!-- search -->
@@ -28,6 +28,7 @@
         <div class="content_details">
           <!-- activity -->
             <div class="activity_feed">
+              <div>my network activies | currently showing only my activities because of what is stated in the controller action "networks"</div>
               <%= render 'activities/activity' %>
             </div>
           <!-- activity -->

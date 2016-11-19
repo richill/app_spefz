@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   
-  resources :activities
+  resources :activities do
+    collection do
+      get 'networks'
+    end
+  end
   resources :subscriptions
   resources :payments
   resources :socials
