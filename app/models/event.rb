@@ -20,13 +20,15 @@ class Event < ActiveRecord::Base
 
   scope :expired_events, -> {where(['date < ?', Date.current])}
 
-  scope :expired_or_closed_events, -> {where(['close = ?', true] || ['date < ?', Date.current])}
+  scope :expired_or_closed_events, -> {where('close = ? OR date < ?', true, Date.current)}
 
   scope :live_events, -> {where(['date >= ?', Date.current])}
 
   scope :closed_events, -> {where(['close = ?', true])}
 
   scope :open_events, -> {where(['close = ? OR close IS ?', false, nil])}
+
+  # scope :live_or_open_events, -> {where(close = 'f' OR close IS NULL) AND (date >= '2016-11-19')}
 
 
   def generate_reference_number
