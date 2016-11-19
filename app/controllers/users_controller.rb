@@ -19,7 +19,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    if current_user.image?
+    if current_user.image? 
       @events = Event.live_events.open_events
       @activities_user = PublicActivity::Activity.order("created_at desc").where(owner_id: @user)
     else
