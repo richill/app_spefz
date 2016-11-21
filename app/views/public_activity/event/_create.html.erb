@@ -23,7 +23,19 @@
                   <span><%= link_to "spefz", "#" %></span>
                 </div>
                 <div class="social_event_content">
-                  <div class="image_cover"><%= link_to(image_tag(activity.trackable.image), user_event_path(activity.trackable.user, activity.trackable)) %></div>
+                  <div class="image_cover">
+                    <!-- sold out -->
+                    <% if activity.trackable.sold_out? %>
+                      <div class="banner">
+                        <div class="ribbon-wrapper-green">
+                          <div class="ribbon-green">sold out</div>
+                        </div>
+                      </div>
+                    <% end %>
+                    <!-- sold out -->
+                    <span><%= link_to(image_tag(activity.trackable.image), user_event_path(activity.trackable.user, activity.trackable)) %></span>
+                    
+                  </div>
                   <div class="social_event_details">
                     <div class="info"><i class="fa fa-calendar" aria-hidden="true"></i> <%= activity.trackable.date.strftime("%A, %d %b") %> <span class="mid_divider">|</span> <%= activity.trackable.time.strftime("%I:%M %p") %></div>
                     <div class="info"><i class="fa fa-map-pin" aria-hidden="true"></i> <%= activity.trackable.city %>, <%= activity.trackable.category_country.name %></div>
