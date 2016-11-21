@@ -20,7 +20,7 @@ class Event < ActiveRecord::Base
 
   scope :expired_events, -> {where(['date < ?', Date.current])}
 
-  scope :expired_or_closed_events, -> {where('close = ? OR date < ?', true, Date.current)}
+  scope :expired_or_closed_events, -> { where('close = ? OR date < ?', true, Date.current) }
 
   scope :live_events, -> {where(['date >= ?', Date.current])}
 
@@ -49,6 +49,10 @@ class Event < ActiveRecord::Base
 
   def live_event
     self.date >= Date.current
+  end
+
+  def expired_or_closed_event
+    self.date < Date.current || self.close == true
   end
 
   def location
