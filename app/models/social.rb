@@ -52,6 +52,10 @@ class Social < ActiveRecord::Base
     self.close == false || self.close == nil
   end
 
+  def expired_or_closed_social
+    self.date < Date.current || self.close == true
+  end
+
   def location
     [address, city, category_country_id].compact.join(', ')
   end
