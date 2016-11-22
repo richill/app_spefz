@@ -14,7 +14,7 @@
             </thead>
             <tbody>
               <tr class="payment_details">
-                <td><%= @subscription.title %> plan</td>
+                <td style="height: 76px;"><%= @subscription.title %> plan</td>
                 <td style="text-align:right;">£<%= number_with_precision(@subscription.price, precision: 2) %> / mth</td>
               </tr>
             </tbody>
@@ -60,19 +60,19 @@
                     </div>
                     <div class="form-row row_card_number">
                       <label>
-                        <span class="card_title">*Card Number</span>
+                        <span class="card_title"><i class="fa fa-lock" aria-hidden="true"></i> *Card Number</span>
                         <input <% if Rails.env.development? %> class= "card_number" value="4242 4242 4242 4242"<% end %> type="text" size="20" data-stripe="number" placeholder="1234 1234 1234 1234">
                       </label>
                     </div>
                     <div class="form-row row_cvv">
                       <label>
-                        <span class="card_title">*CVV</span><span data-tooltip aria-haspopup="true" class="tip-right" title="The CVV number is a 3 or 4 digit security code printed on the front or back of your card."><i class="fa fa-info-circle cvv_icon" aria-hidden="true"></i></span>
+                        <span class="card_title"><i class="fa fa-lock" aria-hidden="true"></i> *CVV</span><span data-tooltip aria-haspopup="true" class="tip-right" title="The CVV number is a 3 or 4 digit security code printed on the front or back of your card."><i class="fa fa-info-circle cvv_icon" aria-hidden="true"></i></span>
                         <input <% if Rails.env.development? %> class= "cvc_number" value="123"<% end %> type="text" size="4" data-stripe="cvc" placeholder="123">
                       </label>
                     </div>
                     <div class="form-row row_exp">
                       <label>
-                        <div class="card_title">*Expiration (MM/YYYY)</div>
+                        <div class="card_title"><i class="fa fa-lock" aria-hidden="true"></i> *Expiration (MM/YYYY)</div>
                         <div class="exp_date_container">
                           <input <% if Rails.env.development? %>value="12"<% end %> type="text" size="2" data-stripe="exp_month" class="exp_mth" placeholder="MM"> 
                           <span class="exp_divider"> / </span>
