@@ -11,8 +11,7 @@
 }
 
 .payments_new_section .content_container {
-  padding: 30px 0px !important;
-  // padding: 15px 0px !important;
+  padding: 20px 0px !important;
   min-height: 822px;
 }
 
@@ -23,8 +22,6 @@
 }
 
 .payments_new_section .payment_main_container {
-  // background-color: rgba(47, 63, 91, 0.2) !important;
-  // padding: 10px !important;
   background-color: rgba(225, 71, 62, 0.1) !important;
   padding: 0px !important;
   -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.14);
@@ -88,7 +85,6 @@
 .payments_new_section .pymt_form_section {
   background-color: #fff;
   padding: 15px;
-  // height: 467px;
 }
 
 .payments_new_section .header {
@@ -148,22 +144,21 @@
 //     workings
 // -------------------------------
 
-.pymt_header {
+.payments_new_section .pymt_header {
   font-family: "Lato", sans-serif;
   font-weight: bold !important;
   font-size: 25px;
   text-transform: capitalize;
-  margin-bottom: 5px;
 }
 
-.card_title {
+.payments_new_section .card_title {
   font-family: "Lato", sans-serif;
   font-weight: bold !important;
   font-size: 12px;
   text-transform: capitalize;
 }
 
-.card_images_all img {
+.payments_new_section .card_images_all img {
   height: 30px;
   margin-bottom: 4px !important;
 }
@@ -172,30 +167,26 @@
   display: none;
 }
 
-.row_card_number {
-
-}
-
-.row_cvv {
+.payments_new_section .row_cvv {
   width: 200px;
   float: right;
 }
 
-.row_exp {
+.payments_new_section .row_exp {
   width: 300px !important;
 }
 
-.exp_mth {
+.payments_new_section .exp_mth {
   width: 120px !important;
   float: left !important;
 }
 
-.exp_divider {
+.payments_new_section .exp_divider {
   float: left !important;
   margin: 7px 15px !important;
 }
 
-.exp_yr {
+.payments_new_section .exp_yr {
   width: 120px !important;
 }
 
@@ -211,12 +202,11 @@
   width: 100%;
   border-radius: 2px;
   margin-top: 3px;
-  margin-bottom: 0px;
+  margin-bottom: 2px;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
 }
-
 
 .payments_new_section input[type="submit"]:hover {
   background-color: #eeaa02;
@@ -224,6 +214,16 @@
   -moz-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
 }
+
+.payments_new_section .payment-errors {
+  background-color: rgba(225, 71, 62, 0.1) !important;
+  width: 100% !important;
+  // display: inline-block;
+  color: #E34B51 !important;
+  text-align: center;
+}
+
+
 
 
 
