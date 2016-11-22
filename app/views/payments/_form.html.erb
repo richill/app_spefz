@@ -58,19 +58,19 @@
                         <input type="text" id="payment_userr_id" name="payment[current_user.id]" value=<%="#{current_user.id}"%> data-stripe="">
                       </label>
                     </div>
-                    <div class="form-row">
+                    <div class="form-row row_card_number">
                       <label>
                         <span class="card_title">*Card Number</span>
                         <input <% if Rails.env.development? %> class= "card_number" value="4242 4242 4242 4242"<% end %> type="text" size="20" data-stripe="number" placeholder="*Card number">
                       </label>
                     </div>
-                    <div class="form-row">
+                    <div class="form-row row_cvv">
                       <label>
                         <span class="card_title">*CVV</span><span data-tooltip aria-haspopup="true" class="tip-right" title="The CVV number is a 3 or 4 digit security code printed on the front or back of your card."><i class="fa fa-info-circle cvv_icon" aria-hidden="true"></i></span>
                         <input <% if Rails.env.development? %> class= "cvc_number" value="123"<% end %> type="text" size="4" data-stripe="cvc" placeholder="*CVV">
                       </label>
                     </div>
-                    <div class="form-row">
+                    <div class="form-row row_exp">
                       <label>
                         <div class="card_title">*Expiration (MM/YYYY)</div>
                         <div class="exp_date_container">
@@ -176,19 +176,19 @@
                         <input type="text" id="payment_userr_id" name="payment[current_user.id]" value=<%="#{current_user.id}"%> data-stripe="">
                       </label>
                     </div>
-                    <div class="form-row">
+                    <div class="form-row row_card_number">
                       <label>
                         <span class="card_title">*Card Number</span>
                         <input <% if Rails.env.development? %> class= "card_number" value="4242 4242 4242 4242"<% end %> type="text" size="20" data-stripe="number" placeholder="*Card number">
                       </label>
                     </div>
-                    <div class="form-row">
+                    <div class="form-row row_cvv">
                       <label>
                         <span class="card_title">*CVV</span><span data-tooltip aria-haspopup="true" class="tip-right" title="The CVV number is a 3 or 4 digit security code printed on the front or back of your card."><i class="fa fa-info-circle cvv_icon" aria-hidden="true"></i></span>
                         <input <% if Rails.env.development? %> class= "cvc_number" value="123"<% end %> type="text" size="4" data-stripe="cvc" placeholder="*CVV">
                       </label>
                     </div>
-                    <div class="form-row">
+                    <div class="form-row row_exp">
                       <label>
                         <div class="card_title">*Expiration (MM/YYYY)</div>
                         <div class="exp_date_container">
