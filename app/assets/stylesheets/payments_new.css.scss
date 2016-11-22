@@ -162,6 +162,10 @@
   display: none;
 }
 
+.payment_form_stripe .fa-lock {
+  margin-right: 5px !important;
+}
+
 .payments_new_section .row_cvv {
   width: 200px;
   float: right;
@@ -216,11 +220,6 @@
   color: #E34B51 !important;
   text-align: center;
 }
-
-
-// -------------------------------
-//     workings
-// -------------------------------
 
 
 
