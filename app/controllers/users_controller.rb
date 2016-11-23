@@ -39,6 +39,15 @@ class UsersController < ApplicationController
   def dashboard
   end
 
+  def membership
+  end
+
+  def account
+  end
+
+  def settings
+  end
+
   private
     def set_user
       @user = User.find(params[:id])

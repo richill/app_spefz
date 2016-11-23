@@ -24,6 +24,9 @@ Rails.application.routes.draw do
     resources :events
     member do
       get 'dashboard'
+      get 'membership'
+      get 'account'
+      get 'settings'
     end
   end
 

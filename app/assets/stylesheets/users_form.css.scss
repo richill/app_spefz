@@ -92,15 +92,7 @@
   margin: 0px 5px;
 }
 
-
-// ------------------------------
-//   workings
-// ------------------------------
-
-
-
-
-#user_image {
+.user_form_page_section .right_inner_section .user_edit_update_form #user_image {
   height: 100%;
   margin-bottom: 0px !important;
   padding: 15px;
@@ -112,40 +104,40 @@
   letter-spacing: 1px;
 }
 
-.user_edit_update_form label {
+.user_form_page_section .right_inner_section .user_edit_update_form label {
   font-family: 'Lato', sans-serif;
   font-size: 15px !important;
   font-weight: 300 !important;
   text-transform: capitalize;;
 }
 
-.user_firstname {
+.user_form_page_section .right_inner_section .user_edit_update_form .user_firstname {
   width: 545px;
   float: left;
   margin-right: 15px;
   margin-top: 25px;
 }
 
-.user_lastname {
+.user_form_page_section .right_inner_section .user_edit_update_form .user_lastname {
   width: 545px;
   float: left;
   margin-top: 25px;
 }
 
-.user_profession {
+.user_form_page_section .right_inner_section .user_edit_update_form .user_profession {
   width: 545px;
   float: left;
   margin-right: 15px;
   margin-top: 25px;
 }
 
-.user_category_gender {
+.user_form_page_section .right_inner_section .user_edit_update_form .user_category_gender {
   width: 545px;
   float: left;
   margin-top: 25px;
 }
 
-.label_interest {
+.user_form_page_section .right_inner_section .user_edit_update_form .label_interest {
   font-family: 'Lato', sans-serif;
   font-size: 15px !important;
   font-weight: 300 !important;
@@ -153,20 +145,20 @@
   margin-top: 12px;
 }
 
-.user_description {
+.user_form_page_section .right_inner_section .user_description {
   margin-top: 25px;
 }
 
-#user_description {
+.user_form_page_section .right_inner_section .user_edit_update_form #user_description {
   height: 60px;
 }
 
-.user_edit_update_form input[type="text"]:focus {
+.user_form_page_section .right_inner_section .user_edit_update_form input[type="text"]:focus {
   border: 1px solid rgba(75, 180, 191, 0.5) !important;
   background-color: #fff !important;
 }
 
-.user_edit_update_form input[type="submit"] {
+.user_form_page_section .right_inner_section .user_edit_update_form input[type="submit"] {
   font-family: 'Lato', sans-serif;
   font-size: 20px;
   color: #fff !important;
@@ -184,6 +176,8 @@
   -moz-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
 }
+
+
 
 
 
