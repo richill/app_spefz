@@ -6,16 +6,19 @@
 
 .user_form_page_section {
   padding: 0px !important;
+  background: url("img_background_main.png") repeat;
 }
 
 // --------left_column_section--------
 .left_column_section {
-  background-color: red;
+  background-color: #283041;
+  min-height: 500px;
+  // background-color: red;
 }
 
 // --------right_column_section--------
 .right_column_section {
-  background-color: green;
+  //background-color: green;
 }
 
 
