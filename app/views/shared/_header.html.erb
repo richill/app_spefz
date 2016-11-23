@@ -31,7 +31,10 @@
           <% end %>
           <div><%= link_to '', '#', id: "notificationLink_friendRequest", class: "fa fa-users" %></div>
           <div id="notificationContainer_friendRequest">
-            <div id="notificationTitle_friendRequest">Requests</div>
+            <div id="notificationTitle_friendRequest">
+              <div class="dropdown_nottification_title"><%= link_to "Requests", "#" %></div>
+              <div class="dropdown_nottification_info"><i class="fa fa-user-plus" aria-hidden="true"></i> <span><%= "List of Request Receieved" %></span></div>
+            </div>
             <div id="notificationsBody_friendRequest" class="notifications">
               <%= render 'shared/content_dropdownbox_friendrequest' %>
             </div>
@@ -42,7 +45,10 @@
           <span id="notification_count_bell">2</span>
           <div><%= link_to '', '#', id: "notificationLink_bell", class: "fa fa-bell" %></div>
           <div id="notificationContainer_bell">
-            <div id="notificationTitle_bell">Notifications</div>
+            <div id="notificationTitle_bell">
+              <div class="dropdown_nottification_title"><%= link_to "Notifications", "#" %></div>
+              <div class="dropdown_nottification_info"><i class="fa fa-globe" aria-hidden="true"></i> <span><%= "Recent Updates" %></span></div>
+            </div>
             <div id="notificationsBody_bell" class="notifications"><%# render 'shared/notification' %></div>
             <!-- <div id="notificationFooter"><a href="#">See All</a></div> -->
           </div>

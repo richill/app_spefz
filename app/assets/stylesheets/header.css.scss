@@ -144,6 +144,31 @@
   -moz-transition: all 0.3s ease; 
   -o-transition: all 0.3s ease;
 }
+
+.nav_user_section .dropdown_nottification_title a {
+  font-family: 'Lato', sans-serif !important;
+  font-size: 25px !important;
+  color: #283041 !important;
+  text-align: left !important;
+  text-transform: capitalize !important;
+  font-weight: bold !important;
+  margin-bottom: 2px !important;
+  word-spacing: 0px !important;
+}
+
+.nav_user_section .dropdown_nottification_info {
+  font-family: 'Lato', sans-serif !important;
+  font-size: 12px !important;
+  text-transform: capitalize !important;
+  margin-top: 5px;
+}
+
+.nav_user_section .dropdown_nottification_info i {
+  font-size: 12px !important;
+  color: #283041 !important;
+  margin-right: 2px;
+}
+
 /*----- notifications_friendRequest -----*/
 .nav_user_section #notification_count_friendRequest {
   font-family: 'Lato', sans-serif;
@@ -190,11 +215,11 @@
 }
 
 .nav_user_section #notificationTitle_friendRequest {
-  padding: 8px;
+  padding: 14px 15px;
   font-size: 13px;
-  background-color: #ffffff;
   z-index: 1000;
-  border-bottom: 1px solid #dddddd;
+  background-color: rgba(47, 63, 91, 0.015);
+  border-bottom: 2px solid #ededf3;
   font-weight: 400;
   color: #41494f;
 }
@@ -259,11 +284,11 @@
 }
 
 .nav_user_section #notificationTitle_bell {
-  padding: 8px;
+  padding: 14px 15px;
   font-size: 13px;
-  background-color: #ffffff;
   z-index: 1000;
-  border-bottom: 1px solid #dddddd;
+  background-color: rgba(47, 63, 91, 0.015);
+  border-bottom: 2px solid #ededf3;
   font-weight: 400;
   color: #41494f;
 }
@@ -396,8 +421,10 @@
   overflow: visible;
   position: absolute;
   top: 60px;
+  right: 35px;
   margin-left: -321px;
-  width: 400px;
+  // width: 400px;
+  width: 300px;
   z-index: 1;
   text-align: left;
   display: none; /*info: Enable this after jquery implementation*/ 
@@ -409,6 +436,7 @@
   position: absolute;
   width: 0;
   height: 0;
+  right: 69px;
   color: transparent;
   border: 10px solid black;
   border-color: transparent transparent white;
@@ -417,11 +445,10 @@
 }
 
 .nav_user_section #notificationTitle_profile {
-  padding: 13px 15px;
+  padding: 14px 15px;
   font-size: 13px;
-  background-color: #ffffff;
   z-index: 1000;
-  // border-bottom: 1px solid #dddddd;
+  background-color: rgba(47, 63, 91, 0.015);
   border-bottom: 1px solid #ededf3;
   font-weight: 400;
   color: #41494f;
@@ -429,7 +456,7 @@
 
 .nav_user_section #notificationsBody_profile {
   padding: 0px 0px 0px 0px !important;
-  min-height: 300px;
+  min-height: 245px;
 }
 
 .nav_user_section #notificationFooter_profile {
@@ -466,6 +493,7 @@
   font-family: 'Lato', sans-serif !important;
   font-size: 12px !important;
   text-transform: capitalize !important;
+  margin-top: 5px;
 }
 
 .nav_user_section #notificationTitle_profile .dropdown_user_membership i {
@@ -658,7 +686,6 @@
     display: none !important;
   }
 }
-
 
 
 

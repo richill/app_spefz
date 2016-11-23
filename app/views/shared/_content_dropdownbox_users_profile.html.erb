@@ -1,32 +1,74 @@
 <div class="userprofile_dropdownbox_inner_container">
   <ul>
+
+    <% if current_user.admin_pa_management_group %>
     <li>
       <div class="list_cover">
-      <% if current_user.admin_pa_management_group %>
         <span><i class="fa fa-tasks" aria-hidden="true"></i></span>
         <span><%= link_to "dashboard", dashboard_user_path(current_user) %></span>
-      <% end %>
       </div>
     </li>
+    <% end %>
 
-    <li><div class="list_cover"><%= link_to "update profile", edit_user_path(current_user) %></div></li>
+    <li>
+      <div class="list_cover">
+        <span><i class="fa fa-user" aria-hidden="true"></i></span>
+        <span><%= link_to "update profile", edit_user_path(current_user) %></span>
+      </div>
+    </li>
+    
+    <% if current_user.subscribed_access? %>
+    <li>
+      <div class="list_cover">
+        <% if current_user.image? %>
+          <span><i class="fa fa-calendar-plus-o" aria-hidden="true"></i></span>
+          <span><%= link_to 'create social', new_user_social_path(current_user) %></span>
+        <% else %>
+          <span><i class="fa fa-calendar-plus-o" aria-hidden="true"></i></span>
+          <span><div><%= link_to 'create social', image_restriction_page_path %></div></span>
+        <% end %>
+      </div>
+    </li>
+    <% end %>
+
+    <li>
+      <div class="list_cover">
+        <span><i class="fa fa-calendar" aria-hidden="true"></i></span>
+        <span><%= link_to 'my socials', "#" %></span>
+      </div>
+    </li>
     
     <li>
       <div class="list_cover">
-      <% if current_user.subscribed_access? %>
-        <% if current_user.image? %>
-          <div><%= link_to 'create social', new_user_social_path(current_user) %></div>
-        <% else %>
-          <div><%= link_to 'create social', image_restriction_page_path %></div>
-        <% end %>
-      <% end %>
+        <span><i class="fa fa-users" aria-hidden="true"></i></span>
+        <span><%= link_to 'network', "#" %></span>
       </div>
     </li>
 
-    <li><div class="list_cover"><%= link_to 'my socials', "#" %></div></li>
-    <li><div class="list_cover"><%= link_to 'network', "#" %></div></li>
-    <li><div class="list_cover"><%= link_to 'settings', "#" %></div></li>
-    <li><div class="list_cover"><%= link_to 'help & support', "#" %></div></li>
-    <li><div class="list_cover"><%= link_to "sign out", destroy_user_session_path, method: :delete  %></div></li>
+    <li>
+      <div class="list_cover">
+        <span><i class="fa fa-cog" aria-hidden="true"></i></span>
+        <span><%= link_to 'settings', "#" %></span>
+      </div>
+    </li>
+
+    <li>
+      <div class="list_cover">
+        <span><i class="fa fa-info-circle" aria-hidden="true"></i></span>
+        <span><%= link_to 'help & support', "#" %></span>
+      </div>
+    </li>
+
+    <li>
+      <div class="list_cover">
+        <span><i class="fa fa-power-off" aria-hidden="true"></i></span>
+        <span><%= link_to "sign out", destroy_user_session_path, method: :delete  %></span>
+      </div>
+    </li>
   </ul>
 </div>
+
+
+
+
+
