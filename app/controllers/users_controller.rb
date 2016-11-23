@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   respond_to :html, :xml, :json
-  before_action :set_user, only: [:show, :edit, :update, :destroy, :followings, :followers]
+  before_action :set_user, only: [:show, :edit, :update, :destroy, :followings, :followers, :dashboard, :membership, :account, :settings]
 
   def index
     @premium_plan = Subscription.find_by(title:"premium")
