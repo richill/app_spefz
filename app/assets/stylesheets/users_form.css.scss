@@ -10,10 +10,56 @@
 }
 
 // --------left_column_section--------
-.left_column_section {
+.user_form_page_section .left_column_section {
   background-color: #283041;
-  min-height: 500px;
-  // background-color: red;
+  min-height: 700px;
+}
+
+.user_form_page_section .left_inner_section ul {
+  margin: 0px !important;
+  list-style: none;
+  background-color: rgba(47, 63, 91, 0.4);
+}
+
+.user_form_page_section .left_inner_section .list_options {
+  border-bottom: 1px solid #364760;
+}
+
+.user_form_page_section .left_inner_section .active {
+  background-color: #364760 !important;
+  border-top: 2px solid rgba(47, 63, 91, 0.6);
+  border-bottom: 1px solid #727985;
+}
+
+.user_form_page_section .left_inner_section ul li a {
+  color: #fff !important;
+  padding: 20px 15px;
+  display: inline-block;
+  width: 100%;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease; 
+}
+
+.user_form_page_section .left_inner_section ul li i {
+  margin-right: 3px; 
+}
+
+.user_form_page_section .left_inner_section ul li a:hover {
+  color: #E34B51 !important;
+  background-color: #364760 !important;
+  width: 100%;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease; 
+}
+
+.user_form_page_section .left_inner_section .option_header {
+  font-family: 'Lato', sans-serif;
+  font-size: 14px !important;
+  font-weight: 300 !important;
+  letter-spacing: 1px;
+  text-transform: capitalize;
 }
 
 // --------right_column_section--------
@@ -23,13 +69,16 @@
 
 
 
-
-
 // ------------------------------
 //   workings
 // ------------------------------
 
-.left_inner_section ul {
-  margin: 0px !important;
-  list-style: none;
-}
+
+
+
+
+
+
+
+
+
