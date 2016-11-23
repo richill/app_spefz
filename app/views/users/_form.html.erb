@@ -50,23 +50,30 @@
 
   <!-- right_column_section -->
   <div class="medium-10 columns right_column_section">
-    <%= simple_form_for(@user) do |f| %>
-      <%= f.error_notification %>
-
-      <div class="form-inputs">
-        <%= f.file_field :image %>
-        <%= f.input :firstname %>
-        <%= f.input :lastname %>
-        <%= f.input :profession %>
-        <%= f.text_field :tag_list, value: @user.tag_list.to_s, placeholder: "chess, jogging, dogs, skipping, gym, startups, entreprenuers, jazz..." %>
-        <%= f.association :category_gender, collection: CategoryGender.all, prompt: "select a category", label: "Gender" %>
-        <%= f.input :description %>
+    <div class="right_inner_section">
+      <div class="tree_link">
+        <span><i class="fa fa-user" aria-hidden="true"></i> <%= link_to "#{current_user.firstname}", user_path(current_user)%></span> <span class="fwd_sign">></span> <span>edit profile</span>
       </div>
+      <div class="user_edit_update_form">
+        <%= simple_form_for(@user) do |f| %>
+          <%= f.error_notification %>
 
-      <div class="form-actions">
-        <%= f.button :submit %>
+          <div class="form-inputs">
+            <%= f.file_field :image %>
+            <%= f.input :firstname %>
+            <%= f.input :lastname %>
+            <%= f.input :profession %>
+            <%= f.text_field :tag_list, value: @user.tag_list.to_s, placeholder: "chess, jogging, dogs, skipping, gym, startups, entreprenuers, jazz..." %>
+            <%= f.association :category_gender, collection: CategoryGender.all, prompt: "select a category", label: "Gender" %>
+            <%= f.input :description %>
+          </div>
+
+          <div class="form-actions">
+            <%= f.button :submit %>
+          </div>
+        <% end %>
       </div>
-    <% end %>
+    </div>
   </div>
 </div>
 <!-- right_column_section -->
