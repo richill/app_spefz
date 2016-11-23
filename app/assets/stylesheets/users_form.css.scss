@@ -63,17 +63,7 @@
 }
 
 // --------right_column_section--------
-.right_column_section {
-  //background-color: green;
-}
-
-
-
-// ------------------------------
-//   workings
-// ------------------------------
-
-.right_inner_section .tree_link {
+.user_form_page_section .right_inner_section .tree_link {
   font-family: 'Lato', sans-serif;
   font-size: 12px !important;
   padding: 15px 0px;
@@ -82,7 +72,7 @@
   margin-bottom: 15px;
 }
 
-.right_inner_section .tree_link a {
+.user_form_page_section .right_inner_section .tree_link a {
   font-family: 'Lato', sans-serif;
   font-size: 12px !important;
   color: #283041 !important;
@@ -91,16 +81,23 @@
   -o-transition: all 0.3s ease; 
 }
 
-.right_inner_section .tree_link a:hover {
+.user_form_page_section .right_inner_section .tree_link a:hover {
   color: #E34B51 !important;
   -webkit-transition: all 0.3s ease; 
   -moz-transition: all 0.3s ease; 
   -o-transition: all 0.3s ease; 
 }
 
-.right_inner_section .fwd_sign {
+.user_form_page_section .right_inner_section .fwd_sign {
   margin: 0px 5px;
 }
+
+
+// ------------------------------
+//   workings
+// ------------------------------
+
+
 
 
 #user_image {
@@ -115,6 +112,78 @@
   letter-spacing: 1px;
 }
 
+.user_edit_update_form label {
+  font-family: 'Lato', sans-serif;
+  font-size: 15px !important;
+  font-weight: 300 !important;
+  text-transform: capitalize;;
+}
+
+.user_firstname {
+  width: 545px;
+  float: left;
+  margin-right: 15px;
+  margin-top: 25px;
+}
+
+.user_lastname {
+  width: 545px;
+  float: left;
+  margin-top: 25px;
+}
+
+.user_profession {
+  width: 545px;
+  float: left;
+  margin-right: 15px;
+  margin-top: 25px;
+}
+
+.user_category_gender {
+  width: 545px;
+  float: left;
+  margin-top: 25px;
+}
+
+.label_interest {
+  font-family: 'Lato', sans-serif;
+  font-size: 15px !important;
+  font-weight: 300 !important;
+  text-transform: capitalize;
+  margin-top: 12px;
+}
+
+.user_description {
+  margin-top: 25px;
+}
+
+#user_description {
+  height: 60px;
+}
+
+.user_edit_update_form input[type="text"]:focus {
+  border: 1px solid rgba(75, 180, 191, 0.5) !important;
+  background-color: #fff !important;
+}
+
+.user_edit_update_form input[type="submit"] {
+  font-family: 'Lato', sans-serif;
+  font-size: 20px;
+  color: #fff !important;
+  font-weight: 300;
+  background: #000;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+  padding: 10px 25px;
+  width: 100%;
+  border: none;
+  display: inline-block;
+  margin-bottom: 0px !important;
+  background-color: #4BB4BF !important;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
 
 
 

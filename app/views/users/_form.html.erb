@@ -60,16 +60,19 @@
 
           <div class="form-inputs">
             <%= f.file_field :image %>
-            <%= f.input :firstname %>
-            <%= f.input :lastname %>
-            <%= f.input :profession %>
-            <%= f.text_field :tag_list, value: @user.tag_list.to_s, placeholder: "chess, jogging, dogs, skipping, gym, startups, entreprenuers, jazz..." %>
+            <%= f.input :firstname, label: "First Name", placeholder: "first name" %>
+            <%= f.input :lastname, label: "Last Name", placeholder: "last name" %>
+            <div class="clear"></div>
+            <%= f.input :profession, placeholder: "risk management" %>
             <%= f.association :category_gender, collection: CategoryGender.all, prompt: "select a category", label: "Gender" %>
-            <%= f.input :description %>
+            <div class="clear"></div>
+            <div class="label_interest">interest</div>
+            <%= f.text_field :tag_list, value: @user.tag_list.to_s, placeholder: "chess, jogging, dogs, skipping, gym, startups, entreprenuers, jazz..." %>
+            <%= f.input :description, label: "about me", placeholder: "Tell us a bit about yourself, what you like doing and where you like going." %>
           </div>
 
           <div class="form-actions">
-            <%= f.button :submit %>
+            <%= f.button :submit, "Update Profile" %>
           </div>
         <% end %>
       </div>
