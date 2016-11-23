@@ -4,34 +4,34 @@
     File: views / users / _edit.html.erb
   =========================================*/
 
-.user_form_page_section {
+.user_general_settings_section {
   padding: 0px !important;
   background: url("img_background_main.png") repeat;
 }
 
 // --------left_column_section--------
-.user_form_page_section .left_column_section {
+.user_general_settings_section .left_column_section {
   background-color: #283041;
   min-height: 700px;
 }
 
-.user_form_page_section .left_inner_section ul {
+.user_general_settings_section .left_inner_section ul {
   margin: 0px !important;
   list-style: none;
   background-color: rgba(47, 63, 91, 0.4);
 }
 
-.user_form_page_section .left_inner_section .list_options {
+.user_general_settings_section .left_inner_section .list_options {
   border-bottom: 1px solid #364760;
 }
 
-.user_form_page_section .left_inner_section .active {
+.user_general_settings_section .left_inner_section .active {
   background-color: #364760 !important;
   border-top: 2px solid rgba(47, 63, 91, 0.6);
   border-bottom: 1px solid #727985;
 }
 
-.user_form_page_section .left_inner_section ul li a {
+.user_general_settings_section .left_inner_section ul li a {
   color: #fff !important;
   padding: 20px 15px;
   display: inline-block;
@@ -41,11 +41,11 @@
   -o-transition: all 0.3s ease; 
 }
 
-.user_form_page_section .left_inner_section ul li i {
+.user_general_settings_section .left_inner_section ul li i {
   margin-right: 3px; 
 }
 
-.user_form_page_section .left_inner_section ul li a:hover {
+.user_general_settings_section .left_inner_section ul li a:hover {
   color: #E34B51 !important;
   background-color: #364760 !important;
   width: 100%;
@@ -54,7 +54,7 @@
   -o-transition: all 0.3s ease; 
 }
 
-.user_form_page_section .left_inner_section .option_header {
+.user_general_settings_section .left_inner_section .option_header {
   font-family: 'Lato', sans-serif;
   font-size: 14px !important;
   font-weight: 300 !important;
@@ -63,7 +63,7 @@
 }
 
 // --------right_column_section--------
-.user_form_page_section .right_inner_section .tree_link {
+.user_general_settings_section .right_inner_section .tree_link {
   font-family: 'Lato', sans-serif;
   font-size: 12px !important;
   padding: 15px 0px;
@@ -72,7 +72,7 @@
   margin-bottom: 15px;
 }
 
-.user_form_page_section .right_inner_section .tree_link a {
+.user_general_settings_section .right_inner_section .tree_link a {
   font-family: 'Lato', sans-serif;
   font-size: 12px !important;
   color: #283041 !important;
@@ -81,18 +81,18 @@
   -o-transition: all 0.3s ease; 
 }
 
-.user_form_page_section .right_inner_section .tree_link a:hover {
+.user_general_settings_section .right_inner_section .tree_link a:hover {
   color: #E34B51 !important;
   -webkit-transition: all 0.3s ease; 
   -moz-transition: all 0.3s ease; 
   -o-transition: all 0.3s ease; 
 }
 
-.user_form_page_section .right_inner_section .fwd_sign {
+.user_general_settings_section .right_inner_section .fwd_sign {
   margin: 0px 5px;
 }
 
-.user_form_page_section .right_inner_section .user_edit_update_form #user_image {
+.user_general_settings_section .right_inner_section .user_edit_update_form #user_image {
   height: 100%;
   margin-bottom: 0px !important;
   padding: 15px;
@@ -104,40 +104,40 @@
   letter-spacing: 1px;
 }
 
-.user_form_page_section .right_inner_section .user_edit_update_form label {
+.user_general_settings_section .right_inner_section .user_edit_update_form label {
   font-family: 'Lato', sans-serif;
   font-size: 15px !important;
   font-weight: 300 !important;
   text-transform: capitalize;;
 }
 
-.user_form_page_section .right_inner_section .user_edit_update_form .user_firstname {
+.user_general_settings_section .right_inner_section .user_edit_update_form .user_firstname {
   width: 545px;
   float: left;
   margin-right: 15px;
   margin-top: 25px;
 }
 
-.user_form_page_section .right_inner_section .user_edit_update_form .user_lastname {
+.user_general_settings_section .right_inner_section .user_edit_update_form .user_lastname {
   width: 545px;
   float: left;
   margin-top: 25px;
 }
 
-.user_form_page_section .right_inner_section .user_edit_update_form .user_profession {
+.user_general_settings_section .right_inner_section .user_edit_update_form .user_profession {
   width: 545px;
   float: left;
   margin-right: 15px;
   margin-top: 25px;
 }
 
-.user_form_page_section .right_inner_section .user_edit_update_form .user_category_gender {
+.user_general_settings_section .right_inner_section .user_edit_update_form .user_category_gender {
   width: 545px;
   float: left;
   margin-top: 25px;
 }
 
-.user_form_page_section .right_inner_section .user_edit_update_form .label_interest {
+.user_general_settings_section .right_inner_section .user_edit_update_form .label_interest {
   font-family: 'Lato', sans-serif;
   font-size: 15px !important;
   font-weight: 300 !important;
@@ -145,20 +145,20 @@
   margin-top: 12px;
 }
 
-.user_form_page_section .right_inner_section .user_description {
+.user_general_settings_section .right_inner_section .user_description {
   margin-top: 25px;
 }
 
-.user_form_page_section .right_inner_section .user_edit_update_form #user_description {
+.user_general_settings_section .right_inner_section .user_edit_update_form #user_description {
   height: 60px;
 }
 
-.user_form_page_section .right_inner_section .user_edit_update_form input[type="text"]:focus {
+.user_general_settings_section .right_inner_section .user_edit_update_form input[type="text"]:focus {
   border: 1px solid rgba(75, 180, 191, 0.5) !important;
   background-color: #fff !important;
 }
 
-.user_form_page_section .right_inner_section .user_edit_update_form input[type="submit"] {
+.user_general_settings_section .right_inner_section .user_edit_update_form input[type="submit"] {
   font-family: 'Lato', sans-serif;
   font-size: 20px;
   color: #fff !important;
