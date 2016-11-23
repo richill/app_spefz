@@ -1,17 +1,23 @@
-<%= simple_form_for(@user) do |f| %>
-  <%= f.error_notification %>
+<div class= "medium-12 columns user_form_page_section">
+  <div><%# render 'shared/content_user_left_column' %></div>
+  <div class="medium-2 columns left_column_section"></div>
+  <div class="medium-10 columns right_column_section">
+    <%= simple_form_for(@user) do |f| %>
+      <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.file_field :image %>
-    <%= f.input :firstname %>
-    <%= f.input :lastname %>
-    <%= f.input :profession %>
-    <%= f.text_field :tag_list, value: @user.tag_list.to_s, placeholder: "chess, jogging, dogs, skipping, gym, startups, entreprenuers, jazz..." %>
-    <%= f.association :category_gender, collection: CategoryGender.all, prompt: "select a category", label: "Gender" %>
-    <%= f.input :description %>
-  </div>
+      <div class="form-inputs">
+        <%= f.file_field :image %>
+        <%= f.input :firstname %>
+        <%= f.input :lastname %>
+        <%= f.input :profession %>
+        <%= f.text_field :tag_list, value: @user.tag_list.to_s, placeholder: "chess, jogging, dogs, skipping, gym, startups, entreprenuers, jazz..." %>
+        <%= f.association :category_gender, collection: CategoryGender.all, prompt: "select a category", label: "Gender" %>
+        <%= f.input :description %>
+      </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+      <div class="form-actions">
+        <%= f.button :submit %>
+      </div>
+    <% end %>
   </div>
-<% end %>
+</div>
