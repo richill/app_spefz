@@ -44,6 +44,8 @@ class UsersController < ApplicationController
   end
 
   def account
+    @user_payments = @user.payments.valid_payments.status_success
+    @user_subscription = @user.payments.valid_subscriptions.status_success
   end
 
   def settings

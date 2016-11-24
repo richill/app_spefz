@@ -32,7 +32,7 @@
                 </thead>
 
                 <tbody>
-                  <% @user.payments.each do |payment| %>
+                  <% @user_payments.each do |payment| %>
                     <tr>
                       <td><%= payment.stripe_customer_id %></td>
                       <td><%= payment.stripe_subscription_id %></td>
