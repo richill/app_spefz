@@ -85,7 +85,7 @@
   text-align: center;
   padding: 15px;
   border-radius: 2px;
-  margin-top: 30px;
+  margin: 30px 0px 35px;
   -webkit-transition: all 0.3s ease; 
   -moz-transition: all 0.3s ease; 
   -o-transition: all 0.3s ease; 
@@ -97,6 +97,75 @@
   -moz-transition: all 0.3s ease; 
   -o-transition: all 0.3s ease; 
 }
+
+
+.subscription_notes {
+  background-color: #fff;
+  color: #283041 !important;
+  padding: 15px;
+  margin-bottom: 40px;
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.14);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.14);
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.14);  
+}
+
+
+.subscribed_memeber {
+  font-family: 'Lato', sans-serif;
+}
+
+.subscribed_memeber .header {
+  font-size: 20px !important;
+  font-weight: bold !important;
+  text-transform: capitalize;
+}
+
+.subscribed_memeber .sub_header_info {
+  font-size: 15px !important;
+  font-weight: 400 !important;
+}
+
+.subscribed_memeber .sub_header_info a {
+ color: #E34B51 !important;
+}
+
+.subscribed_memeber .sub_header_info a:hover {
+ text-decoration: underline;
+}
+
+
+
+
+
+.unsubscribed_memeber {
+  font-family: 'Lato', sans-serif;
+}
+
+.unsubscribed_memeber .header {
+  font-size: 20px !important;
+  font-weight: bold !important;
+  text-transform: capitalize;
+}
+
+.unsubscribed_memeber .header i {
+  margin-right: 3px;
+}
+
+.unsubscribed_memeber .sub_header_info {
+  font-size: 15px !important;
+  font-weight: 400 !important;
+}
+
+.unsubscribed_memeber ul {
+  font-family: 'Lato', sans-serif;
+  padding: 10px 0px;
+  font-weight: 400 !important;
+}
+
+.unsubscribed_memeber li {
+  margin-bottom: 5px;
+}
+
 
 
 
