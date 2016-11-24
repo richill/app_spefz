@@ -58,8 +58,21 @@
         </div>
 
         <div class="subscription_notes">
-          <div class="subscribed_memeber"></div>
-          <div class="unsubscribed_memeber"></div>
+          <% if current_user.subscribed_access? %>
+            <div class="subscribed_memeber"></div>
+          <% else %>
+            <div class="unsubscribed_memeber">
+              <div>premium membership</div>
+              <div>With our Premium plans you will get the most out of our spefz community. Attend and host socials, send messages, meet new people and much more.</div>
+              <div>
+                <ul>
+                  <li>PREMIUM offers access to a range of free socials and events</li>
+                  <li>Be part of a fun friendly community - meet like minded people</li>
+                  <li>Access to a range of Exclusive Benefits</li>
+                </ul>
+              </div>
+            </div>
+          <% end %>
         </div>
 
 
