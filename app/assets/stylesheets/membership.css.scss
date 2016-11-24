@@ -7,8 +7,33 @@
 // --------left_column_section--------
 
 
+.membership_status_container {
+  background-color: #fff;
+  color: #283041 !important;
+  padding: 15px;
+  margin-bottom: 15px;
+  height: 80px;
+}
 
 
+.membership_status_container .text_info {
+  font-family: 'Lato', sans-serif;
+  font-size: 14px !important;
+  font-weight: 300 !important;
+  text-transform: capitalize;
+  margin-bottom: 15px;
+}
+
+.membership_status_container .text_status_info {
+  font-family: 'Lato', sans-serif;
+  font-size: 14px !important;
+  font-weight: bold !important;
+  text-transform: capitalize;
+}
+
+.text_status_info i {
+  margin-right: 5px;
+}
 
 
 
@@ -16,3 +41,34 @@
 // -------------------------------
 //   workings
 // -------------------------------
+
+// .subscription_status {
+//   width: 250px;
+//   border-right: 1px solid #727985;
+// }
+
+.membership_status_container ul {
+  list-style-type: none;
+  margin: 0px !important;
+}
+
+
+.membership_status_container ul li {
+  float: left;
+  width: 350px;
+}
+
+.subscription_status_li {
+  border-right: 1px solid red;
+}
+
+.subscription_date {
+  font-family: 'Lato', sans-serif;
+  font-size: 20px !important;
+  font-weight: bold !important;
+}
+
+
+
+
+

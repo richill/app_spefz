@@ -1,4 +1,4 @@
-<div class= "medium-12 columns user_general_settings_section">
+<div class= "medium-12 columns user_general_settings_section user_main_membership_page">
 
   <!-- left_column_section -->
   <div class="medium-2 columns left_column_section">
@@ -11,7 +11,42 @@
   <div class="medium-10 columns right_column_section">
     <div class="right_inner_section">
       <!-- content goes here -->
-      <div><h1>membership</h1></div>
+      <div class="tree_link">
+        <span><i class="fa fa-user" aria-hidden="true"></i> <%= link_to "#{current_user.firstname}", user_path(current_user)%></span> <span class="fwd_sign">></span> <span>membership</span>
+      </div>
+      <div class="user_membership_section">
+
+
+        <div class="membership_status_container">
+
+          <ul>
+            <li class="subscription_status_li">
+              <span class="subscription_status">
+                <div class="text_info">you are currently a</div>
+                <div class="text_status_info">
+                  <% if current_user.subscribed_access? %>
+                    <span><i class="fa fa-trophy" aria-hidden="true"></i></span>
+                    <span>premium member</span>
+                  <% else %>
+                    <span><i class="fa fa-certificate" aria-hidden="true"></i></span>
+                    <span>basic member</span>
+                  <% end %>
+                </div>
+              </span>
+            </li>
+
+
+            <li class="subscription_date_li">
+              <div class="text_info">subscription date</div>
+              <div class="subscription_date">
+                <div><%= current_user.recent_subscription_pymt_date.strftime("%a, %d %b %Y") %> | <%= current_user.recent_subscription_pymt_date.strftime("%I:%M %p") %></div>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+
+      </div>
     </div>
   </div>
 </div>
