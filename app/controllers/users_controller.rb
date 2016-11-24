@@ -19,13 +19,18 @@ class UsersController < ApplicationController
   end
 
   def show
-    if current_user.image? || current_user == @user
-      @events = Event.live_events.open_events
-      @activities_user = PublicActivity::Activity.order("created_at desc").where(owner_id: @user)
+    if current_user.subscribed_access?
+      if current_user.image? || current_user == @user
+        @events = Event.live_events.open_events
+        @activities_user = PublicActivity::Activity.order("created_at desc").where(owner_id: @user)
+      else
+        redirect_to image_restriction_page_path
+      end
     else
-      redirect_to image_restriction_page_path
+      @premium_plan = Subscription.find_by(title:"premium")
+      redirect_to subscription_path(@premium_plan)
     end
-    # allows current_user to only see their profile page and not other memebers if they do not have a profile image
+    # allows current_user to only see their profile page and not other memebers if they do not have a profile image & if not subscribed
   end
 
   def edit
