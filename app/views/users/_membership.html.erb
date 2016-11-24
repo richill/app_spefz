@@ -18,7 +18,6 @@
 
 
         <div class="membership_status_container">
-
           <ul>
             <li class="subscription_status_li">
               <span class="subscription_status">
@@ -34,16 +33,23 @@
                 </div>
               </span>
             </li>
-
-
             <li class="subscription_date_li">
-              <div class="text_info">subscription date</div>
-              <div class="subscription_date">
-                <div><%= current_user.recent_subscription_pymt_date.strftime("%a, %d %b %Y") %> | <%= current_user.recent_subscription_pymt_date.strftime("%I:%M %p") %></div>
-              </div>
+              <% if current_user.subscribed_access? %>
+                <div class="text_info">subscription date</div>
+                <div class="subscription_date">
+                  <div><%= current_user.recent_subscription_pymt_date.strftime("%a, %d %b %Y") %> | <%= current_user.recent_subscription_pymt_date.strftime("%I:%M %p") %></div>
+                </div>
+              <% else %>
+                <div class="text_info">subscription date</div>
+                <div class="subscription_date">
+                  <div>you currently have no subscription</div>
+                </div>
+              <% end %>
             </li>
           </ul>
         </div>
+
+
 
 
       </div>
