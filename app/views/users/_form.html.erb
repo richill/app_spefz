@@ -41,8 +41,8 @@
                   </span>
                 </div>
                 <div class="select_role_group">
-                  <%= f.association :category_managementgroup, collection: CategoryManagementgroup.all, prompt: "select a category", label: "Management Group" %>
                   <%= f.association :category_role, collection: CategoryRole.all, prompt: "select a category", label: "Role" %>
+                  <%= f.association :category_managementgroup, collection: CategoryManagementgroup.all, prompt: "select a category", label: "Management Group" %>
                 </div>
               </div>
             <% end %>
