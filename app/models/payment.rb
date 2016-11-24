@@ -8,6 +8,10 @@ class Payment < ActiveRecord::Base
   scope :by_females, -> { joins(user: :category_gender).where(category_genders: { name: 'Female' }) }
   scope :by_males, -> { joins(user: :category_gender).where(category_genders: { name: 'Male' }) }
 
+  scope :payments, -> {where(['subscription_payment_date = ? OR subscription_payment_date IS ?', false, nil])}
+  scope :subscriptions, -> {where(['event_payment_date = ? OR event_payment_date IS ?', false, nil])}
+  scope :successful_payments, -> {where(['status = ?', "success"])}
+
   def generate_reference_number
     begin
       reference_length = 6

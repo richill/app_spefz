@@ -18,7 +18,33 @@
         <div class="user_account_section">
           <div class="paymt_cover no_subscription_event_paymts">no_subscription_event_paymts</div>
           <div class="paymt_cover subscription_paymts">subscription_paymts</div>
-          <div class="paymt_cover event_paymts">event_paymts</div>
+          
+
+          <div class="paymt_cover event_paymts">
+            <div>event_paymts</div>
+            <div class="listed_event_paymts">
+              <table>
+                <thead>
+                  <tr>
+                    <th>type</th>
+                    <th>payment/subscription date</th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  <% @user.payments.each do |payment| %>
+                    <tr>
+                      <td><%= payment.stripe_customer_id %></td>
+                      <td><%= payment.stripe_subscription_id %></td>
+                    </tr>
+                  <% end %>
+                </tbody>
+              </table>
+            </div>    
+          </div>
+
+
+
         </div>
       </div>
       <!-- content -->
