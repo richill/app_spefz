@@ -49,6 +49,19 @@
           </ul>
         </div>
 
+        <div class="subscribe_unsubscribe_conatiner">
+          <% if current_user.subscribed_access? %>
+            <div class="sub_btn cancel_sub"><%= link_to "cancel subscription", "#" %></div>
+          <% else %>
+            <div class="sub_btn start_sub"><%= link_to "subscribe now!", "#" %></div>
+          <% end %>
+        </div>
+
+        <div class="subscription_notes">
+          <div class="subscribed_memeber"></div>
+          <div class="unsubscribed_memeber"></div>
+        </div>
+
 
 
 

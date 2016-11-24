@@ -78,6 +78,34 @@
 }
 
 
+.sub_btn a {
+  font-family: 'Lato', sans-serif;
+  font-size: 18px !important;
+  font-weight: 300 !important;
+  color: #fff !important;
+  letter-spacing: 1px;
+  background-color: #E34B51;
+  width: 100%;
+  text-transform: uppercase;
+  display: inline-block;
+  text-align: center;
+  padding: 15px;
+  border-radius: 2px;
+  margin-top: 30px;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease; 
+}
+
+
+.sub_btn a:hover {
+  background-color: #eeaa02 !important;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease; 
+}
+
+
 
 
 
