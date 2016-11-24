@@ -5,17 +5,7 @@
   =========================================*/
 
 // --------left_column_section--------
-
-.user_account_section {
-
-}
-
-
-// ---------------------------
-//   workings
-// ---------------------------
-
-.paymt_cover {
+.user_account_section .paymt_cover {
   background-color: #fff;
   color: #283041 !important;
   padding: 15px;
@@ -24,3 +14,80 @@
   -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.14);
   box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.14);
 }
+
+.user_account_section .pymt_header {
+  font-family: 'Lato', sans-serif;
+  font-size: 20px !important;
+  font-weight: bold !important;
+  text-transform: capitalize;
+}
+
+.user_account_section .pymt_sub_header {
+  font-family: 'Lato', sans-serif;
+  font-size: 16px !important;
+  font-weight: 300 !important;
+  background-color: rgba(88, 205, 166, 0.3) !important;
+  padding: 5px 10px;
+  margin-bottom: 5px;
+}
+
+.user_account_section .pymt_sub_header i {
+  margin-right: 3px;
+}
+
+.user_account_section .divider {
+  margin: 0px 20px;
+}
+
+.user_account_section .info_link a {
+  background-color: #E34B51;
+  padding: 8px 15px;
+  color: #fff !important;
+  font-size: 14px;
+  letter-spacing: 1px;
+  word-spacing: 3px;
+  border-radius: 2px;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease; 
+}
+
+.user_account_section .info_link a:hover {
+  background-color: rgba(47, 63, 91, 0.5) !important;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease; 
+}
+
+.user_account_section table {
+  font-family: 'Lato', sans-serif;
+  width: 100%;
+}
+
+.user_account_section table th {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  word-spacing: 2px;
+}
+
+.user_account_section table td {
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+
+.user_account_section table td a:hover {
+  text-decoration: underline;
+  color: #E34B51 !important;
+}
+
+
+
+
+
+
+
+
+
+
+

@@ -44,8 +44,9 @@ class UsersController < ApplicationController
   end
 
   def account
-    @user_payments = @user.payments.valid_payments.status_success
-    @user_subscription = @user.payments.valid_subscriptions.status_success
+    @user_payments = @user.payments.valid_payments.status_success.order("created_at desc")
+    @user_subscription = @user.payments.valid_subscriptions.status_success.order("created_at desc")
+    @premium_plan = Subscription.find_by(title:"premium")
   end
 
   def settings

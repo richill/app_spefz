@@ -16,34 +16,103 @@
           <span><i class="fa fa-user" aria-hidden="true"></i> <%= link_to "#{current_user.firstname}", user_path(current_user)%></span> <span class="fwd_sign">></span> <span>account</span>
         </div>
         <div class="user_account_section">
-          <div class="paymt_cover no_subscription_event_paymts">no_subscription_event_paymts</div>
-          <div class="paymt_cover subscription_paymts">subscription_paymts</div>
-          
 
+          <% unless @user.subscribed? || @user_payments.present?  %>
+            <div class="paymt_cover no_subscription_event_paymts">
+              <div class="pymt_header">no transactions</div>
+              <div class="pymt_sub_header" style="padding: 15px 10px; margin-bottom: 15px;">
+                <span><i class="fa fa-info-circle" aria-hidden="true"></i></span>
+                <span>You currently are not a subscribed member. What are you waiting for? <span class="divider">|</span> <span class="info_link"><%= link_to "subscribe now!", subscription_path(@premium_plan) %></span></span>
+              </div>
+              <div class="pymt_sub_header" style="padding: 15px 10px; margin-bottom: 15px;">
+                <span><i class="fa fa-info-circle" aria-hidden="true"></i></span>
+                <span>You have not made any recent payments to attend an event/speed-social <span class="divider">|</span> <span class="info_link"><%= link_to "view speed-socials",  events_path %></span></span>
+              </div>
+            </div>
+          <% end %>
+          
+          <% if @user.subscribed? %>
+            <div class="paymt_cover subscription_paymts">
+              <div class="pymt_header">subscription</div>
+              <div class="pymt_sub_header">
+                <span><i class="fa fa-info-circle" aria-hidden="true"></i></span>
+                <span>The below transaction currently display yor subscription</span>
+              </div>
+              <div class="listed_subscription_paymts">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>user id</th>
+                      <th>registed email</th>
+                      <th>subscription</th>
+                      <th>price</th>
+                      <th>subscription ref</th>
+                      <th>subscription date</th>
+                      <th>status</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><%= @user.reference %></td>
+                      <td><%= @user.email %></td>
+                      <td>
+                        <% if @user.subscribed? %>
+                          <span>Premium Plan</span>
+                        <% end %>
+                      </td>
+                      <td>£<%= number_with_precision(15, precision: 2) %>/mth</td>
+                      <td><%= @user.stripe_subscription_pymt_id %></td>
+                      <td><%= @user.recent_subscription_pymt_date.strftime("%a, %d %b %Y") %> | <%= @user.recent_subscription_pymt_date.strftime("%I:%M %p") %></td>
+                      <td>
+                        <% if @user.subscribed? %>
+                          <span style="color:#58CDA6;">active</span>
+                        <% else %>
+                          <span style="color:#E34B51;">canceled</span>
+                        <% end %>
+                      </td>
+                    </tr>
+                  
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          <% end %>
+          
+          <% if @user_payments.present? %>
           <div class="paymt_cover event_paymts">
-            <div>event_paymts</div>
+            <div class="pymt_header">event payments</div>
+            <div class="pymt_sub_header">
+              <span><i class="fa fa-info-circle" aria-hidden="true"></i></span>
+              <span>The below transactions currently display all payments made by you to attend an event</span>
+            </div>
             <div class="listed_event_paymts">
               <table>
                 <thead>
                   <tr>
-                    <th>type</th>
-                    <th>payment/subscription date</th>
+                    <th>user id</th>
+                    <th>registed email</th>
+                    <th>event</th>
+                    <th>price</th>
+                    <th>payment ref</th>
+                    <th>payment date</th>
                   </tr>
                 </thead>
-
                 <tbody>
                   <% @user_payments.each do |payment| %>
                     <tr>
-                      <td><%= payment.stripe_customer_id %></td>
-                      <td><%= payment.stripe_subscription_id %></td>
+                      <td><%= payment.user.reference %></td>
+                      <td><%= payment.email %></td>
+                      <td><%= link_to payment.event.title, user_event_path(payment.event, payment.user) %></td>
+                      <td>£<%= number_with_precision(payment.event.price, precision: 2) %></td>
+                      <td><%= payment.reference %></td>
+                      <td><%= payment.event_payment_date.strftime("%a, %d %b %Y") %> | <%= payment.event_payment_date.strftime("%I:%M %p") %></td>
                     </tr>
                   <% end %>
                 </tbody>
               </table>
             </div>    
           </div>
-
-
+          <% end %>
 
         </div>
       </div>

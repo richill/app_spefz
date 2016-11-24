@@ -47,8 +47,15 @@
 
     <li>
       <div class="list_cover">
+        <span><i class="fa fa-credit-card" aria-hidden="true"></i></span>
+        <span><%= link_to 'account', account_user_path(current_user) %></span>
+      </div>
+    </li>
+
+    <li>
+      <div class="list_cover">
         <span><i class="fa fa-cog" aria-hidden="true"></i></span>
-        <span><%= link_to 'settings', "#" %></span>
+        <span><%= link_to 'settings',settings_user_path(current_user) %></span>
       </div>
     </li>
 
