@@ -40,6 +40,7 @@ class UsersController < ApplicationController
   end
 
   def membership
+    @premium_plan = Subscription.find_by(title:"premium")
   end
 
   def account
