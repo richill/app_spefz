@@ -29,9 +29,24 @@
             <%= f.text_field :tag_list, value: @user.tag_list.to_s, placeholder: "chess, jogging, dogs, skipping, gym, startups, entreprenuers, jazz..." %>
             <%= f.input :description, label: "about me", placeholder: "Tell us a bit about yourself, what you like doing and where you like going." %>
 
-            <div class="admin_content">
-              <div>hello</div>
-            </div>
+            <% if current_user.admin_pa_management_group %>
+              <div class="admin_content">
+                <div class="current_role_group">
+                  <span><i class="fa fa-user" aria-hidden="true"></i></span>
+                  <span>User Current Role & Group: </span>
+                  <span class="current_role_group_info">
+                    <span><%= @user.category_role.name %></span>
+                    <span>|</span>
+                    <span><%= @user.category_managementgroup.name %></span> 
+                  </span>
+                </div>
+                <div class="select_role_group">
+                  <%= f.association :category_managementgroup, collection: CategoryManagementgroup.all, prompt: "select a category", label: "Management Group" %>
+                  <%= f.association :category_role, collection: CategoryRole.all, prompt: "select a category", label: "Role" %>
+                </div>
+              </div>
+            <% end %>
+
           </div>
 
           <div class="form-actions">
