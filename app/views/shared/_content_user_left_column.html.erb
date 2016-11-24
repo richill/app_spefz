@@ -11,7 +11,7 @@
     <li>
       <div class="list_options">
         <%= link_to membership_user_path(@user) do %>
-          <% if current_user.subscribed_access? %>
+          <% if current_user.subscribed? %>
             <span><i class="fa fa-trophy" aria-hidden="true"></i></span>
           <% else %>
             <span><i class="fa fa-certificate" aria-hidden="true"></i></span>

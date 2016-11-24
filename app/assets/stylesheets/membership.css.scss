@@ -7,7 +7,7 @@
 // --------left_column_section--------
 
 
-.membership_status_container {
+.user_membership_section .membership_status_container {
   background-color: #fff;
   color: #283041 !important;
   padding: 15px;
@@ -19,7 +19,7 @@
 }
 
 
-.membership_status_container .text_info {
+.user_membership_section .membership_status_container .text_info {
   font-family: 'Lato', sans-serif;
   font-size: 14px !important;
   font-weight: 300 !important;
@@ -27,52 +27,44 @@
   margin-bottom: 15px;
 }
 
-.membership_status_container .text_status_info {
+.user_membership_section .membership_status_container .text_status_info {
   font-family: 'Lato', sans-serif;
   font-size: 20px !important;
   font-weight: bold !important;
   text-transform: capitalize;
 }
 
-.text_status_info i {
+.user_membership_section .membership_status_container .text_status_info i {
   margin-right: 5px;
 }
 
-
-
-
-// -------------------------------
-//   workings
-// -------------------------------
-
-.membership_status_container ul {
+.user_membership_section .membership_status_container ul {
   list-style-type: none;
   margin: 0px !important;
 }
 
-
-.membership_status_container ul li {
+.user_membership_section .membership_status_container ul li {
   float: left;
   width: 450px;
   padding: 15px 25px;
 }
 
-.subscription_status_li {
+.user_membership_section .subscription_status_li {
   border-right: 1px solid #727985;
 }
 
-.subscription_date_li {
+.user_membership_section .subscription_date_li {
   margin-left: 35px;
 }
 
-.subscription_date {
+.user_membership_section .subscription_date {
   font-family: 'Lato', sans-serif;
   font-size: 20px !important;
   font-weight: bold !important;
   text-transform: capitalize;
 }
 
-.sub_btn a {
+.user_membership_section .sub_btn a {
   font-family: 'Lato', sans-serif;
   font-size: 18px !important;
   font-weight: 300 !important;
@@ -91,15 +83,14 @@
   -o-transition: all 0.3s ease; 
 }
 
-.sub_btn a:hover {
+.user_membership_section .sub_btn a:hover {
   background-color: #eeaa02 !important;
   -webkit-transition: all 0.3s ease; 
   -moz-transition: all 0.3s ease; 
   -o-transition: all 0.3s ease; 
 }
 
-
-.subscription_notes {
+.user_membership_section .subscription_notes {
   background-color: #fff;
   color: #283041 !important;
   padding: 15px;
@@ -109,62 +100,62 @@
   box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.14);  
 }
 
-
-.subscribed_memeber {
+.user_membership_section .subscribed_memeber {
   font-family: 'Lato', sans-serif;
 }
 
-.subscribed_memeber .header {
+.user_membership_section .subscribed_memeber .header {
   font-size: 20px !important;
   font-weight: bold !important;
   text-transform: capitalize;
 }
 
-.subscribed_memeber .sub_header_info {
+.user_membership_section .subscribed_memeber .sub_header_info {
   font-size: 15px !important;
   font-weight: 400 !important;
 }
 
-.subscribed_memeber .sub_header_info a {
+.user_membership_section .subscribed_memeber .sub_header_info a {
  color: #E34B51 !important;
 }
 
-.subscribed_memeber .sub_header_info a:hover {
+.user_membership_section .subscribed_memeber .sub_header_info a:hover {
  text-decoration: underline;
 }
 
-
-
-
-
-.unsubscribed_memeber {
+.user_membership_section .unsubscribed_memeber {
   font-family: 'Lato', sans-serif;
 }
 
-.unsubscribed_memeber .header {
+.user_membership_section .unsubscribed_memeber .header {
   font-size: 20px !important;
   font-weight: bold !important;
   text-transform: capitalize;
 }
 
-.unsubscribed_memeber .header i {
+.user_membership_section .unsubscribed_memeber .header i {
   margin-right: 3px;
 }
 
-.unsubscribed_memeber .sub_header_info {
+.user_membership_section .unsubscribed_memeber .sub_header_info {
   font-size: 15px !important;
   font-weight: 400 !important;
 }
 
-.unsubscribed_memeber ul {
+.user_membership_section .unsubscribed_memeber ul {
   font-family: 'Lato', sans-serif;
   padding: 10px 0px;
   font-weight: 400 !important;
 }
 
-.unsubscribed_memeber li {
+.user_membership_section .unsubscribed_memeber li {
   margin-bottom: 5px;
 }
+
+
+// -------------------------------
+//   workings
+// -------------------------------
 
 
 

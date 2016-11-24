@@ -10,90 +10,90 @@
   <!-- right_column_section -->
   <div class="medium-10 columns right_column_section">
     <div class="right_inner_section">
-      <!-- content goes here -->
-      <div class="tree_link">
-        <span><i class="fa fa-user" aria-hidden="true"></i> <%= link_to "#{current_user.firstname}", user_path(current_user)%></span> <span class="fwd_sign">></span> <span>membership</span>
-      </div>
-      <div class="user_membership_section">
-
-
-        <div class="membership_status_container">
-          <ul>
-            <li class="subscription_status_li">
-              <span class="subscription_status">
-                <div class="text_info">you are currently a</div>
-                <div class="text_status_info">
-                  <% if current_user.subscribed_access? %>
-                    <span><i class="fa fa-trophy" aria-hidden="true"></i></span>
-                    <span>premium member</span>
-                  <% else %>
-                    <span><i class="fa fa-certificate" aria-hidden="true"></i></span>
-                    <span>basic member</span>
-                  <% end %>
-                </div>
-              </span>
-            </li>
-            <li class="subscription_date_li">
-              <% if current_user.subscribed_access? %>
-                <div class="text_info">subscription date</div>
-                <div class="subscription_date">
-                  <div><%= current_user.recent_subscription_pymt_date.strftime("%a, %d %b %Y") %> | <%= current_user.recent_subscription_pymt_date.strftime("%I:%M %p") %></div>
-                </div>
-              <% else %>
-                <div class="text_info">subscription date</div>
-                <div class="subscription_date">
-                  <div>you currently have no subscription</div>
-                </div>
-              <% end %>
-            </li>
-          </ul>
+      <!-- content -->
+      <div class="user_membership_section_main_content">
+        <div class="tree_link">
+          <span><i class="fa fa-user" aria-hidden="true"></i> <%= link_to "#{current_user.firstname}", user_path(current_user)%></span> <span class="fwd_sign">></span> <span>membership</span>
         </div>
+        <div class="user_membership_section">
+          <div class="membership_status_container">
+            <ul>
+              <li class="subscription_status_li">
+                <span class="subscription_status">
+                  <div class="text_info">you are currently a</div>
+                  <div class="text_status_info">
+                    <% if current_user.subscribed? %>
+                      <span><i class="fa fa-trophy" aria-hidden="true"></i></span>
+                      <span>premium member</span>
+                    <% else %>
+                      <span><i class="fa fa-certificate" aria-hidden="true"></i></span>
+                      <span>basic member</span>
+                    <% end %>
+                  </div>
+                </span>
+              </li>
+              <li class="subscription_date_li">
+                <% if current_user.subscribed? %>
+                  <div class="text_info">subscription date</div>
+                  <div class="subscription_date">
+                    <div><%= current_user.recent_subscription_pymt_date.strftime("%a, %d %b %Y") %> | <%= current_user.recent_subscription_pymt_date.strftime("%I:%M %p") %></div>
+                  </div>
+                <% else %>
+                  <div class="text_info">subscription date</div>
+                  <div class="subscription_date">
+                    <div>you currently have no subscription</div>
+                  </div>
+                <% end %>
+              </li>
+            </ul>
+          </div>
 
-        <div class="subscribe_unsubscribe_conatiner">
-          <% if current_user.subscribed_access? %>
-            <div class="sub_btn cancel_sub"><%= link_to "cancel subscription", "#" %></div>
-          <% else %>
-            <div class="sub_btn start_sub"><%= link_to "subscribe now!", subscription_path(@premium_plan)%></div>
+          <div class="subscribe_unsubscribe_conatiner">
+            <% if current_user.subscribed? %>
+              <div class="sub_btn cancel_sub"><%= link_to "cancel subscription", "#" %></div>
+            <% else %>
+              <div class="sub_btn start_sub"><%= link_to "subscribe now!", subscription_path(@premium_plan)%></div>
+            <% end %>
+          </div>
+
+          <% if current_user.subscribed? %>
+            <div class="subscription_notes">
+              <div class="subscribed_memeber">
+                <div class="header">subscription cancellation</div>
+                <div class="sub_header_info">To end your premium member subscription plan, please do <%= link_to "contact us", "#" %> or click the button <%= link_to "cancel subscription", "#" %> above</div>
+              </div>
+            </div>
           <% end %>
-        </div>
 
-        <% if current_user.subscribed_access? %>
           <div class="subscription_notes">
-            <div class="subscribed_memeber">
-              <div class="header">subscription cancellation</div>
-              <div class="sub_header_info">To end your premium member subscription plan, please do <%= link_to "contact us", "#" %> or click the button <%= link_to "cancel subscription", "#" %> above</div>
-            </div>
-          </div>
-        <% end %>
-
-        <div class="subscription_notes">
-          <div class="unsubscribed_memeber">
-            <div class="premium_paln">
-              <div class="header"><i class="fa fa-trophy" aria-hidden="true"></i> premium membership benifits</div>
-              <div class="sub_header_info">With our Premium plans you will get the most out of our spefz community. Attend and host socials, send messages, meet new people and much more.</div>
-              <div>
-                <ul>
-                  <li>PREMIUM offers access to a range of free socials and events</li>
-                  <li>Be part of a fun friendly community - meet like minded people</li>
-                  <li>Access to a range of Exclusive Benefits</li>
-                </ul>
+            <div class="unsubscribed_memeber">
+              <div class="premium_paln">
+                <div class="header"><i class="fa fa-trophy" aria-hidden="true"></i> premium membership benifits</div>
+                <div class="sub_header_info">With our Premium plans you will get the most out of our spefz community. Attend and host socials, send messages, meet new people and much more.</div>
+                <div>
+                  <ul>
+                    <li>PREMIUM offers access to a range of free socials and events</li>
+                    <li>Be part of a fun friendly community - meet like minded people</li>
+                    <li>Access to a range of Exclusive Benefits</li>
+                  </ul>
+                </div>
               </div>
-            </div>
-            <div class="basic_plan">
-              <div class="header"><i class="fa fa-certificate" aria-hidden="true"></i> basic membership benifits</div>
-              <div class="sub_header_info">With our Basic plans you will get limited usaged our spefz community. Limited access to attending and hosting socials, sending messages.</div>
-              <div>
-                <ul>
-                  <li>BASIC offers access to view a range of speed social events</li>
-                  <li>Limited access to attending organised socials</li>
-                  <li>Limited access to connecting with the community - and meeting like minded people</li>
-                </ul>
+              <div class="basic_plan">
+                <div class="header"><i class="fa fa-certificate" aria-hidden="true"></i> basic membership benifits</div>
+                <div class="sub_header_info">With our Basic plans you will get limited usaged our spefz community. Limited access to attending and hosting socials, sending messages.</div>
+                <div>
+                  <ul>
+                    <li>BASIC offers access to view a range of speed social events</li>
+                    <li>Limited access to attending organised socials</li>
+                    <li>Limited access to connecting with the community - and meeting like minded people</li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
         </div>
-
       </div>
+      <!-- content -->
     </div>
   </div>
 </div>
