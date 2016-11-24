@@ -10,9 +10,14 @@
   <!-- right_column_section -->
   <div class="medium-10 columns right_column_section">
     <div class="right_inner_section">
-      <!-- content goes here -->
-      <div><h1>account</h1></div>
+      <!-- content -->
+      <div class="user_acoount_section_main_content">
+        <div class="tree_link">
+          <span><i class="fa fa-user" aria-hidden="true"></i> <%= link_to "#{current_user.firstname}", user_path(current_user)%></span> <span class="fwd_sign">></span> <span>account</span>
+        </div>
+      </div>
+      <!-- content -->
     </div>
   </div>
+  <!-- right_column_section -->
 </div>
-<!-- right_column_section -->
