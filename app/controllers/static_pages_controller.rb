@@ -7,6 +7,9 @@ class StaticPagesController < ApplicationController
   def accountpg 
   end
 
+  def cancellationsrefundpg
+  end
+
   def cookiepg  
   end
 
@@ -29,11 +32,14 @@ class StaticPagesController < ApplicationController
     @signup = Signup.new
   end
 
-  def membership
+  def membershippg
     
   end
 
   def notepg 
+  end
+
+  def paymentqueriespg
   end
 
   def privacypg 

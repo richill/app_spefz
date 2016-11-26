@@ -51,25 +51,28 @@ Rails.application.routes.draw do
   
 
   root  'static_pages#homepg'
-  get   'about-us',                 to: 'static_pages#aboutpg'
-  get   'error',                    to: 'static_pages#errorpg'
-  get   'errorpermission',          to: 'static_pages#errorpermissionpg'
-  get   'help',                     to: 'static_pages#helppg'
-  get   'help/account-and-profile',      to: 'static_pages#accountpg'
-  get   'landing-page',             to: 'static_pages#landingpg'
-  get   'image-restriction-page',   to: 'static_pages#imagepg'
-  get   'notes',                    to: 'static_pages#notepg'
-  get   'terms',                    to: 'static_pages#termspg'
-  get   'terms/cookie-policy',      to: 'static_pages#cookiepg'
-  get   'terms/privacy',            to: 'static_pages#privacypg'
+  get   'about-us',                       to: 'static_pages#aboutpg'
+  get   'error',                          to: 'static_pages#errorpg'
+  get   'errorpermission',                to: 'static_pages#errorpermissionpg'
+  get   'help',                           to: 'static_pages#helppg'
+  get   'help/account-and-profile',       to: 'static_pages#accountpg'
+  get   'help/cancellations-and-refunds',  to: 'static_pages#cancellationsrefundpg'
+  get   'help/membership',                to: 'static_pages#membershippg'
+  get   'help/payment-queries',           to: 'static_pages#paymentqueriespg'
+  get   'landing-page',                   to: 'static_pages#landingpg'
+  get   'image-restriction-page',         to: 'static_pages#imagepg'
+  get   'notes',                          to: 'static_pages#notepg'
+  get   'terms',                          to: 'static_pages#termspg'
+  get   'terms/cookie-policy',            to: 'static_pages#cookiepg'
+  get   'terms/privacy',                  to: 'static_pages#privacypg'
   
-  get   'tags/:tag',                to: 'users#index', as: :tag
-  get   'socialtags/:tag',          to: 'socials#index', as: :social_tag
-  get   'eventtags/:tag',           to: 'events#index', as: :event_tag
+  get   'tags/:tag',                      to: 'users#index', as: :tag
+  get   'socialtags/:tag',                to: 'socials#index', as: :social_tag
+  get   'eventtags/:tag',                 to: 'events#index', as: :event_tag
 
   #massages folder routes
-  get "messages/inbox",              to: "messages#inbox", as: :message_inbox
-  get "messages/sent",               to: "messages#sent",  as: :message_sent
-  get "messages/trash",              to: "messages#trash", as: :message_trash
+  get "messages/inbox",                   to: "messages#inbox", as: :message_inbox
+  get "messages/sent",                    to: "messages#sent",  as: :message_sent
+  get "messages/trash",                   to: "messages#trash", as: :message_trash
 end
 
