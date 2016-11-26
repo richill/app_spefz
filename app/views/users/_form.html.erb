@@ -13,7 +13,7 @@
       <div class="tree_link">
         <span><i class="fa fa-user" aria-hidden="true"></i> <%= link_to "#{current_user.firstname}", user_path(current_user)%></span> <span class="fwd_sign">></span> <span>edit profile</span>
       </div>
-      <div class="user_edit_update_form">
+      <div class="user_general_settings_inner_section user_edit_update_form">
         <%= simple_form_for(@user) do |f| %>
           <%= f.error_notification %>
 
