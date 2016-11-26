@@ -4,6 +4,9 @@ class StaticPagesController < ApplicationController
   def aboutpg
   end
 
+  def cookiepg  
+  end
+
   def errorpermissionpg
   end
   

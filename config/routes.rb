@@ -51,6 +51,7 @@ Rails.application.routes.draw do
   
   root  'static_pages#homepg'
   get   'about-us',                 to: 'static_pages#aboutpg'
+  get   'cookie-policy',                 to: 'static_pages#cookiepg'
   get   'error',                    to: 'static_pages#errorpg'
   get   'errorpermission',          to: 'static_pages#errorpermissionpg'
   get   'help',                     to: 'static_pages#helppg'
