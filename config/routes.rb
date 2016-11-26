@@ -50,11 +50,15 @@ Rails.application.routes.draw do
   end
   
   root  'static_pages#homepg'
+  get   'about-us',                 to: 'static_pages#aboutpg'
   get   'error',                    to: 'static_pages#errorpg'
   get   'errorpermission',          to: 'static_pages#errorpermissionpg'
   get   'landing-page',             to: 'static_pages#landingpg'
   get   'image-restriction-page',   to: 'static_pages#imagepg'
   get   'notes',                    to: 'static_pages#notepg'
+  get   'privacy',                  to: 'static_pages#privacypg'
+  get   'terms',                    to: 'static_pages#termspg'
+
   get   'tags/:tag',                to: 'users#index', as: :tag
   get   'socialtags/:tag',          to: 'socials#index', as: :social_tag
   get   'eventtags/:tag',           to: 'events#index', as: :event_tag

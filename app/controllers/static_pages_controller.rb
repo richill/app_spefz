@@ -1,6 +1,9 @@
 class StaticPagesController < ApplicationController
   # before_filter :user_not_allowed_to_view, only: [:homepg]
 
+  def aboutpg
+  end
+
   def errorpermissionpg
   end
   
@@ -18,6 +21,12 @@ class StaticPagesController < ApplicationController
   end
 
   def notepg 
+  end
+
+  def privacypg 
+  end
+
+  def termspg
   end
 
   # def user_not_allowed_to_view
