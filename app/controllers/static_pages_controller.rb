@@ -19,6 +19,9 @@ class StaticPagesController < ApplicationController
   def errorpg
   end
 
+  def faqspg
+  end
+
   def helppg
   end
 
@@ -33,10 +36,12 @@ class StaticPagesController < ApplicationController
   end
 
   def membershippg
-    
   end
 
   def notepg 
+  end
+
+  def partnerspg 
   end
 
   def paymentqueriespg
