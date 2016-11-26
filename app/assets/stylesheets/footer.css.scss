@@ -349,14 +349,15 @@
 .footer_main_section .footer_links ul {
   margin-bottom: 0px !important;
 }
-@media only screen and (min-width: 500px) {
+@media only screen and (min-width: 660px) {
   .footer_main_section .footer_links ul {
-    width: 505px;
+    // width: 505px;
+    width: 645px;
     margin: auto;
   }
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 660px) {
   .footer_main_section .footer_links ul li {
     width: 100% !important;
     text-align: center !important;
