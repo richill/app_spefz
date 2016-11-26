@@ -67,7 +67,6 @@ Rails.application.routes.draw do
   get   'terms',                          to: 'static_pages#termspg'
   get   'terms/cookie-policy',            to: 'static_pages#cookiepg'
   get   'terms/privacy',                  to: 'static_pages#privacypg'
-  
   get   'tags/:tag',                      to: 'users#index', as: :tag
   get   'socialtags/:tag',                to: 'socials#index', as: :social_tag
   get   'eventtags/:tag',                 to: 'events#index', as: :event_tag
