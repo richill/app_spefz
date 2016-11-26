@@ -63,8 +63,10 @@
 }
 
 // --------right_column_section--------
-.user_general_settings_inner_section {
-  width: 1420px;
+@media only screen and (min-width: 1750px) {
+  .user_general_settings_inner_section  {
+    width: 1420px;
+  }
 }
 
 .user_general_settings_section .right_inner_section .tree_link {
