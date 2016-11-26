@@ -53,6 +53,7 @@ Rails.application.routes.draw do
   get   'about-us',                 to: 'static_pages#aboutpg'
   get   'error',                    to: 'static_pages#errorpg'
   get   'errorpermission',          to: 'static_pages#errorpermissionpg'
+  get   'help',                     to: 'static_pages#helppg'
   get   'landing-page',             to: 'static_pages#landingpg'
   get   'image-restriction-page',   to: 'static_pages#imagepg'
   get   'notes',                    to: 'static_pages#notepg'

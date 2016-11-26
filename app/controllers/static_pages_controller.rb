@@ -10,6 +10,9 @@ class StaticPagesController < ApplicationController
   def errorpg
   end
 
+  def helppg
+  end
+
   def homepg
   end
 
