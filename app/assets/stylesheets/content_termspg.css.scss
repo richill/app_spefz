@@ -1,0 +1,277 @@
+/*=========================================
+    Section: static pages
+    File: views / shared / _content_terms.html.erb 
+    File: views / shared / _content_privacy.html.erb
+  =========================================*/
+
+.static_content_main_section_tree_link_container {
+  width: 960px !important;
+  margin: auto; 
+}
+
+.static_content_main_section {
+  min-height: 950px;
+  padding: 0px 15px 15px !important;
+  background: url("img_background_main.png") repeat;
+}
+
+.static_content_main_section .terms_inner_container { 
+
+}
+@media only screen and (min-width: 1000px) {
+  .static_content_main_section .terms_inner_container  {
+    width: 960px !important;
+    margin: auto;
+  }
+}
+
+.static_content_main_section .terms_info_section_one {
+  margin-top: 15px;
+}
+
+// -----------------------------------
+//  left section
+// -----------------------------------
+
+.static_content_main_section .left_section {
+  padding-left: 0px !important;
+}
+@media only screen and (max-width: 1000px) {
+  .static_content_main_section .left_section {
+    width: 100% !important;
+    padding: 0px !important;
+  }
+}
+
+.static_content_main_section .left_inner_section {
+  padding: 10px;
+  margin-bottom: 15px;
+  background-color: rgba(0, 0, 0, 0.05) !important;
+  min-height: 660px;
+}
+@media only screen and (max-width: 1000px) {
+  .static_content_main_section .left_inner_section {
+    min-height: 0px;
+  }
+}
+
+.static_content_main_section .left_inner_section h3 {
+  font-family: "Lato", sans-serif;
+  font-size: 18px !important;
+  color: #283041;
+  text-align: left;
+  text-transform: capitalize;
+  border-bottom: 1px solid #D4D4D4;
+  background-color: rgba(0, 0, 0, 0.05) !important;
+  padding: 5px;
+}
+
+.static_content_main_section .left_inner_section h3 i {
+  float: right !important;
+  padding: 5px;
+}
+
+.static_content_main_section .left_section .content {
+  font-family: "Lato", sans-serif;
+  font-size: 12px !important;
+  color: #283041;
+  margin-left: 0px !important;
+  text-align: justify;
+  margin-bottom: 15px;
+  background-color: rgba(255, 255, 255, 0.8) !important;
+  border-bottom: 2px solid #D4D4D4;
+  padding: 15px;
+}
+
+.static_content_main_section .content ul {
+  list-style-type: none;
+  margin: 0px !important;
+}
+
+.static_content_main_section .content li {
+  font-family: "Lato", sans-serif;
+  border-bottom: 1px solid #283041 !important;
+  margin-bottom: 1px;
+}
+
+.static_content_main_section .content a {
+  color: #283041 !important;
+  display: inline-block;
+  padding: 8px 5px;
+  width: 100%;
+  height: 35px;
+  letter-spacing: 1px;
+}
+
+.static_content_main_section .content a:hover {
+  background-color: #283041 !important;
+  color: #fff !important;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+.static_content_main_section .content .active a {
+  display: inline-block;
+  color: #fff !important;
+  background-color: #283041;
+  padding: 8px 5px;
+  width: 100%;
+  height: 35px;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+.static_content_main_section .content .active a:hover {
+  display: inline-block;
+  color: #fff !important;
+  background-color: #283041 !important;
+}
+
+
+// -----------------------------------
+//  right section
+// -----------------------------------
+
+.static_content_main_section .right_section {
+  padding: 10px !important;
+  background-color: rgba(0, 0, 0, 0.05) !important;
+  min-height: 660px;
+}
+@media only screen and (max-width: 1000px) {
+  .static_content_main_section .right_section {
+    width: 100% !important;
+  }
+}
+
+.static_content_main_section .right_section {
+  font-family: "Lato", sans-serif !important;
+  word-spacing: 3px;
+}
+
+.static_content_main_section .right_section p b {
+  font-size: 15px !important;
+}
+
+.static_content_main_section .terms_content {
+  background-color: rgba(255, 255, 255, 0.8) !important;
+  padding: 15px;
+} 
+
+.static_content_main_section .terms_content h1 {
+  font-family: "Lato", sans-serif;
+  font-size: 48px;
+  font-weight: bold;
+  text-transform: capitalize;
+  margin: 0px !important;
+  color: #283041;
+  line-height: 50px;
+  margin-bottom: 15px !important;
+}
+
+.static_content_main_section .terms_date {
+  font-family: "Lato", sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: capitalize;
+  margin-bottom: 18px !important;
+  color: #283041;
+}
+
+.static_content_main_section .terms_content_info p {
+  font-family: "Lato", sans-serif;
+  font-size: 14px;
+  color: #283041;
+  text-align: justify;
+}
+
+.static_content_main_section .terms_content_info a {
+  color: #E1473E !important;
+  font-size: 12px !important;
+}
+
+.static_content_main_section .terms_content_info a:hover {
+  text-decoration: underline;
+}
+
+.static_content_main_section .terms_content_info ul {
+  margin-left: 30px !important;
+}
+
+
+.static_content_main_section .terms_content_info ul li {
+  font-family: "Lato", sans-serif;
+  font-size: 14px;
+  color: #283041;
+  text-align: justify;
+}
+
+.static_content_main_section .major_header {
+  font-family: "Lato", sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: capitalize;
+  margin-bottom: 18px !important;
+  color: #283041;
+}
+
+.static_content_main_section .underlined_header {
+  margin-bottom: 0px;
+}
+
+.static_content_main_section .header_centred {
+  text-align: center !important;
+}
+
+.static_content_main_section table {
+  width: 100%;
+}
+
+.static_content_main_section th {
+  height: 50px;
+  font-family: "Lato", sans-serif !important;
+  font-size: 14px !important;
+  color: #283041 !important;
+}
+
+.static_content_main_section td {
+  height: 30px;
+  font-family: "Lato", sans-serif !important;
+  font-size: 14px !important;
+  color: #283041 !important;
+}
+
+.static_content_main_section .title_signed {
+  margin-right: 5px;
+}
+
+.static_content_main_section .title_name {
+  margin-right: 10px;
+}
+
+.static_content_main_section .title_title {
+  margin-right: 18px;
+}
+
+.static_content_main_section .title_date {
+  margin-right: 16px;
+}
+
+.static_content_main_section .left_right_terms {
+  background-color: rgba(0, 0, 0, 0.05) !important;
+  padding: 0px !important;
+}
+
+// .static_content_main_section .left_right_terms p {
+//   font-size: 11px !important;
+// }
+
+
+
+
+
+
+
+
+
+
+
