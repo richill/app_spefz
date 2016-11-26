@@ -50,22 +50,19 @@ Rails.application.routes.draw do
   end
   
 
-  get     'terms/acceptable-policy',  to: 'static_pages#acceptablepg'
-
-
   root  'static_pages#homepg'
   get   'about-us',                 to: 'static_pages#aboutpg'
-  get   'account-and-profile',      to: 'static_pages#accountpg'
   get   'error',                    to: 'static_pages#errorpg'
   get   'errorpermission',          to: 'static_pages#errorpermissionpg'
   get   'help',                     to: 'static_pages#helppg'
+  get   'help/account-and-profile',      to: 'static_pages#accountpg'
   get   'landing-page',             to: 'static_pages#landingpg'
   get   'image-restriction-page',   to: 'static_pages#imagepg'
   get   'notes',                    to: 'static_pages#notepg'
+  get   'terms',                    to: 'static_pages#termspg'
   get   'terms/cookie-policy',      to: 'static_pages#cookiepg'
   get   'terms/privacy',            to: 'static_pages#privacypg'
-  get   'terms',                    to: 'static_pages#termspg'
-
+  
   get   'tags/:tag',                to: 'users#index', as: :tag
   get   'socialtags/:tag',          to: 'socials#index', as: :social_tag
   get   'eventtags/:tag',           to: 'events#index', as: :event_tag
