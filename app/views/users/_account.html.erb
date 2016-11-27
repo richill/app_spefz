@@ -36,7 +36,7 @@
               <div class="pymt_header">subscription</div>
               <div class="pymt_sub_header">
                 <span><i class="fa fa-info-circle" aria-hidden="true"></i></span>
-                <span>The below transaction currently display yor subscription</span>
+                <span>The below transaction currently displays your subscription</span>
               </div>
               <div class="listed_subscription_paymts">
                 <table>
@@ -75,6 +75,7 @@
                   </tbody>
                 </table>
               </div>
+              <div class="minor_notes">*Subscription payment made on the <%= @user.recent_subscription_pymt_date.strftime("%dth") %> of each month</div>
             </div>
           <% end %>
           
@@ -83,7 +84,7 @@
             <div class="pymt_header">event payments</div>
             <div class="pymt_sub_header">
               <span><i class="fa fa-info-circle" aria-hidden="true"></i></span>
-              <span>The below transactions currently display all payments made by you to attend an event</span>
+              <span>The below transactions currently displays all payments made by you to attend an event</span>
             </div>
             <div class="listed_event_paymts">
               <table>

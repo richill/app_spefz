@@ -34,7 +34,7 @@
               </li>
               <li class="subscription_date_li">
                 <% if current_user.subscribed? %>
-                  <div class="text_info">subscription date</div>
+                  <div class="text_info">subscription date <span class="minor_sub_info">[*Subscription payment made on the <%= @user.recent_subscription_pymt_date.strftime("%dth") %> of each month]</span> </div>
                   <div class="subscription_date">
                     <div><%= current_user.recent_subscription_pymt_date.strftime("%a, %d %b %Y") %> | <%= current_user.recent_subscription_pymt_date.strftime("%I:%M %p") %></div>
                   </div>
