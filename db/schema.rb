@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161116132520) do
+ActiveRecord::Schema.define(version: 20161129175131) do
 
   create_table "activities", force: :cascade do |t|
     t.integer  "trackable_id"
@@ -105,6 +105,19 @@ ActiveRecord::Schema.define(version: 20161116132520) do
   add_index "comments", ["commentable_type"], name: "index_comments_on_commentable_type"
   add_index "comments", ["user_id"], name: "index_comments_on_user_id"
 
+  create_table "contacts", force: :cascade do |t|
+    t.string   "name"
+    t.string   "email"
+    t.text     "message"
+    t.integer  "category_enquiry_id"
+    t.string   "tel"
+    t.string   "status"
+    t.string   "reference"
+    t.integer  "category_contactclient_id"
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+  end
+
   create_table "events", force: :cascade do |t|
     t.string   "title"
     t.text     "description"
@@ -145,16 +158,29 @@ ActiveRecord::Schema.define(version: 20161116132520) do
   add_index "favourites", ["favourited_type", "favourited_id"], name: "index_favourites_on_favourited_type_and_favourited_id"
   add_index "favourites", ["user_id"], name: "index_favourites_on_user_id"
 
+  create_table "friends", force: :cascade do |t|
+    t.string   "email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "friendships", force: :cascade do |t|
     t.integer  "friender_id"
     t.integer  "friended_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "user_id"
+    t.integer  "friend_id"
+    t.string   "status"
+    t.datetime "accepted_at"
   end
 
+  add_index "friendships", ["friend_id"], name: "index_friendships_on_friend_id"
   add_index "friendships", ["friended_id"], name: "index_friendships_on_friended_id"
   add_index "friendships", ["friender_id", "friended_id"], name: "index_friendships_on_friender_id_and_friended_id", unique: true
   add_index "friendships", ["friender_id"], name: "index_friendships_on_friender_id"
+  add_index "friendships", ["user_id", "friend_id"], name: "index_friendships_on_user_id_and_friend_id", unique: true
+  add_index "friendships", ["user_id"], name: "index_friendships_on_user_id"
 
   create_table "impressions", force: :cascade do |t|
     t.string   "impressionable_type"

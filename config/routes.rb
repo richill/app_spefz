@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  resources :contacts
+
   resources :activities do
     collection do
       get 'networks'
