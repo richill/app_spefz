@@ -14,11 +14,13 @@ class EventsController < ApplicationController
   end
 
   def show
+    @premium_plan = Subscription.find_by(title:"premium")
   end
 
   def new
     if current_user.admin_pa_management_group || current_user.pa_event_mgt_group
       # @event = Event.new
+      @premium_plan = Subscription.find_by(title:"premium")
       @user = User.find(params[:user_id])
       @event = @user.events.build
     else
@@ -28,6 +30,7 @@ class EventsController < ApplicationController
 
   def edit
     if current_user.admin_pa_management_group || current_user.pa_event_mgt_group
+      @premium_plan = Subscription.find_by(title:"premium")
       @user = User.find(params[:user_id])
     else
       redirect_to errorpermission_path
@@ -36,6 +39,7 @@ class EventsController < ApplicationController
 
   def create
     if current_user.admin_pa_management_group || current_user.pa_event_mgt_group
+      @premium_plan = Subscription.find_by(title:"premium")
       @user = User.find(params[:user_id])
       @event = @user.events.create(event_params)
 
@@ -54,6 +58,7 @@ class EventsController < ApplicationController
   end
 
   def update
+    @premium_plan = Subscription.find_by(title:"premium")
     if current_user.admin_pa_management_group || current_user.pa_event_mgt_group
       respond_to do |format|
         if @event.update_attributes(event_params)
@@ -71,6 +76,7 @@ class EventsController < ApplicationController
 
   def destroy
     if current_user.admin_pa_management_group
+      @premium_plan = Subscription.find_by(title:"premium")
       @user = User.find(params[:user_id])
       @event = @user.events.find(params[:id])
       @event.destroy
@@ -83,6 +89,7 @@ class EventsController < ApplicationController
   def attendants
     if current_user.admin_pa_management_group || current_user.pa_event_mgt_group 
       @event = Event.find(params[:id]) 
+      @premium_plan = Subscription.find_by(title:"premium")
     else
       redirect_to errorpermission_path
     end

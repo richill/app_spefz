@@ -19,7 +19,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    if current_user.subscribed_access?
+    if current_user.subscribed_access? || current_user == @user
       if current_user.image? || current_user == @user
         @events = Event.live_events.open_events
         @activities_user = PublicActivity::Activity.order("created_at desc").where(owner_id: @user)
@@ -34,6 +34,7 @@ class UsersController < ApplicationController
   end
 
   def edit
+    @premium_plan = Subscription.find_by(title:"premium")
   end
 
   def update
@@ -55,6 +56,7 @@ class UsersController < ApplicationController
   end
 
   def settings
+    @premium_plan = Subscription.find_by(title:"premium")
   end
 
   private
