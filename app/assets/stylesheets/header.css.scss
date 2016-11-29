@@ -504,6 +504,17 @@
   margin-right: 2px;
 }
 
+.nav_user_section #notificationTitle_profile .dropdown_user_membership .divider {
+  margin: 0px 5px !important;
+}
+
+.nav_user_section #notificationTitle_profile .dropdown_user_membership a {
+  color: #E34B51 !important;
+}
+
+.nav_user_section #notificationTitle_profile .dropdown_user_membership a:hover {
+  text-decoration: underline;
+}
 
 /*===================================================
     Page: header userr signedin nav
