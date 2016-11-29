@@ -14,6 +14,7 @@ class PaymentsController < ApplicationController
   end
 
   def new
+    @premium_plan = Subscription.find_by(title:"premium")
     @payment = Payment.new
     @subscription_id = params[:subscription_id]
     @event_id = params[:event_id]
