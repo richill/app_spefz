@@ -1,12 +1,14 @@
 Rails.application.routes.draw do
   
-  resources :contacts
-
   resources :activities do
     collection do
       get 'networks'
     end
   end
+
+  resources :contacts
+  get 'contact-us',              to: 'contacts#new'
+
   resources :subscriptions
   resources :payments
   resources :socials
