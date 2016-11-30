@@ -1,6 +1,11 @@
-<h1>Editing Social</h1>
+<% if action_name == 'new'  %>
+  <% provide(:title, "Create Social") %>
+<% else %>
+  <% provide(:title, "Edit Social") %>
+<% end %>
+<div>
+  <%= render 'shared/header' %>
+  <%= render 'form' %>
+  <%= render 'shared/footer' %>
+</div>
 
-<%= render 'form' %>
-
-<%= link_to 'Show', @social %> |
-<%= link_to 'Back', socials_path %>
