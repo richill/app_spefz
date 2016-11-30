@@ -36,9 +36,10 @@ ceq04 = CategoryEnquiry.create!(name:'Suggestions')
 ceq05 = CategoryEnquiry.create!(name:'Compliants')
 ceq06 = CategoryEnquiry.create!(name:'Feedback')
 ceq07 = CategoryEnquiry.create!(name:'Create a Social')
-ceq08 = CategoryEnquiry.create!(name:'End Subscription Plan')
-ceq09 = CategoryEnquiry.create!(name:'Delete Account')
-ceq10 = CategoryEnquiry.create!(name:'I would love to work at Spefz')
+ceq08 = CategoryEnquiry.create!(name:'Book an Event')
+ceq09 = CategoryEnquiry.create!(name:'End Subscription Plan')
+ceq10 = CategoryEnquiry.create!(name:'Delete Account')
+ceq11 = CategoryEnquiry.create!(name:'I would love to work at Spefz')
 
 CategoryGender.delete_all
 cg01 = CategoryGender.create!(name:'Male')
