@@ -4,7 +4,7 @@
       <h2 class="header">Message Sent</h2>
 
       <% if current_user %>
-        <div class="subtitle">Dear <%= current_user.firstname %>, thank you for your message/feedback - we will get back to you as soon as possible</div>
+        <div class="subtitle">Dear <span class="name"><%= current_user.firstname %></span>, thank you for your message/feedback - we will get back to you as soon as possible</div>
       <% else %>
         <div class="subtitle">Dear User, thank you for your message/feedback - we will get back to you as soon as possible</div>
       <% end %>

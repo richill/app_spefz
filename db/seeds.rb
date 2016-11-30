@@ -22,6 +22,12 @@ cc03 = CategoryCountry.create!(name:'Ghana')
 cc04 = CategoryCountry.create!(name:'Nigeria')
 
 
+CategoryContactclient.delete_all
+ccc01 = CategoryContactclient.create!(name:'Spefz Member')
+ccc02 = CategoryContactclient.create!(name:'Press & Media')
+ccc03 = CategoryContactclient.create!(name:'Affiliates')
+ccc04 = CategoryContactclient.create!(name:'Other')
+
 CategoryEnquiry.delete_all
 ceq01 = CategoryEnquiry.create!(name:'General Enquiry')
 ceq02 = CategoryEnquiry.create!(name:'Technical Support')
@@ -29,13 +35,10 @@ ceq03 = CategoryEnquiry.create!(name:'Partnership')
 ceq04 = CategoryEnquiry.create!(name:'Suggestions')
 ceq05 = CategoryEnquiry.create!(name:'Compliants')
 ceq06 = CategoryEnquiry.create!(name:'Feedback')
-ceq07 = CategoryEnquiry.create!(name:'Post a Social')
+ceq07 = CategoryEnquiry.create!(name:'Create a Social')
 ceq08 = CategoryEnquiry.create!(name:'End Subscription Plan')
 ceq09 = CategoryEnquiry.create!(name:'Delete Account')
 ceq10 = CategoryEnquiry.create!(name:'I would love to work at Spefz')
-
-
-
 
 CategoryGender.delete_all
 cg01 = CategoryGender.create!(name:'Male')

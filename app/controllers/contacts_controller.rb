@@ -15,6 +15,7 @@ class ContactsController < ApplicationController
   # GET /contacts/new
   def new
     @contact = Contact.new
+    @usert_id = params[:user_id]
   end
 
   # GET /contacts/1/edit
@@ -28,7 +29,7 @@ class ContactsController < ApplicationController
 
     respond_to do |format|
       if @contact.save
-        format.html { redirect_to @contact, notice: 'Contact was successfully created.' }
+        format.html { redirect_to message_delivered_path, notice: 'Message sent' }
         format.json { render :show, status: :created, location: @contact }
       else
         format.html { render :new }
