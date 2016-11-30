@@ -37,7 +37,11 @@
               <p><b>How can I pay for membership?</b> Just click on your profile image in the header, then got to 
                 <span>
                   <% if signed_in? %>
-                    <%= link_to "Account > Membership", account_user_path(current_user) %> and click on <%= link_to "Subscribe Now!", subscription_path(@premium_plan) %>.
+                    <% if current_user.subscribed? %>
+                      <%= link_to "Account > Membership", account_user_path(current_user) %> and click on <%= link_to "Subscribe Now!", "#" %>.
+                    <% else %>
+                      <%= link_to "Account > Membership", account_user_path(current_user) %> and click on <%= link_to "Subscribe Now!", subscription_path(@premium_plan) %>.
+                    <% end %>
                   <% else %>
                     <%= link_to "Account > Membership", '#' %> and click on <%= link_to "Subscribe Now!", '#' %>.
                   <% end %>

@@ -14,8 +14,8 @@ class ContactsController < ApplicationController
 
   # GET /contacts/new
   def new
+    @premium_plan = Subscription.find_by(title:"premium")
     @contact = Contact.new
-    @usert_id = params[:user_id]
   end
 
   # GET /contacts/1/edit
