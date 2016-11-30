@@ -12,7 +12,15 @@
         <!-- content -->
         <div class="social_form_main_content">
           <div class="tree_link">
-            <span><i class="fa fa-user" aria-hidden="true"></i> <%= link_to "#{current_user.firstname}", user_path(current_user)%></span> <span class="fwd_sign">></span> <span>create social</span>
+            <span><i class="fa fa-user" aria-hidden="true"></i> <%= link_to "#{current_user.firstname}", user_path(current_user)%></span> 
+            <span class="fwd_sign">></span> 
+            <span>
+              <% if action_name == 'new'  %>
+                <span>create social</span>
+              <% else %>
+                <span>edit social</span>
+              <% end %>
+            </span>
           </div>
           <div class="user_general_settings_inner_section user_social_form_section">
             <%= simple_form_for [@user, @social] do |f| %>

@@ -1,4 +1,8 @@
-<% provide(:title, "Social") %>
+<% if action_name == 'new'  %>
+  <% provide(:title, "Create Social") %>
+<% else %>
+  <% provide(:title, "Edit Social") %>
+<% end %>
 <div>
   <%= render 'shared/header' %>
   <%= render 'form' %>
