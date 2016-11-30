@@ -19,6 +19,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    @premium_plan = Subscription.find_by(title:"premium")
     if current_user.subscribed_access? || current_user == @user
       if current_user.image? || current_user == @user
         @events = Event.live_events.open_events

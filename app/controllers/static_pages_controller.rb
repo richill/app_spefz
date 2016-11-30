@@ -46,6 +46,10 @@ class StaticPagesController < ApplicationController
     @signup = Signup.new
   end
 
+  def messagesentpg
+    @premium_plan = Subscription.find_by(title:"premium")
+  end
+
   def membershippg
     @premium_plan = Subscription.find_by(title:"premium")
   end

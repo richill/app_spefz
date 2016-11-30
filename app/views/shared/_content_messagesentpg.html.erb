@@ -1,0 +1,36 @@
+<h1>content_messagesentpg</h1>
+
+<div class="medium-12 columns messagesent_page_section">
+  <div class="messagesent_inner_container">
+    <div class="messagesent_content_section">
+      <h2 class="header">Message Sent</h2>
+
+      <% if current_user %>
+        <div class="subtitle">Dear <%= current_user.firstname %>, thank you for your message/feedback - we will get back to you as soon as possible</div>
+      <% else %>
+        <div class="subtitle">Dear Client, thank you for your message/feedback - we will get back to you as soon as possible</div>
+      <% end %>
+
+      <div class="messagesent_content_inner_section">
+        <h1>Thank You! </h1>
+        <div><i class="fa fa-users"></i></div>
+        <h2>Thank you for getting in touch with us</h2>
+        <div class="sub_content">We have successfully received your message/feedback and will do our best to <br/> get back to you within 48 hours.</div>
+        <div class="messagesent_btn">
+          <% if current_user %>
+            <% if current_userr.category_role.name == "Primary Admin" && current_userr.status.blank? || current_userr.status == "Rejected" %>
+              <div><%= link_to 'view your account ', userr_path(current_userr) %></div>
+            <% else %>
+              <div><%= link_to 'Homepage', dashboard_userr_path(current_userr) %></div>
+            <% end %>
+          <% elsif current_userj %>
+            <div><%= link_to 'Homepage', dashboard_userj_path(current_userj) %></div>
+          <% else %>
+            <div><%= link_to 'Start hiring today', new_userr_registration_path %></div>
+            <div><%= link_to 'Looking for a job', search_adverts_path %></div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
