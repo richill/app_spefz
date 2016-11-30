@@ -1,48 +1,77 @@
-<%= simple_form_for [@user, @social] do |f| %>
-  <%= f.error_notification %>
+<div class= "medium-12 columns user_general_settings_section">
 
-  <div class="form-inputs">
-    <%= f.file_field :image %>
-    <%= f.input :close, label: 'Close Social' %>
-    <%= f.input :companyname, label: false, placeholder: "HSBC Private Bank" %>
-    <div>*maximum word count: 20</div>
-    <%= f.input :title, label: "Discussion Topic", placeholder: "give a short distinct name" %>
-    <div>*minmum word count: 40 | max: 55</div> 
-    <%= f.input :description, label: "About Social" %>
-    <%= f.text_field :tag_list, value: @social.tag_list.to_s, placeholder: "chess, jogging, dogs, skipping, gym, startups, entreprenuers, jazz..." %>
-    <%= f.association :category_topic, collection: CategoryTopic.all, prompt: "select a category", label: "Social Category" %>
-    <%= f.input :venuename, label: "venue name", placeholder: "sky lounge" %>
-    <%= f.input :address, label: "Location", placeholder: "address" %>
-    <%= f.input :city, label: false, placeholder: "city" %>
-    <%= f.association :category_country, collection: CategoryCountry.all, prompt: "select a country", placeholder: "Select Country", label: false %>
-    <%# f.country_select :country, { priority_countries: ["GB", "US"], selected: "GB" } %>
-    <%= f.input :postcode %>
-    <%= f.input :maplink %>
-    <%= f.input :date %>
-    <%= f.input :time %>
-
-    <%= f.association :category_quantitygender, collection: CategoryQuantitygender.all, prompt: "select a category", label: "Quantity Gender Selection", input_html: { class: 'category_select' } %>
-    <div class="general_gender_quantity_content">
-        <%= f.input :quantity, placeholder: "quantity", label: false %>
-    </div>
-    <div class="specific_gender_quantity_content">
-        <%= f.input :quantity_men, placeholder: "quantity men", label: "men" %>
-        <%= f.input :quantity_women, placeholder: "quantity women", label: "women" %>
-    </div>
-    
-    <%= f.association :category_invite, collection: CategoryInvite.all, prompt: "select a category", label: "Who's invited?" %>
-    <%= f.association :category_age, collection: CategoryAge.all, prompt: "select a category", label: "Age Group" %>
-    <%= f.input :speakername, label: "speaker name" %>
-    <%= f.input :speakerlinkedin, label: "speaker's linkedin profile" %>
-
-    <!-- hidden fields -->
-    <%= f.hidden_field :latitude %>
-    <%= f.hidden_field :longitude %>
-    <%= f.hidden_field :user_id %>
-    <!-- hidden fields -->
+  <!-- left_column_section -->
+  <div class="medium-2 columns left_column_section">
+    <%= render 'shared/content_user_left_column' %>
   </div>
+  <!-- left_column_section -->
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+  <!-- right_column_section -->
+  <div class="medium-10 columns right_column_section">
+    <div class="right_inner_section">
+        <!-- content -->
+        <div class="social_form_main_content">
+          <div class="tree_link">
+            <span><i class="fa fa-user" aria-hidden="true"></i> <%= link_to "#{current_user.firstname}", user_path(current_user)%></span> <span class="fwd_sign">></span> <span>create social</span>
+          </div>
+          <div class="user_general_settings_inner_section user_social_form_section">
+            <%= simple_form_for [@user, @social] do |f| %>
+              <%= f.error_notification %>
+
+              <div class="form-inputs">
+                <%= f.file_field :image %>
+                <%= f.input :close, label: 'Close Social' %>
+                <%= f.input :companyname, label: false, placeholder: "HSBC Private Bank" %>
+                <div>*maximum word count: 20</div>
+                <%= f.input :title, label: "Discussion Topic", placeholder: "give a short distinct name" %>
+                <div>*minmum word count: 40 | max: 55</div> 
+                <%= f.input :description, label: "About Social" %>
+                <%= f.text_field :tag_list, value: @social.tag_list.to_s, placeholder: "chess, jogging, dogs, skipping, gym, startups, entreprenuers, jazz..." %>
+                <%= f.association :category_topic, collection: CategoryTopic.all, prompt: "select a category", label: "Social Category" %>
+                <%= f.input :venuename, label: "venue name", placeholder: "sky lounge" %>
+                <%= f.input :address, label: "Location", placeholder: "address" %>
+                <%= f.input :city, label: false, placeholder: "city" %>
+                <%= f.association :category_country, collection: CategoryCountry.all, prompt: "select a country", placeholder: "Select Country", label: false %>
+                <%# f.country_select :country, { priority_countries: ["GB", "US"], selected: "GB" } %>
+                <%= f.input :postcode %>
+                <%= f.input :maplink %>
+                <%= f.input :date %>
+                <%= f.input :time %>
+
+                <%= f.association :category_quantitygender, collection: CategoryQuantitygender.all, prompt: "select a category", label: "Quantity Gender Selection", input_html: { class: 'category_select' } %>
+                <div class="general_gender_quantity_content">
+                    <%= f.input :quantity, placeholder: "quantity", label: false %>
+                </div>
+                <div class="specific_gender_quantity_content">
+                    <%= f.input :quantity_men, placeholder: "quantity men", label: "men" %>
+                    <%= f.input :quantity_women, placeholder: "quantity women", label: "women" %>
+                </div>
+                
+                <%= f.association :category_invite, collection: CategoryInvite.all, prompt: "select a category", label: "Who's invited?" %>
+                <%= f.association :category_age, collection: CategoryAge.all, prompt: "select a category", label: "Age Group" %>
+                <%= f.input :speakername, label: "speaker name" %>
+                <%= f.input :speakerlinkedin, label: "speaker's linkedin profile" %>
+
+                <!-- hidden fields -->
+                <%= f.hidden_field :latitude %>
+                <%= f.hidden_field :longitude %>
+                <%= f.hidden_field :user_id %>
+                <!-- hidden fields -->
+              </div>
+
+              <div class="form-actions">
+                <%= f.button :submit %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+        <!-- content -->
+    </div>
   </div>
-<% end %>
+</div>
+
+
+
+
+
+
