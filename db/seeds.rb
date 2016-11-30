@@ -19,11 +19,27 @@ CategoryCountry.delete_all
 cc01 = CategoryCountry.create!(name:'United Kingdom')
 cc02 = CategoryCountry.create!(name:'United States')
 cc03 = CategoryCountry.create!(name:'Ghana')
-cc05 = CategoryCountry.create!(name:'Nigeria')
+cc04 = CategoryCountry.create!(name:'Nigeria')
+
+
+CategoryEnquiry.delete_all
+ceq01 = CategoryEnquiry.create!(name:'General Enquiry')
+ceq02 = CategoryEnquiry.create!(name:'Technical Support')
+ceq03 = CategoryEnquiry.create!(name:'Partnership')
+ceq04 = CategoryEnquiry.create!(name:'Suggestions')
+ceq05 = CategoryEnquiry.create!(name:'Compliants')
+ceq06 = CategoryEnquiry.create!(name:'Feedback')
+ceq07 = CategoryEnquiry.create!(name:'Post a Social')
+ceq08 = CategoryEnquiry.create!(name:'End Subscription Plan')
+ceq09 = CategoryEnquiry.create!(name:'Delete Account')
+ceq10 = CategoryEnquiry.create!(name:'I would love to work at Spefz')
+
+
+
 
 CategoryGender.delete_all
-cg01 = CategoryCountry.create!(name:'Male')
-cg02 = CategoryCountry.create!(name:'Female')
+cg01 = CategoryGender.create!(name:'Male')
+cg02 = CategoryGender.create!(name:'Female')
 
 CategoryInvite.delete_all
 ci01 = CategoryInvite.create!(name:'just my guest')

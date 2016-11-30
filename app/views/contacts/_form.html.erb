@@ -29,7 +29,7 @@
         <div class="right_inner_section">
           <div class="terms_content">
             <h1>get in touch</h1>
-            <div class="terms_date">We’re always looking to improve our service. If you have any issues do kindly contact us.</div>
+            <div class="terms_date">We’re always looking to improve our service. If you have any issues do kindly contact us. Please enter your enquiry below. We aim to reply to every email within 24 hours and guarantee a response within one working day.</div>
             <div class="terms_content_info">
 
               <div class="contact_form">
@@ -37,14 +37,20 @@
                   <%= f.error_notification %>
 
                   <div class="form-inputs">
+                    <%= f.association :category_contactclient, collection: CategoryContactclient.all, prompt: "select a category", label: "Type of Contact" %>
+                    <%= f.association :category_enquiry, collection: CategoryEnquiry.all, prompt: "select a category", label: "Type Enquiry" %>
                     <%= f.input :name %>
                     <%= f.input :email %>
-                    <%= f.input :message %>
-                    <%= f.input :category_enquiry_id %>
+                    
                     <%= f.input :tel %>
-                    <%= f.input :status %>
-                    <%= f.input :reference %>
-                    <%= f.input :category_contactclient_id %>
+                    <%= f.input :message %>
+                    
+
+                    <!-- hidden_fields -->
+                    <%= f.hidden_field :status %>
+                    <%= f.hidden_field :reference %>
+                    <!-- hidden_fields -->
+                    
                   </div>
 
                   <div class="form-actions">
