@@ -1,0 +1,50 @@
+/*=========================================
+    Section: contacts form
+    File: views / contacts / _form.html.erb
+  =========================================*/
+
+
+.contact_form_section .terms_date {
+  background-color: rgba(75, 180, 191, 0.2) !important;
+  font-weight: 400 !important;
+  padding: 5px 15px !important;
+}
+
+.contact_form_section .contact_firstname, .contact_lastname, .contact_companyname, .contact_tel {
+  margin-bottom: 15px !important;
+}
+
+.contact_form_section input[type="text"] {
+  border: 1px solid rgba(75, 180, 191, 0.5) !important;
+  background-color: #fff !important;
+}
+
+.contact_form_section input[type="submit"] {
+  font-family: 'Lato', sans-serif;
+  font-size: 20px;
+  color: #fff !important;
+  font-weight: 300;
+  background: #000;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+  padding: 10px 25px;
+  width: 100%;
+  border: none;
+  display: inline-block;
+  margin-bottom: 0px !important;
+  background-color: #4BB4BF !important;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+
+.contact_form_section input[type="submit"]:hover {
+  background-color: #E34B51 !important;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+
+

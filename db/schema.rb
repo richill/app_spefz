@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161129175502) do
+ActiveRecord::Schema.define(version: 20161130150317) do
 
   create_table "activities", force: :cascade do |t|
     t.integer  "trackable_id"
@@ -118,7 +118,6 @@ ActiveRecord::Schema.define(version: 20161129175502) do
   add_index "comments", ["user_id"], name: "index_comments_on_user_id"
 
   create_table "contacts", force: :cascade do |t|
-    t.string   "name"
     t.string   "email"
     t.text     "message"
     t.integer  "category_enquiry_id"
@@ -128,6 +127,9 @@ ActiveRecord::Schema.define(version: 20161129175502) do
     t.integer  "category_contactclient_id"
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
+    t.string   "lastname"
+    t.string   "companyname"
+    t.string   "firstname"
   end
 
   create_table "events", force: :cascade do |t|
