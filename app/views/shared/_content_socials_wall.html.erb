@@ -2,7 +2,9 @@
   <div class="comments_conatiner">
     <% if current_user %>
       <div class="comment_form_container hide"><%= render 'shared/content_comments_form' %></div>
-      <div class="display_commentbox_btn">write a comment</div>
+      <% unless @social.expired_or_closed_social %>
+        <div class="display_commentbox_btn">write a comment</div>
+      <% end %>
     <% end %>
     <div><%= render 'shared/content_comments' %></div>
   </div>
