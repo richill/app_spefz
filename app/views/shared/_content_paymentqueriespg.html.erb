@@ -34,7 +34,15 @@
 
               <p><b>Do you charge extra for credit card transactions?</b> To defray the substantial charges we incur when processing credit cards, we now charge a handling fee for all transactions of more than £100. This is set at 2.5 percent of the total transaction for all credit cards. We do not charge for debit cards or Electron cards. For transactions of less than £100 we absorb the cost ourselves.</p>
 
-              <p><b>How can I pay for membership?</b> Just click on your profile image in the header, then got to <%= link_to "Account > Membership", account_user_path(current_user) %> and click on <%= link_to "Subscribe Now!", subscription_path(@premium_plan) %>. We accept the majority of credit and debit cards. We do not hold any card details on our servers, which ensures maximum safety for your details Please note we do not accept payment by cheque/postal order.</p>
+              <p><b>How can I pay for membership?</b> Just click on your profile image in the header, then got to 
+                <span>
+                  <% if signed_in? %>
+                    <%= link_to "Account > Membership", account_user_path(current_user) %> and click on <%= link_to "Subscribe Now!", subscription_path(@premium_plan) %>.
+                  <% else %>
+                    <%= link_to "Account > Membership", '#' %> and click on <%= link_to "Subscribe Now!", '#' %>.
+                  <% end %>
+                </span> 
+                We accept the majority of credit and debit cards. We do not hold any card details on our servers, which ensures maximum safety for your details Please note we do not accept payment by cheque/postal order.</p>
 
               <p><b>How much does a Spefz membership cost?</b> Monthly Membership £15.99</p>
 

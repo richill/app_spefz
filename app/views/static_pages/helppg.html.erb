@@ -1,6 +1,10 @@
 <% provide(:title, "Help and Support") %>
 <div>
-  <%= render 'shared/header' %>
+  <% if signed_in? %>
+    <%= render 'shared/header' %>
+  <% else %>
+    <%= render 'shared/header_unsigned' %>
+  <% end %>
   <%= render 'shared/content_helppg' %>
   <%= render 'shared/footer' %>
 </div>

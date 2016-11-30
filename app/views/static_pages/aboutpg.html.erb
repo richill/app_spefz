@@ -1,6 +1,10 @@
 <% provide(:title, "About us") %>
 <div>
-  <%= render 'shared/header' %>
+  <% if signed_in? %>
+    <%= render 'shared/header' %>
+  <% else %>
+    <%= render 'shared/header_unsigned' %>
+  <% end %>
   <%= render 'shared/content_aboutpg' %>
   <%= render 'shared/footer' %>
 </div>

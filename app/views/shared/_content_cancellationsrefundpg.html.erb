@@ -40,7 +40,15 @@
 
               <p><b>My credit card seems to have been charged twice?</b> Very occasionally we do get double payments. Please contact us at <%= link_to "spefz@admin.com", "#" %> with your transaction ID or the date you booked and we'll refund the double payment for you.</p>
 
-              <p><b>Where can I view my "Billing History" and how long is left of my membership?</b> To view your current status: Just click on your profile image in the header, then got to <%= link_to "Account", account_user_path(current_user) %> </p>
+              <p><b>Where can I view my "Billing History" and how long is left of my membership?</b> To view your current status: Just click on your profile image in the header, then got to 
+                <span>
+                  <% if signed_in? %>
+                    <%= link_to "Account", account_user_path(current_user) %>.
+                  <% else %>
+                    <%= link_to "Account", "#" %>. 
+                  <% end %> 
+                </span>
+              </p>
               
             </div> 
           </div>

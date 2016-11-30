@@ -9,7 +9,13 @@
         <h2>You are not authorize to access this page</h2>
         <div class="sub_content">contact your adminstrator on permission access</div>
         <div class="error_btn">
-          <div><%= link_to "View Socials", socials_path %></div>
+          <% if signed_in? %>
+            <div class="btn_first"><%= link_to 'view socials', socials_path %></div>
+            <div class="btn_second"><%= link_to 'view speed-events', events_path %></div>
+          <% else %>
+            <div class="btn_first"><%= link_to 'sign-up', new_user_registration_path %></div>
+            <div class="btn_second"><%= link_to 'sign-in', user_session_path %></div>
+          <% end %>
         </div>
       </div>
     </div>

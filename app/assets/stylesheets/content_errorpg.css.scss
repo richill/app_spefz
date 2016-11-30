@@ -144,8 +144,10 @@
   height: 55px;
   display: inline-block;
   text-align: center;
+  text-transform: capitalize;
   border-radius: 2px !important;
   color: #fff !important;
+  width: 400px !important;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
@@ -158,5 +160,9 @@
   -o-transition: all 0.3s ease;
 }
 
+.error_page_section .error_btn .btn_first {
+  float: left;
+  margin-right: 25px;
+}
 
 
