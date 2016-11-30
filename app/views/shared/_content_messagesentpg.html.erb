@@ -17,18 +17,8 @@
         <h2>Thank you for getting in touch with us</h2>
         <div class="sub_content">We have successfully received your message/feedback and will do our best to <br/> get back to you within 48 hours.</div>
         <div class="messagesent_btn">
-          <% if current_user %>
-            <% if current_userr.category_role.name == "Primary Admin" && current_userr.status.blank? || current_userr.status == "Rejected" %>
-              <div><%= link_to 'view your account ', userr_path(current_userr) %></div>
-            <% else %>
-              <div><%= link_to 'Homepage', dashboard_userr_path(current_userr) %></div>
-            <% end %>
-          <% elsif current_userj %>
-            <div><%= link_to 'Homepage', dashboard_userj_path(current_userj) %></div>
-          <% else %>
-            <div><%= link_to 'Start hiring today', new_userr_registration_path %></div>
-            <div><%= link_to 'Looking for a job', search_adverts_path %></div>
-          <% end %>
+          <div><%= link_to 'view socials', "#" %></div>
+          <div><%= link_to 'view speed-events', "#" %></div>
         </div>
       </div>
     </div>

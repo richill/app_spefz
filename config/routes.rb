@@ -1,14 +1,5 @@
 Rails.application.routes.draw do
   
-  resources :activities do
-    collection do
-      get 'networks'
-    end
-  end
-
-  resources :contacts
-  get 'contact-us',              to: 'contacts#new'
-
   resources :subscriptions
   resources :payments
   resources :socials
@@ -17,7 +8,6 @@ Rails.application.routes.draw do
   resources :friendships,   only: [:create, :destroy]
   resources :favourite_socials, only: [:create, :destroy]
   resources :attending_socials, only: [:create, :destroy]
-
   resources :favourite_events, only: [:create, :destroy]
   resources :attending_events, only: [:create, :destroy]
 
@@ -34,6 +24,12 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :activities do
+    collection do
+      get 'networks'
+    end
+  end
+
   resources :events do
     member do
       get 'attendants'
@@ -44,6 +40,9 @@ Rails.application.routes.draw do
     resources :comments, only: [:create, :destroy] 
   end
 
+  resources :contacts
+  get 'contact-us',              to: 'contacts#new'
+
   #conversations
   resources :conversations do
     member do
@@ -53,7 +52,7 @@ Rails.application.routes.draw do
     end
   end
   
-
+  #static pages
   root  'static_pages#homepg'
   get   'about-us',                       to: 'static_pages#aboutpg'
   get   'error',                          to: 'static_pages#errorpg'
@@ -67,6 +66,7 @@ Rails.application.routes.draw do
   get   'help/payment-queries',           to: 'static_pages#paymentqueriespg'
   get   'landing-page',                   to: 'static_pages#landingpg'
   get   'image-restriction-page',         to: 'static_pages#imagepg'
+  get   'message-delivered',              to: 'static_pages#messagesentpg'
   get   'notes',                          to: 'static_pages#notepg'
   get   'terms',                          to: 'static_pages#termspg'
   get   'terms/cookie-policy',            to: 'static_pages#cookiepg'
