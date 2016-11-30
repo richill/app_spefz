@@ -16,7 +16,7 @@
                 <li><%= link_to "Cancellations & Refunds", help_cancellations_and_refunds_path %></li>
                 <li><%= link_to "Top FAQs", help_faqs_path %></li>
                 <li><%= link_to "Become A Partner", help_partners_path %></li>
-                <li><%= link_to "Contact us", "#" %></li>
+                <li><%= link_to "Contact us", contact_us_path %></li>
               </ul>
             </div>
           </div>
@@ -46,7 +46,7 @@
 
               <p><b>How much does a Spefz membership cost?</b> Monthly Membership £15.99</p>
 
-              <p><b>I have a problem with payments, where can I get help?</b> Please email us: admin@spefz.com</p>
+              <p><b>I have a problem with payments, where can I get help?</b> Please email us: <%= link_to "admin@spefz.com", contact_us_path %></p>
 
               <p><b>I've signed up for a Spefz online membership with auto-renewal but would now like to cancel?</b> Please email us: admin@spefz.com. Under our terms and conditions we do not refund membership fees</p>
 
@@ -61,7 +61,7 @@
 
               <p><b>What happens after I pay?</b> Once you have paid, your account is immediately activated, and your period of subscription starts. You will receive an email notifying you of your payment. This acts as your payment receipt and the reference on it should be used if you need to contact us for any reason. Your ability to have full access to the site is confirmation from us that we have actioned your payment.</p>
 
-              <p><b>What if I don't want to pay by credit card?</b> Please note we do not accept payments by cheque or postal order. Please contact us at <%= link_to "admin@spefz.com" %> if you are unable to pay by debit/credit card.</p>
+              <p><b>What if I don't want to pay by credit card?</b> Please note we do not accept payments by cheque or postal order. Please contact us at <%= link_to "admin@spefz.com", contact_us_path %> if you are unable to pay by debit/credit card.</p>
 
               <p><b>Will my card be automatically re-billed at the end of my membership?</b> Yes your card will be automatically re-billed once you subscribe to Premium membership.</p>
 

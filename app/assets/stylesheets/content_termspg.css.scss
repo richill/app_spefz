@@ -20,13 +20,10 @@
 
 .static_content_main_section {
   min-height: 950px;
-  padding: 0px 15px 15px !important;
+  padding: 0px 0px 15px 0px !important;
   background: url("img_background_main.png") repeat;
 }
 
-.static_content_main_section .terms_inner_container { 
-
-}
 @media only screen and (min-width: 1000px) {
   .static_content_main_section .terms_inner_container  {
     width: 960px !important;

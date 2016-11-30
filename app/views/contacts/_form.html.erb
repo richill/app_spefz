@@ -1,18 +1,63 @@
-<%= simple_form_for(@contact) do |f| %>
-  <%= f.error_notification %>
+<div class="medium-12 columns static_content_main_section">
+  <div class="terms_inner_container">
+    <div class="terms_info_section_one">
 
-  <div class="form-inputs">
-    <%= f.input :name %>
-    <%= f.input :email %>
-    <%= f.input :message %>
-    <%= f.input :category_enquiry_id %>
-    <%= f.input :tel %>
-    <%= f.input :status %>
-    <%= f.input :reference %>
-    <%= f.input :category_contactclient_id %>
-  </div>
+      <!-- left section -->
+      <div class="medium-3 columns left_section">
+        <div class="left_inner_section">
+          <div>
+            <h3>Help & Support <i class="fa fa-chevron-down click_search_btn_1"></i> </h3>
+            <div class="content container_search_details_1">
+              <ul>
+                <li><%= link_to "About Spefz", help_path %></li> 
+                <li><%= link_to "Account & Profile", help_account_and_profile_path %></li>
+                <li><%= link_to "Membership", help_membership_path %></li>
+                <li><%= link_to "Payment Queries", help_payment_queries_path %></li>
+                <li><%= link_to "Cancellations & Refunds", help_cancellations_and_refunds_path %></li>
+                <li><%= link_to "Top FAQs", help_faqs_path %></li>
+                <li><%= link_to "Become A Partner", help_partners_path %></li>
+                <li class="active"><%= link_to "Contact us", contact_us_path %></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end left section -->
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+      <!-- right section -->
+      <div class="medium-9 columns right_section" style="margin-bottom: 15px;">
+        <div class="right_inner_section">
+          <div class="terms_content">
+            <h1>get in touch</h1>
+            <div class="terms_date"></div>
+            <div class="terms_content_info">
+
+              <div class="contact_form">
+                <%= simple_form_for(@contact) do |f| %>
+                  <%= f.error_notification %>
+
+                  <div class="form-inputs">
+                    <%= f.input :name %>
+                    <%= f.input :email %>
+                    <%= f.input :message %>
+                    <%= f.input :category_enquiry_id %>
+                    <%= f.input :tel %>
+                    <%= f.input :status %>
+                    <%= f.input :reference %>
+                    <%= f.input :category_contactclient_id %>
+                  </div>
+
+                  <div class="form-actions">
+                    <%= f.button :submit %>
+                  </div>
+                <% end %>
+              </div>
+
+              
+            </div> 
+          </div>
+        </div>       
+      </div>
+      <!-- end right section -->
+    </div>
   </div>
-<% end %>
