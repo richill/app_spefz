@@ -15,8 +15,13 @@
         <h2>Thank you for getting in touch with us</h2>
         <div class="sub_content">We have successfully received your message/feedback and will do our best to <br/> get back to you within 48 hours.</div>
         <div class="messagesent_btn">
-          <div class="btn_first"><%= link_to 'view socials', "#" %></div>
-          <div class="btn_second"><%= link_to 'view speed-events', "#" %></div>
+          <% if signed_in? %>
+            <div class="btn_first"><%= link_to 'view socials', socials_path %></div>
+            <div class="btn_second"><%= link_to 'view speed-events', events_path %></div>
+          <% else %>
+            <div class="btn_first"><%= link_to 'sign-up', new_user_registration_path %></div>
+            <div class="btn_second"><%= link_to 'sign-in', user_session_path %></div>
+          <% end %>
         </div>
       </div>
     </div>
