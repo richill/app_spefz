@@ -84,21 +84,24 @@
   margin-bottom: 15px;
 }
 
-
-.social_city {
-  width: 400px;
+.social_category_country {
+  width: 450px;
   float: left;
   margin-bottom: 15px;
 }
 
-.social_category_country {
-  width: 400px;
+#social_category_country_id {
+  height: 40px !important;
+}
+
+.social_city {
+  width: 450px;
   float: left;
-  margin-bottom: 15px;
+  margin: 0px 35px 15px;
 }
 
 .social_postcode {
-  width: 400px;
+  width: 450px;
   float: right;
   margin-bottom: 15px;
 }

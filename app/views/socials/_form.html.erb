@@ -63,7 +63,7 @@
                 <div class="address_lower">
                   <%= f.association :category_country, collection: CategoryCountry.all, prompt: "select a country", placeholder: "Select Country", label: false %>
                   <%= f.input :city, label: false, placeholder: "city" %>
-                  <%= f.input :postcode %>
+                  <%= f.input :postcode, label: false, placeholder:"postcode" %>
                 </div>
                 <div class="clear"></div>
 
