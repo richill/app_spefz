@@ -22,7 +22,7 @@
               <% end %>
             </span>
           </div>
-          <div class="user_general_settings_inner_section user_social_form_section">
+          <div class="user_general_settings_inner_section social_edit_update_form">
             <%= simple_form_for [@user, @social] do |f| %>
               <%= f.error_notification %>
 
@@ -40,7 +40,6 @@
                 <%= f.input :address, label: "Location", placeholder: "address" %>
                 <%= f.input :city, label: false, placeholder: "city" %>
                 <%= f.association :category_country, collection: CategoryCountry.all, prompt: "select a country", placeholder: "Select Country", label: false %>
-                <%# f.country_select :country, { priority_countries: ["GB", "US"], selected: "GB" } %>
                 <%= f.input :postcode %>
                 <%= f.input :maplink %>
                 <%= f.input :date %>
