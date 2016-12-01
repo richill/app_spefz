@@ -9,7 +9,7 @@
 
 .user_general_settings_section .right_inner_section .social_edit_update_form #social_image {
   height: 100%;
-  margin-bottom: 0px !important;
+  margin-bottom: 15px !important;
   padding: 15px;
   background-color: rgba(225, 71, 62, 0.6) !important;
   border-radius: 2px;
@@ -31,7 +31,7 @@
 // --------------------------------
 
 .close_social_section {
-  margin: 15px 0px;
+  margin: 0px 0px 15px;
 }
 
 .boolean {
@@ -55,6 +55,20 @@
 }
 
 .company_info_section {
+  margin-bottom: 15px;
+}
+
+.discussion_topic {
+  margin-bottom: 15px;
+}
+
+.social_edit_update_form textarea {
+  font-weight: 300 !important;
+  font-family: 'Lato', sans-serif;
+  font-size: 15px;
+}
+
+.social_tags {
   margin-bottom: 15px;
 }
 

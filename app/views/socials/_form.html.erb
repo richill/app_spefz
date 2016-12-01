@@ -15,7 +15,7 @@
             <span><i class="fa fa-user" aria-hidden="true"></i> <%= link_to "#{current_user.firstname}", user_path(current_user)%></span> 
             <span class="fwd_sign">></span> 
             <span>
-              <% if action_name == 'new'  %>
+              <% if action_name == 'new' %>
                 <span>create social</span>
               <% else %>
                 <span>update social</span>
@@ -28,21 +28,32 @@
 
               <div class="form-inputs">
                 <%= f.file_field :image %>
+
+                <% if action_name == 'new' %>
                 <div class="close_social_section">
                   <%= f.input :close, label: 'Close Social' %>
                   <div class="text_info">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
                 </div>
+                <% end %>
 
                 <div class="company_info_section">
                   <%= f.input :companyname, label: false, placeholder: "HSBC Private Bank" %>
                   <div class="text_info">*maximum word count: 20</div>
                 </div>
 
-                <%= f.input :title, label: "Discussion Topic", placeholder: "give a short distinct name" %>
-                <div>*minmum word count: 40 | max: 55</div> 
-                <%= f.input :description, label: "About Social" %>
-                <%= f.text_field :tag_list, value: @social.tag_list.to_s, placeholder: "chess, jogging, dogs, skipping, gym, startups, entreprenuers, jazz..." %>
+                <div class="discussion_topic">
+                  <%= f.input :title, label: "Discussion Topic", placeholder: "give a short distinct name" %>
+                  <div class="text_info">*minmum word count: 40 | max: 55</div> 
+                </div>
+
                 <%= f.association :category_topic, collection: CategoryTopic.all, prompt: "select a category", label: "Social Category" %>
+                <%= f.input :description, label: "About Social", placeholder: "tell us about your social" %>
+
+                <div class="social_tags">
+                  <%= f.text_field :tag_list, value: @social.tag_list.to_s, placeholder: "chess, jogging, dogs, skipping, gym, startups, entreprenuers, jazz" %>
+                  <div class="text_info">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+                </div>
+
                 <%= f.input :venuename, label: "venue name", placeholder: "sky lounge" %>
                 <%= f.input :address, label: "Location", placeholder: "address" %>
                 <%= f.input :city, label: false, placeholder: "city" %>
