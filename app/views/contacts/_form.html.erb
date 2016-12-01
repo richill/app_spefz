@@ -37,12 +37,12 @@
                   <%= f.error_notification %>
 
                   <div class="form-inputs">
-                    <%= f.association :category_contactclient, collection: CategoryContactclient.all, prompt: "-- please select --", label: "*Type of Contact" %>
-                    <%= f.association :category_enquiry, collection: CategoryEnquiry.all, prompt: "-- please select --", label: "*Type Enquiry" %>
+                    <%= f.association :category_contactclient, collection: CategoryContactclient.all, prompt: "-- please select --", label: "Type of Contact" %>
+                    <%= f.association :category_enquiry, collection: CategoryEnquiry.all, prompt: "-- please select --", label: "Type Enquiry" %>
                     <% if signed_in? %>
-                      <%= f.input :firstname, label:"*First Name", placeholder:"First Name", input_html: { value: current_user.firstname } %>
-                      <%= f.input :lastname, label:"*Last Name", placeholder:"Last Name", input_html: { value: current_user.lastname } %>
-                      <%= f.input :email, label:"*Email", placeholder:"Email", input_html: { value: current_user.email } %>
+                      <%= f.input :firstname, label:"First Name", placeholder:"First Name", input_html: { value: current_user.firstname } %>
+                      <%= f.input :lastname, label:"Last Name", placeholder:"Last Name", input_html: { value: current_user.lastname } %>
+                      <%= f.input :email, label:"Email", placeholder:"Email", input_html: { value: current_user.email } %>
                     <% else %>
                       <%= f.input :firstname, label:"*First Name", placeholder:"First Name" %>
                       <%= f.input :lastname, label:"*Last Name", placeholder:"Last Name" %>
@@ -52,7 +52,7 @@
                     <%= f.input :companyname, label:"Company or Institute", placeholder:"Company or Institute" %>
                     <%= f.input :tel, label:"Telephone", placeholder:"Telephone Number" %>
                     
-                    <%= f.input :message, label: "*Message" %>
+                    <%= f.input :message, label: "Message" %>
 
                     <!-- hidden_fields -->
                     <%= f.hidden_field :status %>
