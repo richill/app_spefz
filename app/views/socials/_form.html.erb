@@ -29,7 +29,7 @@
               <div class="form-inputs">
                 <%= f.file_field :image %>
 
-                <% if action_name == 'new' %>
+                <% unless action_name == 'new' %>
                 <div class="close_social_section">
                   <%= f.input :close, label: 'Close Social' %>
                   <div class="text_info">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
@@ -54,28 +54,30 @@
                   <div class="text_info">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
                 </div>
 
-                <div class="social_address">
-                  <div class="address_upper">
-                    <%= f.input :venuename, label: "venue name", placeholder: "sky lounge" %>
-                    <%= f.input :address, label: "Location", placeholder: "address" %>
-                  </div>
-                  <div class="clear"></div>
-
-                  <div class="address_lower">
-                    <%= f.association :category_country, collection: CategoryCountry.all, prompt: "select a country", placeholder: "Select Country", label: false %>
-                    <%= f.input :city, label: false, placeholder: "city" %>
-                    <%= f.input :postcode, label: false, placeholder:"postcode" %>
-                  </div>
-                  <div class="clear"></div>
+            
+                <div class="address_upper">
+                  <%= f.input :venuename, label: "venue name", placeholder: "sky lounge" %>
+                  <%= f.input :address, label: "Location", placeholder: "address" %>
                 </div>
+                <div class="clear"></div>
+
+                <div class="address_lower">
+                  <%= f.association :category_country, collection: CategoryCountry.all, prompt: "select a country", placeholder: "Select Country", label: false %>
+                  <%= f.input :city, label: false, placeholder: "city" %>
+                  <%= f.input :postcode, label: false, placeholder:"postcode" %>
+                </div>
+                <div class="clear"></div>
 
                 <div class="map_link">
                   <%= f.input :maplink %>
                   <div class="text_info">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
                 </div>
                 
-                <%= f.input :date %>
-                <%= f.input :time %>
+                <div class="date_time">
+                  <%= f.text_field :date, label: false, class: "event_datepicker", placeholder: "dd/mm/yyyy", id: 'social_date' %>
+                  <%= f.input :time, label: false %>
+                </div>
+                <div class="clear"></div>
 
                 <%= f.association :category_quantitygender, collection: CategoryQuantitygender.all, prompt: "select a category", label: "Quantity Gender Selection", input_html: { class: 'category_select' } %>
                 <div class="general_gender_quantity_content">

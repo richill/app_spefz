@@ -138,6 +138,18 @@ $(document).ready(function() {
   $('.datepicker').datepicker({ dateFormat: 'MM dd, yy' }); 
 });
 
+$(document).ready(function() {
+  $( function() {
+    $( ".event_datepicker" ).datepicker({
+      changeMonth: true,
+      changeYear: true,
+      dateFormat: 'MM dd, yy'
+    });
+  });
+});
+
+
+
 
 
 

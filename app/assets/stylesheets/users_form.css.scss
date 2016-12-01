@@ -131,7 +131,6 @@
   margin-top: 25px;
 }
 
-
 .user_general_settings_section .right_inner_section .user_edit_update_form .user_profession {
   width: 545px;
   float: left;
@@ -143,6 +142,10 @@
   width: 545px;
   float: left;
   margin-top: 25px;
+}
+
+.user_general_settings_section .right_inner_section .user_edit_update_form #user_category_gender_id {
+  height: 40px;
 }
 
 .user_general_settings_section .right_inner_section .user_edit_update_form .label_interest {
@@ -186,7 +189,7 @@
 }
 
 .user_general_settings_section .right_inner_section .admin_content {
-  background-color: rgba(47, 63, 91, 0.1);
+  background-color: rgba(75, 180, 191, 0.2) !important;
   padding: 15px !important;
   margin: 30px 0px;
 }
@@ -200,7 +203,7 @@
 
 .user_general_settings_section .right_inner_section .current_role_group_info {
   padding: 5px 15px;
-  background-color: rgba(225, 71, 62, 0.6) !important;
+  background-color: rgba(75, 180, 191, 0.4) !important;
 }
 
 .user_general_settings_section .right_inner_section .select_role_group {
