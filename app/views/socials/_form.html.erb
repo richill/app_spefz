@@ -60,10 +60,9 @@
                 </div>
                 <div class="clear"></div>
 
-                  <%= f.input :city, label: false, placeholder: "city" %>
-                  <%= f.association :category_country, collection: CategoryCountry.all, prompt: "select a country", placeholder: "Select Country", label: false %>
-                  <%= f.input :postcode %>
-            
+                <%= f.input :city, label: false, placeholder: "city" %>
+                <%= f.association :category_country, collection: CategoryCountry.all, prompt: "select a country", placeholder: "Select Country", label: false %>
+                <%= f.input :postcode %>
                 <div class="clear"></div>
 
                 
