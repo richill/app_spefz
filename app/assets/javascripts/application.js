@@ -148,28 +148,22 @@ $(document).ready(function() {
   });
 });
 
-// word count
-// $(document).ready(function() {
-//   var text_max = 20;
-//   $('#textarea_feedback').html(text_max + ' characters remaining');
-
-//   $('#textarea').keyup(function() {
-//     var text_length = $('#textarea').val().length;
-//     var text_remaining = text_max - text_length;
-
-//     $('#textarea_feedback').html(text_remaining + ' characters remaining');
-//   });
-// });
-
+// word count [create/edit social & event page]
 $(document).ready(function() {
   var text_max_companyname = 20;
+  var text_max_title = 55;
   $('#textarea_companyname_feedback').html(text_max_companyname + ' characters remaining');
+  $('#textarea_title_feedback').html(text_max_title + ' characters remaining');
 
   $('#textarea').keyup(function() {
     var text_length = $('#textarea').val().length;
     var text_remaining = text_max_companyname - text_length;
-
     $('#textarea_companyname_feedback').html(text_remaining + ' characters remaining');
+  });
+  $('#social_title').keyup(function() {
+    var text_length = $('#social_title').val().length;
+    var text_remaining = text_max_title - text_length;
+    $('#textarea_title_feedback').html(text_remaining + ' characters remaining');
   });
 });
 
