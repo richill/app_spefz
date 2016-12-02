@@ -119,18 +119,26 @@
   margin-bottom: 0px;
 }
 
-#social_date {
-  width: 170px;
-  float: left;
+.date_time {
+  background-color: rgba(75, 180, 191, 0.2) !important;
+  padding: 15px !important;
   margin-bottom: 15px;
 }
 
-.date_time {
-  margin-bottom: 15px;
+.social_label {
+  font-family: 'Lato', sans-serif;
+  font-size: 15px !important;
+  font-weight: 300 !important;
+  text-transform: capitalize;
+}
+
+#social_date {
+  width: 170px;
+  margin-bottom: 15px !important;
 }
 
 .time {
-  width: 70px;
+  width: 170px;
   margin: 0px;
 }
 
