@@ -150,20 +150,22 @@ $(document).ready(function() {
 
 // word count [create/edit social & event page]
 $(document).ready(function() {
-  var text_max_companyname = 20;
-  var text_max_title = 55;
-  $('#textarea_companyname_feedback').html(text_max_companyname + ' characters remaining');
-  $('#textarea_title_feedback').html(text_max_title + ' characters remaining');
+  var text_max_companyname = 2;
+  var text_max_title = 5;
+  $('#textarea_companyname_feedback').html(text_max_companyname + ' words remaining');
+  $('#textarea_title_feedback').html(text_max_title + ' words remaining');
 
   $('#textarea').keyup(function() {
-    var text_length = $('#textarea').val().length;
+    var regex = /\s+/gi;
+    var text_length = $('#textarea').val().trim().replace(regex, ' ').split(' ').length;
     var text_remaining = text_max_companyname - text_length;
-    $('#textarea_companyname_feedback').html(text_remaining + ' characters remaining');
+    $('#textarea_companyname_feedback').html(text_remaining + ' words remaining');
   });
   $('#social_title').keyup(function() {
-    var text_length = $('#social_title').val().length;
+    var regex = /\s+/gi;
+    var text_length = $('#social_title').val().trim().replace(regex, ' ').split(' ').length;
     var text_remaining = text_max_title - text_length;
-    $('#textarea_title_feedback').html(text_remaining + ' characters remaining');
+    $('#textarea_title_feedback').html(text_remaining + ' words remaining');
   });
 });
 
