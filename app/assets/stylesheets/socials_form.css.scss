@@ -39,6 +39,11 @@
   padding: 10px !important;
 }
 
+.social_form_main_content input[type="text"]:focus {
+  border: 1px solid rgba(75, 180, 191, 0.5) !important;
+  background-color: #fff !important;
+}
+
 .text_info {
   font-family: 'Lato', sans-serif;
   font-size: 12px !important;
@@ -148,6 +153,70 @@
   margin: 0px 5px;
 }
 
+.social_category_age {
+  width: 540px;
+  float: left;
+}
+
+#social_category_age_id {
+  height: 40px;
+}
+
+.social_category_invite {
+  width: 540px;
+  float: right;
+}
+
+#social_category_invite_id {
+  height: 40px;
+}
+
+.speaker_details {
+  margin-bottom: 15px !important;
+}
+
+.social_speakername {
+  width: 540px;
+  float: left;
+}
+
+#social_speakername {
+  height: 50px;
+}
+
+.social_speakerlinkedin {
+  width: 540px;
+  float: right;
+}
+
+#social_speakerlinkedin {
+  height: 50px !important;
+  padding: 15px;
+}
+
+.save_btn {
+  margin: 15px 0px;
+}
+
+
+.social_form_main_content input[type="submit"] {
+  font-family: 'Lato', sans-serif;
+  font-size: 20px;
+  color: #fff !important;
+  font-weight: 300;
+  background: #000;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+  padding: 10px 25px;
+  width: 100%;
+  border: none;
+  display: inline-block;
+  margin-bottom: 0px !important;
+  background-color: #4BB4BF !important;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
 
 
 

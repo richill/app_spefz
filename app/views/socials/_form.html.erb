@@ -106,18 +106,19 @@
                       <%= f.input :quantity_women, placeholder: "quantity women", label: "women" %>
                   </div>
                 </div>
+                <div class="clear"></div>
 
                 <div class="additional_options">
-                  <div>
-                    <%= f.association :category_age, collection: CategoryAge.all, prompt: "select a category", label: "Age Group" %>
-                  </div>
-                  <div>
-                    <%= f.association :category_invite, collection: CategoryInvite.all, prompt: "select a category", label: "Who's invited?" %>
-                  </div>
+                  <%= f.association :category_age, collection: CategoryAge.all, prompt: "select a category", label: "Age Group" %>
+                  <%= f.association :category_invite, collection: CategoryInvite.all, prompt: "select a category", label: "Who's invited?" %>
                 </div>
+                <div class="clear"></div>
 
-                <%= f.input :speakername, label: "speaker name" %>
-                <%= f.input :speakerlinkedin, label: "speaker's linkedin profile" %>
+                <div class="speaker_details">
+                  <%= f.input :speakername, label: "speaker name" %>
+                  <%= f.input :speakerlinkedin, label: "speaker's linkedin profile", placeholder: "https://uk.linkedin.com/in/marinaronova" %>
+                </div>
+                <div class="clear"></div>
 
                 <!-- hidden fields -->
                 <%= f.hidden_field :latitude %>
@@ -126,7 +127,7 @@
                 <!-- hidden fields -->
               </div>
 
-              <div class="form-actions">
+              <div class="form-actions save_btn">
                 <%= f.button :submit %>
               </div>
             <% end %>
