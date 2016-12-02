@@ -91,6 +91,8 @@
   height: 50px;
   color: #454d53;
   font-size: 15px;
+  border: 1px solid #cccccc !important;
+  margin-bottom: 15px !important;
 }
 
 .users_registrations_new_section .signup_inner_middle_content #user_lastname {
@@ -100,10 +102,13 @@
   height: 50px;
   color: #454d53;
   font-size: 15px;
+  border: 1px solid #cccccc !important;
+  margin-bottom: 15px !important;
 }
 
 .users_registrations_new_section .signup_inner_middle_content #user_email {
   font-family: "Lato", sans-serif;
+  font-weight: 300 !important;
   box-shadow: none !important;
   padding: 0px 15px !important;
   height: 50px;
@@ -111,9 +116,9 @@
   font-size: 15px;
 }
 
-
 .users_registrations_new_section .signup_inner_middle_content #user_password {
   font-family: "Lato", sans-serif;
+  font-weight: 300 !important;
   box-shadow: none !important;
   padding: 0px 15px !important;
   height: 50px;
@@ -123,6 +128,7 @@
 
 .users_registrations_new_section .signup_inner_middle_content #user_password_confirmation {
   font-family: "Lato", sans-serif;
+  font-weight: 300 !important;
   box-shadow: none !important;
   padding: 0px 15px !important;
   height: 50px;
