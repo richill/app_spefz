@@ -150,8 +150,8 @@ $(document).ready(function() {
 
 // word count [create/edit social & event page]
 $(document).ready(function() {
-  var text_max_companyname = 2;
-  var text_max_title = 5;
+  var text_max_companyname = 20;
+  var text_max_title = 55;
   $('#textarea_companyname_feedback').html(text_max_companyname + ' words remaining');
   $('#textarea_title_feedback').html(text_max_title + ' words remaining');
 
