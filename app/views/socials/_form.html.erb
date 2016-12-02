@@ -37,13 +37,14 @@
                 <% end %>
 
                 <div class="company_info_section">
-                  <%= f.input :companyname, label: false, placeholder: "HSBC Private Bank" %>
-                  <div class="text_info">*maximum word count: 20</div>
+                  <%= f.text_field :companyname, label: false, placeholder: "HSBC Private Bank", id: "textarea" %>
+                  <div class="text_info">*maximum word count: 20 | <!-- <span id="textarea_feedback"></span> --><span id="textarea_companyname_feedback"></span>
+                  </div>
                 </div>
 
                 <div class="discussion_topic">
-                  <%= f.input :title, label: "Discussion Topic", placeholder: "give a short distinct name" %>
-                  <div class="text_info">*minmum word count: 40 | maximum: 55</div> 
+                  <%= f.text_field :title, label: "Discussion Topic", placeholder: "give a short distinct name" %>
+                  <div class="text_info">*minmum word count: 40 | maximum: 55 | <span id="textarea_title_feedback"></span></div> 
                 </div>
 
                 <%= f.association :category_topic, collection: CategoryTopic.all, prompt: "select a category", label: "Social Category" %>
