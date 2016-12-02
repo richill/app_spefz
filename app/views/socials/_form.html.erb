@@ -79,17 +79,43 @@
                 </div>
                 <div class="clear"></div>
 
-                <%= f.association :category_quantitygender, collection: CategoryQuantitygender.all, prompt: "select a category", label: "Quantity Gender Selection", input_html: { class: 'category_select' } %>
-                <div class="general_gender_quantity_content">
-                  <%= f.input :quantity, placeholder: "quantity", label: false %>
+                <div class="gender_selection_section">
+                  <% if action_name == 'edit' %>
+                    <div class="current_gender_selection">
+                      <span>Current Settings:</span>
+                      <span>
+                        <% if @social.category_quantitygender.name == "both men & women" %>
+                          <i class="fa fa-users" aria-hidden="true"></i>
+                        <% elsif @social.category_quantitygender.name == "only men" %>
+                          <i class="fa fa-male" aria-hidden="true"></i>
+                        <% else @social.category_quantitygender.name == "only women" %>
+                          <i class="fa fa-female" aria-hidden="true"></i>
+                        <% end %>
+                      </span>
+                      <span><%= @social.category_quantitygender.name %></span>
+                      <span class="divider">|</span>
+                      <span><%= @social.quantity %> space limit</span>
+                    </div>
+                  <% end %>
+                  <%= f.association :category_quantitygender, collection: CategoryQuantitygender.all, prompt: "select a category", label: "Quantity Gender Selection", input_html: { class: 'category_select' } %>
+                  <div class="general_gender_quantity_content">
+                    <%= f.input :quantity, placeholder: "quantity", label: false %>
+                  </div>
+                  <div class="specific_gender_quantity_content">
+                      <%= f.input :quantity_men, placeholder: "quantity men", label: "men" %>
+                      <%= f.input :quantity_women, placeholder: "quantity women", label: "women" %>
+                  </div>
                 </div>
-                <div class="specific_gender_quantity_content">
-                    <%= f.input :quantity_men, placeholder: "quantity men", label: "men" %>
-                    <%= f.input :quantity_women, placeholder: "quantity women", label: "women" %>
+
+                <div class="additional_options">
+                  <div>
+                    <%= f.association :category_age, collection: CategoryAge.all, prompt: "select a category", label: "Age Group" %>
+                  </div>
+                  <div>
+                    <%= f.association :category_invite, collection: CategoryInvite.all, prompt: "select a category", label: "Who's invited?" %>
+                  </div>
                 </div>
-                
-                <%= f.association :category_invite, collection: CategoryInvite.all, prompt: "select a category", label: "Who's invited?" %>
-                <%= f.association :category_age, collection: CategoryAge.all, prompt: "select a category", label: "Age Group" %>
+
                 <%= f.input :speakername, label: "speaker name" %>
                 <%= f.input :speakerlinkedin, label: "speaker's linkedin profile" %>
 
