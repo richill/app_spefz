@@ -15,10 +15,12 @@
   min-height: 1800px;
 }
 
-.user_general_settings_section .left_inner_section {
-  position: fixed;
-  width: 196px;
-}
+// @media only screen and (max-width: 1365px) {
+//  .user_general_settings_section .left_inner_section {
+//     position: fixed;
+//     width: 196px;
+//   }
+// }
 
 .user_general_settings_section .left_inner_section ul {
   margin: 0px !important;

@@ -32,7 +32,7 @@
                 <% unless action_name == 'new' %>
                 <div class="close_social_section">
                   <%= f.input :close, label: 'Close Social' %>
-                  <div class="text_info">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+                  <div class="text_info">If ticked (closed) the social will be removed from the list of socials. Members will no longer be able to view nor attend your social.</div>
                 </div>
                 <% end %>
 
@@ -54,9 +54,8 @@
                 <div class="social_tags">
                   <div class="social_label">social tags</div>
                   <%= f.text_field :tag_list, value: @social.tag_list.to_s, placeholder: "chess, jogging, dogs, skipping, gym, startups, entreprenuers, jazz" %>
-                  <div class="text_info">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+                  <div class="text_info">Place word tags on your social that best describes your social. This allows members to easily allocate your social.</div>
                 </div>
-
             
                 <div class="address_upper">
                   <%= f.input :venuename, label: "venue name", placeholder: "sky lounge" %>
@@ -74,7 +73,7 @@
                 <div class="map_link">
                   <%= f.input :maplink, label: "Google Map Link URL
                   ", placeholder: "https://www.google.co.uk/maps?q=Brasserie+Blanc+(Tower+Hill)+Trinity+Square+(Tower+of+London)+London+EC3N+4AA&um=1&ie=UTF-8&sa=X&ved=0ahUKEwjz_orD857QAhUsCMAKHV2nD2QQ_AUICCgB" %>
-                  <div class="text_info">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+                  <div class="text_info">Copy and past the Google URL Link for the address/location of the social here. This allows members to access the location of the social on the web directly via a click of the address. <i class="fa fa-angle-double-right" aria-hidden="true"></i>Here is an example of how this will be displayed with the given address with the embeded link: <%= link_to "The Pepys, Stew Lane, London, EC4V 3PT", "https://www.google.co.uk/maps/place/The+Pepys/@51.510479,-0.0983617,17z/data=!3m1!4b1!4m5!3m4!1s0x487604aa3ade883b:0x10f9847b2204fa31!8m2!3d51.510479!4d-0.096173", target:"_blank" %></div>
                 </div>
                 
                 <div class="date_time">
@@ -120,7 +119,7 @@
                 </div>
                 <div class="clear"></div>
 
-                <div class="speaker_details hide">
+                <div class="speaker_details">
                   <%= f.input :speakername, label: "speaker name", placeholder: "Dr. Nelson Larbi" %>
                   <%= f.input :speakerlinkedin, label: "speaker's linkedin profile", placeholder: "https://uk.linkedin.com/in/nelsonlarbi" %>
                   <div class="text_info">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
