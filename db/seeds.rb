@@ -25,8 +25,10 @@ CategoryContactclient.delete_all
 ccc01 = CategoryContactclient.create!(name:'Spefz Member')
 ccc02 = CategoryContactclient.create!(name:'Spefz Partner')
 ccc03 = CategoryContactclient.create!(name:'Press & Media')
-ccc04 = CategoryContactclient.create!(name:'Affiliates')
-ccc05 = CategoryContactclient.create!(name:'Other')
+ccc04 = CategoryContactclient.create!(name:'Marketing')
+ccc05 = CategoryContactclient.create!(name:'Affiliates')
+ccc06 = CategoryContactclient.create!(name:'Customer Service')
+ccc07 = CategoryContactclient.create!(name:'Other')
 
 CategoryEnquiry.delete_all
 ceq01 = CategoryEnquiry.create!(name:'General Enquiry')
