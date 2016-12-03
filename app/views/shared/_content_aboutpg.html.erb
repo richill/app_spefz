@@ -20,15 +20,15 @@
         </div>
         <div class="medium-12 columns content_info">
           <div class="title">the founders</div>
-          <div class="subtitle">find lots of interesting socials, events & discussion and meet like minded people today!</div>
+          <div class="subtitle">we're a really cool team! check us out and conect with us!</div>
           <div class="team_member">
-            <div class="team_img"><%= image_tag("img_profile_01.png") %></div>
+            <div class="team_img"><%= link_to(image_tag("img_profile_01.png"), "https://uk.linkedin.com/in/a-richill-artloe-138520", target:"_blank") %></div>
             <div class="team_name">richill artloe</div>
             <div class="team_position">cheif executive officer</div>
             <div class="team_note">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
           </div>
           <div class="team_member">
-            <div class="team_img"><%= image_tag("img-profile-image-default.png") %></div>
+            <div class="team_img"><%= link_to(image_tag("img-profile-image-default.png"), "#", target:"_blank") %></div>
             <div class="team_name">stephan elliot</div>
             <div class="team_position">cheif technology officer</div>
             <div class="team_note">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
@@ -36,7 +36,7 @@
           <div class="title">the team</div>
           <div class="subtitle">find lots of interesting socials, events & discussion and meet like minded people today!</div>
           <div class="team_member" style="margin-bottom: 0px;">
-            <div class="team_img"><%= image_tag("img-profile-image-default.png") %></div>
+            <div class="team_img"><%= link_to(image_tag("img-profile-image-default.png"), "#", target:"_blank") %></div>
             <div class="team_name">simon cohen</div>
             <div class="team_position">cheif operating officer</div>
             <div class="team_note">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
@@ -56,9 +56,8 @@
           <div class="clear"></div>
           <div class="content_info" style="margin-top:50px;">
             <div class="title">get in touch with us</div>
-            <div class="subtitle">We look foward to hearing from you! </div>
-            <!-- <div class="text_info">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div> -->
-            <div class="text_info">Please make sure you are writing to the department that is relevant to your request, as we cannot otherwise guarantee a response.</div>
+            <div class="subtitle">We look forward to hearing from you! </div>
+            <div class="text_info">Please make sure you are writing to the department that is relevant to your request, as we cannot otherwise guarantee a response. Besides that, we are always looking to improve our service. If you have any issues do kindly contact us.</div>
           </div>
           <div class="btn_contact"><%= link_to "contact us", contact_us_path %></div>
         </div>
