@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161130150317) do
+ActiveRecord::Schema.define(version: 20161204112823) do
 
   create_table "activities", force: :cascade do |t|
     t.integer  "trackable_id"
@@ -195,6 +195,12 @@ ActiveRecord::Schema.define(version: 20161130150317) do
   add_index "friendships", ["friender_id"], name: "index_friendships_on_friender_id"
   add_index "friendships", ["user_id", "friend_id"], name: "index_friendships_on_user_id_and_friend_id", unique: true
   add_index "friendships", ["user_id"], name: "index_friendships_on_user_id"
+
+  create_table "hosts", force: :cascade do |t|
+    t.integer  "event_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "impressions", force: :cascade do |t|
     t.string   "impressionable_type"
