@@ -4,9 +4,9 @@ class Event < ActiveRecord::Base
   
   acts_as_taggable
 
-  has_many :payments
-  
   has_one :host
+  
+  has_many :payments  
   
   belongs_to :user
   belongs_to :category_topic
