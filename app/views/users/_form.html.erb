@@ -29,6 +29,14 @@
             <%= f.text_field :tag_list, value: @user.tag_list.to_s, placeholder: "chess, jogging, dogs, skipping, gym, startups, entreprenuers, jazz..." %>
             <%= f.input :description, label: "about me", placeholder: "Tell us a bit about yourself, what you like doing and where you like going." %>
 
+            <% if current_user.admin_pa_management_group  %>
+              <div class="admin_content">
+                <div>
+                  <%= f.input :host_description, placeholder: "Event Host Description" %>
+                </div>
+              </div>
+            <% end %>
+
             <% if current_user.admin_pa_management_group %>
               <div class="admin_content">
                 <div class="current_role_group">
