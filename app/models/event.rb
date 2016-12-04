@@ -7,7 +7,6 @@ class Event < ActiveRecord::Base
   has_many :payments
   
   has_many :hosts
-  has_many :users, through: :hosts
   
   belongs_to :user
   belongs_to :category_topic

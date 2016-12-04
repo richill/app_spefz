@@ -10,9 +10,7 @@ class User < ActiveRecord::Base
   belongs_to :category_gender 
   belongs_to :category_role 
   belongs_to :category_managementgroup 
-  # belongs_to :host 
-  # has_many :hosts
-  # belongs_to :hosts
+  belongs_to :host 
 
   has_many :payments
   has_many :events, dependent: :destroy
