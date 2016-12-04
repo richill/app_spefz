@@ -30,6 +30,10 @@
     <%= f.association :category_age, collection: CategoryAge.all, prompt: "select a category", label: "Age Group" %>
     <%= f.text_field :tag_list, value: @event.tag_list.to_s, placeholder: "charity, education, social, music, social impact, travel, health, jazz..." %>
 
+    <div class="event_host">
+        <div>the event hosts goes here</div>
+    </div><br/>
+
 
     <!-- hidden fields -->
     <%= f.hidden_field :latitude %>
