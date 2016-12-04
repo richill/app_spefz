@@ -10,7 +10,7 @@
             <div class="host_name"><%= link_to "#{host.firstname} #{host.lastname}", host %></div>
           </div>
           <div class="introduction">
-            Ian is our events and marketing executive here at Spefz HQ. He deals with the organisation of all the UK speed social events.
+            <%= host.host_description %>
           </div>
         </li>
         <% end %>
