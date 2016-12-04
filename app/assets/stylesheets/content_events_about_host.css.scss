@@ -90,6 +90,36 @@
 
 
 
+.no_host_text {
+  text-transform: capitalize;
+  text-align: center;
+  padding: 25px 0px;
+}
+
+.add_host a {
+  font-size: 18px;
+  background-color: #E34B51 !important;
+  color: #fff !important;
+  padding: 15px 0px;
+  width: 100% !important;
+  display: inline-block;
+  text-align: center;
+  border-radius: 2px;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease;
+}
+
+.add_host a:hover {
+  background-color: rgba(47, 63, 91, 0.5) !important;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease;
+}
+
+
+
+
 
 
 

@@ -1,0 +1,203 @@
+/*=========================================
+    Section: event [age | event host modal
+    File: views / shared / _modal_event_hosts.html.erb
+    File: views / events / _show.html.erb
+  =========================================*/
+
+#myModal-events-hosts {
+  background: url("img_background_main.png") repeat;
+  border-radius: 0px !important;
+  border: 0px !important;
+  padding: 0px !important;
+  width: 400px !important;
+}
+
+.eventhosts_inner_container {
+  background-color: #fff !important;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+}
+
+.eventhosts_inner_container .header {
+  padding: 5px 15px !important;
+  font-size: 35px;
+  border-bottom: 2px solid #58CDA6;
+  text-transform: capitalize;
+  color: #fff !important;
+  background-color: #283041;
+}
+
+.eventhosts_inner_container .content_list {
+  padding: 8px !important;
+  min-height: 100px;
+}
+
+.eventhosts_inner_container .cancel_button {
+  color: #fff !important;
+}
+
+.eventhosts_inner_container ul {
+  margin: 0px;
+  list-style-type: none;
+}
+
+.eventhosts_inner_container ul li {
+  background-color: rgba(47, 63, 91, 0.05) !important;
+  padding: 5px;
+  margin-bottom: 5px;
+  height: 74px;
+}
+
+.eventhosts_inner_container .image_section {
+  float: left;
+}
+
+.eventhosts_inner_container .img_cover {
+  margin: 3px;
+  padding: 4px;
+  border-radius: 5px;
+  background-color: rgba(88, 205, 166, 0.2) !important;
+  display: inline-block;
+}
+
+.eventhosts_inner_container .img_cover img {
+  height: 48px;
+  width: 48px;
+  border-radius: 200px;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease;
+}
+
+.eventhosts_inner_container .user_info_section {
+  padding: 12px;
+  float: left;
+  text-align: left;
+}
+
+.eventhosts_inner_container .follower_following_name a {
+  font-family: 'Lato', sans-serif;
+  font-weight: bold;
+  text-transform: capitalize;
+  color: #283041 !important;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease;
+}
+
+.eventhosts_inner_container .follower_following_name a:hover {
+  color: #E34B51 !important;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease;
+}
+
+.eventhosts_inner_container .user_profession {
+  font-family: 'Lato', sans-serif;
+  font-size: 12px;
+  font-weight: 300;
+  text-transform: capitalize;
+  text-align: left;
+}
+
+.eventhosts_inner_container .action_btn_section {
+  float: right;
+  padding: 22px 0px;
+}
+
+.eventhosts_inner_container .btn a {
+  font-family: 'Lato', sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  background: #000;
+  text-transform: capitalize;
+  color: #fff !important;
+  padding: 11px 25px;
+  letter-spacing: 1px;
+  margin-top: 11px;
+  margin-right: 5px;
+  background-color: rgba(47, 63, 91, 0.5) !important;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease;
+}
+
+.eventhosts_inner_container .btn a:hover {
+  background-color: #E34B51 !important;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease;
+}
+
+.eventhosts_inner_container .event_title {
+  font-weight: bold;
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+.eventhosts_inner_container label {
+  font-family: 'Lato', sans-serif;
+  font-size: 15px !important;
+  font-weight: 300 !important;
+  text-transform: capitalize;
+}
+
+.eventhosts_inner_container .checkbox {
+  float: left;
+  margin-right: 10px;
+}
+
+.eventhosts_inner_container input[type="checkbox"] {
+  margin-right: 5px;
+  margin-bottom: 10px;
+}
+
+.eventhosts_inner_container .listed_hosts {
+  background-color: rgba(88, 205, 166, 0.2) !important;
+  text-transform: capitalize;
+  padding: 15px;
+  margin-bottom: 15px;
+}
+
+.eventhosts_inner_container .host_event {
+  margin-bottom: 8px;
+}
+
+.eventhosts_inner_container input[type="submit"] {
+  font-family: 'Lato', sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  background: #000;
+  text-transform: capitalize;
+  color: #fff !important;
+  padding: 15px 0px;
+  letter-spacing: 1px;
+  border: none;
+  width: 100%;
+  background-color: #E34B51 !important;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+
+.eventhosts_inner_container input[type="submit"]:hover {
+  background-color: rgba(47, 63, 91, 0.5) !important;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

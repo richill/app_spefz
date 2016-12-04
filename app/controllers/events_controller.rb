@@ -15,6 +15,7 @@ class EventsController < ApplicationController
 
   def show
     @premium_plan = Subscription.find_by(title:"premium")
+    @host = Host.new
   end
 
   def new

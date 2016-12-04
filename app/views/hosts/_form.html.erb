@@ -2,11 +2,14 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.association :users, collection: User.hosts.all.order(:firstname), label_method: :firstname, label: 'select host', as: :check_boxes %><br/>
+    <div class="medium-12 columns listed_hosts">
+      <%= f.association :users, collection: User.hosts.all.order(:firstname), label_method: :firstname, label: 'select host:', as: :check_boxes %><br/>
+    </div>
+    <div class="clear"></div>
     <%= f.association :event, collection: Event.all.order(:title), prompt: "please select your event", label_method: :title, label: 'Event' %>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.button :submit, "Create Hosts" %>
   </div>
 <% end %>
