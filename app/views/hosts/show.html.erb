@@ -2,8 +2,16 @@
 
 <p>
   <strong>Event:</strong>
-  <%= @host.event_id %>
+  <%= @host.event.title %>
 </p>
+
+<p>
+  <strong>Hosts:</strong>
+  <% @host.users.each do |host| %>
+    <%= host.firstname %>
+  <% end %>
+</p>
+
 
 <%= link_to 'Edit', edit_host_path(@host) %> |
 <%= link_to 'Back', hosts_path %>
