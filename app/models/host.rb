@@ -1,8 +1,6 @@
 class Host < ActiveRecord::Base
-  # belongs_to :user #add user_id under hosts
 
-  has_many :users 
-  #remove user_id under hosts
+  has_and_belongs_to_many :users 
 
   belongs_to :event
 end
