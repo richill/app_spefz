@@ -18,49 +18,39 @@
     </div>
   </div>
 <% else %>
-  <div class="event_host_section">
-    <div class="listed_hosts">
-      <div class="no_host_text">currently no hosts for this event</div>
-      <div class="add_host">
-        <a href="#" data-reveal-id="myModal-events-hosts">Add Hosts</a>
-        <span><%= render 'shared/modal_event_hosts' %></span>
+  <% if current_user.admin_pa_management_group || current_user.pa_event_mgt_group %>
+    <div class="event_host_section">
+      <div class="listed_hosts">
+        <div class="no_host_text">currently no hosts for this event</div>
+        <div class="add_host">
+          <a href="#" data-reveal-id="myModal-events-hosts">Add Hosts</a>
+          <span><%= render 'shared/modal_event_hosts' %></span>
+        </div>
       </div>
     </div>
-  </div>
+  <% else %>
+    <div class="event_host_section">
+      <div class="listed_hosts">
+        <ul>
+          <li>
+            <span class="host"><%= link_to (image_tag("img-profile-image-default.png")), "#" %></span>
+            <div class="host_details">
+              <div>Meet your host</div>
+              <div class="host_name"><%= link_to "Assigning Host", "#" %></div>
+            </div>
+          </li>
 
-  <div class="event_host_section hide">
-    <div class="listed_hosts">
-      <ul>
-        <li>
-          <span class="host"><%= link_to (image_tag("img_profile_13.png")), "#" %></span>
-          <div class="host_details">
-            <div>Meet your host</div>
-            <div class="host_name"><%= link_to "Ian Gallaper", "#" %></div>
-            <% if current_user.admin_pa_management_group || current_user.pa_event_mgt_group %>
-              <div class="dummy_host">Dummy Host [<%= link_to "Add Hosts", new_host_path, target:"_blank" %>]</div class="dummy_host">
-            <% end %>
-          </div>
-          <div class="introduction">
-            Ian is our events and marketing executive here at Spefz HQ. He deals with the organisation of all the UK speed social events.
-          </div>
-        </li>
-
-        <li>
-          <span class="host"><%= link_to (image_tag("img_profile_10.png")), "#" %></span>
-          <div class="host_details">
-            <div>Meet your host</div>
-            <div class="host_name"><%= link_to "Emma Watson", "#" %></div>
-            <% if current_user.admin_pa_management_group || current_user.pa_event_mgt_group %>
-              <div class="dummy_host">Dummy Host [<%= link_to "Add Hosts", new_host_path, target:"_blank" %>]</div class="dummy_host">
-            <% end %>
-          </div>
-          <div class="introduction">
-            Emma is our events and marketing executive here at Spefz HQ. She deals with the organisation of all the UK speed social events.
-          </div>
-        </li>
-      </ul>
+          <li>
+            <span class="host"><%= link_to (image_tag("img-profile-image-default.png")), "#" %></span>
+            <div class="host_details">
+              <div>Meet your host</div>
+              <div class="host_name"><%= link_to "Assigning Host", "#" %></div>
+            </div>
+          </li>
+        </ul>
+      </div>
     </div>
-  </div>
+  <% end %>
 <% end %>
 
 

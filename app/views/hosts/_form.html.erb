@@ -1,3 +1,4 @@
+host_form: <%= @event.title %>
 <%= simple_form_for(@host) do |f| %>
   <%= f.error_notification %>
 
@@ -6,7 +7,8 @@
       <%= f.association :users, collection: User.hosts.all.order(:firstname), label_method: :firstname, label: 'select host:', as: :check_boxes %><br/>
     </div>
     <div class="clear"></div>
-    <%= f.association :event, collection: Event.all.order(:title), prompt: "please select your event", label_method: :title, label: 'Event' %>
+    <%= f.association :event, collection: Event.live_events.all.order(:title), prompt: "please select your event", label_method: :title, label: 'Event', value_method: :title %>
+    <%# f.association :category_country, collection: CategoryCountry.all, prompt: "select a category", label: "current country (you currently live in)", :value => current_user.category_country.name, :selected => current_user.category_country_id %>
   </div>
 
   <div class="form-actions">
