@@ -7,10 +7,9 @@
 
 <p>
   <strong>Hosts:</strong>
-  <%# @host.user.firstname %>
-  <%# @host.users.each do |host| %>
-    <%# host.firstname %>
-  <%# end %>
+  <% @host.users.each do |host| %>
+    <%= link_to "#{host.firstname}" %>
+  <% end %>
 </p>
 
 

@@ -2,8 +2,7 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.association :users, collection: User.all.order(:firstname), label_method: :firstname, as: :check_boxes %>
-    <%# f.association :user, collection: User.all.order(:firstname), prompt: "please select your user", label_method: :firstname, label: 'user' %>
+    <%= f.association :users, collection: User.all.order(:firstname), label_method: :firstname, label: 'select host', as: :check_boxes %><br/>
     <%= f.association :event, collection: Event.all.order(:title), prompt: "please select your event", label_method: :title, label: 'Event' %>
   </div>
 
