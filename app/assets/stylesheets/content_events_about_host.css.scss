@@ -66,6 +66,20 @@
   color: #E34B51 !important
 }
 
+.event_host_section .dummy_host {
+  font-size: 12px;
+  color: #E34B51;
+}
+
+.event_host_section .dummy_host a {
+  font-size: 12px;
+  color: #E34B51 !important;
+}
+
+.event_host_section .dummy_host a:hover {
+  text-decoration: underline;
+}
+
 .event_host_section .introduction {
   font-family: 'Lato', sans-serif;
   font-weight: 300 !important;

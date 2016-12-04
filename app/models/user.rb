@@ -90,7 +90,6 @@ class User < ActiveRecord::Base
   scope :management_group, ->() { joins(:category_managementgroup).where('category_managementgroups.name' => "Sales/Marketing Group") }                                                                                       
   # all users in sales_marketing_group
 
-  # scope :hosts, ->() { joins(:category_managementgroup).where('category_managementgroups.name' => "Event Management Group") }
   scope :hosts, -> { joins(:category_managementgroup).where("category_managementgroups.name IN (?)", ["Management Group", "Event Management Group"]) }                                                                                    
   # display users that are in charge of hosting speed-events
 

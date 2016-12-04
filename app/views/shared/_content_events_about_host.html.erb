@@ -1,4 +1,4 @@
-<% if @event.host.users.present? %>
+<% if @event.host.present? %>
   <div class="event_host_section">
     <div class="listed_hosts">
       <ul>
@@ -18,8 +18,7 @@
     </div>
   </div>
 <% else %>
-  <div>hello</div>
-  <div class="event_host_section hide">
+  <div class="event_host_section">
     <div class="listed_hosts">
       <ul>
         <li>
@@ -27,18 +26,23 @@
           <div class="host_details">
             <div>Meet your host</div>
             <div class="host_name"><%= link_to "Ian Gallaper", "#" %></div>
+            <% if current_user.admin_pa_management_group || current_user.pa_event_mgt_group %>
+              <div class="dummy_host">Dummy Host [<%= link_to "Add Hosts", new_host_path %>]</div class="dummy_host">
+            <% end %>
           </div>
           <div class="introduction">
             Ian is our events and marketing executive here at Spefz HQ. He deals with the organisation of all the UK speed social events.
           </div>
         </li>
-        <div class="divider"></div>
 
         <li>
           <span class="host"><%= link_to (image_tag("img_profile_10.png")), "#" %></span>
           <div class="host_details">
             <div>Meet your host</div>
             <div class="host_name"><%= link_to "Emma Watson", "#" %></div>
+            <% if current_user.admin_pa_management_group || current_user.pa_event_mgt_group %>
+              <div class="dummy_host">Dummy Host [<%= link_to "Add Hosts", new_host_path %>]</div class="dummy_host">
+            <% end %>
           </div>
           <div class="introduction">
             Emma is our events and marketing executive here at Spefz HQ. She deals with the organisation of all the UK speed social events.
