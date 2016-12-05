@@ -235,6 +235,25 @@
   -o-transition: all 0.3s ease;
 }
 
+.blog_user_details a {
+  font-family: 'Lato', sans-serif;
+  color: #414249 !important;
+  margin: 3px 0px 10px;
+  letter-spacing: 1px;
+  font-size: 13px !important;
+  font-weight: bold; 
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+.blog_user_details a:hover {
+  color: #E34B51 !important; 
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
 .blog_content_read {
   margin: 10px 0px;
 }
@@ -248,7 +267,6 @@
   letter-spacing: 1px;
   margin: 10px 0px;
 }
-
 
 .read_more a {
   font-family: 'Lato', sans-serif;
