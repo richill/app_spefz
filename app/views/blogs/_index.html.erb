@@ -17,14 +17,15 @@
             <ul>
               <!-- content -->
               <% @blogs.each do |blog| %>
-                <li class="medium-12 columns">
+                <li class="medium-12 columns listed_blog">
                   <div class="medium-6 columns left_content">
                     <div><%= link_to(image_tag("#{blog.image_url}", :alt =>  "image", :class =>"#"), user_blog_path(blog.user, blog)) %></div>
                   </div>
                   <div class="medium-6 columns right_content">
-                    <div><%= link_to "#{blog.title}", user_blog_path(blog.user, blog) %></div>
-                    <div>
-                      <span><%= blog.category_blog.name %></span>
+                    <div class="blog_title"><%= link_to "#{blog.title}", user_blog_path(blog.user, blog) %></div>
+                    <div class="blog_category_date">
+                      <span>Category: </span>
+                      <span class="blog_category"><%= link_to "#{blog.category_blog.name}", "#" %></span>
                       <span>|</span>
                       <span><%= blog.created_at %></span>
                     </div>
