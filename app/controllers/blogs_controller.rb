@@ -16,6 +16,7 @@ class BlogsController < ApplicationController
   end
 
   def new
+    @premium_plan = Subscription.find_by(title:"premium")
     @user = User.find(params[:user_id])
     @blog = @user.blogs.build
   end
@@ -25,6 +26,7 @@ class BlogsController < ApplicationController
   end
 
   def create
+    @premium_plan = Subscription.find_by(title:"premium")
     @user = User.find(params[:user_id])
     @blog = @user.blogs.create(blog_params)
     respond_to do |format|
@@ -39,6 +41,7 @@ class BlogsController < ApplicationController
   end
 
   def update
+    @premium_plan = Subscription.find_by(title:"premium")
     respond_to do |format|
       if @blog.update_attributes(blog_params)
         format.html { redirect_to([@blog.user, @blog], notice: 'Blog was successfully updated.') }
@@ -51,6 +54,7 @@ class BlogsController < ApplicationController
   end
 
   def destroy
+    @premium_plan = Subscription.find_by(title:"premium")
     @user = Userr.find(params[:user_id])
     @blog = @user.blogs.find(params[:id])
     @blog.destroy
@@ -58,21 +62,25 @@ class BlogsController < ApplicationController
   end
 
   def venues
+    @premium_plan = Subscription.find_by(title:"premium")
     @search = Blog.order("created_at DESC").search(params[:q])
     @blogs = @search.result(distinct: true)
   end
 
   def networking_tips
+    @premium_plan = Subscription.find_by(title:"premium")
     @search = Blog.order("created_at DESC").search(params[:q])
     @blogs = @search.result(distinct: true)
   end
 
   def dating_tips
+    @premium_plan = Subscription.find_by(title:"premium")
     @search = Blog.order("created_at DESC").search(params[:q])
     @blogs = @search.result(distinct: true)
   end
 
   def spefz_news
+    @premium_plan = Subscription.find_by(title:"premium")
     @search = Blog.order("created_at DESC").search(params[:q])
     @blogs = @search.result(distinct: true)
   end

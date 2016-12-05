@@ -64,9 +64,9 @@
                 <span class="blog_category"><%= link_to "#{@blog.category_blog.name}", "#" %></span>
                 <span class="divider">|</span>
                 <span><%= @blog.created_at.strftime("%B %d, %Y") %></span>
-                <span class="divider">|</span>
                 <% if signed_in? %>
                   <% if current_user.admin_pa_management_group || current_user.pa_administration_group %>
+                    <span class="divider">|</span>
                     <span class="read_more"><%= link_to "edit blog", edit_user_blog_path(@blog.user, @blog) %></span>
                   <% end %>
                 <% end %>

@@ -11,7 +11,10 @@
   <div class="medium-10 columns right_column_section">
     <div class="right_inner_section">
       <!-- content -->
-      <div><h1>settings</h1></div>
+      <div>
+        <h1>settings</h1>
+        <button><%= link_to "create blog", new_user_blog_path(current_user) %></button>
+      </div>
       <!-- content -->
     </div>
   </div>
