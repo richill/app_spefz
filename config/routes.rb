@@ -19,6 +19,7 @@ Rails.application.routes.draw do
     resources :comments, only: [:create, :destroy] 
     resources :socials
     resources :events
+    resources :blogs
     member do
       get 'dashboard'
       get 'membership'
