@@ -1,73 +1,114 @@
 class BlogsController < ApplicationController
   before_action :set_blog, only: [:show, :edit, :update, :destroy]
 
-  # GET /blogs
-  # GET /blogs.json
+
   def index
-    @blogs = Blog.all
+    @search = Blog.order("created_at DESC").search(params[:q])
+    @blogs = @search.result(distinct: true)
+    respond_with(@blogs)
   end
 
-  # GET /blogs/1
-  # GET /blogs/1.json
   def show
+    @user = User.find(params[:user_id])
+    @blog = @user.blogs.find(params[:id]) 
   end
 
-  # GET /blogs/new
   def new
-    @blog = Blog.new
+    @user = User.find(params[:user_id])
+    @blog = @user.blogs.build
   end
 
-  # GET /blogs/1/edit
   def edit
+    @user = User.find(params[:user_id])
   end
 
-  # POST /blogs
-  # POST /blogs.json
   def create
-    @blog = Blog.new(blog_params)
-
+    @user = User.find(params[:user_id])
+    @blog = @user.blogs.create(blog_params)
     respond_to do |format|
       if @blog.save
-        format.html { redirect_to @blog, notice: 'Blog was successfully created.' }
-        format.json { render :show, status: :created, location: @blog }
+        format.html { redirect_to([@blog.user, @blog], notice: 'Blog was successfully created.') }
+        format.json  { render json: @blog, status: :created, location: @blog }
       else
-        format.html { render :new }
-        format.json { render json: @blog.errors, status: :unprocessable_entity }
+        format.html { render action: "new" }
+        format.json  { render json: @blog.errors, status: :unprocessable_entity }
       end
     end
   end
 
-  # PATCH/PUT /blogs/1
-  # PATCH/PUT /blogs/1.json
   def update
     respond_to do |format|
-      if @blog.update(blog_params)
-        format.html { redirect_to @blog, notice: 'Blog was successfully updated.' }
-        format.json { render :show, status: :ok, location: @blog }
+      if @blog.update_attributes(blog_params)
+        format.html { redirect_to([@blog.user, @blog], notice: 'Blog was successfully updated.') }
+        format.json { head :no_content }
       else
-        format.html { render :edit }
+        format.html { render action: "edit" }
         format.json { render json: @blog.errors, status: :unprocessable_entity }
       end
     end
   end
 
-  # DELETE /blogs/1
-  # DELETE /blogs/1.json
   def destroy
+    @user = Userr.find(params[:user_id])
+    @blog = @user.blogs.find(params[:id])
     @blog.destroy
-    respond_to do |format|
-      format.html { redirect_to blogs_url, notice: 'Blog was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    redirect_to blogs_path
   end
 
+
+  # def index
+  #   @blogs = Blog.all
+  # end
+
+  # def show
+  # end
+
+  # def new
+  #   @blog = Blog.new
+  # end
+
+  # def edit
+  # end
+
+  # def create
+  #   @blog = Blog.new(blog_params)
+
+  #   respond_to do |format|
+  #     if @blog.save
+  #       format.html { redirect_to @blog, notice: 'Blog was successfully created.' }
+  #       format.json { render :show, status: :created, location: @blog }
+  #     else
+  #       format.html { render :new }
+  #       format.json { render json: @blog.errors, status: :unprocessable_entity }
+  #     end
+  #   end
+  # end
+
+  # def update
+  #   respond_to do |format|
+  #     if @blog.update(blog_params)
+  #       format.html { redirect_to @blog, notice: 'Blog was successfully updated.' }
+  #       format.json { render :show, status: :ok, location: @blog }
+  #     else
+  #       format.html { render :edit }
+  #       format.json { render json: @blog.errors, status: :unprocessable_entity }
+  #     end
+  #   end
+  # end
+
+  # def destroy
+  #   @blog.destroy
+  #   respond_to do |format|
+  #     format.html { redirect_to blogs_url, notice: 'Blog was successfully destroyed.' }
+  #     format.json { head :no_content }
+  #   end
+  # end
+
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_blog
       @blog = Blog.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def blog_params
       params.require(:blog).permit(:title, :content, :image, :user_id, :category_blog_id, :video_link)
     end
