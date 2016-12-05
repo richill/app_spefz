@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   
-  resources :blogs
+  resources :blogs do
+    collection do
+      get 'venues'
+    end
+  end
 
   resources :hosts
   resources :subscriptions

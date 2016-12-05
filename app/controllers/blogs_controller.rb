@@ -57,6 +57,26 @@ class BlogsController < ApplicationController
     redirect_to blogs_path
   end
 
+  def venues
+    @search = Blog.order("created_at DESC").search(params[:q])
+    @blogs = @search.result(distinct: true)
+  end
+
+  def networking_tips
+    @search = Blog.order("created_at DESC").search(params[:q])
+    @blogs = @search.result(distinct: true)
+  end
+
+  def dating_tips
+    @search = Blog.order("created_at DESC").search(params[:q])
+    @blogs = @search.result(distinct: true)
+  end
+
+  def spefz_news
+    @search = Blog.order("created_at DESC").search(params[:q])
+    @blogs = @search.result(distinct: true)
+  end
+
   private
     def set_blog
       @blog = Blog.find(params[:id])

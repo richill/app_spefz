@@ -6,8 +6,8 @@
       <div class="search_inner_container">        
         <div>
           <ul class="search_left_content">
-            <li class="active"><%= link_to "Blogs", blogs_path %></li>
-            <li><%= link_to "Venues", venues_blogs_path %></li>
+            <li><%= link_to "Blogs", blogs_path %></li>
+            <li class="active"><%= link_to "Venues", venues_blogs_path %></li>
             <li><%= link_to "Networking Tips", "#" %></li>
             <li><%= link_to "Dating Tips", "#" %></li>
             <li><%= link_to "SPefz News", "#" %></li>
@@ -32,7 +32,7 @@
           <div class="blog_main_container">
             <ul>
               <!-- content -->
-              <% @blogs.each do |blog| %>
+              <% @blogs.networking.each do |blog| %>
                 <li class="medium-12 columns listed_blog">
                   <div class="medium-6 columns left_content">
                     <div><%= link_to(image_tag("#{blog.image_url}", :alt =>  "image", :class =>"#"), user_blog_path(blog.user, blog)) %></div>
