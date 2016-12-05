@@ -1,34 +1,87 @@
-<p id="notice"><%= notice %></p>
+<div class="blogs_section">
+  <div class="medium-12 columns blogs_inner_section">
 
-<p>
-  <strong>Title:</strong>
-  <%= @blog.title %>
-</p>
+    <!-- search -->
+    <div class="medium-12 columns search_container">
+      <div class="search_inner_container">        
+        <div>
+          <ul>
+            <li><%= link_to "Blogs", "#" %></li>
+            <li><%= link_to "Venues", "#" %></li>
+            <li><%= link_to "Networking Tips", "#" %></li>
+            <li><%= link_to "Dating Tips", "#" %></li>
+            <li><%= link_to "SPefz News", "#" %></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- search -->
 
-<p>
-  <strong>Content:</strong>
-  <%= @blog.content %>
-</p>
+    <!-- content -->
+    <div class="medium-12 columns social_content_section">
+      <div class="medium-12 columns content_container">
+        <div class="content_details">
+          <div class="blog_main_container">
+            <ul>
+              <!-- content -->
+              <div>content</div>
+              <!-- content -->
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- content -->
 
-<p>
-  <strong>Image:</strong>
-  <%= image_tag(@blog.image_url) %>
-</p>
+  </div>
+</div>
 
-<p>
-  <strong>User:</strong>
-  <%= @blog.user_id %>
-</p>
 
-<p>
-  <strong>Category blog:</strong>
-  <%= @blog.category_blog_id %>
-</p>
 
-<p>
-  <strong>Video link:</strong>
-  <%= @blog.video_link %>
-</p>
 
-<%= link_to 'Edit', edit_user_blog_path(@blog.user, @blog) %> |
-<%= link_to 'Back', blogs_path %>
+
+
+
+
+
+
+
+
+
+
+<div class="old_content">
+  <p id="notice"><%= notice %></p>
+
+  <p>
+    <strong>Title:</strong>
+    <%= @blog.title %>
+  </p>
+
+  <p>
+    <strong>Content:</strong>
+    <%= @blog.content %>
+  </p>
+
+  <p>
+    <strong>Image:</strong>
+    <%= image_tag(@blog.image_url) %>
+  </p>
+
+  <p>
+    <strong>User:</strong>
+    <%= @blog.user_id %>
+  </p>
+
+  <p>
+    <strong>Category blog:</strong>
+    <%= @blog.category_blog_id %>
+  </p>
+
+  <p>
+    <strong>Video link:</strong>
+    <%= @blog.video_link %>
+  </p>
+
+  <%= link_to 'Edit', edit_user_blog_path(@blog.user, @blog) %> |
+  <%= link_to 'Back', blogs_path %>
+</div>
