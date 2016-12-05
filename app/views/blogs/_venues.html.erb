@@ -32,7 +32,7 @@
           <div class="blog_main_container">
             <ul>
               <!-- content -->
-              <% @blogs.networking.each do |blog| %>
+              <% @blogs.venues.each do |blog| %>
                 <li class="medium-12 columns listed_blog">
                   <div class="medium-6 columns left_content">
                     <div><%= link_to(image_tag("#{blog.image_url}", :alt =>  "image", :class =>"#"), user_blog_path(blog.user, blog)) %></div>
