@@ -25,9 +25,9 @@ Rails.application.routes.draw do
 
       get 'analytics'
       get 'company'
-      get 'members'
-      get 'socials'
-      get 'events'
+      get 'stats-users'
+      get 'stats-socials'
+      get 'stats-events'
       get 'transactions'
       get 'blogs'
       get 'inquiries'

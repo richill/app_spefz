@@ -66,10 +66,10 @@ class UsersController < ApplicationController
   def company
   end
 
-  def members
+  def stats_users
   end
 
-  def socials
+  def stats_socials
   end
 
   def events
