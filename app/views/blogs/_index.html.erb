@@ -17,7 +17,7 @@
             <ul>
               <!-- content -->
               <% @blogs.each do |blog| %>
-                <li><%= link_to(image_tag("#{blog.image_url}", :alt =>  "image", :class =>"#"), user_social_path(blog.user, blog)) %></li>
+                <li><%# link_to(image_tag("#{blog.image_url}", :alt =>  "image", :class =>"#"), user_social_path(blog.user, blog)) %></li>
               <% end %>
               <!-- content -->
             </ul>
@@ -65,7 +65,7 @@
           <td><%= blog.category_blog_id %></td>
           <td><%= blog.video_link %></td>
           <td><%# link_to 'Show', user_blog(blog.user, blog) %></td>
-          <td><%# link_to 'Edit', edit_user_blog_path(blog.user, blog) %></td>
+          <td><%= link_to 'Edit', edit_user_blog_path(blog.user, blog) %></td>
           <td><%# link_to 'Destroy', userr_blog_path(blog.userr, blog), method: :delete, data: { confirm: 'Are you sure?' } %></td>
         </tr>
       <% end %>
