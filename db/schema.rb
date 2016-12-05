@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161205144312) do
+ActiveRecord::Schema.define(version: 20161205162353) do
 
   create_table "activities", force: :cascade do |t|
     t.integer  "trackable_id"
@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(version: 20161205144312) do
     t.string   "user_image_link"
     t.string   "user_link"
     t.string   "blog_image_link"
+    t.string   "twitter_link"
   end
 
   create_table "category_ages", force: :cascade do |t|

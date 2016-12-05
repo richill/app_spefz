@@ -281,8 +281,28 @@
 // -----------------------------
 
 
+.search_inner_container ul {
+  list-style-type: none;
+  margin: 0px;
+}
 
+.search_inner_container ul li {
+  float: left;
+  margin-right: 2px;
+}
 
+.search_inner_container ul li a {
+  font-family: 'Lato', sans-serif;
+  color: #414249 !important;
+  letter-spacing: 1px;
+  font-size: 12px !important;
+  font-weight: bold;
+  padding: 18px 20px;
+}
+
+.search_inner_container ul li a:hover {
+  border-bottom: 3px solid #E34B51;
+}
 
 
 
