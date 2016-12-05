@@ -1,4 +1,4 @@
-<%= simple_form_for(@blog) do |f| %>
+<%= simple_form_for [@user, @blog] do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
@@ -12,7 +12,8 @@
     <%= f.input :image_url_link %>
 
     <!-- hidden fields -->
-    <%= f.hidden_field :user_id %>
+    <%# f.hidden_field :user_id %>
+    <%= f.input :user_id %>
     <!-- hidden fields -->
   </div>
 

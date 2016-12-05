@@ -1,6 +1,10 @@
-<h1>Editing Blog</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @blog %> |
-<%= link_to 'Back', blogs_path %>
+<% provide(:title, "Edit Blog") %>
+<div>
+  <% if signed_in? %>
+    <%= render 'shared/header' %>
+  <% else %>
+    <%= render 'shared/header_unsigned' %>
+  <% end %>
+  <%= render 'form' %>
+  <%= render 'shared/footer' %>
+</div>
