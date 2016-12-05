@@ -74,9 +74,9 @@
                     <div class="blog_content_read">
                       <span class="blog_info_content"><%= truncate "#{blog.content}", length: 700 %></span>
                       <span class="read_more"><%= link_to "read more", user_blog_path(blog.user, blog) %></span>
-                      <span class="divider">|</span>
                       <% if signed_in? %>
                         <% if current_user.admin_pa_management_group || current_user.pa_administration_group %>
+                          <span class="divider">|</span>
                           <span class="read_more"><%= link_to "edit blog", edit_user_blog_path(blog.user, blog) %></span>
                         <% end %>
                       <% end %>
