@@ -77,7 +77,7 @@
                       <% if signed_in? %>
                         <% if current_user.admin_pa_management_group || current_user.pa_administration_group %>
                           <span class="divider">|</span>
-                          <span class="read_more"><%= link_to "edit blog", edit_user_blog_path(blog.user, blog) %></span>
+                          <span class="read_more"><%= link_to "edit", edit_user_blog_path(blog.user, blog) %></span>
                         <% end %>
                       <% end %>
                     </div>
