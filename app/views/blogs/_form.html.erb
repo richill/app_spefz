@@ -7,6 +7,9 @@
     <%= f.input :content %>
     <%= f.association :category_blog, collection: CategoryBlog.all, prompt: "select a category", label: "Blog Category" %>
     <%= f.input :video_link %>
+    <%= f.input :user_image_url %>
+    <%= f.input :user_url_link %>
+    <%= f.input :image_url_link %>
 
     <!-- hidden fields -->
     <%= f.hidden_field :user_id %>
