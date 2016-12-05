@@ -7,6 +7,7 @@
     <%= f.input :image %>
     <%= f.input :user_id %>
     <%= f.input :category_blog_id %>
+    <%= f.association :category_blog_id, collection: CategoryBlog.all, prompt: "select a category", label: "Blog Category" %>
     <%= f.input :video_link %>
   </div>
 

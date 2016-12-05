@@ -24,9 +24,9 @@
         <td><%= blog.user_id %></td>
         <td><%= blog.category_blog_id %></td>
         <td><%= blog.video_link %></td>
-        <td><%= link_to 'Show', blog %></td>
-        <td><%= link_to 'Edit', edit_blog_path(blog) %></td>
-        <td><%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', user_blog(blog.user, blog) %></td>
+        <td><%= link_to 'Edit', edit_user_blog_path(blog.user, blog) %></td>
+        <td><%= link_to 'Destroy', userr_blog_path(blog.userr, blog), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
