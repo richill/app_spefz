@@ -1,14 +1,3 @@
-<div>
-  <h1>i am the dashboard for the admin</h1>
-  <div>
-    <ul>
-      <li><button><%= link_to "create speed-social", new_user_event_path(current_user) %></button></li>
-      <li><button><%= link_to "create social", new_user_social_path(current_user) %></button></li>
-    </ul>
-  </div>
-</div>
-
-
 <div class= "medium-12 columns user_general_settings_section user_main_dashboard_page">
 
   <!-- left_column_section -->
@@ -22,7 +11,17 @@
   <div class="medium-10 columns right_column_section">
     <div class="right_inner_section">
       <!-- content -->
-      <div class="user_general_settings_inner_section user_dashboard_section_main_content">dashboard</div>
+      <div class="user_general_settings_inner_section user_dashboard_section_main_content">
+        <h1>dashboard</h1>
+        <div>
+          <div>
+            <ul>
+              <li><button><%= link_to "create speed-social", new_user_event_path(current_user) %></button></li>
+              <li><button><%= link_to "create social", new_user_social_path(current_user) %></button></li>
+            </ul>
+          </div>
+        </div>
+      </div>
       <!-- content -->
     </div>
   </div>
