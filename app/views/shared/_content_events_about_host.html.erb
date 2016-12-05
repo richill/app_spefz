@@ -16,6 +16,11 @@
         <% end %>
       </ul>
     </div>
+    <div class="add_host"><%= link_to "Edit Host", edit_host_path(@event.host) %></div>
+    <!-- <div class="add_host">
+      <a href="#" data-reveal-id="myModal-events-hosts">Edit Hosts</a>
+      <span><%= render 'shared/modal_event_hosts' %></span>
+    </div> -->
   </div>
 <% else %>
   <% if current_user.admin_pa_management_group || current_user.pa_event_mgt_group %>

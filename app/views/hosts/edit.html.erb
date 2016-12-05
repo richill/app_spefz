@@ -1,6 +1,2 @@
-<h1>Editing Host</h1>
-
+<%= link_to "#{@host.event.title}", user_event_path(@host.event.user, @host.event) %>
 <%= render 'form' %>
-
-<%= link_to 'Show', @host %> |
-<%= link_to 'Back', hosts_path %>
