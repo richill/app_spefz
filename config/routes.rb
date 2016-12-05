@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   resources :blogs do
     collection do
       get 'venues'
+      get 'networking-tips'
+      get 'dating-tips'
+      get 'spefz-news'
     end
   end
 
