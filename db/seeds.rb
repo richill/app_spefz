@@ -15,6 +15,12 @@ ca05 = CategoryAge.create!(name:'55 - 64')
 ca06 = CategoryAge.create!(name:'65+')
 ca07 = CategoryAge.create!(name:'All Ages')
 
+CategoryBlog.delete_all
+cb01 = CategoryBlog.create!(name:'News')
+cb02 = CategoryBlog.create!(name:'Venues')
+cb03 = CategoryBlog.create!(name:'Networking Tips')
+cb04 = CategoryBlog.create!(name:'Dating Tips')
+
 CategoryCountry.delete_all
 cc01 = CategoryCountry.create!(name:'United Kingdom')
 cc02 = CategoryCountry.create!(name:'United States')
