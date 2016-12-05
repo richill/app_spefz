@@ -6,7 +6,7 @@
       <div class="search_inner_container">        
         <div>
           <ul>
-            <li><%= link_to "Blogs", "#" %></li>
+            <li><%= link_to "Blogs", blogs_path %></li>
             <li><%= link_to "Venues", "#" %></li>
             <li><%= link_to "Networking Tips", "#" %></li>
             <li><%= link_to "Dating Tips", "#" %></li>
@@ -26,7 +26,7 @@
             <!-- content -->
             <div class="detailed_blog">
               <div class="blog_show_title"><%= link_to "#{@blog.title}", user_blog_path(@blog.user, @blog) %></div>
-              <div class="blog_show_category_date">
+              <div class="blog_show_sub_content">
                 <span class="blog_img_cover"><%= link_to(image_tag("#{@blog.user.image_url}", :alt =>  "image", :class =>"#"), user_path(@blog.user)) %></span>
                 <span><%= link_to "#{@blog.user.firstname}", user_path(@blog.user) %></span>
                 <span class="divider">|</span>
@@ -44,7 +44,13 @@
                 <span class="blog_category"><%= link_to "#{@blog.category_blog.name}", "#" %></span>
                 <span class="divider">|</span>
                 <span><%= @blog.created_at.strftime("%B %d, %Y") %></span>
+                <span class="divider">|</span>
+                <% if current_user.admin_pa_management_group || current_user.pa_administration_group %>
+                  <span class="read_more"><%= link_to "edit blog", edit_user_blog_path(@blog.user, @blog) %></span>
+                <% end %>
               </div>
+              <div class="blog_show_img"><%= link_to(image_tag("#{@blog.image_url}", :alt =>  "image", :class =>"#"), user_blog_path(@blog.user, @blog)) %></div>
+              <div class="blog_info_content"><%= @blog.content %></div>
             </div>
             <!-- content -->
      
@@ -67,42 +73,3 @@
 
 
 
-
-
-
-<div class="old_content">
-  <p id="notice"><%= notice %></p>
-
-  <p>
-    <strong>Title:</strong>
-    <%= @blog.title %>
-  </p>
-
-  <p>
-    <strong>Content:</strong>
-    <%= @blog.content %>
-  </p>
-
-  <p>
-    <strong>Image:</strong>
-    <%= image_tag(@blog.image_url) %>
-  </p>
-
-  <p>
-    <strong>User:</strong>
-    <%= @blog.user_id %>
-  </p>
-
-  <p>
-    <strong>Category blog:</strong>
-    <%= @blog.category_blog_id %>
-  </p>
-
-  <p>
-    <strong>Video link:</strong>
-    <%= @blog.video_link %>
-  </p>
-
-  <%= link_to 'Edit', edit_user_blog_path(@blog.user, @blog) %> |
-  <%= link_to 'Back', blogs_path %>
-</div>
