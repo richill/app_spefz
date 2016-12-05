@@ -32,12 +32,21 @@
                     <div class="blog_user_details">
                       <span class="blog_img_cover"><%= link_to(image_tag("#{blog.user.image_url}", :alt =>  "image", :class =>"#"), user_path(blog.user)) %></span>
                       <span><%= link_to "#{blog.user.firstname}", user_path(blog.user) %></span>
+                      <span class="divider">|</span>
+                      <%= link_to "#" do %>
+                        <span><i class="fa fa-twitter" aria-hidden="true"></i></span>
+                        <span>twitter</span>
+                      <% end %>
+                      <span class="divider">|</span>
+                      <%= link_to "#" do %>
+                        <span><i class="fa fa-user" aria-hidden="true"></i></span>
+                        <span>website</span>
+                      <% end %>
                     </div>
                     <div class="blog_content_read">
                       <span class="blog_info_content"><%= truncate "#{blog.content}", length: 700 %></span>
                       <span class="read_more"><%= link_to "read more", user_blog_path(blog.user, blog) %></span>
                     </div>
-                    
                   </div>
                 </li>
                 <div class="clear"></div>
