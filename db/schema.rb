@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161205135615) do
+ActiveRecord::Schema.define(version: 20161205144312) do
 
   create_table "activities", force: :cascade do |t|
     t.integer  "trackable_id"
@@ -50,9 +50,9 @@ ActiveRecord::Schema.define(version: 20161205135615) do
     t.string   "video_link"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
-    t.string   "user_image_url"
-    t.string   "user_url_link"
-    t.string   "image_url_link"
+    t.string   "user_image_link"
+    t.string   "user_link"
+    t.string   "blog_image_link"
   end
 
   create_table "category_ages", force: :cascade do |t|
