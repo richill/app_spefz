@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   
   resources :hosts
-
   resources :subscriptions
   resources :payments
   resources :socials
