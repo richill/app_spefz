@@ -1,11 +1,11 @@
 class BlogsController < ApplicationController
+  respond_to :html, :xml, :json
   before_action :set_blog, only: [:show, :edit, :update, :destroy]
 
 
   def index
     @search = Blog.order("created_at DESC").search(params[:q])
     @blogs = @search.result(distinct: true)
-    respond_with(@blogs)
   end
 
   def show

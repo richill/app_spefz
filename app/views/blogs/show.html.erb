@@ -30,5 +30,5 @@
   <%= @blog.video_link %>
 </p>
 
-<%= link_to 'Edit', edit_blog_path(@blog) %> |
+<%= link_to 'Edit', edit_user_blog_path(@blog.user, @blog) %> |
 <%= link_to 'Back', blogs_path %>
