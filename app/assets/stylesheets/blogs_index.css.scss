@@ -145,7 +145,11 @@
 // -----------------------------
 
 .listed_blog {
-  padding: 0px !important;
+  background-color: #fff;
+  padding: 18px !important;
+  margin-bottom: 35px;
+  box-shadow: 0 3px 0 rgba(47, 63, 91, 0.1);
+  border-radius: 5px;
 }
 
 .left_content {
@@ -153,11 +157,12 @@
 }
 
 .blog_title a {
-  font-family: "Lato", sans-serif;
-  font-size: 22px;
-  color: #283041 !important;
-  font-weight: 400;
+  font-family: 'Lato', sans-serif;
+  font-size: 20px;
+  line-height: 30px;
+  font-weight: bold;
   text-transform: capitalize;
+  color: #283041 !important;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
@@ -173,7 +178,7 @@
 .blog_category_date {
   font-family: 'Lato', sans-serif;
   color: #414249 !important;
-  margin-bottom: 2px;
+  margin: 3px 0px 10px;
   letter-spacing: 1px;
   font-size: 12px !important;
   font-weight: bold;
@@ -193,8 +198,70 @@
   -o-transition: all 0.3s ease;
 }
 
+.right_content .divider {
+  color: #ededf3 !important;
+  font-weight: 300 !important;
+  margin: 0px 5px !important;
+}
+
+.blog_img_cover {
+  height: 60px;
+  width: 60px !important;
+  display: inline-flex;
+  border-radius: 5px;
+  padding: 4px;
+  background-color: rgba(88, 205, 166, 0.2) !important;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+.blog_img_cover:hover {
+  color: rgba(88, 205, 166, 0.5) !important;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+.blog_img_cover img {
+  border-radius: 200px;
+}
+
+.blog_img_cover img:hover {
+  opacity: 0.5;
+  border-radius: 200px;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+.blog_content_read {
+  margin: 10px 0px;
+}
+
+.blog_info_content {
+  font-family: "Lato", sans-serif;
+  font-size: 12px;
+  word-spacing: 3px;
+  color: #7C93A7;
+  font-weight: 300;
+  letter-spacing: 1px;
+  margin: 10px 0px;
+}
 
 
+.read_more a {
+  font-family: 'Lato', sans-serif;
+  color: #414249 !important;
+  letter-spacing: 1px;
+  font-size: 12px !important;
+  font-weight: bold;
+  color: rgba(225, 71, 62, 0.7) !important;
+}
+
+.read_more a:hover {
+  text-decoration: underline;
+}
 
 
 

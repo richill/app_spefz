@@ -26,14 +26,18 @@
                     <div class="blog_category_date">
                       <span>Category: </span>
                       <span class="blog_category"><%= link_to "#{blog.category_blog.name}", "#" %></span>
-                      <span>|</span>
-                      <span><%= blog.created_at %></span>
+                      <span class="divider">|</span>
+                      <span><%= blog.created_at.strftime("%B %d, %Y") %></span>
                     </div>
-                    <div>
-                      <span><%= link_to(image_tag("#{blog.user.image_url}", :alt =>  "image", :class =>"#"), user_path(blog.user)) %></span>
+                    <div class="blog_user_details">
+                      <span class="blog_img_cover"><%= link_to(image_tag("#{blog.user.image_url}", :alt =>  "image", :class =>"#"), user_path(blog.user)) %></span>
                       <span><%= link_to "#{blog.user.firstname}", user_path(blog.user) %></span>
                     </div>
-                    <div><%= blog.content %></div>
+                    <div class="blog_content_read">
+                      <span class="blog_info_content"><%= truncate "#{blog.content}", length: 700 %></span>
+                      <span class="read_more"><%= link_to "read more", user_blog_path(blog.user, blog) %></span>
+                    </div>
+                    
                   </div>
                 </li>
                 <div class="clear"></div>
@@ -56,40 +60,3 @@
 
 
 
-
-
-<div class="old_content">
-  <p id="notice"><%= notice %></p>
-  <h1>Listing Blogs</h1>
-  <table>
-    <thead>
-      <tr>
-        <th>Title</th>
-        <th>Content</th>
-        <th>Image</th>
-        <th>User</th>
-        <th>Category blog</th>
-        <th>Video link</th>
-        <th colspan="3"></th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @blogs.each do |blog| %>
-        <tr>
-          <td><%= blog.title %></td>
-          <td><%= blog.content %></td>
-          <td><%= blog.image %></td>
-          <td><%= blog.user_id %></td>
-          <td><%= blog.category_blog_id %></td>
-          <td><%= blog.video_link %></td>
-          <td><%# link_to 'Show', user_blog(blog.user, blog) %></td>
-          <td><%= link_to 'Edit', edit_user_blog_path(blog.user, blog) %></td>
-          <td><%# link_to 'Destroy', userr_blog_path(blog.userr, blog), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-  <br>
-  <%= link_to 'New Blog', new_blog_path %>
-</div>
