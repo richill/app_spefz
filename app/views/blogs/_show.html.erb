@@ -35,8 +35,20 @@
             <div class="detailed_blog">
               <div class="blog_show_title"><%= link_to "#{@blog.title}", user_blog_path(@blog.user, @blog) %></div>
               <div class="blog_show_sub_content">
-                <span class="blog_img_cover"><%= link_to(image_tag("#{@blog.user.image_url}", :alt =>  "image", :class =>"#"), user_path(@blog.user)) %></span>
-                <span><%= link_to "#{@blog.user.firstname}", user_path(@blog.user) %></span>
+                <span class="blog_img_cover">
+                  <% if signed_in?  %>
+                    <%= link_to(image_tag("#{@blog.user.image_url}", :alt =>  "image", :class =>"#"), user_path(@blog.user)) %>
+                  <% else %>
+                    <%= link_to(image_tag("#{@blog.user.image_url}", :alt =>  "image", :class =>"#"), "#") %>
+                  <% end %>
+                </span>
+                <span>
+                  <% if signed_in?  %>
+                    <%= link_to "#{@blog.user.firstname}", user_path(@blog.user) %>
+                  <% else %>
+                    <%= link_to "#{@blog.user.firstname}", "#" %>
+                  <% end %>
+                </span>
                 <span class="divider">|</span>
                 <%= link_to "#{@blog.twitter_link}", target:"_blank" do %>
                   <span><i class="fa fa-twitter" aria-hidden="true"></i></span>
@@ -53,8 +65,10 @@
                 <span class="divider">|</span>
                 <span><%= @blog.created_at.strftime("%B %d, %Y") %></span>
                 <span class="divider">|</span>
-                <% if current_user.admin_pa_management_group || current_user.pa_administration_group %>
-                  <span class="read_more"><%= link_to "edit blog", edit_user_blog_path(@blog.user, @blog) %></span>
+                <% if signed_in? %>
+                  <% if current_user.admin_pa_management_group || current_user.pa_administration_group %>
+                    <span class="read_more"><%= link_to "edit blog", edit_user_blog_path(@blog.user, @blog) %></span>
+                  <% end %>
                 <% end %>
               </div>
               <div class="blog_show_img"><%= link_to(image_tag("#{@blog.image_url}", :alt =>  "image", :class =>"#"), user_blog_path(@blog.user, @blog)) %></div>
