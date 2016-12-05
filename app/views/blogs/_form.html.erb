@@ -2,13 +2,15 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
+    <%= f.file_field :image %>
     <%= f.input :title %>
     <%= f.input :content %>
-    <%= f.input :image %>
-    <%= f.input :user_id %>
-    <%= f.input :category_blog_id %>
-    <%= f.association :category_blog_id, collection: CategoryBlog.all, prompt: "select a category", label: "Blog Category" %>
+    <%= f.association :category_blog, collection: CategoryBlog.all, prompt: "select a category", label: "Blog Category" %>
     <%= f.input :video_link %>
+
+    <!-- hidden fields -->
+    <%= f.hidden_field :user_id %>
+    <!-- hidden fields -->
   </div>
 
   <div class="form-actions">
