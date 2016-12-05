@@ -20,7 +20,7 @@ class HostsController < ApplicationController
 
     respond_to do |format|
       if @host.save
-        format.html { redirect_to @host, notice: 'Host was successfully created.' }
+        format.html { redirect_to user_event_path(@host.event.user, @host.event), notice: 'Host was successfully created.' }
         format.json { render :show, status: :created, location: @host }
       else
         format.html { render :new }
@@ -32,7 +32,7 @@ class HostsController < ApplicationController
   def update
     respond_to do |format|
       if @host.update(host_params)
-        format.html { redirect_to @host, notice: 'Host was successfully updated.' }
+        format.html { redirect_to user_event_path(@host.event.user, @host.event), notice: 'Host was successfully updated.' }
         format.json { render :show, status: :ok, location: @host }
       else
         format.html { render :edit }
