@@ -17,7 +17,14 @@
             <ul>
               <!-- content -->
               <% @blogs.each do |blog| %>
-                <li><%= link_to(image_tag("#{blog.image_url}", :alt =>  "image", :class =>"#"), user_social_path(blog.user, blog)) %></li>
+                <li>
+                  <div class="medium-6 columns left_content">
+                    <div><%= link_to(image_tag("#{blog.image_url}", :alt =>  "image", :class =>"#"), user_blog_path(blog.user, blog)) %></div>
+                  </div>
+                  <div class="medium-6 columns right_content">
+                    <div><%= link_to "#{blog.title}", user_blog_path(blog.user, blog) %></div>
+                  </div>
+                </li>
               <% end %>
               <!-- content -->
             </ul>
