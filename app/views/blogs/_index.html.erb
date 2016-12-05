@@ -1,5 +1,5 @@
-<div class="socials_section">
-  <div class="medium-12 columns socials_inner_section">
+<div class="blogs_section">
+  <div class="medium-12 columns blogs_inner_section">
 
     <!-- search -->
     <div class="medium-12 columns search_container">
@@ -10,23 +10,19 @@
     <!-- search -->
 
     <!-- content -->
-    <% if @socials.blank? %>
-      <div><%= render 'shared/content_search_no_result' %></div>
-    <% else %>
-      <div class="medium-12 columns social_content_section">
-        <div class="medium-12 columns content_container">
-          <div class="content_details">
-            <div class="social_main_container">
-              <ul>
-                <!-- content -->
-                <div>blogs</div>
-                <!-- content -->
-              </ul>
-            </div>
+    <div class="medium-12 columns social_content_section">
+      <div class="medium-12 columns content_container">
+        <div class="content_details">
+          <div class="blog_main_container">
+            <ul>
+              <!-- content -->
+              <div>blogs</div>
+              <!-- content -->
+            </ul>
           </div>
         </div>
       </div>
-    <% end %>
+    </div>
     <!-- content -->
 
   </div>
