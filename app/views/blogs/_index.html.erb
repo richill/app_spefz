@@ -17,7 +17,7 @@
             <ul>
               <!-- content -->
               <% @blogs.each do |blog| %>
-                <li>
+                <li class="medium-12 columns">
                   <div class="medium-6 columns left_content">
                     <div><%= link_to(image_tag("#{blog.image_url}", :alt =>  "image", :class =>"#"), user_blog_path(blog.user, blog)) %></div>
                   </div>
@@ -35,6 +35,7 @@
                     <div><%= blog.content %></div>
                   </div>
                 </li>
+                <div class="clear"></div>
               <% end %>
               <!-- content -->
             </ul>
