@@ -23,6 +23,16 @@
                   </div>
                   <div class="medium-6 columns right_content">
                     <div><%= link_to "#{blog.title}", user_blog_path(blog.user, blog) %></div>
+                    <div>
+                      <span><%= blog.category_blog.name %></span>
+                      <span>|</span>
+                      <span><%= blog.created_at %></span>
+                    </div>
+                    <div>
+                      <span><%= link_to(image_tag("#{blog.user.image_url}", :alt =>  "image", :class =>"#"), user_path(blog.user)) %></span>
+                      <span><%= link_to "#{blog.user.firstname}", user_path(blog.user) %></span>
+                    </div>
+                    <div><%= blog.content %></div>
                   </div>
                 </li>
               <% end %>
