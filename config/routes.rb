@@ -29,7 +29,7 @@ Rails.application.routes.draw do
       get 'stats-socials'
       get 'stats-events'
       get 'transactions'
-      get 'blogs'
+      get 'stats-blogs'
       get 'inquiries'
     end
   end

@@ -72,13 +72,13 @@ class UsersController < ApplicationController
   def stats_socials
   end
 
-  def events
+  def stats_events
   end
 
   def transactions
   end
 
-  def blogs
+  def stats_blogs
   end
 
   def inquiries
