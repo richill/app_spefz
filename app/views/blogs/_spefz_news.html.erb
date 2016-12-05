@@ -1,0 +1,91 @@
+<div class="blogs_section">
+  <div class="medium-12 columns blogs_inner_section">
+
+    <!-- search -->
+    <div class="medium-12 columns search_container">
+      <div class="search_inner_container">        
+        <div>
+          <ul class="search_left_content">
+            <li><%= link_to "Blogs", blogs_path %></li>
+            <li><%= link_to "Venues", venues_blogs_path %></li>
+            <li><%= link_to "Networking Tips", networking_tips_blogs_path %></li>
+            <li><%= link_to "Dating Tips", dating_tips_blogs_path %></li>
+            <li class="active"><%= link_to "SPefz News", spefz_news_blogs_path %></li>
+          </ul>
+          <ul class="search_right_content">
+            <li>
+              <%= search_form_for(@search) do |f| %>
+              <li class="search_btn"><%= f.submit 'search' %></li>
+              <li class="search_box"><%= f.text_field :title_cont, placeholder: 'search blog'%></li>
+              <% end %>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- search -->
+
+    <!-- content -->
+    <div class="medium-12 columns blog_index_content_section">
+      <div class="medium-12 columns content_container">
+        <div class="content_details">
+          <div class="blog_main_container">
+            <ul>
+              <!-- content -->
+              <% @blogs.news.each do |blog| %>
+                <li class="medium-12 columns listed_blog">
+                  <div class="medium-6 columns left_content">
+                    <div><%= link_to(image_tag("#{blog.image_url}", :alt =>  "image", :class =>"#"), user_blog_path(blog.user, blog)) %></div>
+                  </div>
+                  <div class="medium-6 columns right_content">
+                    <div class="blog_title"><%= link_to "#{blog.title}", user_blog_path(blog.user, blog) %></div>
+                    <div class="blog_category_date">
+                      <span>Category: </span>
+                      <span class="blog_category"><%= link_to "#{blog.category_blog.name}", "#" %></span>
+                      <span class="divider">|</span>
+                      <span><%= blog.created_at.strftime("%B %d, %Y") %></span>
+                    </div>
+                    <div class="blog_user_details">
+                      <span class="blog_img_cover"><%= link_to(image_tag("#{blog.user.image_url}", :alt =>  "image", :class =>"#"), user_path(blog.user)) %></span>
+                      <span><%= link_to "#{blog.user.firstname}", user_path(blog.user) %></span>
+                      <span class="divider">|</span>
+                      <%= link_to "#{blog.twitter_link}", target:"_blank" do %>
+                        <span><i class="fa fa-twitter" aria-hidden="true"></i></span>
+                        <span>twitter</span>
+                      <% end %>
+                      <span class="divider">|</span>
+                      <%= link_to "#{blog.user_link}", target:"_blank" do %>
+                        <span><i class="fa fa-user" aria-hidden="true"></i></span>
+                        <span>website</span>
+                      <% end %>
+                    </div>
+                    <div class="blog_content_read">
+                      <span class="blog_info_content"><%= truncate "#{blog.content}", length: 700 %></span>
+                      <span class="read_more"><%= link_to "read more", user_blog_path(blog.user, blog) %></span>
+                      <span class="divider">|</span>
+                      <% if current_user.admin_pa_management_group || current_user.pa_administration_group %>
+                        <span class="read_more"><%= link_to "edit blog", edit_user_blog_path(blog.user, blog) %></span>
+                      <% end %>
+                    </div>
+                  </div>
+                </li>
+                <div class="clear"></div>
+              <% end %>
+              <!-- content -->
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- content -->
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
