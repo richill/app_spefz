@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161204182426) do
+ActiveRecord::Schema.define(version: 20161205132030) do
 
   create_table "activities", force: :cascade do |t|
     t.integer  "trackable_id"
@@ -40,6 +40,17 @@ ActiveRecord::Schema.define(version: 20161204182426) do
 
   add_index "attendances", ["attendable_type", "attendable_id"], name: "index_attendances_on_attendable_type_and_attendable_id"
   add_index "attendances", ["user_id"], name: "index_attendances_on_user_id"
+
+  create_table "blogs", force: :cascade do |t|
+    t.string   "title"
+    t.text     "content"
+    t.string   "image"
+    t.integer  "user_id"
+    t.integer  "category_blog_id"
+    t.string   "video_link"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
 
   create_table "category_ages", force: :cascade do |t|
     t.string   "name"

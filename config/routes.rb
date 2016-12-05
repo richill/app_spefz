@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  resources :blogs
+
   resources :hosts
   resources :subscriptions
   resources :payments
