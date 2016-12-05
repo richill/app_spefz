@@ -49,15 +49,39 @@ class UsersController < ApplicationController
     @premium_plan = Subscription.find_by(title:"premium")
   end
 
-  def dashboard
-  end
-
   def membership
     @premium_plan = Subscription.find_by(title:"premium")
   end
 
   def settings
     @premium_plan = Subscription.find_by(title:"premium")
+  end
+
+  def dashboard
+  end
+
+  def analytics
+  end
+
+  def company
+  end
+
+  def members
+  end
+
+  def socials
+  end
+
+  def events
+  end
+
+  def transactions
+  end
+
+  def blogs
+  end
+
+  def inquiries
   end
 
   private

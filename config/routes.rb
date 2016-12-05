@@ -22,6 +22,15 @@ Rails.application.routes.draw do
       get 'membership'
       get 'account'
       get 'settings'
+
+      get 'analytics'
+      get 'company'
+      get 'members'
+      get 'socials'
+      get 'events'
+      get 'transactions'
+      get 'blogs'
+      get 'inquiries'
     end
   end
 
