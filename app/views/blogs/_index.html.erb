@@ -5,15 +5,20 @@
     <div class="medium-12 columns search_container">
       <div class="search_inner_container">        
         <div>
-          <ul>
-            <li><%= link_to "Blogs", blogs_path %></li>
+          <ul class="search_left_content">
+            <li class="active"><%= link_to "Blogs", blogs_path %></li>
             <li><%= link_to "Venues", "#" %></li>
             <li><%= link_to "Networking Tips", "#" %></li>
             <li><%= link_to "Dating Tips", "#" %></li>
             <li><%= link_to "SPefz News", "#" %></li>
           </ul>
-          <ul>
-            <li></li>
+          <ul class="search_right_content">
+            <li>
+              <%= search_form_for(@search) do |f| %>
+              <li class="search_btn"><%= f.submit 'search' %></li>
+              <li class="search_box"><%= f.text_field :title_cont, placeholder: 'search blog'%></li>
+              <% end %>
+            </li>
           </ul>
         </div>
       </div>
