@@ -26,7 +26,6 @@ gem 'jquery-ui-rails'
 gem "ransack"
 gem 'stripe'
 gem 'public_activity'
-gem 'friendly_id', '~> 5.1.0'
 
 group :development, :test do
   gem 'sqlite3'
