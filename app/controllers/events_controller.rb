@@ -20,9 +20,8 @@ class EventsController < ApplicationController
 
   def new
     if current_user.admin_pa_management_group || current_user.pa_event_mgt_group
-      # @event = Event.new
       @premium_plan = Subscription.find_by(title:"premium")
-      @user = User.find(params[:user_id])
+      @user = User.friendly.find(params[:user_id])
       @event = @user.events.build
     else
       redirect_to errorpermission_path
@@ -32,7 +31,7 @@ class EventsController < ApplicationController
   def edit
     if current_user.admin_pa_management_group || current_user.pa_event_mgt_group
       @premium_plan = Subscription.find_by(title:"premium")
-      @user = User.find(params[:user_id])
+      @user = User.friendly.find(params[:user_id])
     else
       redirect_to errorpermission_path
     end
@@ -41,7 +40,7 @@ class EventsController < ApplicationController
   def create
     if current_user.admin_pa_management_group || current_user.pa_event_mgt_group
       @premium_plan = Subscription.find_by(title:"premium")
-      @user = User.find(params[:user_id])
+      @user = User.friendly.find(params[:user_id])
       @event = @user.events.create(event_params)
 
       respond_to do |format|
@@ -78,8 +77,8 @@ class EventsController < ApplicationController
   def destroy
     if current_user.admin_pa_management_group
       @premium_plan = Subscription.find_by(title:"premium")
-      @user = User.find(params[:user_id])
-      @event = @user.events.find(params[:id])
+      @user = User.friendly.find(params[:user_id])
+      @event = Event.friendly.find(params[:id])
       @event.destroy
       redirect_to events_path
     else
@@ -89,7 +88,7 @@ class EventsController < ApplicationController
 
   def attendants
     if current_user.admin_pa_management_group || current_user.pa_event_mgt_group 
-      @event = Event.find(params[:id]) 
+      @event = Event.friendly.find(params[:id])
       @premium_plan = Subscription.find_by(title:"premium")
     else
       redirect_to errorpermission_path
@@ -97,13 +96,12 @@ class EventsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_event
-      @event = Event.find(params[:id])
+      # @event = Event.find(params[:id])
+      @event = Event.friendly.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def event_params
-      params.require(:event).permit(:title, :description, :address, :postcode, :latitude, :longitude, :user_id, :category_topic_id, :image, :date, :time, :city, :quantity, :category_age_id, :category_country_id, :quantity_men, :quantity_women, :category_quantitygender_id, :venuename, :price, :time_end, :tag_list, :maplink, :close)
+      params.require(:event).permit(:title, :description, :address, :postcode, :latitude, :longitude, :user_id, :category_topic_id, :image, :date, :time, :city, :quantity, :category_age_id, :category_country_id, :quantity_men, :quantity_women, :category_quantitygender_id, :venuename, :price, :time_end, :tag_list, :maplink, :close, :slug)
     end
 end

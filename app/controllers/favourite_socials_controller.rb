@@ -16,7 +16,7 @@ class FavouriteSocialsController < ApplicationController
   
   private
   def set_social
-    @social = Social.find(params[:social_id] || params[:id])
+    @social = Social.friendly.find(params[:social_id] || params[:id])
   end
 end
 

@@ -1,6 +1,9 @@
 class Event < ActiveRecord::Base
   include PublicActivity::Model
   tracked only: [:create], owner: -> (controller, model) { controller && controller.current_user }
+
+  extend FriendlyId
+  friendly_id :slug_events, use: :slugged
   
   acts_as_taggable
 
@@ -32,6 +35,11 @@ class Event < ActiveRecord::Base
 
   # scope :live_or_open_events, -> {where(close = 'f' OR close IS NULL) AND (date >= '2016-11-19')}
 
+  def slug_events
+    [
+      :title
+    ]
+  end
 
   def generate_reference_number
     begin

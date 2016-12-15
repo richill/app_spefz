@@ -16,7 +16,7 @@ class FavouriteEventsController < ApplicationController
   
   private
   def set_event
-    @event = Event.find(params[:event_id] || params[:id])
+    @event = Event.friendly.find(params[:event_id] || params[:id])
   end
 end
 
