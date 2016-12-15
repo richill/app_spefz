@@ -3,6 +3,8 @@ class Social < ActiveRecord::Base
   # tracked only: [:update, :create], owner: -> (controller, model) { controller && controller.current_user }
   tracked only: [:create], owner: -> (controller, model) { controller && controller.current_user }
 
+  extend FriendlyId
+  friendly_id :slug_socials, use: :slugged
   
   acts_as_taggable
   is_impressionable
@@ -34,6 +36,12 @@ class Social < ActiveRecord::Base
   scope :closed_socials, -> {where(close: true)}
 
   scope :open_socials, -> {where(['close = ? OR close IS ?', false, nil])}
+
+  def slug_socials
+    [
+      :title
+    ]
+  end
 
 
   def subscribed?

@@ -16,7 +16,8 @@ class SocialsController < ApplicationController
   end
 
   def user_socials
-    @user = User.find(params[:user_id])
+    # @user = User.find(params[:user_id])
+    @user = User.friendly.find(params[:id])
     @socials = @user.socials.order("created_at DESC")
     respond_with(@socials)
   end
@@ -30,13 +31,16 @@ class SocialsController < ApplicationController
       @comment = Comment.new
       @comments = @commentable.comments
     end
+    @premium_plan = Subscription.find_by(title:"premium")
   end
 
   def new
     @premium_plan = Subscription.find_by(title:"premium")
     if current_user.subscribed_access?
       if current_user.image?
-        @user = User.find(params[:user_id])
+        # @user = User.find(params[:user_id])
+        # @user = User.friendly.find(params[:id])
+        @user = current_user
         @social = @user.socials.build
       else
         redirect_to image_restriction_page_path
@@ -48,11 +52,16 @@ class SocialsController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[:user_id])
+    # @user = User.find(params[:user_id])
+    # @user = User.friendly.find(params[:id])
+    @user = current_user
+    @premium_plan = Subscription.find_by(title:"premium")
   end
 
   def create
-    @user = User.find(params[:user_id])
+    # @user = User.find(params[:user_id])
+    # @user = User.friendly.find(params[:id])
+    @user = current_user
     @social = @user.socials.create(social_params)
 
     respond_to do |format|
@@ -64,9 +73,11 @@ class SocialsController < ApplicationController
         format.json  { render json: @social.errors, status: :unprocessable_entity }
       end
     end
+    @premium_plan = Subscription.find_by(title:"premium")
   end
 
   def update
+    @premium_plan = Subscription.find_by(title:"premium")
     respond_to do |format|
       if @social.update_attributes(social_params)
         format.html { redirect_to([@social.user, @social], notice: 'Social was successfully updated.') }
@@ -79,7 +90,8 @@ class SocialsController < ApplicationController
   end
 
   def destroy
-    @user = User.find(params[:user_id])
+    # @user = User.find(params[:user_id])
+    @user = User.friendly.find(params[:id])
     @social = @user.socials.find(params[:id])
     @social.destroy
     redirect_to socials_path
@@ -87,10 +99,11 @@ class SocialsController < ApplicationController
 
   private
     def set_social
-      @social = Social.find(params[:id])
+      # @social = Social.find(params[:id])
+      @social = Social.friendly.find(params[:id])
     end
 
     def social_params
-      params.require(:social).permit(:title, :description, :address, :postcode, :latitude, :longitude, :user_id, :category_topic_id, :image, :date, :time, :city, :quantity, :category_age_id, :companyname, :category_country_id, :tag_list, :category_invite_id, :speakername, :speakerlinkedin, :quantity_men, :quantity_women, :category_quantitygender_id, :venuename, :maplink, :close)
+      params.require(:social).permit(:title, :description, :address, :postcode, :latitude, :longitude, :user_id, :category_topic_id, :image, :date, :time, :city, :quantity, :category_age_id, :companyname, :category_country_id, :tag_list, :category_invite_id, :speakername, :speakerlinkedin, :quantity_men, :quantity_women, :category_quantitygender_id, :venuename, :maplink, :close, :slug)
     end
 end
