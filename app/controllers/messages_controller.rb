@@ -8,6 +8,7 @@ class MessagesController < ApplicationController
     else
       redirect_to image_restriction_page_path
     end
+    @premium_plan = Subscription.find_by(title:"premium")
   end
 
   def sent
@@ -22,6 +23,7 @@ class MessagesController < ApplicationController
       @premium_plan = Subscription.find_by(title:"premium") 
       redirect_to subscription_path(@premium_plan)
     end
+    @premium_plan = Subscription.find_by(title:"premium")
   end
 
   def trash
@@ -37,6 +39,7 @@ class MessagesController < ApplicationController
       redirect_to subscription_path(@premium_plan)
     end
   end
+  @premium_plan = Subscription.find_by(title:"premium")
 end
 
 
