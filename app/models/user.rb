@@ -4,6 +4,9 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  extend FriendlyId
+  friendly_id :slug_users, use: :slugged
+
   acts_as_taggable
   acts_as_messageable
 
@@ -94,6 +97,12 @@ class User < ActiveRecord::Base
   scope :hosts, -> { joins(:category_managementgroup).where("category_managementgroups.name IN (?)", ["Management Group", "Event Management Group"]) }                                                                                    
   # display users that are in charge of hosting speed-events
 
+
+  def slug_users
+    [
+      :firstname
+    ]
+  end
 
   def admin_pa_management_group
     self.category_role.name == "Admin" && self.category_managementgroup.name == "Account Group" || 
