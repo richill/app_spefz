@@ -16,8 +16,7 @@ class SocialsController < ApplicationController
   end
 
   def user_socials
-    # @user = User.find(params[:user_id])
-    @user = User.friendly.find(params[:id])
+    @user = User.friendly.find(params[:user_id])
     @socials = @user.socials.order("created_at DESC")
     respond_with(@socials)
   end
@@ -38,9 +37,7 @@ class SocialsController < ApplicationController
     @premium_plan = Subscription.find_by(title:"premium")
     if current_user.subscribed_access?
       if current_user.image?
-        # @user = User.find(params[:user_id])
-        # @user = User.friendly.find(params[:id])
-        @user = current_user
+        @user = User.friendly.find(params[:user_id])
         @social = @user.socials.build
       else
         redirect_to image_restriction_page_path
@@ -52,16 +49,12 @@ class SocialsController < ApplicationController
   end
 
   def edit
-    # @user = User.find(params[:user_id])
-    # @user = User.friendly.find(params[:id])
-    @user = current_user
+    @user = User.friendly.find(params[:user_id])
     @premium_plan = Subscription.find_by(title:"premium")
   end
 
   def create
-    # @user = User.find(params[:user_id])
-    # @user = User.friendly.find(params[:id])
-    @user = current_user
+    @user = User.friendly.find(params[:user_id])
     @social = @user.socials.create(social_params)
 
     respond_to do |format|
@@ -90,8 +83,7 @@ class SocialsController < ApplicationController
   end
 
   def destroy
-    # @user = User.find(params[:user_id])
-    @user = User.friendly.find(params[:id])
+    @user = User.friendly.find(params[:user_id])
     @social = @user.socials.find(params[:id])
     @social.destroy
     redirect_to socials_path
@@ -99,7 +91,6 @@ class SocialsController < ApplicationController
 
   private
     def set_social
-      # @social = Social.find(params[:id])
       @social = Social.friendly.find(params[:id])
     end
 
