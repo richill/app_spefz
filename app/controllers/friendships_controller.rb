@@ -47,8 +47,8 @@ class FriendshipsController < ApplicationController
   # Accepts a friend request.
   # We'd rather call this "accept", but that's not allowed by Rails.
   def update
-    @user = User.find(params[:user_id])
-    @friend = User.find(params[:friend_id])
+    @user = User.friendly.find(params[:user_id])
+    @friend = User.friendly.find(params[:friend_id])
     if @user.requested_friends.include?(@friend)
       Friendship.accept(@user, @friend)
       flash[:notice] = "Friendship with #{@friend.firstname} accepted!"
@@ -59,23 +59,23 @@ class FriendshipsController < ApplicationController
   end
 
   def destroy
-    @user = User.find(params[:user_id])
-    @friend = User.find(params[:friend_id])
+    @user = User.friendly.find(params[:user_id])
+    @friend = User.friendly.find(params[:friend_id])
     if @user.requested_friends.include?(@friend) #decline
       Friendship.breakup(@user, @friend)
-      redirect_to user_path(current_user)
+      redirect_to user_path(@user)
     elsif @user.pending_friends.include?(@friend) #cancel
       Friendship.breakup(@user, @friend)
-      redirect_to user_path(current_user)
+      redirect_to user_path(@user)
     elsif @user.friends.include?(@friend) #delete
       Friendship.breakup(@user, @friend)
-      redirect_to user_path(current_user)
+      redirect_to user_path(@user)
     end
   end
 
   def decline
-    @user = User.find(params[:user_id])
-    @friend = User.find(params[:friend_id])
+    @user = User.friendly.find(params[:user_id])
+    @friend = User.friendly.find(params[:friend_id])
     if @user.requested_friends.include?(@friend)
       Friendship.breakup(@user, @friend)
       flash[:notice] = "Friendship with #{@friend.firstname} declined"
@@ -86,8 +86,8 @@ class FriendshipsController < ApplicationController
   end
 
   def cancel
-    @user = User.find(params[:user_id])
-    @friend = User.find(params[:friend_id])
+    @user = User.friendly.find(params[:user_id])
+    @friend = User.friendly.find(params[:friend_id])
     if @user.pending_friends.include?(@friend)
       Friendship.breakup(@user, @friend)
       flash[:notice] = "Friendship request canceled."
@@ -98,8 +98,8 @@ class FriendshipsController < ApplicationController
   end
 
   def delete
-    @user = User.find(params[:user_id])
-    @friend = User.find(params[:friend_id])
+    @user = User.friendly.find(params[:user_id])
+    @friend = User.friendly.find(params[:friend_id])
     if @user.friends.include?(@friend)
       Friendship.breakup(@user, @friend)
       flash[:notice] = "Friendship with #{@friend.firstname} deleted!"

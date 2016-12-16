@@ -252,7 +252,6 @@
   -o-transition: all 0.3s ease; 
 }
 
-
 .user_profile_page_section .btn_friend_request_submit:hover {
   background-color: rgba(47, 63, 91, 0.5) !important;
   -webkit-transition: all 0.3s ease; 
@@ -268,18 +267,19 @@
   text-transform: capitalize;
   color: #fff !important;
   width: 145px;
-  padding: 11px 25px;
+  padding: 10px 22px;
   margin-left: -15px;
   letter-spacing: 1px;
   border:none;
-  background-color: #eeaa02 !important;
+  display: inline-block;
+  background-color: rgba(47, 63, 91, 0.5) !important;
   -webkit-transition: all 0.3s ease; 
   -moz-transition: all 0.3s ease; 
   -o-transition: all 0.3s ease; 
 }
 
 .user_profile_page_section .btn_friend_request_cancel_submit:hover {
-  background-color: rgba(47, 63, 91, 0.5) !important;
+  background-color: #eeaa02 !important;
   -webkit-transition: all 0.3s ease; 
   -moz-transition: all 0.3s ease; 
   -o-transition: all 0.3s ease; 
