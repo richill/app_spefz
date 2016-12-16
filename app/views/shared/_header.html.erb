@@ -26,9 +26,9 @@
           <% end %>
         <% end %>
         <li class="notification_li">
-          <%# if current_user.received_friend_requests.present? %>
-            <span id="notification_count_friendRequest"><%# current_user.received_friend_requests.count %></span>
-          <%# end %>
+          <% if current_user.requested_friends.present? %>
+            <span id="notification_count_friendRequest"><%= current_user.requested_friends.count %></span>
+          <% end %>
           <div><%= link_to '', '#', id: "notificationLink_friendRequest", class: "fa fa-users" %></div>
           <div id="notificationContainer_friendRequest">
             <div id="notificationTitle_friendRequest">
@@ -36,7 +36,7 @@
               <div class="dropdown_nottification_info"><i class="fa fa-user-plus" aria-hidden="true"></i> <span><%= "List of Request Received" %></span></div>
             </div>
             <div id="notificationsBody_friendRequest" class="notifications">
-              <%# render 'shared/content_dropdownbox_friendrequest' %>
+              <%= render 'shared/content_dropdownbox_friendrequest' %>
             </div>
             <!-- <div id="notificationFooter"><a href="#">See All</a></div> -->
           </div>
