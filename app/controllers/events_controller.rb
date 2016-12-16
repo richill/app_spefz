@@ -1,5 +1,6 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
+  before_filter :setup_friends
 
   def index
     if params[:tag]
@@ -97,8 +98,12 @@ class EventsController < ApplicationController
 
   private
     def set_event
-      # @event = Event.find(params[:id])
       @event = Event.friendly.find(params[:id])
+    end
+
+    def setup_friends
+      @user = User.find(current_user.id)
+      @friend = User.find_by_email(params[:id])
     end
 
     def event_params

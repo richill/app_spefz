@@ -72,7 +72,7 @@
             <a href="#" data-reveal-id="myModal-users-followers"><%= "followers [#{@user.followers.count}]" %></a>
             <span><%= render 'shared/modal_users_followers' %></span>
           </li>
-          <li class="btn btn_friend_stats"><%= link_to "friends [#{@user.friends.count}]", "#" %></li>
+          <li class="btn btn_friend_stats"><%= link_to "network [#{@user.friends.count}]", "#" %></li>
         <% end %>
       </ul>
     </div>
