@@ -45,6 +45,14 @@
       </ul>
       <ul class="inline-list right">
         <% unless current_user.id == @user.id %>
+        <li><%# friendship_status(@logged_in_user, @user) %></li>
+          <li class="friend_unfriend_form">
+            <% if Friendship.exists?(current_user, @friend) %>
+              <span class=""><%= render 'user_friend_request_cancel' %></span>
+            <% else %>
+              <span class=""><%= render 'user_friend_request' %></span>
+            <% end %>
+          </li>
 
           <li class="follow_unfollow_form">
             <% if current_user.following?(@user) %>
@@ -52,14 +60,6 @@
             <% else %>
               <span class=""><%= render 'user_follow' %></span>
             <% end %>
-          </li>
-
-          <li class="friend_unfriend_form">
-            <%# if current_user.friended?(@user) %>
-              <span class=""><%# render 'user_friend_request_cancel' %></span>
-            <%# else %>
-              <span class=""><%= render 'user_friend_request' %></span>
-            <%# end %>
           </li>
 
           <li class="btn btn_invite"><%= link_to "invite to social", "#" %></li>

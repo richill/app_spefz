@@ -63,13 +63,13 @@ class FriendshipsController < ApplicationController
     @friend = User.friendly.find(params[:friend_id])
     if @user.requested_friends.include?(@friend) #decline
       Friendship.breakup(@user, @friend)
-      redirect_to user_path(@user)
+      redirect_to :back
     elsif @user.pending_friends.include?(@friend) #cancel
       Friendship.breakup(@user, @friend)
-      redirect_to user_path(@user)
+      redirect_to :back
     elsif @user.friends.include?(@friend) #delete
       Friendship.breakup(@user, @friend)
-      redirect_to user_path(@user)
+      redirect_to :back
     end
   end
 

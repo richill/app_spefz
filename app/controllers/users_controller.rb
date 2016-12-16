@@ -19,6 +19,8 @@ class UsersController < ApplicationController
   end
 
   def show
+    @user = User.friendly.find(params[:id])
+    @friend = User.friendly.find(params[:id])
     @premium_plan = Subscription.find_by(title:"premium")
     @logged_in_user = current_user if signed_in?
     if current_user.subscribed_access? || current_user == @user

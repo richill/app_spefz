@@ -193,7 +193,8 @@
   background: #000;
   text-transform: capitalize;
   color: #fff !important;
-  padding: 11px 25px;
+  padding: 10px 25px;
+  height: 38px;
   margin-left: -15px;
   letter-spacing: 1px;
   border:none;
@@ -217,7 +218,8 @@
   background: #000;
   text-transform: capitalize;
   color: #fff !important;
-  padding: 11px 25px;
+  padding: 10px 25px;
+  height: 38px;
   margin-left: -15px;
   letter-spacing: 1px;
   border:none;
@@ -242,6 +244,7 @@
   text-transform: capitalize;
   color: #fff !important;
   padding: 10px 25px;
+  height: 38px;
   margin-left: -15px;
   letter-spacing: 1px;
   border:none;
@@ -266,8 +269,9 @@
   background: #000;
   text-transform: capitalize;
   color: #fff !important;
-  width: 145px;
-  padding: 10px 22px;
+  width: 155px;
+  padding: 10px 25px;
+  height: 38px;
   margin-left: -15px;
   letter-spacing: 1px;
   border:none;
@@ -284,6 +288,34 @@
   -moz-transition: all 0.3s ease; 
   -o-transition: all 0.3s ease; 
 }
+
+.user_profile_page_section .btn_friend_request_info a {
+  font-family: 'Lato', sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  background: #000;
+  text-transform: capitalize;
+  color: #fff !important;
+  text-align: center;
+  padding: 10px 25px;
+  height: 38px;
+  margin-left: -15px;
+  letter-spacing: 1px;
+  border:none;
+  display: inline-block;
+  background-color: #eeaa02 !important;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease; 
+}
+
+
+
+
+
+
+
+
 
 .user_profile_page_section .middle_section .right .btn a:hover {
   background-color: rgba(47, 63, 91, 0.5) !important;

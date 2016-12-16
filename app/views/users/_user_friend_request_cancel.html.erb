@@ -1,6 +1,5 @@
-<%# form_for(current_user.active_friendship_requests.find_by(friended_id: @user.id), html: { method: :delete }, remote: true) do |f| %>
-  <%# f.submit "Request Sent", class: "btn btn_friend_request_cancel_submit" %>
-<%# end %>
-
-
-<%= link_to 'Cancel Request', friendship_path(user_id: current_user, friend_id: @user), controller: "friendships", action: "cancel", method: :delete, class: "btn btn_friend_request_cancel_submit" %>
+<% if current_user.friended?(@user) %>
+  <%= link_to 'Cancel Request', friendship_path(user_id: current_user, friend_id: @user), controller: "friendships", action: "cancel", method: :delete, class: "btn btn_friend_request_cancel_submit" %>
+<% else %>
+  <span class="btn btn_friend_request_info"><%= link_to friendship_status(@logged_in_user, @user), "#" %></span>
+<% end %>
