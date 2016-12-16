@@ -56,9 +56,9 @@
 
           <li class="friend_unfriend_form">
             <%# if current_user.friended?(@user) %>
-              <span class=""><%# render 'user_friend_request_cancel' %></span>
+              <span class=""><%= render 'user_friend_request_cancel' %></span>
             <%# else %>
-              <span class=""><%= render 'user_friend_request' %></span>
+              <span class=""><%# render 'user_friend_request' %></span>
             <%# end %>
           </li>
 
