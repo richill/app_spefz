@@ -55,11 +55,11 @@
           </li>
 
           <li class="friend_unfriend_form">
-            <% if current_user.friended?(@user) %>
-              <span class=""><%= render 'user_friend_request_cancel' %></span>
-            <% else %>
-              <span class=""><%= render 'user_friend_request' %></span>
-            <% end %>
+            <%# if current_user.friended?(@user) %>
+              <span class=""><%# render 'user_friend_request_cancel' %></span>
+            <%# else %>
+              <span class=""><%# render 'user_friend_request' %></span>
+            <%# end %>
           </li>
 
           <li class="btn btn_invite"><%= link_to "invite to social", "#" %></li>
