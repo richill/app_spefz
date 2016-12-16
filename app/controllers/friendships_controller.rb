@@ -33,6 +33,7 @@
 
 
 class FriendshipsController < ApplicationController
+  before_action :authenticate_user!
   before_filter :setup_friends
 
   # Sends a friend request.
