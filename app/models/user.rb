@@ -46,6 +46,11 @@ class User < ActiveRecord::Base
   # has_many :passive_friendship_requests, class_name: "Friendship", foreign_key: "friended_id", dependent: :destroy
   # has_many :received_friend_requests, through: :passive_friendship_requests, source: :friender
 
+  has_many :friendships
+  has_many :friends, -> { where(friendships: { status: "accepted"}) }, through: :friendships
+  has_many :requested_friends, -> { where(friendships: { status: "requested"}) }, through: :friendships, source: :friend #this is like recieved_request
+  has_many :pending_friends, -> { where(friendships: { status: "pending"}) }, through: :friendships, source: :friend #this is like sent_request
+
   mount_uploader :image, ImageUploader
   before_destroy :delete_activities
   before_create :generate_reference_number
