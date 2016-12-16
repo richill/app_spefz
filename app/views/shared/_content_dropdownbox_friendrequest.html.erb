@@ -1,27 +1,27 @@
 <div class="userfriendrequests_inner_container">
   <div class="content_list">
     <ul>
-      <% current_user.requested_friends.each do |friend| %>
+      <% current_user.requested_friends.each do |requester| %>
         <li>
 
           <div class="image_section">
             <span class="img_cover">
-              <% if friend.image_url.present? %>
-                <%= link_to(image_tag(friend.image_url, :alt =>  "image", :class =>"#", id: ""), user_path(friend)) %>
+              <% if requester.image_url.present? %>
+                <%= link_to(image_tag(requester.image_url, :alt =>  "image", :class =>"#", id: ""), user_path(requester)) %>
               <% else %>
-                <%= link_to(image_tag("img-profile-image-default.png", :alt =>  "image", :class =>"#", id: ""), user_path(friend)) %>
+                <%= link_to(image_tag("img-profile-image-default.png", :alt =>  "image", :class =>"#", id: ""), user_path(requester)) %>
               <% end %>
             </span>
           </div>
 
           <div class="user_info_section">
-            <div class="friend_request_name"><%= link_to truncate("#{friend.firstname} #{friend.lastname}", length: 23), user_path(friend) %></div>
-            <div class="user_profession"><%= truncate(friend.profession, length: 23) %></div>
+            <div class="friend_request_name"><%= link_to truncate("#{requester.firstname} #{requester.lastname}", length: 23), user_path(requester) %></div>
+            <div class="user_profession"><%= truncate(requester.profession, length: 23) %></div>
           </div>
 
           <div class="action_btn_section"> 
-            <span class="btn btn_add_friend"><%= link_to "Connect", "#" %></span>
-            <span class="btn btn_remove_friend"><%= link_to "Remove", "#" %></span>       
+            <span class="btn btn_add_friend"><%= link_to 'Accept', friendship_path(user_id: current_user, friend_id: requester), controller: "friendships", action: "update", method: :put %></span>
+            <span class="btn btn_remove_friend"><%= link_to 'Decline', friendship_path(user_id: current_user, friend_id: requester), controller: "friendships", action: "decline", method: :delete %></span>
           </div>
 
         </li>

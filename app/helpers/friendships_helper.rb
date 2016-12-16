@@ -9,7 +9,7 @@ module FriendshipsHelper
     when 'pending'
       "You have requested friendship with #{friend.firstname}"
     when 'accepted'
-      "#{friend.firstname} is your friend"
+      "#{friend.firstname} is in your network"
     end
   end
 end

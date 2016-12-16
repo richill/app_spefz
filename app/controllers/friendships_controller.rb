@@ -40,7 +40,7 @@ class FriendshipsController < ApplicationController
   # We'd rather call this "request", but that's not allowed by Rails.
   def create
     Friendship.request(@user, @friend)
-    flash[:notice] = "Friend request sent."
+    flash[:notice] = "Request sent."
     redirect_to :back
   end
 
@@ -51,9 +51,9 @@ class FriendshipsController < ApplicationController
     @friend = User.friendly.find(params[:friend_id])
     if @user.requested_friends.include?(@friend)
       Friendship.accept(@user, @friend)
-      flash[:notice] = "Friendship with #{@friend.firstname} accepted!"
+      flash[:notice] = "Connection with #{@friend.firstname} accepted!"
     else
-      flash[:notice] = "No friendship request from #{@friend.firstname}."
+      flash[:notice] = "No connect request from #{@friend.firstname}."
     end
     redirect_to :back
   end
@@ -78,9 +78,9 @@ class FriendshipsController < ApplicationController
     @friend = User.friendly.find(params[:friend_id])
     if @user.requested_friends.include?(@friend)
       Friendship.breakup(@user, @friend)
-      flash[:notice] = "Friendship with #{@friend.firstname} declined"
+      flash[:notice] = "Connection with #{@friend.firstname} declined"
     else
-      flash[:notice] = "No friendship request from #{@friend.firstname}."
+      flash[:notice] = "No connect request from #{@friend.firstname}."
     end
     redirect_to :back
   end
@@ -90,9 +90,9 @@ class FriendshipsController < ApplicationController
     @friend = User.friendly.find(params[:friend_id])
     if @user.pending_friends.include?(@friend)
       Friendship.breakup(@user, @friend)
-      flash[:notice] = "Friendship request canceled."
+      flash[:notice] = "Connection request canceled."
     else
-      flash[:notice] = "No request for friendship with #{@friend.firstname}"
+      flash[:notice] = "No request for connection with #{@friend.firstname}"
     end
     redirect_to :back
   end
@@ -102,9 +102,9 @@ class FriendshipsController < ApplicationController
     @friend = User.friendly.find(params[:friend_id])
     if @user.friends.include?(@friend)
       Friendship.breakup(@user, @friend)
-      flash[:notice] = "Friendship with #{@friend.firstname} deleted!"
+      flash[:notice] = "Connection with #{@friend.firstname} deleted!"
     else
-      flash[:notice] = "You aren't friends with #{@friend.firstname}"
+      flash[:notice] = "You aren't connected with #{@friend.firstname}"
     end
     redirect_to :back
   end

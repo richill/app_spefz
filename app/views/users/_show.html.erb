@@ -72,7 +72,7 @@
             <a href="#" data-reveal-id="myModal-users-followers"><%= "followers [#{@user.followers.count}]" %></a>
             <span><%= render 'shared/modal_users_followers' %></span>
           </li>
-          <li class="btn btn_friend_stats"><%= link_to "friends [14]", "#" %></li>
+          <li class="btn btn_friend_stats"><%= link_to "friends [#{@user.friends.count}]", "#" %></li>
         <% end %>
       </ul>
     </div>
@@ -194,7 +194,7 @@
       <div class="medium-3 columns column_right">
         <div class="medium-12 columns right_container">
           <div class="medium-12 columns right_inner_container network_container">
-            <div class="header"><div class="header_content"><i class="fa fa-users" aria-hidden="true"></i> <%= link_to "network [114]", "#" %></div></div>
+            <div class="header"><div class="header_content"><i class="fa fa-users" aria-hidden="true"></i> <%= link_to "network [#{@user.friends.count}]", "#" %></div></div>
             <div class="content">
               <div class="content_info">
                 <div><%= render 'shared/content_users_network' %></div>
