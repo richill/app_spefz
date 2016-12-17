@@ -1,6 +1,7 @@
 class SocialsController < ApplicationController
   respond_to :html, :xml, :json
   before_action :set_social, only: [:show, :edit, :update, :destroy]
+  before_filter :setup_friends
   impressionist :actions=>[:show]
 
   def index
@@ -92,6 +93,11 @@ class SocialsController < ApplicationController
   private
     def set_social
       @social = Social.friendly.find(params[:id])
+    end
+
+    def setup_friends
+      @user = User.find(current_user.id)
+      @friend = User.find_by_email(params[:id])
     end
 
     def social_params
