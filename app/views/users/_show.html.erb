@@ -45,7 +45,6 @@
       </ul>
       <ul class="inline-list right">
         <% unless current_user.id == @user.id %>
-        <li><%# friendship_status(@logged_in_user, @user) %></li>
           <li class="friend_unfriend_form">
             <% if Friendship.exists?(current_user, @friend) %>
               <span class=""><%= render 'user_friend_request_cancel' %></span>
