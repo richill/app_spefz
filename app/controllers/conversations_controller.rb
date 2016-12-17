@@ -1,5 +1,6 @@
 class ConversationsController < ApplicationController
   before_action :authenticate_user!
+  before_filter :setup_friends, :setup_subscription
 
   def new
     unless current_user.subscribed_access?
@@ -55,6 +56,15 @@ class ConversationsController < ApplicationController
 
 
   private
+
+  def setup_friends
+    @user = User.find(current_user.id)
+    @friend = User.find_by_email(params[:id])
+  end
+
+  def setup_subscription
+    @premium_plan = Subscription.find_by(title:"premium") 
+  end
 
   def conversation_params
     params.require(:conversation).permit(:subject, :body, recipients:[])

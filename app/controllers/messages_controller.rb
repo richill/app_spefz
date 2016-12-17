@@ -1,5 +1,6 @@
 class MessagesController < ApplicationController
   before_action :authenticate_user!
+  before_filter :setup_friends
 
   def inbox
     if current_user.image?
@@ -38,8 +39,14 @@ class MessagesController < ApplicationController
       @premium_plan = Subscription.find_by(title:"premium") 
       redirect_to subscription_path(@premium_plan)
     end
+    @premium_plan = Subscription.find_by(title:"premium")
   end
-  @premium_plan = Subscription.find_by(title:"premium")
+
+  private
+    def setup_friends
+      @user = User.find(current_user.id)
+      @friend = User.find_by_email(params[:id])
+    end
 end
 
 

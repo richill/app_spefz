@@ -5,7 +5,12 @@
 
     <div class="form-inputs">
       <%= f.label :recipients %>
-      <%= f.select(:recipients, User.all.collect {|p| [ "#{p.firstname} #{p.lastname}", p.id ] }, {}, { multiple: true , class: "chosen-select form-control" })%>
+
+      <%# if current_user.admin_pa_management_group %>
+        <%= f.select(:recipients, current_user.friends.collect {|p| [ "#{p.firstname} #{p.lastname}", p.id ] }, {}, { multiple: true , class: "chosen-select form-control" })%>
+      <%# else %>
+        <%# f.select(:recipients, User.all.collect {|p| [ "#{p.firstname} #{p.lastname}", p.id ] }, {}, { multiple: true , class: "chosen-select form-control" })%>
+      <%# end %>
 
       <%= f.label :subject %>
       <%= f.text_field :subject, placeholder: "Subject", class: "form-control" %>
