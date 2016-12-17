@@ -21,18 +21,8 @@
             </div>
 
             <div class="action_btn_section"> 
-              <span class="btn btn_add_friend"><%= link_to 'Accept', friendship_path(user_id: current_user, friend_id: requester), controller: "friendships", action: "update", method: :put %></span>
-
-              <!-- <span>
-                <%# form_for friendship, url: friendship_path(requester), method: :put do |f| %>
-                  <%# f.hidden_field :user_id, value: current_user.id %>
-                  <%# f.hidden_field :friend_id, value: requester.id %>
-                  <%# submit_tag "Accept_test", class: "btn btn_add_friend" %>
-                <%# end %>
-              </span> -->
-
-
-              <span class="btn btn_remove_friend"><%# link_to 'Decline', friendship_path(user_id: current_user, friend_id: requester), controller: "friendships", action: "decline", method: :delete %></span>
+              <span class="btn btn_add_friend"><%= link_to 'Accept', friendship_path(id: @user, user_id: current_user, friend_id: requester), controller: "friendships", action: "update", method: :put %></span>
+              <span class="btn btn_remove_friend"><%= link_to 'Decline', friendship_path(id: @user, user_id: current_user, friend_id: requester), controller: "friendships", action: "decline", method: :delete %></span>
             </div>
 
           </li>
