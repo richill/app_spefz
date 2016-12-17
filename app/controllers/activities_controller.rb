@@ -6,7 +6,11 @@ class ActivitiesController < ApplicationController
   end
 
   def networks 
-    @activities = PublicActivity::Activity.order("created_at desc").where(owner_id: current_user)
+    @activities = PublicActivity::Activity.order("created_at desc").where(owner_id: current_user.friends)
+  end
+
+  def followings 
+    @activities = PublicActivity::Activity.order("created_at desc").where(owner_id: current_user.followings)
   end
 
   private

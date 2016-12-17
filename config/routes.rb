@@ -49,6 +49,7 @@ Rails.application.routes.draw do
   resources :activities do
     collection do
       get 'networks'
+      get 'followings'
     end
   end
 

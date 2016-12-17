@@ -11,13 +11,13 @@
               <span>Feed</span>
             <% end %>
           </li>
-          <li class="active">
+          <li>
             <%= link_to networks_activities_path do %>
               <i class="fa fa-users" aria-hidden="true"></i>
               <span>feed network</span>
             <% end %>
           </li>
-          <li>
+          <li class="active">
             <%= link_to followings_activities_path do %>
               <i class="fa fa-users" aria-hidden="true"></i>
               <span>feed following</span>
@@ -34,7 +34,7 @@
         <div class="content_details">
           <!-- activity -->
             <div class="activity_feed">
-              <div>my network activies | currently showing activities of users in my network because of what is stated in the controller action "networks"</div>
+              <div>my followings activies | currently showing activities of users i am following because of what is stated in the controller action "networks"</div>
               <%= render 'activities/activity' %>
             </div>
           <!-- activity -->
