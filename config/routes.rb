@@ -15,7 +15,9 @@ Rails.application.routes.draw do
   resources :socials
   resources :signups
   resources :relationships, only: [:create, :destroy]
+
   resources :friendships,   only: [:create, :update, :destroy]
+
   resources :favourite_socials, only: [:create, :destroy]
   resources :attending_socials, only: [:create, :destroy]
   resources :favourite_events, only: [:create, :destroy]
