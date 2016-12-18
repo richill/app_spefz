@@ -43,6 +43,10 @@ class Social < ActiveRecord::Base
     ]
   end
 
+  def original_url
+    base_url + original_fullpath
+  end
+
 
   def subscribed?
     self.user.stripe_subscription_pymt_id?
