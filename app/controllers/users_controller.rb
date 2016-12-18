@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   respond_to :html, :xml, :json
   before_action :set_user, only: [:show, :edit, :update, :destroy, :followings, :followers, :dashboard, :membership, :account, :settings]
+  before_filter :setup_friends
 
   def index
     @premium_plan = Subscription.find_by(title:"premium")
@@ -88,6 +89,11 @@ class UsersController < ApplicationController
   end
 
   private
+    def setup_friends
+      @user = User.find(current_user.id)
+      @friend = User.find_by_email(params[:id])
+    end
+
     def set_user
       @user = User.friendly.find(params[:id])
     end
