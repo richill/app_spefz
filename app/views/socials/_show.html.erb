@@ -29,12 +29,10 @@
                                                   subject: "Invitation to: #{@social.title}", 
                                                   body: "Hi, would like to invite you to the Social: '#{@social.title}' - website: #{request.original_url}. From: #{current_user.firstname} #{current_user.lastname}" %>
             </span>
-
-          
             <span class="socialicon_cover_up"><%= link_to '', '#', class: "fa fa-user-plus" %></span>
             <span class="socialicon_cover_up"><%= link_to '', '#', class: "fa fa-calendar" %></span>
-            <span class="socialicon_cover_fb"><%= link_to '', '#', class: "fa fa-facebook" %></span> 
-            <span class="socialicon_cover_tt"><%= link_to '', '#', class: "fa fa-twitter" %></span>
+            <span class="socialicon_cover_fb hide"><%= link_to '', '#', class: "fa fa-facebook" %></span> 
+            <span class="socialicon_cover_tt hide"><%= link_to '', '#', class: "fa fa-twitter" %></span>
           </div>
         </div>
       </div>
