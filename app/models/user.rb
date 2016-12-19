@@ -185,8 +185,8 @@ class User < ActiveRecord::Base
     self.category_managementgroup = CategoryManagementgroup.where(name: 'Client Group').first
   end
 
-  def category_inviteoption
-    self.category_role = CategoryInviteoption.where(name: 'Every member').first
+  def assign_user_to_invitationoption
+    self.category_inviteoption = CategoryInviteoption.where(name: 'Every member').first
   end
 
   def profile_image?

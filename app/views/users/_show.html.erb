@@ -61,13 +61,11 @@
             <% end %>
           </li>
 
+          <% if @user.category_inviteoption.name == "Only members in my network" && current_user.friends?(@user) || @user.category_inviteoption.name == "Every member" %>
           <li class="btn btn_invite">
-            <%# if @user.category_inviteoption == "Only members in my network" &&  %>
-              <%= link_to "invite to social", "#" %>
-            <%# else %>
-            <%# end %>
+            <%= link_to "invite to social", "#", class: "invite_active" %>
           </li>
-
+          <% end %>
 
         <% else %>
           <li class="btn btn_followings_stats">
