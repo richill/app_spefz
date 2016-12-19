@@ -11,14 +11,19 @@
   <div class="medium-10 columns right_column_section">
     <div class="right_inner_section">
       <!-- content -->
-      <div>
-        <h1>settings</h1>
-        <ul>
-          <li>update password</li>
-          <li>cancel subscription</li>
-          <li>delete account</li>
-          <li>contact us</li>
-        </ul>
+      <div class="user_settings_section_main_content">
+        <div class="tree_link">
+          <span><i class="fa fa-user" aria-hidden="true"></i> <%= link_to "#{current_user.firstname}", user_path(current_user)%></span> <span class="fwd_sign">></span> <span>settings</span>
+        </div>
+        <div class="user_general_settings_inner_section user_settings_section">
+          <h1>settings</h1>
+          <ul>
+            <li>update password</li>
+            <li>cancel subscription</li>
+            <li>delete account</li>
+            <li>contact us</li>
+          </ul>
+        </div>
       </div>
       <!-- content -->
     </div>
