@@ -24,6 +24,7 @@ class UsersController < ApplicationController
     @friend = User.friendly.find(params[:id])
     @logged_in_user = current_user if signed_in?
     @premium_plan = Subscription.find_by(title:"premium")
+    @invite = Invite.new
     if current_user.subscribed_access? || current_user == @user
       if current_user.image? || current_user == @user
         @events = Event.live_events.open_events
