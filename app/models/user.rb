@@ -225,6 +225,11 @@ class User < ActiveRecord::Base
     pending_friends.include?(other_user)
   end
 
+  #returns true if both users are friends
+  def friends?(other_user)
+    friends.include?(other_user)
+  end
+
   def self.desc_order
     order('created_at DESC')
   end
