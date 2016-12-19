@@ -13,6 +13,7 @@ class User < ActiveRecord::Base
   belongs_to :category_gender 
   belongs_to :category_role 
   belongs_to :category_managementgroup 
+  belongs_to :category_inviteoption 
   
   has_and_belongs_to_many :hosts 
 
@@ -47,6 +48,7 @@ class User < ActiveRecord::Base
   before_destroy :delete_activities
   before_create :generate_reference_number
   before_create :assign_user_to_role_and_group
+  before_create :assign_user_to_invitationoption
 
 
   # ---- gender -----
@@ -181,6 +183,10 @@ class User < ActiveRecord::Base
   def assign_user_to_role_and_group
     self.category_role = CategoryRole.where(name: 'Client').first
     self.category_managementgroup = CategoryManagementgroup.where(name: 'Client Group').first
+  end
+
+  def category_inviteoption
+    self.category_role = CategoryInviteoption.where(name: 'Every member').first
   end
 
   def profile_image?

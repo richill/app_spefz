@@ -60,6 +60,11 @@ CategoryInvite.delete_all
 ci01 = CategoryInvite.create!(name:'just my guest')
 ci02 = CategoryInvite.create!(name:'open to everyone')
 
+CategoryInviteoption.delete_all
+cio01 = CategoryInviteoption.create!(name:'Only members in my network')
+cio02 = CategoryInviteoption.create!(name:'Every member')
+cio03 = CategoryInviteoption.create!(name:'No one')
+
 CategoryQuantitygender.delete_all
 cqg01 = CategoryQuantitygender.create!(name:'only men')
 cqg02 = CategoryQuantitygender.create!(name:'only women')
