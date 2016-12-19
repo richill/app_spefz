@@ -17,7 +17,7 @@ class FriendshipsController < ApplicationController
     @friend = User.friendly.find(params[:friend_id])
     if @user.requested_friends.include?(@friend)
       Friendship.accept(@user, @friend)
-      flash[:notice] = "Connection with #{@friend.firstname} accepted!"
+      flash[:notice] = "You and #{@friend.firstname} are now connected"
     else
       flash[:notice] = "No connect request from #{@friend.firstname}."
     end
