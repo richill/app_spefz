@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161219133017) do
+ActiveRecord::Schema.define(version: 20161219143050) do
 
   create_table "activities", force: :cascade do |t|
     t.integer  "trackable_id"
@@ -276,6 +276,15 @@ ActiveRecord::Schema.define(version: 20161219133017) do
   add_index "impressions", ["impressionable_type", "impressionable_id", "session_hash"], name: "poly_session_index"
   add_index "impressions", ["impressionable_type", "message", "impressionable_id"], name: "impressionable_type_message_index"
   add_index "impressions", ["user_id"], name: "index_impressions_on_user_id"
+
+  create_table "invites", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "invitee_id"
+    t.integer  "social_id"
+    t.integer  "event_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "mailboxer_conversation_opt_outs", force: :cascade do |t|
     t.integer "unsubscriber_id"

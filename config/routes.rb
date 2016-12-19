@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  resources :invites
+
   resources :blogs do
     collection do
       get 'venues'
