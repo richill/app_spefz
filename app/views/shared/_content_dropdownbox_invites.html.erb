@@ -1,0 +1,40 @@
+<% if current_user.requested_friends.present? %>
+  <div class="userinviterequests_inner_container">
+    <div class="content_list">
+      <ul>
+        <% current_user.requested_friends.each do |requester| %>
+          <li>
+
+            <div class="image_section">
+              <span class="img_cover">
+                <% if requester.image_url.present? %>
+                  <%= link_to(image_tag(requester.image_url, :alt =>  "image", :class =>"#", id: ""), user_path(requester)) %>
+                <% else %>
+                  <%= link_to(image_tag("img-profile-image-default.png", :alt =>  "image", :class =>"#", id: ""), user_path(requester)) %>
+                <% end %>
+              </span>
+            </div>
+
+            <div class="user_info_section">
+              <div class="friend_request_name"><%= link_to truncate("#{requester.firstname} #{requester.lastname}", length: 23), user_path(requester) %></div>
+              <div class="user_profession"><%= truncate(requester.profession, length: 23) %></div>
+            </div>
+
+            <div class="action_btn_section"> 
+              <span class="btn btn_add_friend"><%= link_to 'Accept', friendship_path(id: @user, user_id: current_user, friend_id: requester), controller: "friendships", action: "update", method: :put %></span>
+              <span class="btn btn_remove_friend"><%= link_to 'Decline', friendship_path(id: @user, user_id: current_user, friend_id: requester), controller: "friendships", action: "decline", method: :delete %></span>
+            </div>
+
+          </li>
+          <div class="clear"></div>
+        <% end %>
+      </ul>
+    </div> 
+  </div>
+<% else %>
+  <div class="userinviterequests_inner_container">
+    <div class="content_list_none">you currently have no invites</div> 
+  </div>
+<% end %>
+
+

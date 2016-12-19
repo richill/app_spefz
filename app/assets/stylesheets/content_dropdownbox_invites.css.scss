@@ -1,0 +1,212 @@
+/*=========================================
+    Section: profile page
+    File: views / shared / _content_dropdownbox_invites.html.erb
+  =========================================*/
+
+.userinviterequests_inner_container {
+  background-color: #fff !important;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  min-height: 89px !important;
+  max-height: 325px !important;
+  overflow: scroll;
+}
+
+.userinviterequests_inner_container .header {
+  padding: 5px 15px !important;
+  font-size: 35px;
+  border-bottom: 2px solid #58CDA6;
+  text-transform: capitalize;
+  color: #fff !important;
+  background-color: #283041;
+}
+
+.userinviterequests_inner_container .content_list {
+  padding: 8px !important;
+  min-height: 100px;
+}
+
+.userinviterequests_inner_container .content_list_none {
+  padding: 35px 15px !important;
+  min-height: 100px;
+  text-transform: capitalize;
+  text-align: center;
+}
+
+.userinviterequests_inner_container ul {
+  margin: 0px;
+  list-style-type: none;
+}
+
+.userinviterequests_inner_container ul li {
+  background-color: rgba(47, 63, 91, 0.05) !important;
+  padding: 5px;
+  margin-bottom: 5px;
+  height: 74px;
+}
+
+.userinviterequests_inner_container .image_section {
+  float: left;
+}
+
+.userinviterequests_inner_container .img_cover {
+  margin: 3px;
+  padding: 4px;
+  border-radius: 5px;
+  background-color: rgba(88, 205, 166, 0.2) !important;
+  display: inline-block;
+}
+
+.userinviterequests_inner_container .img_cover img {
+  height: 48px;
+  width: 48px;
+  border-radius: 200px;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease;
+}
+
+.userinviterequests_inner_container .user_info_section {
+  padding: 12px;
+  float: left;
+  text-align: left;
+}
+
+.userinviterequests_inner_container .friend_request_name a {
+  font-family: 'Lato', sans-serif;
+  font-weight: bold;
+  text-transform: capitalize;
+  color: #283041 !important;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease;
+}
+
+.userinviterequests_inner_container .friend_request_name a:hover {
+  color: #E34B51 !important;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease;
+}
+
+.userinviterequests_inner_container .user_profession {
+  font-family: 'Lato', sans-serif;
+  font-size: 12px;
+  font-weight: 300;
+  text-transform: capitalize;
+  text-align: left;
+}
+
+.userinviterequests_inner_container .action_btn_section {
+  float: right;
+  padding: 22px 0px;
+}
+
+.userinviterequests_inner_container .btn a {
+  font-family: 'Lato', sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  background: #000;
+  text-transform: capitalize;
+  color: #fff !important;
+  padding: 11px 25px;
+  letter-spacing: 1px;
+  margin-top: 11px;
+  margin-right: 5px;
+  background-color: rgba(47, 63, 91, 0.5) !important;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease;
+}
+
+.userinviterequests_inner_container .btn a:hover {
+  background-color: #E34B51 !important;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease;
+}
+
+.userinviterequests_inner_container input[type="submit"]{
+  font-family: 'Lato', sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  background: #000;
+  text-transform: capitalize;
+  color: #fff !important;
+  padding: 11px 25px;
+  float: right;
+  position: absolute;
+  top: 96px;
+  right: 23px;
+  letter-spacing: 1px;
+  border: none;
+  background-color: rgba(47, 63, 91, 0.5) !important;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+.userinviterequests_inner_container .friend_request_name a {
+  font-family: 'Lato', sans-serif;
+  font-weight: bold;
+  text-transform: capitalize;
+  color: #283041 !important;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease;
+}
+
+.userinviterequests_inner_container .friend_request_name a:hover {
+  color: #E34B51 !important;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease;
+}
+
+.userinviterequests_inner_container .btn a {
+  font-family: 'Lato', sans-serif;
+  font-size: 10px;
+  font-weight: 300;
+  background: #000;
+  text-transform: capitalize;
+  color: #fff !important;
+  padding: 11px 10px;
+  letter-spacing: 1px;
+  margin-top: 11px;
+  margin-right: 5px;
+  background-color: rgba(47, 63, 91, 0.5) !important;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease;
+}
+
+.userinviterequests_inner_container .btn a:hover {
+  background-color: #E34B51 !important;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease;
+}
+
+.userinviterequests_inner_container .btn_add_friend a {
+  background-color: #58CDA6 !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
