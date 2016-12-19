@@ -42,11 +42,9 @@
           </div>
         </li>
 
-
-
         <li class="notification_li">
-          <% if current_user.requested_friends.present? %>
-            <span id="notification_count_invites"><%= current_user.requested_friends.count %></span>
+          <% if current_user.recieved_invites.present? %>
+            <span id="notification_count_invites"><%= current_user.recieved_invites.count %></span>
           <% end %>
           <div><%= link_to '', '#', id: "notificationLink_invites", class: "fa fa-calendar-check-o" %></div>
           <div id="notificationContainer_invites">
@@ -60,10 +58,6 @@
             <!-- <div id="notificationFooter"><a href="#">See All</a></div> -->
           </div>
         </li>
-
-
-
-
 
         <li class="notification_li">
           <span id="notification_count_bell">2</span>
