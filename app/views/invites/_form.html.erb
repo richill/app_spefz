@@ -2,22 +2,17 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <h5><%= "#{user.firstname}" %>, invite <%= "#{@user.firstname} #{@user.lastname}" %> to a social</h5>
+    <div class="invite_message">Hi <span class="invitation_names"><%= "#{user.firstname}" %></span>! invite <span class="invitation_names"><%= "#{@user.firstname} #{@user.lastname}" %></span> to a social</div class="invite_message">
 
-    <%= f.association :social, collection: sociallist_for(user, @user), prompt: "select an social", label: "Listed Socials" %>
+    <%= f.association :social, collection: sociallist_for(user, @user), prompt: "select a social", label: "Listed Socials" %>
 
     <!-- hidden_field -->
-    <label>user</label>
-    <%= f.input_field :user_id, value: user.id, label:"user" %><br/>
+    <label class="hide">user</label>
+    <%= f.hidden_field :user_id, value: user.id, label:"user" %>
 
-    <label>invitee</label>
-    <%= f.input_field :invitee_id, value: @user.id, label:"invitee" %>
+    <label class="hide">invitee</label>
+    <%= f.hidden_field :invitee_id, value: @user.id, label:"invitee" %>
     <!-- hidden_field -->
-
-    <%# f.input :user_id %>
-    <%# f.input :invitee_id %>
-    <%# f.input :social_id %>
-    <%# f.input :event_id %>
   </div>
 
   <div class="form-actions">
