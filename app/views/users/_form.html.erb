@@ -28,6 +28,7 @@
             <div class="label_interest">interest</div>
             <%= f.text_field :tag_list, value: @user.tag_list.to_s, placeholder: "chess, jogging, dogs, skipping, gym, startups, entreprenuers, jazz..." %>
             <%= f.input :description, label: "about me", placeholder: "Tell us a bit about yourself, what you like doing and where you like going." %>
+            <div class="invite_option"><%= f.association :category_inviteoption, collection: CategoryInviteoption.all, prompt: "select a category", label: "I would like to receive invites from:" %></div>
 
             <% if current_user.admin_pa_management_group  %>
               <div class="admin_content">
