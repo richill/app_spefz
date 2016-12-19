@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161219130106) do
+ActiveRecord::Schema.define(version: 20161219133017) do
 
   create_table "activities", force: :cascade do |t|
     t.integer  "trackable_id"
@@ -478,6 +478,7 @@ ActiveRecord::Schema.define(version: 20161219130106) do
     t.string   "reference"
     t.text     "host_description"
     t.string   "slug"
+    t.integer  "category_inviteoption_id"
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
