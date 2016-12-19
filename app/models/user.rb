@@ -235,6 +235,11 @@ class User < ActiveRecord::Base
     friends.include?(other_user)
   end
 
+  #returns true if user has recieved an invite
+  def invited?(other_user)
+    invites.include?(other_user)
+  end
+
   def self.desc_order
     order('created_at DESC')
   end
