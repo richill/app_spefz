@@ -61,7 +61,14 @@
             <% end %>
           </li>
 
-          <li class="btn btn_invite"><%= link_to "invite to social", "#" %></li>
+          <li class="btn btn_invite">
+            <%# if @user.category_inviteoption == "Only members in my network" &&  %>
+              <%= link_to "invite to social", "#" %>
+            <%# else %>
+            <%# end %>
+          </li>
+
+
         <% else %>
           <li class="btn btn_followings_stats">
             <a href="#" data-reveal-id="myModal-users-followings"><%= "following [#{@user.followings.count}]" %></a>
