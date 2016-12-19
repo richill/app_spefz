@@ -46,15 +46,15 @@
 
         <li class="notification_li">
           <% if current_user.requested_friends.present? %>
-            <span id="notification_count_friendRequest notification_count_invites"><%= current_user.requested_friends.count %></span>
+            <span id="notification_count_invites"><%= current_user.requested_friends.count %></span>
           <% end %>
-          <div><%= link_to '', '#', id: "notificationLink_friendRequest notificationLink_invites", class: "fa fa-calendar-o" %></div>
-          <div id="notificationContainer_friendRequest notificationContainer_invites">
-            <div id="notificationTitle_friendRequest notificationTitle_invites">
+          <div><%= link_to '', '#', id: "notificationLink_invites", class: "fa fa-calendar-o" %></div>
+          <div id="notificationContainer_invites">
+            <div id="notificationTitle_invites">
               <div class="dropdown_nottification_title"><%= link_to "Invites", "#" %></div>
               <div class="dropdown_nottification_info"><i class="fa fa-envelope" aria-hidden="true"></i> <span><%= "List of Invitations Received" %></span></div>
             </div>
-            <div id="notificationsBody_friendRequest" class="notifications">
+            <div id="notificationsBody_invites" class="notifications">
               <% render 'shared/content_dropdownbox_invites' %>
             </div>
             <!-- <div id="notificationFooter"><a href="#">See All</a></div> -->

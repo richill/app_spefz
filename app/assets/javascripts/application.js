@@ -57,6 +57,7 @@ $(document).ready(function() {
     $("#notificationLink_friendRequest").click(function() {
       $("#notificationContainer_friendRequest").fadeToggle(300);
       $("#notification_count_friendRequest").fadeOut("slow");
+      $("#notificationContainer_invites").fadeOut("slow");
       $("#notificationContainer_bell").fadeOut("slow");
       $("#notificationContainer_comment").fadeOut("slow");
       $("#notificationContainer_profile").fadeOut("slow");
@@ -72,12 +73,34 @@ $(document).ready(function() {
     });
   });
 
+  // [nav] notificationLink_invites
+  $(document).ready(function() {
+    $("#notificationLink_invites").click(function() {
+      $("#notificationContainer_invites").fadeToggle(300);
+      $("#notification_count_invites").fadeOut("slow");
+      $("#notificationContainer_friendRequest").fadeOut("slow");
+      $("#notificationContainer_bell").fadeOut("slow");
+      $("#notificationContainer_comment").fadeOut("slow");
+      $("#notificationContainer_profile").fadeOut("slow");
+      return false;
+    });
+    //Document Click hiding the popup 
+    $(document).click(function() {
+      $("#notificationContainer_invites").hide();
+    });
+    //Popup on click
+    $("#notificationContainer_invites").click(function() {
+      return true;
+    });
+  });
+
   // [nav] notificationLink_bell
   $(document).ready(function() {
     $("#notificationLink_bell").click(function() {
       $("#notificationContainer_bell").fadeToggle(300);
       $("#notification_count_bell").fadeOut("slow");
       $("#notificationContainer_friendRequest").fadeOut("slow");
+      $("#notificationContainer_invites").fadeOut("slow");
       $("#notificationContainer_comment").fadeOut("slow");
       $("#notificationContainer_profile").fadeOut("slow");
       return false;
@@ -98,6 +121,7 @@ $(document).ready(function() {
       $("#notificationContainer_comment").fadeToggle(300);
       $("#notification_count_comment").fadeOut("slow");
       $("#notificationContainer_friendRequest").fadeOut("slow");
+      $("#notificationContainer_invites").fadeOut("slow");
       $("#notificationContainer_bell").fadeOut("slow");
       $("#notificationContainer_profile").fadeOut("slow");
       return false;
@@ -118,6 +142,7 @@ $(document).ready(function() {
       $("#notificationContainer_profile").fadeToggle(300);
       $("#notification_count_profile").fadeOut("slow");
       $("#notificationContainer_friendRequest").fadeOut("slow");
+      $("#notificationContainer_invites").fadeOut("slow");
       $("#notificationContainer_bell").fadeOut("slow");
       $("#notificationContainer_comment").fadeOut("slow");
       return false;
