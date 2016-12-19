@@ -45,6 +45,10 @@ class User < ActiveRecord::Base
   has_many :requested_friends, -> { where(friendships: { status: "requested"}) }, through: :friendships, source: :friend #this is like recieved_request
   has_many :pending_friends, -> { where(friendships: { status: "pending"}) }, through: :friendships, source: :friend #this is like sent_request
 
+  has_many :invites
+  has_many :sent_invites, -> { where(invites: { status: "pending"}) }, through: :invites, source: :invitee
+  has_many :declined_invites, -> { where(invites: { status: "declined"}) }, through: :invites, source: :invitee
+
   mount_uploader :image, ImageUploader
   before_destroy :delete_activities
   before_create :generate_reference_number

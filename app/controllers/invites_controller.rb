@@ -69,6 +69,6 @@ class InvitesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def invite_params
-      params.require(:invite).permit(:user_id, :invitee_id, :social_id, :event_id)
+      params.require(:invite).permit(:user_id, :invitee_id, :social_id, :event_id, :status)
     end
 end
