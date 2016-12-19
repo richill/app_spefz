@@ -47,6 +47,7 @@ class User < ActiveRecord::Base
 
   has_many :invites
   has_many :sent_invites, -> { where(invites: { status: "pending"}) }, through: :invites, source: :invitee
+  has_many :recieved_invites, -> { where(invites: { status: "pending"}) }, class_name: "Invite", foreign_key: "invitee_id", dependent: :destroy
   has_many :declined_invites, -> { where(invites: { status: "declined"}) }, through: :invites, source: :invitee
 
   mount_uploader :image, ImageUploader
@@ -235,9 +236,14 @@ class User < ActiveRecord::Base
     friends.include?(other_user)
   end
 
-  #returns true if user has recieved an invite
+  #returns true if user has sent an invite to other_user
   def invited?(other_user)
-    invites.include?(other_user)
+    sent_invites.include?(other_user)
+  end
+
+  #testing
+  def recieved_invite?(other_user)
+    sent_invites.include(other_user)
   end
 
   def self.desc_order
