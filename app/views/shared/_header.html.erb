@@ -48,7 +48,7 @@
           <% if current_user.requested_friends.present? %>
             <span id="notification_count_invites"><%= current_user.requested_friends.count %></span>
           <% end %>
-          <div><%= link_to '', '#', id: "notificationLink_invites", class: "fa fa-calendar-o" %></div>
+          <div><%= link_to '', '#', id: "notificationLink_invites", class: "fa fa-calendar-check-o" %></div>
           <div id="notificationContainer_invites">
             <div id="notificationTitle_invites">
               <div class="dropdown_nottification_title"><%= link_to "Invites", "#" %></div>

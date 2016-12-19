@@ -101,6 +101,15 @@
   -o-transition: all 0.3s ease;
 }
 
+.nav_user_section .notification_li .fa-calendar-check-o {
+  color: #fff !important;
+  margin-top: 10px;
+  font-size: 18px;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease;
+}
+
 .nav_user_section .notification_li .fa-bell {
   color: #fff !important;
   margin-top: 10px;
@@ -120,6 +129,15 @@
 }
 
 .nav_user_section .notification_li .fa-users:hover {
+  color: #E34B51 !important;
+  margin-top: 10px;
+  font-size: 18px;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease;
+}
+
+.nav_user_section .notification_li .fa-calendar-check-o:hover {
   color: #E34B51 !important;
   margin-top: 10px;
   font-size: 18px;
