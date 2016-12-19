@@ -19,6 +19,7 @@ class User < ActiveRecord::Base
 
   has_many :payments
   has_many :blogs
+  has_many :invites, dependent: :destroy
   has_many :events, dependent: :destroy
   has_many :socials, dependent: :destroy
   has_many :favourites, dependent: :destroy
