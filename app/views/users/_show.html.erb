@@ -64,10 +64,13 @@
           <% if @user.category_inviteoption.present? %>
             <% if @user.category_inviteoption.name == "Only members in my network" && current_user.friends?(@user) || @user.category_inviteoption.name == "Every member" %>
             <li class="btn btn_invite">
-              <%= link_to "invite to social", "#", class: "invite_active" %>
+              <%# link_to "invite to social", "#", class: "invite_active" %>
+              <span data-tooltip aria-haspopup="true" class="tip-left" title="invite user to a social"><a href="#<%= @user.id %>" data-reveal-id="<%= dom_id(@user) %>_inviteuser">invite <%= @user.firstname %> to a social</a></span>
+              <div><%= render partial: 'shared/modal_invite_user', locals: { invitee: @user, user: current_user } %></div>
             </li>
             <% end %>
           <% end %>
+
 
         <% else %>
           <li class="btn btn_followings_stats">
