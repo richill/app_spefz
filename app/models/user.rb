@@ -241,11 +241,6 @@ class User < ActiveRecord::Base
     sent_invites.include?(other_user)
   end
 
-  #testing
-  def recieved_invite?(other_user)
-    sent_invites.include(other_user)
-  end
-
   def self.desc_order
     order('created_at DESC')
   end
