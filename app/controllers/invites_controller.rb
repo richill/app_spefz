@@ -19,15 +19,18 @@ class InvitesController < ApplicationController
     @invite = Invite.new(invite_params)
     @invite.status = "pending"
 
-    respond_to do |format|
-      if @invite.save
-        format.html { redirect_to @invite, notice: 'Invite was successfully created.' }
-        format.json { render :show, status: :created, location: @invite }
-      else
-        format.html { render :new }
-        format.json { render json: @invite.errors, status: :unprocessable_entity }
-      end
-    end
+    flash[:notice] = "Invite sent."
+    redirect_to :back
+
+    # respond_to do |format|
+    #   if @invite.save
+    #     format.html { redirect_to @invite, notice: 'Invite was successfully created.' }
+    #     format.json { render :show, status: :created, location: @invite }
+    #   else
+    #     format.html { render :new }
+    #     format.json { render json: @invite.errors, status: :unprocessable_entity }
+    #   end
+    # end
   end
 
   def update
