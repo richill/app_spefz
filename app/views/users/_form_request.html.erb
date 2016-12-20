@@ -9,13 +9,13 @@
   <% else %>
     <span class="icon_user_plus">
       <!-- render 'user_friend_request' -->
-
-    
       <span data-tooltip aria-haspopup="true" data-options="disable_for_touch:true" class="tip-right" title="Add to Network">
-      <%= link_to "", friendship_path(user_id: current_user, friend_id: user), controller: "friendships", action: "create", method: :post, class: "btn btn_friend_request_cancel_submit fa fa-user-plus" %><br/>
+      <%= link_to "", 
+              { controller: "friendships", 
+                action: "create", 
+                id: user.email }, 
+                confirm: "Send friend request to #{user.firstname}?", method: :post, class: "btn fa fa-user-plus" %>
       </span>
-
-
     </span>
   <% end %>
 </span>

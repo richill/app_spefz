@@ -24,11 +24,11 @@
             <% end %>
           </li>
         </ul> 
-        <%= search_form_for @search, url: followings_user_path(current_user) do |f| %>
+        <%= search_form_for @search, url: network_user_path(current_user) do |f| %>
         <ul class="search_fields_right">
           <li><%= f.submit 'search' %></li> 
           <li class="field btn_all">
-            <%= link_to followings_user_path(current_user) do %>
+            <%= link_to network_user_path(current_user) do %>
               <i class="fa fa-users" aria-hidden="true"></i>
             <% end %>
           </li>
@@ -104,8 +104,8 @@
                         <% end %>
                         <div class="action_btns">
                           <% if user != current_user %>
-                          <%# render partial: "form_request", locals: { user: user } %>
-                          <%# render partial: "form_follow", locals: { user: user } %>
+                          <%= render partial: "form_request", locals: { user: user } %>
+                          <%= render partial: "form_follow", locals: { user: user } %>
                           <% end %>
                         </div>
                       </div>
