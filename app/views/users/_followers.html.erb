@@ -5,7 +5,7 @@
     <div class="medium-12 columns search_container">
       <div class="search_inner_container">        
         <ul class="search_fields_left">
-          <li class="active"> 
+          <li> 
             <%= link_to network_user_path(current_user) do %>
               <i class="fa fa-server" aria-hidden="true"></i>
               <span>network [<%= current_user.friends.count %>]</span>
@@ -17,18 +17,18 @@
               <span>following [<%= current_user.followings.count %>]</span>
             <% end %>
           </li>
-          <li>
+          <li class="active">
             <%= link_to followers_user_path(current_user) do %>
               <i class="fa fa-users" aria-hidden="true"></i>
               <span>followers [<%= current_user.followers.count %>]</span>
             <% end %>
           </li>
         </ul> 
-        <%= search_form_for @search, url: network_user_path(current_user) do |f| %>
+        <%= search_form_for @search, url: followers_user_path(current_user) do |f| %>
         <ul class="search_fields_right">
           <li><%= f.submit 'search' %></li> 
           <li class="field btn_all">
-            <%= link_to network_user_path(current_user) do %>
+            <%= link_to followers_user_path(current_user) do %>
               <i class="fa fa-users" aria-hidden="true"></i>
             <% end %>
           </li>
@@ -45,11 +45,11 @@
         <div class="content_details">
             
             <!-- members -->
-            <% if @friends.blank? %>
+            <% if @followers.blank? %>
               <div><%= render 'shared/content_search_no_result' %></div>
             <% else %>
               <ul class="inline-list">
-                <% @friends.each do |user| %>
+                <% @followers.each do |user| %>
                   <% if current_user.subscribed_access? %>
                     <li class="medium-3 columns member_container user_subscribed">
                       <!-- subscribed banner -->

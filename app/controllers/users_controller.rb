@@ -88,9 +88,14 @@ class UsersController < ApplicationController
     @friends = @search.result(distinct: true)
   end
 
-  def following
-    @search = current_user.friends.search(params[:q])
-    @friends = @search.result(distinct: true)
+  def followings
+    @search = current_user.followings.search(params[:q])
+    @followings = @search.result(distinct: true)
+  end
+
+  def followers
+    @search = current_user.followers.search(params[:q])
+    @followers = @search.result(distinct: true)
   end
 
   private

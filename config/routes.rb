@@ -46,6 +46,8 @@ Rails.application.routes.draw do
       get 'stats-blogs'
       get 'inquiries'
       get 'network'
+      get 'followings'
+      get 'followers'
     end
   end
 
