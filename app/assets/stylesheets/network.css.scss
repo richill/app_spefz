@@ -392,11 +392,14 @@
 // --------------------
 
 
+.user_network_following_followers_section .btn_request .icon_user_times {
+  float: right;
+}
+
 .user_network_following_followers_section .btn_request .icon_user_times .fa-user-times {
   margin: 0px !important;
   padding: 10px !important;
-  // float: right;
-  // margin-left: 5px !important;
+  margin-left: 5px !important;
   color: #fff !important;
   border-radius: 0px !important;
   background-color: #2F3F5B !important;
