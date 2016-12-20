@@ -89,6 +89,9 @@ class UsersController < ApplicationController
   def inquiries
   end
 
+  def network
+  end
+
   private
     def setup_friends
       @user = User.find(current_user.id)
