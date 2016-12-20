@@ -1,10 +1,9 @@
 class UsersController < ApplicationController
   respond_to :html, :xml, :json
   before_action :set_user, only: [:show, :edit, :update, :destroy, :followings, :followers, :dashboard, :membership, :account, :settings]
-  before_filter :setup_friends
+  before_filter :setup_friends, :setup_subscription
 
   def index
-    @premium_plan = Subscription.find_by(title:"premium")
     if params[:tag]
       @users = User.tagged_with(params[:tag])
       @search = User.search(params[:q])
@@ -23,7 +22,6 @@ class UsersController < ApplicationController
     @user = User.friendly.find(params[:id])
     @friend = User.friendly.find(params[:id])
     @logged_in_user = current_user if signed_in?
-    @premium_plan = Subscription.find_by(title:"premium")
     @invite = Invite.new
     if current_user.subscribed_access? || current_user == @user
       if current_user.image? || current_user == @user
@@ -40,7 +38,6 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @premium_plan = Subscription.find_by(title:"premium")
   end
 
   def update
@@ -51,15 +48,12 @@ class UsersController < ApplicationController
   def account
     @user_payments = @user.payments.valid_payments.status_success.order("created_at desc")
     @user_subscription = @user.payments.valid_subscriptions.status_success.order("created_at desc")
-    @premium_plan = Subscription.find_by(title:"premium")
   end
 
   def membership
-    @premium_plan = Subscription.find_by(title:"premium")
   end
 
   def settings
-    @premium_plan = Subscription.find_by(title:"premium")
   end
 
   def dashboard
@@ -98,6 +92,10 @@ class UsersController < ApplicationController
     def setup_friends
       @user = User.find(current_user.id)
       @friend = User.find_by_email(params[:id])
+    end
+
+    def setup_subscription
+      @premium_plan = Subscription.find_by(title:"premium") 
     end
 
     def set_user
