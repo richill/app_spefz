@@ -104,8 +104,8 @@
                         <% end %>
                         <div class="action_btns">
                           <% if user != current_user %>
-                          <%# render partial: "form_request", locals: { user: user } %>
-                          <%# render partial: "form_follow", locals: { user: user } %>
+                          <%= render partial: "form_request", locals: { user: user } %>
+                          <%= render partial: "form_follow", locals: { user: user } %>
                           <% end %>
                         </div>
                       </div>

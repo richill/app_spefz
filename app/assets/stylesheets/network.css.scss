@@ -373,7 +373,7 @@
   text-align: center;
   color: #fff !important;
   border-radius: 0px !important;
-  background-color: #2F3F5B !important;
+  background-color: rgba(238, 170, 2, 0.6) !important;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
@@ -385,6 +385,69 @@
   -moz-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
 }
+
+
+
+
+
+
+
+
+
+
+
+.user_network_following_followers_section .btn_request .icon_user_users {
+  float: right;
+  margin-left: 5px !important;
+}
+
+.user_network_following_followers_section .btn_request .icon_user_users .fa-users {
+  font-size: 12px !important;
+  margin: 0px !important;
+  padding: 13px 0px !important;
+  width: 38px;
+  text-align: center;
+  color: #fff !important;
+  border-radius: 0px !important;
+  background-color: #2F3F5B !important;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+.user_network_following_followers_section .btn_request .icon_user_users .fa-users:hover {
+  background-color: rgba(238, 170, 2, 0.6) !important;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 .user_network_following_followers_section .btn_request .icon_user_plus {
