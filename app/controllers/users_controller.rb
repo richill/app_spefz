@@ -90,6 +90,8 @@ class UsersController < ApplicationController
   end
 
   def network
+    @search = current_user.friends.search(params[:q])
+    @friends = @search.result(distinct: true)
   end
 
   private
