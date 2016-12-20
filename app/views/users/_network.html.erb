@@ -5,9 +5,25 @@
     <div class="medium-12 columns search_container">
       <div class="search_inner_container">        
         <ul class="search_fields_left">
-          <li class="field select_role">hello 1</li>
-          <li class="field select_mgtgroup">hello 2</li>
-        </ul>  
+          <li class="active"> 
+            <%= link_to activities_path do %>
+              <i class="fa fa-server" aria-hidden="true"></i>
+              <span>network</span>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to networks_activities_path do %>
+              <i class="fa fa-users" aria-hidden="true"></i>
+              <span>following</span>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to followings_activities_path do %>
+              <i class="fa fa-users" aria-hidden="true"></i>
+              <span>followers</span>
+            <% end %>
+          </li>
+        </ul> 
         <%= search_form_for @search, url: network_user_path(current_user) do |f| %>
         <ul class="search_fields_right">
           <li><%= f.submit 'search' %></li> 

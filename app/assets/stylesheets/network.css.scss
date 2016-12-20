@@ -348,7 +348,46 @@
 
 
 
+// --------------------
+//   workings
+// --------------------
 
+.user_network_section .search_fields_left li a {
+  font-family: 'Lato', sans-serif;
+  font-size: 13px;
+  color: #fff !important;
+  font-weight: 300;
+  background: #283041;
+  text-transform: capitalize;
+  text-align: center;
+  letter-spacing: 1px;
+  padding: 12px 25px;
+  width: 100%;
+  border: none;
+  display: inline-block;
+  height: 40px;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+.user_network_section .search_fields_left li a i {
+  color: #fff !important;
+}
+
+.activities_section .search_fields_left li a:hover {
+  background-color: rgba(238, 170, 2, 0.6) !important;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+.user_network_section .search_fields_left .active a {
+  background-color: rgba(225, 71, 62, 0.5) !important;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
 
 
 
