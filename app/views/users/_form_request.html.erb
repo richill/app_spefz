@@ -2,14 +2,14 @@
   <% if Friendship.exists?(current_user, user) %>
     <span class="icon_user_times">
       <!-- render 'user_friend_request_cancel' -->
-      <span data-tooltip aria-haspopup="true" data-options="disable_for_touch:true" class="tip-right" title="Remove from Network">
+      <span data-tooltip aria-haspopup="true" data-options="disable_for_touch:true" class="tip-right" title="Cancel Request">
       <%= link_to "", friendship_path(user_id: current_user, friend_id: user), controller: "friendships", action: "cancel", method: :delete, class: "btn btn_friend_request_cancel_submit fa fa-user-times" %>
       </span>
     </span>
   <% else %>
     <span class="icon_user_plus">
       <!-- render 'user_friend_request' -->
-      <span data-tooltip aria-haspopup="true" data-options="disable_for_touch:true" class="tip-right" title="Add to Network">
+      <span data-tooltip aria-haspopup="true" data-options="disable_for_touch:true" class="tip-right" title="Send a Connection Request">
       <%= link_to "", 
               { controller: "friendships", 
                 action: "create", 
