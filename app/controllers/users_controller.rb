@@ -84,6 +84,9 @@ class UsersController < ApplicationController
   end
 
   def network
+    # @user = User.friendly.find(params[:user_id])
+    # @friend = User.friendly.find(params[:friend_id])
+    # @logged_in_user = current_user if signed_in?
     @search = current_user.friends.search(params[:q])
     @friends = @search.result(distinct: true)
   end
