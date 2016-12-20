@@ -129,11 +129,12 @@
   background: #000;
   text-transform: capitalize;
   color: #fff !important;
-  padding: 11px 10px;
+  padding: 10px 10px;
   letter-spacing: 1px;
   margin-top: 0px !important;
   display: inline-block;
   margin-right: 5px;
+  margin-bottom: 5px;
   background-color: rgba(47, 63, 91, 0.5) !important;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
@@ -147,7 +148,7 @@
   -o-transition: all 0.3s ease;
 }
 
-.userinviterequests_inner_container input[type="submit"] {
+.userinviterequests_inner_container .action_btn_section input[type="submit"] {
   font-family: 'Lato', sans-serif;
   font-size: 10px;
   font-weight: 300;
@@ -166,7 +167,7 @@
   -o-transition: all 0.3s ease; 
 }
 
-.userinviterequests_inner_container input[type="submit"]:hover {
+.userinviterequests_inner_container .action_btn_section input[type="submit"]:hover {
   background-color: #E34B51 !important;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
@@ -221,8 +222,41 @@
 
 
 
+// ---------------------------
+//   workings
+// ---------------------------
 
 
+
+.userinviterequests_inner_container .action_btn_section_attending {
+  float: right;
+}
+
+.userinviterequests_inner_container .action_btn_section_attending input[type="submit"] {
+  font-family: 'Lato', sans-serif;
+  font-size: 10px;
+  font-weight: 300;
+  background: #000;
+  text-transform: capitalize;
+  color: #fff !important;
+  padding: 11px 0px;
+  width: 71px;
+  letter-spacing: 1px;
+  display: inline-block;
+  margin-right: 5px;
+  border: none;
+  background-color: rgba(47, 63, 91, 0.5) !important;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease; 
+}
+
+.userinviterequests_inner_container .action_btn_section_attending input[type="submit"]:hover {
+  background-color: #E34B51 !important;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease; 
+}
 
 
 

@@ -49,6 +49,19 @@
   text-transform: capitalize;
 }
 
+.invite_user_modal .invite_form .invite_message_info {
+  font-family: 'Lato', sans-serif;
+  font-size: 14px !important;
+  font-weight: 300 !important;
+  background-color: rgba(88, 205, 166, 0.2) !important;
+  padding: 5px 15px;
+  margin-bottom: 15px;
+}
+
+.invite_user_modal .invite_form #invite_social_id {
+  margin-bottom: 0px;
+}
+
 .invite_user_modal input[type="submit"] {
   font-family: 'Lato', sans-serif;
   font-size: 13px;
@@ -72,6 +85,9 @@
   -moz-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
 }
+
+
+
 
 
 

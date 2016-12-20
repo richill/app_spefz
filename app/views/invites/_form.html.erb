@@ -5,6 +5,9 @@
     <div class="invite_message">Hi <span class="invitation_names"><%= "#{user.firstname}" %></span>! invite <span class="invitation_names"><%= "#{@user.firstname} #{@user.lastname}" %></span> to a social</div class="invite_message">
 
     <%= f.association :social, collection: sociallist_for(user, @user), prompt: "select a social", label: "Listed Socials" %>
+    <div class="invite_message_info">
+      <div>Note: No Socials displaying? It could mean you have already sent invites on all your socials to <span class="invitation_names"><%= "#{@user.firstname} #{@user.lastname}" %></span>.</div>
+    </div>
 
     <!-- hidden_field -->
     <label class="hide">user</label>

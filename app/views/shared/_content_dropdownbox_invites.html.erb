@@ -34,12 +34,12 @@
             </div>
 
             <% if invite.social.current_user_attending?(current_user) %>
-              <div class="action_btn_section"> 
-                <span class="btn btn_decline_invite"><%= link_to 'Attending', "#" %></span>
+              <div class="action_btn_section_attending"> 
+                <span class="btn btn_decline_invite"><%= link_to 'Attending', user_social_path(invite.social.user, invite.social) %></span>
                 <%= form_for invite, url: invite_path(invite), method: :put do |f| %>
                   <%= f.hidden_field :user_id, value: invite.user.id %>
                   <%= f.hidden_field :invitee_id, value: current_user.id %>
-                  <%= submit_tag "Decline", class: "btn btn_decline_invite" %>
+                  <%= submit_tag "Remove", class: "btn btn_decline_invite" %>
                 <% end %>
               </div>
             <% else %>
@@ -51,8 +51,6 @@
                 <% end %>
               </div>
             <% end %>
-
-
 
           </li>
           <div class="clear"></div>
