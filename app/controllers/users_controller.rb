@@ -88,6 +88,11 @@ class UsersController < ApplicationController
     @friends = @search.result(distinct: true)
   end
 
+  def following
+    @search = current_user.friends.search(params[:q])
+    @friends = @search.result(distinct: true)
+  end
+
   private
     def setup_friends
       @user = User.find(current_user.id)

@@ -8,19 +8,19 @@
           <li class="active"> 
             <%= link_to activities_path do %>
               <i class="fa fa-server" aria-hidden="true"></i>
-              <span>network</span>
+              <span>network [<%= current_user.friends.count %>]</span>
             <% end %>
           </li>
           <li>
             <%= link_to networks_activities_path do %>
               <i class="fa fa-users" aria-hidden="true"></i>
-              <span>following</span>
+              <span>following [<%= current_user.followings.count %>]</span>
             <% end %>
           </li>
           <li>
             <%= link_to followings_activities_path do %>
               <i class="fa fa-users" aria-hidden="true"></i>
-              <span>followers</span>
+              <span>followers [<%= current_user.followers.count %>]</span>
             <% end %>
           </li>
         </ul> 
