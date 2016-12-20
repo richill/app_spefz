@@ -1,0 +1,7 @@
+<%= form_for(current_user.active_relationships.find_by(followed_id: user.id), html: { method: :delete }, remote: true) do |f| %>
+  <%= button_tag type: 'submit', class: "", id: "" do %>
+    <span data-tooltip aria-haspopup="true" data-options="disable_for_touch:true" class="tip-right" title="Un-Follow">
+    <i class="fa fa-refresh" aria-hidden="true"></i>
+    </span>
+  <% end %>
+<% end %>

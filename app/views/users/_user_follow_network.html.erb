@@ -1,0 +1,8 @@
+<%= form_for(current_user.active_relationships.build, remote: true) do |f| %>
+  <div><%= hidden_field_tag :followed_id, user.id %></div>
+  <%= button_tag type: 'submit', class: "", id: "" do %>
+    <span data-tooltip aria-haspopup="true" data-options="disable_for_touch:true" class="tip-right" title="Follow">
+    <i class="fa fa-user" aria-hidden="true"></i>
+    </span>
+  <% end %>
+<% end %>
