@@ -1,28 +1,40 @@
-<% if current_user.requested_friends.present? %>
+<% if current_user.recieved_invites.present? %>
   <div class="userinviterequests_inner_container">
     <div class="content_list">
       <ul>
-        <% current_user.requested_friends.each do |requester| %>
+        <% current_user.recieved_invites.each do |invite| %>
           <li>
 
             <div class="image_section">
               <span class="img_cover">
-                <% if requester.image_url.present? %>
-                  <%= link_to(image_tag(requester.image_url, :alt =>  "image", :class =>"#", id: ""), user_path(requester)) %>
+                <% if invite.social.image_url.present? %>
+                  <%= link_to(image_tag(invite.social.image_url, :alt =>  "image", :class =>"#", id: ""), user_social_path(invite.social.user, invite.social)) %>
                 <% else %>
-                  <%= link_to(image_tag("img-profile-image-default.png", :alt =>  "image", :class =>"#", id: ""), user_path(requester)) %>
+                  <%= link_to(image_tag("img-profile-image-default.png", :alt =>  "image", :class =>"#", id: ""), user_social_path(invite.social.user, invite.social)) %>
                 <% end %>
               </span>
             </div>
 
-            <div class="user_info_section">
-              <div class="friend_request_name"><%= link_to truncate("#{requester.firstname} #{requester.lastname}", length: 23), user_path(requester) %></div>
-              <div class="user_profession"><%= truncate(requester.profession, length: 23) %></div>
+            <div class="info_section">
+              <div class="title"><%= link_to truncate("#{invite.social.title}", length: 30), user_social_path(invite.social.user, invite.social) %></div>
+              <div class="date_country_info">
+                <span><%= invite.social.date.strftime("%a, %d %b %Y") %></span> 
+                <span class="divider">|</span> 
+                <span><%= invite.social.time.strftime("%I:%M %p") %></span>
+              </div>
+              <div class="date_country_info">
+                <span><%= invite.social.category_country.name %></span> 
+                <span>-</span> 
+                <span><%= invite.social.city %></span>
+              </div>
+              <div class="date_country_info"> 
+                <span>invited by:</span>
+                <span><%= link_to invite.user.firstname, user_path(invite.user) %></span>
+              </div>
             </div>
 
             <div class="action_btn_section"> 
-              <span class="btn btn_add_friend"><%= link_to 'Accept', friendship_path(id: @user, user_id: current_user, friend_id: requester), controller: "friendships", action: "update", method: :put %></span>
-              <span class="btn btn_remove_friend"><%= link_to 'Decline', friendship_path(id: @user, user_id: current_user, friend_id: requester), controller: "friendships", action: "decline", method: :delete %></span>
+              <span class="btn btn_decline_invite"><%= link_to 'Decline', "#" %></span>
             </div>
 
           </li>
