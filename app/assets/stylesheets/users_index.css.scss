@@ -313,6 +313,7 @@
   margin: 0px !important;
   padding: 10px 0px !important;
   width: 38px;
+  height: 38px;
   float: right;
   margin-left: 5px !important;
   border-radius: 0px !important;
@@ -323,6 +324,7 @@
   margin: 0px !important;
   padding: 10px 0px !important;
   width: 38px;
+  height: 38px;
   float: right;
   margin-left: 5px !important;
   border-radius: 0px !important;
@@ -332,7 +334,6 @@
 .members_section .btn_follow button:hover {
   background-color: #2F3F5B !important;
 }
-
 
 .members_section .fa-user-plus {
   font-size: 15px;
@@ -384,16 +385,6 @@
   -o-transition: all 0.3s ease;
 }
 
-
-
-
-
-
-
-
-
-
-
 .members_section .btn_request .icon_user_users {
   float: right;
   margin-left: 5px !important;
@@ -420,33 +411,31 @@
   -o-transition: all 0.3s ease;
 }
 
+.members_section .btn_request .icon_user_plus_request_recieved {
+  float: right;
+  margin-left: 5px !important;
+}
 
+.members_section .btn_request .icon_user_plus_request_recieved .fa-user-plus {
+  font-size: 12px !important;
+  margin: 0px !important;
+  padding: 13px 0px !important;
+  width: 38px;
+  text-align: center;
+  color: #fff !important;
+  border-radius: 0px !important;
+  background-color: #58CDA6 !important;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.members_section .btn_request .icon_user_plus_request_recieved .fa-user-plus:hover {
+  background-color: rgba(238, 170, 2, 0.6) !important;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
 
 .members_section .btn_request .icon_user_plus {
   float: right;
@@ -501,37 +490,6 @@
 .members_section .user_roles .divider {
   margin: 5px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
