@@ -1,7 +1,7 @@
 <span class="btn_request">
   <% if current_user.friended?(user) %>
     <span class="icon_user_times">
-      <!-- displays 'Cancel Request' when current_user has sent user a request -->
+      <!-- displays 'Cancel Request' when current_user has sent user a request [current_user sent request] -->
       <span data-tooltip aria-haspopup="true" data-options="disable_for_touch:true" class="tip-right" title="Request Sent - Cancel Request">
       <%= link_to "", friendship_path(id: user, user_id: current_user, friend_id: user), controller: "friendships", action: "cancel", method: :delete, class: "btn btn_friend_request_cancel_submit fa fa-user-times " %>
       </span>
@@ -11,20 +11,15 @@
     <span class="icon_user_users">
       <span data-tooltip aria-haspopup="true" data-options="disable_for_touch:true" class="tip-right" title="Remove From Network">
         <%= link_to "", friendship_path(id: user, user_id: current_user, friend_id: user), controller: "friendships", action: "decline", method: :delete, class: "btn btn_friend_request_cancel_submit fa fa-users"  %>
-        </span>
-      </span>
-
-
-  <% elsif user.friended?(current_user) %>
-    <!-- displays 'Accept Request' when current_user has recieved a request from user -->
-    <span class="icon_user_plus_request_recieved">
-      <span data-tooltip aria-haspopup="true" data-options="disable_for_touch:true" class="tip-right" title="Request Recieved - Accept Request">
-      <%= link_to "", friendship_path(id: user, user_id: current_user, friend_id: user), controller: "friendships", action: "cancel", method: :delete, class: "btn btn_friend_request_cancel_submit fa fa-user-plus" %>
       </span>
     </span>
-
-
-
+  <% elsif user.friended?(current_user) %>
+    <!-- displays 'Accept Request' when user has sent current_user a request [current_user recieved request] -->
+    <span class="icon_user_plus_request_recieved">
+      <span data-tooltip aria-haspopup="true" data-options="disable_for_touch:true" class="tip-right" title="Request Recieved - Accept Request">
+        <%= link_to "", friendship_path(id: user, user_id: current_user, friend_id: user), controller: "friendships", action: "update", method: :put, class: "btn btn_friend_request_cancel_submit fa fa-user-plus" %>
+      </span>
+    </span>
   <% else %>
     <span class="icon_user_plus">
       <!-- displays 'Add To Network' when user has not added user to network -->
