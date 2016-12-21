@@ -27,9 +27,21 @@
             <% if @user != current_user %>
               <span class="socialicon_cover_fb"><%= link_to '', '#', class: "fa fa-envelope" %></span> 
             <% end %>
-            <span class="socialicon_cover_in"><%= link_to '', '#', class: "fa fa-linkedin" %></span> 
-            <span class="socialicon_cover_fb"><%= link_to '', '#', class: "fa fa-facebook" %></span> 
-            <span class="socialicon_cover_tt"><%= link_to '', '#', class: "fa fa-twitter" %></span>
+            <span class="socialicon_cover_in hide"><%= link_to '', '#', class: "fa fa-linkedin" %></span> 
+            <span class="socialicon_cover_fb">
+              <% if @user.link_fb.present? %>
+                <%= link_to '', "#{@user.link_fb}", class: "fa fa-facebook", target: "_blank" %>
+              <% else %>
+                <%= link_to '', user_path(@user), class: "fa fa-facebook", target: "_blank" %>
+              <% end %>
+            </span> 
+            <span class="socialicon_cover_tt">
+              <% if @user.link_twitter.present? %>
+                <%= link_to '', "#{@user.link_twitter}", class: "fa fa-twitter", target: "_blank" %>
+              <% else %>
+                <%= link_to '', user_path(@user), class: "fa fa-twitter", target: "_blank" %>
+              <% end %>
+            </span>
           </div>
         </div>
       </div>
