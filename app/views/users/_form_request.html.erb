@@ -1,20 +1,33 @@
 <span class="btn_request">
   <% if current_user.friended?(user) %>
     <span class="icon_user_times">
-      <!-- render 'user_friend_request_cancel' -->
+      <!-- displays 'Cancel Request' when current_user has sent user a request -->
       <span data-tooltip aria-haspopup="true" data-options="disable_for_touch:true" class="tip-right" title="Request Sent - Cancel Request">
       <%= link_to "", friendship_path(id: user, user_id: current_user, friend_id: user), controller: "friendships", action: "cancel", method: :delete, class: "btn btn_friend_request_cancel_submit fa fa-user-times " %>
       </span>
     </span>
   <% elsif current_user.friends?(user) %>
+    <!-- displays 'Remove From Network' when current_user already has user in their network -->
     <span class="icon_user_users">
       <span data-tooltip aria-haspopup="true" data-options="disable_for_touch:true" class="tip-right" title="Remove From Network">
         <%= link_to "", friendship_path(id: user, user_id: current_user, friend_id: user), controller: "friendships", action: "decline", method: :delete, class: "btn btn_friend_request_cancel_submit fa fa-users"  %>
         </span>
       </span>
+
+      
+  <% elsif current_user.friended?(user) %>
+    <!-- displays 'Accept Request' when current_user has recieved a request from user -->
+    <span class="icon_user_users">
+      <span data-tooltip aria-haspopup="true" data-options="disable_for_touch:true" class="tip-right" title="Request Recieved - Accept Request">
+      <%= link_to "", friendship_path(id: user, user_id: current_user, friend_id: user), controller: "friendships", action: "cancel", method: :delete, class: "btn btn_friend_request_cancel_submit fa fa-user-times " %>
+      </span>
+    </span>
+
+
+
   <% else %>
     <span class="icon_user_plus">
-      <!-- render 'user_friend_request' -->
+      <!-- displays 'Add To Network' when user has not added user to network -->
       <span data-tooltip aria-haspopup="true" data-options="disable_for_touch:true" class="tip-right" title="Add To Network">
       <%= link_to "", 
               { controller: "friendships", 
