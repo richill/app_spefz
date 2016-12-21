@@ -54,7 +54,7 @@
                         </div>
                       <% end %>
                       <div class="feed subscribed">
-                        <%= link_to user_social_path(social.user, social) do %>
+                        <%= link_to social_path(social) do %>
                           <div class="social_cover">
                             <div class="social_header">
                               <div class="social_date"><i class="fa fa-calendar date"></i> <%= social.date.strftime("%a, %d %b %Y") %> | <%= social.time.strftime("%I:%M %p") %></div>
@@ -72,7 +72,7 @@
                           </div>
                         <% end %>
 
-                        <div class="social_img"><%= link_to(image_tag("#{social.image_url}", :alt =>  "image", :class =>"#"), user_social_path(social.user, social)) %></div>
+                        <div class="social_img"><%= link_to(image_tag("#{social.image_url}", :alt =>  "image", :class =>"#"), social_path(social)) %></div>
                         <div class="social_user">
                           <% if social.user.image.present? %>
                             <div><%= link_to(image_tag(social.user.image_url), user_path(social.user)) %></div>
@@ -144,7 +144,7 @@
                                   </span> -->
                                 <%# elsif %>
                                 <span data-tooltip aria-haspopup="true" data-options="disable_for_touch:true" class="tip-right" title="<%="#{social.available_places_BothAndOnly_men_and_women}"%> places left">
-                                  <%= link_to "+#{social.available_places_BothAndOnly_men_and_women}", user_social_path(social.user, social), class: "#" %>
+                                  <%= link_to "+#{social.available_places_BothAndOnly_men_and_women}", social_path(social), class: "#" %>
                                 </span>
                                 <%# end %>
                               </li>

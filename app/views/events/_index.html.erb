@@ -57,15 +57,15 @@
                     <!-- sold out -->
                     <!-- left_evt content -->
                     <div class="left_evt">
-                      <%= link_to user_event_path(event.user, event) do %>
+                      <%= link_to event_path(event) do %>
                         <% if current_user.admin_pa_management_group || current_user.pa_event_mgt_group %>
                           <div class="img_shade_cover"><span><%= link_to '', edit_user_event_path(event.user, event), class: "fa fa-pencil-square-o" %></span></div>
                         <% end %>
                         <div class="img_cover">
                           <% if event.image.present? %>
-                            <%= link_to(image_tag("#{event.image_url}", :alt =>  "image", :class =>"#"), user_event_path(event.user, event)) %>
+                            <%= link_to(image_tag("#{event.image_url}", :alt =>  "image", :class =>"#"), event_path(event)) %>
                           <% else %>
-                            <%= link_to(image_tag("img_feed_07.png", :alt =>  "image", :class =>"#"), user_event_path(event.user, event)) %>
+                            <%= link_to(image_tag("img_feed_07.png", :alt =>  "image", :class =>"#"), event_path(event)) %>
                           <% end %>
                         </div>
                       <% end %>
@@ -73,7 +73,7 @@
 
                     <!-- middle_evt content -->
                     <div class="middle_evt">
-                      <div class="title"><%= link_to "#{event.title}", user_event_path(event.user, event) %></div>
+                      <div class="title"><%= link_to "#{event.title}", event_path(event) %></div>
                       <div class="info"><i class="fa fa-map-marker" aria-hidden="true"></i> <%= event.venuename %></div>
                       <div class="info"><i class="fa fa-calendar" aria-hidden="true"></i> <%= event.date.strftime("%A, %d %b") %></div>
                       <div class="info"><i class="fa fa-clock-o" aria-hidden="true"></i> <%= event.time.strftime("%H:%M") %>h - <%= event.time_end.strftime("%H:%M") %>h</div>
@@ -133,12 +133,12 @@
                         <div class="month"><span><%= event.date.strftime("%b") %></span> <span class="divider">|</span> <span><%= event.date.strftime("%a") %></span></div>
                         
                         <% if event.current_user_attending_paid?(current_user) %>
-                          <div class="btn_booked"><%= link_to "booked!", user_event_path(event.user, event) %></div>
+                          <div class="btn_booked"><%= link_to "booked!", event_path(event) %></div>
                         <% else %>
                           <% if event.sold_out? %>
-                            <div class="btn_soldout"><%= link_to "sold out!", user_event_path(event.user, event) %></div>
+                            <div class="btn_soldout"><%= link_to "sold out!", event_path(event) %></div>
                           <% else %>
-                            <div class="btn_booknow"><%= link_to "book now!", user_event_path(event.user, event) %></div>
+                            <div class="btn_booknow"><%= link_to "book now!", event_path(event) %></div>
                           <% end %>
                         <% end %>
                         

@@ -103,7 +103,7 @@
                     <tr>
                       <td><%= payment.user.reference %></td>
                       <td><%= payment.email %></td>
-                      <td><%= link_to payment.event.title, user_event_path(payment.event, payment.user) %></td>
+                      <td><%= link_to payment.event.title, event_path(payment.event) %></td>
                       <td>£<%= number_with_precision(payment.event.price, precision: 2) %></td>
                       <td><%= payment.reference %></td>
                       <td><%= payment.event_payment_date.strftime("%a, %d %b %Y") %> | <%= payment.event_payment_date.strftime("%I:%M %p") %></td>
