@@ -695,7 +695,8 @@
             <!-- events_controller -->
             <li class="listed_content">#.] <span class="listed_content_header">events_controller:</span>
               <ul>
-                <li><u><b>can</b> view</u>: can view index / show / attendants </li>
+                <li><u><b>can</b> view</u>: can view index / show</li>
+                <li><u><b>cannot</b> view</u>: cannot view attendants</li>
                 <li><u><b>cannot</b> action</u>: cannot edit / create / update</li>
                 <li><u><b>cannot</b> action</u>: cannot destroy</li> <!-- cannot destroy but can close an event [boolean] -->
               </ul>
@@ -820,10 +821,25 @@
         <div>
           <div class="auth_header">[authentication] can & cannot actions</div>
           <ul>
+            <!-- activities_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">activities_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can create</li>
+                <li><u><b>cannot</b> action</u>: cannot edit / update / destroy </li>
+                <li><u><b>can</b> view</u>: can view index / networks / followings </li>
+              </ul>
+            </li>
             <!-- attending_socials_controller -->
             <li class="listed_content">#.] <span class="listed_content_header">attending_socials_controller:</span>
               <ul>
                 <li><u><b>can</b> action</u>: can create / destroy </li>
+              </ul>
+            </li>
+            <!-- blogs_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">blogs_controller:</span>
+              <ul>
+                <li><u><b>cannot</b> action</u>: cannot edit / create / update / destroy</li>
+                <li><u><b>can</b> view</u>: can view index / show / venues / networking_tips / dating_tips / spefz_news</li>
               </ul>
             </li>
             <!-- comments_controller -->
@@ -844,8 +860,10 @@
             <!-- events_controller -->
             <li class="listed_content">#.] <span class="listed_content_header">events_controller:</span>
               <ul>
-                <li><u><b>can</b> view</u>: can view index / show </li>
-                <li><u><b>cannot</b> action</u>: cannot edit / create / update /destroy  </li>
+                <li><u><b>can</b> view</u>: can view index / show</li>
+                <li><u><b>cannot</b> view</u>: cannot view attendants</li>
+                <li><u><b>cannot</b> action</u>: cannot edit / create / update</li>
+                <li><u><b>cannot</b> action</u>: cannot destroy</li> <!-- cannot destroy but can close an event [boolean] -->
               </ul>
             </li>
             <!-- favourite_events_controller -->
@@ -864,6 +882,21 @@
             <li class="listed_content">#.] <span class="listed_content_header">friendships_controller:</span>
               <ul>
                 <li><u><b>can</b> action</u>: can create / destroy </li>
+              </ul>
+            </li>
+            <!-- hosts_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">hosts_controller:</span>
+              <ul>
+                <li><u><b>cannot</b> action</u>: cannot edit / create / update / destroy</li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show</li>
+              </ul>
+            </li>
+            <!-- invites_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">invites_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can create</li>
+                <li><u><b>cannot</b> action</u>: cannot edit / update / destroy</li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show</li>
               </ul>
             </li>
             <!-- messages_controller -->
@@ -905,7 +938,7 @@
             <!-- static_pages_controller -->
             <li class="listed_content">#.] <span class="listed_content_header">static_pages_controller:</span>
               <ul>
-                <li><u><b>can</b> view</u>: can view homepg </li>
+                <li><u><b>can</b> view</u>: can view aboutpg / accountpg / cancellationsrefundpg / cookiepg / errorpermissionpg / errorpg / faqspg / helppg / homepg / imagepg / messagesentpg / membershippg / partnerspg / paymentqueriespg / privacypg / termspg</li>
                 <li><u><b>cannot</b> view</u>: cannot view landingpg / notepg </li>
               </ul>
             </li>
@@ -920,9 +953,9 @@
             <!-- users_controller -->
             <li class="listed_content">#.] <span class="listed_content_header">users_controller:</span>
               <ul>
-                <li><u><b>can</b> action</u>: can edit / create / update </li>
-                <li><u><b>can</b> view</u>: can view show / dashboard</li>
-                <li><u><b>cannot</b> view</u>: cannot view index </li>
+                <li><u><b>can</b> action</u>: can edit / create / update</li>
+                <li><u><b>can</b> view</u>: can view show / account / membership / settings / network / followings / followers</li>
+                <li><u><b>cannot</b> view</u>: cannot view index / dashboard / analytics / company / stats_users / stats_socials / stats_events / transactions / stats_blogs / inquiries</li>
                 <li><u><b>cannot</b> action</u>: cannot destroy </li>
               </ul>
             </li>
