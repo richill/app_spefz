@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  resources :reports
+
   resources :invites
 
   resources :blogs do

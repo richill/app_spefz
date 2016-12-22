@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161222205429) do
+ActiveRecord::Schema.define(version: 20161222205845) do
 
   create_table "activities", force: :cascade do |t|
     t.integer  "trackable_id"
@@ -368,6 +368,16 @@ ActiveRecord::Schema.define(version: 20161222205429) do
   add_index "relationships", ["followed_id"], name: "index_relationships_on_followed_id"
   add_index "relationships", ["follower_id", "followed_id"], name: "index_relationships_on_follower_id_and_followed_id", unique: true
   add_index "relationships", ["follower_id"], name: "index_relationships_on_follower_id"
+
+  create_table "reports", force: :cascade do |t|
+    t.text     "content"
+    t.integer  "category_report_id"
+    t.integer  "event_id"
+    t.integer  "social_id"
+    t.integer  "user_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+  end
 
   create_table "signups", force: :cascade do |t|
     t.string   "name"
