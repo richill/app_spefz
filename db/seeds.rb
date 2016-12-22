@@ -107,10 +107,10 @@ cr03 = CategoryRole.create!(name:'Client')
 CategoryManagementgroup.delete_all
 cmr01 = CategoryManagementgroup.create!(name:'Account Group')
 cmr02 = CategoryManagementgroup.create!(name:'Administration Group')
-cmr03 = CategoryManagementgroup.create!(name:'Client Group') #not done
+cmr03 = CategoryManagementgroup.create!(name:'Client Group')
 cmr04 = CategoryManagementgroup.create!(name:'Client Guest Group') #users who do not need to subscribe use site
 cmr05 = CategoryManagementgroup.create!(name:'Development Group')
-cmr06 = CategoryManagementgroup.create!(name:'Dummy Group') #not done
+cmr06 = CategoryManagementgroup.create!(name:'Dummy Group')
 cmr07 = CategoryManagementgroup.create!(name:'Event Management Group')
 cmr08 = CategoryManagementgroup.create!(name:'Management Group') #superior group
 cmr09 = CategoryManagementgroup.create!(name:'Sales/Marketing Group')
