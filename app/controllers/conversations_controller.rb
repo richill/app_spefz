@@ -56,7 +56,6 @@ class ConversationsController < ApplicationController
 
 
   private
-
   def setup_friends
     @user = User.find(current_user.id)
     @friend = User.find_by_email(params[:id])
