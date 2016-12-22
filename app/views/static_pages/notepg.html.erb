@@ -166,7 +166,7 @@
             <!-- static_pages_controller -->
             <li class="listed_content">#.] <span class="listed_content_header">static_pages_controller:</span>
               <ul>
-                <li><u><b>can</b> view</u>: can view homepg / landingpg / notepg </li>
+                <li><u><b>can</b> view</u>: can view aboutpg / accountpg / cancellationsrefundpg / cookiepg / errorpermissionpg / errorpg / faqspg / helppg / homepg / imagepg / landingpg / messagesentpg / notepg / membershippg / partnerspg / paymentqueriespg / privacypg / termspg</li>
               </ul>
             </li>
             <!-- subscriptions_controller -->
@@ -323,7 +323,7 @@
             <!-- static_pages_controller -->
             <li class="listed_content">#.] <span class="listed_content_header">static_pages_controller:</span>
               <ul>
-                <li><u><b>can</b> view</u>: can view homepg / landingpg / notepg </li>
+                <li><u><b>can</b> view</u>: can view aboutpg / accountpg / cancellationsrefundpg / cookiepg / errorpermissionpg / errorpg / faqspg / helppg / homepg / imagepg / landingpg / messagesentpg / notepg / membershippg / partnerspg / paymentqueriespg / privacypg / termspg</li>
               </ul>
             </li>
             <!-- subscriptions_controller -->
@@ -416,13 +416,6 @@
                 <li><u><b>can</b> action</u>: can create / destroy </li>
               </ul>
             </li>
-            <!-- messages_controller -->
-            <li class="listed_content">#.] <span class="listed_content_header">messages_controller:</span>
-              <ul>
-                <li><u><b>can</b> action</u>: can inbox / sent / trash </li>
-                <li><u><b>can</b> view</u>: can view inbox / sent / trash </li>
-              </ul>
-            </li>
             <!-- hosts_controller -->
             <li class="listed_content">#.] <span class="listed_content_header">hosts_controller:</span>
               <ul>
@@ -430,20 +423,21 @@
                 <li><u><b>cannot</b> view</u>: cannot view index / show</li>
               </ul>
             </li>
-
             <!-- invites_controller -->
             <li class="listed_content">#.] <span class="listed_content_header">invites_controller:</span>
               <ul>
-                <li><u><b>can</b> action</u>: can edit / create / update / destroy </li>
-                <li><u><b>can</b> view</u>: can view index / show</li>
+                <li><u><b>can</b> action</u>: can create</li>
+                <li><u><b>cannot</b> action</u>: cannot edit / update / destroy</li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show</li>
               </ul>
             </li>
-
-
-
-
-
-
+            <!-- messages_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">messages_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can inbox / sent / trash </li>
+                <li><u><b>can</b> view</u>: can view inbox / sent / trash </li>
+              </ul>
+            </li>
             <!-- payments_controller -->
             <li class="listed_content">#.] <span class="listed_content_header">payments_controller:</span>
               <ul>
@@ -477,7 +471,7 @@
             <!-- static_pages_controller -->
             <li class="listed_content">#.] <span class="listed_content_header">static_pages_controller:</span>
               <ul>
-                <li><u><b>can</b> view</u>: can view homepg </li>
+                <li><u><b>can</b> view</u>: can view aboutpg / accountpg / cancellationsrefundpg / cookiepg / errorpermissionpg / errorpg / faqspg / helppg / homepg / imagepg / messagesentpg / membershippg / partnerspg / paymentqueriespg / privacypg / termspg</li>
                 <li><u><b>cannot</b> view</u>: cannot view landingpg / notepg </li>
               </ul>
             </li>
@@ -492,8 +486,9 @@
             <!-- users_controller -->
             <li class="listed_content">#.] <span class="listed_content_header">users_controller:</span>
               <ul>
-                <li><u><b>can</b> action</u>: can edit / create / update </li>
-                <li><u><b>can</b> view</u>: can view index / show / dashboard</li>
+                <li><u><b>can</b> action</u>: can edit / create / update</li>
+                <li><u><b>can</b> view</u>: can view index / show / account / membership / settings / network / followings / followers</li>
+                <li><u><b>cannot</b> view</u>: cannot view dashboard / analytics / company / stats_users / stats_socials / stats_events / transactions / stats_blogs / inquiries</li>
                 <li><u><b>cannot</b> action</u>: cannot destroy </li>
               </ul>
             </li>
@@ -572,13 +567,6 @@
                 <li><u><b>can</b> action</u>: can create / destroy </li>
               </ul>
             </li>
-            <!-- messages_controller -->
-            <li class="listed_content">#.] <span class="listed_content_header">messages_controller:</span>
-              <ul>
-                <li><u><b>can</b> action</u>: can inbox / sent / trash </li>
-                <li><u><b>can</b> view</u>: can view inbox / sent / trash </li>
-              </ul>
-            </li>
             <!-- hosts_controller -->
             <li class="listed_content">#.] <span class="listed_content_header">hosts_controller:</span>
               <ul>
@@ -586,7 +574,21 @@
                 <li><u><b>cannot</b> view</u>: cannot view index / show</li>
               </ul>
             </li>
-            
+            <!-- invites_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">invites_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can create</li>
+                <li><u><b>cannot</b> action</u>: cannot edit / update / destroy</li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show</li>
+              </ul>
+            </li>
+            <!-- messages_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">messages_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can inbox / sent / trash </li>
+                <li><u><b>can</b> view</u>: can view inbox / sent / trash </li>
+              </ul>
+            </li>
             <!-- payments_controller -->
             <li class="listed_content">#.] <span class="listed_content_header">payments_controller:</span>
               <ul>
@@ -620,7 +622,7 @@
             <!-- static_pages_controller -->
             <li class="listed_content">#.] <span class="listed_content_header">static_pages_controller:</span>
               <ul>
-                <li><u><b>can</b> view</u>: can view homepg </li>
+                <li><u><b>can</b> view</u>: can view aboutpg / accountpg / cancellationsrefundpg / cookiepg / errorpermissionpg / errorpg / faqspg / helppg / homepg / imagepg / messagesentpg / membershippg / partnerspg / paymentqueriespg / privacypg / termspg</li>
                 <li><u><b>cannot</b> view</u>: cannot view landingpg / notepg </li>
               </ul>
             </li>
