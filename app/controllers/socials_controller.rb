@@ -13,7 +13,8 @@ class SocialsController < ApplicationController
       @search = Social.search(params[:q])
       @socials = @search.result(distinct: true).live_socials.open_socials
     end
-    @premium_plan = Subscription.find_by(title:"premium") 
+    @premium_plan = Subscription.find_by(title:"premium")
+     @report = Report.new
   end
 
   def user_socials
