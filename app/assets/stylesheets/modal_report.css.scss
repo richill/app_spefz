@@ -1,11 +1,200 @@
 /*=========================================
     Section: socials page
+    File: views / shared / _modal_report.html.erb
+    File: views / reports / _form_social.html.erb
     File: views / socials / _index.html.erb
   =========================================*/
 
-// .blogs_show_section .blogs_inner_section {
-//   background-color: #fff !important;
-//   background: url("img_background_main.png") repeat;
-//   padding: 0px !important;
-//   min-height: 822px;
-// }
+.report_modal {
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  border-radius: 0px !important;
+  border: 0px !important;
+  padding: 0px !important;
+}
+
+#myModal-report-header {
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  padding: 5px 15px !important;
+  font-size: 35px;
+  border-bottom: 2px solid #58CDA6;
+  text-transform: capitalize;
+  color: #fff !important;
+  background-color: #283041;
+}
+
+.report_modal .content_info {
+  padding: 8px 20px !important;
+  min-height: 100px;
+}
+
+.report_modal .cancel_button {
+  color: #fff !important;
+}
+
+.report_modal ul {
+  margin: 0px;
+  list-style-type: none;
+}
+
+.report_modal ul li {
+  background-color: rgba(47, 63, 91, 0.05) !important;
+  padding: 5px;
+  margin-bottom: 5px;
+  height: 74px;
+}
+
+.report_modal .image_section {
+  float: left;
+}
+
+.report_modal .img_cover {
+  margin: 3px;
+  padding: 4px;
+  border-radius: 5px;
+  background-color: rgba(88, 205, 166, 0.2) !important;
+  display: inline-block;
+}
+
+.report_modal .img_cover img {
+  height: 48px;
+  width: 48px;
+  border-radius: 200px;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease;
+}
+
+.report_modal .user_info_section {
+  padding: 12px;
+  float: left;
+  text-align: left;
+}
+
+.report_modal .follower_following_name a {
+  font-family: 'Lato', sans-serif;
+  font-weight: bold;
+  text-transform: capitalize;
+  color: #283041 !important;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease;
+}
+
+.report_modal .follower_following_name a:hover {
+  color: #E34B51 !important;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease;
+}
+
+.report_modal .user_profession {
+  font-family: 'Lato', sans-serif;
+  font-size: 12px;
+  font-weight: 300;
+  text-transform: capitalize;
+  text-align: left;
+}
+
+.report_modal .action_btn_section {
+  float: right;
+  padding: 22px 0px;
+}
+
+.report_modal .btn a {
+  font-family: 'Lato', sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  background: #000;
+  text-transform: capitalize;
+  color: #fff !important;
+  padding: 11px 25px;
+  letter-spacing: 1px;
+  margin-top: 11px;
+  margin-right: 5px;
+  background-color: rgba(47, 63, 91, 0.5) !important;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease;
+}
+
+.report_modal .btn a:hover {
+  background-color: #E34B51 !important;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease;
+}
+
+.report_modal .event_title {
+  font-weight: bold;
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+.report_modal label {
+  font-family: 'Lato', sans-serif;
+  font-size: 15px !important;
+  font-weight: 300 !important;
+  text-transform: capitalize;
+}
+
+.report_modal .checkbox {
+  float: left;
+  margin-right: 10px;
+}
+
+.report_modal input[type="checkbox"] {
+  margin-right: 5px;
+  margin-bottom: 10px;
+}
+
+.report_modal .listed_hosts {
+  background-color: rgba(88, 205, 166, 0.2) !important;
+  text-transform: capitalize;
+  padding: 15px;
+  margin-bottom: 15px;
+}
+
+.report_modal .host_event {
+  margin-bottom: 8px;
+}
+
+.report_modal input[type="submit"] {
+  font-family: 'Lato', sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  background: #000;
+  text-transform: capitalize;
+  color: #fff !important;
+  padding: 15px 0px;
+  letter-spacing: 1px;
+  border: none;
+  width: 100%;
+  background-color: #E34B51 !important;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+
+.report_modal input[type="submit"]:hover {
+  background-color: rgba(47, 63, 91, 0.5) !important;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

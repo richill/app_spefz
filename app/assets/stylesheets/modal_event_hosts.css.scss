@@ -1,5 +1,5 @@
 /*=========================================
-    Section: event [age | event host modal
+    Section: event page | event host modal
     File: views / shared / _modal_event_hosts.html.erb
     File: views / events / _show.html.erb
   =========================================*/
@@ -27,7 +27,7 @@
 }
 
 .eventhosts_inner_container .content_list {
-  padding: 8px !important;
+  padding: 8px 20px !important;
   min-height: 100px;
 }
 

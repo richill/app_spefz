@@ -2,14 +2,15 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
+    <%= f.association :category_report, collection: CategoryReport.all, prompt: "select a category" %>
+    <%# f.input :category_report_id %>
     <%= f.input :content %>
-    <%= f.input :category_report_id %>
-    <%= f.input :event_id %>
-    <%= f.input :social_id %>
-    <%= f.input :user_id %>
+    <%= f.hidden_field :event_id %>
+    <%= f.hidden_field :social_id %>
+    <%= f.hidden_field :user_id %>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.button :submit, "Send" %>
   </div>
 <% end %>
