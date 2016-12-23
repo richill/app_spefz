@@ -20,7 +20,6 @@ class Social < ActiveRecord::Base
   belongs_to :category_country
   belongs_to :category_invite
   belongs_to :category_quantitygender
-  belongs_to :category_report
 
   mount_uploader :image, ImageUploader
   before_create :generate_reference_number
