@@ -1,7 +1,7 @@
 <div class="report_modal">
   <div id="<%= dom_id(social) %>_report" class="reveal-modal report_modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
     <h2 id="myModal-report-advertsearchpg">Report this social | <%= social.title %></h2>
-    <div><%= render partial: "reports/form", locals: { social: social } %></div>
+    <div><%= render partial: "reports/form_social", locals: { social: social } %></div>
     <a class="close-reveal-modal cancel_button" aria-label="Close">&#215;</a>
   </div>
 </div> 

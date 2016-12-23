@@ -199,14 +199,11 @@
 
                                   <span class="report_container">
                                     <span class="report">
-                                      <a href="#<%= social.id %>" data-reveal-id="<%= dom_id(social) %>_report"><i class="fa fa-exclamation-triangle"></i></a>
+                                      <a href="#<%= social.id %>" data-reveal-id="<%= dom_id(social) %>_report" class="fa fa-exclamation-triangle"></a>
                                     </span>
                                     <div><%= render partial: 'shared/modal_report', locals: { social: social } %></div>
                                   </span>
 
-
-
-                          
                                 <% end %>
                               <% end %>
                             </li>
