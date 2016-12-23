@@ -192,6 +192,24 @@
                                 <% end %>
                               <% end %>
                             </li>
+                            <li>
+                              <!-- we are here -->
+                              <% if user_signed_in? %>
+                                <% if current_user %>
+
+                                  <span class="report_container">
+                                    <span class="report">
+                                      <a href="#<%= social.id %>" data-reveal-id="<%= dom_id(social) %>_report"><i class="fa fa-exclamation-triangle"></i></a>
+                                    </span>
+                                    <div><%= render partial: 'shared/modal_report', locals: { social: social } %></div>
+                                  </span>
+
+
+
+                          
+                                <% end %>
+                              <% end %>
+                            </li>
                           </ul>
                         </div>
                       </div>
