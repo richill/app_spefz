@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161222210008) do
+ActiveRecord::Schema.define(version: 20161223155004) do
 
   create_table "activities", force: :cascade do |t|
     t.integer  "trackable_id"
@@ -193,6 +193,7 @@ ActiveRecord::Schema.define(version: 20161222210008) do
     t.boolean  "close"
     t.string   "reference"
     t.string   "slug"
+    t.integer  "category_report_id"
   end
 
   add_index "events", ["slug"], name: "index_events_on_slug", unique: true
@@ -422,6 +423,7 @@ ActiveRecord::Schema.define(version: 20161222210008) do
     t.boolean  "close"
     t.string   "reference"
     t.string   "slug"
+    t.integer  "category_report_id"
   end
 
   add_index "socials", ["slug"], name: "index_socials_on_slug", unique: true
@@ -502,6 +504,7 @@ ActiveRecord::Schema.define(version: 20161222210008) do
     t.integer  "category_inviteoption_id"
     t.string   "link_fb"
     t.string   "link_twitter"
+    t.integer  "category_report_id"
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
