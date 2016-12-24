@@ -21,16 +21,15 @@
               <i class="fa fa-suitcase" aria-hidden="true"></i> 
               <span><%= @user.profession %></span>
             <% end %>
-            <span class="divider">|</span>
-            <span class="report_container">
-              <span data-tooltip aria-haspopup="true" data-options="disable_for_touch:true" class="tip-right report" title="Report User">
-                <a href="#<%= @user.id %>" data-reveal-id="<%= dom_id(@user) %>_report" class="fa fa-exclamation-triangle"></a>
+            <% if @user != current_user %>
+              <span class="divider">|</span>
+              <span class="report_container">
+                <span data-tooltip aria-haspopup="true" data-options="disable_for_touch:true" class="tip-right report" title="Report User">
+                  <a href="#<%= @user.id %>" data-reveal-id="<%= dom_id(@user) %>_report" class="fa fa-exclamation-triangle"></a>
+                </span>
+                <div><%= render partial: 'shared/modal_report_user', locals: { user: @user } %></div>
               </span>
-              <div><%= render partial: 'shared/modal_report_user', locals: { user: @user } %></div>
-            </span>
-
-
-
+            <% end %>
           </div>
           <div class="clear"></div>
           <div class="user_social_icons">
