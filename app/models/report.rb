@@ -1,4 +1,4 @@
 class Report < ActiveRecord::Base
   belongs_to :category_report
-  has_many :socials
+  belongs_to :social
 end

@@ -10,15 +10,12 @@ class ReportsController < ApplicationController
 
   def new
     @report = Report.new
-    # @social = Social.find(params[:social_id])
   end
 
   def edit
   end
 
   def create
-    # @social = Social.find(params[:social_id])
-    # debug
     @report = Report.new(report_params)
 
     respond_to do |format|

@@ -15,7 +15,6 @@ class SocialsController < ApplicationController
     end
     @premium_plan = Subscription.find_by(title:"premium")
     @report = Report.new
-    # @social = Social.find(params[:social_id])
   end
 
   def user_socials

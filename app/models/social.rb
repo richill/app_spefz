@@ -13,6 +13,7 @@ class Social < ActiveRecord::Base
   has_many :comments, as: :commentable, dependent: :destroy
 
   has_many :attendances, as: :attendable, dependent: :destroy
+  has_many :reports
   
   belongs_to :user
   belongs_to :category_topic
@@ -20,7 +21,6 @@ class Social < ActiveRecord::Base
   belongs_to :category_country
   belongs_to :category_invite
   belongs_to :category_quantitygender
-  belongs_to :report
 
   mount_uploader :image, ImageUploader
   before_create :generate_reference_number
