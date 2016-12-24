@@ -5,11 +5,11 @@
 <table>
   <thead>
     <tr>
-      <th>Content</th>
+      <th>Type</th>
+      <th>Reefernce</th>
       <th>Category report</th>
-      <th>Event</th>
-      <th>Social</th>
-      <th>User</th>
+      <th>Social/Event/User</th>
+      <th>Content</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -17,11 +17,27 @@
   <tbody>
     <% @reports.each do |report| %>
       <tr>
-        <td><%= report.content %></td>
+        <td>
+          <% if report.social_id.present? %>
+            <%= "Social" %>
+          <% elsif report.event_id.present? %>
+            <%= "Event" %>
+          <% elsif report.user_id.present? %>
+            <%= "User" %>
+          <% end %>
+        </td>
+        <td>ref</td>
         <td><%= report.category_report.name %></td>
-        <td><%= report.event_id %></td>
-        <td><%= report.social.title %></td>
-        <td><%= report.user_id %></td>
+        <td>
+          <% if report.social_id.present? %>
+            <%= report.social.title %>
+          <% elsif report.event_id.present? %>
+            <%= report.event.title %>
+          <% elsif report.user_id.present? %>
+            <%= report.user.title %>
+          <% end %>
+        </td>
+        <td><%= report.content %></td>
         <td><%= link_to 'Show', report %></td>
         <td><%= link_to 'Edit', edit_report_path(report) %></td>
         <td><%= link_to 'Destroy', report, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -30,6 +46,4 @@
   </tbody>
 </table>
 
-<br>
 
-<%= link_to 'New Report', new_report_path %>

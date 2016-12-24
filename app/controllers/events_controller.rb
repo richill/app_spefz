@@ -12,6 +12,7 @@ class EventsController < ApplicationController
       @events = @search.result(distinct: true).live_events.open_events
     end
     @premium_plan = Subscription.find_by(title:"premium")
+    @report = Report.new
   end
 
   def show

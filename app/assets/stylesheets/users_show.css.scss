@@ -95,6 +95,7 @@
 }
 
 .user_profile_page_section .upper_section .user_social_icons .fa-envelope {
+  height: 47px;
   font-size: 15px;
   color: #fff !important; 
   padding: 16px 18px;
@@ -103,6 +104,7 @@
 }
 
 .user_profile_page_section .upper_section .user_social_icons .fa-linkedin {
+  height: 47px;
   font-size: 17px;
   color: #fff !important;
   padding: 15px 19px;
@@ -111,18 +113,34 @@
 }
 
 .user_profile_page_section .upper_section .user_social_icons .fa-facebook {
+  height: 47px;
   font-size: 15px;
   color: #fff !important; 
   padding: 16px 20px;
-  background-color: rgba(255,255,255, 0.2) !important;
+  background-color: rgba(255,255,255, 0.2);
   margin: 0px 2px;
 }
 
+.user_profile_page_section .upper_section .user_social_icons .socialicon_cover_fb .inactive {
+  height: 47px;
+  font-size: 15px;
+  color: #fff !important; 
+  padding: 16px 20px;
+  background-color: rgba(75, 180, 191, 0.2);
+  margin: 0px 2px;
+}
+
+.user_profile_page_section .upper_section .user_social_icons .socialicon_cover_fb .inactive:hover {
+  color: #E34B51 !important;
+  background-color: rgba(75, 180, 191, 0.2) !important;
+}
+
 .user_profile_page_section .upper_section .user_social_icons .fa-twitter {
+  height: 47px;
   font-size: 15px;
   color: #fff !important; 
   padding: 16px 18px;
-  background-color: rgba(255,255,255, 0.2) !important;
+  background-color: rgba(255,255,255, 0.2);
   margin: 0px 2px;
 }
 
@@ -130,6 +148,19 @@
   color: #E34B51 !important; 
 }
 
+.user_profile_page_section .upper_section .user_social_icons .socialicon_cover_tt .inactive {
+  height: 47px;
+  font-size: 15px;
+  color: #fff !important; 
+  padding: 16px 18px;
+  background-color: rgba(75, 180, 191, 0.2);
+  margin: 0px 2px;
+}
+
+.user_profile_page_section .upper_section .user_social_icons .socialicon_cover_tt .inactive:hover {
+  color: #E34B51 !important;
+  background-color: rgba(75, 180, 191, 0.2) !important;
+}
 
 // ======== middle_section ========
 .user_profile_page_section .middle_section {

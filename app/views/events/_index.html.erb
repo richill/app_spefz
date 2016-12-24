@@ -128,7 +128,7 @@
                                   <span data-tooltip aria-haspopup="true" data-options="disable_for_touch:true" class="tip-right report" title="Report Event">
                                     <a href="#<%= event.id %>" data-reveal-id="<%= dom_id(event) %>_report" class="fa fa-exclamation-triangle"></a>
                                   </span>
-                                  <div><%# render partial: 'shared/modal_report', locals: { event: event } %></div>
+                                  <div><%= render partial: 'shared/modal_report_event', locals: { event: event } %></div>
                                 </span>
                               <% end %>
                             <% end %>

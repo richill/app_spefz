@@ -10,7 +10,7 @@ class Event < ActiveRecord::Base
   has_one :host
   
   has_many :payments 
-  has_many :reports 
+  has_many :reports
   
   belongs_to :user
   belongs_to :category_topic
