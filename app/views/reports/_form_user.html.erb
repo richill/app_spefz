@@ -2,7 +2,7 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.association :category_report, collection: CategoryReport.all, prompt: "please choose", label: 'Report this social' %>
+    <%= f.association :category_report, collection: CategoryReport.all, prompt: "please choose", label: 'Report this member' %>
     <div class="error_msg">can't be blank</div>
 
     <%= f.input :content %>
