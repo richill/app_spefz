@@ -8,9 +8,11 @@
     <%= f.input :content %>
     <div class="error_msg">can't be blank</div>
     
-    <%= f.input_field :social_id, value: social.id %>
+    <!-- hidden_field -->
+    <%= f.hidden_field :social_id, value: social.id %>
     <%= f.hidden_field :event_id %>
     <%= f.hidden_field :user_id %>
+    <!-- hidden_field -->
   </div>
 
   <div class="form-actions report_button">
