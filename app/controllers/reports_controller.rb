@@ -10,17 +10,20 @@ class ReportsController < ApplicationController
 
   def new
     @report = Report.new
+    # @social = Social.find(params[:social_id])
   end
 
   def edit
   end
 
   def create
+    # @social = Social.find(params[:social_id])
+    # debug
     @report = Report.new(report_params)
 
     respond_to do |format|
       if @report.save
-        format.html { redirect_to @report, notice: 'Report was successfully created.' }
+        format.html { redirect_to :back, notice: 'Report was successfully sent.' }
         format.json { render :show, status: :created, location: @report }
       else
         format.html { render :new }
@@ -32,7 +35,7 @@ class ReportsController < ApplicationController
   def update
     respond_to do |format|
       if @report.update(report_params)
-        format.html { redirect_to @report, notice: 'Report was successfully updated.' }
+        format.html { redirect_to :back, notice: 'Report was successfully updated.' }
         format.json { render :show, status: :ok, location: @report }
       else
         format.html { render :edit }

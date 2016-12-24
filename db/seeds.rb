@@ -75,9 +75,8 @@ CategoryReport.delete_all
 crt01 = CategoryReport.create!(name:'Spam or scam')
 crt02 = CategoryReport.create!(name:'Offensive language')
 crt03 = CategoryReport.create!(name:'Poor spelling or grammar')
-crt04 = CategoryReport.create!(name:'Exaggerated salary')
-crt05 = CategoryReport.create!(name:'Incorrect information')
-crt06 = CategoryReport.create!(name:'Discriminatory')
+crt04 = CategoryReport.create!(name:'Incorrect information')
+crt05 = CategoryReport.create!(name:'Discriminatory')
 
 CategoryTopic.delete_all
 ct01 = CategoryTopic.create!(name:'Activity Social')
