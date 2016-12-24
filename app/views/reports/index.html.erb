@@ -34,7 +34,7 @@
           <% elsif report.event_id.present? %>
             <%= report.event.title %>
           <% elsif report.user_id.present? %>
-            <%= report.user.title %>
+            <%= "#{report.user.firstname} #{report.user.lastname}" %>
           <% end %>
         </td>
         <td><%= report.content %></td>
