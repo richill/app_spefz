@@ -90,6 +90,20 @@
   margin-right: 2px;
 }
 
+.user_profile_page_section .upper_section .user_location .fa-exclamation-triangle {
+  color: #fff !important;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease; 
+}
+
+.user_profile_page_section .upper_section .user_location .fa-exclamation-triangle:hover {
+  color: #E34B51 !important;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease; 
+}
+
 .user_profile_page_section .upper_section .user_social_icons {
   margin-top: 10px
 }
