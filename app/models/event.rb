@@ -70,10 +70,6 @@ class Event < ActiveRecord::Base
     [address, city, category_country_id].compact.join(', ')
   end
 
-  def google_map(center)
-    "https://maps.googleapis.com/maps/api/staticmap?center=#{center}&size=300x300&zoom=17"
-  end
-
   def self.desc_order
     order('date DESC')
   end
