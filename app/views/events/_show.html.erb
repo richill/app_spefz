@@ -173,11 +173,10 @@
                     <div><%= "#{@event.address}, london, United Kingdom, #{@event.postcode}" %></div>
                   <% end %>
                 </div>
-                <div><%= image_tag('img_map.png') %></div>
-                <div><%# image_tag "http://maps.google.com/maps/api/staticmap?size=450x300&sensor=false&zoom=16&markers=#{@event.latitude}%2C#{@event.longitude}" %></div>
-                <div><%# image_tag google_map(center: @event.full_street_address) %></div>
-                <div><%# image_tag google_map(center: [ @event.latitude, @event.longitude ].join(',')) %></div>
-                <div><%# image_tag "https://maps.googleapis.com/maps/api/staticmap?{@event.latitude}%2C#{@event.longitude}&size=300x300&zoom=17" %></div>
+                <div><%# image_tag('img_map.png') %></div>
+                <!-- <div>website: "https://console.developers.google.com/apis/credentials?project=api-project-595213325480&authuser=0"</div> -->
+                <div><%= "#{@event.latitude} #{@event.longitude}" %></div>
+                <div><%= image_tag "http://maps.googleapis.com/maps/api/staticmap?key=AIzaSyBhy3b2NyD-pwNVd_dBFllN9sXDYVsCnJ4&size=400x300&sensor=false&markers=#{@event.latitude}%2C#{@event.longitude}" %></div>
               </div>
             </div>
           </div>
