@@ -152,6 +152,16 @@
 
 .events_show_inner_section .right_evt_details .city_country .share_content a {
   color: #fff !important;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease; 
+}
+
+.events_show_inner_section .right_evt_details .city_country .share_content a:hover {
+  color: #E34B51 !important;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease; 
 }
 
 .events_show_inner_section .right_evt_details .divider {
