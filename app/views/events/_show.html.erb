@@ -33,8 +33,14 @@
                 <div class="info"><i class="fa fa-map-marker" aria-hidden="true"></i> <%= @event.venuename %></div>
                 <div class="info"><i class="fa fa-calendar" aria-hidden="true"></i> <%= @event.date.strftime("%A, %d %b") %></div>
                 <div class="info"><i class="fa fa-clock-o" aria-hidden="true"></i> <%= @event.time.strftime("%H:%M") %>h - <%= @event.time_end.strftime("%H:%M") %>h</div>
-                <div class="info city_country"><i class="fa fa-map-pin" aria-hidden="true"></i> <%= @event.city %>, <%= @event.category_country.name %></div> 
-                <%#  "#{@event.latitude} #{@event.longitude}" %>
+                <div class="info city_country">
+                  <span><i class="fa fa-map-pin" aria-hidden="true"></i> <%= @event.city %>, <%= @event.category_country.name %></span>
+                  <span class="divider">|</span>
+                  <span class="share_content">
+                    <a href="#" data-reveal-id="myModal-share-buttons" class:"socialicon_cover_fb"><i class="fa fa-share-alt" aria-hidden="true"></i> share</a>
+                    <span><%= render 'shared/modal_share_buttons' %></span>
+                  </span>
+                </div> 
                 <div class="price">
                   <% if @event.expired_or_closed_event %>
                     <span>Event Closed</span>
