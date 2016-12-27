@@ -11,7 +11,7 @@ class BlogsController < ApplicationController
 
   def show
     @premium_plan = Subscription.find_by(title:"premium")
-    @user = User.find(params[:user_id])
+    @user = User.friendly.find(params[:user_id])
     @blog = @user.blogs.find(params[:id]) 
     @search = Blog.order("created_at DESC").search(params[:q])
     @blogs = @search.result(distinct: true)
