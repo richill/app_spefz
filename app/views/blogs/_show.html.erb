@@ -60,6 +60,11 @@
                   <span>website</span>
                 <% end %>
                 <span class="divider">|</span>
+                <span>
+                  <a href="#" data-reveal-id="myModal-share-buttons" class:"socialicon_cover_fb"><i class="fa fa-share-alt" aria-hidden="true"></i> share</a>
+                  <span><%= render 'shared/modal_share_buttons' %></span>
+                </span>
+                <span class="divider">|</span>
                 <span>Category: </span>
                 <span class="blog_category"><%= link_to "#{@blog.category_blog.name}", "#" %></span>
                 <span class="divider">|</span>
