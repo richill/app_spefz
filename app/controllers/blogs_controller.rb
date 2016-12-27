@@ -11,21 +11,19 @@ class BlogsController < ApplicationController
 
   def show
     @premium_plan = Subscription.find_by(title:"premium")
-    @user = User.friendly.find(params[:user_id])
-    @blog = @user.blogs.find(params[:id]) 
     @search = Blog.order("created_at DESC").search(params[:q])
     @blogs = @search.result(distinct: true)
   end
 
   def new
     @premium_plan = Subscription.find_by(title:"premium")
-    @user = User.find(params[:user_id])
+    @user = User.friendly.find(params[:user_id])
     @blog = @user.blogs.build
   end
 
   def edit
     @premium_plan = Subscription.find_by(title:"premium")
-    @user = User.find(params[:user_id])
+    @user = User.friendly.find(params[:user_id])
   end
 
   def create
@@ -90,10 +88,10 @@ class BlogsController < ApplicationController
 
   private
     def set_blog
-      @blog = Blog.find(params[:id])
+      @blog = Blog.friendly.find(params[:id])
     end
 
     def blog_params
-      params.require(:blog).permit(:title, :content, :image, :user_id, :category_blog_id, :video_link, :user_image_link, :user_link, :blog_image_link, :twitter_link)
+      params.require(:blog).permit(:title, :content, :image, :user_id, :category_blog_id, :video_link, :user_image_link, :user_link, :blog_image_link, :twitter_link, :slug)
     end
 end

@@ -1,4 +1,7 @@
 class Blog < ActiveRecord::Base
+  extend FriendlyId
+  friendly_id :slug_blogs, use: :slugged
+
   mount_uploader :image, ImageUploader
   belongs_to :user
   belongs_to :category_blog
@@ -7,4 +10,10 @@ class Blog < ActiveRecord::Base
   scope :venues, ->() { joins(:category_blog).where('category_blogs.name' => "Venues") } 
   scope :networking, ->() { joins(:category_blog).where('category_blogs.name' => "Networking Tips") } 
   scope :dating, ->() { joins(:category_blog).where('category_blogs.name' => "Dating Tips") } 
+
+  def slug_blogs
+    [
+      :title
+    ]
+  end
 end
