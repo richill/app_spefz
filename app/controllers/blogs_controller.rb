@@ -28,7 +28,7 @@ class BlogsController < ApplicationController
 
   def create
     @premium_plan = Subscription.find_by(title:"premium")
-    @user = User.find(params[:user_id])
+    @user = User.friendly.find(params[:user_id])
     @blog = @user.blogs.create(blog_params)
     respond_to do |format|
       if @blog.save
@@ -56,7 +56,7 @@ class BlogsController < ApplicationController
 
   def destroy
     @premium_plan = Subscription.find_by(title:"premium")
-    @user = Userr.find(params[:user_id])
+    @user = User.friendly.find(params[:user_id])
     @blog = @user.blogs.find(params[:id])
     @blog.destroy
     redirect_to blogs_path

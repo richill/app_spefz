@@ -35,10 +35,10 @@
               <% @blogs.each do |blog| %>
                 <li class="medium-12 columns listed_blog">
                   <div class="medium-6 columns left_content">
-                    <div><%= link_to(image_tag("#{blog.image_url}", :alt =>  "image", :class =>"#"), user_blog_path(blog.user, blog)) %></div>
+                    <div><%= link_to(image_tag("#{blog.image_url}", :alt =>  "image", :class =>"#"), blog_path(blog)) %></div>
                   </div>
                   <div class="medium-6 columns right_content">
-                    <div class="blog_title"><%= link_to "#{blog.title}", user_blog_path(blog.user, blog) %></div>
+                    <div class="blog_title"><%= link_to "#{blog.title}", blog_path(blog) %></div>
                     <div class="blog_category_date">
                       <span>Category: </span>
                       <span class="blog_category"><%= link_to "#{blog.category_blog.name}", "#" %></span>
@@ -73,7 +73,7 @@
                     </div>
                     <div class="blog_content_read">
                       <span class="blog_info_content"><%= truncate "#{blog.content}", length: 700 %></span>
-                      <span class="read_more"><%= link_to "read more", user_blog_path(blog.user, blog) %></span>
+                      <span class="read_more"><%= link_to "read more", blog_path(blog) %></span>
                       <% if signed_in? %>
                         <% if current_user.admin_pa_management_group || current_user.pa_administration_group %>
                           <span class="divider">|</span>
