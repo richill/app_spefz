@@ -1,0 +1,70 @@
+<div class="events_section">
+  <div class="medium-12 columns events_inner_section">
+
+    <!-- content -->
+    <div class="medium-12 columns event_content_section">
+      <div class="medium-12 columns content_container">
+        <div class="content_details">
+          <div class="event_container">
+            <ul>
+              <!-- event_card -->
+              <% @cards.asc_order.each do |card| %>
+              <li class="medium-12 columns listed_events">
+                <div class="medium-12 columns image_content_info">
+
+                  
+                </div>
+                <div class="clear"></div>
+              </li>
+              <% end %>
+              <!-- event_card -->
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- content -->
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="original_content">
+  <h1>Listing Cards</h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Event</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @cards.each do |card| %>
+        <tr>
+          <td><%= card.title %></td>
+          <td><%= card.event_id %></td>
+          <td><%= link_to 'Show', card %></td>
+          <td><%= link_to 'Edit', edit_card_path(card) %></td>
+          <td><%= link_to 'Destroy', card, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+
+  <%= link_to 'New Card', new_card_path %>
+</div>
