@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  resources :cards
+
   resources :reports
 
   resources :invites
