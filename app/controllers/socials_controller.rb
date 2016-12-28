@@ -1,7 +1,7 @@
 class SocialsController < ApplicationController
   respond_to :html, :xml, :json
   before_action :set_social, only: [:show, :edit, :update, :destroy]
-  before_filter :setup_friends
+  before_filter :setup_friends, :setup_subscription
   impressionist :actions=>[:show]
 
   def index
@@ -13,7 +13,6 @@ class SocialsController < ApplicationController
       @search = Social.search(params[:q])
       @socials = @search.result(distinct: true).live_socials.open_socials
     end
-    @premium_plan = Subscription.find_by(title:"premium")
     @report = Report.new
   end
 
@@ -32,11 +31,9 @@ class SocialsController < ApplicationController
       @comment = Comment.new
       @comments = @commentable.comments
     end
-    @premium_plan = Subscription.find_by(title:"premium")
   end
 
   def new
-    @premium_plan = Subscription.find_by(title:"premium")
     if current_user.subscribed_access?
       if current_user.image?
         @user = User.friendly.find(params[:user_id])
@@ -52,7 +49,6 @@ class SocialsController < ApplicationController
 
   def edit
     @user = User.friendly.find(params[:user_id])
-    @premium_plan = Subscription.find_by(title:"premium")
   end
 
   def create
@@ -72,7 +68,6 @@ class SocialsController < ApplicationController
   end
 
   def update
-    @premium_plan = Subscription.find_by(title:"premium")
     respond_to do |format|
       if @social.update_attributes(social_params)
         format.html { redirect_to([@social.user, @social], notice: 'Social was successfully updated.') }
@@ -99,6 +94,10 @@ class SocialsController < ApplicationController
     def setup_friends
       @user = User.find(current_user.id)
       @friend = User.find_by_email(params[:id])
+    end
+
+    def setup_subscription
+      @premium_plan = Subscription.find_by(title:"premium") 
     end
 
     def social_params

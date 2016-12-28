@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
-  before_filter :setup_friends
+  before_filter :setup_friends, :setup_subscription
 
   def index
     if params[:tag]
@@ -11,12 +11,10 @@ class EventsController < ApplicationController
       @search = Event.search(params[:q])
       @events = @search.result(distinct: true).live_events.open_events
     end
-    @premium_plan = Subscription.find_by(title:"premium")
     @report = Report.new
   end
 
   def show
-    @premium_plan = Subscription.find_by(title:"premium")
     @host = Host.new
   end
 
@@ -60,7 +58,6 @@ class EventsController < ApplicationController
   end
 
   def update
-    @premium_plan = Subscription.find_by(title:"premium")
     if current_user.admin_pa_management_group || current_user.pa_event_mgt_group
       respond_to do |format|
         if @event.update_attributes(event_params)
@@ -105,6 +102,10 @@ class EventsController < ApplicationController
     def setup_friends
       @user = User.find(current_user.id)
       @friend = User.find_by_email(params[:id])
+    end
+
+    def setup_subscription
+      @premium_plan = Subscription.find_by(title:"premium") 
     end
 
     def event_params

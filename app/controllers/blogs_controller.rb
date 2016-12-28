@@ -1,33 +1,29 @@
 class BlogsController < ApplicationController
   respond_to :html, :xml, :json
   before_action :set_blog, only: [:show, :edit, :update, :destroy]
+  before_filter :setup_subscription
 
 
   def index
-    @premium_plan = Subscription.find_by(title:"premium")
     @search = Blog.order("created_at DESC").search(params[:q])
     @blogs = @search.result(distinct: true)
   end
 
   def show
-    @premium_plan = Subscription.find_by(title:"premium")
     @search = Blog.order("created_at DESC").search(params[:q])
     @blogs = @search.result(distinct: true)
   end
 
   def new
-    @premium_plan = Subscription.find_by(title:"premium")
     @user = User.friendly.find(params[:user_id])
     @blog = @user.blogs.build
   end
 
   def edit
-    @premium_plan = Subscription.find_by(title:"premium")
     @user = User.friendly.find(params[:user_id])
   end
 
   def create
-    @premium_plan = Subscription.find_by(title:"premium")
     @user = User.friendly.find(params[:user_id])
     @blog = @user.blogs.create(blog_params)
     respond_to do |format|
@@ -42,7 +38,6 @@ class BlogsController < ApplicationController
   end
 
   def update
-    @premium_plan = Subscription.find_by(title:"premium")
     respond_to do |format|
       if @blog.update_attributes(blog_params)
         format.html { redirect_to([@blog.user, @blog], notice: 'Blog was successfully updated.') }
@@ -55,7 +50,6 @@ class BlogsController < ApplicationController
   end
 
   def destroy
-    @premium_plan = Subscription.find_by(title:"premium")
     @user = User.friendly.find(params[:user_id])
     @blog = @user.blogs.find(params[:id])
     @blog.destroy
@@ -63,25 +57,21 @@ class BlogsController < ApplicationController
   end
 
   def venues
-    @premium_plan = Subscription.find_by(title:"premium")
     @search = Blog.order("created_at DESC").search(params[:q])
     @blogs = @search.result(distinct: true)
   end
 
   def networking_tips
-    @premium_plan = Subscription.find_by(title:"premium")
     @search = Blog.order("created_at DESC").search(params[:q])
     @blogs = @search.result(distinct: true)
   end
 
   def dating_tips
-    @premium_plan = Subscription.find_by(title:"premium")
     @search = Blog.order("created_at DESC").search(params[:q])
     @blogs = @search.result(distinct: true)
   end
 
   def spefz_news
-    @premium_plan = Subscription.find_by(title:"premium")
     @search = Blog.order("created_at DESC").search(params[:q])
     @blogs = @search.result(distinct: true)
   end
@@ -89,6 +79,10 @@ class BlogsController < ApplicationController
   private
     def set_blog
       @blog = Blog.friendly.find(params[:id])
+    end
+
+    def setup_subscription
+      @premium_plan = Subscription.find_by(title:"premium") 
     end
 
     def blog_params
