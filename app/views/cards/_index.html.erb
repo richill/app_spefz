@@ -1,19 +1,16 @@
-<div class="events_section">
-  <div class="medium-12 columns events_inner_section">
+<div class="cards_section">
+  <div class="medium-12 columns cards_inner_section">
 
     <!-- content -->
-    <div class="medium-12 columns event_content_section">
+    <div class="medium-12 columns event_card_content_section">
       <div class="medium-12 columns content_container">
         <div class="content_details">
-          <div class="event_container">
+          <div class="card_container">
             <ul>
               <!-- event_card -->
-              <% @cards.asc_order.each do |card| %>
-              <li class="medium-12 columns listed_events">
-                <div class="medium-12 columns image_content_info">
-
-                  
-                </div>
+              <% @cards.desc_order.each do |card| %>
+              <li class="medium-12 columns listed_event_cards">
+              
                 <div class="clear"></div>
               </li>
               <% end %>
