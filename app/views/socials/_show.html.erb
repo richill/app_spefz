@@ -273,11 +273,11 @@
               </div>
               <div class="content_info evts_upcoming_content hide"><%= render 'shared/content_socials_upcomingsocials' %></div>
               <div>
-                <%# if @socials.present? %>
+                <% if @social.user.socials.expired_or_closed_socials.present? %>
                   <div class="content_info evts_past_content hide"><%= render 'shared/content_socials_pastsocials' %></div>
-                <%# else %>
-                  <!-- <div class="comment_info_display evts_past_content hide">Currently no past socials</div> -->
-                <%# end %>
+                <% else %>
+                  <div class="comment_info_display evts_past_content hide">Currently no past socials</div>
+                <% end %>
               </div>
             </div>
           </div>

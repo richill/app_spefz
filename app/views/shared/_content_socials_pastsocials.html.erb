@@ -1,140 +1,137 @@
-<!-- <div class="socials_pastsocials_header">
-  <b>past socials</b>
-</div> -->
 <% if @social.user.socials.present? %>
-<div class="socials_pastsocials_section">
-  <div class="socials_pastsocials_inner_section">
-    <div class="event_container">
-      <% @social.user.socials.expired_or_closed_socials.each do |social| %>
-      <ul>
-        <li class="medium-12 columns">
-          <div class="title"><%= link_to "#{social.title}", user_social_path(social.user, social) %></div>
-          <div class="medium-12 columns image_content_info">
-            <% if social.sold_out? %>
-              <div class="banner">
-                <div class="ribbon-wrapper-green">
-                  <div class="ribbon-green">sold out</div>
+  <div class="socials_pastsocials_section">
+    <div class="socials_pastsocials_inner_section">
+      <div class="event_container">
+        <% @social.user.socials.expired_or_closed_socials.each do |social| %>
+        <ul>
+          <li class="medium-12 columns">
+            <div class="title"><%= link_to "#{social.title}", user_social_path(social.user, social) %></div>
+            <div class="medium-12 columns image_content_info">
+              <% if social.sold_out? %>
+                <div class="banner">
+                  <div class="ribbon-wrapper-green">
+                    <div class="ribbon-green">sold out</div>
+                  </div>
                 </div>
+              <% end %>
+              <div class="left_evt">
+                <div class="img_cover"><%= link_to(image_tag("#{social.image_url}", :alt =>  "image", :class =>"#"), user_social_path(social.user, social)) %></div>
               </div>
-            <% end %>
-            <div class="left_evt">
-              <div class="img_cover"><%= link_to(image_tag("#{social.image_url}", :alt =>  "image", :class =>"#"), user_social_path(social.user, social)) %></div>
+              <div class="right_evt">
+                <div class="info"><i class="fa fa-calendar" aria-hidden="true"></i> <%= social.date.strftime("%A, %d %b") %></div>
+                <div class="info"><i class="fa fa-clock-o" aria-hidden="true"></i> <%= social.time.strftime("%I:%M %p") %></div>
+                <div class="info city_country"><i class="fa fa-map-pin" aria-hidden="true"></i> <%= social.city %>, <%= social.category_country.name %></div>
+                <div class="divider"></div>
+                <div class="description"><%= truncate(social.description, length: 100) %></div>
+              </div>
             </div>
-            <div class="right_evt">
-              <div class="info"><i class="fa fa-calendar" aria-hidden="true"></i> <%= social.date.strftime("%A, %d %b") %></div>
-              <div class="info"><i class="fa fa-clock-o" aria-hidden="true"></i> <%= social.time.strftime("%I:%M %p") %></div>
-              <div class="info city_country"><i class="fa fa-map-pin" aria-hidden="true"></i> <%= social.city %>, <%= social.category_country.name %></div>
-              <div class="divider"></div>
-              <div class="description"><%= truncate(social.description, length: 100) %></div>
-            </div>
-          </div>
-          <div class="clear"></div>
-          <div class="info_action_container">
-            <ul class="inline-list left_evt_info">
-              <li><div class="header">price</div> <div class="content_header">Free</div></li>
-              <li>
-                <div class="header">space</div> 
-                <div class="content">
-                  <!-- male -->
-                  <% if social.category_quantitygender.name == "only men" %>
-                    <span>
-                      <% if social.sold_out? %>
-                        <span class="content_soldout">sold out</span>
-                      <% else %>
-                        <span class="content_available">available</span>
-                      <% end %>
-                    </span>
-
-                  <!-- female -->
-                  <% elsif social.category_quantitygender.name == "only women" %>
-                    <span>
-                      <% if social.sold_out? %>
-                        <span class="content_soldout">sold out</span>
-                      <% else %>
-                        <span class="content_available">available</span>
-                      <% end %>
-                    </span>
-                    
-                  <!-- male & female -->
-                  <% else social.category_quantitygender.name == "both men & women" %>
-                    <span>
-                      <% if social.sold_out? %>
-                        <span class="content_soldout">sold out</span>
-                      <% else %>
-                        <span class="content_available">available</span>
-                      <% end %>
-                    </span>
-                  <% end %>
-                </div>
-              </li>
-              <li>
-                <div class="header">attendees</div> 
-                <div class="content">
-                  <!-- male -->
-                  <% if social.category_quantitygender.name == "only men" %>
-                    <span><%= social.total_attendance_to_male_only_social %></span>
-
-                  <!-- female -->
-                  <% elsif social.category_quantitygender.name == "only women" %>
-                    <span><%= social.total_attendance_to_female_only_social %></span>
-                    
-                  <!-- male & female -->
-                  <% else social.category_quantitygender.name == "both men & women" %>
-                    <span><%= social.attendances.count %></span>
-                  <% end %>
-                </div>
-              </li>
-            </ul>
-            <% if social.live_social && social.open_social %>
-              <ul class="inline-list right_evt_info">
-                <% if social.category_invite_id.present? && social.category_invite.name == "just my guest" %>
-                  <li class="btn_attend"><%= link_to "invite only", "#" %></li>
-                <% else %>
-                  <li class="btn_attend">
-                    <!-- attend button -->
-                    <% if social.category_quantitygender.name == "only women" && current_user.category_gender.name == "Female" || 
-                          social.category_quantitygender.name == "only men" && current_user.category_gender.name == "Male" %>
-                      <% unless current_user.attending_socials.exists?(id: social.id) %>
-                        <% unless social.sold_out? %> <!-- note: if ticket is sold out do not display attend button -->
-                          <div class="social_profile_btn btn_social_attend"><%= link_to 'Attend', attending_socials_path(social_id: social), method: :post %></div>
+            <div class="clear"></div>
+            <div class="info_action_container">
+              <ul class="inline-list left_evt_info">
+                <li><div class="header">price</div> <div class="content_header">Free</div></li>
+                <li>
+                  <div class="header">space</div> 
+                  <div class="content">
+                    <!-- male -->
+                    <% if social.category_quantitygender.name == "only men" %>
+                      <span>
+                        <% if social.sold_out? %>
+                          <span class="content_soldout">sold out</span>
+                        <% else %>
+                          <span class="content_available">available</span>
                         <% end %>
-                      <% else %>
-                        <div class="social_profile_btn btn_social_unattend"><%= link_to 'Un-Attend Social', attending_social_path(social), method: :delete %></div>
-                      <% end %>
-                    <% elsif social.category_quantitygender.name == "both men & women" && current_user.category_gender.name == "Male" || social.category_quantitygender.name == "both men & women" && current_user.category_gender.name == "Female" %>
-                      <% unless current_user.attending_socials.exists?(id: social.id)  %>
-                        <% unless social.sold_out? %> <!-- note: if ticket is sold out do not display attend button -->
-                          <div class="social_profile_btn btn_social_attend"><%= link_to 'Attend', attending_socials_path(social_id: social), method: :post %></div>
+                      </span>
+
+                    <!-- female -->
+                    <% elsif social.category_quantitygender.name == "only women" %>
+                      <span>
+                        <% if social.sold_out? %>
+                          <span class="content_soldout">sold out</span>
+                        <% else %>
+                          <span class="content_available">available</span>
                         <% end %>
-                      <% else %>
-                          <div class="social_profile_btn btn_social_unattend"><%= link_to 'Un-Attend Social', attending_social_path(social), method: :delete %></div>
-                      <% end %>
-                    <% else  %>
-                      <% unless social.sold_out? %> <!-- note: if ticket is sold out do not display attend button -->
-                        <div class="social_profile_btn btn_social_attendance_restrictions"><%= link_to 'Attendance Restriction', social_path(social) %></div>
-                      <% end %>
+                      </span>
+                      
+                    <!-- male & female -->
+                    <% else social.category_quantitygender.name == "both men & women" %>
+                      <span>
+                        <% if social.sold_out? %>
+                          <span class="content_soldout">sold out</span>
+                        <% else %>
+                          <span class="content_available">available</span>
+                        <% end %>
+                      </span>
                     <% end %>
-                    <!-- attend button -->
-                  </li>
-                <% end %>
-                <li class="btn_save">
-                  <!-- save button -->
-                  <% if current_user %>
-                    <% unless current_user.favourite_socials.exists?(id: social.id)  %>
-                      <div class="social_profile_btn btn_social_save"><%= link_to 'Save', favourite_socials_path(social_id: social), method: :post %></div>
-                    <% else %>
-                      <div class="social_profile_btn btn_social_unsave"><%= link_to 'Un-Save', favourite_social_path(social), method: :delete %></div>
+                  </div>
+                </li>
+                <li>
+                  <div class="header">attendees</div> 
+                  <div class="content">
+                    <!-- male -->
+                    <% if social.category_quantitygender.name == "only men" %>
+                      <span><%= social.total_attendance_to_male_only_social %></span>
+
+                    <!-- female -->
+                    <% elsif social.category_quantitygender.name == "only women" %>
+                      <span><%= social.total_attendance_to_female_only_social %></span>
+                      
+                    <!-- male & female -->
+                    <% else social.category_quantitygender.name == "both men & women" %>
+                      <span><%= social.attendances.count %></span>
                     <% end %>
-                  <% end %>
-                  <!-- save button -->
+                  </div>
                 </li>
               </ul>
-            <% end %>
-          </div>
-        </li>
-      </ul>
-      <% end %>
+              <% if social.live_social && social.open_social %>
+                <ul class="inline-list right_evt_info">
+                  <% if social.category_invite_id.present? && social.category_invite.name == "just my guest" %>
+                    <li class="btn_attend"><%= link_to "invite only", "#" %></li>
+                  <% else %>
+                    <li class="btn_attend">
+                      <!-- attend button -->
+                      <% if social.category_quantitygender.name == "only women" && current_user.category_gender.name == "Female" || 
+                            social.category_quantitygender.name == "only men" && current_user.category_gender.name == "Male" %>
+                        <% unless current_user.attending_socials.exists?(id: social.id) %>
+                          <% unless social.sold_out? %> <!-- note: if ticket is sold out do not display attend button -->
+                            <div class="social_profile_btn btn_social_attend"><%= link_to 'Attend', attending_socials_path(social_id: social), method: :post %></div>
+                          <% end %>
+                        <% else %>
+                          <div class="social_profile_btn btn_social_unattend"><%= link_to 'Un-Attend Social', attending_social_path(social), method: :delete %></div>
+                        <% end %>
+                      <% elsif social.category_quantitygender.name == "both men & women" && current_user.category_gender.name == "Male" || social.category_quantitygender.name == "both men & women" && current_user.category_gender.name == "Female" %>
+                        <% unless current_user.attending_socials.exists?(id: social.id)  %>
+                          <% unless social.sold_out? %> <!-- note: if ticket is sold out do not display attend button -->
+                            <div class="social_profile_btn btn_social_attend"><%= link_to 'Attend', attending_socials_path(social_id: social), method: :post %></div>
+                          <% end %>
+                        <% else %>
+                            <div class="social_profile_btn btn_social_unattend"><%= link_to 'Un-Attend Social', attending_social_path(social), method: :delete %></div>
+                        <% end %>
+                      <% else  %>
+                        <% unless social.sold_out? %> <!-- note: if ticket is sold out do not display attend button -->
+                          <div class="social_profile_btn btn_social_attendance_restrictions"><%= link_to 'Attendance Restriction', social_path(social) %></div>
+                        <% end %>
+                      <% end %>
+                      <!-- attend button -->
+                    </li>
+                  <% end %>
+                  <li class="btn_save">
+                    <!-- save button -->
+                    <% if current_user %>
+                      <% unless current_user.favourite_socials.exists?(id: social.id)  %>
+                        <div class="social_profile_btn btn_social_save"><%= link_to 'Save', favourite_socials_path(social_id: social), method: :post %></div>
+                      <% else %>
+                        <div class="social_profile_btn btn_social_unsave"><%= link_to 'Un-Save', favourite_social_path(social), method: :delete %></div>
+                      <% end %>
+                    <% end %>
+                    <!-- save button -->
+                  </li>
+                </ul>
+              <% end %>
+            </div>
+          </li>
+        </ul>
+        <% end %>
+      </div>
     </div>
   </div>
-</div>
 <% end %>
