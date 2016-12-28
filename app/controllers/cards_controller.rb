@@ -23,8 +23,8 @@ class CardsController < ApplicationController
 
   def create
     @event = Event.friendly.find(params[:event_id])
-    @card = @event.cards.create(card_params)
-
+    @event.card = Card.new(card_params)
+    @card = @event.card
     respond_to do |format|
       if @card.save
         format.html { redirect_to([@card.event, @card], notice: 'Card was successfully created.') }

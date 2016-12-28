@@ -229,6 +229,7 @@
           </div>
         </div>
         <!-- event_card -->
+        <% if @event.current_user_attending_paid?(current_user) || current_user.admin_pa_management_group || current_user.pa_event_mgt_group %>
         <div class="medium-12 columns right_container">
           <div class="medium-12 columns right_inner_container card_container">
             <div class="header"><div class="header_content"><i class="fa fa-newspaper-o" aria-hidden="true"></i> <%= link_to "card", "#" %></div></div>
@@ -239,7 +240,7 @@
             </div>
           </div>
         </div>
-
+        <% end %>
       </div>
     </div>
   </div>

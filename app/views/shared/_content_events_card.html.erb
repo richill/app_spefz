@@ -1,11 +1,11 @@
-<%# if @event.card.present? %>
+<% if @event.card.present? %>
   <div class="event_card_section">
       <div class="information_section">
         <div class="card_text">view card to connect with members from the event</div>
-        <div class="view_card"><%= link_to "view card", "#" %></div>
+        <div class="view_card"><%= link_to "view card", event_card_path(@event, @event.card) %></div>
       </div>
     </div>
-<%# else %>
+<% else %>
   <% if current_user.admin_pa_management_group || current_user.pa_event_mgt_group %>
     <div class="event_card_section">
       <div class="information_section">
@@ -17,6 +17,6 @@
       </div>
     </div>
   <% end %>
-<%# end %>
+<% end %>
 
 
