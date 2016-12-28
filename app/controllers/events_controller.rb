@@ -16,6 +16,7 @@ class EventsController < ApplicationController
 
   def show
     @host = Host.new
+    @card = Card.new
   end
 
   def new
