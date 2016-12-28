@@ -24,13 +24,12 @@
           </div>
           <div class="clear"></div>
           <div class="user_social_icons">
-            <!-- <span class="socialicon_cover_ev"><% link_to '', '#', class: "fa fa-envelope" %></span> -->
             <span class="socialicon_cover_ev"><%= mail_to '', '', class: "fa fa-envelope", 
                                                   subject: "Invitation to: #{@social.title}", 
                                                   body: "Hi, would like to invite you to the Social: '#{@social.title}' - website: #{request.original_url}. From: #{current_user.firstname} #{current_user.lastname}" %>
             </span>
             <span class="socialicon_cover_up"><%= link_to '', '#', class: "fa fa-user-plus" %></span>
-            <span class="socialicon_cover_up"><%= link_to '', '#', class: "fa fa-calendar" %></span>
+            <span class="socialicon_cover_up hide"><%= link_to '', '#', class: "fa fa-calendar" %></span>
             <span>
               <a href="#" data-reveal-id="myModal-share-buttons" class:"socialicon_cover_fb"><i class="fa fa-share-alt" aria-hidden="true"></i></a>
               <span><%= render 'shared/modal_share_buttons' %></span>
