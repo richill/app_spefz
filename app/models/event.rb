@@ -8,6 +8,7 @@ class Event < ActiveRecord::Base
   acts_as_taggable
 
   has_one :host
+  has_one :card
   
   has_many :payments 
   has_many :reports
