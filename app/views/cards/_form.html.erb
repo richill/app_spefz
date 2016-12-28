@@ -1,9 +1,10 @@
-<%= simple_form_for(@card) do |f| %>
+<%# simple_form_for(@card) do |f| %>
+<%= simple_form_for [@event, @card] do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :title %>
-    <%= f.input :event_id %>
+    <%= f.input_field :title, value: @event.title %>
+    <%= f.input_field :event_id, value: @event.id %>
   </div>
 
   <div class="form-actions">

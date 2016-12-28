@@ -2,6 +2,9 @@ class CardsController < ApplicationController
   before_action :set_card, only: [:show, :edit, :update, :destroy]
   before_filter :setup_subscription
 
+  # user = event
+  # blog = card
+
   def index
     @cards = Card.all
   end
@@ -10,18 +13,21 @@ class CardsController < ApplicationController
   end
 
   def new
-    @card = Card.new
+    @event = Event.friendly.find(params[:event_id])
+    @card = @event.cards.build
   end
 
   def edit
+    @event = Event.friendly.find(params[:event_id])
   end
 
   def create
-    @card = Card.new(card_params)
+    @event = Event.friendly.find(params[:event_id])
+    @card = @event.cards.create(card_params)
 
     respond_to do |format|
       if @card.save
-        format.html { redirect_to @card, notice: 'Card was successfully created.' }
+        format.html { redirect_to([@card.event, @card], notice: 'Card was successfully created.') }
         format.json { render :show, status: :created, location: @card }
       else
         format.html { render :new }
@@ -33,7 +39,7 @@ class CardsController < ApplicationController
   def update
     respond_to do |format|
       if @card.update(card_params)
-        format.html { redirect_to @card, notice: 'Card was successfully updated.' }
+        format.html { redirect_to([@card.event, @card], notice: 'Card was successfully updated.') }
         format.json { render :show, status: :ok, location: @card }
       else
         format.html { render :edit }
@@ -43,6 +49,8 @@ class CardsController < ApplicationController
   end
 
   def destroy
+    @event = Event.friendly.find(params[:event_id])
+    @card = @event.cards.find(params[:id])
     @card.destroy
     respond_to do |format|
       format.html { redirect_to cards_url, notice: 'Card was successfully destroyed.' }
