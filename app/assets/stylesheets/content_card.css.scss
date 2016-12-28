@@ -1,115 +1,13 @@
 /*=========================================
     Section: events show page
-    File: views / events / _content_events_about_host.html.erb
+    File: views / events / _content_card.html.erb
     File: views / events / _show.html.erb
   =========================================*/
-
-.event_card_section .divider {
-  border-top: 1px solid #fff;
-  margin: 20px 0px;
-}
-
-.event_card_section ul {
-  margin: 0px;
-  list-style-type: none;
-}
-
-.event_card_section ul li {
-  border-bottom: 1px solid #fff;
-  padding: 20px 0px;
-}
-
-.event_card_section ul li:last-child {
-  border-bottom: none !important;
-  margin-bottom: 0px !important;
-}
-
-.event_card_section ul li .host {
-  margin: 3px;
-  padding: 4px;
-  width: 58px;
-  border-radius: 5px;
-  float: left;
-  margin-right: 8px;
-  background-color: rgba(88, 205, 166, 0.2) !important;
-}
-
-.event_card_section ul li .host img {
-  height: 48px;
-  width: 48px;
-  border-radius: 200px;
-  -webkit-transition: all 0.3s ease; 
-  -moz-transition: all 0.3s ease; 
-  -o-transition: all 0.3s ease;
-}
-
-.event_card_section ul li .host img:hover {
-  opacity: 0.5;
-  -webkit-transition: all 0.3s ease; 
-  -moz-transition: all 0.3s ease; 
-  -o-transition: all 0.3s ease;
-}
-
-.event_card_section .host_details {
-  font-family: 'Lato', sans-serif;
-  font-weight: 300 !important;
-  text-transform: capitalize;
-  padding: 15px 0px;
-}
-
-.event_card_section .host_name a {
-  color: #283041 !important;
-  font-weight: bold;
-}
-
-.event_card_section .host_name a:hover {
-  color: #E34B51 !important
-}
-
-.event_card_section .dummy_host {
-  font-size: 12px;
-  color: #E34B51;
-}
-
-.event_card_section .dummy_host a {
-  font-size: 12px;
-  color: #E34B51 !important;
-}
-
-.event_card_section .dummy_host a:hover {
-  text-decoration: underline;
-}
-
-.event_card_section .introduction {
-  font-family: 'Lato', sans-serif;
-  font-weight: 300 !important;
-}
 
 .event_card_section .card_text {
   text-transform: capitalize;
   text-align: center;
   padding: 25px 0px;
-}
-
-.event_card_section .edit_host a {
-  font-size: 18px;
-  background-color: rgba(47, 63, 91, 0.5) !important;
-  color: #fff !important;
-  padding: 15px 0px;
-  width: 100% !important;
-  display: inline-block;
-  text-align: center;
-  border-radius: 2px;
-  -webkit-transition: all 0.3s ease; 
-  -moz-transition: all 0.3s ease; 
-  -o-transition: all 0.3s ease;
-}
-
-.event_card_section .edit_host a:hover {
-  background-color: #E34B51 !important;
-  -webkit-transition: all 0.3s ease; 
-  -moz-transition: all 0.3s ease; 
-  -o-transition: all 0.3s ease;
 }
 
 .event_card_section .add_card a {
@@ -133,7 +31,6 @@
   -moz-transition: all 0.3s ease; 
   -o-transition: all 0.3s ease;
 }
-
 
 .event_card_section .view_card a {
   font-size: 18px;
