@@ -9,7 +9,7 @@
   <% if current_user.admin_pa_management_group || current_user.pa_event_mgt_group %>
     <div class="event_card_section">
       <div class="information_section">
-        <div class="card_text">currently no match card for this event</div>
+        <div class="card_text">currently no card for this event</div>
         <div class="add_card">
           <a href="#" data-reveal-id="myModal-event-card">add card</a>
           <span><%= render 'shared/modal_event_card' %></span>

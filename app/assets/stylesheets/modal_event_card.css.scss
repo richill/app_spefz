@@ -37,15 +37,13 @@
 }
 
 .eventcard_inner_container ul {
-  margin: 0px;
-  list-style-type: none;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  margin-bottom: 0px;
 }
 
 .eventcard_inner_container ul li {
-  background-color: rgba(47, 63, 91, 0.05) !important;
-  padding: 5px;
-  margin-bottom: 5px;
-  height: 74px;
+  margin: 5px 0px !important
 }
 
 .eventcard_inner_container .image_section {
@@ -195,7 +193,13 @@
 
 
 
-
+.info_card_content {
+  background-color: rgba(88, 205, 166, 0.2) !important;
+  padding: 15px;
+  letter-spacing: 1px;
+  word-spacing: 3px;
+  margin-bottom: 25px;
+}
 
 
 
