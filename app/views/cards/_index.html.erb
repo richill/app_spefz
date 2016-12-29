@@ -6,8 +6,10 @@
       <div class="medium-12 columns content_container">
         <div class="content_details">
           <div class="card_container">
-            <div>my matches</div>
-            <div>choose the event you want results for and click the action below</div>
+            <div class="title_section">
+              <div class="card_main_title">my event cards</div>
+              <div class="card_sub_title">View listed members whom attended the events you were at and connect</div>
+            </div>
             <ul>
               <!-- event_card -->
               <% @cards.desc_order.each do |card| %>
@@ -16,10 +18,10 @@
                   <!-- left_evt content -->
                   <div class="left_evt">
                     <!-- event_card_path(@event, @event.card) -->
-                    <%= link_to '#' do %>
+                    <%= link_to card_path(card) do %>
                       <div class="img_cover">
                         <% if card.event.image.present? %>
-                          <%= link_to(image_tag("#{card.event.image_url}", :alt =>  "image", :class =>"#"), "#") %>
+                          <%= link_to(image_tag("#{card.event.image_url}", :alt =>  "image", :class =>"#"), card) %>
                         <% else %>
                           <%= link_to(image_tag("img_feed_07.png", :alt =>  "image", :class =>"#"), "#") %>
                         <% end %>
@@ -29,7 +31,7 @@
 
                   <!-- middle_evt content -->
                   <div class="middle_evt">
-                    <div class="title"><%= link_to "#{card.event.title}", "#" %></div>
+                    <div class="title"><%= link_to "#{card.event.title}", card %></div>
                     <div class="info"><i class="fa fa-map-marker" aria-hidden="true"></i> <%= card.event.venuename %></div>
                     <div class="info"><i class="fa fa-calendar" aria-hidden="true"></i> <%= card.event.date.strftime("%A, %d %b") %></div>
                     <div class="info"><i class="fa fa-clock-o" aria-hidden="true"></i> <%= card.event.time.strftime("%H:%M") %>h - <%= card.event.time_end.strftime("%H:%M") %>h</div>
@@ -38,8 +40,12 @@
                   </div>
                   <!-- middle_evt content -->
                   
-
                   <!-- right_evt content -->
+                  <div class="right_evt">
+                    <div class="right_evt_container">
+                       <div class="btn_view_card"><%= link_to "view card", card %></div>
+                    </div>
+                  </div>
                   <!-- right_evt content -->
                 </div>
                 <div class="clear"></div>
@@ -67,7 +73,7 @@
 
 
 
-<div class="original_content">
+<div class="original_content hide">
   <h1>Listing Cards</h1>
 
   <table>
