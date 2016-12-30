@@ -8,4 +8,8 @@ class Card < ActiveRecord::Base
   def self.asc_order
     order('created_at ASC')
   end
+
+  def card_status_open?
+    Date.today > self.event.date 
+  end
 end

@@ -7,6 +7,8 @@ class Event < ActiveRecord::Base
   
   acts_as_taggable
 
+  validate :date_cannot_be_in_the_past
+
   has_one :host
   has_one :card
   
@@ -48,6 +50,13 @@ class Event < ActiveRecord::Base
       reference_length = 6
       self.reference = "SPz_" + Devise.friendly_token.first(reference_length)
     end while self.class.exists?(reference: reference)
+  end
+
+  #events can not be created in the past
+  def date_cannot_be_in_the_past
+    if date.present? && date <= Date.today
+      errors.add(:date, "event date can not be in the past")
+    end
   end
 
   #checks if current user has paid to attend event

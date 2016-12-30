@@ -41,7 +41,11 @@
                     <!-- right_evt content -->
                     <div class="right_evt">
                       <div class="right_evt_container">
-                         <div class="btn_view_card"><%= link_to "view attendees & connect", card %></div>
+                        <% if card.card_status_open? %>
+                          <div class="btn_card_status_open"><%= link_to "view attendees & connect", card %></div>
+                        <% else %>
+                          <div class="btn_card_status_pending"><%= link_to "not yet open", '#' %></div>
+                        <% end %>
                       </div>
                     </div>
 
