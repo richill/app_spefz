@@ -73,9 +73,19 @@
 
   <!-- lower section -->
   <div class="medium-12 columns lower_section">
-    <div class="lower_inner_section">
+    <div class="lower_inner_section attendant_container">
       <!-- listed attendants -->
-      
+      <ul>
+        <% @card.event.payments.each do |attendant| %>
+          <li class="medium-12 columns attendant_details_section">
+            <div class="medium-2 columns info_left">one</div>
+            <div class="medium-8 columns info_middle">two</div>
+            <div class="medium-2 columns info_right">three</div>
+          </li>
+          <div class="clear"></div>
+          <%# link_to "#{attendant.user.firstname} #{attendant.user.lastname}", user_path(attendant.user) %>
+        <% end %>
+      </ul>
       <!-- listed attendants -->
     </div>
   </div>
@@ -99,6 +109,7 @@
 
 <div class="old_content hide">
   <p id="notice"><%= notice %></p>
+
 
   <p>
     <strong>Title:</strong>
