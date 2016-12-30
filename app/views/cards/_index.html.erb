@@ -13,41 +13,42 @@
             <ul>
               <!-- event_card -->
               <% @cards.desc_order.each do |card| %>
-              <li class="medium-12 columns listed_event_cards">
-                <div class="medium-12 columns image_content_info">
-                  <!-- left_evt content -->
-                  <div class="left_evt">
-                    <%= link_to card_path(card) do %>
-                      <div class="img_cover">
-                        <% if card.event.image.present? %>
-                          <%= link_to(image_tag("#{card.event.image_url}", :alt =>  "image", :class =>"#"), card) %>
-                        <% else %>
-                          <%= link_to(image_tag("img_feed_07.png", :alt =>  "image", :class =>"#"), "#") %>
-                        <% end %>
-                      </div>
-                    <% end %>
-                  </div>
-
-                  <!-- middle_evt content -->
-                  <div class="middle_evt">
-                    <div class="title"><%= link_to "#{card.event.title}", card %></div>
-                    <div class="info"><i class="fa fa-map-marker" aria-hidden="true"></i> <%= card.event.venuename %></div>
-                    <div class="info"><i class="fa fa-calendar" aria-hidden="true"></i> <%= card.event.date.strftime("%A, %d %b") %></div>
-                    <div class="info"><i class="fa fa-clock-o" aria-hidden="true"></i> <%= card.event.time.strftime("%H:%M") %>h - <%= card.event.time_end.strftime("%H:%M") %>h</div>
-                    <div class="info city_country"><i class="fa fa-map-pin" aria-hidden="true"></i> <%= card.event.city %>, <%= card.event.category_country.name %></div>
-                  </div>
-                  <!-- middle_evt content -->
-                  
-                  <!-- right_evt content -->
-                  <div class="right_evt">
-                    <div class="right_evt_container">
-                       <div class="btn_view_card"><%= link_to "view attendees & connect", card %></div>
+                <% if card.event.current_user_attending_paid?(current_user) %>
+                <li class="medium-12 columns listed_event_cards">
+                  <div class="medium-12 columns image_content_info">
+                    <!-- left_evt content -->
+                    <div class="left_evt">
+                      <%= link_to card_path(card) do %>
+                        <div class="img_cover">
+                          <% if card.event.image.present? %>
+                            <%= link_to(image_tag("#{card.event.image_url}", :alt =>  "image", :class =>"#"), card) %>
+                          <% else %>
+                            <%= link_to(image_tag("img_feed_07.png", :alt =>  "image", :class =>"#"), "#") %>
+                          <% end %>
+                        </div>
+                      <% end %>
                     </div>
+
+                    <!-- middle_evt content -->
+                    <div class="middle_evt">
+                      <div class="title"><%= link_to "#{card.event.title}", card %></div>
+                      <div class="info"><i class="fa fa-map-marker" aria-hidden="true"></i> <%= card.event.venuename %></div>
+                      <div class="info"><i class="fa fa-calendar" aria-hidden="true"></i> <%= card.event.date.strftime("%A, %d %b") %></div>
+                      <div class="info"><i class="fa fa-clock-o" aria-hidden="true"></i> <%= card.event.time.strftime("%H:%M") %>h - <%= card.event.time_end.strftime("%H:%M") %>h</div>
+                      <div class="info city_country"><i class="fa fa-map-pin" aria-hidden="true"></i> <%= card.event.city %>, <%= card.event.category_country.name %></div>
+                    </div>
+                    
+                    <!-- right_evt content -->
+                    <div class="right_evt">
+                      <div class="right_evt_container">
+                         <div class="btn_view_card"><%= link_to "view attendees & connect", card %></div>
+                      </div>
+                    </div>
+
                   </div>
-                  <!-- right_evt content -->
-                </div>
-                <div class="clear"></div>
-              </li>
+                  <div class="clear"></div>
+                </li>
+                <% end %>
               <% end %>
               <!-- event_card -->
             </ul>

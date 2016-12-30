@@ -104,20 +104,24 @@
             </div>
             <!-- info_right -->
             <div class="medium-3 columns info_right">
-              <div class="hide">
-                <div class="current_connection">
-                  <%# friendship_status(@user, @friend) %>
-                  andrew is in your network
+              <% if current_user == attendant.user %>
+                <div class="btn_view_profile"><%= link_to "view profile", user_path(attendant.user) %></div>
+              <% else %>
+                <div class="hide">
+                  <div class="current_connection">
+                    <%# friendship_status(@user, @friend) %>
+                    andrew is in your network
+                  </div>
+                  <div class="btn_view_profile"><%= link_to "view profile", "#" %></div>
                 </div>
-                <div class="btn_view_profile"><%= link_to "view profile", "#" %></div>
-              </div>
-              <div class="">
-                <div class="current_connection">
-                  <%# friendship_status(@user, @friend) %>
-                  andrew is not in your network (yet)
+                <div class="">
+                  <div class="current_connection">
+                    <%# friendship_status(@user, @friend) %>
+                    andrew is not in your network (yet)
+                  </div>
+                  <div class="btn_connect"><%= link_to "connect with andrew", "#" %></div>
                 </div>
-                <div class="btn_connect"><%= link_to "connect with andrew", "#" %></div>
-              </div>
+              <% end %>
             </div>
           </li>
           <div class="clear"></div>
