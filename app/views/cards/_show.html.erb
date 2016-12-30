@@ -62,13 +62,10 @@
   <div class="medium-12 columns middle_section">
     <div class="middle_inner_section">
       <ul class="inline-list left">
-        <li>
-          <span class="header">Age Group:</span>
-          <span class="content"><%= @card.event.category_age.name %></span>
-        </li>
+        <li><span class="header">View list of members that attended the event</span></li>
       </ul>
       <ul class="inline-list right">
-        <li><span><div class="event_show_btn btn_event_booked"><%= link_to 'Booked!', '#' %></div></span></li>
+        <li><span><div class="event_show_btn btn_event_booked"><%= link_to 'View My Event Cards', cards_path %></div></span></li>
       </ul>
     </div>
   </div>
