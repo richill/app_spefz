@@ -427,7 +427,7 @@
   -o-transition: all 0.3s ease; 
 }
 
-.cards_show_inner_section .event_show_btn a {
+.cards_show_inner_section .card_show_btn a {
   font-family: 'Lato', sans-serif;
   font-size: 13px;
   color: #fff !important;
@@ -438,72 +438,7 @@
   display: inline-block;
 }
 
-.cards_show_inner_section .btn_request a {
-  padding: 10px 25px;
-  margin-left: -15px;
-  display: inline-block;
-  background-color: #E34B51 !important;
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-}
-
-.cards_show_inner_section .btn_request a:hover {
-  padding: 10px 25px;
-  margin-left: -15px;
-  display: inline-block;
-  background-color: rgba(47, 63, 91, 0.5) !important;
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-}
-
-.cards_show_inner_section .attendants a {
-  padding: 10px 15px;
-  font-size: 14px;
-  margin-left: 8px;
-  background-color: #4BB4BF !important;
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-}
-
-.cards_show_inner_section .attendants i {
-  color: #fff !important;
-}
-
-.cards_show_inner_section .attendants i .attendance_count {
-  font-family: 'Lato', sans-serif;
-  font-size: 12px;
-  font-weight: bold !important;
-}
-
-.cards_show_inner_section .attendants a:hover {
-  background-color: rgba(47, 63, 91, 0.5) !important;
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-}
-
-.cards_show_inner_section .btn_event_booknow a {
-  padding: 10px 45px;
-  display: inline-block;
-  background-color: #E34B51 !important;
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-}
-
-.cards_show_inner_section .btn_event_booknow a:hover {
-  padding: 10px 45px;
-  display: inline-block;
-  background-color: rgba(47, 63, 91, 0.5) !important;
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-}
-
-.cards_show_inner_section .btn_event_booked a {
+.cards_show_inner_section .btn_view_event_cards a {
   padding: 10px 55px;
   display: inline-block;
   background-color: rgba(47, 63, 91, 0.5) !important;
@@ -512,89 +447,15 @@
   -o-transition: all 0.3s ease;
 }
 
-.cards_show_inner_section .btn_social_unattend a {
-  padding: 10px 55px;
-  display: inline-block;
-  background-color: rgba(47, 63, 91, 0.5) !important;
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-}
-
-.cards_show_inner_section .btn_social_unattend a:hover {
-  padding: 10px 55px;
-  display: inline-block;
-  background-color: #E34B51 !important;
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-}
-
-.cards_show_inner_section .btn_social_attendance_restrictions a {
-  padding: 10px 25px;
-  display: inline-block;
-  background-color: rgba(47, 63, 91, 0.5) !important;
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-}
-
-.cards_show_inner_section .btn_event_save a {
-  padding: 10px 55px;
-  margin-left: 8px;
-  display: inline-block;
+.cards_show_inner_section .btn_view_event_cards a:hover {
   background-color: #eeaa02 !important;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
 }
 
-.cards_show_inner_section .btn_event_save a:hover {
-  padding: 10px 55px;
-  display: inline-block;
-  background-color: rgba(47, 63, 91, 0.5) !important;
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-}
 
-.cards_show_inner_section .btn_event_unsave a {
-  padding: 10px 55px;
-  margin-left: 8px;
-  display: inline-block;
-  background-color: rgba(47, 63, 91, 0.5) !important;
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-}
 
-.cards_show_inner_section .btn_event_unsave a:hover {
-  padding: 10px 55px;
-  display: inline-block;
-  background-color: #eeaa02 !important;
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-}
-
-.cards_show_inner_section .btn_edit a {
-  padding: 10px 25px;
-  margin-left: 8px;
-  display: inline-block;
-  background-color: #4BB4BF !important;
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-}
-
-.cards_show_inner_section .btn_edit a:hover {
-  padding: 10px 25px;
-  display: inline-block;
-  background-color: rgba(47, 63, 91, 0.5) !important;
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-}
 
 // ======== lower_section ========
 .cards_show_inner_section .lower_section {
