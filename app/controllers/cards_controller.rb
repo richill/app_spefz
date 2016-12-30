@@ -65,6 +65,7 @@ class CardsController < ApplicationController
 
     def setup_friends
       @user = User.find(current_user.id)
+      # @user = User.friendly.find(params[:id])
       @friend = User.find_by_email(params[:id])
     end
 

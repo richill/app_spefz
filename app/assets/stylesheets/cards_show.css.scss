@@ -547,6 +547,15 @@
   margin-top: 5px;
 }
 
+.info_middle .user_profession_uncompleted {
+  font-family: 'Lato', sans-serif;
+  font-size: 16px;
+  color: rgba(88, 205, 166, 0.5) !important;
+  text-transform: capitalize;
+  margin-top: 5px;
+  font-style: italic;
+}
+
 .info_middle .user_name a:hover {
   color: #E34B51 !important;
   -webkit-transition: all 0.3s ease;
@@ -563,18 +572,81 @@
   font-style: italic;
 }
 
+.info_middle .user_description_uncompleted {
+  font-family: 'Lato', sans-serif;
+  font-size: 16px;
+  line-height: 22px;
+  color: #fff !important;
+  font-weight: 300;
+  margin: 20px 0px;
+  background-color: rgba(47, 63, 91, 0.25) !important;
+  padding: 29px 15px;
+}
+
 // -------- info_right --------
 .info_right {
   height: 195px;
   border-right: 1px solid #ededf3 !important;
   background-color: #fff;
-  padding: 18px 15px !important;
+  padding: 32px 15px !important;
 }
 
-.current_connection {
-  background-color: #7C93A7 !important;
+.info_right .current_connection {
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  font-size: 15px;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  background-color: rgba(47, 63, 91, 0.5) !important;
+  margin-bottom: 15px;
 }
 
+.info_right .btn_view_profile a {
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+  color: #fff !important;
+  background: #4BB4BF;
+  width: 100% !important;
+  display: inherit;
+  padding: 20px;
+  text-align: center;
+  text-transform: capitalize;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+.info_right .btn_view_profile a:hover {
+  background: #eeaa02 !important;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+.info_right .btn_connect a {
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+  color: #fff !important;
+  background: #58CDA6;
+  width: 100% !important;
+  display: inherit;
+  padding: 20px;
+  text-align: center;
+  text-transform: capitalize;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+.info_right .btn_connect a:hover {
+  background: #eeaa02 !important;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
 
 
 

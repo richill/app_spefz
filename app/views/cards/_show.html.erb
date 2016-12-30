@@ -87,14 +87,32 @@
             <!-- info_middle -->
             <div class="medium-7 columns info_middle">
               <div class="user_name"><%= link_to "#{attendant.user.firstname} #{attendant.user.lastname}", user_path(attendant.user) %></div>
-              <div class="user_profession"><i class="fa fa-briefcase" aria-hidden="true"></i> <%= attendant.user.profession %></div>
-              <div class="user_description"><%= truncate attendant.user.description, length: 245 %></div>
+              <% if attendant.user.profession? %>
+                <div class="user_profession"><i class="fa fa-briefcase" aria-hidden="true"></i> <%= attendant.user.profession %></div>
+              <% else %>
+                <div class="user_profession_uncompleted"><i class="fa fa-briefcase" aria-hidden="true"></i> <%= "#{attendant.user.firstname} has not stated his profession" %></div>
+              <% end %>
+              <% if attendant.user.description? %>
+                <div class="user_description"><%= truncate attendant.user.description, length: 245 %></div>
+              <% else %>
+                <div class="user_description_uncompleted"><%= "#{attendant.user.firstname} currently has not completed his profile description" %></div>
+              <% end %>
             </div>
             <!-- info_right -->
             <div class="medium-3 columns info_right">
-              <div class="current_connection">
-                <%= friendship_status(@user, @friend) %>
-                is not in your network (yet)
+              <div class="hide">
+                <div class="current_connection">
+                  <%# friendship_status(@user, @friend) %>
+                  andrew is in your network
+                </div>
+                <div class="btn_view_profile"><%= link_to "view profile", "#" %></div>
+              </div>
+              <div class="">
+                <div class="current_connection">
+                  <%# friendship_status(@user, @friend) %>
+                  andrew is not in your network (yet)
+                </div>
+                <div class="btn_connect"><%= link_to "connect with andrew", "#" %></div>
               </div>
             </div>
           </li>
@@ -102,6 +120,7 @@
         <% end %>
       </ul>
       <!-- listed attendants -->
+      <!-- is not in your network (yet) -->
     </div>
   </div>
 </div>
