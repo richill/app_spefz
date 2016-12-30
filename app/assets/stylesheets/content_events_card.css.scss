@@ -32,7 +32,7 @@
   -o-transition: all 0.3s ease;
 }
 
-.event_card_section .view_card a {
+.event_card_section .view_card_open a {
   font-size: 18px;
   text-transform: capitalize;
   background-color: #58CDA6 !important;
@@ -47,13 +47,27 @@
   -o-transition: all 0.3s ease;
 }
 
-.event_card_section .view_card a:hover {
+.event_card_section .view_card_open a:hover {
   background-color: rgba(47, 63, 91, 0.5) !important;
   -webkit-transition: all 0.3s ease; 
   -moz-transition: all 0.3s ease; 
   -o-transition: all 0.3s ease;
 }
 
+.event_card_section .view_card_pending a {
+  font-size: 18px;
+  text-transform: capitalize;
+  background-color: rgba(47, 63, 91, 0.5) !important;
+  color: #fff !important;
+  padding: 15px 0px;
+  width: 100% !important;
+  display: inline-block;
+  text-align: center;
+  border-radius: 2px;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease;
+}
 
 
 

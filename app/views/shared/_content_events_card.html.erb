@@ -2,7 +2,11 @@
   <div class="event_card_section">
       <div class="information_section">
         <div class="card_text">view card to connect with members from the event</div>
-        <div class="view_card"><%= link_to "view card", event_card_path(@event, @event.card) %></div>
+        <% if @event.card.card_status_open? %>
+          <div class="view_card_open"><%= link_to "view card", event_card_path(@event, @event.card) %></div>
+        <% else %>
+          <div class="view_card_pending"><%= link_to "not yet opened", event_card_path(@event, @event.card) %></div>
+        <% end %>
       </div>
     </div>
 <% else %>
