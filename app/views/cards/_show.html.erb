@@ -85,12 +85,17 @@
               </div>
             </div>
             <!-- info_middle -->
-            <div class="medium-7 columns info_middle">two</div>
+            <div class="medium-7 columns info_middle">
+              <div class="user_name"><%= link_to "#{attendant.user.firstname} #{attendant.user.lastname}", user_path(attendant.user) %></div>
+              <div class="user_profession"><i class="fa fa-briefcase" aria-hidden="true"></i> <%= attendant.user.profession %></div>
+              <div class="user_description"><%= truncate attendant.user.description, length: 245 %></div>
+            </div>
             <!-- info_right -->
-            <div class="medium-3 columns info_right">three</div>
+            <div class="medium-3 columns info_right">
+              three
+            </div>
           </li>
           <div class="clear"></div>
-          <%# link_to "#{attendant.user.firstname} #{attendant.user.lastname}", user_path(attendant.user) %>
         <% end %>
       </ul>
       <!-- listed attendants -->
