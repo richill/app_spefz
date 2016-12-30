@@ -61,7 +61,15 @@
   <!-- middle section -->
   <div class="medium-12 columns middle_section">
     <div class="middle_inner_section">
-      <!-- your content goes here --> hello
+      <ul class="inline-list left">
+        <li>
+          <span class="header">Age Group:</span>
+          <span class="content"><%= @card.event.category_age.name %></span>
+        </li>
+      </ul>
+      <ul class="inline-list right">
+        <li><span><div class="event_show_btn btn_event_booked"><%= link_to 'Booked!', '#' %></div></span></li>
+      </ul>
     </div>
   </div>
 
