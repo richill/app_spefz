@@ -467,37 +467,29 @@
   height: 400px;
 }
 
-
-
-// -----------------------------
-//   workings
-// -----------------------------
-
-.attendant_container ul {
+.cards_show_inner_section .attendant_container ul {
   list-style-type: none;
   margin: 0px !important;
 }
 
-.attendant_details_section {
-  // background-color: #fff;
+.cards_show_inner_section .attendant_details_section {
   padding: 35px 0px !important;
   border-bottom: 1px solid #ededf3 !important;
 }
 
 
 // -------- info_left --------
-.info_left {
-  // background-color: green;
+.cards_show_inner_section .info_left {
   padding: 0px !important;
 }
 
-.info_left .image_cover {
+.cards_show_inner_section .info_left .image_cover {
   background-color: rgba(88, 205, 166, 0.2) !important;
   padding: 15px;
   border-radius: 5px;
 }
 
-.info_left img {
+.cards_show_inner_section .info_left img {
   width: 100%;
   border-radius: 200px;
   -webkit-transition: all 0.3s ease;
@@ -505,7 +497,7 @@
   -o-transition: all 0.3s ease;
 }
 
-.info_left img:hover {
+.cards_show_inner_section .info_left img:hover {
   opacity: 0.5;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
@@ -513,17 +505,14 @@
 }
 
 
-
-
-
 // -------- info_middle --------
-.info_middle {
+.cards_show_inner_section .info_middle {
   height: 195px;
   padding: 18px 15px !important;
   background-color: #fff;
 }
 
-.info_middle .user_name a {
+.cards_show_inner_section .info_middle .user_name a {
   font-family: 'Lato', sans-serif;
   font-size: 25px;
   color: #414249 !important;
@@ -534,12 +523,12 @@
   -o-transition: all 0.3s ease;
 }
 
-.info_middle .user_profession i {
+.cards_show_inner_section .info_middle .user_profession i {
   font-size: 14px;
   margin-right: 2px;
 }
 
-.info_middle .user_profession {
+.cards_show_inner_section .info_middle .user_profession {
   font-family: 'Lato', sans-serif;
   font-size: 16px;
   color: #414249 !important;
@@ -547,7 +536,7 @@
   margin-top: 5px;
 }
 
-.info_middle .user_profession_uncompleted {
+.cards_show_inner_section .info_middle .user_profession_uncompleted {
   font-family: 'Lato', sans-serif;
   font-size: 16px;
   color: rgba(88, 205, 166, 0.5) !important;
@@ -556,14 +545,14 @@
   font-style: italic;
 }
 
-.info_middle .user_name a:hover {
+.cards_show_inner_section .info_middle .user_name a:hover {
   color: #E34B51 !important;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
 }
 
-.info_middle .user_description {
+.cards_show_inner_section .info_middle .user_description {
   font-family: 'Lato', sans-serif;
   font-size: 16px;
   line-height: 22px;
@@ -572,7 +561,7 @@
   font-style: italic;
 }
 
-.info_middle .user_description_uncompleted {
+.cards_show_inner_section .info_middle .user_description_uncompleted {
   font-family: 'Lato', sans-serif;
   font-size: 16px;
   line-height: 22px;
@@ -584,14 +573,14 @@
 }
 
 // -------- info_right --------
-.info_right {
+.cards_show_inner_section .info_right {
   height: 195px;
   border-right: 1px solid #ededf3 !important;
   background-color: #fff;
   padding: 32px 15px !important;
 }
 
-.info_right .current_connection {
+.cards_show_inner_section .info_right .current_connection {
   font-family: 'Lato', sans-serif;
   font-weight: 300;
   font-size: 15px;
@@ -602,7 +591,7 @@
   margin-bottom: 15px;
 }
 
-.info_right .btn_view_profile a {
+.cards_show_inner_section .info_right .btn_view_profile a {
   font-family: 'Lato', sans-serif;
   font-weight: 300;
   font-size: 18px;
@@ -618,14 +607,14 @@
   -o-transition: all 0.3s ease;
 }
 
-.info_right .btn_view_profile a:hover {
+.cards_show_inner_section .info_right .btn_view_profile a:hover {
   background: #eeaa02 !important;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
 }
 
-.info_right .btn_connect a {
+.cards_show_inner_section .info_right .btn_connect a {
   font-family: 'Lato', sans-serif;
   font-weight: 300;
   font-size: 18px;
@@ -641,7 +630,7 @@
   -o-transition: all 0.3s ease;
 }
 
-.info_right .btn_connect a:hover {
+.cards_show_inner_section .info_right .btn_connect a:hover {
   background: #eeaa02 !important;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
