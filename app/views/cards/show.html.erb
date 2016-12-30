@@ -1,14 +1,8 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @card.title %>
-</p>
-
-<p>
-  <strong>Event:</strong>
-  <%= @card.event_id %>
-</p>
-
-<%= link_to 'Edit', edit_card_path(@card) %> |
-<%= link_to 'Back', cards_path %>
+<% provide(:title, "Card") %>
+<div>
+  <div>
+      <%# render 'shared/header' %>
+      <%= render 'show' %>
+      <%= render 'shared/footer' %>
+  </div>
+</div>
