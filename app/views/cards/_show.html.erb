@@ -1,16 +1,16 @@
-<div class="medium-12 columns events_show_inner_section">
+<div class="medium-12 columns cards_show_inner_section">
 
   <!-- upper section -->
   <div class="medium-12 columns upper_section">
     <div class="profile_banner">
-      <div class="medium-12 columns event_inner_banner">
+      <div class="medium-12 columns card_inner_banner">
         <div class="header"><%= render 'shared/header' %></div>
-        <div class="medium-12 columns upper_event_content">
-          <div class="medium-12 columns evt_details_cover">
-            <div class="evt_details_container">
+        <div class="medium-12 columns upper_card_content">
+          <div class="medium-12 columns card_details_cover">
+            <div class="card_details_container">
 
-              <!-- left_evt_details -->
-              <div class="medium-3 columns left_evt_details">
+              <!-- left_card_details -->
+              <div class="medium-3 columns left_card_details">
                 <!-- sold out -->
                 <% if @card.event.sold_out? %>
                   <div class="banner">
@@ -27,8 +27,8 @@
                 <% end %>
               </div>
 
-              <!-- right_evt_details -->
-              <div class="medium-9 columns right_evt_details">
+              <!-- right_card_details -->
+              <div class="medium-9 columns right_card_details">
                 <div class="title"><%= @card.event.title %></div>
                 <div class="info"><i class="fa fa-map-marker" aria-hidden="true"></i> <%= @card.event.venuename %></div>
                 <div class="info"><i class="fa fa-calendar" aria-hidden="true"></i> <%= @card.event.date.strftime("%A, %d %b") %></div>
