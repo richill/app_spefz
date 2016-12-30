@@ -81,7 +81,11 @@
             <!-- info_left -->
             <div class="medium-2 columns info_left">
               <div class="image_cover">
-                <%= link_to(image_tag("#{attendant.user.image_url}", :alt =>  "image", :class =>"#"), attendant.user) %>
+                <% if attendant.user.image.present? %>
+                  <%= link_to(image_tag("#{attendant.user.image_url}", :alt =>  "image", :class =>"#"), attendant.user) %>
+                <% else %>
+                  <%= link_to(image_tag("img-profile-image-default.png", :alt =>  "image", :class =>"#"), attendant.user) %>
+                <% end %>
               </div>
             </div>
             <!-- info_middle -->
