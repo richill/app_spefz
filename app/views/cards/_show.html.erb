@@ -89,10 +89,6 @@
               </div>
             </div>
 
-
-
-
-
             <!-- info_middle -->
             <div class="medium-7 columns info_middle">
               <div class="user_name"><%= link_to "#{attendant.user.firstname} #{attendant.user.lastname}", user_path(attendant.user) %></div>
@@ -102,14 +98,14 @@
                 <div class="user_profession_uncompleted"><i class="fa fa-briefcase" aria-hidden="true"></i> <%= "#{attendant.user.firstname} has not yet stated his profession" %></div>
               <% end %>
               <% if attendant.user.description? %>
-                <div class="user_description"><%= truncate attendant.user.description, length: 245 %></div>
+                <div class="user_description"><%= truncate attendant.user.description, length: 190 %></div>
               <% else %>
                 <div class="user_description_uncompleted"><%= "#{attendant.user.firstname} currently has not yet completed his profile description" %></div>
               <% end %>
-              <div class="rating_section">
+              <div class="medium-12 columns rating_section">
                 <ul>
                   <li class="ratings_looks">
-                    <span>rating looks</span>
+                    <span>rate looks:</span>
                     <i class="fa fa-star" aria-hidden="true"></i>
                     <i class="fa fa-star" aria-hidden="true"></i>
                     <i class="fa fa-star" aria-hidden="true"></i>
@@ -118,7 +114,7 @@
                   </li>
                   <li class="divider">|</li>
                   <li class="ratings_personality">
-                    <span>rating personality</span> 
+                    <span>rate personality:</span> 
                     <i class="fa fa-star" aria-hidden="true"></i>
                     <i class="fa fa-star" aria-hidden="true"></i>
                     <i class="fa fa-star" aria-hidden="true"></i>
@@ -128,11 +124,6 @@
                 </ul>
               </div>
             </div>
-
-
-
-
-
 
             <!-- info_right -->
             <div class="medium-3 columns info_right">

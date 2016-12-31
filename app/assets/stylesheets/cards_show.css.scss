@@ -557,20 +557,46 @@
   font-size: 16px;
   line-height: 22px;
   color: #7C93A7 !important;
-  margin: 20px 0px;
+  padding: 15px 0px;
   font-style: italic;
+  height: 83px;
 }
 
 .cards_show_inner_section .info_middle .user_description_uncompleted {
   font-family: 'Lato', sans-serif;
   font-size: 16px;
+  font-weight: 300;
   line-height: 22px;
   color: #fff !important;
-  font-weight: 300;
-  margin: 20px 0px;
+  padding: 19px 15px;
+  font-style: italic;
+  height: 63px;
   background-color: rgba(47, 63, 91, 0.25) !important;
-  padding: 29px 15px;
+  margin: 10px 0px;
 }
+
+.cards_show_inner_section .info_middle .rating_section {
+  border-top: 1px solid #ededf3 !important;
+  background-color: rgba(88, 205, 166, 0.1) !important;
+  padding: 13px;
+}
+
+.cards_show_inner_section .info_middle .rating_section ul {
+  list-style-type: none;
+}
+
+.cards_show_inner_section .info_middle .rating_section ul li {
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  color: #414249 !important;
+  float: left;
+  text-transform: capitalize;
+}
+
+.cards_show_inner_section .info_middle .rating_section .divider {
+  margin: 0px 20px !important;
+}
+
 
 // -------- info_right --------
 .cards_show_inner_section .info_right {
@@ -638,22 +664,6 @@
 
 
 
-// -------------------------
-//   workings
-// -------------------------
-
-
-.rating_section {
-  border-top: 1px solid #ededf3 !important;
-}
-
-.rating_section ul {
-  list-style-type: none;
-}
-
-.rating_section ul li {
-  float: left;
-}
 
 
 
