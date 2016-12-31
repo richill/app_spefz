@@ -72,7 +72,7 @@
                       <% end %>
                     </div>
                     <div class="blog_content_read">
-                      <span class="blog_info_content"><%= truncate "#{blog.content}", length: 700 %></span>
+                      <span class="blog_info_content"><%= truncate "#{blog.content}", length: 600 %></span>
                       <span class="read_more"><%= link_to "read more", blog_path(blog) %></span>
                       <% if signed_in? %>
                         <% if current_user.admin_pa_management_group || current_user.pa_administration_group %>
