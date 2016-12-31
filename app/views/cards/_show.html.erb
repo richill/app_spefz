@@ -88,6 +88,11 @@
                 <% end %>
               </div>
             </div>
+
+
+
+
+
             <!-- info_middle -->
             <div class="medium-7 columns info_middle">
               <div class="user_name"><%= link_to "#{attendant.user.firstname} #{attendant.user.lastname}", user_path(attendant.user) %></div>
@@ -101,7 +106,34 @@
               <% else %>
                 <div class="user_description_uncompleted"><%= "#{attendant.user.firstname} currently has not yet completed his profile description" %></div>
               <% end %>
+              <div class="rating_section">
+                <ul>
+                  <li class="ratings_looks">
+                    <span>rating looks</span>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                  </li>
+                  <li class="divider">|</li>
+                  <li class="ratings_personality">
+                    <span>rating personality</span> 
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star" aria-hidden="true"></i>
+                    <i class="fa fa-star-o" aria-hidden="true"></i>
+                  </li>
+                </ul>
+              </div>
             </div>
+
+
+
+
+
+
             <!-- info_right -->
             <div class="medium-3 columns info_right">
               <% if current_user == attendant.user %>
