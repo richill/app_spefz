@@ -7,7 +7,7 @@ class Event < ActiveRecord::Base
   
   acts_as_taggable
 
-  validate :date_cannot_be_in_the_past
+  # validate :date_cannot_be_in_the_past
 
   has_one :host
   has_one :card

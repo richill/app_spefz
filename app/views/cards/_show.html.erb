@@ -94,12 +94,12 @@
               <% if attendant.user.profession? %>
                 <div class="user_profession"><i class="fa fa-briefcase" aria-hidden="true"></i> <%= attendant.user.profession %></div>
               <% else %>
-                <div class="user_profession_uncompleted"><i class="fa fa-briefcase" aria-hidden="true"></i> <%= "#{attendant.user.firstname} has not stated his profession" %></div>
+                <div class="user_profession_uncompleted"><i class="fa fa-briefcase" aria-hidden="true"></i> <%= "#{attendant.user.firstname} has not yet stated his profession" %></div>
               <% end %>
               <% if attendant.user.description? %>
                 <div class="user_description"><%= truncate attendant.user.description, length: 245 %></div>
               <% else %>
-                <div class="user_description_uncompleted"><%= "#{attendant.user.firstname} currently has not completed his profile description" %></div>
+                <div class="user_description_uncompleted"><%= "#{attendant.user.firstname} currently has not yet completed his profile description" %></div>
               <% end %>
             </div>
             <!-- info_right -->
