@@ -102,27 +102,29 @@
               <% else %>
                 <div class="user_description_uncompleted"><%= "#{attendant.user.firstname} currently has not yet completed his profile description" %></div>
               <% end %>
-              <div class="medium-12 columns rating_section">
-                <ul>
-                  <li class="ratings_looks">
-                    <span>rate looks:</span>
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                    <i class="fa fa-star-o" aria-hidden="true"></i>
-                  </li>
-                  <li class="divider">|</li>
-                  <li class="ratings_personality">
-                    <span>rate personality:</span> 
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                    <i class="fa fa-star-o" aria-hidden="true"></i>
-                  </li>
-                </ul>
-              </div>
+              <% unless current_user == attendant.user %>
+                <div class="medium-12 columns rating_section">
+                  <ul>
+                    <li class="ratings_looks">
+                      <span>rate looks:</span>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <i class="fa fa-star-o" aria-hidden="true"></i>
+                    </li>
+                    <li class="divider">|</li>
+                    <li class="ratings_personality">
+                      <span>rate personality:</span> 
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <i class="fa fa-star-o" aria-hidden="true"></i>
+                    </li>
+                  </ul>
+                </div>
+              <% end %>
             </div>
 
             <!-- info_right -->
