@@ -42,9 +42,6 @@
                     <div class="blog_category_date">
                       <span>Category: </span>
                       <span class="blog_category"><%= link_to "#{blog.category_blog.name}", "#" %></span>
-                      <span class="blog_category"><%= link_to "#{blog.category_blog.name}", blogs_path(q: {title_cont_any: blog.title.split(' ')}) %></span>
-
-
                       <span class="divider">|</span>
                       <span><%= blog.created_at.strftime("%B %d, %Y") %></span>
                     </div>
