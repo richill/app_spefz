@@ -132,19 +132,24 @@
               <% if current_user == attendant.user %>
                 <div class="btn_view_profile"><%= link_to "view profile", user_path(attendant.user) %></div>
               <% else %>
-                <div class="hide">
+                <div>
                   <div class="current_connection">
-                    <%# friendship_status(@user, @friend) %>
-                    andrew is in your network
+                    <%= friendship_status(current_user, attendant.user) %>
                   </div>
-                  <div class="btn_view_profile"><%= link_to "view profile", "#" %></div>
-                </div>
-                <div class="">
-                  <div class="current_connection">
-                    <%# friendship_status(@user, @friend) %>
-                    andrew is not in your network (yet)
-                  </div>
-                  <div class="btn_connect"><%= link_to "connect with andrew", "#" %></div>
+                  <% if current_user.friends?(attendant.user) %>
+                    <div class="btn_view_profile"><%= link_to "view profile", user_path(attendant.user) %></div>
+                  <% elsif current_user.friended?(attendant.user) %>
+                    <%= "" %>
+                  <% else current_user.friends?(attendant.user) %>
+                    <div class="btn_connect">
+                      <%= link_to "connect with #{attendant.user.firstname}", 
+                                  { controller: "friendships", 
+                                    action: "create", 
+                                    id: attendant.user.email }, 
+                                    confirm: "Send friend request to #{attendant.user.firstname}?", method: :post %>
+                    </div>  
+                  <% end %>
+
                 </div>
               <% end %>
             </div>
@@ -153,7 +158,6 @@
         <% end %>
       </ul>
       <!-- listed attendants -->
-      <!-- is not in your network (yet) -->
     </div>
   </div>
 </div>
