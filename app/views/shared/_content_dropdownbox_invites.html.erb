@@ -69,7 +69,6 @@ hello
   <div class="userinviterequests_inner_container">
     <div class="content_list">
       <ul>
-        <%# current_user.recieved_invites.each do |invite| %>
         <% @cards.each do |card| %>
           <% if card.event.current_user_attending_paid?(current_user) %>
           <li>
@@ -101,24 +100,25 @@ hello
               </div>
             </div>
 
-            <%# if invite.social.current_user_attending?(current_user) %>
+            <% if card.card_status_open? %>
               <div class="action_btn_section_attending"> 
-                <span class="btn btn_decline_invite"><%# link_to 'Attending', user_social_path(invite.social.user, invite.social) %></span>
+                <span class="btn btn_decline_invite"><%= link_to "view", card %></span>
                 <%# form_for invite, url: invite_path(invite), method: :put do |f| %>
                   <%# f.hidden_field :user_id, value: invite.user.id %>
                   <%# f.hidden_field :invitee_id, value: current_user.id %>
                   <%# submit_tag "Remove", class: "btn btn_decline_invite" %>
                 <%# end %>
               </div>
-            <%# else %>
+            <% else %>
               <div class="action_btn_section"> 
+                <span class="btn btn_decline_invite"><%= link_to "not open", card %></span>
                 <%# form_for invite, url: invite_path(invite), method: :put do |f| %>
                   <%# f.hidden_field :user_id, value: invite.user.id %>
                   <%# f.hidden_field :invitee_id, value: current_user.id %>
                   <%# submit_tag "Decline", class: "btn btn_decline_invite" %>
                 <%# end %>
               </div>
-            <%# end %>
+            <% end %>
           </li>
           <% end %>
           <div class="clear"></div>
