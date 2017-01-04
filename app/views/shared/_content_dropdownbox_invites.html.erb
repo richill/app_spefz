@@ -71,6 +71,7 @@ hello
       <ul>
         <%# current_user.recieved_invites.each do |invite| %>
         <% @cards.each do |card| %>
+          <% if card.event.current_user_attending_paid?(current_user) %>
           <li>
             <div class="image_section">
               <span class="img_cover">
@@ -119,6 +120,7 @@ hello
               </div>
             <%# end %>
           </li>
+          <% end %>
           <div class="clear"></div>
         <% end %>
       </ul>
