@@ -184,6 +184,16 @@ class User < ActiveRecord::Base
     # current_user belongs to the pa_event_mgt_group
   end
 
+  #displays the overall avaerage rating for an user looks & personality
+  def overall_ratings
+    array = Rate.where(rateable_id: id, rateable_type: 'User')
+    stars = array.map {|user| user.stars }
+    star_count = stars.count
+    stars_total = stars.inject(0){|sum,x| sum + x }
+    score = stars_total / (star_count.nonzero? || 1)
+  end
+
+  #displays the overall avaerage rating for an user looks
   def ratings_dimension_looks
     array = Rate.where(rateable_id: id, rateable_type: 'User').where(dimension: "looks")
     stars = array.map {|user| user.stars }
@@ -192,6 +202,7 @@ class User < ActiveRecord::Base
     score = stars_total / (star_count.nonzero? || 1)
   end
 
+  #displays the overall avaerage rating for an user personality
   def ratings_dimension_personality
     array = Rate.where(rateable_id: id, rateable_type: 'User').where(dimension: "personality")
     stars = array.map {|user| user.stars }
