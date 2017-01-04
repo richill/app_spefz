@@ -51,6 +51,10 @@
                       <div class="right_evt_container">
                         <% if card.card_status_open? %>
                           <div class="btn_card_status_open"><%= link_to "view attendees & connect", card %></div>
+                          <div class="rate_conainer">
+                            <span class="rate_title">Rate Event:</span>
+                            <span class="rate_stars"><%= rating_for card.event, 'atmosphere', cancel_place: "right", disable_after_rate: true %></span>
+                          </div>
                         <% else %>
                           <div class="btn_card_status_pending"><%= link_to "not yet open", '#' %></div>
                         <% end %>

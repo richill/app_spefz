@@ -5,7 +5,7 @@ class Event < ActiveRecord::Base
   extend FriendlyId
   friendly_id :slug_events, use: :slugged
 
-  ratyrate_rateable "event"
+  ratyrate_rateable "atmosphere"
   
   acts_as_taggable
 
