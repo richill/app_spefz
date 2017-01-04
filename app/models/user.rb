@@ -184,6 +184,22 @@ class User < ActiveRecord::Base
     # current_user belongs to the pa_event_mgt_group
   end
 
+  def ratings_dimension_looks
+    array = Rate.where(rateable_id: id, rateable_type: 'User').where(dimension: "looks")
+    stars = array.map {|user| user.stars }
+    star_count = stars.count
+    stars_total = stars.inject(0){|sum,x| sum + x }
+    score = stars_total / (star_count.nonzero? || 1)
+  end
+
+  def ratings_dimension_personality
+    array = Rate.where(rateable_id: id, rateable_type: 'User').where(dimension: "personality")
+    stars = array.map {|user| user.stars }
+    star_count = stars.count
+    stars_total = stars.inject(0){|sum,x| sum + x }
+    score = stars_total / (star_count.nonzero? || 1)
+  end
+
   def generate_reference_number
     begin
       reference_length = 6
