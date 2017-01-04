@@ -113,8 +113,8 @@ cards
                 <% end %>
               </div>
             <% else %>
-              <div class="action_btn_section"> 
-                <span class="btn btn_remove_card"><%= link_to "not open", card %></span>
+              <div class="action_btn_section action_btn_card_section"> 
+                <span class="btn btn_decline_invite"><%= link_to "not open", card %></span>
                 <%= form_for card, url: card_path(card), method: :put do |f| %>
                   <%= f.hidden_field :event_id, value: card.event.id %>
                   <%= f.hidden_field :card_id, value: card.id %>
@@ -132,7 +132,6 @@ cards
   <% end %>
 <% end %>
 <%# else %>
-hi
   <!-- <div class="userinviterequests_inner_container">
     <div class="content_list_none">you currently have no invites</div> 
   </div> -->
