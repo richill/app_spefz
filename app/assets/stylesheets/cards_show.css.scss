@@ -578,7 +578,7 @@
 .cards_show_inner_section .info_middle .rating_section {
   border-top: 1px solid #ededf3 !important;
   background-color: rgba(88, 205, 166, 0.1) !important;
-  padding: 13px;
+  padding: 12px;
 }
 
 .cards_show_inner_section .info_middle .rating_section ul {
@@ -595,6 +595,18 @@
 
 .cards_show_inner_section .info_middle .rating_section .divider {
   margin: 0px 20px !important;
+}
+
+
+.cards_show_inner_section .info_middle .rating_section .rate_title {
+  float: left;
+  margin-right: 5px;
+  font-size: 12px;
+  margin-top: 3px;
+} 
+
+.cards_show_inner_section .info_middle .rating_section .rate_stars {
+  float: left;
 }
 
 
@@ -661,6 +673,10 @@
   -moz-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
 }
+
+// ---------------------------
+//   workings
+// ---------------------------
 
 
 

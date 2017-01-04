@@ -106,21 +106,13 @@
                 <div class="medium-12 columns rating_section">
                   <ul>
                     <li class="ratings_looks">
-                      <span>rate looks:</span>
-                      <i class="fa fa-star" aria-hidden="true"></i>
-                      <i class="fa fa-star" aria-hidden="true"></i>
-                      <i class="fa fa-star" aria-hidden="true"></i>
-                      <i class="fa fa-star" aria-hidden="true"></i>
-                      <i class="fa fa-star-o" aria-hidden="true"></i>
+                      <span class="rate_title">rate looks:</span>
+                      <span class="rate_stars"><%= rating_for attendant.user, 'looks', cancel_place: "right", disable_after_rate: true %></span>
                     </li>
                     <li class="divider">|</li>
                     <li class="ratings_personality">
-                      <span>rate personality:</span> 
-                      <i class="fa fa-star" aria-hidden="true"></i>
-                      <i class="fa fa-star" aria-hidden="true"></i>
-                      <i class="fa fa-star" aria-hidden="true"></i>
-                      <i class="fa fa-star" aria-hidden="true"></i>
-                      <i class="fa fa-star-o" aria-hidden="true"></i>
+                      <span class="rate_title">rate personality:</span> 
+                      <span class="rate_stars"><%= rating_for attendant.user, 'personality', cancel_place: "right", disable_after_rate: true %></span>
                     </li>
                   </ul>
                 </div>
