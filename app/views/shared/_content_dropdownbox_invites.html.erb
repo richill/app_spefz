@@ -78,9 +78,9 @@ cards
             <div class="image_section">
               <span class="img_cover">
                 <% if card.event.image_url.present? %>
-                  <%= link_to(image_tag(card.event.image_url, :alt =>  "image", :class =>"#", id: ""), user_event_path(card.event.user, card.event)) %>
+                  <%= link_to(image_tag(card.event.image_url, :alt =>  "image", :class =>"#", id: ""), cards_path) %>
                 <% else %>
-                  <%= link_to(image_tag("img-profile-image-default.png", :alt =>  "image", :class =>"#", id: ""), user_event_path(card.event.user, card.event)) %>
+                  <%= link_to(image_tag("img-profile-image-default.png", :alt =>  "image", :class =>"#", id: ""), cards_path) %>
                 <% end %>
               </span>
             </div>
@@ -114,7 +114,7 @@ cards
               </div>
             <% else %>
               <div class="action_btn_section action_btn_card_section"> 
-                <span class="btn btn_decline_invite"><%= link_to "not open", card %></span>
+                <span class="btn btn_decline_invite"><%= link_to "not open", cards_path %></span>
                 <%= form_for card, url: card_path(card), method: :put do |f| %>
                   <%= f.hidden_field :event_id, value: card.event.id %>
                   <%= f.hidden_field :card_id, value: card.id %>
