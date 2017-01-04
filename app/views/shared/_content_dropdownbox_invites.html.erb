@@ -69,54 +69,55 @@ hello
   <div class="userinviterequests_inner_container">
     <div class="content_list">
       <ul>
-        <% current_user.recieved_invites.each do |invite| %>
+        <%# current_user.recieved_invites.each do |invite| %>
+        <% @cards.each do |card| %>
           <li>
             <div class="image_section">
               <span class="img_cover">
-                <% if invite.social.image_url.present? %>
-                  <%= link_to(image_tag(invite.social.image_url, :alt =>  "image", :class =>"#", id: ""), user_social_path(invite.social.user, invite.social)) %>
+                <% if card.event.image_url.present? %>
+                  <%= link_to(image_tag(card.event.image_url, :alt =>  "image", :class =>"#", id: ""), user_event_path(card.event.user, card.event)) %>
                 <% else %>
-                  <%= link_to(image_tag("img-profile-image-default.png", :alt =>  "image", :class =>"#", id: ""), user_social_path(invite.social.user, invite.social)) %>
+                  <%= link_to(image_tag("img-profile-image-default.png", :alt =>  "image", :class =>"#", id: ""), user_event_path(card.event.user, card.event)) %>
                 <% end %>
               </span>
             </div>
 
             <div class="info_section">
-              <div class="title"><%= link_to truncate("#{invite.social.title}", length: 30), user_social_path(invite.social.user, invite.social) %></div>
+              <div class="title"><%= link_to truncate("#{card.event.title}", length: 30), "#" %></div>
               <div class="date_country_info" style="margin-top:2px;">
-                <span><%= invite.social.date.strftime("%a, %d %b %Y") %></span> 
+                <span><%= card.event.date.strftime("%a, %d %b %Y") %></span> 
                 <span class="divider">|</span> 
-                <span><%= invite.social.time.strftime("%I:%M %p") %></span>
+                <span><%= card.event.time.strftime("%I:%M %p") %></span>
               </div>
               <div class="date_country_info">
-                <span><%= invite.social.category_country.name %></span> 
+                <span><%= card.event.category_country.name %></span> 
                 <span>-</span> 
-                <span><%= invite.social.city %></span>
+                <span><%= card.event.city %></span>
               </div>
               <div class="date_country_info"> 
                 <span>invited by:</span>
-                <span><%= link_to "#{invite.user.firstname} #{invite.user.lastname}", user_path(invite.user) %></span>
+                <span><%# link_to "#{invite.user.firstname} #{invite.user.lastname}", user_path(invite.user) %></span>
               </div>
             </div>
 
-            <% if invite.social.current_user_attending?(current_user) %>
+            <%# if invite.social.current_user_attending?(current_user) %>
               <div class="action_btn_section_attending"> 
-                <span class="btn btn_decline_invite"><%= link_to 'Attending', user_social_path(invite.social.user, invite.social) %></span>
-                <%= form_for invite, url: invite_path(invite), method: :put do |f| %>
-                  <%= f.hidden_field :user_id, value: invite.user.id %>
-                  <%= f.hidden_field :invitee_id, value: current_user.id %>
-                  <%= submit_tag "Remove", class: "btn btn_decline_invite" %>
-                <% end %>
+                <span class="btn btn_decline_invite"><%# link_to 'Attending', user_social_path(invite.social.user, invite.social) %></span>
+                <%# form_for invite, url: invite_path(invite), method: :put do |f| %>
+                  <%# f.hidden_field :user_id, value: invite.user.id %>
+                  <%# f.hidden_field :invitee_id, value: current_user.id %>
+                  <%# submit_tag "Remove", class: "btn btn_decline_invite" %>
+                <%# end %>
               </div>
-            <% else %>
+            <%# else %>
               <div class="action_btn_section"> 
-                <%= form_for invite, url: invite_path(invite), method: :put do |f| %>
-                  <%= f.hidden_field :user_id, value: invite.user.id %>
-                  <%= f.hidden_field :invitee_id, value: current_user.id %>
-                  <%= submit_tag "Decline", class: "btn btn_decline_invite" %>
-                <% end %>
+                <%# form_for invite, url: invite_path(invite), method: :put do |f| %>
+                  <%# f.hidden_field :user_id, value: invite.user.id %>
+                  <%# f.hidden_field :invitee_id, value: current_user.id %>
+                  <%# submit_tag "Decline", class: "btn btn_decline_invite" %>
+                <%# end %>
               </div>
-            <% end %>
+            <%# end %>
           </li>
           <div class="clear"></div>
         <% end %>
