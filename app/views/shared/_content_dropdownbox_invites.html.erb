@@ -118,7 +118,7 @@ cards
                 <%= form_for card, url: card_path(card), method: :put do |f| %>
                   <%= f.hidden_field :event_id, value: card.event.id %>
                   <%= f.hidden_field :card_id, value: card.id %>
-                  <%= submit_tag "Remove", class: "btn btn_decline_invite" %>
+                  <%= submit_tag "Remove", class: "btn btn_decline_invite hide" %>
                 <% end %>
               </div>
             <% end %>
