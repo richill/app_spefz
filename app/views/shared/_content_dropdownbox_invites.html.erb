@@ -65,70 +65,76 @@
 
 <!-- cards -->
 hello
-<% if current_user.recieved_invites.present? %>
-  <div class="userinviterequests_inner_container">
-    <div class="content_list">
-      <ul>
-        <% @cards.each do |card| %>
-          <% if card.event.current_user_attending_paid?(current_user) %>
-          <li>
-            <div class="image_section">
-              <span class="img_cover">
-                <% if card.event.image_url.present? %>
-                  <%= link_to(image_tag(card.event.image_url, :alt =>  "image", :class =>"#", id: ""), user_event_path(card.event.user, card.event)) %>
-                <% else %>
-                  <%= link_to(image_tag("img-profile-image-default.png", :alt =>  "image", :class =>"#", id: ""), user_event_path(card.event.user, card.event)) %>
-                <% end %>
-              </span>
-            </div>
+<%# if current_user.recieved_invites.present? %>
+<%# if @events.current_user_attending_paid?(current_user).card.present? %>
+  <% @cards.each do |card| %>
+    <% if card.event.current_user_attending_paid?(current_user) && card.card_status_nil %>
+    <div class="userinviterequests_inner_container">
+      <div class="content_list">
+        <ul>
+          <%# @cards.each do |card| %>
+            <%# if card.event.current_user_attending_paid?(current_user) && card.card_status_nil %>
+            <li>
+              <div class="image_section">
+                <span class="img_cover">
+                  <% if card.event.image_url.present? %>
+                    <%= link_to(image_tag(card.event.image_url, :alt =>  "image", :class =>"#", id: ""), user_event_path(card.event.user, card.event)) %>
+                  <% else %>
+                    <%= link_to(image_tag("img-profile-image-default.png", :alt =>  "image", :class =>"#", id: ""), user_event_path(card.event.user, card.event)) %>
+                  <% end %>
+                </span>
+              </div>
 
-            <div class="info_section">
-              <div class="title"><%= link_to truncate("#{card.event.title}", length: 30), "#" %></div>
-              <div class="date_country_info" style="margin-top:2px;">
-                <span><%= card.event.date.strftime("%a, %d %b %Y") %></span> 
-                <span class="divider">|</span> 
-                <span><%= card.event.time.strftime("%I:%M %p") %></span>
+              <div class="info_section">
+                <div class="title"><%= link_to truncate("#{card.event.title}", length: 30), "#" %></div>
+                <div class="date_country_info" style="margin-top:2px;">
+                  <span><%= card.event.date.strftime("%a, %d %b %Y") %></span> 
+                  <span class="divider">|</span> 
+                  <span><%= card.event.time.strftime("%I:%M %p") %></span>
+                </div>
+                <div class="date_country_info">
+                  <span><%= card.event.category_country.name %></span> 
+                  <span>-</span> 
+                  <span><%= card.event.city %></span>
+                </div>
+                <div class="date_country_info"> 
+                  <span>invited by:</span>
+                  <span><%# link_to "#{invite.user.firstname} #{invite.user.lastname}", user_path(invite.user) %></span>
+                </div>
               </div>
-              <div class="date_country_info">
-                <span><%= card.event.category_country.name %></span> 
-                <span>-</span> 
-                <span><%= card.event.city %></span>
-              </div>
-              <div class="date_country_info"> 
-                <span>invited by:</span>
-                <span><%# link_to "#{invite.user.firstname} #{invite.user.lastname}", user_path(invite.user) %></span>
-              </div>
-            </div>
 
-            <% if card.card_status_open? %>
-              <div class="action_btn_section_attending"> 
-                <span class="btn btn_remove_card"><%= link_to "view", card %></span>
-                <%= form_for card, url: card_path(card), method: :put do |f| %>
-                  <%= f.hidden_field :event_id, value: card.event.id %>
-                  <%= f.hidden_field :card_id, value: card.id %>
-                  <%= submit_tag "Remove", class: "btn btn_decline_invite" %>
-                <% end %>
-              </div>
-            <% else %>
-              <div class="action_btn_section"> 
-                <span class="btn btn_remove_card"><%= link_to "not open", card %></span>
-                <%= form_for card, url: card_path(card), method: :put do |f| %>
-                  <%= f.hidden_field :event_id, value: card.event.id %>
-                  <%= f.hidden_field :card_id, value: card.id %>
-                  <%= submit_tag "Remove", class: "btn btn_decline_invite" %>
-                <% end %>
-              </div>
-            <% end %>
-          </li>
-          <% end %>
-          <div class="clear"></div>
-        <% end %>
-      </ul>
-    </div> 
-  </div>
-<% else %>
-  <div class="userinviterequests_inner_container">
+              <% if card.card_status_open? %>
+                <div class="action_btn_section_attending"> 
+                  <span class="btn btn_remove_card"><%= link_to "view", card %></span>
+                  <%= form_for card, url: card_path(card), method: :put do |f| %>
+                    <%= f.hidden_field :event_id, value: card.event.id %>
+                    <%= f.hidden_field :card_id, value: card.id %>
+                    <%= submit_tag "Remove", class: "btn btn_decline_invite" %>
+                  <% end %>
+                </div>
+              <% else %>
+                <div class="action_btn_section"> 
+                  <span class="btn btn_remove_card"><%= link_to "not open", card %></span>
+                  <%= form_for card, url: card_path(card), method: :put do |f| %>
+                    <%= f.hidden_field :event_id, value: card.event.id %>
+                    <%= f.hidden_field :card_id, value: card.id %>
+                    <%= submit_tag "Remove", class: "btn btn_decline_invite" %>
+                  <% end %>
+                </div>
+              <% end %>
+            </li>
+            <%# end %>
+            <div class="clear"></div>
+          <%# end %>
+        </ul>
+      </div> 
+    </div>
+    <% end %>
+  <% end %>
+<%# else %>
+hi
+  <!-- <div class="userinviterequests_inner_container">
     <div class="content_list_none">you currently have no invites</div> 
-  </div>
-<% end %>
+  </div> -->
+<%# end %>
 
