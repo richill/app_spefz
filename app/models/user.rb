@@ -7,6 +7,8 @@ class User < ActiveRecord::Base
   extend FriendlyId
   friendly_id :slug_users, use: :slugged
 
+  ratyrate_rateable "looks", "personality"
+
   ratyrate_rater
 
   acts_as_taggable

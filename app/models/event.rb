@@ -54,6 +54,15 @@ class Event < ActiveRecord::Base
     end while self.class.exists?(reference: reference)
   end
 
+  #displays the overall avaerage rating for an event
+  def overall_ratings
+    array = Rate.where(rateable_id: id, rateable_type: 'Event')
+    stars = array.map {|event| event.stars }
+    star_count = stars.count
+    stars_total = stars.inject(0){|sum,x| sum + x }
+    score = stars_total / (star_count.nonzero? || 1)
+  end
+
   #events can not be created in the past
   def date_cannot_be_in_the_past
     if date.present? && date <= Date.today
