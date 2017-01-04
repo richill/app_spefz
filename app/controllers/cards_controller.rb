@@ -7,6 +7,7 @@ class CardsController < ApplicationController
   end
 
   def show
+    @cards = Card.all
     @logged_in_user = current_user if signed_in?
     @friend = User.find_by_email(params[:id])
     # @friend = User.find(params[:user_id])

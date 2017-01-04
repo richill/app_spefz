@@ -104,19 +104,19 @@ hello
               <div class="action_btn_section_attending"> 
                 <span class="btn btn_decline_invite"><%= link_to "view", card %></span>
                 <%= form_for card, url: card_path(card), method: :put do |f| %>
-                  <%# f.hidden_field :user_id, value: invite.user.id %>
-                  <%# f.hidden_field :invitee_id, value: current_user.id %>
+                  <%= f.hidden_field :event_id, value: card.event.id %>
+                  <%= f.hidden_field :card_id, value: card.id %>
                   <%= submit_tag "Remove", class: "btn btn_decline_invite" %>
                 <% end %>
               </div>
             <% else %>
               <div class="action_btn_section"> 
                 <span class="btn btn_decline_invite"><%= link_to "not open", card %></span>
-                <%# form_for invite, url: invite_path(invite), method: :put do |f| %>
-                  <%# f.hidden_field :user_id, value: invite.user.id %>
-                  <%# f.hidden_field :invitee_id, value: current_user.id %>
-                  <%# submit_tag "Decline", class: "btn btn_decline_invite" %>
-                <%# end %>
+                <%= form_for card, url: card_path(card), method: :put do |f| %>
+                  <%= f.hidden_field :event_id, value: card.event.id %>
+                  <%= f.hidden_field :card_id, value: card.id %>
+                  <%= submit_tag "Remove", class: "btn btn_decline_invite" %>
+                <% end %>
               </div>
             <% end %>
           </li>
