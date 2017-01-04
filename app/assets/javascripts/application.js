@@ -18,6 +18,8 @@
 //= require foundation-datetimepicker
 //= require social-share-button
 //= require turbolinks
+//= require jquery.raty
+//= require ratyrate
 //= require_tree .
 
 $(function(){ $(document).foundation(); });
