@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   respond_to :html, :xml, :json
   before_action :set_user, only: [:show, :edit, :update, :destroy, :followings, :followers, :dashboard, :membership, :account, :settings]
-  before_filter :setup_friends, :setup_subscription
+  before_filter :setup_friends, :setup_subscription, :setup_cards
 
   def index
     if params[:tag]
@@ -19,7 +19,6 @@ class UsersController < ApplicationController
   end
 
   def show
-    @cards = Card.all
     @user = User.friendly.find(params[:id])
     @friend = User.friendly.find(params[:id])
     @logged_in_user = current_user if signed_in?
@@ -108,6 +107,10 @@ class UsersController < ApplicationController
 
     def setup_subscription
       @premium_plan = Subscription.find_by(title:"premium") 
+    end
+
+    def setup_cards
+      @cards = Card.all
     end
 
     def set_user

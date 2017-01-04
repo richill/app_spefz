@@ -1,13 +1,12 @@
 class CardsController < ApplicationController
   before_action :set_card, only: [:show, :edit, :update, :destroy]
-  before_filter :setup_friends, :setup_subscription
+  before_filter :setup_friends, :setup_subscription, :setup_cards
 
   def index
     @cards = Card.all
   end
 
   def show
-    @cards = Card.all
     @logged_in_user = current_user if signed_in?
     @friend = User.find_by_email(params[:id])
     # @friend = User.find(params[:user_id])
@@ -75,6 +74,10 @@ class CardsController < ApplicationController
 
     def setup_subscription
       @premium_plan = Subscription.find_by(title:"premium") 
+    end
+
+    def setup_cards
+      @cards = Card.all
     end
 
     def card_params

@@ -102,7 +102,7 @@ hello
 
             <% if card.card_status_open? %>
               <div class="action_btn_section_attending"> 
-                <span class="btn btn_decline_invite"><%= link_to "view", card %></span>
+                <span class="btn btn_remove_card"><%= link_to "view", card %></span>
                 <%= form_for card, url: card_path(card), method: :put do |f| %>
                   <%= f.hidden_field :event_id, value: card.event.id %>
                   <%= f.hidden_field :card_id, value: card.id %>
@@ -111,7 +111,7 @@ hello
               </div>
             <% else %>
               <div class="action_btn_section"> 
-                <span class="btn btn_decline_invite"><%= link_to "not open", card %></span>
+                <span class="btn btn_remove_card"><%= link_to "not open", card %></span>
                 <%= form_for card, url: card_path(card), method: :put do |f| %>
                   <%= f.hidden_field :event_id, value: card.event.id %>
                   <%= f.hidden_field :card_id, value: card.id %>
