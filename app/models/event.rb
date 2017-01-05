@@ -41,11 +41,10 @@ class Event < ActiveRecord::Base
 
   scope :booked_events, -> (user) { joins(payments: :user).where(users: { id: user.id }) }
   #terminal: events.booked_events(current_user)
-  #displays all events that have been booked/paid by user
+  #displays all events that have been booked/paid by a user
 
-
-  #events with cards that are nil that the user has paid to attend
-
+  scope :booked_events_with_cards, -> (user) { joins(:card, payments: :user).where(users: { id: user.id }) }
+  #displays all events with cards that have been booked/paid by a user
 
   # scope :live_or_open_events, -> {where(close = 'f' OR close IS NULL) AND (date >= '2016-11-19')}
 
