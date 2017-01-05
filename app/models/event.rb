@@ -39,6 +39,14 @@ class Event < ActiveRecord::Base
 
   scope :open_events, -> {where(['close = ? OR close IS ?', false, nil])}
 
+  scope :booked_events, -> (user) { joins(payments: :user).where(users: { id: user.id }) }
+  #terminal: events.booked_events(current_user)
+  #displays all events that have been booked/paid by user
+
+
+  #events with cards that are nil that the user has paid to attend
+
+
   # scope :live_or_open_events, -> {where(close = 'f' OR close IS NULL) AND (date >= '2016-11-19')}
 
   def slug_events
@@ -69,7 +77,7 @@ class Event < ActiveRecord::Base
       errors.add(:date, "event date can not be in the past")
     end
   end
-
+  
   #checks if current user has paid to attend event
   def current_user_attending_paid?(user)
     self.payments.exists?(user: user)

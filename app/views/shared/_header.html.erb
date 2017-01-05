@@ -44,7 +44,7 @@
 
         <li class="notification_li">
           <% if current_user.recieved_invites.present? %>
-            <span id="notification_count_invites"><%= current_user.recieved_invites.count %></span>
+            <span id="notification_count_invites"><%# current_user.recieved_invites.count %><% @events.current_user_attending_paid?(current_user).count %></span>
           <% end %>
           <div><%= link_to '', '#', id: "notificationLink_invites", class: "fa fa-calendar-check-o" %></div>
           <div id="notificationContainer_invites">

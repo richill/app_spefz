@@ -1,7 +1,7 @@
 class SocialsController < ApplicationController
   respond_to :html, :xml, :json
   before_action :set_social, only: [:show, :edit, :update, :destroy]
-  before_filter :setup_friends, :setup_subscription, :setup_cards
+  before_filter :setup_friends, :setup_subscription, :setup_cards_events
   impressionist :actions=>[:show]
 
   def index
@@ -100,8 +100,9 @@ class SocialsController < ApplicationController
       @premium_plan = Subscription.find_by(title:"premium") 
     end
 
-    def setup_cards
+    def setup_cards_events
       @cards = Card.all
+      @events = Event.all
     end
 
     def social_params
