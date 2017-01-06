@@ -17,10 +17,11 @@ class InviteRequestsController < ApplicationController
 
   def create
     @invite_request = InviteRequest.new(invite_request_params)
+    @invite_request.status = "pending"
 
     respond_to do |format|
       if @invite_request.save
-        format.html { redirect_to @invite_request, notice: 'Invite request was successfully created.' }
+        format.html { redirect_to :back, notice: 'Invite request was successfully created.' }
         format.json { render :show, status: :created, location: @invite_request }
       else
         format.html { render :new }

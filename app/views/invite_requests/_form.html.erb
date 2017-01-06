@@ -3,12 +3,15 @@
 
   <div class="form-inputs">
     <div class="invite_message">Hi <span class="invitation_names"><%= "#{user.firstname}!" %></span> send an invite request to the organiser to be invited to the social <span class="invitation_names"><%= "#{@social.title}" %></span></div>
-    <%= f.input_field :user_id, value: user.id, label:"user" %>
-    <%= f.input_field :inviter_id, value: @social.user.id, label:"inviter" %>
-    <%= f.input_field :social_id, value: @social.id, label:"social" %>
+    
+    <!-- hidden_field -->
+    <%= f.hidden_field :user_id, value: user.id, label:"user" %>
+    <%= f.hidden_field :inviter_id, value: @social.user.id, label:"inviter" %>
+    <%= f.hidden_field :social_id, value: @social.id, label:"social" %>
+    <!-- hidden_field -->
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.button :submit, "Send Request" %>
   </div>
 <% end %>
