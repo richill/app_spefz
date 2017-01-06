@@ -67,13 +67,13 @@
 cards
 <%# if current_user.recieved_invites.present? %>
 <%# if @events.current_user_attending_paid?(current_user).card.present? %>
-<% @cards.status_nil.each do |card| %>
+<%# @cards.status_nil.each do |card| %>
+<% @cards.unread_by(current_user).each do |card| %>
   <% if card.event.current_user_attending_paid?(current_user) %>
   <div class="userinviterequests_inner_container">
     <div class="content_list">
       <ul>
         <%# @cards.each do |card| %>
-          <%# if card.event.current_user_attending_paid?(current_user) && card.card_status_nil %>
           <li>
             <div class="image_section">
               <span class="img_cover">
@@ -107,13 +107,12 @@ cards
               <div class="action_btn_section_attending action_btn_card_section"> 
                 <span class="btn btn_view_card"><%= link_to 'test', card_mark_as_viewed_path(card_id: card.id), method: :post %></span>
               </div>
-            <% else %>
+            <% elsif %>
               <div class="action_btn_section action_btn_card_section"> 
                 <span class="btn btn_view_card_not_open"><%= link_to "not open", cards_path %></span>
               </div>
             <% end %>
           </li>
-          <%# end %>
           <div class="clear"></div>
         <%# end %>
       </ul>
