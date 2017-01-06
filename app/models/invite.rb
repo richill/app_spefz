@@ -14,6 +14,8 @@ class Invite < ActiveRecord::Base
   end
 end
 
+# this model represent invitations being sent by the creator of a social/event to other users
+
 
 
 
