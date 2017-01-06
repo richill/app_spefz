@@ -105,7 +105,7 @@ cards
 
             <% if card.card_status_open? && card.unread?(current_user) %>
               <div class="action_btn_section_attending action_btn_card_section"> 
-                <span class="btn btn_view_card"><%= link_to 'test', card_mark_as_viewed_path(card_id: card.id), method: :post %></span>
+                <span class="btn btn_view_card"><%= link_to 'view', card_mark_as_viewed_path(card_id: card.id), method: :post %></span>
               </div>
             <% elsif %>
               <div class="action_btn_section action_btn_card_section"> 
