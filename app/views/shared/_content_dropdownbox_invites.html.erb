@@ -65,7 +65,7 @@
 
 <!-- cards -->
 cards
-<% if @cards.unread_by(current_user).present? %>
+<%# if @cards.unread_by(current_user).present? %>
   <% @cards.unread_by(current_user).each do |card| %>
     <% if card.event.current_user_attending_paid?(current_user) %>
     <div class="userinviterequests_inner_container">
@@ -118,9 +118,9 @@ cards
     </div>
     <% end %>
   <% end %>
-<% else %>
-  <div class="userinviterequests_inner_container">
+<%# else %>
+  <!-- <div class="userinviterequests_inner_container">
     <div class="content_list_none">you currently have no updated card notification</div> 
-  </div>
-<% end %>
+  </div> -->
+<%# end %>
 
