@@ -41,7 +41,7 @@
 .userinviterequests_inner_container ul li {
   background-color: rgba(47, 63, 91, 0.05) !important;
   padding: 5px;
-  margin-bottom: 5px;
+  // margin-bottom: 5px;
   height: 90px;
 }
 
@@ -243,7 +243,13 @@
 }
 
 
+// ---------------------
+//   workings
+// ---------------------
 
+.middle_divider {
+  border-bottom: 1px solid #ededf3;
+}
 
 
 

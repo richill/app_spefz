@@ -63,8 +63,9 @@
   </div>
 <% end %>
 
+<div class="middle_divider"></div>
+
 <!-- cards -->
-cards
 <% if @cards.cards_with_booked_events(current_user).unread_by(current_user).present? %>
   <% @cards.cards_with_booked_events(current_user).unread_by(current_user).each do |card| %>
     <% if card.event.current_user_attending_paid?(current_user) %>
