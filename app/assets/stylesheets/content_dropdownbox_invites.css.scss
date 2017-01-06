@@ -3,6 +3,11 @@
     File: views / shared / _content_dropdownbox_invites.html.erb
   =========================================*/
 
+.userinviterequests_inner_container_middle_divider {
+  border-bottom: 1px solid #ededf3;
+  margin-bottom: 5px !important;
+}
+
 .userinviterequests_inner_container {
   background-color: #fff !important;
   font-family: 'Lato', sans-serif;
@@ -258,10 +263,7 @@
   display: none !important;
 }
 
-.userinviterequests_inner_container .middle_divider {
-  border-bottom: 1px solid #ededf3;
-  margin-bottom: 5px !important;
-}
+
 
 
 
