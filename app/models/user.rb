@@ -55,6 +55,8 @@ class User < ActiveRecord::Base
   has_many :recieved_invites, -> { where(invites: { status: "pending"}) }, class_name: "Invite", foreign_key: "invitee_id", dependent: :destroy
   has_many :declined_invites, -> { where(invites: { status: "declined"}) }, through: :invites, source: :invitee
 
+  has_many :invite_requests
+
   mount_uploader :image, ImageUploader
   before_destroy :delete_activities
   before_create :generate_reference_number
