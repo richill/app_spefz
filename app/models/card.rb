@@ -4,9 +4,6 @@ class Card < ActiveRecord::Base
   belongs_to :event
   has_many :payments, through: :event
 
-  scope :status_nil, -> {where(['status = ? OR status IS ?', false, nil])}
-  scope :status_remove, -> {where(['status = ?', "remove"])}
-
   def self.desc_order
     order('created_at DESC')
   end

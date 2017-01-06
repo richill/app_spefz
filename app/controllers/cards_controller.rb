@@ -38,8 +38,6 @@ class CardsController < ApplicationController
   end
 
   def update
-    @card.status = "remove"
-
     respond_to do |format|
       if @card.update(card_params)
         format.html { redirect_to([@card.event, @card], notice: 'Card was successfully updated.') }
