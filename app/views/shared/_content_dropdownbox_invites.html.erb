@@ -59,7 +59,7 @@
   </div>
 <% else %>
   <div class="userinviterequests_inner_container">
-    <div class="content_list_none">you currently have no invites</div> 
+    <div class="content_list_none">you currently have no invite notifications</div> 
   </div>
 <% end %>
 
@@ -119,7 +119,10 @@
   <% end %>
 <% else %>
   <div class="userinviterequests_inner_container">
-    <div class="content_list_none">you currently have no updated card notification</div> 
+    <div class="content_list_none">
+      <div>you currently have no card notification</div>
+      <div class="content_list_none_link" ><%= link_to "view all social cards", cards_path %></div>
+    </div> 
   </div>
 <% end %>
 

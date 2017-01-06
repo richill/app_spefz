@@ -27,10 +27,26 @@
 }
 
 .userinviterequests_inner_container .content_list_none {
-  padding: 35px 15px !important;
+  padding: 40px 15px !important;
   min-height: 100px;
   text-transform: capitalize;
   text-align: center;
+}
+
+.userinviterequests_inner_container .content_list_none .content_list_none_link a {
+  text-transform: lowercase !important;
+  font-size: 12px;
+  color: #E34B51 !important;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease;
+}
+
+.userinviterequests_inner_container .content_list_none .content_list_none_link a:hover {
+  color: #58CDA6 !important;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease;
 }
 
 .userinviterequests_inner_container ul {
