@@ -105,11 +105,11 @@ cards
 
             <% if card.card_status_open? && card.unread?(current_user) %>
               <div class="action_btn_section_attending action_btn_card_section"> 
-                <span class="btn btn_remove_card"><%= link_to "view", card %></span>
+                <span class="btn btn_view_card"><%= link_to "view", card %></span>
               </div>
             <% else %>
               <div class="action_btn_section action_btn_card_section"> 
-                <span class="btn btn_decline_invite"><%= link_to "not open", cards_path %></span>
+                <span class="btn btn_view_card_not_open"><%= link_to "not open", cards_path %></span>
               </div>
             <% end %>
           </li>
