@@ -29,6 +29,7 @@ gem 'public_activity'
 gem 'friendly_id', '~> 5.1.0'
 gem 'social-share-button'
 gem 'ratyrate'
+gem 'unread'
 
 group :development, :test do
   gem 'sqlite3'
