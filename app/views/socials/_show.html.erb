@@ -134,7 +134,7 @@
                       </div>
                     <% else %>
                       <div class="social_profile_btn btn_request"> 
-                        <span data-tooltip aria-haspopup="true" class="tip-left" title="request to be invited"><a href="#<%= @user.id %>" data-reveal-id="<%= dom_id(@user) %>_inviterequest">request to be invited testing</a></span>
+                        <span data-tooltip aria-haspopup="true" class="tip-left" title="request to be invited"><a href="#<%= @user.id %>" data-reveal-id="<%= dom_id(@user) %>_inviterequest">request to be invited</a></span>
                         <div><%= render partial: 'shared/modal_invite_request', locals: { invitee: @user, user: current_user } %></div>
                       </div>
                     <% end %>

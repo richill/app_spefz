@@ -31,8 +31,6 @@ class InviteRequestsController < ApplicationController
   end
 
   def update
-    @invite_request.status = "declined"
-
     respond_to do |format|
       if @invite_request.update(invite_request_params)
         format.html { redirect_to :back, notice: 'Invite request was successfully declined.' }
