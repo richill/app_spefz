@@ -32,10 +32,10 @@ class InviteRequestsController < ApplicationController
 
   def update
     @invite_request.status = "declined"
-    
+
     respond_to do |format|
       if @invite_request.update(invite_request_params)
-        format.html { redirect_to @invite_request, notice: 'Invite request was successfully updated.' }
+        format.html { redirect_to :back, notice: 'Invite request was successfully declined.' }
         format.json { render :show, status: :ok, location: @invite_request }
       else
         format.html { render :edit }

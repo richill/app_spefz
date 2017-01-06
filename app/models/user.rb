@@ -278,6 +278,11 @@ class User < ActiveRecord::Base
     sent_invites.include?(other_user)
   end
 
+  #returns true if user has sent an invite request to event_organizer for an event/social
+  def requested_invite?(event_organizer, social)
+    sent_invite_requests.include?(event_organizer, social)
+  end
+
   def self.desc_order
     order('created_at DESC')
   end
