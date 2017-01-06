@@ -279,8 +279,8 @@ class User < ActiveRecord::Base
   end
 
   #returns true if user has sent an invite request to event_organizer for an event/social
-  def requested_invite?(event_organizer, social)
-    sent_invite_requests.include?(event_organizer, social)
+  def requested_invite?(event_organizer)
+    sent_invite_requests.include?(event_organizer)
   end
 
   def self.desc_order

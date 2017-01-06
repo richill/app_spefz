@@ -426,6 +426,26 @@
   -o-transition: all 0.3s ease;
 }
 
+
+.social_profile_page_section .btn_request_sent a {
+  padding: 10px 25px;
+  display: inline-block;
+  background-color: #eeaa02 !important;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+.social_profile_page_section .btn_request_sent a:hover {
+  padding: 10px 25px;
+  display: inline-block;
+  background-color: rgba(47, 63, 91, 0.5) !important;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+
 .social_profile_page_section .btn_social_attend a {
   padding: 10px 25px;
   display: inline-block;
