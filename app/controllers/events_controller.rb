@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
-  before_filter :setup_friends, :setup_subscription
+  before_filter :setup_friends, :setup_subscription, :setup_cards
 
   def index
     if params[:tag]
@@ -107,6 +107,10 @@ class EventsController < ApplicationController
 
     def setup_subscription
       @premium_plan = Subscription.find_by(title:"premium") 
+    end
+
+    def setup_cards
+      @cards = Card.all
     end
 
     def event_params
