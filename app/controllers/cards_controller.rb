@@ -64,7 +64,7 @@ class CardsController < ApplicationController
   def mark_as_viewed
     @card =  Card.find(params[:card_id]) 
     @card.mark_as_read! :for => current_user
-    redirect_to :back
+    redirect_to @card
   end
 
   private
