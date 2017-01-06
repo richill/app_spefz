@@ -1,0 +1,7 @@
+<div class="invite_user_section">
+  <div id="<%= dom_id(@user) %>_inviteuser" class="reveal-modal invite_user_modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+    <h2 id="modalTitle-invite" class="header">invite</h2>
+    <div class="invite_form"><%= render partial: "invites/organiser_invite_user_form", locals: { invitee: @user, user: current_user } %></div>
+    <a class="close-reveal-modal cancel_button" aria-label="Close">&#215;</a>
+  </div>
+</div>

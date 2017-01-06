@@ -65,6 +65,67 @@
 
 <div class="userinviterequests_inner_container_middle_divider"></div>
 
+<!-- invite requests -->
+<% if current_user.recieved_invite_requests.present? %>
+  <div class="userinviterequests_inner_container">
+    <div class="content_list">
+      <ul>
+        <% current_user.recieved_invite_requests.each do |invite_request| %>
+          <li>
+            <div class="image_section">
+              <span class="img_cover">
+                <% if invite_request.social.image_url.present? %>
+                  <%= link_to(image_tag(invite_request.social.image_url, :alt =>  "image", :class =>"#", id: ""), social_path(invite_request.social)) %>
+                <% else %>
+                  <%= link_to(image_tag("img-profile-image-default.png", :alt =>  "image", :class =>"#", id: ""), social_path(invite_request.social)) %>
+                <% end %>
+              </span>
+            </div>
+
+            <div class="info_section">
+              <div class="title"><%= link_to truncate("#{invite_request.social.title}", length: 30), social_path(invite_request.social) %></div>
+              <div class="date_country_info" style="margin-top:2px;">
+                <span><%= invite_request.social.date.strftime("%a, %d %b %Y") %></span> 
+                <span class="divider">|</span> 
+                <span><%= invite_request.social.time.strftime("%I:%M %p") %></span>
+              </div>
+              <div class="date_country_info">
+                <span><%= link_to "user", user_path(invite_request.user) %> wants to attend your social</span>
+              </div>
+              <div class="date_country_info"> 
+                <span>invite request from:</span>
+                <span><%= link_to "#{invite_request.user.firstname}", user_path(invite_request.user) %></span>
+              </div>
+            </div>
+
+
+            <!-- user are here -->
+            <div class="action_btn_section_attending">
+              <span data-tooltip aria-haspopup="true" class="tip-left btn btn_decline_invite" title="invite user to a social"><a href="#<%= invite_request.user.id %>" data-reveal-id="<%= dom_id(invite_request.user) %>_inviteuser">invite</a></span>
+              <div><%= render partial: 'shared/modal_invite_user modal_organiser_invite_user', locals: { invitee: invite_request.user, user: current_user } %></div>
+
+              <span class="btn btn_decline_invite"><%= link_to 'Decline', invite_request, method: :delete %></span>
+
+            </div>
+            <!-- user are here -->
+
+
+
+   
+          </li>
+          <div class="clear"></div>
+        <% end %>
+      </ul>
+    </div> 
+  </div>
+<% else %>
+  <div class="userinviterequests_inner_container">
+    <div class="content_list_none">you currently have no invite request notifications</div> 
+  </div>
+<% end %>
+
+<div class="userinviterequests_inner_container_middle_divider"></div>
+
 <!-- cards -->
 <% if @cards.cards_with_booked_events(current_user).unread_by(current_user).present? %>
   <div class="userinviterequests_inner_container">
