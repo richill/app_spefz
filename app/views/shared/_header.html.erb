@@ -43,7 +43,7 @@
         </li>
 
         <li class="notification_li">
-          <% if current_user.recieved_invites.present? %>
+          <% if current_user.recieved_invites.present? || @cards.cards_with_booked_events(current_user).unread_by(current_user).present? %>
             <span id="notification_count_invites"><%= (current_user.recieved_invites.count) + (@cards.cards_with_booked_events(current_user).unread_by(current_user).count) %></span>
           <% end %>
           <div><%= link_to '', '#', id: "notificationLink_invites", class: "fa fa-calendar-check-o" %></div>
