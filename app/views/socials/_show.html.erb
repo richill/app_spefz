@@ -164,7 +164,10 @@
                   <div class="location_address"> 
                     <%= link_to "#{@social.maplink}", target:"_blank" do %>
                      <b><%= "#{@social.venuename}" %></b> - 
-                      <%= "#{@social.address}, #{@social.city}, #{@social.category_country.name}, #{@social.postcode}" %>
+                      <% if @social.address.present? %>
+                        <%= "#{@social.address}, " %>
+                      <% end %>
+                      <%= "#{@social.city}, #{@social.category_country.name}, #{@social.postcode}" %>
                     <% end %>
                   </div>
                   <div class="location_info">location only displayed to host & attendees</div>
