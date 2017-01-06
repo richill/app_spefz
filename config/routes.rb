@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   
   post '/rate' => 'rater#create', :as => 'rate'
-  resources :cards
+  resources :cards do
+    post :mark_as_viewed
+  end
 
   resources :reports
 
