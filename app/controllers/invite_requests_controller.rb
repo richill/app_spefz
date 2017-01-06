@@ -21,7 +21,7 @@ class InviteRequestsController < ApplicationController
 
     respond_to do |format|
       if @invite_request.save
-        format.html { redirect_to :back, notice: 'Invite request was successfully created.' }
+        format.html { redirect_to :back, notice: 'Invite request was successfully sent.' }
         format.json { render :show, status: :created, location: @invite_request }
       else
         format.html { render :new }

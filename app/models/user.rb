@@ -56,6 +56,9 @@ class User < ActiveRecord::Base
   has_many :declined_invites, -> { where(invites: { status: "declined"}) }, through: :invites, source: :invitee
 
   has_many :invite_requests
+  has_many :sent_invite_requests, -> { where(invite_requests: { status: "pending"}) }, through: :invite_requests, source: :inviter
+  has_many :recieved_invite_requests, -> { where(invite_requests: { status: "pending"}) }, class_name: "InviteRequest", foreign_key: "inviter_id", dependent: :destroy
+  has_many :declined_invite_requests, -> { where(invite_requests: { status: "declined"}) }, through: :invite_requests, source: :inviter
 
   mount_uploader :image, ImageUploader
   before_destroy :delete_activities
