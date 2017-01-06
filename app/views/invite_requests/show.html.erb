@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @invite_request.user_id %>
+</p>
+
+<p>
+  <strong>Inviter:</strong>
+  <%= @invite_request.inviter_id %>
+</p>
+
+<p>
+  <strong>Social:</strong>
+  <%= @invite_request.social_id %>
+</p>
+
+<p>
+  <strong>Event:</strong>
+  <%= @invite_request.event_id %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @invite_request.status %>
+</p>
+
+<%= link_to 'Edit', edit_invite_request_path(@invite_request) %> |
+<%= link_to 'Back', invite_requests_path %>

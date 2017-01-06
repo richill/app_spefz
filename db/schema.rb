@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170106123701) do
+ActiveRecord::Schema.define(version: 20170106170557) do
 
   create_table "activities", force: :cascade do |t|
     t.integer  "trackable_id"
@@ -296,6 +296,16 @@ ActiveRecord::Schema.define(version: 20170106123701) do
   add_index "impressions", ["impressionable_type", "impressionable_id", "session_hash"], name: "poly_session_index"
   add_index "impressions", ["impressionable_type", "message", "impressionable_id"], name: "impressionable_type_message_index"
   add_index "impressions", ["user_id"], name: "index_impressions_on_user_id"
+
+  create_table "invite_requests", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "inviter_id"
+    t.integer  "social_id"
+    t.integer  "event_id"
+    t.string   "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "invites", force: :cascade do |t|
     t.integer  "user_id"

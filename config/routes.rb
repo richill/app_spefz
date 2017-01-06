@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  resources :invite_requests
+
   post '/rate' => 'rater#create', :as => 'rate'
   resources :cards do
     post :mark_as_viewed
