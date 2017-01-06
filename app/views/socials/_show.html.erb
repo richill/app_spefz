@@ -1,5 +1,4 @@
 <div class="medium-12 columns social_profile_page_section">
-
   <!-- upper section -->
   <div class="medium-12 columns upper_section">
     <div class="profile_banner">
@@ -91,7 +90,48 @@
           <li>
             <% if current_user %>
               <% if @social.category_invite.present? && @social.category_invite.name == "just my guest" %>
-                <div class="social_profile_btn btn_request"> <%= link_to "request to be invited", "#" %></div>
+                <% unless @social.user == current_user %>
+                  <% if Invite.invitation_exist?(@social.user, @social, current_user).exists? %>
+                    <div> 
+                      <!-- note: attend btn is displayed if user has been invited to a private social by the event organiser -->
+                      <span class="attendance">
+                      <% if @social.category_quantitygender.name == "only women" && current_user.category_gender.name == "Female" || 
+                            @social.category_quantitygender.name == "only men" && current_user.category_gender.name == "Male" %>
+                        <% unless current_user.attending_socials.exists?(id: @social.id) %>
+                          <% unless @social.sold_out? %> <!-- note: if ticket is sold out do not display attend button -->
+                            <% if current_user.image? %>
+                              <div class="social_profile_btn btn_social_attend"><%= link_to 'Attend', attending_socials_path(social_id: @social), method: :post %></div>
+                            <% else %>
+                              <div class="social_profile_btn btn_social_attend"><%= link_to 'Attend', image_restriction_page_path %></div>
+                            <% end %>
+                          <% end %>
+                        <% else %>
+                          <div class="social_profile_btn btn_social_unattend"><%= link_to 'Un-Attend Social', attending_social_path(@social), method: :delete %></div>
+                        <% end %>
+                      <% elsif @social.category_quantitygender.name == "both men & women" && current_user.category_gender.name == "Male" || @social.category_quantitygender.name == "both men & women" && current_user.category_gender.name == "Female" %>
+                        <% unless current_user.attending_socials.exists?(id: @social.id)  %>
+                          <% unless @social.sold_out? %> <!-- note: if ticket is sold out do not display attend button -->
+                            <% if current_user.image? %>
+                              <div class="social_profile_btn btn_social_attend"><%= link_to 'Attend', attending_socials_path(social_id: @social), method: :post %></div>
+                            <% else %>
+                              <div class="social_profile_btn btn_social_attend"><%= link_to 'Attend', image_restriction_page_path %></div>
+                            <% end %>
+                          <% end %>
+                        <% else %>
+                            <div class="social_profile_btn btn_social_unattend"><%= link_to 'Un-Attend Social', attending_social_path(@social), method: :delete %></div>
+                        <% end %>
+                      <% else  %>
+                        <% unless @social.sold_out? %> <!-- note: if ticket is sold out do not display attend button -->
+                          <div class="social_profile_btn btn_social_attendance_restrictions"><%= link_to 'Attendance Restriction', social_path(@social) %></div>
+                        <% end %>
+                      <% end %>
+                      </span>
+                    </div>
+                  <% else %>
+                    <div class="social_profile_btn btn_request"> <%= link_to "request to be invited", "#" %></div>
+                  <% end %>
+                <% end %>
+
               <% else %>
                 <span class="attendance">
                   <% if @social.category_quantitygender.name == "only women" && current_user.category_gender.name == "Female" || 
