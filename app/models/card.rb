@@ -4,6 +4,10 @@ class Card < ActiveRecord::Base
   belongs_to :event
   has_many :payments, through: :event
 
+  scope :cards_with_booked_events, -> (user) { joins(:event, payments: :user).where(users: { id: user.id }) }
+  # terminal: cards.cards_with_booked_events(current_user)
+  # displays all cards with events that have been booked/paid by user
+
   def self.desc_order
     order('created_at DESC')
   end
