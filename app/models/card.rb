@@ -6,7 +6,7 @@ class Card < ActiveRecord::Base
 
   scope :cards_with_booked_events, -> (user) { joins(:event, payments: :user).where(users: { id: user.id }) }
   # terminal: cards.cards_with_booked_events(current_user)
-  # displays all cards with events that have been booked/paid by user
+  # displays all cards with events that have been booked/paid by user | needed association "has_many :payments, through: :event" to work
 
   def self.desc_order
     order('created_at DESC')
