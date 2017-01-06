@@ -72,48 +72,46 @@
     <div class="userinviterequests_inner_container">
       <div class="content_list">
         <ul>
-          <%# @cards.each do |card| %>
-            <li>
-              <div class="image_section">
-                <span class="img_cover">
-                  <% if card.event.image_url.present? %>
-                    <%= link_to(image_tag(card.event.image_url, :alt =>  "image", :class =>"#", id: ""), cards_path) %>
-                  <% else %>
-                    <%= link_to(image_tag("img-profile-image-default.png", :alt =>  "image", :class =>"#", id: ""), cards_path) %>
-                  <% end %>
-                </span>
-              </div>
+          <li>
+            <div class="image_section">
+              <span class="img_cover">
+                <% if card.event.image_url.present? %>
+                  <%= link_to(image_tag(card.event.image_url, :alt =>  "image", :class =>"#", id: ""), cards_path) %>
+                <% else %>
+                  <%= link_to(image_tag("img-profile-image-default.png", :alt =>  "image", :class =>"#", id: ""), cards_path) %>
+                <% end %>
+              </span>
+            </div>
 
-              <div class="info_section">
-                <div class="title"><%= link_to truncate("#{card.event.title}", length: 30), "#" %></div>
-                <div class="date_country_info" style="margin-top:2px;">
-                  <span><%= card.event.date.strftime("%a, %d %b %Y") %></span> 
-                  <span class="divider">|</span> 
-                  <span><%= card.event.time.strftime("%I:%M %p") %></span>
-                </div>
-                <div class="date_country_info">
-                  <span><%= card.event.category_country.name %></span> 
-                  <span>-</span> 
-                  <span><%= card.event.city %></span>
-                </div>
-                <div class="date_country_info"> 
-                  <span>invited by:</span>
-                  <span><%# link_to "#{invite.user.firstname} #{invite.user.lastname}", user_path(invite.user) %></span>
-                </div>
+            <div class="info_section">
+              <div class="title"><%= link_to truncate("#{card.event.title}", length: 30), "#" %></div>
+              <div class="date_country_info" style="margin-top:2px;">
+                <span><%= card.event.date.strftime("%a, %d %b %Y") %></span> 
+                <span class="divider">|</span> 
+                <span><%= card.event.time.strftime("%I:%M %p") %></span>
               </div>
+              <div class="date_country_info">
+                <span><%= card.event.category_country.name %></span> 
+                <span>-</span> 
+                <span><%= card.event.city %></span>
+              </div>
+              <div class="date_country_info"> 
+                <span>card:</span>
+                <span><%= link_to "social card", cards_path %></span>
+              </div>
+            </div>
 
-              <% if card.card_status_open? && card.unread?(current_user) %>
-                <div class="action_btn_section_attending action_btn_card_section"> 
-                  <span class="btn btn_view_card"><%= link_to 'view', card_mark_as_viewed_path(card_id: card.id), method: :post %></span>
-                </div>
-              <% elsif %>
-                <div class="action_btn_section action_btn_card_section"> 
-                  <span class="btn btn_view_card_not_open"><%= link_to "not open", cards_path %></span>
-                </div>
-              <% end %>
-            </li>
-            <div class="clear"></div>
-          <%# end %>
+            <% if card.card_status_open? && card.unread?(current_user) %>
+              <div class="action_btn_section_attending action_btn_card_section"> 
+                <span class="btn btn_view_card"><%= link_to 'view', card_mark_as_viewed_path(card_id: card.id), method: :post %></span>
+              </div>
+            <% elsif %>
+              <div class="action_btn_section action_btn_card_section"> 
+                <span class="btn btn_view_card_not_open"><%= link_to "not open", cards_path %></span>
+              </div>
+            <% end %>
+          </li>
+          <div class="clear"></div>
         </ul>
       </div> 
     </div>
