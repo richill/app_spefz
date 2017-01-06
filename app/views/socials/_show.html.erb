@@ -94,7 +94,6 @@
                 <div class="social_profile_btn btn_request"> <%= link_to "request to be invited", "#" %></div>
               <% else %>
                 <span class="attendance">
-
                   <% if @social.category_quantitygender.name == "only women" && current_user.category_gender.name == "Female" || 
                         @social.category_quantitygender.name == "only men" && current_user.category_gender.name == "Male" %>
                     <% unless current_user.attending_socials.exists?(id: @social.id) %>
@@ -125,7 +124,6 @@
                       <div class="social_profile_btn btn_social_attendance_restrictions"><%= link_to 'Attendance Restriction', social_path(@social) %></div>
                     <% end %>
                   <% end %>
-
                 </span>
               <% end %>
             <% end %>
