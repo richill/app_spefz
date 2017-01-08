@@ -100,12 +100,16 @@
 
 
             <!-- user are here -->
+            <!-- <div class="action_btn_section_attending">
+              <span data-tooltip aria-haspopup="true" class="tip-left btn btn_decline_invite" title="invite user to a social"><a href="#<%# @user.id %>" data-reveal-id="<%= dom_id(@user) %>_inviterequest">invite</a></span>
+              <div><%# render partial: 'shared/modal_organiser_invite_user', locals: { invitee: @user, user: current_user } %></div>
+              <span class="btn btn_decline_invite"><%# link_to 'Decline', invite_request, method: :delete %></span>
+            </div> -->
+
             <div class="action_btn_section_attending">
-              <span data-tooltip aria-haspopup="true" class="tip-left btn btn_decline_invite" title="invite user to a social"><a href="#<%= invite_request.user.id %>" data-reveal-id="<%= dom_id(invite_request.user) %>_inviteuser">invite</a></span>
-              <div><%= render partial: 'shared/modal_invite_user modal_organiser_invite_user', locals: { invitee: invite_request.user, user: current_user } %></div>
-
+              <span data-tooltip aria-haspopup="true" class="tip-left btn btn_decline_invite" title="invite user to a social"><a href="#<%= invite_request.id %>" data-reveal-id="<%= dom_id(invite_request) %>_inviterequest">invite</a></span>
+              <div><%= render partial: 'shared/modal_organiser_invite_user', locals: { invite_request: invite_request } %></div>
               <span class="btn btn_decline_invite"><%= link_to 'Decline', invite_request, method: :delete %></span>
-
             </div>
             <!-- user are here -->
 
