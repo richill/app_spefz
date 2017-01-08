@@ -1,6 +1,6 @@
 class CardsController < ApplicationController
   before_action :set_card, only: [:show, :edit, :update, :destroy]
-  before_filter :setup_friends, :setup_subscription, :setup_cards
+  before_filter :setup_friends, :setup_subscription, :setup_cards, :setup_events, :setup_invite_form
 
   def index
     @cards = Card.all
@@ -66,25 +66,33 @@ class CardsController < ApplicationController
   end
 
   private
-    def set_card
-      @card = Card.find(params[:id])
-    end
+  def set_card
+    @card = Card.find(params[:id])
+  end
 
-    def setup_friends
-      @user = User.find(current_user.id)
-      # @user = User.friendly.find(params[:id])
-      @friend = User.find_by_email(params[:id])
-    end
+  def setup_friends
+    @user = User.find(current_user.id)
+    # @user = User.friendly.find(params[:id])
+    @friend = User.find_by_email(params[:id])
+  end
 
-    def setup_subscription
-      @premium_plan = Subscription.find_by(title:"premium") 
-    end
+  def setup_subscription
+    @premium_plan = Subscription.find_by(title:"premium") 
+  end
 
-    def setup_cards
-      @cards = Card.all
-    end
+  def setup_cards
+    @cards = Card.all
+  end
 
-    def card_params
-      params.require(:card).permit(:title, :event_id, :status)
-    end
+  def setup_events
+    @events = Event.all
+  end
+
+  def setup_invite_form
+    @invite = Invite.new
+  end
+
+  def card_params
+    params.require(:card).permit(:title, :event_id, :status)
+  end
 end

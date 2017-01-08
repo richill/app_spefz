@@ -1,7 +1,7 @@
 class BlogsController < ApplicationController
   respond_to :html, :xml, :json
   before_action :set_blog, only: [:show, :edit, :update, :destroy]
-  before_filter :setup_subscription
+  before_filter :setup_subscription, :setup_cards, :setup_events, :setup_invite_form
 
 
   def index
@@ -77,15 +77,27 @@ class BlogsController < ApplicationController
   end
 
   private
-    def set_blog
-      @blog = Blog.friendly.find(params[:id])
-    end
+  def set_blog
+    @blog = Blog.friendly.find(params[:id])
+  end
 
-    def setup_subscription
-      @premium_plan = Subscription.find_by(title:"premium") 
-    end
+  def setup_subscription
+    @premium_plan = Subscription.find_by(title:"premium") 
+  end
 
-    def blog_params
-      params.require(:blog).permit(:title, :content, :image, :user_id, :category_blog_id, :video_link, :user_image_link, :user_link, :blog_image_link, :twitter_link, :slug)
-    end
+  def setup_cards
+    @cards = Card.all
+  end
+
+  def setup_events
+    @events = Event.all
+  end
+
+  def setup_invite_form
+    @invite = Invite.new
+  end
+
+  def blog_params
+    params.require(:blog).permit(:title, :content, :image, :user_id, :category_blog_id, :video_link, :user_image_link, :user_link, :blog_image_link, :twitter_link, :slug)
+  end
 end
