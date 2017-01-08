@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   respond_to :html, :xml, :json
   before_action :set_user, only: [:show, :edit, :update, :destroy, :followings, :followers, :dashboard, :membership, :account, :settings]
-  before_filter :setup_friends, :setup_subscription, :setup_cards
+  before_filter :setup_friends, :setup_subscription, :setup_cards, :setup_events, :setup_invite_form
 
   def index
     if params[:tag]
@@ -22,7 +22,6 @@ class UsersController < ApplicationController
     @user = User.friendly.find(params[:id])
     @friend = User.friendly.find(params[:id])
     @logged_in_user = current_user if signed_in?
-    @invite = Invite.new
     @report = Report.new
     if current_user.subscribed_access? || current_user == @user
       if current_user.image? || current_user == @user
@@ -100,24 +99,32 @@ class UsersController < ApplicationController
   end
 
   private
-    def setup_friends
-      @user = User.find(current_user.id)
-      @friend = User.find_by_email(params[:id])
-    end
+  def setup_friends
+    @user = User.find(current_user.id)
+    @friend = User.find_by_email(params[:id])
+  end
 
-    def setup_subscription
-      @premium_plan = Subscription.find_by(title:"premium") 
-    end
+  def setup_subscription
+    @premium_plan = Subscription.find_by(title:"premium") 
+  end
 
-    def setup_cards
-      @cards = Card.all
-    end
+  def setup_cards
+    @cards = Card.all
+  end
 
-    def set_user
-      @user = User.friendly.find(params[:id])
-    end
+  def setup_events
+    @events = Event.all
+  end
 
-    def user_params
-      params.require(:user).permit(:email, :firstname, :lastname, :birthdate, :category_gender_id, :description, :profession, :image, :tag_list, :category_role_id, :category_managementgroup_id, :stripe_id, :stripe_subscription_pymt_id, :card_last4, :card_exp_month, :card_exp_year, :card_type, :recent_subscription_pymt_date, :stripe_event_pymt_id, :recent_event_pymt_date, :host_description, :slug, :category_inviteoption_id, :link_fb, :link_twitter)
-    end
+  def setup_invite_form
+    @invite = Invite.new
+  end
+
+  def set_user
+    @user = User.friendly.find(params[:id])
+  end
+
+  def user_params
+    params.require(:user).permit(:email, :firstname, :lastname, :birthdate, :category_gender_id, :description, :profession, :image, :tag_list, :category_role_id, :category_managementgroup_id, :stripe_id, :stripe_subscription_pymt_id, :card_last4, :card_exp_month, :card_exp_year, :card_type, :recent_subscription_pymt_date, :stripe_event_pymt_id, :recent_event_pymt_date, :host_description, :slug, :category_inviteoption_id, :link_fb, :link_twitter)
+  end
 end

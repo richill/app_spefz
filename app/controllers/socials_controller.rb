@@ -1,7 +1,7 @@
 class SocialsController < ApplicationController
   respond_to :html, :xml, :json
   before_action :set_social, only: [:show, :edit, :update, :destroy]
-  before_filter :setup_friends, :setup_subscription, :setup_cards_events
+  before_filter :setup_friends, :setup_subscription, :setup_cards, :setup_events, :setup_invite_form
   impressionist :actions=>[:show]
 
   def index
@@ -24,7 +24,6 @@ class SocialsController < ApplicationController
 
   def show 
     @invite_request = InviteRequest.new
-    @invite = Invite.new
     unless current_user.subscribed_social_access?(@social)
       @premium_plan = Subscription.find_by(title:"premium")
       redirect_to subscription_path(@premium_plan)
@@ -89,25 +88,32 @@ class SocialsController < ApplicationController
   end
 
   private
-    def set_social
-      @social = Social.friendly.find(params[:id])
-    end
+  def set_social
+    @social = Social.friendly.find(params[:id])
+  end
 
-    def setup_friends
-      @user = User.find(current_user.id)
-      @friend = User.find_by_email(params[:id])
-    end
+  def setup_friends
+    @user = User.find(current_user.id)
+    @friend = User.find_by_email(params[:id])
+  end
 
-    def setup_subscription
-      @premium_plan = Subscription.find_by(title:"premium") 
-    end
+  def setup_subscription
+    @premium_plan = Subscription.find_by(title:"premium") 
+  end
 
-    def setup_cards_events
-      @cards = Card.all
-      @events = Event.all
-    end
+  def setup_cards
+    @cards = Card.all
+  end
 
-    def social_params
-      params.require(:social).permit(:title, :description, :address, :postcode, :latitude, :longitude, :user_id, :category_topic_id, :image, :date, :time, :city, :quantity, :category_age_id, :companyname, :category_country_id, :tag_list, :category_invite_id, :speakername, :speakerlinkedin, :quantity_men, :quantity_women, :category_quantitygender_id, :venuename, :maplink, :close, :slug)
-    end
+  def setup_events
+    @events = Event.all
+  end
+
+  def setup_invite_form
+    @invite = Invite.new
+  end
+
+  def social_params
+    params.require(:social).permit(:title, :description, :address, :postcode, :latitude, :longitude, :user_id, :category_topic_id, :image, :date, :time, :city, :quantity, :category_age_id, :companyname, :category_country_id, :tag_list, :category_invite_id, :speakername, :speakerlinkedin, :quantity_men, :quantity_women, :category_quantitygender_id, :venuename, :maplink, :close, :slug)
+  end
 end

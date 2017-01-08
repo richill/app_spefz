@@ -1,6 +1,6 @@
 class ConversationsController < ApplicationController
   before_action :authenticate_user!
-  before_filter :setup_friends, :setup_subscription
+  before_filter :setup_friends, :setup_subscription, :setup_cards, :setup_events, :setup_invite_form
 
   def new
     unless current_user.subscribed_access?
@@ -63,6 +63,18 @@ class ConversationsController < ApplicationController
 
   def setup_subscription
     @premium_plan = Subscription.find_by(title:"premium") 
+  end
+
+  def setup_cards
+    @cards = Card.all
+  end
+
+  def setup_events
+    @events = Event.all
+  end
+
+  def setup_invite_form
+    @invite = Invite.new
   end
 
   def conversation_params

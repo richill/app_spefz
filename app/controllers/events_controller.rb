@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
-  before_filter :setup_friends, :setup_subscription, :setup_cards
+  before_filter :setup_friends, :setup_subscription, :setup_cards, :setup_invite_form
 
   def index
     if params[:tag]
@@ -96,24 +96,28 @@ class EventsController < ApplicationController
   end
 
   private
-    def set_event
-      @event = Event.friendly.find(params[:id])
-    end
+  def set_event
+    @event = Event.friendly.find(params[:id])
+  end
 
-    def setup_friends
-      @user = User.find(current_user.id)
-      @friend = User.find_by_email(params[:id])
-    end
+  def setup_friends
+    @user = User.find(current_user.id)
+    @friend = User.find_by_email(params[:id])
+  end
 
-    def setup_subscription
-      @premium_plan = Subscription.find_by(title:"premium") 
-    end
+  def setup_subscription
+    @premium_plan = Subscription.find_by(title:"premium") 
+  end
 
-    def setup_cards
-      @cards = Card.all
-    end
+  def setup_cards
+    @cards = Card.all
+  end
 
-    def event_params
-      params.require(:event).permit(:title, :description, :address, :postcode, :latitude, :longitude, :user_id, :category_topic_id, :image, :date, :time, :city, :quantity, :category_age_id, :category_country_id, :quantity_men, :quantity_women, :category_quantitygender_id, :venuename, :price, :time_end, :tag_list, :maplink, :close, :slug)
-    end
+  def setup_invite_form
+    @invite = Invite.new
+  end
+
+  def event_params
+    params.require(:event).permit(:title, :description, :address, :postcode, :latitude, :longitude, :user_id, :category_topic_id, :image, :date, :time, :city, :quantity, :category_age_id, :category_country_id, :quantity_men, :quantity_women, :category_quantitygender_id, :venuename, :price, :time_end, :tag_list, :maplink, :close, :slug)
+  end
 end

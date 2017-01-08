@@ -8,7 +8,7 @@
       <div>
         <span class="img_cover">
           <% if invite_request.user.image.present? %>
-            <%= link_to(image_tag(invite_request.user.image_url), "#") %>
+            <%= link_to(image_tag(invite_request.user.image_url), user_path(invite_request.user)) %>
           <% else %>
             <%= image_tag("img-profile-image-default.png") %>
           <% end %>
