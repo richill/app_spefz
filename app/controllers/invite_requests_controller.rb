@@ -33,7 +33,7 @@ class InviteRequestsController < ApplicationController
   def update
     respond_to do |format|
       if @invite_request.update(invite_request_params)
-        format.html { redirect_to :back, notice: 'Invite request was successfully declined.' }
+        format.html { redirect_to :back, notice: 'Invite request was successfully updated.' }
         format.json { render :show, status: :ok, location: @invite_request }
       else
         format.html { render :edit }
@@ -45,7 +45,7 @@ class InviteRequestsController < ApplicationController
   def destroy
     @invite_request.destroy
     respond_to do |format|
-      format.html { redirect_to invite_requests_url, notice: 'Invite request was successfully destroyed.' }
+      format.html { redirect_to :back, notice: 'Invite request was successfully declined.' }
       format.json { head :no_content }
     end
   end
