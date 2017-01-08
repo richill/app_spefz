@@ -2,7 +2,7 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <div class="invite_message">Hi <span class="invitation_names"><%= "#{user.firstname}!" %></span> send an invite request to the organiser to be invited to the social <span class="invitation_names"><%= "#{@social.title}" %></span></div>
+    <div class="invite_message">Hi <span class="invitation_names"><%= "#{user.firstname}!" %></span> send an invite request to the event organiser to be invited to the social <span class="social_event_names"><%= "#{@social.title}" %></span></div>
     
     <!-- hidden_field -->
     <%= f.hidden_field :user_id, value: user.id, label:"user" %>
