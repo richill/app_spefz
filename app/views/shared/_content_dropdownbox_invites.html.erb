@@ -103,9 +103,9 @@
 
 
             <div class="action_btn_section_attending">
-              <span data-tooltip aria-haspopup="true" class="tip-left btn btn_decline_invite" title="invite user to a social"><a href="#<%= invite_request.id %>" data-reveal-id="<%= dom_id(invite_request) %>_inviterequest">invite</a></span>
+              <span data-tooltip aria-haspopup="true" class="tip-left btn action_btn_view_request_section" title="view invite request"><a href="#<%= invite_request.id %>" data-reveal-id="<%= dom_id(invite_request) %>_inviterequest">view</a></span>
               <div><%= render partial: 'shared/modal_organiser_invite_user', locals: { invite_request: invite_request } %></div>
-              <span class="btn btn_decline_invite"><%= link_to 'Decline', invite_request, method: :delete %></span>
+              <!-- <span class="btn btn_decline_invite"><%# link_to 'Decline', invite_request, method: :delete %></span> -->
             </div>
             <!-- user are here -->
 

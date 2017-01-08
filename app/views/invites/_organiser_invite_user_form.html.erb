@@ -5,7 +5,20 @@
     <div class="invite_message">Hi <span class="invitation_names"><%= "#{invite_request.inviter.firstname}" %></span>! <span class="invitation_names"><%= "#{invite_request.user.firstname} #{invite_request.user.lastname}" %></span> would like to attend your social, <span class="invitation_names"><%= "#{invite_request.social.title}" %></span></div>
 
     <div class="invite_message_info">
-      <div>Social: <span class="invitation_names"><%= "#{invite_request.social.title}" %></span></div>
+      <div>
+        <span class="img_cover">
+          <% if invite_request.user.image.present? %>
+            <%= link_to(image_tag(invite_request.user.image_url), "#") %>
+          <% else %>
+            <%= image_tag("img-profile-image-default.png") %>
+          <% end %>
+        </span>
+        <span class="invitation_names"><%= "#{invite_request.user.firstname} #{invite_request.user.lastname}" %></span>
+         <% if invite_request.user.profession.present? %>
+          <span class="divider">|</span>
+          <span class="invitation_names"><%= "#{invite_request.user.profession}" %></span>
+        <% end %>
+      </div>
     </div>
 
     <!-- hidden_field -->
@@ -25,7 +38,7 @@
   </div>
 <% end %>
 
-<div>
+<div class="action_btn_decline">
   <%= link_to 'Decline', invite_request, method: :delete %>
 </div>
 
