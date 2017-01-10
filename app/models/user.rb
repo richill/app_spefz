@@ -225,16 +225,10 @@ class User < ActiveRecord::Base
   end
 
   def uninvited_friends(social)
-    friends = Set.new((self.friends.joins(:category_inviteoption).where('category_inviteoptions.name' => "Every member")).to_a)
+    friends = Set.new((self.friends.joins(:category_inviteoption).where("category_inviteoptions.name IN (?)", ["Only members in my network", "Every member"])).to_a)
     invited_friends = Set.new(self.invites.where(invitee: nil, social: social).flat_map(&:users))
-    univited_friends = friends.difference(invited_friends) 
+    friends.difference(invited_friends) 
   end
-
-  # def uninvited_friends(social)
-  #   friends = Set.new((self.friends).to_a)
-  #   invited_friends = Set.new(self.invites.where(invitee: nil, social: social).flat_map(&:users))
-  #   univited_friends = friends.difference(invited_friends) 
-  # end
 
   def assign_user_to_role_and_group
     self.category_role = CategoryRole.where(name: 'Client').first
