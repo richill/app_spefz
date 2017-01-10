@@ -2,6 +2,7 @@
     Section: user profile page
     File: views / shared / _modal_invite_user.html.erb
     File: views / shared / _modal_organiser_invite_user.html.erb
+    File: views / shared / _modal_invite_multiple_users.html.erb
     File: views / users / _show.html.erb
   =========================================*/
 
@@ -123,6 +124,38 @@
   -moz-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
 }
+
+
+
+// -------------------------
+//   workings
+// -------------------------
+
+
+.invite_user_modal .checkbox {
+  float: left;
+  margin-right: 10px;
+}
+
+.invite_user_modal input[type="checkbox"] {
+  margin-right: 5px;
+  margin-bottom: 10px;
+}
+
+.invite_user_modal .listed_network_members_header {
+  font-family: 'Lato', sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  text-transform: capitalize !important;
+}
+
+.invite_user_modal .listed_network_members {
+  background-color: rgba(88, 205, 166, 0.2) !important;
+  text-transform: capitalize !important;
+  padding: 15px;
+  margin-bottom: 15px;
+}
+
 
 
 

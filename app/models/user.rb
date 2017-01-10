@@ -19,7 +19,8 @@ class User < ActiveRecord::Base
   belongs_to :category_managementgroup 
   belongs_to :category_inviteoption 
   
-  has_and_belongs_to_many :hosts 
+  has_and_belongs_to_many :hosts
+  has_and_belongs_to_many :socials 
 
   has_many :payments
   has_many :blogs

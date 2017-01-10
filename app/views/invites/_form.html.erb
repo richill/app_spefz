@@ -4,9 +4,11 @@
   <%= simple_form_for(@invite) do |f| %>
     <%= f.error_notification %>
     <div class="form-inputs">
-      <h5>Hi <%= "#{user.firstname}" %>, invite users to the social "<%= "#{social.title}" %>"</h5>
-      <%= f.association :users, collection: current_user.uninvited_friends(social), label_method: :firstname, label: 'select host', as: :check_boxes %><br/>
-      
+      <div class="invite_message">Hi <span class="invitation_names"><%= "#{user.firstname}" %></span>, invite members in your network to the social "<span class="invitation_names"><%= "#{social.title}" %></span>"</div>
+      <div class="listed_network_members_header">select members in network</div>
+      <div class="medium-12 columns listed_network_members">
+        <%= f.association :users, collection: current_user.uninvited_friends(social), label_method: :firstname, label: false, as: :check_boxes %>
+      </div>
       <!-- hidden_field -->
       <%= f.input_field :user_id, value: user.id, label:"user" %><br/>
       <%= f.input_field :social_id, value: social.id, label:"social" %>
