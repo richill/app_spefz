@@ -223,6 +223,12 @@ class User < ActiveRecord::Base
     end while self.class.exists?(reference: reference)
   end
 
+  def uninvited_friends(social)
+    friends = Set.new((self.friends).to_a)
+    invited_friends = Set.new(self.invites.where(invitee: nil, social: social).flat_map(&:users))
+    univited_friends = friends.difference(invited_friends) 
+  end
+
   def assign_user_to_role_and_group
     self.category_role = CategoryRole.where(name: 'Client').first
     self.category_managementgroup = CategoryManagementgroup.where(name: 'Client Group').first
