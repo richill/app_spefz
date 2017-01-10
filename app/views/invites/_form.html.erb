@@ -10,12 +10,12 @@
         <%= f.association :users, collection: current_user.uninvited_friends(social), label_method: :firstname, label: false, as: :check_boxes %>
       </div>
       <!-- hidden_field -->
-      <%= f.input_field :user_id, value: user.id, label:"user" %><br/>
-      <%= f.input_field :social_id, value: social.id, label:"social" %>
+      <%= f.hidden_field :user_id, value: user.id, label:"user" %><br/>
+      <%= f.hidden_field :social_id, value: social.id, label:"social" %>
       <!-- hidden_field -->
     </div>
     <div class="form-actions">
-      <%= f.button :submit, user: current_user %>
+      <%= f.button :submit, "Send Invite", user: current_user %>
     </div>
   <% end %>
 <% else %>
@@ -39,7 +39,7 @@
     </div>
 
     <div class="form-actions">
-      <%= f.button :submit, "Send", invitee: @user, user: current_user %>
+      <%= f.button :submit, "Send Invite", invitee: @user, user: current_user %>
     </div>
   <% end %>
 <% end %>
