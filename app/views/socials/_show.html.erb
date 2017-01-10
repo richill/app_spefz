@@ -27,20 +27,12 @@
                                                   subject: "Invitation to: #{@social.title}", 
                                                   body: "Hi, would like to invite you to the Social: '#{@social.title}' - website: #{request.original_url}. From: #{current_user.firstname} #{current_user.lastname}" %>
             </span>
-
-
-
-
-            <!-- you are here -->
             <span>
+              <% if @social.category_invite.name == "just my guest" && @social.user == current_user || @social.category_invite.name == "open to everyone" || current_user.admin_pa_management_group || current_user.pa_event_mgt_group %>
               <a href="#<%= @social.id %>" data-reveal-id="<%= dom_id(@social) %>_inviteusertosocial" class="socialicon_cover_fb"><i class="fa fa-user-plus" aria-hidden="true"></i></a>
               <span><%= render partial: 'shared/modal_invite_multiple_users', locals: { social: @social, user: current_user } %></span>
+              <% end %>
             </span>
-            <!-- you are here -->
-
-
-
-
             <span class="socialicon_cover_up hide"><%= link_to '', '#', class: "fa fa-calendar" %></span>
             <span>
               <a href="#" data-reveal-id="myModal-share-buttons" class:"socialicon_cover_fb"><i class="fa fa-share-alt" aria-hidden="true"></i></a>

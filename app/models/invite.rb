@@ -15,10 +15,6 @@ class Invite < ActiveRecord::Base
   def self.exists?(user, invitee)
     not find_by_user_id_and_invitee_id(user.id, invitee.id).nil?
   end
-
-  def self.exists_test?(user, invitee, social)
-    not find_by_user_id_and_invitee_id_and_social_id(user.id, invitee.id, social.id).nil?
-  end
 end
 
 # this model represent invitations being sent by the creator of a social/event to other users
