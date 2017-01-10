@@ -12,7 +12,7 @@ class Invite < ActiveRecord::Base
   # checks if invitation for current_user, other_user exist for a specific event
   # terminal: Invite.invitation_exist?(richill, social, richards).exists?
 
-  def self.exists?(user, invitee)
+  def self.exists?(user, invitees)
     not find_by_user_id_and_invitee_id(user.id, invitee.id).nil?
   end
 end
