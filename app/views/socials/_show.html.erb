@@ -33,8 +33,8 @@
 
             <!-- you are here -->
             <span>
-              <a href="#" data-reveal-id="myModal-invite-multiple-users-buttons" class:"socialicon_cover_up"><i class="fa fa-user-plus" aria-hidden="true"></i></a>
-              <span><%= render 'shared/modal_invite_multiple_users' %></span>
+              <a href="#<%= @social.id %>" data-reveal-id="<%= dom_id(@social) %>_inviteusertosocial" class="socialicon_cover_fb"><i class="fa fa-user-plus" aria-hidden="true"></i></a>
+              <span><%= render partial: 'shared/modal_invite_multiple_users', locals: { social: @social, user: current_user } %></span>
             </span>
             <!-- you are here -->
 

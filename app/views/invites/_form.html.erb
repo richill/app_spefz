@@ -1,26 +1,51 @@
-<%= simple_form_for(@invite) do |f| %>
-  <%= f.error_notification %>
+<% if @social.present? %> 
+  <!-- inviting multiple users -->
+  <%= simple_form_for(@invite) do |f| %>
+    <%= f.error_notification %>
+    <div class="form-inputs">
+      <h5>Hi <%= "#{user.firstname}" %>, invite users to the social "<%= "#{social.title}" %>"</h5>
+      <%= f.association :users, collection: current_user.uninvited_friends(social), label_method: :firstname, label: 'select host', as: :check_boxes %><br/>
+      
+      <!-- hidden_field -->
+      <%= f.input_field :user_id, value: user.id, label:"user" %><br/>
+      <%= f.input_field :social_id, value: social.id, label:"social" %>
+      <!-- hidden_field -->
+    </div>
+    <div class="form-actions">
+      <%= f.button :submit, user: current_user %>
+    </div>
+  <% end %>
+<% else %>
+  <!-- inviting single user -->
+  <%= simple_form_for(@invite) do |f| %>
+    <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <div class="invite_message">Hi <span class="invitation_names"><%= "#{user.firstname}" %></span>! invite <span class="invitation_names"><%= "#{@user.firstname} #{@user.lastname}" %></span> to a social</div class="invite_message">
+    <div class="form-inputs">
+      <div class="invite_message">Hi <span class="invitation_names"><%= "#{user.firstname}" %></span>! invite <span class="invitation_names"><%= "#{@user.firstname} #{@user.lastname}" %></span> to a social</div class="invite_message">
 
-    <%= f.association :social, collection: sociallist_for(user, @user), prompt: "select a social", label: "Listed Socials" %>
-    <div class="invite_message_info">
-      <div>Note: No Socials displaying? It could mean you have already sent invites on all your socials to <span class="invitation_names"><%= "#{@user.firstname} #{@user.lastname}" %></span>.</div>
+      <%= f.association :social, collection: sociallist_for(user, @user), prompt: "select a social", label: "Listed Socials" %>
+      <div class="invite_message_info">
+        <div>Note: No Socials displaying? It could mean you have already sent invites on all your socials to <span class="invitation_names"><%= "#{@user.firstname} #{@user.lastname}" %></span>.</div>
+      </div>
+
+      <!-- hidden_field -->
+      <label class="hide">user</label>
+      <%= f.hidden_field :user_id, value: user.id, label:"user" %>
+
+      <label class="hide">invitee</label>
+      <%= f.hidden_field :invitee_id, value: @user.id, label:"invitee" %>
+      <!-- hidden_field -->
     </div>
 
-    <!-- hidden_field -->
-    <label class="hide">user</label>
-    <%= f.hidden_field :user_id, value: user.id, label:"user" %>
+    <div class="form-actions">
+      <%= f.button :submit, "Send", invitee: @user, user: current_user %>
+    </div>
+  <% end %>
 
-    <label class="hide">invitee</label>
-    <%= f.hidden_field :invitee_id, value: @user.id, label:"invitee" %>
-    <!-- hidden_field -->
-  </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Send", invitee: @user, user: current_user %>
-  </div>
+
+
+
 <% end %>
 
 
