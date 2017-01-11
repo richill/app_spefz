@@ -112,7 +112,7 @@ class User < ActiveRecord::Base
 
   scope :hosts, -> { joins(:category_managementgroup).where("category_managementgroups.name IN (?)", ["Management Group", "Event Management Group"]) }                                                                                    
   # display users that are in charge of hosting speed-events
-
+  
 
   def slug_users
     [
