@@ -96,7 +96,7 @@
             <% if current_user %>
               <% if @social.category_invite.present? && @social.category_invite.name == "just my guest" %>
                 <% unless @social.user == current_user %>
-                  <% if Invite.invitation_exist?(@social.user, @social, current_user).exists? %>
+                  <% if Invite.invitation_exist?(@social.user, @social, current_user).exists? || Invite.user_invited?(@social, @user) %>
                     <div> 
                       <!-- note: attend btn is displayed if user has been invited to a private social by the event organiser -->
                       <span class="attendance">
