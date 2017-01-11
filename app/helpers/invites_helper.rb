@@ -20,7 +20,7 @@ module InvitesHelper
   end
 end
 
-#aim: finding socials that the user is already attending
+#aim: finding my socials that the user(richard) has already been invited to
 
 #Invite.where(user: richill, social_id: social).flat_map(&:users)
 #Invite.where(user: richill, invitee: nil).map(&:social)
