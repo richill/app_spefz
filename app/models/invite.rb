@@ -9,15 +9,12 @@ class Invite < ActiveRecord::Base
   # validates_presence_of :user_id, :invitee_id
 
   scope :invitation_exist?, -> (user, social, other_user) { where(user_id: user.id, social_id: social.id, invitee_id: other_user.id) }
-  # checks if invitation for current_user, other_user exist for a specific event
+  # checks if invitation for current_user, other_user exist for a specific event [user profile page]
   # terminal: Invite.invitation_exist?(richill, social, richards).exists?
+  # checking for invitation made via single invite
 
   scope :user_invited?, -> (social, other_user) { where(social_id: social).flat_map(&:users).include?(other_user) }
-#   2.3.0 :018 >   Invite.user_invited?(social, other_user)
-#   Invite Load (0.2ms)  SELECT "invites".* FROM "invites" WHERE "invites"."social_id" = 6
-#   User Load (0.2ms)  SELECT "users".* FROM "users" INNER JOIN "invites_users" ON "users"."id" = "invites_users"."user_id" WHERE "invites_users"."invite_id" = ?  [["invite_id", 20]]
-#   => true 
-#   2.3.0 :019 > 
+  # checking for invitation made via multiple invite [social profile page]
 
   def self.exists?(user, invitee)
     not find_by_user_id_and_invitee_id(user.id, invitee.id).nil?
