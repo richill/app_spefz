@@ -49,7 +49,6 @@ class SocialsController < ApplicationController
   end
 
   def edit
-    @user = User.friendly.find(params[:user_id])
   end
 
   def create
