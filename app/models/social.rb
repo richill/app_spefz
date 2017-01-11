@@ -14,6 +14,7 @@ class Social < ActiveRecord::Base
 
   has_many :attendances, as: :attendable, dependent: :destroy
   has_many :reports
+  has_many :invites
   
   belongs_to :user
   belongs_to :category_topic
