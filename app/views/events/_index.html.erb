@@ -63,7 +63,7 @@
                         <% end %>
                         <div class="img_cover">
                           <% if event.image.present? %>
-                            <%= link_to(image_tag("#{event.image_url}", :alt =>  "image", :class =>"#"), event_path(event)) %>
+                          <%= link_to(cl_image_tag(event.image, :transformation=>[{:gravity=>"center", :width=>200, :height=>200, :crop=>"fill"}]), event_path(event)) %>
                           <% else %>
                             <%= link_to(image_tag("img_feed_07.png", :alt =>  "image", :class =>"#"), event_path(event)) %>
                           <% end %>

@@ -7,7 +7,7 @@
         <div class="upper_profile_content">
           <div class="profile_img_main_cover">
             <% if @social.image.present? %>
-              <div><%= image_tag(@social.image_url) %></div>
+              <div><%= cl_image_tag(@social.image, :transformation=>[{:gravity=>"face", :width=>200, :height=>200, :crop=>"fill"}]) %></div>
             <% else %>
               <div class="img_default"><%= image_tag("img-profile-image-default.png") %></div>
             <% end %>
@@ -28,9 +28,11 @@
                                                   body: "Hi, would like to invite you to the Social: '#{@social.title}' - website: #{request.original_url}. From: #{current_user.firstname} #{current_user.lastname}" %>
             </span>
             <span>
-              <% if @social.category_invite.name == "just my guest" && @social.user == current_user || @social.category_invite.name == "open to everyone" || current_user.admin_pa_management_group || current_user.pa_event_mgt_group %>
-              <a href="#<%= @social.id %>" data-reveal-id="<%= dom_id(@social) %>_inviteusertosocial" class="socialicon_cover_fb"><i class="fa fa-user-plus" aria-hidden="true"></i></a>
-              <span><%= render partial: 'shared/modal_invite_multiple_users', locals: { social: @social, user: current_user } %></span>
+              <% if @social.category_invite.present? %>
+                <% if @social.category_invite.name == "just my guest" && @social.user == current_user || @social.category_invite.name == "open to everyone" || current_user.admin_pa_management_group || current_user.pa_event_mgt_group %>
+                <a href="#<%= @social.id %>" data-reveal-id="<%= dom_id(@social) %>_inviteusertosocial" class="socialicon_cover_fb"><i class="fa fa-user-plus" aria-hidden="true"></i></a>
+                <span><%= render partial: 'shared/modal_invite_multiple_users', locals: { social: @social, user: current_user } %></span>
+                <% end %>
               <% end %>
             </span>
             <span class="socialicon_cover_up hide"><%= link_to '', '#', class: "fa fa-calendar" %></span>

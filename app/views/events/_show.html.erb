@@ -21,7 +21,7 @@
                 <% end %>
                 <!-- sold out -->
                 <% if @event.image.present? %>
-                  <div class="image_cover"><%= image_tag("#{@event.image_url}") %></div>
+                  <div class="image_cover"><%= cl_image_tag(@event.image, :transformation=>[{:gravity=>"center", :width=>200, :height=>200, :crop=>"fill"}]) %></div>
                 <% else %>
                   <div class="image_cover"><%= image_tag("img_feed_07.png") %></div>
                 <% end %>

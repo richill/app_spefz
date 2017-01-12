@@ -71,8 +71,8 @@
                             </div>
                           </div>
                         <% end %>
-
-                        <div class="social_img"><%= link_to(image_tag("#{social.image_url}", :alt =>  "image", :class =>"#"), social_path(social)) %></div>
+                        <!-- <div class="social_img"><%# link_to(image_tag("#{social.image_url}", :alt =>  "image", :class =>"#"), social_path(social)) %></div> -->
+                        <div class="social_img"><%= link_to(cl_image_tag(social.image, :transformation=>[{:gravity=>"face", :width=>200, :height=>200, :crop=>"fill"}]), social_path(social)) %></div>
                         <div class="social_user">
                           <% if social.user.image.present? %>
                             <div><%= link_to(cl_image_tag(social.user.image, :transformation=>[{:gravity=>"face", :width=>200, :height=>200, :crop=>"fill"}]), user_path(social.user)) %></div>

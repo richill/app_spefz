@@ -6,7 +6,7 @@
         <div class="medium-1 columns image_name_container">
           <div class="image_cover">
             <% if comment.user.image.present? %>
-              <div><%= link_to (image_tag(comment.user.image_url)), user_path(comment.user) %></div>
+              <div><%= link_to(cl_image_tag(comment.user.image, :transformation=>[{:gravity=>"face", :width=>200, :height=>200, :crop=>"fill", :radius=>"max"}]), user_path(comment.user)) %></div>
             <% else %>
               <div><%= link_to(image_tag("img-profile-image-default.png", :alt =>  "alt text", :class =>"#"), user_path(comment.user)) %></div>
             <% end %>

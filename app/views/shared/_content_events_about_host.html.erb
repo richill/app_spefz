@@ -4,7 +4,9 @@
       <ul>
         <% @event.host.users.each do |host| %>
         <li>
-          <span class="host"><%= link_to(image_tag(host.image_url), host) %></span>
+          <span class="host">
+            <%= link_to(cl_image_tag(host.image, :transformation=>[{:gravity=>"face", :width=>200, :height=>200, :crop=>"fill", :radius=>"max"}]), host) %>
+          </span>
           <div class="host_details">
             <div>Meet your host</div>
             <div class="host_name"><%= link_to "#{host.firstname} #{host.lastname}", host %></div>
