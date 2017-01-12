@@ -37,7 +37,7 @@
               <div class="blog_show_sub_content">
                 <span class="blog_img_cover">
                   <% if signed_in?  %>
-                    <%= link_to(image_tag("#{@blog.user.image_url}", :alt =>  "image", :class =>"#"), user_path(@blog.user)) %>
+                    <%= link_to(cl_image_tag(@blog.user.image, :transformation=>[{:gravity=>"face", :width=>200, :height=>200, :crop=>"fill", :radius=>"max"}]), user_path(@blog.user)) %>
                   <% else %>
                     <%= link_to(image_tag("#{@blog.user.image_url}", :alt =>  "image", :class =>"#"), "#") %>
                   <% end %>

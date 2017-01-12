@@ -35,7 +35,9 @@
               <% @blogs.each do |blog| %>
                 <li class="medium-12 columns listed_blog">
                   <div class="medium-6 columns left_content">
-                    <div><%= link_to(image_tag("#{blog.image_url}", :alt =>  "image", :class =>"#"), blog_path(blog)) %></div>
+                    <div>
+                      <%= link_to(image_tag("#{blog.image_url}", :alt =>  "image", :class =>"#"), blog_path(blog)) %>
+                    </div>
                   </div>
                   <div class="medium-6 columns right_content">
                     <div class="blog_title"><%= link_to "#{blog.title}", blog_path(blog) %></div>
@@ -48,7 +50,7 @@
                     <div class="blog_user_details">
                       <span class="blog_img_cover">
                         <% if signed_in?  %>
-                          <%= link_to(image_tag("#{blog.user.image_url}", :alt =>  "image", :class =>"#"), user_path(blog.user)) %>
+                          <%= link_to(cl_image_tag(blog.user.image, :transformation=>[{:gravity=>"face", :width=>200, :height=>200, :crop=>"fill", :radius=>"max"}]), user_path(blog.user)) %>
                         <% else %>
                           <%= link_to(image_tag("#{blog.user.image_url}", :alt =>  "image", :class =>"#"), "#") %>
                         <% end %>
