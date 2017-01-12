@@ -112,7 +112,7 @@ class User < ActiveRecord::Base
 
   scope :hosts, -> { joins(:category_managementgroup).where("category_managementgroups.name IN (?)", ["Management Group", "Event Management Group"]) }                                                                                    
   # display users that are in charge of hosting speed-events
-  
+
 
   def slug_users
     [
@@ -224,14 +224,6 @@ class User < ActiveRecord::Base
     end while self.class.exists?(reference: reference)
   end
 
-
-
-  # --------------------- you are here ---------------------
-
-  # def user_invite_exists?(social, other_user)
-  #   self.invites.where(social_id: social).flat_map(&:users).include?(other_user)
-  # end
-
   def uninvited_friends(social)
     friends = Set.new((self.friends.joins(:category_inviteoption).where("category_inviteoptions.name IN (?)", ["Only members in my network", "Every member"])).to_a)
     friends_already_invited_to_social = Set.new(Invite.where(social_id: social).flat_map(&:invitee))
@@ -239,22 +231,6 @@ class User < ActiveRecord::Base
     invited_friends = Set.new(self.invites.where(invitee: nil, social: social).flat_map(&:users))
     uninvited_friends = friends_not_yet_invited_to_social.difference(invited_friends)
   end
-
-  # def uninvited_friends(social)
-  #   friends = Set.new((self.friends.joins(:category_inviteoption).where("category_inviteoptions.name IN (?)", ["Only members in my network", "Every member"])).to_a)
-  #   invited_friends = Set.new(self.invites.where(invitee: nil, social: social).flat_map(&:users))
-  #   uninvited_friends = friends.difference(invited_friends)
-  # end
-
-  # def uninvited_friends(social)
-  #   friends = Set.new((self.friends.joins(:category_inviteoption).where("category_inviteoptions.name IN (?)", ["Only members in my network", "Every member"])).to_a)
-  #   friends_already_invited_to_social = Set.new(self.invites.where(social_id: social).flat_map(&:invitee))
-  #   friends_not_yet_invited_to_social = friends.difference(friends_already_invited_to_social)
-  #   invited_friends = Set.new(self.invites.where(invitee: nil, social: social).flat_map(&:users))
-  #   uninvited_friends = friends_not_yet_invited_to_social.difference(invited_friends)
-  # end
-
-  # --------------------- you are here ---------------------
 
   def assign_user_to_role_and_group
     self.category_role = CategoryRole.where(name: 'Client').first
