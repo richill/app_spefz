@@ -126,7 +126,8 @@
             <div class="image_section">
               <span class="img_cover">
                 <% if card.event.image.present? %>
-                  <%= link_to(image_tag(card.event.image_url, :alt =>  "image", :class =>"#", id: ""), cards_path) %>
+                  <%# link_to(image_tag(card.event.image_url, :alt =>  "image", :class =>"#", id: ""), cards_path) %>
+                  <%= link_to(cl_image_tag(card.event.image, :alt =>  "image", :class =>"#", id: ""), cards_path) %>
                 <% else %>
                   <%= link_to(image_tag("img-profile-image-default.png", :alt =>  "image", :class =>"#", id: ""), cards_path) %>
                 <% end %>
