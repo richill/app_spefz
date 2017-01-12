@@ -10,7 +10,9 @@
             <div class="event_details">
               <div>
                 <% if @event.image.present? %>
-                  <div class="image_cover event_image_cover"><%= link_to(image_tag("#{@event.image_url}", :alt =>  "image", :class =>"#"), user_event_path(@event.user, @event)) %></div>
+                  <div class="image_cover event_image_cover">
+                    <%= link_to(cl_image_tag(@event.image, :transformation=>[{:gravity=>"face", :width=>200, :height=>200, :crop=>"fill"}]), user_event_path(@event.user, @event)) %>
+                  </div>
                 <% else %>
                   <div class="image_cover event_image_cover"><%= link_to(image_tag("img_feed_07.png", :alt =>  "image", :class =>"#"), "#") %></div>
                 <% end %>
