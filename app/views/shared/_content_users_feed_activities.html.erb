@@ -9,7 +9,13 @@
           <li class="left_side">
             <!-- activity_left_side -->
             <div class="image_content right_side_content">
-              <div class="activity_feed_img_cover"><%= link_to(image_tag(activity.owner.image), user_path(activity.owner)) %></div>
+              <div class="activity_feed_img_cover">
+                <% if activity.owner.image.present? %>
+                  <%= link_to(cl_image_tag(activity.owner.image, :transformation=>[{:gravity=>"face", :width=>200, :height=>200, :crop=>"fill", :radius=>"max"}]), user_path(activity.owner)) %>
+                <% else %>
+                  <%= link_to(image_tag("img-profile-image-default.png"), user_path(activity.owner)) %>
+                <% end %>
+              </div>
             </div>
             <!-- activity_left_side -->
           </li>
