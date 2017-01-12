@@ -10,7 +10,13 @@
             <li class="left_side">
               <!-- activity_left_side -->
               <div class="image_content right_side_content">
-                <div class="activity_feed_img_cover"><%= link_to(image_tag(activity.owner.image), user_path(activity.owner)) %></div>
+                <div class="activity_feed_img_cover">
+                  <% if activity.owner.image.present? %>
+                    <%= link_to(cl_image_tag(activity.owner.image, :transformation=>[{:gravity=>"face", :width=>200, :height=>200, :crop=>"fill", :radius=>"max"}]), user_path(activity.owner)) %>
+                  <% else %>
+                    <%= image_tag("img-profile-image-default.png") %>
+                  <% end %>
+                </div>
               </div>
               <!-- activity_left_side -->
             </li>
@@ -65,7 +71,7 @@
                             <% activity.trackable.attendances.order(created_at: :desc).limit(5).each do |attendant| %>
                               <li>
                                 <% if attendant.user.image.present? %>
-                                  <%= link_to(image_tag(attendant.user.image_url, :alt =>  "alt text", :class =>"#"), user_path(attendant.user)) %>
+                                  <%= link_to(cl_image_tag(attendant.user.image, :transformation=>[{:gravity=>"face", :width=>200, :height=>200, :crop=>"fill"}]), user_path(attendant.user)) %>
                                 <% else %>
                                   <%= link_to(image_tag("img-profile-image-default.png", :alt =>  "alt text", :class =>"#"), user_path(attendant.user)) %>
                                 <% end %>
