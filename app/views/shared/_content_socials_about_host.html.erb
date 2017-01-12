@@ -4,7 +4,7 @@
       <li>
         <span class="host">
           <% if @social.user.image.present? %>
-            <%= link_to(image_tag(@social.user.image_url, :alt =>  "alt text", :class =>"#"), user_path(@social.user)) %>
+          <%= link_to(cl_image_tag(@social.user.image, :transformation=>[{:gravity=>"face", :width=>200, :height=>200, :crop=>"fill", :radius=>"max"}]), user_path(@social.user)) %>
           <% else %>
             <%= link_to(image_tag("img-profile-image-default.png", :alt =>  "alt text", :class =>"#"), user_path(@social.user)) %>
           <% end %>
