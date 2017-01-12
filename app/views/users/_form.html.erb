@@ -18,7 +18,8 @@
           <%= f.error_notification %>
 
           <div class="form-inputs">
-            <%= f.file_field :image %>
+            <%= f.file_field :image, type: :file %>
+            <%= f.hidden_field(:image_cache) %>
             <%= f.input :firstname, label: "First Name", placeholder: "first name" %>
             <%= f.input :lastname, label: "Last Name", placeholder: "last name" %>
             <div class="clear"></div>
