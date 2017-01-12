@@ -13,6 +13,7 @@ gem 'devise'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'carrierwave'
+gem 'cloudinary'
 gem 'rmagick'
 gem 'acts-as-taggable-on'
 gem 'country_select'
@@ -30,7 +31,6 @@ gem 'friendly_id', '~> 5.1.0'
 gem 'social-share-button'
 gem 'ratyrate'
 gem 'unread'
-gem 'cloudinary'
 
 group :development, :test do
   gem 'sqlite3'
