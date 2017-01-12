@@ -8,7 +8,7 @@
         <div class="medium-1 columns image_name_container">
           <div class="image_cover">
             <% if message.sender.image.present? %>
-              <div><%= link_to(image_tag("#{message.sender.image_url}", alt: "image", :class =>"#"), user_path(message.sender)) %></div>
+            <div><%= link_to(cl_image_tag(message.sender.image, :transformation=>[{:gravity=>"face", :width=>200, :height=>200, :crop=>"fill", :radius=>"max"}]), user_path(message.sender)) %></div>
             <% else %>
               <div><%= link_to(image_tag("img-profile-image-default.png", alt: "image", :class =>"#"), user_path(message.sender)) %></div>
             <% end %>
