@@ -87,7 +87,7 @@
         <li class="notification_li">
           <div class="profile_img_cover">
             <% if current_user.image.present? %>
-              <div><%= link_to(image_tag(current_user.image_url, :alt =>  "image", :class =>"#", id: "notificationLink_profile"), '#') %></div>
+              <div><%= cl_image_tag(current_user.image, :transformation=>[{:gravity=>"face", :width=>200, :height=>200, :crop=>"fill", :radius=>"max"}]) %></div>
             <% else %>
               <div class="img_default"><%= link_to(image_tag("img-profile-image-default.png", :alt =>  "image", :class =>"#", id: "notificationLink_profile"), '#') %></div>
             <% end %>

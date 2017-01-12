@@ -68,7 +68,7 @@
                       <div class="medium-12 columns member_inner_container">
                         <div class="image_section">
                           <% if user.image_url.present? %>
-                            <div class="image_cover"><%= link_to(image_tag("#{user.image_url}", :alt =>  "image", :class =>"#"), user) %></div>
+                            <div class="image_cover"><%= link_to(cl_image_tag(user.image, :transformation=>[{:gravity=>"face", :width=>200, :height=>200, :crop=>"fill", :radius=>"max"}]), user) %></div>
                           <% else %>
                             <div class="image_cover" style="border-radius:0px;"><%= link_to(image_tag("img-profile-image-default.png", :alt =>  "image", :class =>"#"), user) %></div>
                           <% end %>
