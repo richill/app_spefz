@@ -78,6 +78,7 @@ class StaticPagesController < ApplicationController
   # def user_not_allowed_to_view
   #   redirect_to root_path
   # end
+  
   private
   def setup_friends
     @user = User.find(current_user.id)
