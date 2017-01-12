@@ -19,10 +19,3 @@ end
 
 #   end
 # end
-
-#aim: finding my socials that the user(richard) has already been invited to
-
-#Invite.where(user: richill, social_id: social).flat_map(&:users)
-#Invite.where(user: richill, invitee: nil).map(&:social)
-#Invite.where(user: richill, invitee: invitee).map(&:social) = show social i have invited richard to
-#ap Invite.joins(:users).uniq
