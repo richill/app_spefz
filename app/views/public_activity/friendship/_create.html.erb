@@ -1,5 +1,5 @@
 <% if activity.trackable.present? %>
-  <% unless activity.trackable.attendable.expired_or_closed_social %>
+  <%# unless activity.trackable.attendable.expired_or_closed_social %>
     <div class="activity_list">
       <% if activity.trackable %>
         <div class="cd-timeline-block">
@@ -62,5 +62,5 @@
       <% end %>
       <div class="clear"></div>
     </div>
-  <% end %>
+  <%# end %>
 <% end %>
