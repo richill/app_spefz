@@ -1,6 +1,6 @@
 class StaticPagesController < ApplicationController
   # before_filter :user_not_allowed_to_view, only: [:homepg]
-  before_filter :setup_friends, :setup_subscription, :setup_cards, :setup_events, :setup_invite_form
+  before_filter :setup_subscription, :setup_cards, :setup_events, :setup_invite_form
 
   def aboutpg
     @premium_plan = Subscription.find_by(title:"premium")
@@ -80,11 +80,6 @@ class StaticPagesController < ApplicationController
   # end
   
   private
-  def setup_friends
-    @user = User.find(current_user.id)
-    @friend = User.find_by_email(params[:id])
-  end
-
   def setup_subscription
     @premium_plan = Subscription.find_by(title:"premium") 
   end
