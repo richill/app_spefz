@@ -794,6 +794,24 @@ Timline CSS
   -o-transition: all 0.3s ease;
 }
 
+.activities_section .title_attend a {
+  font-family: 'Lato', sans-serif;
+  font-size: 25px;
+  font-weight: bold;
+  text-transform: capitalize;
+  color: #4BB4BF !important;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+.activities_section .title_attend a:hover {
+  color: #E34B51 !important;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
 .activities_section .cd-container::after {
   content: '';
   display: table;
@@ -912,8 +930,13 @@ Timline CSS
 
 .activities_section .activity_list ul .left_side {
   float: left !important;
-  // background-color: red;
   height: 200px;
+  margin-right: 15px;
+}
+
+.activities_section .activity_list ul .left_side_attend {
+  float: left !important;
+  height: 125px;
   margin-right: 15px;
 }
 
@@ -1000,11 +1023,17 @@ border-radius: 200px;
   margin-right: 10px;
   background-color: rgba(47, 63, 91, 0.08);
   padding: 5px;
+  width: 160px;
+  height: 116px;
 }
 
-.activities_section .activity_list .social_event_content .image_cover img {
-  width: 150px;
-  height: 105px;
+.activities_section .activity_list .social_event_content .image_cover_attend {
+  float: left;
+  margin-right: 10px;
+  background-color: rgba(47, 63, 91, 0.08);
+  padding: 5px;
+  width: 160px;
+  height: 71px;
 }
 
 .activities_section .activity_list .info {
