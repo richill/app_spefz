@@ -3,12 +3,12 @@
     File: views / shared / _content_dropdownbox_notification.html.erb
   =========================================*/
 
-.userinviterequests_inner_container_middle_divider {
+.usernotifications_inner_container_middle_divider {
   border-bottom: 1px solid #ededf3;
   margin-bottom: 5px !important;
 }
 
-.userinviterequests_inner_container {
+.usernotifications_inner_container {
   background-color: #fff !important;
   font-family: 'Lato', sans-serif;
   font-weight: 300;
@@ -17,7 +17,7 @@
   overflow: scroll;
 }
 
-.userinviterequests_inner_container .header {
+.usernotifications_inner_container .header {
   padding: 5px 15px !important;
   font-size: 35px;
   border-bottom: 2px solid #58CDA6;
@@ -26,19 +26,19 @@
   background-color: #283041;
 }
 
-.userinviterequests_inner_container .content_list {
+.usernotifications_inner_container .content_list {
   padding: 8px !important;
   min-height: 100px;
 }
 
-.userinviterequests_inner_container .content_list_none {
+.usernotifications_inner_container .content_list_none {
   padding: 40px 15px !important;
   min-height: 100px;
   text-transform: capitalize;
   text-align: center;
 }
 
-.userinviterequests_inner_container .content_list_none .content_list_none_link a {
+.usernotifications_inner_container .content_list_none .content_list_none_link a {
   text-transform: lowercase !important;
   font-size: 12px;
   color: #E34B51 !important;
@@ -47,37 +47,37 @@
   -o-transition: all 0.3s ease;
 }
 
-.userinviterequests_inner_container .content_list_none .content_list_none_link a:hover {
+.usernotifications_inner_container .content_list_none .content_list_none_link a:hover {
   color: #58CDA6 !important;
   -webkit-transition: all 0.3s ease; 
   -moz-transition: all 0.3s ease; 
   -o-transition: all 0.3s ease;
 }
 
-.userinviterequests_inner_container ul {
+.usernotifications_inner_container ul {
   margin: 0px;
   list-style-type: none;
 }
 
-.userinviterequests_inner_container ul li {
+.usernotifications_inner_container ul li {
   background-color: rgba(47, 63, 91, 0.05) !important;
   padding: 5px;
   margin-bottom: 5px;
   height: 90px;
 }
 
-.userinviterequests_inner_container .image_section {
+.usernotifications_inner_container .image_section {
   float: left;
 }
 
-.userinviterequests_inner_container .img_cover {
+.usernotifications_inner_container .img_cover {
   margin: 3px;
   padding: 4px;
   background-color: rgba(88, 205, 166, 0.2) !important;
   display: inline-block;
 }
 
-.userinviterequests_inner_container .img_cover img {
+.usernotifications_inner_container .img_cover img {
   height: 65px;
   border-radius: 2px;
   -webkit-transition: all 0.3s ease; 
@@ -85,13 +85,13 @@
   -o-transition: all 0.3s ease;
 }
 
-.userinviterequests_inner_container .info_section {
+.usernotifications_inner_container .info_section {
   padding: 4px 12px;
   float: left;
   text-align: left;
 }
 
-.userinviterequests_inner_container .title a {
+.usernotifications_inner_container .title a {
   font-family: 'Lato', sans-serif;
   font-weight: bold;
   text-transform: capitalize;
@@ -101,14 +101,14 @@
   -o-transition: all 0.3s ease;
 }
 
-.userinviterequests_inner_container .title a:hover {
+.usernotifications_inner_container .title a:hover {
   color: #E34B51 !important;
   -webkit-transition: all 0.3s ease; 
   -moz-transition: all 0.3s ease; 
   -o-transition: all 0.3s ease;
 }
 
-.userinviterequests_inner_container .date_country_info {
+.usernotifications_inner_container .date_country_info {
   font-size: 11px;
   font-weight: 400;
   text-transform: capitalize;
@@ -116,7 +116,7 @@
   line-height: 16px;
 }
 
-.userinviterequests_inner_container .date_country_info a {
+.usernotifications_inner_container .date_country_info a {
   color: #E34B51 !important;
   font-weight: bold;
   -webkit-transition: all 0.3s ease; 
@@ -124,7 +124,7 @@
   -o-transition: all 0.3s ease;
 }
 
-.userinviterequests_inner_container .date_country_info a:hover {
+.usernotifications_inner_container .date_country_info a:hover {
   color: #58CDA6 !important;
   font-weight: bold;
   -webkit-transition: all 0.3s ease; 
@@ -132,26 +132,32 @@
   -o-transition: all 0.3s ease;
 }
 
-.userinviterequests_inner_container .date_country_info .divider {
+.usernotifications_inner_container .date_country_info .divider {
   margin: 0px 5px;
 }
 
-.userinviterequests_inner_container .action_btn_section {
+.usernotifications_inner_container .action_btn_section {
   float: right;
   padding: 22px 0px;
 }
 
-.userinviterequests_inner_container .action_btn_card_section {
+.usernotifications_inner_container .action_btn_card_section {
+  float: right;
+  padding: 0px 0px !important;
+}
+
+.usernotifications_inner_container .action_btn_card_section .img_container {
+  margin-bottom: 5px !important;
+  width: 40px;
+  margin: auto;
+}
+
+.usernotifications_inner_container .action_btn_view_request_section {
   float: right;
   padding: 22px 0px !important;
 }
 
-.userinviterequests_inner_container .action_btn_view_request_section {
-  float: right;
-  padding: 22px 0px !important;
-}
-
-.userinviterequests_inner_container .btn a {
+.usernotifications_inner_container .btn a {
   font-family: 'Lato', sans-serif;
   font-size: 10px;
   font-weight: 300;
@@ -172,26 +178,26 @@
   -o-transition: all 0.3s ease;
 }
 
-.userinviterequests_inner_container .btn a:hover {
+.usernotifications_inner_container .btn a:hover {
   background-color: #E34B51 !important;
   -webkit-transition: all 0.3s ease; 
   -moz-transition: all 0.3s ease; 
   -o-transition: all 0.3s ease;
 }
 
-.userinviterequests_inner_container .btn_view_card a {
+.usernotifications_inner_container .btn_view_card a {
   padding: 8px 23px !important;
 }
 
-.userinviterequests_inner_container .btn_view_card_not_open a {
+.usernotifications_inner_container .btn_view_card_not_open a {
   padding: 8px 10px !important;
 }
 
-.userinviterequests_inner_container .action_btn_section_attending {
+.usernotifications_inner_container .action_btn_section_attending {
   float: right;
 }
 
-.userinviterequests_inner_container .action_btn_section_attending input[type="submit"] {
+.usernotifications_inner_container .action_btn_section_attending input[type="submit"] {
   font-family: 'Lato', sans-serif;
   font-size: 10px;
   font-weight: 300;
@@ -211,14 +217,14 @@
   -o-transition: all 0.3s ease; 
 }
 
-.userinviterequests_inner_container .action_btn_section_attending input[type="submit"]:hover {
+.usernotifications_inner_container .action_btn_section_attending input[type="submit"]:hover {
   background-color: #E34B51 !important;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   -o-transition: all 0.3s ease; 
 }
 
-.userinviterequests_inner_container .action_btn_section input[type="submit"] {
+.usernotifications_inner_container .action_btn_section input[type="submit"] {
   font-family: 'Lato', sans-serif;
   font-size: 10px;
   font-weight: 300;
@@ -237,14 +243,14 @@
   -o-transition: all 0.3s ease; 
 }
 
-.userinviterequests_inner_container .action_btn_section input[type="submit"]:hover {
+.usernotifications_inner_container .action_btn_section input[type="submit"]:hover {
   background-color: #E34B51 !important;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   -o-transition: all 0.3s ease; 
 }
 
-.userinviterequests_inner_container .friend_request_name a {
+.usernotifications_inner_container .friend_request_name a {
   font-family: 'Lato', sans-serif;
   font-weight: bold;
   text-transform: capitalize;
@@ -254,18 +260,18 @@
   -o-transition: all 0.3s ease;
 }
 
-.userinviterequests_inner_container .friend_request_name a:hover {
+.usernotifications_inner_container .friend_request_name a:hover {
   color: #E34B51 !important;
   -webkit-transition: all 0.3s ease; 
   -moz-transition: all 0.3s ease; 
   -o-transition: all 0.3s ease;
 }
 
-.userinviterequests_inner_container .btn_add_friend a {
+.usernotifications_inner_container .btn_add_friend a {
   background-color: #58CDA6 !important;
 }
 
-.userinviterequests_inner_container .hide {
+.usernotifications_inner_container .hide {
   display: none !important;
 }
 
