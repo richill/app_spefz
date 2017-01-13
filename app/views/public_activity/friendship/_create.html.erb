@@ -24,32 +24,35 @@
               <li class="right_side">
                 <!-- activity_right_side -->
                 <div class="right_side_content">
-                  <div class="title_attend"><%= link_to "#{activity.owner.firstname} is attending '#{activity.trackable.attendable.title}'", user_social_path(activity.trackable.user, activity.trackable.attendable) %></div>
+                  <div class="title_attend">
+                    <%# link_to "#{activity.owner.firstname} is attending '#{activity.trackable.attendable.title}'", user_social_path(activity.trackable.user, activity.trackable.attendable) %>
+                    <%= link_to "#{activity.owner.firstname} #{activity.owner.lastname} and #{activity.trackable.user.firstname} #{activity.trackable.user.lastname} are now connected", "#" %>
+                  </div>
                   <div class="host">
                     <span>Hosted by</span>
-                    <span><%= link_to activity.trackable.attendable.user.firstname, activity.trackable.attendable.user if activity.trackable.attendable.user %></span>
+                    <span><%# link_to activity.trackable.attendable.user.firstname, activity.trackable.attendable.user if activity.trackable.attendable.user %></span>
                   </div>
                   <div class="social_event_content">
                     <div class="image_cover_attend">
                       <!-- sold out -->
-                      <% if activity.trackable.attendable.sold_out? %>
+                      <%# if activity.trackable.attendable.sold_out? %>
                         <div class="banner">
                           <div class="ribbon-wrapper-green">
                             <div class="ribbon-green">sold out</div>
                           </div>
                         </div>
-                      <% end %>
+                      <%# end %>
                       <!-- sold out -->
-                      <span><%= link_to(cl_image_tag(activity.trackable.attendable.image, :transformation=>[{:gravity=>"center", :width=>150, :height=>60, :crop=>"fill"}]), user_social_path(activity.trackable.attendable.user, activity.trackable.attendable)) %></span>
+                      <span><%# link_to(cl_image_tag(activity.trackable.attendable.image, :transformation=>[{:gravity=>"center", :width=>150, :height=>60, :crop=>"fill"}]), user_social_path(activity.trackable.attendable.user, activity.trackable.attendable)) %></span>
                     </div>
                     <div class="social_event_details">
-                      <div class="info"><i class="fa fa-calendar" aria-hidden="true"></i> <%= activity.trackable.attendable.date.strftime("%A, %d %b") %> <span class="mid_divider">|</span> <%= activity.trackable.attendable.time.strftime("%I:%M %p") %></div>
-                      <div class="info"><i class="fa fa-map-pin" aria-hidden="true"></i> <%= activity.trackable.attendable.city %>, <%= activity.trackable.attendable.category_country.name %></div>
+                      <div class="info"><i class="fa fa-calendar" aria-hidden="true"></i> <%# activity.trackable.attendable.date.strftime("%A, %d %b") %> <span class="mid_divider">|</span> <%# activity.trackable.attendable.time.strftime("%I:%M %p") %></div>
+                      <div class="info"><i class="fa fa-map-pin" aria-hidden="true"></i> <%# activity.trackable.attendable.city %>, <%# activity.trackable.attendable.category_country.name %></div>
                       <div class="info">
-                        <span><i class="fa fa-male" aria-hidden="true"></i> <%= activity.trackable.attendable.category_age.name %></span>
+                        <span><i class="fa fa-male" aria-hidden="true"></i> <%# activity.trackable.attendable.category_age.name %></span>
                         <span class="mid_divider">|</span>
                         <span class="category">Category:</span> 
-                        <span class="category_info"><%= link_to "#{activity.trackable.attendable.category_topic.name}", socials_path(q: {category_topic_name_eq: activity.trackable.attendable.category_topic.name}) %></span>
+                        <span class="category_info"><%# link_to "#{activity.trackable.attendable.category_topic.name}", socials_path(q: {category_topic_name_eq: activity.trackable.attendable.category_topic.name}) %></span>
                       </div>
                     </div>
                   </div>

@@ -1,6 +1,6 @@
 class Friendship < ActiveRecord::Base
-  include PublicActivity::Model
-  tracked only: [:create], owner: -> (controller, model) { controller && controller.current_user }
+  # include PublicActivity::Model
+  # tracked only: [:create], owner: -> (controller, model) { controller && controller.current_user }
   
   belongs_to :user
   belongs_to :friend, class_name: "User", foreign_key: "friend_id"
