@@ -75,10 +75,11 @@
   padding: 4px;
   background-color: rgba(88, 205, 166, 0.2) !important;
   display: inline-block;
+  width: 73px;
+  height: 73px;
 }
 
 .usernotifications_inner_container .img_cover img {
-  height: 65px;
   border-radius: 2px;
   -webkit-transition: all 0.3s ease; 
   -moz-transition: all 0.3s ease; 
@@ -143,7 +144,7 @@
 
 .usernotifications_inner_container .action_btn_card_section {
   float: right;
-  padding: 0px 0px !important;
+  padding: 2px 0px !important;
 }
 
 .usernotifications_inner_container .action_btn_card_section .img_container {
