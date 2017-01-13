@@ -1,64 +1,66 @@
-<% unless activity.trackable.attendable.expired_or_closed_social %>
-  <div class="activity_list">
-    <% if activity.trackable %>
-      <div class="cd-timeline-block">
-        <div class="cd-timeline-img cd-star">
-          <i class="fa fa-user"></i>
-        </div> 
-        <div class="cd-timeline-content">
-          <ul>
-            <li class="left_side_attend">
-              <!-- activity_left_side -->
-              <div class="image_content right_side_content">
-                <div class="activity_feed_img_cover">
-                  <% if activity.owner.image.present? %>
-                    <%= link_to(cl_image_tag(activity.owner.image, :transformation=>[{:gravity=>"face", :width=>200, :height=>200, :crop=>"fill", :radius=>"max"}]), user_path(activity.owner)) %>
-                  <% else %>
-                    <%= image_tag("img-profile-image-default.png") %>
-                  <% end %>
-                </div>
-              </div>
-              <!-- activity_left_side -->
-            </li>
-            <li class="right_side">
-              <!-- activity_right_side -->
-              <div class="right_side_content">
-                <div class="title_attend"><%= link_to "#{activity.owner.firstname} is attending '#{activity.trackable.attendable.title}'", user_social_path(activity.trackable.user, activity.trackable.attendable) %></div>
-                <div class="host">
-                  <span>Hosted by</span>
-                  <span><%= link_to activity.trackable.attendable.user.firstname, activity.trackable.attendable.user if activity.trackable.attendable.user %></span>
-                </div>
-                <div class="social_event_content">
-                  <div class="image_cover_attend">
-                    <!-- sold out -->
-                    <% if activity.trackable.attendable.sold_out? %>
-                      <div class="banner">
-                        <div class="ribbon-wrapper-green">
-                          <div class="ribbon-green">sold out</div>
-                        </div>
-                      </div>
+<% if activity.trackable.present? %>
+  <% unless activity.trackable.attendable.expired_or_closed_social %>
+    <div class="activity_list">
+      <% if activity.trackable %>
+        <div class="cd-timeline-block">
+          <div class="cd-timeline-img cd-star">
+            <i class="fa fa-user"></i>
+          </div> 
+          <div class="cd-timeline-content">
+            <ul>
+              <li class="left_side_attend">
+                <!-- activity_left_side -->
+                <div class="image_content right_side_content">
+                  <div class="activity_feed_img_cover">
+                    <% if activity.owner.image.present? %>
+                      <%= link_to(cl_image_tag(activity.owner.image, :transformation=>[{:gravity=>"face", :width=>200, :height=>200, :crop=>"fill", :radius=>"max"}]), user_path(activity.owner)) %>
+                    <% else %>
+                      <%= image_tag("img-profile-image-default.png") %>
                     <% end %>
-                    <!-- sold out -->
-                    <span><%= link_to(cl_image_tag(activity.trackable.attendable.image, :transformation=>[{:gravity=>"center", :width=>150, :height=>60, :crop=>"fill"}]), user_social_path(activity.trackable.attendable.user, activity.trackable.attendable)) %></span>
                   </div>
-                  <div class="social_event_details">
-                    <div class="info"><i class="fa fa-calendar" aria-hidden="true"></i> <%= activity.trackable.attendable.date.strftime("%A, %d %b") %> <span class="mid_divider">|</span> <%= activity.trackable.attendable.time.strftime("%I:%M %p") %></div>
-                    <div class="info"><i class="fa fa-map-pin" aria-hidden="true"></i> <%= activity.trackable.attendable.city %>, <%= activity.trackable.attendable.category_country.name %></div>
-                    <div class="info">
-                      <span><i class="fa fa-male" aria-hidden="true"></i> <%= activity.trackable.attendable.category_age.name %></span>
-                      <span class="mid_divider">|</span>
-                      <span class="category">Category:</span> 
-                      <span class="category_info"><%= link_to "#{activity.trackable.attendable.category_topic.name}", socials_path(q: {category_topic_name_eq: activity.trackable.attendable.category_topic.name}) %></span>
+                </div>
+                <!-- activity_left_side -->
+              </li>
+              <li class="right_side">
+                <!-- activity_right_side -->
+                <div class="right_side_content">
+                  <div class="title_attend"><%= link_to "#{activity.owner.firstname} is attending '#{activity.trackable.attendable.title}'", user_social_path(activity.trackable.user, activity.trackable.attendable) %></div>
+                  <div class="host">
+                    <span>Hosted by</span>
+                    <span><%= link_to activity.trackable.attendable.user.firstname, activity.trackable.attendable.user if activity.trackable.attendable.user %></span>
+                  </div>
+                  <div class="social_event_content">
+                    <div class="image_cover_attend">
+                      <!-- sold out -->
+                      <% if activity.trackable.attendable.sold_out? %>
+                        <div class="banner">
+                          <div class="ribbon-wrapper-green">
+                            <div class="ribbon-green">sold out</div>
+                          </div>
+                        </div>
+                      <% end %>
+                      <!-- sold out -->
+                      <span><%= link_to(cl_image_tag(activity.trackable.attendable.image, :transformation=>[{:gravity=>"center", :width=>150, :height=>60, :crop=>"fill"}]), user_social_path(activity.trackable.attendable.user, activity.trackable.attendable)) %></span>
+                    </div>
+                    <div class="social_event_details">
+                      <div class="info"><i class="fa fa-calendar" aria-hidden="true"></i> <%= activity.trackable.attendable.date.strftime("%A, %d %b") %> <span class="mid_divider">|</span> <%= activity.trackable.attendable.time.strftime("%I:%M %p") %></div>
+                      <div class="info"><i class="fa fa-map-pin" aria-hidden="true"></i> <%= activity.trackable.attendable.city %>, <%= activity.trackable.attendable.category_country.name %></div>
+                      <div class="info">
+                        <span><i class="fa fa-male" aria-hidden="true"></i> <%= activity.trackable.attendable.category_age.name %></span>
+                        <span class="mid_divider">|</span>
+                        <span class="category">Category:</span> 
+                        <span class="category_info"><%= link_to "#{activity.trackable.attendable.category_topic.name}", socials_path(q: {category_topic_name_eq: activity.trackable.attendable.category_topic.name}) %></span>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <!-- activity_right_side -->
-            </li>
-          </ul>
+                <!-- activity_right_side -->
+              </li>
+            </ul>
+          </div>
         </div>
-      </div>
-    <% end %>
-    <div class="clear"></div>
-  </div>
+      <% end %>
+      <div class="clear"></div>
+    </div>
+  <% end %>
 <% end %>
