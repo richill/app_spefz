@@ -2,8 +2,7 @@ class ActivitiesController < ApplicationController
   before_filter :setup_friends, :setup_subscription, :setup_cards, :setup_events, :setup_invite_form
 
   def index
-    @activities = PublicActivity::Activity.order("created_at desc").where(trackable_type: "Social")
-    # @activities = PublicActivity::Activity.order("created_at desc").where("category_managementgroups.name IN (?)", ["Management Group", "Event Management Group"]) } 
+    @activities = PublicActivity::Activity.order("created_at desc").where("trackable_type IN (?)", ["Social", "Event"]) 
   end
 
   def networks 
