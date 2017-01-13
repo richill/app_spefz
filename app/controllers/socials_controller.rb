@@ -1,7 +1,7 @@
 class SocialsController < ApplicationController
   respond_to :html, :xml, :json
   before_action :set_social, only: [:show, :edit, :update, :destroy]
-  before_filter :setup_friends, :setup_subscription, :setup_cards, :setup_events, :setup_invite_form
+  before_filter :setup_friends, :setup_subscription, :setup_cards, :setup_events, :setup_invite_form, :setup_user_network_activities
   impressionist :actions=>[:show]
 
   def index
@@ -110,6 +110,10 @@ class SocialsController < ApplicationController
 
   def setup_invite_form
     @invite = Invite.new
+  end
+
+  def setup_user_network_activities
+    @user_network_activities = Activity.order("created_at desc").where(owner_id: current_user.friends)
   end
 
   def social_params

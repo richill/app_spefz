@@ -16,7 +16,11 @@ class ActivitiesController < ApplicationController
   def mark_as_viewed
     @activity =  Activity.find(params[:activity_id]) 
     @activity.mark_as_read! :for => current_user
-    redirect_to :back
+    if @activity.trackable_type == "Social"
+      redirect_to @activity.trackable
+    elsif @activity.trackable_type == "Attendance"
+      redirect_to @activity.trackable.attendable
+    end
   end
 
   private
