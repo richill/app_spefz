@@ -1,5 +1,6 @@
 <!-- notifications -->
-<% if @user_network_activities.present? %>
+<% if @user_network_activities.unread_by(current_user).present? %>
+<%# if @user_network_activities.present? %>
   <div class="usernotifications_inner_container">
     <div class="content_list">
       <ul>
@@ -38,7 +39,38 @@
               </div>
             </li>
           <% elsif activity.trackable_type == "Attendance" %>
-            <%= "hey" %>
+            <li>
+              <div class="image_section">
+                <span class="img_cover">
+                  <% if activity.trackable.attendable.image_url.present? %>
+                    <%= link_to(cl_image_tag(activity.trackable.attendable.image, :transformation=>[{:gravity=>"center", :width=>65, :height=>65, :crop=>"fill"}]), social_path(activity.trackable)) %>
+                  <% else %>
+                    <%= link_to(image_tag("img-profile-image-default.png", :alt =>  "image", :class =>"#", id: ""), social_path(activity.trackable)) %>
+                  <% end %>
+                </span>
+              </div>
+              <div class="info_section">
+                <div class="title"><%= link_to truncate("#{activity.trackable.attendable.title}", length: 30), social_path(activity.trackable) %></div>
+                <div class="date_country_info" style="margin-top:2px;">
+                  <span><%= activity.trackable.attendable.date.strftime("%a, %d %b %Y") %></span> 
+                  <span class="divider">|</span> 
+                  <span><%= activity.trackable.attendable.time.strftime("%I:%M %p") %></span>
+                </div>
+                <div class="date_country_info">
+                  <span><%= activity.trackable.attendable.category_country.name %></span> 
+                  <span>-</span> 
+                  <span><%= activity.trackable.attendable.city %></span>
+                </div>
+                <div class="date_country_info"> 
+                  <span>attending:</span>
+                  <span><%= link_to "#{activity.trackable.user.firstname} #{activity.trackable.user.lastname}", user_path(activity.trackable.user) %></span>
+                </div>
+              </div>
+              <div class="action_btn_section_attending action_btn_card_section"> 
+                <div class="img_container"><%= link_to(cl_image_tag(activity.trackable.user.image, :transformation=>[{:gravity=>"face", :width=>35, :height=>35, :crop=>"fill", :radius=>"max"}]), user_path(activity.trackable.user)) %></div>
+                <span class="btn btn_view_card"><%= link_to 'view', social_mark_as_viewed_path(social_id: activity.trackable.id), method: :post %></span>
+              </div>
+            </li>
           <% end %>
           <div class="clear"></div>
         <% end %>
@@ -46,7 +78,7 @@
     </div> 
   </div>
 <% else %>
-  <div class="userinviterequests_inner_container">
+  <div class="usernotifications_inner_container">
     <div class="content_list_none">you currently have no updated notifications</div> 
   </div>
 <% end %>

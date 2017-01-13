@@ -23,7 +23,6 @@ Rails.application.routes.draw do
   resources :hosts
   resources :subscriptions
   resources :payments
-  resources :socials
   resources :signups
   resources :relationships, only: [:create, :destroy]
 
@@ -61,6 +60,7 @@ Rails.application.routes.draw do
   end
 
   resources :activities do
+    post :mark_as_viewed
     collection do
       get 'networks'
       get 'followings'

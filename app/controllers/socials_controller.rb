@@ -86,6 +86,12 @@ class SocialsController < ApplicationController
     redirect_to socials_path
   end
 
+  def mark_as_viewed
+    @social =  Social.find(params[:card_id]) 
+    @social.mark_as_read! :for => current_user
+    redirect_to @social
+  end
+
   private
   def set_social
     @social = Social.friendly.find(params[:id])
