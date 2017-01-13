@@ -3,6 +3,7 @@ class ActivitiesController < ApplicationController
 
   def index
     @activities = PublicActivity::Activity.order("created_at desc").where(trackable_type: "Social")
+    # @activities = PublicActivity::Activity.order("created_at desc").where("category_managementgroups.name IN (?)", ["Management Group", "Event Management Group"]) } 
   end
 
   def networks 
