@@ -1,0 +1,49 @@
+<!-- notifications -->
+<% if @user_network_activities.present? %>
+  <div class="userinviterequests_inner_container">
+    <div class="content_list">
+      <ul>
+        <% @user_network_activities.each do |activity| %>
+          <% if activity.trackable == "Social" %>
+            <li>
+              <div class="image_section">
+                <span class="img_cover">
+                  <% if activity.trackable.social.image_url.present? %>
+                    <%= link_to(image_tag(activity.trackable.social.image_url, :alt =>  "image", :class =>"#", id: ""), social_path(activity.trackable.social)) %>
+                  <% else %>
+                    <%= link_to(image_tag("img-profile-image-default.png", :alt =>  "image", :class =>"#", id: ""), social_path(activity.trackable.social)) %>
+                  <% end %>
+                </span>
+              </div>
+              <div class="info_section">
+                <div class="title"><%= link_to truncate("#{activity.trackable.social.title}", length: 30), social_path(activity.trackable.social) %></div>
+                <div class="date_country_info" style="margin-top:2px;">
+                  <span><%= activity.trackable.social.date.strftime("%a, %d %b %Y") %></span> 
+                  <span class="divider">|</span> 
+                  <span><%= activity.trackable.social.time.strftime("%I:%M %p") %></span>
+                </div>
+                <div class="date_country_info">
+                  <span><%= activity.trackable.social.category_country.name %></span> 
+                  <span>-</span> 
+                  <span><%= activity.trackable.social.city %></span>
+                </div>
+                <div class="date_country_info"> 
+                  <span>invited by:</span>
+                  <span><%= link_to "#{activity.trackable.user.firstname} #{activity.trackable.user.lastname}", user_path(activity.trackable.user) %></span>
+                </div>
+              </div>
+            </li>
+          <% elsif activity.trackable == "Attendance" %>
+            <%= "hey" %>
+          <% end %>
+          <div class="clear"></div>
+        <% end %>
+      </ul>
+    </div> 
+  </div>
+<% else %>
+  <div class="userinviterequests_inner_container">
+    <div class="content_list_none">you currently have no updated notifications</div> 
+  </div>
+<% end %>
+
