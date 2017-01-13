@@ -2,15 +2,21 @@ class ActivitiesController < ApplicationController
   before_filter :setup_friends, :setup_subscription, :setup_cards, :setup_events, :setup_invite_form, :setup_user_network_activities
 
   def index
-    @activities = PublicActivity::Activity.order("created_at desc").where("trackable_type IN (?)", ["Social", "Event"]) 
+    @activities = Activity.order("created_at desc").where("trackable_type IN (?)", ["Social", "Event"]) 
   end
 
   def networks 
-    @activities = PublicActivity::Activity.order("created_at desc").where(owner_id: current_user.friends)
+    @activities = Activity.order("created_at desc").where(owner_id: current_user.friends)
   end
 
   def followings 
-    @activities = PublicActivity::Activity.order("created_at desc").where(owner_id: current_user.followings)
+    @activities = Activity.order("created_at desc").where(owner_id: current_user.followings)
+  end
+
+  def mark_as_viewed
+    @activity =  Activity.find(params[:activity_id]) 
+    @activity.mark_as_read! :for => current_user
+    redirect_to :back
   end
 
   private
@@ -32,7 +38,7 @@ class ActivitiesController < ApplicationController
   end
 
   def setup_user_network_activities
-    @user_network_activities = PublicActivity::Activity.order("created_at desc").where(owner_id: current_user.friends)
+    @user_network_activities = Activity.order("created_at desc").where(owner_id: current_user.friends)
   end
 
   def setup_invite_form
