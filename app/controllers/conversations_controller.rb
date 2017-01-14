@@ -1,6 +1,6 @@
 class ConversationsController < ApplicationController
   before_action :authenticate_user!
-  before_filter :setup_friends, :setup_subscription, :setup_cards, :setup_events, :setup_invite_form
+  before_filter :setup_friends, :setup_subscription, :setup_cards, :setup_events, :setup_invite_form, :setup_user_network_activities
 
   def new
     unless current_user.subscribed_access?
@@ -75,6 +75,10 @@ class ConversationsController < ApplicationController
 
   def setup_invite_form
     @invite = Invite.new
+  end
+
+  def setup_user_network_activities
+    @user_network_activities = Activity.order("created_at desc").where(owner_id: current_user.friends)
   end
 
   def conversation_params

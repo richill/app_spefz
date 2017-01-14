@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   respond_to :html, :xml, :json
   before_action :set_user, only: [:show, :edit, :update, :destroy, :followings, :followers, :dashboard, :membership, :account, :settings]
-  before_filter :setup_friends, :setup_subscription, :setup_cards, :setup_events, :setup_invite_form
+  before_filter :setup_friends, :setup_subscription, :setup_cards, :setup_events, :setup_invite_form, :setup_user_network_activities
 
   def index
     if params[:tag]
@@ -118,6 +118,10 @@ class UsersController < ApplicationController
 
   def setup_invite_form
     @invite = Invite.new
+  end
+
+  def setup_user_network_activities
+    @user_network_activities = Activity.order("created_at desc").where(owner_id: current_user.friends)
   end
 
   def set_user

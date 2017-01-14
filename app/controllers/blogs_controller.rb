@@ -1,7 +1,7 @@
 class BlogsController < ApplicationController
   respond_to :html, :xml, :json
   before_action :set_blog, only: [:show, :edit, :update, :destroy]
-  before_filter :setup_subscription, :setup_cards, :setup_events, :setup_invite_form
+  before_filter :setup_subscription, :setup_cards, :setup_events, :setup_invite_form, :setup_user_network_activities
 
 
   def index
@@ -77,10 +77,6 @@ class BlogsController < ApplicationController
   end
 
   private
-  def set_blog
-    @blog = Blog.friendly.find(params[:id])
-  end
-
   def setup_subscription
     @premium_plan = Subscription.find_by(title:"premium") 
   end
@@ -95,6 +91,14 @@ class BlogsController < ApplicationController
 
   def setup_invite_form
     @invite = Invite.new
+  end
+
+  def setup_user_network_activities
+    @user_network_activities = Activity.order("created_at desc").where(owner_id: current_user.friends)
+  end
+
+  def set_blog
+    @blog = Blog.friendly.find(params[:id])
   end
 
   def blog_params

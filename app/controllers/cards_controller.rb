@@ -1,6 +1,6 @@
 class CardsController < ApplicationController
   before_action :set_card, only: [:show, :edit, :update, :destroy]
-  before_filter :setup_friends, :setup_subscription, :setup_cards, :setup_events, :setup_invite_form
+  before_filter :setup_friends, :setup_subscription, :setup_cards, :setup_events, :setup_invite_form, :setup_user_network_activities
 
   def index
     @cards = Card.all
@@ -66,10 +66,6 @@ class CardsController < ApplicationController
   end
 
   private
-  def set_card
-    @card = Card.find(params[:id])
-  end
-
   def setup_friends
     @user = User.find(current_user.id)
     # @user = User.friendly.find(params[:id])
@@ -90,6 +86,14 @@ class CardsController < ApplicationController
 
   def setup_invite_form
     @invite = Invite.new
+  end
+
+  def setup_user_network_activities
+    @user_network_activities = Activity.order("created_at desc").where(owner_id: current_user.friends)
+  end
+
+  def set_card
+    @card = Card.find(params[:id])
   end
 
   def card_params

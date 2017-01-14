@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
-  before_filter :setup_friends, :setup_subscription, :setup_cards, :setup_invite_form
+  before_filter :setup_friends, :setup_subscription, :setup_cards, :setup_invite_form, :setup_user_network_activities
 
   def index
     if params[:tag]
@@ -96,10 +96,6 @@ class EventsController < ApplicationController
   end
 
   private
-  def set_event
-    @event = Event.friendly.find(params[:id])
-  end
-
   def setup_friends
     @user = User.find(current_user.id)
     @friend = User.find_by_email(params[:id])
@@ -115,6 +111,14 @@ class EventsController < ApplicationController
 
   def setup_invite_form
     @invite = Invite.new
+  end
+
+  def setup_user_network_activities
+    @user_network_activities = Activity.order("created_at desc").where(owner_id: current_user.friends)
+  end
+
+  def set_event
+    @event = Event.friendly.find(params[:id])
   end
 
   def event_params
