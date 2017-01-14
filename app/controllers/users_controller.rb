@@ -47,6 +47,17 @@ class UsersController < ApplicationController
     end
   end
 
+  def create
+    @user = User.new(user_params)
+
+    respond_to do |format|
+      if @user.save
+        MailerWelcomemember.welcome_member(@user).deliver
+        format.html { redirect_to socials_path }
+      end
+    end
+  end
+
   def update
     @user.update(user_params)
     redirect_to @user
