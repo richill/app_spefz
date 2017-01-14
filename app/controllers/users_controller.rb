@@ -40,6 +40,12 @@ class UsersController < ApplicationController
   def edit
   end
 
+  def create
+    if @user.save
+      MailerReport.report_advert(@report).deliver
+    end
+  end
+
   def update
     @user.update(user_params)
     redirect_to @user
