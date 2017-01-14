@@ -1,6 +1,6 @@
 class StaticPagesController < ApplicationController
   # before_filter :user_not_allowed_to_view, only: [:homepg]
-  before_filter :setup_subscription, :setup_cards, :setup_events, :setup_invite_form, :setup_user_network_activities
+  before_filter :setup_subscription, :setup_cards, :setup_events, :setup_invite_form
 
   def aboutpg
     @premium_plan = Subscription.find_by(title:"premium")
@@ -94,10 +94,6 @@ class StaticPagesController < ApplicationController
 
   def setup_invite_form
     @invite = Invite.new
-  end
-
-  def setup_user_network_activities
-    @user_network_activities = Activity.order("created_at desc").where(owner_id: current_user.friends)
   end
 
   def set_user
