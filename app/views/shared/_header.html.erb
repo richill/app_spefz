@@ -60,7 +60,9 @@
         </li>
 
         <li class="notification_li">
-          <span id="notification_count_bell">2</span>
+          <% if @user_network_activities.unread_by(current_user).present?  %>
+            <span id="notification_count_bell"><%= @user_network_activities.unread_by(current_user).count %></span>
+          <% end %>
           <div><%= link_to '', '#', id: "notificationLink_bell", class: "fa fa-bell" %></div>
           <div id="notificationContainer_bell">
             <div id="notificationTitle_bell">
