@@ -42,7 +42,15 @@ class UsersController < ApplicationController
 
   def create
     if @user.save
-      MailerReport.report_advert(@report).deliver
+      # MailerReport.report_advert(@report).deliver
+      MailerWelcomemember.welcome_member(@user).deliver
+    end
+  end
+
+  def create
+    @user = User.new(user_params)
+    if @user.save
+      MailerWelcomemember.welcome_member(@user).deliver
     end
   end
 
