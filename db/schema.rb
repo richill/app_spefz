@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170110115516) do
+ActiveRecord::Schema.define(version: 20170113165825) do
 
   create_table "activities", force: :cascade do |t|
     t.integer  "trackable_id"
@@ -433,9 +433,9 @@ ActiveRecord::Schema.define(version: 20170110115516) do
 
   create_table "read_marks", force: :cascade do |t|
     t.integer  "readable_id"
-    t.string   "readable_type", null: false
+    t.string   "readable_type", limit: 255, null: false
     t.integer  "reader_id"
-    t.string   "reader_type",   null: false
+    t.string   "reader_type",               null: false
     t.datetime "timestamp"
   end
 
