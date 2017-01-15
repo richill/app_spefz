@@ -25,6 +25,26 @@
   text-transform: capitalize;
 }
 
+
+.user_settings_section .settings_link {
+  color: #283041 !important;
+  font-size: 20px !important;
+  font-weight: bold !important;
+  text-transform: capitalize;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease; 
+}
+
+.user_settings_section .settings_link:hover {
+  color: #E34B51 !important;
+  text-transform: capitalize;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease; 
+}
+
+
 .user_settings_section .subscribed_memeber .sub_header_info {
   font-size: 15px !important;
   font-weight: 400 !important;
