@@ -1,4 +1,4 @@
-<div class= "medium-12 columns user_general_settings_section user_main_membership_page">
+<div class= "medium-12 columns user_general_settings_section user_main_setting_page">
 
   <!-- left_column_section -->
   <div class="medium-2 columns left_column_section">
@@ -11,13 +11,13 @@
   <div class="medium-10 columns right_column_section">
     <div class="right_inner_section">
       <!-- content -->
-      <div class="user_general_settings_inner_section user_membership_section_main_content">
+      <div class="user_general_settings_inner_section user_setting_section_main_content">
         <div class="tree_link">
           <span><i class="fa fa-user" aria-hidden="true"></i> <%= link_to "#{current_user.firstname}", user_path(current_user)%></span> <span class="fwd_sign">></span> <span>settings</span>
         </div>
-        <div class="user_membership_section">
+        <div class="user_settings_section">
 
-          <div class="subscription_notes">
+          <div class="settings_notes">
             <div class="unsubscribed_memeber">
               <div class="premium_paln">
                 <div class="header"><i class="fa fa-trophy" aria-hidden="true"></i> premium membership benifits</div>
@@ -55,13 +55,11 @@
 
 
 <div class= "medium-12 columns user_general_settings_section hide">
-
   <!-- left_column_section -->
   <div class="medium-2 columns left_column_section">
     <%= render 'shared/content_user_left_column' %>
   </div>
   <!-- left_column_section -->
-
 
   <!-- right_column_section -->
   <div class="medium-10 columns right_column_section">

@@ -5,87 +5,93 @@
   =========================================*/
 
 // --------left_column_section--------
-.user_settings_section .paymt_cover {
+.user_settings_section .settings_notes {
   background-color: #fff;
   color: #283041 !important;
   padding: 15px;
-  margin-bottom: 15px;
+  margin-bottom: 40px;
   -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.14);
   -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.14);
-  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.14);
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.14);  
 }
 
-.user_settings_section .pymt_header {
+.user_settings_section .subscribed_memeber {
   font-family: 'Lato', sans-serif;
+}
+
+.user_settings_section .subscribed_memeber .header {
   font-size: 20px !important;
   font-weight: bold !important;
   text-transform: capitalize;
 }
 
-.user_settings_section .pymt_sub_header {
-  font-family: 'Lato', sans-serif;
-  font-size: 16px !important;
-  font-weight: 300 !important;
-  background-color: rgba(88, 205, 166, 0.3) !important;
-  padding: 5px 10px;
-  margin-bottom: 5px;
+.user_settings_section .subscribed_memeber .sub_header_info {
+  font-size: 15px !important;
+  font-weight: 400 !important;
 }
 
-.user_settings_section .pymt_sub_header i {
+.user_settings_section .subscribed_memeber .sub_header_info a {
+ color: #E34B51 !important;
+}
+
+.user_settings_section .subscribed_memeber .sub_header_info a:hover {
+ text-decoration: underline;
+}
+
+.user_settings_section .unsubscribed_memeber {
+  font-family: 'Lato', sans-serif;
+}
+
+.user_settings_section .unsubscribed_memeber .header {
+  font-size: 20px !important;
+  font-weight: bold !important;
+  text-transform: capitalize;
+}
+
+.user_settings_section .unsubscribed_memeber .header i {
   margin-right: 3px;
 }
 
-.user_settings_section .divider {
-  margin: 0px 20px;
+.user_settings_section .unsubscribed_memeber .sub_header_info {
+  font-size: 15px !important;
+  font-weight: 400 !important;
 }
 
-.user_settings_section .info_link a {
-  background-color: #E34B51;
-  padding: 8px 15px;
-  color: #fff !important;
-  font-size: 14px;
-  letter-spacing: 1px;
-  word-spacing: 3px;
-  border-radius: 2px;
-  -webkit-transition: all 0.3s ease; 
-  -moz-transition: all 0.3s ease; 
-  -o-transition: all 0.3s ease; 
-}
-
-.user_settings_section .info_link a:hover {
-  background-color: rgba(47, 63, 91, 0.5) !important;
-  -webkit-transition: all 0.3s ease; 
-  -moz-transition: all 0.3s ease; 
-  -o-transition: all 0.3s ease; 
-}
-
-.user_settings_section table {
+.user_settings_section .unsubscribed_memeber ul {
   font-family: 'Lato', sans-serif;
-  width: 100%;
+  padding: 10px 0px;
+  font-weight: 400 !important;
 }
 
-.user_settings_section table th {
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  word-spacing: 2px;
+.user_settings_section .unsubscribed_memeber li {
+  margin-bottom: 5px;
 }
 
-.user_settings_section table td {
-  font-size: 11px;
-  letter-spacing: 1px;
+.user_settings_section .minor_sub_info {
+  font-size: 11px !important;
+  font-weight: bold !important;
+  margin-left: 2px !important;
 }
 
-.user_settings_section table td a:hover {
-  text-decoration: underline;
-  color: #E34B51 !important;
-}
 
-.user_settings_section .minor_notes {
-  font-size: 10px;
-  letter-spacing: 1px;
-  word-spacing: 2px;
-}
+
+// -------------------------------
+//   workings
+// -------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
