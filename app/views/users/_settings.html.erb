@@ -17,6 +17,7 @@
         </div>
         <div class="user_settings_section">
 
+          <!-- settings_password -->
           <div class="settings_notes">
             <div class="settings_detailed_info">
               <div class="settings_password">
@@ -30,8 +31,14 @@
                   </ul>
                 </div>
               </div>
+            </div>
+          </div>
+
+          <!-- settings_cancel_subscription -->
+          <div class="settings_notes">
+            <div class="settings_detailed_info">
               <div class="settings_cancel_subscription">
-                <div class="header"><i class="fa fa-certificate" aria-hidden="true"></i> basic membership benifits</div>
+                <div class="header"><i class="fa fa-certificate" aria-hidden="true"></i> cancel subscription</div>
                 <div class="sub_header_info">With our Basic plans you will get limited usaged our spefz community. Limited access to attending and hosting socials, sending messages.</div>
                 <div>
                   <ul>
@@ -43,6 +50,45 @@
               </div>
             </div>
           </div>
+
+          <!-- settings_delete_account -->
+          <div class="settings_notes">
+            <div class="settings_detailed_info">
+              <div class="settings_delete_account">
+                <div class="header"><i class="fa fa-certificate" aria-hidden="true"></i> delete account</div>
+                <div class="sub_header_info">With our Basic plans you will get limited usaged our spefz community. Limited access to attending and hosting socials, sending messages.</div>
+                <div>
+                  <ul>
+                    <li>BASIC offers access to view a range of speed social events</li>
+                    <li>Limited access to attending organised socials</li>
+                    <li>Limited access to connecting with the community - and meeting like minded people</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- settings_contact_us -->
+          <div class="settings_notes">
+            <div class="settings_detailed_info">
+              <div class="settings_contact_us">
+                <div class="header"><i class="fa fa-certificate" aria-hidden="true"></i> contact us</div>
+                <div class="sub_header_info">With our Basic plans you will get limited usaged our spefz community. Limited access to attending and hosting socials, sending messages.</div>
+                <div>
+                  <ul>
+                    <li>BASIC offers access to view a range of speed social events</li>
+                    <li>Limited access to attending organised socials</li>
+                    <li>Limited access to connecting with the community - and meeting like minded people</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+
+
+
         </div>
       </div>
       <!-- content -->
@@ -52,35 +98,3 @@
 </div>
 
 
-
-
-<div class= "medium-12 columns user_general_settings_section hide">
-  <!-- left_column_section -->
-  <div class="medium-2 columns left_column_section">
-    <%= render 'shared/content_user_left_column' %>
-  </div>
-  <!-- left_column_section -->
-
-  <!-- right_column_section -->
-  <div class="medium-10 columns right_column_section">
-    <div class="right_inner_section">
-      <!-- content -->
-      <div class="user_settings_section_main_content">
-        <div class="tree_link">
-          <span><i class="fa fa-user" aria-hidden="true"></i> <%= link_to "#{current_user.firstname}", user_path(current_user)%></span> <span class="fwd_sign">></span> <span>settings</span>
-        </div>
-        <div class="user_general_settings_inner_section user_settings_section">
-          <h1>settings</h1>
-          <ul>
-            <li>update password</li>
-            <li>cancel subscription</li>
-            <li>delete account</li>
-            <li>contact us</li>
-          </ul>
-        </div>
-      </div>
-      <!-- content -->
-    </div>
-  </div>
-  <!-- right_column_section -->
-</div>
