@@ -21,13 +21,13 @@
           <div class="settings_notes">
             <div class="settings_detailed_info">
               <div class="settings_password">
-                <div class="header"><i class="fa fa-unlock-alt" aria-hidden="true"></i> <%= link_to "update password", "#", class: "settings_link" %></div>
-                <div class="sub_header_info">With our Premium plans you will get the most out of our spefz community. Attend and host socials, send messages, meet new people and much more.</div>
+                <div class="header"><i class="fa fa-unlock-alt" aria-hidden="true"></i> <%= link_to "update password", edit_user_registration_path, class: "settings_link" %></div>
+                <div class="sub_header_info">Change your password at anytime. Periodically updating your password will help keep your account secure.</div>
                 <div>
                   <ul>
-                    <li>PREMIUM offers access to a range of free socials and events</li>
-                    <li>Be part of a fun friendly community - meet like minded people</li>
-                    <li>Access to a range of Exclusive Benefits</li>
+                    <li>We recommend updating it at least every six months</li>
+                    <li>Updating your password does not affect how your account connects with your social networks</li>
+                    <li>Passwords must include: 8 characters (no more than 64; 1 upper-case letter; and 1 lower-case letter</li>
                   </ul>
                 </div>
               </div>
@@ -38,13 +38,13 @@
           <div class="settings_notes">
             <div class="settings_detailed_info">
               <div class="settings_cancel_subscription">
-                <div class="header"><i class="fa fa-cogs" aria-hidden="true"></i> <%= link_to "cancel subscription", "#", class: "settings_link" %></div>
-                <div class="sub_header_info">With our Basic plans you will get limited usaged our spefz community. Limited access to attending and hosting socials, sending messages.</div>
+                <div class="header"><i class="fa fa-cogs" aria-hidden="true"></i> <%= link_to "cancel subscription", membership_user_path(current_user), class: "settings_link" %></div>
+                <div class="sub_header_info">You can canecl your subscription at anytime. If unable to cancel your subscription via the website <span class="highlighted_info"><%= link_to "contact us", contact_us_path %></span></div>
                 <div>
                   <ul>
-                    <li>BASIC offers access to view a range of speed social events</li>
-                    <li>Limited access to attending organised socials</li>
-                    <li>Limited access to connecting with the community - and meeting like minded people</li>
+                    <li>At the "Contact Us" page select under the filter "Type Enquiry" then select the option <span class="highlighted_info">End Subscription Plan</span></li>
+                    <li>Your subscription account <span class="highlighted_info"><%= "User ID: #{current_user.reference}" %></span> will be cancelled within a week</li>
+                    <li>An email will sent to you confirming the calletaion for your monthly subscription account</li>
                   </ul>
                 </div>
               </div>
@@ -55,13 +55,13 @@
           <div class="settings_notes">
             <div class="settings_detailed_info">
               <div class="settings_delete_account">
-                <div class="header"><i class="fa fa-user-times" aria-hidden="true"></i> <%= link_to "delete account", "#", class: "settings_link" %></div>
-                <div class="sub_header_info">With our Basic plans you will get limited usaged our spefz community. Limited access to attending and hosting socials, sending messages.</div>
+                <div class="header"><i class="fa fa-user-times" aria-hidden="true"></i> <%= link_to "delete account", contact_us_path, class: "settings_link" %></div>
+                <div class="sub_header_info">To delete your spefz membership account you must <span class="highlighted_info"><%= link_to "contact us", "#" %></span></div>
                 <div>
                   <ul>
-                    <li>BASIC offers access to view a range of speed social events</li>
-                    <li>Limited access to attending organised socials</li>
-                    <li>Limited access to connecting with the community - and meeting like minded people</li>
+                    <li>At the "Contact Us" page select under the filter "Type Enquiry" then select the option <span class="highlighted_info">Delete Account</span></li>
+                    <li>Your membership account <span class="highlighted_info"><%= "User ID: #{current_user.reference}" %></span> will be deleted within a week</li>
+                    <li>An email will sent to you confirming the closure of your membership account</li>
                   </ul>
                 </div>
               </div>
@@ -72,22 +72,18 @@
           <div class="settings_notes">
             <div class="settings_detailed_info">
               <div class="settings_contact_us">
-                <div class="header"><i class="fa fa-phone-square" aria-hidden="true"></i> <%= link_to "contact us", "#", class: "settings_link" %></div>
-                <div class="sub_header_info">With our Basic plans you will get limited usaged our spefz community. Limited access to attending and hosting socials, sending messages.</div>
+                <div class="header"><i class="fa fa-phone-square" aria-hidden="true"></i> <%= link_to "contact us", contact_us_path, class: "settings_link" %></div>
+                <div class="sub_header_info">If you have any issue do <span class="highlighted_info"><%= link_to "contact us", contact_us_path %></span>, as we are always looking to improve our services.</div>
                 <div>
                   <ul>
-                    <li>BASIC offers access to view a range of speed social events</li>
-                    <li>Limited access to attending organised socials</li>
-                    <li>Limited access to connecting with the community - and meeting like minded people</li>
+                    <li>Please make sure you are writing to the department that is relevant to your request</li>
+                    <li>At the "Contact Us" page select your <span class="highlighted_info">Type of Enquiry</span> and complete all fields.</li>
+                    <li>Writting to the right department enables us to gaurantee you with a response</li>
                   </ul>
                 </div>
               </div>
             </div>
           </div>
-
-
-
-
 
         </div>
       </div>
