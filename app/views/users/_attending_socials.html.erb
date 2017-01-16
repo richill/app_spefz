@@ -49,11 +49,110 @@
             <%# if @friends.blank? %>
               <!-- <div><%# render 'shared/content_search_no_result' %></div> -->
             <%# else %>
-              <ul class="inline-list">
-                <% current_user.attending_socials.each do |socials| %>
-                
-                <% end %>
-              <ul/>
+              
+              <% current_user.attending_socials.each do |social| %>
+                <ul class="inline-list">
+                  <!-- you are here -->
+                    <div class="activity_list">
+                      <div class="cd-timeline-block">
+                        <div class="cd-timeline-img cd-star">
+                          <i class="fa fa-calendar"></i>
+                        </div> 
+                        <div class="cd-timeline-content">
+                          <ul>
+                            <li class="left_side">
+                              <!-- activity_left_side -->
+                              <div class="image_content right_side_content">
+                                <div class="activity_feed_img_cover">
+                                  <% if social.user.image.present? %>
+                                    <%= link_to(cl_image_tag(social.user.image, :transformation=>[{:gravity=>"face", :width=>200, :height=>200, :crop=>"fill", :radius=>"max"}]), user_path(current_user)) %>
+                                  <% else %>
+                                    <%= image_tag("img-profile-image-default.png") %>
+                                  <% end %>
+                                </div>
+                              </div>
+                              <!-- activity_left_side -->
+                            </li>
+                            <li class="right_side">
+                              <!-- activity_right_side -->
+                              <div class="right_side_content">
+                                <div class="title"><%= link_to social.title, social_path(social.user, social) %></div>
+                                <div class="host">
+                                  <span>Hosted by</span>
+                                  <span><%= link_to social.user.firstname, social.user if social.user %></span>
+                                </div>
+                                <div class="social_event_content">
+                                  <div class="image_cover">
+                                    <!-- sold out -->
+                                    <% if social.sold_out? %>
+                                      <div class="banner">
+                                        <div class="ribbon-wrapper-green">
+                                          <div class="ribbon-green">sold out</div>
+                                        </div>
+                                      </div>
+                                    <% end %>
+                                    <!-- sold out -->
+                                    <span><%= link_to(cl_image_tag(social.image, :transformation=>[{:gravity=>"center", :width=>150, :height=>105, :crop=>"fill"}]), user_social_path(social.user, social)) %></span>
+                                  </div>
+                                  <div class="social_event_details">
+                                    <div class="info"><i class="fa fa-calendar" aria-hidden="true"></i> <%= social.date.strftime("%A, %d %b") %> <span class="mid_divider">|</span> <%= social.time.strftime("%I:%M %p") %></div>
+                                    <div class="info"><i class="fa fa-map-pin" aria-hidden="true"></i> <%= social.city %>, <%= social.category_country.name %></div>
+                                    <div class="info">
+                                      <span><i class="fa fa-male" aria-hidden="true"></i> <%= social.category_age.name %></span>
+                                      <span class="mid_divider">|</span>
+                                      <span class="category">Category:</span> 
+                                      <span class="category_info"><%= link_to "#{social.category_topic.name}", socials_path(q: {category_topic_name_eq: social.category_topic.name}) %></span>
+                                    </div>
+                                    <div class="divider"></div>
+                                    <div class="description"><%= truncate(social.description, length: 200) %></div>
+                                    <div class="attendance">
+                                      <div>
+                                        <% if social.sold_out? %>
+                                          <ul>
+                                            <% social.attendances.limit(6).each do |attendant| %>
+                                              <li>
+                                                <% if attendant.user.image.present? %>
+                                                  <%= link_to(image_tag(attendant.user.image_url, :alt =>  "alt text", :class =>"#"), user_path(attendant.user)) %>
+                                                <% else %>
+                                                  <%= link_to(image_tag("img-profile-image-default.png", :alt =>  "alt text", :class =>"#"), user_path(attendant.user)) %>
+                                                <% end %>
+                                              </li> 
+                                            <% end %>
+                                          </ul>
+                                        <% else %>
+                                          <ul>
+                                            <% social.attendances.order(created_at: :desc).limit(5).each do |attendant| %>
+                                              <li>
+                                                <% if attendant.user.image.present? %>
+                                                  <%= link_to(cl_image_tag(attendant.user.image, :transformation=>[{:gravity=>"face", :width=>200, :height=>200, :crop=>"fill"}]), user_path(attendant.user)) %>
+                                                <% else %>
+                                                  <%= link_to(image_tag("img-profile-image-default.png", :alt =>  "alt text", :class =>"#"), user_path(attendant.user)) %>
+                                                <% end %>
+                                              </li> 
+                                            <% end %>
+                                            <li class="remaining_places" style="margin-right: 0px;">
+                                              <span data-tooltip aria-haspopup="true" data-options="disable_for_touch:true" class="tip-right" title="<%="#{social.available_places_BothAndOnly_men_and_women}"%> places left">
+                                                <%= link_to "+#{social.available_places_BothAndOnly_men_and_women}", user_social_path(social.user, social), class: "#" %>
+                                              </span>
+                                            </li>
+                                          </ul>
+                                        <% end %>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <!-- activity_right_side -->
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="clear"></div>
+                    </div>
+                  <!-- you are here -->
+                <ul/>
+              <% end %>
+              
             <%# end %>
             <div class="clear"></div>
             <!-- members -->
