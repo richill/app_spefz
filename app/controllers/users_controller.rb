@@ -110,7 +110,10 @@ class UsersController < ApplicationController
   def saved_events 
   end
 
-  def created_socials 
+  def live_socials 
+  end
+
+  def expired_socials 
   end
 
   private

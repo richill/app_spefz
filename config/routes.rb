@@ -62,7 +62,8 @@ Rails.application.routes.draw do
       get 'attending-events'
       get 'saved-socials'
       get 'saved-events'
-      get 'created-socials'
+      get 'live-socials'
+      get 'expired-socials'
     end
   end
 
