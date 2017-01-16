@@ -1,4 +1,3 @@
-<h1>saved socials</h1>
 <div class="user_attending_save_created_section">
   <div class="medium-12 columns attending_save_created_inner_section">
 
@@ -6,16 +5,16 @@
     <div class="medium-12 columns search_container">
       <div class="search_inner_container">        
         <ul class="search_fields_left">
-          <li class="active"> 
+          <li> 
             <%= link_to attending_socials_user_path(current_user) do %>
               <i class="fa fa-server" aria-hidden="true"></i>
               <span>attending [<%= (current_user.attending_socials.live_socials.open_socials.count) + (Event.live_events.open_events.booked_events(current_user).count) %>]</span>
             <% end %>
           </li>
-          <li>
+          <li class="active">
             <%= link_to saved_socials_user_path(current_user) do %>
               <i class="fa fa-server" aria-hidden="true"></i>
-              <span>saved [<%= (current_user.favourite_socials.count) + (current_user.favourite_events.count) %>]</span>
+              <span>saved [<%= (current_user.favourite_socials.live_socials.open_socials.count) + (current_user.favourite_events.live_events.open_events.count) %>]</span>
             <% end %>
           </li>
           <li>
@@ -43,7 +42,7 @@
                 <% end %>
               </li>
               <li>
-                <%= link_to attending_events_user_path(current_user), class: "btn btn_attending" do %>
+                <%= link_to saved_events_user_path(current_user), class: "btn btn_attending" do %>
                   <i class="fa fa-server" aria-hidden="true"></i>
                   <span>saved events [<%= current_user.favourite_events.live_events.open_events.count %>]</span>
                 <% end %>

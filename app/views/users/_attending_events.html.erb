@@ -14,7 +14,7 @@
           <li>
             <%= link_to saved_socials_user_path(current_user) do %>
               <i class="fa fa-server" aria-hidden="true"></i>
-              <span>saved [<%= (current_user.favourite_socials.count) + (current_user.favourite_events.count) %>]</span>
+              <span>saved [<%= (current_user.favourite_socials.live_socials.open_socials.count) + (current_user.favourite_events.live_events.open_events.count) %>]</span>
             <% end %>
           </li>
           <li>
