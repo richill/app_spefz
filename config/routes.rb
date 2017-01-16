@@ -33,7 +33,10 @@ Rails.application.routes.draw do
   resources :favourite_events, only: [:create, :destroy]
   resources :attending_events, only: [:create, :destroy]
 
-  devise_for :users
+  # devise_for :users
+  # devise_for :users, controllers: { sessions: "users/sessions" }
+  # devise_for :users, :controllers => {:sessions => "sessions"}
+  devise_for :users, controllers: {sessions: "sessions"}
   resources :users do
     resources :comments, only: [:create, :destroy] 
     resources :socials

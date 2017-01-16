@@ -1,0 +1,74 @@
+<div class= "medium-12 columns user_general_settings_section user_main_setting_page">
+
+  <!-- left_column_section -->
+  <div class="medium-2 columns left_column_section">
+    <%= render 'shared/content_user_left_column' %>
+  </div>
+  <!-- left_column_section -->
+
+
+  <!-- right_column_section -->
+  <div class="medium-10 columns right_column_section">
+    <div class="right_inner_section">
+      <!-- content -->
+      <div class="user_general_settings_inner_section user_setting_section_main_content">
+        <div class="tree_link">
+          <span><i class="fa fa-user" aria-hidden="true"></i> <%= link_to "#{current_user.firstname}", user_path(current_user)%></span> <span class="fwd_sign">></span> <span><%= link_to "settings", settings_user_path(current_user) %></span> <span class="fwd_sign">></span> <span>update password</span>
+        </div>
+        <div class="user_settings_section">
+
+          <!-- settings_password -->
+          <div class="settings_notes">
+            <div class="settings_detailed_info">
+              <div class="settings_password">
+                <div class="header"><i class="fa fa-unlock-alt" aria-hidden="true"></i> <%= link_to "update password", '#', class: "settings_link" %></div>
+                <div class="sub_header_info">Change your password at anytime. Periodically updating your password will help keep your account secure.</div>
+                <div>
+                  <ul>
+                    <li>We recommend updating it at least every six months</li>
+                    <li>Updating your password does not affect how your account connects with your social networks</li>
+                    <li>Passwords must include: 8 characters (no more than 64; 1 upper-case letter; and 1 lower-case letter</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- devise_password -->
+          <div class="devise_content">
+            <!-- <h2>Edit <%# resource_name.to_s.humanize %></h2> -->
+
+            <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+              <%= f.error_notification %>
+              <div class="form-inputs">
+                <%= f.hidden_field :email, required: true, autofocus: true %>
+                <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+                  <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+                <% end %>
+                <%= f.input :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false %>
+                <%= f.input :password_confirmation, required: false %>
+                <%= f.input :current_password, hint: "we need your current password to confirm your changes", required: true %>
+              </div>
+              <div class="form-actions">
+                <%= f.button :submit, "Update" %>
+              </div>
+            <% end %>
+
+            <div class="cancel_account_info hide">
+              <h3>Cancel my account</h3>
+              <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+              <%= link_to "Back", :back %>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+      <!-- content -->
+    </div>
+  </div>
+  <!-- right_column_section -->
+</div>
+
+
+
