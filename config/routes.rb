@@ -57,6 +57,12 @@ Rails.application.routes.draw do
       get 'network'
       get 'followings'
       get 'followers'
+
+      get 'attending-socials'
+      get 'attending-events'
+      get 'saved-socials'
+      get 'saved-events'
+      get 'created-socials'
     end
   end
 

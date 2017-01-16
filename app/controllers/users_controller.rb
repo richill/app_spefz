@@ -98,6 +98,21 @@ class UsersController < ApplicationController
     @followers = @search.result(distinct: true)
   end
 
+  def attending_socials 
+  end
+
+  def attending_events 
+  end
+
+  def saved_socials 
+  end
+
+  def saved_events 
+  end
+
+  def created_socials 
+  end
+
   private
   def setup_friends
     @user = User.find(current_user.id)
