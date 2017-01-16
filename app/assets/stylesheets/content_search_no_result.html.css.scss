@@ -1,6 +1,14 @@
 /*=========================================
     Section: events show page
-    File: views / events / _content_search_no_result.html.erb
+    File: views / shared / _content_search_no_result.html.erb
+    File: views / shared / _content_no_result_attending_socials.html.erb
+
+
+    File: views / shared / _content_no_result_attending_events.html.erb
+    File: views / shared / _content_no_result_saved_socials.html.erb
+    File: views / shared / _content_no_result_saved_events.html.erb
+    File: views / shared / _content_no_result_created_socials.html.erb
+
   =========================================*/
 
 .search_content_noresults_section {
@@ -68,6 +76,10 @@
   margin-bottom: 15px;
 }
 
+.search_content_noresults_section .noresult_text_header .user_name {
+  text-transform: capitalize;
+}
+
 .search_content_noresults_section .noresult_text_sub_header {
   font-size: 18px !important;
   color: #2F3F5B !important;
@@ -95,7 +107,6 @@
   -moz-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
 }
-
 
 .search_content_noresults_section .noresult_listed_options a:hover {
   text-decoration: underline;
