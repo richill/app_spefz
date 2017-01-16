@@ -11,13 +11,13 @@
               <span>attending [<%= (current_user.attending_socials.live_socials.open_socials.count) + (Event.live_events.open_events.booked_events(current_user).count) %>]</span>
             <% end %>
           </li>
-          <li class="active">
+          <li>
             <%= link_to saved_socials_user_path(current_user) do %>
               <i class="fa fa-server" aria-hidden="true"></i>
               <span>saved [<%= (current_user.favourite_socials.live_socials.open_socials.count) + (current_user.favourite_events.live_events.open_events.count) %>]</span>
             <% end %>
           </li>
-          <li>
+          <li class="active">
             <%= link_to live_socials_user_path(current_user) do %>
               <i class="fa fa-server" aria-hidden="true"></i>
               <span>my socials [<%= current_user.socials.count %>]</span>
@@ -36,15 +36,15 @@
           <div class="medium-12 columns sub_tab_headings_container">
             <ul>
               <li>
-                <%= link_to saved_socials_user_path(current_user), class: "btn btn_attending active" do %>
+                <%= link_to live_socials_user_path(current_user), class: "btn btn_attending" do %>
                   <i class="fa fa-server" aria-hidden="true"></i>
-                  <span>saved socials [<%= current_user.favourite_socials.live_socials.open_socials.count %>]</span>
+                  <span>live socials [<%= current_user.socials.live_socials.open_socials.count %>]</span>
                 <% end %>
               </li>
               <li>
-                <%= link_to saved_events_user_path(current_user), class: "btn btn_attending" do %>
+                <%= link_to expired_socials_user_path(current_user), class: "btn btn_attending active" do %>
                   <i class="fa fa-server" aria-hidden="true"></i>
-                  <span>saved events [<%= current_user.favourite_events.live_events.open_events.count %>]</span>
+                  <span>expired socials [<%= current_user.socials.expired_or_closed_socials.count %>]</span>
                 <% end %>
               </li>
             </ul>
@@ -52,9 +52,9 @@
           <div class="clear"></div>
           <!-- sub_tab_headings -->
 
-          <!-- saved_socials -->
-          <% if current_user.favourite_socials.live_socials.open_socials.present? %>
-            <% current_user.favourite_socials.live_socials.open_socials.each do |social| %>
+          <!-- live_socials -->
+          <% if current_user.socials.expired_or_closed_socials.present? %>
+            <% current_user.socials.expired_or_closed_socials.each do |social| %>
               <ul class="inline-list">
                 <div class="social_event_list">
                   <div class="cd-timeline-block">
@@ -155,10 +155,10 @@
               <ul/>
             <% end %>
           <% else %>
-            <%= render "shared/content_no_result_saved_socials" %>
+            <%= render "shared/content_no_result_created_socials" %>
           <% end %>
           <div class="clear"></div>
-          <!-- saved_socials -->
+          <!-- live_socials -->
         </div>
       </div>
     </div>

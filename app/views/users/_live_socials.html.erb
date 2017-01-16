@@ -21,7 +21,7 @@
           <li class="active">
             <%= link_to live_socials_user_path(current_user) do %>
               <i class="fa fa-server" aria-hidden="true"></i>
-              <span>created socials [<%= current_user.socials.count %>]</span>
+              <span>my socials [<%= current_user.socials.count %>]</span>
             <% end %>
           </li>
         </ul> 
@@ -45,7 +45,7 @@
               <li>
                 <%= link_to expired_socials_user_path(current_user), class: "btn btn_attending" do %>
                   <i class="fa fa-server" aria-hidden="true"></i>
-                  <span>expired socials [<%= current_user.socials.live_socials.open_socials.count %>]</span>
+                  <span>expired socials [<%= current_user.socials.expired_or_closed_socials.count %>]</span>
                 <% end %>
               </li>
             </ul>
