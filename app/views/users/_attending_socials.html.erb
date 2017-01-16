@@ -34,12 +34,23 @@
       <div class="medium-12 columns content_container">
         <div class="content_details">
           <!-- sub_tab_headings -->
-            <div class="sub_tab_headings_container">
-              <ul>
-                <li><%= link_to "Attending Socials", attending_socials_user_path(current_user) %></li>
-                <li><%= link_to "Booked Events ", attending_events_user_path(current_user) %></li>
-              </ul>
-            </div>
+          <div class="medium-12 columns sub_tab_headings_container">
+            <ul>
+              <li>
+                <%= link_to attending_socials_user_path(current_user), class: "btn btn_attending_socials active" do %>
+                  <i class="fa fa-server" aria-hidden="true"></i>
+                  <span>attending socials [<%= current_user.attending_socials.live_socials.open_socials.count %>]</span>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to attending_events_user_path(current_user), class: "btn btn_attending_socials" do %>
+                  <i class="fa fa-server" aria-hidden="true"></i>
+                  <span>booked events [<%= Event.live_events.open_events.booked_events(current_user).count %>]</span>
+                <% end %>
+              </li>
+            </ul>
+          </div>
+          <div class="clear"></div>
           <!-- sub_tab_headings -->
 
           <!-- attending_socials -->
