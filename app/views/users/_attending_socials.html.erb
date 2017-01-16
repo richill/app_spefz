@@ -37,13 +37,13 @@
           <div class="medium-12 columns sub_tab_headings_container">
             <ul>
               <li>
-                <%= link_to attending_socials_user_path(current_user), class: "btn btn_attending_socials active" do %>
+                <%= link_to attending_socials_user_path(current_user), class: "btn btn_attending active" do %>
                   <i class="fa fa-server" aria-hidden="true"></i>
                   <span>attending socials [<%= current_user.attending_socials.live_socials.open_socials.count %>]</span>
                 <% end %>
               </li>
               <li>
-                <%= link_to attending_events_user_path(current_user), class: "btn btn_attending_socials" do %>
+                <%= link_to attending_events_user_path(current_user), class: "btn btn_attending" do %>
                   <i class="fa fa-server" aria-hidden="true"></i>
                   <span>booked events [<%= Event.live_events.open_events.booked_events(current_user).count %>]</span>
                 <% end %>
