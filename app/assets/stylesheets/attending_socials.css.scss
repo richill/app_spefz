@@ -1110,24 +1110,24 @@ Timline CSS
   border-right: 7px solid #fff;
 }
 
-// ------activity_left_side------
-.user_attending_save_created_section .activity_list ul {
+// ------social_event_left_side------
+.user_attending_save_created_section .social_event_list ul {
   list-style-type: none;
 }
 
-.user_attending_save_created_section .activity_list ul .left_side {
+.user_attending_save_created_section .social_event_list ul .left_side {
   float: left !important;
   height: 200px;
   margin-right: 15px;
 }
 
-.user_attending_save_created_section .activity_list ul .left_side_attend {
+.user_attending_save_created_section .social_event_list ul .left_side_attend {
   float: left !important;
   height: 125px;
   margin-right: 15px;
 }
 
-.user_attending_save_created_section .activity_list .activity_feed_img_cover {
+.user_attending_save_created_section .social_event_list .social_event_feed_img_cover {
   width: 48px;
   height: 48px;
   padding: 5px;
@@ -1135,18 +1135,18 @@ Timline CSS
   background-color: rgba(88, 205, 166, 0.2) !important;
 }
 
-.user_attending_save_created_section .activity_list .spefz_img_cover {
+.user_attending_save_created_section .social_event_list .spefz_img_cover {
   background-color: rgba(225, 71, 62, 0.1)!important;
 }
 
-.user_attending_save_created_section .activity_list .activity_feed_img_cover img {
+.user_attending_save_created_section .social_event_list .social_event_feed_img_cover img {
 border-radius: 200px;
 -webkit-transition: all 0.3s ease;
 -moz-transition: all 0.3s ease;
 -o-transition: all 0.3s ease;
 }
 
-.user_attending_save_created_section .activity_list .activity_feed_img_cover img:hover {
+.user_attending_save_created_section .social_event_list .social_event_feed_img_cover img:hover {
   opacity: 0.5;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
@@ -1155,14 +1155,14 @@ border-radius: 200px;
 
 
 // ------activity_right_side------
-.user_attending_save_created_section .activity_list .host {
+.user_attending_save_created_section .social_event_list .host {
   font-family: 'Lato', sans-serif;
   font-size: 12px;
   font-weight: 300;
   padding: 2px 0px;
 }
 
-.user_attending_save_created_section .activity_list .host a {
+.user_attending_save_created_section .social_event_list .host a {
   font-family: 'Lato', sans-serif;
   color: #E34B51 !important;
   font-weight: bold;
@@ -1172,7 +1172,7 @@ border-radius: 200px;
   -o-transition: all 0.3s ease;
 }
 
-.user_attending_save_created_section .activity_list .social_event_content {
+.user_attending_save_created_section .social_event_list .social_event_content {
   padding: 5px 0px;
 }
 
@@ -1205,7 +1205,7 @@ border-radius: 200px;
   box-shadow: 0px0px3pxrgba 0, 0, 0, 0.3;
 }
 
-.user_attending_save_created_section .activity_list .social_event_content .image_cover {
+.user_attending_save_created_section .social_event_list .social_event_content .image_cover {
   float: left;
   margin-right: 10px;
   background-color: rgba(47, 63, 91, 0.08);
@@ -1214,7 +1214,7 @@ border-radius: 200px;
   height: 116px;
 }
 
-.user_attending_save_created_section .activity_list .social_event_content .image_cover_attend {
+.user_attending_save_created_section .social_event_list .social_event_content .image_cover_attend {
   float: left;
   margin-right: 10px;
   background-color: rgba(47, 63, 91, 0.08);
@@ -1223,7 +1223,7 @@ border-radius: 200px;
   height: 71px;
 }
 
-.user_attending_save_created_section .activity_list .info {
+.user_attending_save_created_section .social_event_list .info {
   font-family: 'Lato', sans-serif;
   color: #414249 !important;
   margin-bottom: 2px;
@@ -1232,16 +1232,16 @@ border-radius: 200px;
   font-weight: bold;
 }
 
-.user_attending_save_created_section .activity_list .info i {
+.user_attending_save_created_section .social_event_list .info i {
   margin-right: 5px;
 }
 
-.user_attending_save_created_section .activity_list .fa-map-pin {
+.user_attending_save_created_section .social_event_list .fa-map-pin {
   margin-left: 3px;
   margin-right: 8px;
 }
 
-.user_attending_save_created_section .activity_list .fa-male {
+.user_attending_save_created_section .social_event_list .fa-male {
   margin-left: 3px;
   margin-right: 8px;
 }
@@ -1254,23 +1254,23 @@ border-radius: 200px;
   color: rgba(88, 205, 166, 0.5) !important;
 }
 
-.user_attending_save_created_section .activity_list .price_figure {
+.user_attending_save_created_section .social_event_list .price_figure {
   color: #E34B51 !important;
   font-size: 14px !important;
 }
 
-.user_attending_save_created_section .activity_list .social_event_details .divider {
+.user_attending_save_created_section .social_event_list .social_event_details .divider {
   border-top: 1px solid #ededf3;
   margin: 7px 0px;
 }
 
-.user_attending_save_created_section .activity_list .social_event_details .mid_divider {
+.user_attending_save_created_section .social_event_list .social_event_details .mid_divider {
   color: #ededf3 !important;
   font-weight: 300 !important;
   margin: 0px 5px !important;
 }
 
-.user_attending_save_created_section .activity_list .description {
+.user_attending_save_created_section .social_event_list .description {
   font-family: "Lato", sans-serif;
   font-size: 12px;
   color: #7C93A7;
@@ -1279,17 +1279,17 @@ border-radius: 200px;
   margin-bottom: 5px;
 }
 
-.user_attending_save_created_section .activity_list .attendance ul li {
+.user_attending_save_created_section .social_event_list .attendance ul li {
   margin-bottom: 0px !important;
   margin-right: 9px;
   float: left;
 }
 
-.user_attending_save_created_section .activity_list .attendance ul li:nth-child(6) {  
+.user_attending_save_created_section .social_event_list .attendance ul li:nth-child(6) {  
   margin-right: 0px !important;
 }
 
-.user_attending_save_created_section .activity_list .attendance a {
+.user_attending_save_created_section .social_event_list .attendance a {
   font-family: "Lato", sans-serif;
   font-size: 12px;
   letter-spacing: 1px;
@@ -1304,38 +1304,38 @@ border-radius: 200px;
   -o-transition: all 0.3s ease; 
 }
 
-.user_attending_save_created_section .activity_list .attendance a:hover {
+.user_attending_save_created_section .social_event_list .attendance a:hover {
   background-color: rgba(225, 71, 62, 0.4) !important;
   -webkit-transition: all 0.3s ease; 
   -moz-transition: all 0.3s ease; 
   -o-transition: all 0.3s ease; 
 }
 
-.user_attending_save_created_section .activity_list .attendance img {
+.user_attending_save_created_section .social_event_list .attendance img {
   width: 30px;
   height: 30px;
 }
 
-.user_attending_save_created_section .activity_list .remaining_places a {
+.user_attending_save_created_section .social_event_list .remaining_places a {
   padding: 8px 0px !important;
   height: 34px;
   width: 34px !important;
   background-color: rgba(238, 170, 2, 0.6) !important;
 }
 
-.user_attending_save_created_section .activity_list .icon_list {
+.user_attending_save_created_section .social_event_list .icon_list {
   background-color: rgba(47, 63, 91, 0.1);
   border-bottom: 1px solid rgba(225, 71, 62, 0.3) !important;
 }
 
-.user_attending_save_created_section .activity_list .icon_list ul {
+.user_attending_save_created_section .social_event_list .icon_list ul {
   margin: auto !important;
   list-style-type: none;
   width: 250px;
   height: 33px;
 }
 
-.user_attending_save_created_section .activity_list .icons a {
+.user_attending_save_created_section .social_event_list .icons a {
   font-size: 13px !important;
   text-transform: uppercase;
   padding: 11px 10px;
@@ -1347,11 +1347,11 @@ border-radius: 200px;
   -o-transition: all 0.3s ease; 
 }
 
-.user_attending_save_created_section .activity_list .icons .fa-eye, .fa-comments-o, .fa-users, .fa-user-plus, .fa-bookmark-o {
+.user_attending_save_created_section .social_event_list .icons .fa-eye, .fa-comments-o, .fa-users, .fa-user-plus, .fa-bookmark-o {
   color: #414249 !important;
 }
 
-.user_attending_save_created_section .activity_list .icons a:hover {
+.user_attending_save_created_section .social_event_list .icons a:hover {
   color: #fff !important;
   background-color: #58CDA6 !important;
   -webkit-transition: all 0.3s ease; 
@@ -1359,7 +1359,7 @@ border-radius: 200px;
   -o-transition: all 0.3s ease; 
 }
 
-.user_attending_save_created_section .activity_list .remove_fav a {
+.user_attending_save_created_section .social_event_list .remove_fav a {
   color: #E34B51 !important;
 }
 

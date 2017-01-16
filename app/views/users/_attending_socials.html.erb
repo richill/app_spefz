@@ -53,7 +53,7 @@
               <% current_user.attending_socials.each do |social| %>
                 <ul class="inline-list">
                   <!-- you are here -->
-                    <div class="activity_list">
+                    <div class="social_event_list">
                       <div class="cd-timeline-block">
                         <div class="cd-timeline-img cd-star">
                           <i class="fa fa-calendar"></i>
@@ -61,9 +61,9 @@
                         <div class="cd-timeline-content">
                           <ul>
                             <li class="left_side">
-                              <!-- activity_left_side -->
+                              <!-- social_event_left_side -->
                               <div class="image_content right_side_content">
-                                <div class="activity_feed_img_cover">
+                                <div class="social_event_feed_img_cover">
                                   <% if social.user.image.present? %>
                                     <%= link_to(cl_image_tag(social.user.image, :transformation=>[{:gravity=>"face", :width=>200, :height=>200, :crop=>"fill", :radius=>"max"}]), user_path(current_user)) %>
                                   <% else %>
@@ -71,10 +71,10 @@
                                   <% end %>
                                 </div>
                               </div>
-                              <!-- activity_left_side -->
+                              <!-- social_event_left_side -->
                             </li>
                             <li class="right_side">
-                              <!-- activity_right_side -->
+                              <!-- social_event_right_side -->
                               <div class="right_side_content">
                                 <div class="title"><%= link_to social.title, social_path(social.user, social) %></div>
                                 <div class="host">
@@ -142,7 +142,7 @@
                                   </div>
                                 </div>
                               </div>
-                              <!-- activity_right_side -->
+                              <!-- social_event_right_side -->
                             </li>
                           </ul>
                         </div>
