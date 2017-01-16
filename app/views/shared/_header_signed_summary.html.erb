@@ -1,0 +1,49 @@
+<div class="medium-12 columns nav_user_section">
+  <header class="nav_user_inner_section">
+    <nav class="nav_list">
+
+      <!-- nav left side -->
+      <ul class="inline-list left">
+        <li class="logo_text"><%= link_to "SPEFZ", socials_path %></li>
+      </ul>
+
+      <!-- nav right side -->
+      <ul class="inline-list right">
+        <li class="link"><%= link_to 'speed-socials', events_path %></li>
+        <li class="link"><%= link_to 'socials', socials_path %></li>
+        <li class="link">
+          <% if current_user.image? %>
+            <%= link_to 'activity', activities_path %>
+          <% else %>
+            <%= link_to 'activity', image_restriction_page_path %>
+          <% end %>
+        </li>
+        <% if current_user.subscribed_access? %>
+          <% if current_user.image? %>
+            <li class="create_button"><%= link_to 'create social', new_user_social_path(current_user) %></li>
+          <% else %>
+            <li class="create_button"><%= link_to 'create social', image_restriction_page_path %></li>
+          <% end %>
+        <% end %>
+
+        <li class="notification_li">
+          <div class="profile_img_cover">
+            <% if current_user.image.present? %>
+              <div><%= link_to(cl_image_tag(current_user.image, :transformation=>[{:gravity=>"face", :width=>200, :height=>200, :crop=>"fill", :radius=>"max"}]), user_path(current_user)) %></div>
+            <% else %>
+              <div class="img_default"><%= link_to(image_tag("img-profile-image-default.png", :alt =>  "image", :class =>"#"), user_path(current_user)) %></div>
+            <% end %>
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </header>
+</div>
+<div class="clear"></div>
+
+
+
+
+
+
+

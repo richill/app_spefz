@@ -1,0 +1,152 @@
+/*=========================================
+    Section: users registration update password page
+    File: views / users / registrations/ _edit.html.erb
+    File: views / users / registrations/ edit.html.erb
+  =========================================*/
+
+// --------left_column_section--------
+.user_regitration_edit_password_section .settings_notes {
+  background-color: #fff;
+  color: #283041 !important;
+  padding: 15px;
+  margin-bottom: 40px;
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.14);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.14);
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.14);  
+}
+
+.user_regitration_edit_password_section .subscribed_memeber {
+  font-family: 'Lato', sans-serif;
+}
+
+.user_regitration_edit_password_section .subscribed_memeber .header {
+  font-size: 20px !important;
+  font-weight: bold !important;
+  text-transform: capitalize;
+}
+
+.user_regitration_edit_password_section .settings_link {
+  color: #283041 !important;
+  font-size: 20px !important;
+  font-weight: bold !important;
+  text-transform: capitalize;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease; 
+}
+
+.user_regitration_edit_password_section .settings_link:hover {
+  color: #E34B51 !important;
+  text-transform: capitalize;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease; 
+}
+
+.user_regitration_edit_password_section .subscribed_memeber .sub_header_info {
+  font-size: 15px !important;
+  font-weight: 400 !important;
+}
+
+.user_regitration_edit_password_section .subscribed_memeber .sub_header_info a {
+ color: #E34B51 !important;
+}
+
+.user_regitration_edit_password_section .subscribed_memeber .sub_header_info a:hover {
+ text-decoration: underline;
+}
+
+.user_regitration_edit_password_section .settings_detailed_info {
+  font-family: 'Lato', sans-serif;
+}
+
+.user_regitration_edit_password_section .settings_detailed_info .header {
+  font-size: 20px !important;
+  font-weight: bold !important;
+  text-transform: capitalize;
+}
+
+.user_regitration_edit_password_section .settings_detailed_info .header i {
+  margin-right: 3px;
+}
+
+.user_regitration_edit_password_section .settings_detailed_info .sub_header_info {
+  font-size: 15px !important;
+  font-weight: 400 !important;
+}
+
+.user_regitration_edit_password_section .settings_detailed_info ul {
+  font-family: 'Lato', sans-serif;
+  padding: 10px 0px;
+  font-weight: 400 !important;
+}
+
+.user_regitration_edit_password_section .settings_detailed_info li {
+  margin-bottom: 5px;
+}
+
+.user_regitration_edit_password_section .minor_sub_info {
+  font-size: 11px !important;
+  font-weight: bold !important;
+  margin-left: 2px !important;
+}
+
+.user_regitration_edit_password_section .highlighted_info a {
+  color: #E34B51 !important;
+}
+
+.user_regitration_edit_password_section .highlighted_info {
+  color: #E34B51 !important;
+}
+
+
+.user_regitration_edit_password_section label {
+  font-family: 'Lato', sans-serif;
+  font-size: 15px !important;
+  font-weight: 300 !important;
+  text-transform: capitalize;
+}
+
+.user_regitration_edit_password_section #user_current_password {
+  margin-bottom: 40px;
+}
+
+.user_regitration_edit_password_section #user_password input[type="text"], input[type="password"] {
+  border: 1px solid rgba(75, 180, 191, 0.5) !important;
+  background-color: #fff !important;
+}
+
+.user_regitration_edit_password_section input[type="submit"] {
+  font-family: 'Lato', sans-serif;
+  font-size: 20px;
+  color: #fff !important;
+  font-weight: 300;
+  background: #000;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+  padding: 10px 25px;
+  width: 100%;
+  border: none;
+  display: inline-block;
+  margin-bottom: 0px !important;
+  background-color: #4BB4BF !important;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

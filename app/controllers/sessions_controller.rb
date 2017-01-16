@@ -1,4 +1,5 @@
 class SessionsController < Devise::SessionsController
+# class Devise::SessionsController < DeviseController
 
   def edit
     # add custom logic here
