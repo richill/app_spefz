@@ -1,0 +1,183 @@
+<!-- <h1>attending socials</h1> -->
+<div class="user_attending_save_created_section">
+  <div class="medium-12 columns attending_save_created_inner_section">
+
+    <!-- search -->
+    <div class="medium-12 columns search_container">
+      <div class="search_inner_container">        
+        <ul class="search_fields_left">
+          <li class="active"> 
+            <%= link_to network_user_path(current_user) do %>
+              <i class="fa fa-server" aria-hidden="true"></i>
+              <span>attending [<%= current_user.friends.count %>]</span>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to followings_user_path(current_user) do %>
+              <i class="fa fa-server" aria-hidden="true"></i>
+              <span>saved [<%= current_user.followings.count %>]</span>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to followers_user_path(current_user) do %>
+              <i class="fa fa-server" aria-hidden="true"></i>
+              <span>created [<%= current_user.followers.count %>]</span>
+            <% end %>
+          </li>
+        </ul> 
+        <!-- <%# search_form_for @search, url: network_user_path(current_user) do |f| %>
+        <ul class="search_fields_right">
+          <li><%# f.submit 'search' %></li> 
+          <li class="field btn_all">
+            <%# link_to network_user_path(current_user) do %>
+              <i class="fa fa-users" aria-hidden="true"></i>
+            <%# end %>
+          </li>
+          <li class="field select_user_name"><%# f.text_field :firstname_or_lastname_or_reference_cont, placeholder: 'search firstname or lastname eg: kofi'%></li>
+        </ul>        
+        <%# end %> -->
+      </div>
+    </div>
+    <!-- search -->
+
+    <!-- content -->
+    <div class="medium-12 columns event_socials_content_section">
+      <div class="medium-12 columns content_container">
+        <div class="content_details">
+            
+            <!-- members -->
+            <% if @friends.blank? %>
+              <div><%= render 'shared/content_search_no_result' %></div>
+            <% else %>
+              <ul class="inline-list">
+                <% @friends.each do |user| %>
+                  <% if current_user.subscribed_access? %>
+                    <li class="medium-3 columns member_container user_subscribed">
+                      <!-- subscribed banner -->
+                      <div class="subie_banner_wrapper_container_index">
+                        <div class="subie_banner_wrapper_index">
+                          <% if current_user.admin_pa_management_group %>
+                            <% if user.subscribed? %>
+                              <div class="subie_banner_ribbon_wrapper_red_index">
+                                <div class="subie_banner_ribbon_name_index"></div>
+                              </div>
+                            <% end %>
+                          <% end %>
+                        </div>​
+                      </div>
+                      <!-- subscribed banner -->
+                      <!-- dummy banner -->
+                      <div class="banner_wrapper_container_index">
+                        <div class="banner_wrapper_index">
+                          <% if current_user.admin_pa_management_group %>
+                            <% if user.category_managementgroup.name == "Dummy Group" %>
+                              <div class="banner_ribbon_wrapper_green_index">
+                                <div class="banner_ribbon_name_index">DUMMY</div>
+                              </div>
+                            <% end %>
+                          <% end %>
+                        </div>​
+                      </div>
+                      <!-- dummy banner -->
+                      <div class="medium-12 columns member_inner_container">
+                        <div class="image_section">
+                          <% if user.image_url.present? %>
+                            <div class="image_cover"><%= link_to(image_tag("#{user.image_url}", :alt =>  "image", :class =>"#"), user) %></div>
+                          <% else %>
+                            <div class="image_cover" style="border-radius:0px;"><%= link_to(image_tag("img-profile-image-default.png", :alt =>  "image", :class =>"#"), user) %></div>
+                          <% end %>
+                        </div>
+                        <% if current_user.admin_pa_management_group %>
+                          <div class="user_info_adj">
+                            <div class="user_name"><%= link_to "#{user.firstname} #{user.lastname}", user %></div>
+                            <div class="user_profession"><%= truncate(user.profession, length: 25) %></div>
+                            <div>
+                              <span class="user_ref"><%= user.reference %></span>
+                              <span class="divider">|</span>
+                              <span class="user_age">Age:  <%= user.age %></span>
+                            </div>
+                          </div>
+                        <% else %>
+                          <div class="user_info">
+                            <div class="user_name"><%= link_to "#{user.firstname} #{user.lastname}", user %></div>
+                            <div class="user_profession"><%= truncate(user.profession, length: 25) %></div>
+                          </div>
+                        <% end %>
+                        <div class="action_btns">
+                          <% if user != current_user %>
+                          <%= render partial: "form_request", locals: { user: user } %>
+                          <%= render partial: "form_follow", locals: { user: user } %>
+                          <% end %>
+                        </div>
+                      </div>
+                      <div class="clear"></div>
+                      <% if current_user.admin_pa_management_group || current_user.pa_administration_group %>
+                      <div class="user_roles">
+                        <span><i class="fa fa-user" aria-hidden="true"></i></span>
+                        <span><%= truncate(user.category_role.name, length: 25) %></span>
+                        <span class="divider"> | </span>
+                        <span><%= truncate(user.category_managementgroup.name, length: 25) %></span>
+                      </div>
+                      <% end %>
+                    </li>
+                  <% else %>
+                    <li class="medium-3 columns member_container user_unsubscribed">
+                      <!-- dummy banner -->
+                      <div class="banner_wrapper_container_index">
+                        <div class="banner_wrapper_index">
+                          <% if current_user.admin_pa_management_group %>
+                            <% if user.category_managementgroup.name == "Dummy Group" %>
+                              <div class="banner_ribbon_wrapper_green_index">
+                                <div class="banner_ribbon_name_index">DUMMY</div>
+                              </div>
+                            <% end %>
+                          <% end %>
+                        </div>​
+                      </div>
+                      <!-- dummy banner -->
+                      <div class="medium-12 columns member_inner_container">
+                        <div class="image_section">
+                          <% if user.image_url.present? %>
+                            <div class="image_cover"><%= link_to(image_tag("#{user.image_url}", :alt =>  "image", :class =>"#"), user_path(user)) %></div>
+                          <% else %>
+                            <div class="image_cover"><%= link_to(image_tag("img-profile-image-default.png", :alt =>  "image", :class =>"#"), user_path(user)) %></div>
+                          <% end %>
+                        </div>
+                        <div class="user_info">
+                          <div class="user_name"><%= link_to "#{user.firstname} #{user.lastname}", user_path(user) %></div>
+                          <div class="user_profession"><%= truncate(user.profession, length: 25) %></div>
+                        </div>
+                        <div class="action_btns">
+                          <%= link_to subscription_path(@premium_plan) do  %>
+                            <% if user != current_user %>
+                            <%= render partial: "form_request", locals: { user: user } %>
+                            <%= render partial: "form_follow", locals: { user: user } %>
+                            <% end %>
+                          <% end %>
+                        </div>
+                      </div>
+                      <div class="clear"></div>
+                      <% if current_user.admin_pa_management_group || current_user.pa_administration_group %>
+                      <div class="user_roles">
+                        <span><i class="fa fa-user" aria-hidden="true"></i></span>
+                        <span><%= truncate(user.category_role.name, length: 25) %></span>
+                        <span class="divider"> | </span>
+                        <span><%= truncate(user.category_managementgroup.name, length: 25) %></span>
+                      </div>
+                      <% end %>
+                    </li>
+                  <% end %>
+                <% end %>
+              <ul/>
+            <% end %>
+            <div class="clear"></div>
+            <!-- members -->
+        </div>
+      </div>
+    </div>
+    <!-- content -->
+
+  </div>
+</div>
+
+
