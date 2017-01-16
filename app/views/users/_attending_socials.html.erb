@@ -9,7 +9,7 @@
           <li class="active"> 
             <%= link_to network_user_path(current_user) do %>
               <i class="fa fa-server" aria-hidden="true"></i>
-              <span>attending [<%= (current_user.attending_socials.count) + (Event.booked_events(current_user).count) %>]</span>
+              <span>attending [<%= (current_user.attending_socials.live_socials.open_socials.count) + (Event.live_events.open_events.booked_events(current_user).count) %>]</span>
             <% end %>
           </li>
           <li>
@@ -50,7 +50,7 @@
               <!-- <div><%# render 'shared/content_search_no_result' %></div> -->
             <%# else %>
               
-              <% current_user.attending_socials.each do |social| %>
+              <% current_user.attending_socials.live_socials.open_socials.each do |social| %>
                 <ul class="inline-list">
                   <!-- you are here -->
                     <div class="social_event_list">
