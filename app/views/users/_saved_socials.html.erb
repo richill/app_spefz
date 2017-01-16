@@ -1,3 +1,4 @@
+<h1>saved socials</h1>
 <div class="user_attending_save_created_section">
   <div class="medium-12 columns attending_save_created_inner_section">
 
@@ -36,15 +37,15 @@
           <div class="medium-12 columns sub_tab_headings_container">
             <ul>
               <li>
-                <%= link_to attending_socials_user_path(current_user), class: "btn btn_attending active" do %>
+                <%= link_to saved_socials_user_path(current_user), class: "btn btn_attending active" do %>
                   <i class="fa fa-server" aria-hidden="true"></i>
-                  <span>attending socials [<%= current_user.attending_socials.live_socials.open_socials.count %>]</span>
+                  <span>saved socials [<%= current_user.favourite_socials.live_socials.open_socials.count %>]</span>
                 <% end %>
               </li>
               <li>
                 <%= link_to attending_events_user_path(current_user), class: "btn btn_attending" do %>
                   <i class="fa fa-server" aria-hidden="true"></i>
-                  <span>booked events [<%= Event.live_events.open_events.booked_events(current_user).count %>]</span>
+                  <span>saved events [<%= current_user.favourite_events.live_events.open_events.count %>]</span>
                 <% end %>
               </li>
             </ul>
@@ -52,9 +53,9 @@
           <div class="clear"></div>
           <!-- sub_tab_headings -->
 
-          <!-- attending_socials -->
-          <% if current_user.attending_socials.live_socials.open_socials.present? %>
-            <% current_user.attending_socials.live_socials.open_socials.each do |social| %>
+          <!-- saved_socials -->
+          <% if current_user.favourite_socials.live_socials.open_socials.present? %>
+            <% current_user.favourite_socials.live_socials.open_socials.each do |social| %>
               <ul class="inline-list">
                 <div class="social_event_list">
                   <div class="cd-timeline-block">
@@ -155,10 +156,10 @@
               <ul/>
             <% end %>
           <% else %>
-            <%= render "shared/content_no_result_attending_socials" %>
+            <%= render "shared/content_no_result_saved_socials" %>
           <% end %>
           <div class="clear"></div>
-          <!-- attending_socials -->
+          <!-- saved_socials -->
         </div>
       </div>
     </div>
