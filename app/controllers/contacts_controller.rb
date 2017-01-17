@@ -30,7 +30,7 @@ class ContactsController < ApplicationController
 
     respond_to do |format|
       if @contact.save
-        MailerContactus.report_content(@contact).deliver
+        MailerContactus.contactus(@contact).deliver
         format.html { redirect_to message_delivered_path, notice: 'Message sent' }
         format.json { render :show, status: :created, location: @contact }
       else

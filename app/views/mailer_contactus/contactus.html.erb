@@ -53,12 +53,8 @@ a{color:#37aadc}
             
             <div style="font-family:Arial, Helvetica, sans-serif;font-size:12px;text-transform:capitalize;background-color:#F9F9F9;padding:15px;">Info: Enquiring On <%= @contact.category_enquiry.name %></div> <br/>
             
-            <% if signed_in? %>
-              <div style="font-family:Arial, Helvetica, sans-serif;font-size:12px;background-color:#F9F9F9;padding:15px 15px 5px 15px;">Contacted by: <%= "#{current_user.firstname} #{current_user.lastname}" %> | Email: <%= current_user.email %> | Ref: <%= current_user.reference %></div>
-            <% else %>
-              <div style="font-family:Arial, Helvetica, sans-serif;font-size:12px;background-color:#F9F9F9;padding:15px 15px 5px 15px;">Contacted by: <%= "#{@contact.firstname} #{@contact.lastname}" %> | Email: <%= @contact.email %></div>
-            <% end %>
-
+            <div style="font-family:Arial, Helvetica, sans-serif;font-size:12px;background-color:#F9F9F9;padding:15px 15px 5px 15px;">Contacted by: <%= "#{@contact.firstname} #{@contact.lastname}" %> | Email: <%= @contact.email %></div>
+         
             <div style="font-family:Arial, Helvetica, sans-serif;font-size:12px;background-color:#F9F9F9;padding:0px 15px 5px 15px">Contact Number: <%= @contact.tel %></div>
 
             <% if @contact.companyname.present? %>
