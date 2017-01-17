@@ -20,6 +20,7 @@ class ReportsController < ApplicationController
 
     respond_to do |format|
       if @report.save
+        MailerReport.report_content(@report).deliver
         format.html { redirect_to :back, notice: 'Report was successfully sent.' }
         format.json { render :show, status: :created, location: @report }
       else
