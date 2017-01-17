@@ -8,7 +8,7 @@ class FriendshipsController < ApplicationController
     Friendship.request(@user, @friend)
     flash[:notice] = "Request sent."
     redirect_to :back
-    MailerReport.friend_request(@user, @friend).deliver
+    MailerFriendrequest.friend_request(@user, @friend).deliver
   end
 
   # Accepts a friend request.
