@@ -51,21 +51,14 @@ a{color:#37aadc}
             </p>
             
             <p style="font-family:Arial, Helvetica, sans-serif;font-size:12px;line-height:22px;background-color:#F9F9F9;padding:15px;height:80px;">
-                <!-- you are here -->
-                <% if @user.image.present? %>
-                <%= cl_image_tag(@user.image, :transformation=>[{:gravity=>"face", :width=>200, :height=>200, :crop=>"fill", :radius=>"max"}]) %>
-                <%= image_tag @user.imag_url style: "border: 1px solid red" %>
-                <img height="80" width="80" src="http://res.cloudinary.com/africanjober/image/upload/v1484229811/img_profile_13.png" style="border:0;display:block;border-radius:200px;float:left; margin-right:10px;">
-                <% else %>
-                  #do something
-                <% end %>
-                <!-- you are here -->
-
-
-
-                <span style="font-size:25px;margin-top:12px;display: inline-block;"><%= "#{@user.firstname} #{@user.lastname}" %></span><br/>
-                <span style="text-transform:capitalize;margin-left:2px;"><%= @user.profession %></span><br/>
-                <span style="margin-left:2px;">Find out more about <%= "#{@user.firstname}" %> <span style="margin: 0px 5px 0px 5px;">|</span> <a href="https://www.spefz.com/" style="font-family:Arial, Helvetica, sans-serif;color:#b6584f;font-size:12px">view profile</a></span>
+              <% if @user.image.present? %>
+                <%= cl_image_tag(@user.image, :transformation=>[{:gravity=>"face", :width=>80, :height=>80, :crop=>"fill", :radius=>"max"}]), style: "border:0;display:block;border-radius:200px;float:left; margin-right:10px;" %>
+              <% else %>
+                <%= image_tag("img-profile-image-default.png"), style: "height:80px;width:80px;border:0;display:block;border-radius:200px;float:left;margin-right:10px;" %>
+              <% end %>
+              <span style="font-size:25px;margin-top:12px;display: inline-block;"><%= "#{@user.firstname} #{@user.lastname}" %></span><br/>
+              <span style="text-transform:capitalize;margin-left:2px;"><%= @user.profession %></span><br/>
+              <span style="margin-left:2px;">Find out more about <%= "#{@user.firstname}" %> <span style="margin: 0px 5px 0px 5px;">|</span> <a href="https://www.spefz.com/" style="font-family:Arial, Helvetica, sans-serif;color:#b6584f;font-size:12px">view profile</a></span>
             </p>
         
             <p style="font-family:Arial, Helvetica, sans-serif;font-size:12px;line-height:22px;margin-top:20px;">
