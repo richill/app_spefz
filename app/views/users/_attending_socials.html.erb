@@ -5,6 +5,12 @@
     <div class="medium-12 columns search_container">
       <div class="search_inner_container">        
         <ul class="search_fields_left">
+          <li>
+            <%= link_to live_socials_user_path(current_user) do %>
+              <i class="fa fa-server" aria-hidden="true"></i>
+              <span>my socials [<%= current_user.socials.count %>]</span>
+            <% end %>
+          </li>
           <li class="active"> 
             <%= link_to attending_socials_user_path(current_user) do %>
               <i class="fa fa-server" aria-hidden="true"></i>
@@ -15,12 +21,6 @@
             <%= link_to saved_socials_user_path(current_user) do %>
               <i class="fa fa-server" aria-hidden="true"></i>
               <span>saved [<%= (current_user.favourite_socials.live_socials.open_socials.count) + (current_user.favourite_events.live_events.open_events.count) %>]</span>
-            <% end %>
-          </li>
-          <li>
-            <%= link_to live_socials_user_path(current_user) do %>
-              <i class="fa fa-server" aria-hidden="true"></i>
-              <span>my socials [<%= current_user.socials.count %>]</span>
             <% end %>
           </li>
         </ul> 
@@ -68,9 +68,9 @@
                           <div class="image_content right_side_content">
                             <div class="social_event_feed_img_cover">
                               <% if social.user.image.present? %>
-                                <%= link_to(cl_image_tag(social.user.image, :transformation=>[{:gravity=>"face", :width=>200, :height=>200, :crop=>"fill", :radius=>"max"}]), user_path(current_user)) %>
+                                <%= link_to(cl_image_tag(social.user.image, :transformation=>[{:gravity=>"face", :width=>200, :height=>200, :crop=>"fill", :radius=>"max"}]), user_path(social.user)) %>
                               <% else %>
-                                <%= image_tag("img-profile-image-default.png") %>
+                                <%= link_to(image_tag("img-profile-image-default.png"), user_path(social.user)) %>
                               <% end %>
                             </div>
                           </div>
@@ -79,7 +79,7 @@
                         <li class="right_side">
                           <!-- social_event_right_side -->
                           <div class="right_side_content">
-                            <div class="title"><%= link_to social.title, social_path(social.user, social) %></div>
+                            <div class="title"><%= link_to social.title, social_path(social) %></div>
                             <div class="host">
                               <span>Hosted by</span>
                               <span><%= link_to social.user.firstname, social.user if social.user %></span>
@@ -95,7 +95,7 @@
                                   </div>
                                 <% end %>
                                 <!-- sold out -->
-                                <span><%= link_to(cl_image_tag(social.image, :transformation=>[{:gravity=>"center", :width=>150, :height=>105, :crop=>"fill"}]), user_social_path(social.user, social)) %></span>
+                                <span><%= link_to(cl_image_tag(social.image, :transformation=>[{:gravity=>"center", :width=>150, :height=>105, :crop=>"fill"}]), social_path(social)) %></span>
                               </div>
                               <div class="social_event_details">
                                 <div class="info"><i class="fa fa-calendar" aria-hidden="true"></i> <%= social.date.strftime("%A, %d %b") %> <span class="mid_divider">|</span> <%= social.time.strftime("%I:%M %p") %></div>
@@ -135,7 +135,7 @@
                                         <% end %>
                                         <li class="remaining_places" style="margin-right: 0px;">
                                           <span data-tooltip aria-haspopup="true" data-options="disable_for_touch:true" class="tip-right" title="<%="#{social.available_places_BothAndOnly_men_and_women}"%> places left">
-                                            <%= link_to "+#{social.available_places_BothAndOnly_men_and_women}", user_social_path(social.user, social), class: "#" %>
+                                            <%= link_to "+#{social.available_places_BothAndOnly_men_and_women}", social_path(social), class: "#" %>
                                           </span>
                                         </li>
                                       </ul>

@@ -5,6 +5,12 @@
     <div class="medium-12 columns search_container">
       <div class="search_inner_container">        
         <ul class="search_fields_left">
+          <li>
+            <%= link_to live_socials_user_path(current_user) do %>
+              <i class="fa fa-server" aria-hidden="true"></i>
+              <span>my socials [<%= current_user.socials.count %>]</span>
+            <% end %>
+          </li>
           <li> 
             <%= link_to attending_socials_user_path(current_user) do %>
               <i class="fa fa-server" aria-hidden="true"></i>
@@ -15,12 +21,6 @@
             <%= link_to saved_socials_user_path(current_user) do %>
               <i class="fa fa-server" aria-hidden="true"></i>
               <span>saved [<%= (current_user.favourite_socials.live_socials.open_socials.count) + (current_user.favourite_events.live_events.open_events.count) %>]</span>
-            <% end %>
-          </li>
-          <li>
-            <%= link_to live_socials_user_path(current_user) do %>
-              <i class="fa fa-server" aria-hidden="true"></i>
-              <span>my socials [<%= current_user.socials.count %>]</span>
             <% end %>
           </li>
         </ul> 
@@ -52,7 +52,7 @@
           <div class="clear"></div>
           <!-- sub_tab_headings -->
 
-          <!-- saved_socials -->
+          <!-- saved_events -->
           <% if current_user.favourite_events.live_events.open_events.present? %>
             <% current_user.favourite_events.live_events.open_events.each do |event| %>
               <ul class="inline-list">
@@ -75,10 +75,10 @@
                         <li class="right_side">
                           <!-- social_event_right_side -->
                           <div class="right_side_content">
-                            <div class="title"><%= link_to event.title, social_path(event.user, event) %></div>
+                            <div class="title"><%= link_to event.title, event_path(event) %></div>
                             <div class="host">
                               <span>Hosted by</span>
-                              <span><%= link_to event.user.firstname, event.user if event.user %></span>
+                              <span><%= link_to "Spefz Team", about_us_path %></span>
                             </div>
                             <div class="social_event_content">
                               <div class="image_cover">
@@ -91,7 +91,7 @@
                                   </div>
                                 <% end %>
                                 <!-- sold out -->
-                                <span><%= link_to(cl_image_tag(event.image, :transformation=>[{:gravity=>"center", :width=>150, :height=>105, :crop=>"fill"}]), user_social_path(event.user, event)) %></span>
+                                <span><%= link_to(cl_image_tag(event.image, :transformation=>[{:gravity=>"center", :width=>150, :height=>105, :crop=>"fill"}]), event_path(event)) %></span>
                               </div>
                               <div class="social_event_details">
                                 <div class="info"><i class="fa fa-calendar" aria-hidden="true"></i> <%= event.date.strftime("%A, %d %b") %> <span class="mid_divider">|</span> <%= event.time.strftime("%I:%M %p") %></div>
@@ -120,7 +120,7 @@
             <%= render "shared/content_no_result_saved_events" %>
           <% end %>
           <div class="clear"></div>
-          <!-- saved_socials -->
+          <!-- saved_events -->
         </div>
       </div>
     </div>
