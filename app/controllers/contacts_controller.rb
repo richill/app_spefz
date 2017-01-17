@@ -66,8 +66,11 @@ class ContactsController < ApplicationController
 
   private
   def setup_friends
-    @user = User.find(current_user.id)
-    @friend = User.find_by_email(params[:id])
+    if signed_in?
+      @user = User.find(current_user.id)
+      @friend = User.find_by_email(params[:id])
+    end
+
   end
 
   def setup_subscription
@@ -87,7 +90,9 @@ class ContactsController < ApplicationController
   end
 
   def setup_user_network_activities
-    @user_network_activities = Activity.order("created_at desc").where(owner_id: current_user.friends)
+    if signed_in?
+      @user_network_activities = Activity.order("created_at desc").where(owner_id: current_user.friends)
+    end
   end
   
   # Use callbacks to share common setup or constraints between actions.
