@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact Us</title>
+<title>Application Status</title>
 <style type="text/css">
 @media(max-width:480px){
   table[class=main_table],table[class=layout_table]{width:300px !important;}
@@ -40,18 +40,18 @@ a{color:#37aadc}
           <td align="left">
               
             <p style="font-family:Arial, Helvetica, sans-serif;font-size:14px;line-height:22px;font-weight:bold;">
-              Contact Ref: AJk2wXJT
+              Contact Ref: <%= @contact.reference %>
             </p>
             
             <p style="font-family:Arial, Helvetica, sans-serif;font-size:14px;line-height:22px;text-transform:capitalize;font-weight:bold;">
-              Type Of Enquiry: Technical Support
+              Type Of Enquiry: <%= @contact.category_enquiry.name %>
             </p>
             
             <p style="font-family:Arial, Helvetica, sans-serif;font-size:14px;line-height:22px;text-transform:capitalize;font-weight:bold;">
-              Client Category: Spefz Member
+              Client Category: <%= @contact.category_contactclient.name %>
             </p>
             
-            <div style="font-family:Arial, Helvetica, sans-serif;font-size:12px;text-transform:capitalize;background-color:#F9F9F9;padding:15px;">Info: Enquiring On Technical Support</div> <br/>
+            <div style="font-family:Arial, Helvetica, sans-serif;font-size:12px;text-transform:capitalize;background-color:#F9F9F9;padding:15px;">Info: Enquiring On <%= @contact.category_enquiry.name %></div> <br/>
             
             <div style="font-family:Arial, Helvetica, sans-serif;font-size:12px;background-color:#F9F9F9;padding:15px 15px 5px 15px;">Contacted by: Richill Tamakloe | Email: richill@gmail.com | Ref: AJk2wXJT</div>
             <div style="font-family:Arial, Helvetica, sans-serif;font-size:12px;background-color:#F9F9F9;padding:0px 15px 5px 15px">Contact Number: 0208 958 7999</div>

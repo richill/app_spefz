@@ -1,5 +1,5 @@
 class MailerContactus < ApplicationMailer
-  def contact_us(contact)
+  def contactus(contact)
     @contact = contact
     mail( to: "info@spefz.com",
           subject: "Spefz | <Client Enquiries> Ref: #{contact.reference} - #{contact.category_enquiry.name}", 
