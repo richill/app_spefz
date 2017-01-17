@@ -38,18 +38,31 @@ a{color:#37aadc}
           <tbody>
           <tr>
           <td align="left">
+            
+            <!-- report_user -->
+            <% if @report.user %>
+              <p style="font-family:Arial, Helvetica, sans-serif;font-size:14px;line-height:22px;font-weight:bold;">
+                Social Ref: <%= @report.social.reference %> 
+              </p>
               
-            <p style="font-family:Arial, Helvetica, sans-serif;font-size:14px;line-height:22px;font-weight:bold;">
-              Social Ref: AJk2wXJT
-            </p>
-            
-            <p style="font-family:Arial, Helvetica, sans-serif;font-size:14px;line-height:22px;text-transform:capitalize;font-weight:bold;">
-              Social Title: Software Engineer
-            </p>
-            
-            <p style="font-family:Arial, Helvetica, sans-serif;font-size:14px;line-height:22px;text-transform:capitalize;font-weight:bold;">
-              Type of Report: Offensive Language
-            </p>
+              <p style="font-family:Arial, Helvetica, sans-serif;font-size:14px;line-height:22px;text-transform:capitalize;font-weight:bold;">
+                Social Title: <%= @report.social.title %>
+              </p>
+
+              <p style="font-family:Arial, Helvetica, sans-serif;font-size:14px;line-height:22px;text-transform:capitalize;font-weight:bold;">
+                Type of Report: <%= @report.category_report.name %>
+              </p>
+
+            <!-- report_social -->
+            <% elsif @report.social %>
+
+            <!-- report_event -->
+            <% elsif @report.event %>
+            <% end %>
+
+
+
+
             
             <div style="font-family:Arial, Helvetica, sans-serif;font-size:12px;text-transform:capitalize;background-color:#F9F9F9;padding:15px;">Category: Software</div> <br/>
             
