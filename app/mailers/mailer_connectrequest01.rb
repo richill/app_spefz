@@ -1,5 +1,5 @@
 class MailerFriendrequest < ApplicationMailer
-  def friend_request(user, friend)
+  def connect_request(user, friend)
     @user = user
     @friend = friend
     mail( to: "#{friend.email}", 
