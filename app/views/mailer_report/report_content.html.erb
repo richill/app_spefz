@@ -80,7 +80,7 @@ a{color:#37aadc}
             <% end %>
 
 
-            <div style="font-family:Arial, Helvetica, sans-serif;font-size:12px;background-color:#F9F9F9;padding:15px;">Reported by: <%= link_to "#{current_user.user.firstname} #{current_user.user.lastname}", user_path(current_user) %> | Email: <%= link_to "#{current_user.email}", user_path(current_user) %> | Ref: <%= current_user.reference %></div>
+            <div style="font-family:Arial, Helvetica, sans-serif;font-size:12px;background-color:#F9F9F9;padding:15px;">Reported by: <%= link_to "#{current_user.firstname} #{current_user.lastname}", user_path(current_user) %> | Email: <%= link_to "#{current_user.email}", user_path(current_user) %> | Ref: <%= current_user.reference %></div>
             
             <p style="font-family:Arial, Helvetica, sans-serif;font-size:14px;line-height:22px;background-color:#F9F9F9;padding:15px;">
               <%= @report.content %>

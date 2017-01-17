@@ -3,6 +3,7 @@ class Report < ActiveRecord::Base
   belongs_to :social
   belongs_to :event
   belongs_to :user
+  belongs_to :reporter, class_name: "User", foreign_key: "reporter_id"
 
   before_create :generate_reference_number
 

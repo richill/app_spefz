@@ -9,9 +9,10 @@
     <div class="error_msg">can't be blank</div>
     
     <!-- hidden_field -->
-    <%= f.hidden_field :social_id, value: social.id %>
-    <%= f.hidden_field :event_id %>
-    <%= f.hidden_field :user_id %>
+    <%= f.input_field :social_id, value: social.id %>
+    <%= f.input_field :event_id %>
+    <%= f.input_field :user_id %>
+    <%= f.input_field :reporter_id, value: current_user.id, label:"reporter" %>
     <!-- hidden_field -->
   </div>
 
