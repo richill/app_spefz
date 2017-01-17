@@ -42,27 +42,45 @@ a{color:#37aadc}
             <!-- report_user -->
             <% if @report.user %>
               <p style="font-family:Arial, Helvetica, sans-serif;font-size:14px;line-height:22px;font-weight:bold;">
-                Social Ref: <%= @report.social.reference %> 
+                User Ref: <%= @report.user.reference %> 
               </p>
-
               <p style="font-family:Arial, Helvetica, sans-serif;font-size:14px;line-height:22px;text-transform:capitalize;font-weight:bold;">
-                Social Title: <%= @report.social.title %>
+                User Name: <%= link_to "#{@report.user.firtsname} #{@report.user.lastname}", user_path(@report.user) %>
               </p>
-
               <p style="font-family:Arial, Helvetica, sans-serif;font-size:14px;line-height:22px;text-transform:capitalize;font-weight:bold;">
                 Type of Report: <%= @report.category_report.name %>
               </p>
-
-              <div style="font-family:Arial, Helvetica, sans-serif;font-size:12px;text-transform:capitalize;background-color:#F9F9F9;padding:15px;">Info: Reporting Social Content</div> <br/>
+              <div style="font-family:Arial, Helvetica, sans-serif;font-size:12px;text-transform:capitalize;background-color:#F9F9F9;padding:15px;">Info: Reporting User/User Content</div> <br/>
 
             <!-- report_social -->
             <% elsif @report.social %>
+              <p style="font-family:Arial, Helvetica, sans-serif;font-size:14px;line-height:22px;font-weight:bold;">
+                Social Ref: <%= @report.social.reference %> 
+              </p>
+              <p style="font-family:Arial, Helvetica, sans-serif;font-size:14px;line-height:22px;text-transform:capitalize;font-weight:bold;">
+                Social Title: <%= link_to @report.social.title, social_path(@report.social) %>
+              </p>
+              <p style="font-family:Arial, Helvetica, sans-serif;font-size:14px;line-height:22px;text-transform:capitalize;font-weight:bold;">
+                Type of Report: <%= @report.category_report.name %>
+              </p>
+              <div style="font-family:Arial, Helvetica, sans-serif;font-size:12px;text-transform:capitalize;background-color:#F9F9F9;padding:15px;">Info: Reporting Social Content</div> <br/>
 
             <!-- report_event -->
             <% elsif @report.event %>
+              <p style="font-family:Arial, Helvetica, sans-serif;font-size:14px;line-height:22px;font-weight:bold;">
+                Social Ref: <%= @report.event.reference %> 
+              </p>
+              <p style="font-family:Arial, Helvetica, sans-serif;font-size:14px;line-height:22px;text-transform:capitalize;font-weight:bold;">
+                Social Title: <%= link_to @report.event.title, event_path(@report.event) %>
+              </p>
+              <p style="font-family:Arial, Helvetica, sans-serif;font-size:14px;line-height:22px;text-transform:capitalize;font-weight:bold;">
+                Type of Report: <%= @report.category_report.name %>
+              </p>
+              <div style="font-family:Arial, Helvetica, sans-serif;font-size:12px;text-transform:capitalize;background-color:#F9F9F9;padding:15px;">Info: Reporting Event Content</div> <br/>
             <% end %>
 
-            <div style="font-family:Arial, Helvetica, sans-serif;font-size:12px;background-color:#F9F9F9;padding:15px;">Reported by: <%= link_to "#{@report.user.firstname} #{@report.user.lastname}", user_path(@report.user) %> | Email: <%= link_to "#{@report.user.email}", user_path(@report.user) %> | Ref: <%= @report.user.reference %></div>
+
+            <div style="font-family:Arial, Helvetica, sans-serif;font-size:12px;background-color:#F9F9F9;padding:15px;">Reported by: <%= link_to "#{current_user.user.firstname} #{current_user.user.lastname}", user_path(current_user) %> | Email: <%= link_to "#{current_user.email}", user_path(current_user) %> | Ref: <%= current_user.reference %></div>
             
             <p style="font-family:Arial, Helvetica, sans-serif;font-size:14px;line-height:22px;background-color:#F9F9F9;padding:15px;">
               <%= @report.content %>
