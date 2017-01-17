@@ -44,7 +44,7 @@ a{color:#37aadc}
               <p style="font-family:Arial, Helvetica, sans-serif;font-size:14px;line-height:22px;font-weight:bold;">
                 Social Ref: <%= @report.social.reference %> 
               </p>
-              
+
               <p style="font-family:Arial, Helvetica, sans-serif;font-size:14px;line-height:22px;text-transform:capitalize;font-weight:bold;">
                 Social Title: <%= @report.social.title %>
               </p>
@@ -53,6 +53,8 @@ a{color:#37aadc}
                 Type of Report: <%= @report.category_report.name %>
               </p>
 
+              <div style="font-family:Arial, Helvetica, sans-serif;font-size:12px;text-transform:capitalize;background-color:#F9F9F9;padding:15px;">Info: Reporting Social Content</div> <br/>
+
             <!-- report_social -->
             <% elsif @report.social %>
 
@@ -60,16 +62,10 @@ a{color:#37aadc}
             <% elsif @report.event %>
             <% end %>
 
-
-
-
-            
-            <div style="font-family:Arial, Helvetica, sans-serif;font-size:12px;text-transform:capitalize;background-color:#F9F9F9;padding:15px;">Category: Software</div> <br/>
-            
-            <div style="font-family:Arial, Helvetica, sans-serif;font-size:12px;background-color:#F9F9F9;padding:15px;">Reported by: Richill Tamakloe | Email: richill@gmail.com | Ref: AJk2wXJT</div>
+            <div style="font-family:Arial, Helvetica, sans-serif;font-size:12px;background-color:#F9F9F9;padding:15px;">Reported by: <%= link_to "#{@report.user.firstname} #{@report.user.lastname}", user_path(@report.user) %> | Email: <%= link_to "#{@report.user.email}", user_path(@report.user) %> | Ref: <%= @report.user.reference %></div>
             
             <p style="font-family:Arial, Helvetica, sans-serif;font-size:14px;line-height:22px;background-color:#F9F9F9;padding:15px;">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+              <%= @report.content %>
             </p>
             
             <p style="font-family:Arial, Helvetica, sans-serif;font-size:12px;line-height:22px;margin-top:20px;">
