@@ -8,7 +8,6 @@ class Contact < ActiveRecord::Base
   validates_presence_of :category_enquiry, presence: true, message: "please select a category"
   validates_presence_of :category_contactclient, presence: true, message: "please select a category"
 
-  belongs_to :user
   belongs_to :category_enquiry
   belongs_to :category_contactclient
 
