@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Payment Receipt</title>
+<title>Spefz Receipt</title>
 <style type="text/css">
 @media(max-width:480px){
   table[class=main_table],table[class=layout_table]{width:300px !important;}
@@ -29,6 +29,9 @@ a{color:#37aadc}
       <tr>
       <td align="left" class="header_image"><img height="120" src="http://res.cloudinary.com/africanjober/image/upload/v1484406305/Spefz_email_template_top_design_wpdgcj.png" width="600" style="border:0;display:block;"></td>
       </tr>
+      <tr>
+      <td align="left" class="header_image"><img height="120" src="http://res.cloudinary.com/africanjober/image/upload/v1484408684/Spefz_email_template_top_img_text_design_ymi7ae.png" width="600" style="border:0;display:block;"></td>
+      </tr>
       <!--  H E A D E R R O W  E N D  -->
       <tr><td style="font-size:13px;line-height:13px;margin:0;padding:0;">&nbsp;</td></tr>
       <!--  B O D Y R O W  S T A R T  -->
@@ -38,56 +41,41 @@ a{color:#37aadc}
           <tbody>
           <tr>
           <td align="left">
-            
-            <!-- report_user -->
-            <% if @report.user %>
-              <p style="font-family:Arial, Helvetica, sans-serif;font-size:14px;line-height:22px;font-weight:bold;">
-                User Ref: <%= @report.user.reference %> 
-              </p>
-              <p style="font-family:Arial, Helvetica, sans-serif;font-size:14px;line-height:22px;text-transform:capitalize;font-weight:bold;">
-                User Name: <%= link_to "#{@report.user.firtsname} #{@report.user.lastname}", user_path(@report.user) %>
-              </p>
-              <p style="font-family:Arial, Helvetica, sans-serif;font-size:14px;line-height:22px;text-transform:capitalize;font-weight:bold;">
-                Type of Report: <%= @report.category_report.name %>
-              </p>
-              <div style="font-family:Arial, Helvetica, sans-serif;font-size:12px;text-transform:capitalize;background-color:#F9F9F9;padding:15px;">Info: Reporting User/User Content</div> <br/>
-
-            <!-- report_social -->
-            <% elsif @report.social %>
-              <p style="font-family:Arial, Helvetica, sans-serif;font-size:14px;line-height:22px;font-weight:bold;">
-                Social Ref: <%= @report.social.reference %> 
-              </p>
-              <p style="font-family:Arial, Helvetica, sans-serif;font-size:14px;line-height:22px;text-transform:capitalize;font-weight:bold;">
-                Social Title: <%= link_to @report.social.title, social_path(@report.social) %>
-              </p>
-              <p style="font-family:Arial, Helvetica, sans-serif;font-size:14px;line-height:22px;text-transform:capitalize;font-weight:bold;">
-                Type of Report: <%= @report.category_report.name %>
-              </p>
-              <div style="font-family:Arial, Helvetica, sans-serif;font-size:12px;text-transform:capitalize;background-color:#F9F9F9;padding:15px;">Info: Reporting Social Content</div> <br/>
-
-            <!-- report_event -->
-            <% elsif @report.event %>
-              <p style="font-family:Arial, Helvetica, sans-serif;font-size:14px;line-height:22px;font-weight:bold;">
-                Social Ref: <%= @report.event.reference %> 
-              </p>
-              <p style="font-family:Arial, Helvetica, sans-serif;font-size:14px;line-height:22px;text-transform:capitalize;font-weight:bold;">
-                Social Title: <%= link_to @report.event.title, event_path(@report.event) %>
-              </p>
-              <p style="font-family:Arial, Helvetica, sans-serif;font-size:14px;line-height:22px;text-transform:capitalize;font-weight:bold;">
-                Type of Report: <%= @report.category_report.name %>
-              </p>
-              <div style="font-family:Arial, Helvetica, sans-serif;font-size:12px;text-transform:capitalize;background-color:#F9F9F9;padding:15px;">Info: Reporting Event Content</div> <br/>
-            <% end %>
-
-
-            <div style="font-family:Arial, Helvetica, sans-serif;font-size:12px;background-color:#F9F9F9;padding:15px;">Reported by: <%= link_to "#{@report.reporter.firstname} #{@report.reporter.lastname}", user_path(@report.reporter) %> | Email: <%= link_to "#{@report.reporter.email}", user_path(@report.reporter) %> | Ref: <%= @report.reporter.reference %></div>
-            
-            <p style="font-family:Arial, Helvetica, sans-serif;font-size:14px;line-height:22px;background-color:#F9F9F9;padding:15px;">
-              <%= @report.content %>
+              
+            <p style="font-family:Arial, Helvetica, sans-serif;font-size:14px;line-height:22px;font-weight:bold;">
+              Dear <span style="text-transform:capitalize;">richill artloe</span>,
             </p>
             
+            <p style="font-family:Arial, Helvetica, sans-serif;font-size:12px;line-height:22px;background-color:#F9F9F9;padding:15px;text-align:center;">
+                Thank you for your purchase with Spefz Ltd.
+            </p>
+            
+            <div style="font-family:Arial, Helvetica, sans-serif;font-size:12px;background-color:#F9F9F9;padding:15px 15px 5px 15px;"><span style="font-weight:bold;">Purchase Transaction ID:</span> SPz_hkZVEC</div>
+            <div style="font-family:Arial, Helvetica, sans-serif;font-size:12px;background-color:#F9F9F9;padding:0px 15px 5px 15px"><span style="font-weight:bold;">Generated at:</span> Friday, 25 November 2016</div>
+            <div style="font-family:Arial, Helvetica, sans-serif;font-size:12px;background-color:#F9F9F9;padding:0px 15px 15px 15px;"><span style="font-weight:bold;">Sale value:</span> £25.00</div>
+            
+            <p style="font-family:Arial, Helvetica, sans-serif;font-size:12px;line-height:22px;background-color:#F9F9F9;padding:15px;height:80px;">
+                <img height="80" width="80" src="http://res.cloudinary.com/africanjober/image/upload/v1484229811/img_profile_13.png" style="border:0;display:block;border-radius:200px;float:left; margin-right:10px;">
+                <span style="font-size:25px;margin-top:12px;display:inline-block;text-transform:capitalize;">ian gallant</span><br/>
+                <span style="text-transform:capitalize;margin-left:2px;">mobile app developer</span><br/>
+                <span style="margin-left:2px;">Find out more about <span style="text-transform:capitalize;">ian</span> <span style="margin: 0px 5px 0px 5px;">|</span> <a href="https://www.spefz.com/" style="font-family:Arial, Helvetica, sans-serif;color:#b6584f;font-size:12px">view profile</a></span>
+            </p>
+            
+            <p style="font-family:Arial, Helvetica, sans-serif;font-size:12px;line-height:22px;background-color:#F9F9F9;padding:15px;height:80px;">
+                <img height="80" width="130" src="http://res.cloudinary.com/africanjober/image/upload/v1484738658/img_feed_15_acxucg.png" style="border:0;display:block;border-radius:0px;float:left; margin-right:10px;">
+                <span style="font-size:16px;margin-top:8px;display:inline-block;text-transform:capitalize;">new members night out (west london)</span><br/>
+                <span style="text-transform:capitalize;margin-left:2px;">24th January 2017 <span style="margin: 0px 5px 0px 5px;">|</span> 06:30 PM</span><br/>
+                <span style="margin-left:2px;">Find out more about the social <span style="margin: 0px 5px 0px 5px;">|</span> <a href="https://www.spefz.com/" style="font-family:Arial, Helvetica, sans-serif;color:#b6584f;font-size:12px">view</a></span>
+            </p>
+            
+            <p style="font-family:Arial, Helvetica, sans-serif;font-size:12px;line-height:22px;background-color:#F9F9F9;padding:15px;">
+                <span style="font-weight:bold;text-transform:capitalize;">location</span><br/>
+                <span>100-110 Euston Road, London, NW1 2AJ, </span>
+                <span style="text-transform:capitalize;">london, united kingdom</span>
+            </p>
+        
             <p style="font-family:Arial, Helvetica, sans-serif;font-size:12px;line-height:22px;margin-top:20px;">
-              <div style="font-family:Arial, Helvetica, sans-serif;font-size:12px;">Powered by,</div>
+              <div style="font-family:Arial, Helvetica, sans-serif;font-size:12px;">Regards,</div>
               <div style="font-family:Arial, Helvetica, sans-serif;font-size:12px;">The <a href="https://www.spefz.com/" style="font-family:Arial, Helvetica, sans-serif;color:#b6584f">Spefz.com</a> Team</div>
             </p>
           </td>
