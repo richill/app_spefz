@@ -12,8 +12,7 @@
             </div>
             <ul>
               <!-- event_card -->
-              <% @cards.desc_order.each do |card| %>
-                <% if card.event.current_user_attending_paid?(current_user) %>
+              <% @user_event_cards.each do |card| %>
                 <li class="medium-12 columns listed_event_cards">
                   <div class="medium-12 columns image_content_info">
                     <!-- left_evt content -->
@@ -64,7 +63,6 @@
                   </div>
                   <div class="clear"></div>
                 </li>
-                <% end %>
               <% end %>
               <!-- event_card -->
             </ul>

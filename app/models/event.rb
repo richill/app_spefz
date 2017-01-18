@@ -48,6 +48,7 @@ class Event < ActiveRecord::Base
 
   # scope :live_or_open_events, -> {where(close = 'f' OR close IS NULL) AND (date >= '2016-11-19')}
 
+
   def slug_events
     [
       :title

@@ -4,6 +4,7 @@ class CardsController < ApplicationController
 
   def index
     @cards = Card.all
+    @user_event_cards = Event.order("date desc").booked_events_with_cards(current_user).map(&:card)
   end
 
   def show
