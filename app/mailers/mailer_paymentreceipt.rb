@@ -1,0 +1,2 @@
+class MailerPaymentreceipt < ApplicationMailer
+end
