@@ -17,7 +17,6 @@
     <%= f.input :time, label: "Sart Time" %>
     <%= f.input :time_end, label: "End Time" %>
     <%= f.input :price, label: "Price" %>
-    <%= f.input :event_score_access, label: "Event Score Access" %>
 
     <%= f.association :category_quantitygender, collection: CategoryQuantitygender.all, prompt: "select a category", label: "Quantity Gender Selection", input_html: { class: 'category_select' } %>
     <div class="general_gender_quantity_content">
@@ -31,8 +30,8 @@
     <%= f.association :category_age, collection: CategoryAge.all, prompt: "select a category", label: "Age Group" %>
     <%= f.text_field :tag_list, value: @event.tag_list.to_s, placeholder: "charity, education, social, music, social impact, travel, health, jazz..." %>
 
-    <div class="event_host">
-        <div>the event hosts goes here</div>
+    <div class="event_score_access">
+        <div><%= f.input :event_score_access, label: "Event Score Access", placeholder: "3.5" %></div>
     </div><br/>
 
 
