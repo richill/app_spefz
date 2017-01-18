@@ -1,0 +1,2 @@
+class MailerInvitemember < ApplicationMailer
+end
