@@ -21,7 +21,7 @@ class InvitesController < ApplicationController
 
     respond_to do |format|
       if @invite.save
-        MailerInvitemember.connectrequest(@invite).deliver
+        MailerInvitemember.invitememeber(@invite).deliver
         format.html { redirect_to :back, notice: 'Invite was successfully sent' }
         format.json { render :show, status: :created, location: @invite }
       else

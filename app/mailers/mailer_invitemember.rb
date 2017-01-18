@@ -1,5 +1,5 @@
 class MailerInvitemember < ApplicationMailer
-  def invitation(invite)
+  def invitememeber(invite)
     @invite = invite
     mail( to: "#{invite.invitee.email}", 
           subject: "Spefz | Private Invite to #{invite.social.title}", 

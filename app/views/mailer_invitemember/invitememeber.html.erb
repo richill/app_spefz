@@ -51,17 +51,25 @@ a{color:#37aadc}
             </p>
             
             <p style="font-family:Arial, Helvetica, sans-serif;font-size:12px;line-height:22px;background-color:#F9F9F9;padding:15px;height:80px;">
-                <img height="80" width="80" src="http://res.cloudinary.com/africanjober/image/upload/v1484229811/img_profile_13.png" style="border:0;display:block;border-radius:200px;float:left; margin-right:10px;">
-                <span style="font-size:25px;margin-top:12px;display: inline-block;">Ian Gallant</span><br/>
-                <span style="text-transform:capitalize;margin-left:2px;">mobile app developer</span><br/>
-                <span style="margin-left:2px;">Find out more about Ian <span style="margin: 0px 5px 0px 5px;">|</span> <a href="https://www.spefz.com/" style="font-family:Arial, Helvetica, sans-serif;color:#b6584f;font-size:12px">view profile</a></span>
+              <% if @invite.user.image.present? %>
+                <%= cl_image_tag(@invite.user.image, :transformation=>[{:gravity=>"face", :width=>80, :height=>80, :crop=>"fill", :radius=>"max", style: "border:0;display:block;border-radius:200px;float:left; margin-right:10px;"}]) %>
+              <% else %>
+                <%= image_tag("img-profile-image-default.png", style: "height:80px;width:80px;border:0;display:block;border-radius:200px;float:left;margin-right:10px;") %>
+              <% end %>
+              <span style="font-size:25px;margin-top:12px;display: inline-block;"><%= "#{@invite.user.firstname} #{@invite.user.lastname}" %></span><br/>
+              <span style="text-transform:capitalize;margin-left:2px;"><%= "#{@invite.user.profession}" %></span><br/>
+              <span style="margin-left:2px;">Find out more about <%= "#{@invite.user.firstname}" %> <span style="margin: 0px 5px 0px 5px;">|</span> <%= link_to "view profile", user_path(@invite.user), {style: "font-family:Arial, Helvetica, sans-serif;color:#b6584f;font-size:12px"} %></span>
             </p>
             
             <p style="font-family:Arial, Helvetica, sans-serif;font-size:12px;line-height:22px;background-color:#F9F9F9;padding:15px;height:80px;">
-                <img height="80" width="130" src="http://res.cloudinary.com/africanjober/image/upload/v1484738658/img_feed_15_acxucg.png" style="border:0;display:block;border-radius:0px;float:left; margin-right:10px;">
-                <span style="font-size:16px;margin-top:8px;display: inline-block;">New Members Night Out (West London)</span><br/>
-                <span style="text-transform:capitalize;margin-left:2px;">24th January 2017 <span style="margin: 0px 5px 0px 5px;">|</span> 06:30 PM</span><br/>
-                <span style="margin-left:2px;">Find out more about the social <span style="margin: 0px 5px 0px 5px;">|</span> <a href="https://www.spefz.com/" style="font-family:Arial, Helvetica, sans-serif;color:#b6584f;font-size:12px">view</a></span>
+              <% if @invite.social.image.present? %>
+                <%= cl_image_tag(@invite.social.image, :transformation=>[{:gravity=>"face", :width=>80, :height=>130, :crop=>"fill", style: "border:0;display:block;border-radius:0px;float:left; margin-right:10px;"}]) %>
+              <% else %>
+                <%= image_tag("img-profile-image-default.png", style: "height:80px;width:130px;border:0;display:block;border-radius:0px;float:left;margin-right:10px;") %>
+              <% end %>
+              <span style="font-size:16px;margin-top:8px;display: inline-block;"><%= truncate "#{@invite.social.title}", length: 35 %></span><br/>
+              <span style="text-transform:capitalize;margin-left:2px;"><%= @invite.social.date.strftime("%a, %d %b %Y") %> <span style="margin: 0px 5px 0px 5px;">|</span> <%= @invite.social.time.strftime("%I:%M %p") %></span><br/>
+              <span style="margin-left:2px;">Find out more about the social <span style="margin: 0px 5px 0px 5px;">|</span> <%= link_to "view", social_path(@invite.social), {style: "font-family:Arial, Helvetica, sans-serif;color:#b6584f;font-size:12px"} %></span>
             </p>
         
             <p style="font-family:Arial, Helvetica, sans-serif;font-size:12px;line-height:22px;margin-top:20px;">
