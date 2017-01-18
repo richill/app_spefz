@@ -96,6 +96,7 @@ class PaymentsController < ApplicationController
 
       respond_to do |format|
         if @payment.save
+          MailerPaymentreceipt.userpayment(@payment).deliver
           format.html { redirect_to user_path(current_user), notice: 'Your Subscription Payment was successful.' }
           format.json { render :show, status: :created, location: @payment }
         else
