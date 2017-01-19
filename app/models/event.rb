@@ -68,25 +68,6 @@ class Event < ActiveRecord::Base
     self.event_score_access.to_f.round(1) <= user.overall_ratings
   end
 
-  # def match(user)
-  #   # user_rating:  3  | user_rating_percentage:  (user_rating/5)*100:  60%
-  #   # event_access: 2  | event_access_percentage: (event_access/5)*100: 50%
-  #   # match: (event_access_percentage/user_rating_percentage)*100:      83.3%
-  #   # match.round(0) = 83%
-  #   if self.event_score_access.blank?
-  #     if self.event_score_access.blank?
-  #       event_access = self.event_score_access = user.overall_ratings
-  #     end
-  #   end
-  #   user_rating = user.overall_ratings
-  #   user_rating_percentage = (user_rating/5)*100
-  #   event_access = self.event_score_access.to_f
-  #   event_access_percentage = (event_access/5)*100
-  #   match = (event_access_percentage/user_rating_percentage)*100 
-  #   match.round(0)
-  # end
-
-
   def match(user)
     # user_rating:  3  | user_rating_percentage:  (user_rating/5)*100:  60%
     # event_access: 2  | event_access_percentage: (event_access/5)*100: 50%
@@ -104,6 +85,7 @@ class Event < ActiveRecord::Base
     match = (event_access_percentage/user_rating_percentage)*100 
     if match.is_a?(Float) && match.nan?
       100
+      #displays 100% if user has no ratings & event_access_is_blank_or_null
     else
       match_result = match.round(0)
     end
