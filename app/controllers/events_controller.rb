@@ -4,11 +4,11 @@ class EventsController < ApplicationController
 
   def index
     if params[:tag]
-      @events = Event.tagged_with(params[:tag]).live_events.open_events
+      @events = Event.events_access_below_user_score(current_user).tagged_with(params[:tag]).live_events.open_events
       @search = Event.search(params[:q])
       @listed_events = @search.result(distinct: true)
     else
-      @search = Event.search(params[:q])
+      @search = Event.events_access_below_user_score(current_user).search(params[:q])
       @events = @search.result(distinct: true).live_events.open_events
     end
     @report = Report.new
