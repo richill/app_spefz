@@ -83,7 +83,13 @@
                         <ul class="inline-list middle_evt_bottom_info">
                           <li><div class="header">price</div> <div class="content_header" style="margin-top:7px;">£<%= number_with_precision(event.price, precision: 2) %> </div></li>
                           <li><div class="header">age group</div> <div class="content" style="margin-top:7px;"><%= event.category_age.name %></div></li>
-                          <li><div class="header">match</div> <div class="content" style="margin-top:7px;"><%= event.match(current_user) %>%</div></li>
+                          <li>
+                            <div class="header">match</div> 
+                            <div class="content match_link_info" style="margin-top:3px;">
+                              <a href="#" data-reveal-id="myModal-match-info"><%= event.match(current_user) %>%</a>
+                              <div><%= render 'shared/modal_match_info' %></div>
+                            </div>
+                          </li>
                           <li>
                             <div class="header">space</div> 
                             <div class="content">
