@@ -29,6 +29,12 @@ class Event < ActiveRecord::Base
   geocoded_by :location                               # can also be an IP address
   after_validation :geocode, if: :address_changed?    # auto-fetch coordinates
 
+  scope :events_access_below_user_score, -> (user) {where(['event_score_access <= ? OR event_score_access IS ?', user.overall_ratings, nil])}
+  # display all events with event_score_access above user overall rating
+
+  scope :events_access_above_user_score, -> (user) {where(['event_score_access >= ?', user.overall_ratings])}
+  # display all events with event_score_access below user overall rating
+
   scope :expired_events, -> {where(['date < ?', Date.current])}
 
   scope :expired_or_closed_events, -> { where('close = ? OR date < ?', true, Date.current) }
