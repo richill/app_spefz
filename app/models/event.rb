@@ -65,6 +65,17 @@ class Event < ActiveRecord::Base
     self.event_score_access.to_i <= user.overall_ratings || self.event_score_access.to_i == nil
   end
 
+  def match(user)
+    # user_rating:  3  | user_rating_percentage:  (user_rating/5)*100:  60%
+    # event_access: 2  | event_access_percentage: (event_access/5)*100: 50%
+    # match: (event_access_percentage/user_rating_percentage)*100:      83.3%
+    user_rating = user.overall_ratings
+    user_rating_percentage = (user_rating/5)*100
+    event_access = self.event_score_access.to_i
+    event_access_percentage = (event_access/5)*100
+    match = (event_access_percentage/user_rating_percentage)*100 
+  end
+
   def generate_reference_number
     begin
       reference_length = 6
