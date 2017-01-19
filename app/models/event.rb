@@ -65,7 +65,7 @@ class Event < ActiveRecord::Base
   end
 
   def event_access_below_user_score(user)
-    self.event_score_access.to_i <= user.overall_ratings || self.event_score_access.to_i == nil
+    self.event_score_access.to_f.round(1) <= user.overall_ratings
   end
 
   def match(user)
@@ -80,7 +80,7 @@ class Event < ActiveRecord::Base
     end
     user_rating = user.overall_ratings
     user_rating_percentage = (user_rating/5)*100
-    event_access = self.event_score_access.to_f
+    event_access = self.event_score_access.to_f.round(1)
     event_access_percentage = (event_access/5)*100
     match = (event_access_percentage/user_rating_percentage)*100 
     match.round(0)
