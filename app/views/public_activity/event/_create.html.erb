@@ -1,6 +1,6 @@
 <% unless activity.trackable.expired_or_closed_event %>
   <div class="activity_list">
-    <% if activity.trackable %>
+    <% if activity.trackable.event_access_below_user_score(current_user) %>
       <div class="cd-timeline-block">
         <div class="cd-timeline-img cd-star">
           <i class="fa fa-calendar"></i>

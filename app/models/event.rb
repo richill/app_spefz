@@ -61,6 +61,10 @@ class Event < ActiveRecord::Base
     ]
   end
 
+  def event_access_below_user_score(user)
+    self.event_score_access.to_i <= user.overall_ratings || self.event_score_access.to_i == nil
+  end
+
   def generate_reference_number
     begin
       reference_length = 6
