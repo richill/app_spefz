@@ -17,6 +17,10 @@ class EventsController < ApplicationController
   def show
     @host = Host.new
     @card = Card.new
+    unless @event.event_access_below_user_score(current_user)
+      redirect_to errorpermission_path
+      #directs user to access_restricted page if event_access_score is > user average rating
+    end
   end
 
   def new
