@@ -75,12 +75,12 @@ class Event < ActiveRecord::Base
     # match.round(0) = 83%
     if self.event_score_access.blank?
       if self.event_score_access.blank?
-        self.event_score_access = user.overall_ratings
+        event_access = self.event_score_access = user.overall_ratings
       end
     end
     user_rating = user.overall_ratings
     user_rating_percentage = (user_rating/5)*100
-    event_access = self.event_score_access.to_f.round(1)
+    event_access = self.event_score_access.to_f
     event_access_percentage = (event_access/5)*100
     match = (event_access_percentage/user_rating_percentage)*100 
     match.round(0)
