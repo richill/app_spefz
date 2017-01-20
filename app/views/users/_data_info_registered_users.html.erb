@@ -9,11 +9,76 @@
   <div class="h1_subtitle"><i class="fa fa-info-circle"></i> displays all registered users on the platform</div>
 </h1>
 
-<div id="status_pending_content">
+<div id="status_users_all_content">
   <div class="bottom_inner_content">
     <div class="table">
       <div class="tablerow">
         <div class="tablecell header background">all registered users</div>
+        <div class="tablecell background"></div>
+        <div class="tablecell background"></div>
+        <div class="tablecell background"></div>
+        <div class="tablecell background"></div>
+        <div class="tablecell background"></div>
+        <div class="tablecell background"></div>
+      </div>
+      <% @users.all.each do |user| %>
+        <div class="tablerow">
+          <div class="tablecell">
+            <div class="banner_wrapper_index">
+              <%# if userr_signed_in? %>
+                <%# if current_userr.admin_pa_management_group %>
+                  <%# if application.advert.fake? %>
+                    <div class="banner_ribbon_wrapper_green_index">
+                      <div class="banner_ribbon_name_index">DUMMY</div>
+                    </div>
+                  <%# end %>
+                <%# end %>
+              <%# end %>
+            </div>​
+            <span data-tooltip aria-haspopup="true" class="tip-bottom" title="view applicant's application"><span class="user_name"><%# link_to "#{application.userj.firstname} #{application.userj.lastname}", application %></span></span>
+            <div class="user_location"><%# link_to "#{application.userj.category_country.name}, #{application.userj.city}", application %></div>
+            <div><span class="faint_text_main">applied:</span> <span class="applied_job"><%# link_to "#{application.advert.title}", userr_advert_path(application.advert.userr, application.advert) %></span></div>
+            <div><span class="applied_date">date applied: <%# application.created_at.strftime("%b %d, %Y") %></span></div>
+          </div>
+          <div class="tablecell"><div><span class="advert_title"><%# link_to truncate("#{application.advert.title}", length: 30), rabbit_advert_path(application.advert) %></span><br/><span class="faint_text"><%# link_to "#{application.advert.category_country.name}, #{application.advert.city}",  userr_advert_path(application.advert.userr, application.advert) %></span></div><div><span class="ref_title">reference #:</span> <span class="ref_id"><%# application.advert.reference %></span></div><div class="created_by">created by: <%# link_to "#{application.advert.userr.firstname} #{application.advert.userr.lastname}", userr_path(@userr) %></div><div>created: <%# application.advert.created_at.strftime("%b %d, %Y") %></div></div>
+          <div class="tablecell"><div><%# application.advert.category_jobtype.name %></div><div>seeking: <%# application.advert.category_positiontype.name %></div></div>
+          <div class="tablecell"><%# application.advert.currency %> <%# application.advert.category_price.name %><br/><%# application.advert.category_period.name %></div>
+          <div class="tablecell"><div>Advert Deadline</div><div><%# application.advert.appdeadline.strftime("%b %d, %Y") %></div></div>
+          <div class="tablecell">
+            <div class="job_match_stat">
+              <div>Match</div>
+              <div><%# number_to_percentage(application.match_percentage(application.advert), precision: 0) %></div>
+            </div>
+          </div>
+
+          <div class="tablecell">
+            <div>Application Status</div>
+            <div>
+              <%# if application.pending %>
+                <div class="status_app_result status_colour_blue"><%# "pending" %></div>
+              <%# elsif application.accepted %>
+                <div class="status_app_result status_colour_green"><%# "hired" %></div>
+              <%# elsif application.rejected %>
+                <div class="status_app_result status_colour_red"><%# "rejected" %></div>
+              <%# elsif application.interview %>
+                <div class="status_app_result status_colour_yellow"><%# "interview" %></div>
+              <%# elsif application.shortlisted %>
+                <div class="status_app_result status_colour_bluelight"><%# "shortlisted" %></div>
+              <%# end %>
+            </div>
+            <div class="new"><%# link_to 'view', application, target: "_blank" %></div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div id="status_pending_content">
+  <div class="bottom_inner_content">
+    <div class="table">
+      <div class="tablerow">
+        <div class="tablecell header background">all registered users_other</div>
         <div class="tablecell background"></div>
         <div class="tablecell background"></div>
         <div class="tablecell background"></div>
