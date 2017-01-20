@@ -58,6 +58,8 @@ class UsersController < ApplicationController
 
   def dashboard
     @users = User.all
+    @socials = Social.all
+    @events = Event.all
   end
 
   def analytics
