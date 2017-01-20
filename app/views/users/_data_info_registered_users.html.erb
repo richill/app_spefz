@@ -2,10 +2,10 @@
   <span id="status_users_all" class="status_colour_blue">all [<%= @users.all.count %>]</span>
   <span id="status_users_male" class="status_colour_blue">male [<%= @users.males.count %>]</span>
   <span id="status_users_female" class="status_colour_blue">female [<%= @users.females.count %>]</span>
-  <span id="status_hired" class="status_colour_green">hired [<%# @userr.forms.applicant_accepted.count %>]</span>
+  <!-- <span id="status_hired" class="status_colour_green">hired [<%# @userr.forms.applicant_accepted.count %>]</span>
   <span id="status_rejected" class="status_colour_red">rejected [<%# @userr.forms.applicant_rejected.open_ad_applications.active_ad_applications.count %>]</span>
   <span id="status_interview" class="status_colour_yellow">interview [<%# @userr.forms.applicant_interview.open_ad_applications.active_ad_applications.count %>]</span>
-  <span id="status_shortlisted" class="status_colour_bluelight">shortlisted [<%# @userr.forms.applicant_shortlisted.open_ad_applications.active_ad_applications.count %>]</span>
+  <span id="status_shortlisted" class="status_colour_bluelight">shortlisted [<%# @userr.forms.applicant_shortlisted.open_ad_applications.active_ad_applications.count %>]</span> -->
   <div class="h1_subtitle"><i class="fa fa-info-circle"></i> displays all registered users on the platform</div>
 </h1>
 
@@ -14,6 +14,7 @@
     <div class="table">
       <div class="tablerow">
         <div class="tablecell header background">all registered users</div>
+        <div class="tablecell background"></div>
         <div class="tablecell background"></div>
         <div class="tablecell background"></div>
         <div class="tablecell background"></div>
@@ -40,35 +41,42 @@
           <div class="tablecell">
             <div class="user_name"><%= "#{user.firstname} #{user.lastname}" %></div>
             <div class="ref_id"><%= user.reference %></div>
-            <span class="faint_text_format"><%= user.profession %></span>
+            <% if user.subscribed? %>
+              <div class="ref_id"><%= "subscribed" %></div>
+            <% else %>
+              <div class="faint_text_format"><%= "unsubscribed" %></div> 
+            <% end %>
           </div>
           <div class="tablecell">
-            <span class="main_text_format">e: <%= mail_to "#{user.email}", "#{user.email}" %></span>
+            <div class="main_text_format">e: <%= mail_to "#{user.email}", "#{user.email}" %></div>
+            <div class="faint_text_format"><%= user.profession %></div>
             <div class="faint_text_format">london, united kingdom</div> 
           </div>
-
           <div class="tablecell">
             <div class="faint_text_format">Role</div> 
-            <span class="main_text_format"><%= user.category_role.name %></span>
+            <div class="main_text_format"><%= user.category_role.name %></div>
           </div>
-
           <div class="tablecell">
             <div class="faint_text_format">Group</div> 
-            <span class="main_text_format"><%= user.category_managementgroup.name %></span>
+            <div class="main_text_format"><%= user.category_managementgroup.name %></div>
           </div>
-
           <div class="tablecell">
             <div class="overall_rate">
               <div>Rate</div>
               <div><%= number_with_precision(user.overall_ratings, precision: 1) %></div>
             </div>
           </div>
-
           <div class="tablecell">
             <div>
-              <span class="main_text_format"><%= user.socials.count %></span>
+              <span class="main_text_format"><%= user.socials.live_socials.open_socials.count %></span>
               <span class="faint_text_format"> :Created Socials</span> 
             </div>
+            <div>
+              <span class="main_text_format"><%= user.events.live_events.open_events.count %></span>
+              <span class="faint_text_format"> :Created Events</span> 
+            </div>
+          </div>
+          <div class="tablecell">
             <div>
               <span class="main_text_format"><%= user.attending_socials.live_socials.open_socials.count %></span>
               <span class="faint_text_format"> :Attending Socials</span> 
@@ -78,10 +86,6 @@
               <span class="faint_text_format"> :Booked Events</span> 
             </div>
           </div>
-
-     
-
-   
         </div>
       <% end %>
     </div>
