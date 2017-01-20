@@ -18,4 +18,9 @@ class Payment < ActiveRecord::Base
       self.reference = "SPz_" + Devise.friendly_token.first(reference_length)
     end while self.class.exists?(reference: reference)
   end
+
+  # def total_price
+  #   # find the list of payments belonging to an event
+  #   self.event.to_a.sum { |item| item.price }
+  # end
 end
