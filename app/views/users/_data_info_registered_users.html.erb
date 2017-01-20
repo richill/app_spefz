@@ -1,7 +1,7 @@
 <h1>registered users [<%= @users.all.count %>]
-  <span id="status_pending" class="status_colour_blue">all [<%= @users.all.count %>]</span>
-  <span id="status_pending" class="status_colour_blue">male [<%= @users.males.count %>]</span>
-  <span id="status_pending" class="status_colour_blue">female [<%= @users.females.count %>]</span>
+  <span id="status_users_all" class="status_colour_blue">all [<%= @users.all.count %>]</span>
+  <span id="status_users_male" class="status_colour_blue">male [<%= @users.males.count %>]</span>
+  <span id="status_users_female" class="status_colour_blue">female [<%= @users.females.count %>]</span>
   <span id="status_hired" class="status_colour_green">hired [<%# @userr.forms.applicant_accepted.count %>]</span>
   <span id="status_rejected" class="status_colour_red">rejected [<%# @userr.forms.applicant_rejected.open_ad_applications.active_ad_applications.count %>]</span>
   <span id="status_interview" class="status_colour_yellow">interview [<%# @userr.forms.applicant_interview.open_ad_applications.active_ad_applications.count %>]</span>
