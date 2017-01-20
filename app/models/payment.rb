@@ -12,6 +12,9 @@ class Payment < ActiveRecord::Base
   scope :valid_subscriptions, -> {where(['event_payment_date = ? OR event_payment_date IS ?', false, nil])}
   scope :status_success, -> {where(['status = ?', "success"])}
 
+  scope :events_with_successful_payments, -> {joins(:events).map(&:event)}
+
+
   def generate_reference_number
     begin
       reference_length = 6
@@ -19,8 +22,8 @@ class Payment < ActiveRecord::Base
     end while self.class.exists?(reference: reference)
   end
 
-  # def total_price
-  #   # find the list of payments belonging to an event
-  #   self.event.to_a.sum { |item| item.price }
-  # end
+  # more reliable
+  #payments.status_success.joins(:event).map(&:event) [displays events with sucessful payments]
+  #payments.status_success.joins(:event).map(&:event).map(&:price) [displays prices of events with sucessful payments]
+  #payments.status_success.joins(:event).map(&:event).map(&:price).sum [displays total sum of events with sucessful payments]
 end

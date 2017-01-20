@@ -59,22 +59,9 @@ class Event < ActiveRecord::Base
 
   scope :created_this_month, -> { where(created_at: Time.now.beginning_of_month..Time.now.end_of_month) }
 
-
-
-
-  # more reliable
-  #payments.status_success.joins(:event).map(&:event) [ displays events with sucessful payments]
-  #payments.status_success.joins(:event).map(&:event).map(&:price)
-  #payments.status_success.joins(:event).map(&:event).map(&:price).sum
-
   def event_with_payments_sum(event)
     self.payments.to_a.map(&:price).sum
   end
-
-
-
-
-
 
   def slug_events
     [
