@@ -23,7 +23,7 @@
       </div>
       <% @users.all.each do |user| %>
         <div class="tablerow">
-          <div class="tablecell">
+          <div class="tablecell" style="width:16%">
             <div class="banner_wrapper_index">
               <% if user_signed_in? %>
                 <% if current_user.admin_pa_management_group %>

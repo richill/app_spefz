@@ -103,6 +103,35 @@
   background-color: rgba(255, 255, 255, 0.9) !important;
 }
 
+.user_dashboard_admin_overview .lower_data_inner_content .image_container {
+  background-color: rgba(0, 0, 0, 0.03) !important;
+  padding: 5px;
+  border-radius: 2px;
+}
+
+.user_dashboard_admin_overview .lower_data_inner_content .image {
+  margin: auto;
+}
+
+.user_dashboard_admin_overview .lower_data_inner_content .image {
+  width: 50px;
+  height: 50px;
+  background: url("img-profile-default.png") no-repeat;
+  background-size: 60%;
+  background-color: rgba(0, 0, 0, 0.05) !important;
+  border-radius: 250px;
+  background-position: 50% 45%;
+}
+
+.user_dashboard_admin_overview .lower_data_inner_content .image img {
+  height: 50px;
+  border-radius: 250px;
+}
+
+.user_dashboard_admin_overview .lower_data_inner_content .image img:hover {
+  opacity: 0.7;
+}
+
 .user_dashboard_admin_overview .lower_data_inner_content h1 {
   background-color: rgba(0, 0, 0, 0.05) !important;
   font-size: 22px;
@@ -518,34 +547,7 @@
 //  workings
 // -----------------------------------
 
-.user_dashboard_admin_overview .lower_data_inner_content .image_container {
-  background-color: rgba(0, 0, 0, 0.03) !important;
-  padding: 5px;
-  border-radius: 2px;
-}
 
-.user_dashboard_admin_overview .lower_data_inner_content .image {
-  margin: auto;
-}
-
-.user_dashboard_admin_overview .lower_data_inner_content .image {
-  width: 50px;
-  height: 50px;
-  background: url("img-profile-default.png") no-repeat;
-  background-size: 60%;
-  background-color: rgba(0, 0, 0, 0.05) !important;
-  border-radius: 250px;
-  background-position: 50% 45%;
-}
-
-.user_dashboard_admin_overview .lower_data_inner_content .image img {
-  height: 50px;
-  border-radius: 250px;
-}
-
-.user_dashboard_admin_overview .lower_data_inner_content .image img:hover {
-  opacity: 0.7;
-}
 
 
 
