@@ -1,0 +1,55 @@
+<div class="user_dashboard_admin_overview user_dashboard_admin_company">
+  <!-- upper_data_content -->
+  <div class="medium-12 columns upper_data_content">
+    <div class="medium-2 columns left_data responsive_data">
+      <div class="data_content">
+        <div class="header"> total registered users</div>
+        <div class="header_data"><span class="header_icon"><i class="fa fa-users" aria-hidden="true"></i></span><span><%# @users.all.count %></span></div>
+      </div>
+    </div>
+    <div class="medium-2 columns middle_data responsive_data">
+      <div class="data_content">
+        <div class="header"> total subscribed users</div>
+        <div class="header_data"><span class="header_icon"><i class="fa fa-user-plus" aria-hidden="true"></i></span>
+          <span><%# @users.subcribed_users.count %></span>
+          <span class="minor_info">£<%# (@users.subcribed_users.count) * (@premium_plan.price) %>/mth</span>
+        </div>
+      </div>
+    </div>
+    <div class="medium-2 columns middle_data responsive_data">
+      <div class="data_content">
+        <div class="header"> total socials</div>
+        <div class="header_data"><span class="header_icon"><i class="fa fa-calendar" aria-hidden="true"></i></span><span><%# @socials.all.count %></span></div>
+      </div>
+    </div>
+    <div class="medium-2 columns middle_data responsive_data">
+      <div class="data_content">
+        <div class="header"> total events</div>
+        <div class="header_data"><span class="header_icon"><i class="fa fa-calendar" aria-hidden="true"></i></span><span><%# @events.all.count %></span></div>
+      </div>
+    </div>
+    <div class="medium-2 columns middle_data responsive_data">
+      <div class="data_content">
+        <div class="header"> total active socials</div>
+        <div class="header_data"><span class="header_icon"><i class="fa fa-calendar-check-o" aria-hidden="true"></i></span><span><%# @socials.live_socials.open_socials.count %></span></div>
+      </div>
+    </div>
+    <div class="medium-2 columns right_data responsive_data">
+      <div class="data_content">
+        <div class="header"> total active events</div>
+        <div class="header_data"><span class="header_icon"><i class="fa fa-calendar-check-o" aria-hidden="true"></i></span><span><%# @events.live_events.open_events.count %></span></div>
+      </div>
+    </div>
+  </div>
+  <div class="clear"></div>
+
+  <!-- table_data_content -->
+  <div class="medium-12 columns lower_data_content">
+    <div class="medium-12 columns lower_data_inner_content">
+      <%# render 'data_info_registered_users' %>
+    </div>
+  </div>
+
+  <div class="clear"></div>
+</div>
+
