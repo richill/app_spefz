@@ -101,6 +101,23 @@
                                   <span class="mid_divider">|</span>
                                   <span class="category">Category:</span> 
                                   <span class="category_info"><%= link_to "#{event.category_topic.name}", socials_path(q: {category_topic_name_eq: event.category_topic.name}) %></span>
+                                  <% if event.display_event_match? %>
+                                    <span class="mid_divider">|</span> 
+                                    <span class="category">Match:</span>
+                                    <span class="category_info">
+                                      <a href="#" data-reveal-id="myModal-match-info"><%= event.match(current_user) %>%</a>
+                                      <%= render 'shared/modal_match_info' %> 
+                                    </span> 
+                                  <% end %>
+                                  <span class="mid_divider">|</span> 
+                                  <span class="price">Price:</span>
+                                  <span class="price_figure">
+                                    <% if event.expired_or_closed_event %>
+                                      <span>Event Closed</span>
+                                    <% else %>
+                                      <span>£<%= number_with_precision(event.price, precision: 2) %></span>
+                                    <% end %>
+                                  </span>
                                 </div>
                                 <div class="divider"></div>
                                 <div class="description"><%= truncate(event.description, length: 200) %></div>

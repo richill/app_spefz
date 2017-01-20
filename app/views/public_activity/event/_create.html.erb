@@ -43,12 +43,14 @@
                       <span class="mid_divider">|</span>
                       <span class="category">Category:</span> 
                       <span class="category_info"><%= link_to "#{activity.trackable.category_topic.name}", events_path(q: {category_topic_name_eq: activity.trackable.category_topic.name}) %></span>
-                      <span class="mid_divider">|</span> 
-                      <span class="category">Match:</span>
-                      <span class="match_info">
-                        <a href="#" data-reveal-id="myModal-match-info"><%= activity.trackable.match(current_user) %>%</a>
-                        <%= render 'shared/modal_match_info' %> 
-                      </span> 
+                      <% if activity.trackable.display_event_match? %>
+                        <span class="mid_divider">|</span> 
+                        <span class="category">Match:</span>
+                        <span class="match_info">
+                          <a href="#" data-reveal-id="myModal-match-info"><%= activity.trackable.match(current_user) %>%</a>
+                          <%= render 'shared/modal_match_info' %> 
+                        </span> 
+                      <% end %>
                       <span class="mid_divider">|</span> 
                       <span class="price">Price:</span>
                       <span class="price_figure">

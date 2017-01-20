@@ -65,7 +65,7 @@ class Event < ActiveRecord::Base
   end
 
   def display_event_match?
-    self.hide_match == true
+    self.display_match == true
   end
 
   def event_access_below_user_score(user)

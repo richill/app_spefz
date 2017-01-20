@@ -106,14 +106,16 @@
           <span class="header">Age Group:</span>
           <span class="content"><%= @event.category_age.name %></span>
         </li>
-        <li><span>|</span></li>
-        <li>
-          <span class="header">Match: </span> 
-          <span class="content match_link_info">
-            <a href="#" data-reveal-id="myModal-match-info"><%= @event.match(current_user) %>%</a>
-            <%= render 'shared/modal_match_info' %>
-          </span>
-        </li>
+        <% if @event.display_event_match? %>
+          <li><span>|</span></li>
+          <li>
+            <span class="header">Match: </span> 
+            <span class="content match_link_info">
+              <a href="#" data-reveal-id="myModal-match-info"><%= @event.match(current_user) %>%</a>
+              <%= render 'shared/modal_match_info' %>
+            </span>
+          </li>
+        <% end %>
       </ul>
       <ul class="inline-list right">
 
