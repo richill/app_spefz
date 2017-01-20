@@ -24,6 +24,7 @@ class Payment < ActiveRecord::Base
   # # payments.status_success.sum_events_with_successful_payments_prices
   # displays total sum of events with sucessful payments
 
+  scope :created_this_month, -> { where(created_at: Time.now.beginning_of_month..Time.now.end_of_month) }
 
   def generate_reference_number
     begin
@@ -31,9 +32,4 @@ class Payment < ActiveRecord::Base
       self.reference = "SPz_" + Devise.friendly_token.first(reference_length)
     end while self.class.exists?(reference: reference)
   end
-
-  # more reliable
-  #payments.status_success.joins(:event).map(&:event) [displays events with sucessful payments]
-  #payments.status_success.joins(:event).map(&:event).map(&:price) [displays prices of events with sucessful payments]
-  #payments.status_success.joins(:event).map(&:event).map(&:price).sum [displays total sum of events with sucessful payments]
 end

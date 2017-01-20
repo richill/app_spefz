@@ -69,6 +69,7 @@ class UsersController < ApplicationController
     @users = User.all
     @socials = Social.all
     @events = Event.all
+    @payments = Payment.all
   end
 
   def stats_users
