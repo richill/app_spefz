@@ -64,6 +64,10 @@ class Event < ActiveRecord::Base
     ]
   end
 
+  def display_event_match?
+    self.hide_match == true
+  end
+
   def event_access_below_user_score(user)
     self.event_score_access.to_f.round(1) <= user.overall_ratings
   end

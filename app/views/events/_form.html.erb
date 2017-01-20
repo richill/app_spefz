@@ -31,6 +31,7 @@
     <%= f.text_field :tag_list, value: @event.tag_list.to_s, placeholder: "charity, education, social, music, social impact, travel, health, jazz..." %>
 
     <div class="event_score_access">
+        <div><%= f.input :hide_match, label: "Display Event Match %" %></div>
         <div><%= f.input :event_score_access, label: "Event Score Access", placeholder: "3.5" %></div>
     </div>
 
