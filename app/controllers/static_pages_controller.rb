@@ -6,6 +6,8 @@ class StaticPagesController < ApplicationController
     @premium_plan = Subscription.find_by(title:"premium")
     if signed_in?
       @user_network_activities = Activity.order("created_at desc").where(owner_id: current_user.friends)
+      @user = User.find(current_user.id)
+      @friend = User.find_by_email(params[:id])
     end
   end
 
@@ -13,6 +15,8 @@ class StaticPagesController < ApplicationController
     @premium_plan = Subscription.find_by(title:"premium")
     if signed_in?
       @user_network_activities = Activity.order("created_at desc").where(owner_id: current_user.friends)
+      @user = User.find(current_user.id)
+      @friend = User.find_by_email(params[:id])
     end
   end
 
@@ -20,6 +24,8 @@ class StaticPagesController < ApplicationController
     @premium_plan = Subscription.find_by(title:"premium")
     if signed_in?
       @user_network_activities = Activity.order("created_at desc").where(owner_id: current_user.friends)
+      @user = User.find(current_user.id)
+      @friend = User.find_by_email(params[:id])
     end
   end
 
@@ -27,6 +33,8 @@ class StaticPagesController < ApplicationController
     @premium_plan = Subscription.find_by(title:"premium")
     if signed_in?
       @user_network_activities = Activity.order("created_at desc").where(owner_id: current_user.friends)
+      @user = User.find(current_user.id)
+      @friend = User.find_by_email(params[:id])
     end 
   end
 
@@ -34,6 +42,8 @@ class StaticPagesController < ApplicationController
     @premium_plan = Subscription.find_by(title:"premium")
     if signed_in?
       @user_network_activities = Activity.order("created_at desc").where(owner_id: current_user.friends)
+      @user = User.find(current_user.id)
+      @friend = User.find_by_email(params[:id])
     end
   end
   
@@ -41,6 +51,8 @@ class StaticPagesController < ApplicationController
     @premium_plan = Subscription.find_by(title:"premium")
     if signed_in?
       @user_network_activities = Activity.order("created_at desc").where(owner_id: current_user.friends)
+      @user = User.find(current_user.id)
+      @friend = User.find_by_email(params[:id])
     end
   end
 
@@ -48,6 +60,8 @@ class StaticPagesController < ApplicationController
     @premium_plan = Subscription.find_by(title:"premium")
     if signed_in?
       @user_network_activities = Activity.order("created_at desc").where(owner_id: current_user.friends)
+      @user = User.find(current_user.id)
+      @friend = User.find_by_email(params[:id])
     end
   end
 
@@ -55,6 +69,8 @@ class StaticPagesController < ApplicationController
     @premium_plan = Subscription.find_by(title:"premium")
     if signed_in?
       @user_network_activities = Activity.order("created_at desc").where(owner_id: current_user.friends)
+      @user = User.find(current_user.id)
+      @friend = User.find_by_email(params[:id])
     end
   end
 
@@ -66,6 +82,8 @@ class StaticPagesController < ApplicationController
     @premium_plan = Subscription.find_by(title:"premium")
     if signed_in?
       @user_network_activities = Activity.order("created_at desc").where(owner_id: current_user.friends)
+      @user = User.find(current_user.id)
+      @friend = User.find_by_email(params[:id])
     end
   end
 
@@ -78,6 +96,8 @@ class StaticPagesController < ApplicationController
     @premium_plan = Subscription.find_by(title:"premium")
     if signed_in?
       @user_network_activities = Activity.order("created_at desc").where(owner_id: current_user.friends)
+      @user = User.find(current_user.id)
+      @friend = User.find_by_email(params[:id])
     end
   end
 
@@ -85,6 +105,8 @@ class StaticPagesController < ApplicationController
     @premium_plan = Subscription.find_by(title:"premium")
     if signed_in?
       @user_network_activities = Activity.order("created_at desc").where(owner_id: current_user.friends)
+      @user = User.find(current_user.id)
+      @friend = User.find_by_email(params[:id])
     end
   end
 
@@ -92,6 +114,8 @@ class StaticPagesController < ApplicationController
     @premium_plan = Subscription.find_by(title:"premium")
     if signed_in?
       @user_network_activities = Activity.order("created_at desc").where(owner_id: current_user.friends)
+      @user = User.find(current_user.id)
+      @friend = User.find_by_email(params[:id])
     end 
   end
 
@@ -99,6 +123,8 @@ class StaticPagesController < ApplicationController
     @premium_plan = Subscription.find_by(title:"premium")
     if signed_in?
       @user_network_activities = Activity.order("created_at desc").where(owner_id: current_user.friends)
+      @user = User.find(current_user.id)
+      @friend = User.find_by_email(params[:id])
     end
   end
 
@@ -106,6 +132,8 @@ class StaticPagesController < ApplicationController
     @premium_plan = Subscription.find_by(title:"premium")
     if signed_in?
       @user_network_activities = Activity.order("created_at desc").where(owner_id: current_user.friends)
+      @user = User.find(current_user.id)
+      @friend = User.find_by_email(params[:id])
     end
   end
 
@@ -113,6 +141,8 @@ class StaticPagesController < ApplicationController
     @premium_plan = Subscription.find_by(title:"premium")
     if signed_in?
       @user_network_activities = Activity.order("created_at desc").where(owner_id: current_user.friends)
+      @user = User.find(current_user.id)
+      @friend = User.find_by_email(params[:id])
     end 
   end
 
@@ -120,6 +150,8 @@ class StaticPagesController < ApplicationController
     @premium_plan = Subscription.find_by(title:"premium")
     if signed_in?
       @user_network_activities = Activity.order("created_at desc").where(owner_id: current_user.friends)
+      @user = User.find(current_user.id)
+      @friend = User.find_by_email(params[:id])
     end
   end
 
