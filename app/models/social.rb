@@ -39,6 +39,8 @@ class Social < ActiveRecord::Base
 
   scope :open_socials, -> {where(['close = ? OR close IS ?', false, nil])}
 
+  scope :created_this_month, -> { where(created_at: Time.now.beginning_of_month..Time.now.end_of_month) }
+
   def slug_socials
     [
       :title

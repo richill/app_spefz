@@ -66,6 +66,9 @@ class UsersController < ApplicationController
   end
 
   def company
+    @users = User.all
+    @socials = Social.all
+    @events = Event.all
   end
 
   def stats_users

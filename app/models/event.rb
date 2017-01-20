@@ -57,6 +57,8 @@ class Event < ActiveRecord::Base
 
   # scope :live_or_open_events, -> {where(close = 'f' OR close IS NULL) AND (date >= '2016-11-19')}
 
+  scope :created_this_month, -> { where(created_at: Time.now.beginning_of_month..Time.now.end_of_month) }
+
 
   def slug_events
     [
