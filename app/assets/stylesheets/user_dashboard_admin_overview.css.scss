@@ -356,10 +356,11 @@
   color: #E1473E !important;
 }
 
-.user_dashboard_admin_overview .lower_data_inner_content .job_match_stat {
+.user_dashboard_admin_overview .lower_data_inner_content .overall_rate {
   font-size: 12px;
+  font-weight: 400 !important;
   background-color: rgba(225, 71, 62, 0.85) !important;
-  text-transform: lowercase;
+  text-transform: capitalize;
   padding: 10px;
   color: #fff;
   font-weight: bold;
@@ -382,12 +383,24 @@
   position: relative;
 }
 
-.user_dashboard_admin_overview .lower_data_inner_content .faint_text {
+.user_dashboard_admin_overview .lower_data_inner_content .faint_text_format {
+  color: #8b8a8c !important;
+  font-weight: 300;
+  text-transform: capitalize;
+}
+
+.faint_text_format a {
   color: #8b8a8c !important;
 }
 
-.faint_text a {
-  color: #8b8a8c !important;
+.user_dashboard_admin_overview .lower_data_inner_content .main_text_format {
+  color: #2F3F5B !important;
+  font-weight: 400;
+}
+
+.user_dashboard_admin_overview .lower_data_inner_content .main_text_format a {
+  color: #2F3F5B !important;
+  font-weight: 400;
 }
 
 .user_dashboard_admin_overview .lower_data_inner_content .application a {
