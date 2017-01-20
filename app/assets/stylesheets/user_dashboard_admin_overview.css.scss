@@ -3,7 +3,7 @@
     File: views / users / _user_dashboard_admin_overview.html.erb
   =========================================*/
 
-.userr_dashboard_content .tree_link {
+.user_dashboard_admin_overview .tree_link {
   font-family: "Lato", sans-serif;
   font-size: 12px;
   color: #2F3F5B;
@@ -15,19 +15,18 @@
 //  upper_data_content
 // -----------------------------------
 
-.userr_dashboard_content .upper_data_content {
+.user_dashboard_admin_overview .upper_data_content {
   padding: 0px !important;
   margin-bottom: 30px;
   background-color: rgba(0, 0, 0, 0.05) !important;
 }
 
-.userr_dashboard_content .data_content {
+.user_dashboard_admin_overview .data_content {
   text-align: center;
   color: #2F3F5B;
 }
 
-.userr_dashboard_content .data_content .header {
-  // font-family: sans-serif;
+.user_dashboard_admin_overview .data_content .header {
   font-family: 'Lato', sans-serif;
   text-transform: capitalize;
   background-color: #2F3F5B;
@@ -40,31 +39,32 @@
   word-spacing: 2px;
 }
 
-.userr_dashboard_content .header_data {
+.user_dashboard_admin_overview .header_data {
   font-family: sans-serif;
   font-size: 25px;
   padding: 10px 0px;
   border: 1px solid #D4D4D4;
   border-bottom: 2px solid #D4D4D4;
   background-color: rgba(255, 255, 255, 0.9) !important;
+  height: 60px;
 }
 
-.userr_dashboard_content .header_icon {
+.user_dashboard_admin_overview .header_icon {
   float: left;
   padding: 0px 20px;
   border-right: 1px solid #D4D4D4;
   opacity: 0.8;
 }
 
-.userr_dashboard_content .left_data {
+.user_dashboard_admin_overview .left_data {
   padding: 15px 5px 15px 15px;
 }
 
-.userr_dashboard_content .middle_data {
+.user_dashboard_admin_overview .middle_data {
   padding: 15px 5px;
 }
 
-.userr_dashboard_content .right_data {
+.user_dashboard_admin_overview .right_data {
   padding: 15px 15px 15px 5px;
 }
 
@@ -72,7 +72,7 @@
 //  data_graph_content
 // -----------------------------------
 
-.userr_dashboard_content .data_graph_content {
+.user_dashboard_admin_overview .data_graph_content {
   padding: 0px !important;
   height: 300px;
   background-color: rgba(0, 0, 0, 0.05) !important;
@@ -83,12 +83,12 @@
 //  middle_data_content
 // -----------------------------------
 
-.userr_dashboard_content .middle_data_content {
+.user_dashboard_admin_overview .middle_data_content {
   margin-bottom: 30px;
   background-color: rgba(0, 0, 0, 0.05) !important;
 }
 
-.userr_dashboard_content .middle_data_content .middle_data_header {
+.user_dashboard_admin_overview .middle_data_content .middle_data_header {
   background-color: rgba(255, 255, 255, 0.9) !important;
   // background-color: rgba(0, 0, 0, 0.05) !important;
   margin-top: 15px;
@@ -96,12 +96,12 @@
   padding: 15px;
 }
 
-.userr_dashboard_content .middle_data_content .middle_data_header_inner {
+.user_dashboard_admin_overview .middle_data_content .middle_data_header_inner {
   background-color: rgba(0, 0, 0, 0.05) !important;
   padding: 5px;
 }
 
-.userr_dashboard_content .middle_data_content .middle_data_header_main {
+.user_dashboard_admin_overview .middle_data_content .middle_data_header_main {
   font-size: 22px;
   text-align: left;
   text-transform: capitalize;
@@ -109,7 +109,7 @@
   color: #2F3F5B;
 }
 
-.userr_dashboard_content .middle_data_content .middle_data_header_subtitle {
+.user_dashboard_admin_overview .middle_data_content .middle_data_header_subtitle {
   font-size: 12px;
   text-align: left;
   text-transform: lowercase;
@@ -120,28 +120,28 @@
 // -----------------------------------
 //  middle_data_content / left_data_content
 // -----------------------------------
-.userr_dashboard_content .job_info_section_one {
+.user_dashboard_admin_overview .job_info_section_one {
   margin-top: 15px;
 }
 
-.userr_dashboard_content .left_data_content {
+.user_dashboard_admin_overview .left_data_content {
   padding: 0px 15px 15px 0px;
 }
 @media only screen and (max-width: 1200px) {
-  .userr_dashboard_content .left_data_content {
+  .user_dashboard_admin_overview .left_data_content {
     width: 100% !important;
     padding-right: 0px !important;
   }
 }
 
-.userr_dashboard_content .left_data_content .left_inner_content {
+.user_dashboard_admin_overview .left_data_content .left_inner_content {
   padding: 15px 15px 30px;
   height: 345px;
   overflow: scroll;
   background-color: rgba(255, 255, 255, 0.9) !important;
 }
 
-.userr_dashboard_content .left_data_content .table { 
+.user_dashboard_admin_overview .left_data_content .table { 
   font-family: "Lato", sans-serif;
   font-size: 14px;
   color: #2F3F5B;
@@ -150,36 +150,36 @@
   width: 100%;
 }
 
-.userr_dashboard_content .left_data_content .table .header {
+.user_dashboard_admin_overview .left_data_content .table .header {
   font-size: 22px;
   text-align: left;
   text-transform: capitalize;
 }
 
-.userr_dashboard_content .left_data_content .dashboard_view a {
+.user_dashboard_admin_overview .left_data_content .dashboard_view a {
   color: #2F3F5B !important;
 }
 
-.userr_dashboard_content .left_data_content .dashboard_view a:hover {
+.user_dashboard_admin_overview .left_data_content .dashboard_view a:hover {
   text-decoration: underline;
   color: #E1473E !important;
 }
 
-.userr_dashboard_content .left_data_content .table .background {
+.user_dashboard_admin_overview .left_data_content .table .background {
   background-color: rgba(0, 0, 0, 0.05) !important;
 }
 
-.userr_dashboard_content .left_data_content .table  .tablerow .tablecell a { 
+.user_dashboard_admin_overview .left_data_content .table  .tablerow .tablecell a { 
   font-family: "Lato", sans-serif !important;
   font-size: 12px !important;
 }
 
-.userr_dashboard_content .left_data_content .table  .tablerow .tablecell a:hover { 
+.user_dashboard_admin_overview .left_data_content .table  .tablerow .tablecell a:hover { 
   text-decoration: underline !important;
 }
 
 
-.userr_dashboard_content .left_data_content .image {
+.user_dashboard_admin_overview .left_data_content .image {
   width: 50px;
   height: 50px;
   background: url("img-profile-default.png") no-repeat;
@@ -189,70 +189,70 @@
   background-position: 50% 45%;
 }
 
-.userr_dashboard_content .left_data_content .image img {
+.user_dashboard_admin_overview .left_data_content .image img {
   height: 50px;
   border-radius: 250px;
 }
 
-.userr_dashboard_content .left_data_content .image img:hover {
+.user_dashboard_admin_overview .left_data_content .image img:hover {
   opacity: 0.7;
 }
 
 
-.userr_dashboard_content .left_data_content .user_name {
+.user_dashboard_admin_overview .left_data_content .user_name {
   font-weight: bold !important;
   text-transform: capitalize !important;
 }
 
-.userr_dashboard_content .left_data_content .user_name a {
+.user_dashboard_admin_overview .left_data_content .user_name a {
   font-weight: bold !important;
   color: #2F3F5B !important;
 }
 
-.userr_dashboard_content .left_data_content .user_email a {
+.user_dashboard_admin_overview .left_data_content .user_email a {
   color: #2F3F5B !important;
 }
 
-.userr_dashboard_content .left_data_content .user_email a:hover {
+.user_dashboard_admin_overview .left_data_content .user_email a:hover {
   text-decoration: underline;
 }
 
-.userr_dashboard_content .left_data_content .user_tel a {
+.user_dashboard_admin_overview .left_data_content .user_tel a {
   color: #2F3F5B !important;
 }
 
-.userr_dashboard_content .left_data_content .user_tel a:hover {
+.user_dashboard_admin_overview .left_data_content .user_tel a:hover {
   text-decoration: underline;
 }
 
-.userr_dashboard_content .left_data_content .user_location a {
+.user_dashboard_admin_overview .left_data_content .user_location a {
   color: #8b8a8c !important;
   text-transform: capitalize;
   font-size: 10px !important;
 }
 
-.userr_dashboard_content .left_data_content .user_cv_rating {
+.user_dashboard_admin_overview .left_data_content .user_cv_rating {
   text-align: center !important;
   font-size: 12px;
 }
 
-.userr_dashboard_content .left_data_content .application {
+.user_dashboard_admin_overview .left_data_content .application {
   font-size: 10px;
 }
 
-.userr_dashboard_content .left_data_content .tablerow  { 
+.user_dashboard_admin_overview .left_data_content .tablerow  { 
   display: table-row; 
   border-bottom: 1px solid #D4D4D4;
 }
 
-.userr_dashboard_content .left_data_content .tablecell { 
+.user_dashboard_admin_overview .left_data_content .tablecell { 
   display: table-cell; 
   padding: 10px 5px;
   vertical-align: middle;
   position: relative;
 }
 
-.userr_dashboard_content .left_data_content .new a {
+.user_dashboard_admin_overview .left_data_content .new a {
   text-align: center;
   background-color: #8ABFA1 !important;
   color: #fff !important;
@@ -263,7 +263,7 @@
   padding: 5px 15px !important;
 }
 
-.userr_dashboard_content .left_data_content .new a:hover {
+.user_dashboard_admin_overview .left_data_content .new a:hover {
   background-color: #2F3F5B !important;
   text-decoration: none !important;
 }
@@ -273,27 +273,27 @@
 //  middle_data_content / right_data_content
 // -----------------------------------
 
-.userr_dashboard_content .job_info_section_one {
+.user_dashboard_admin_overview .job_info_section_one {
   margin-top: 15px;
 }
 
-.userr_dashboard_content .right_data_content {
+.user_dashboard_admin_overview .right_data_content {
   padding: 0px 0px 15px !important;
 }
 @media only screen and (max-width: 1200px) {
-  .userr_dashboard_content .right_data_content {
+  .user_dashboard_admin_overview .right_data_content {
     width: 100% !important;
   }
 }
 
-.userr_dashboard_content .right_data_content .right_inner_content {
+.user_dashboard_admin_overview .right_data_content .right_inner_content {
   padding: 15px 15px 30px;
   background-color: rgba(255, 255, 255, 0.9) !important;
   height: 345px;
   overflow: scroll;
 }
 
-.userr_dashboard_content .right_data_content .table { 
+.user_dashboard_admin_overview .right_data_content .table { 
   font-family: "Lato", sans-serif;
   font-size: 14px;
   color: #2F3F5B;
@@ -302,7 +302,7 @@
   width: 100%;
 }
 
-.userr_dashboard_content .right_data_content .table .header {
+.user_dashboard_admin_overview .right_data_content .table .header {
   font-size: 22px;
   text-align: left;
   text-transform: capitalize;
@@ -317,20 +317,20 @@
   color: #E1473E !important;
 }
 
-.userr_dashboard_content .right_data_content .table .background {
+.user_dashboard_admin_overview .right_data_content .table .background {
   background-color: rgba(0, 0, 0, 0.05) !important;
 }
 
-.userr_dashboard_content .right_data_content .table  .tablerow .tablecell a { 
+.user_dashboard_admin_overview .right_data_content .table  .tablerow .tablecell a { 
   font-family: "Lato", sans-serif !important;
   font-size: 10px !important;
 }
 
-.userr_dashboard_content .right_data_content .table  .tablerow .tablecell a:hover { 
+.user_dashboard_admin_overview .right_data_content .table  .tablerow .tablecell a:hover { 
   text-decoration: underline !important;
 }
 
-.userr_dashboard_content .right_data_content .image {
+.user_dashboard_admin_overview .right_data_content .image {
   width: 50px;
   height: 50px;
   background: url("img-profile-default.png") no-repeat;
@@ -340,70 +340,70 @@
   background-position: 50% 45%;
 }
 
-.userr_dashboard_content .right_data_content .image img {
+.user_dashboard_admin_overview .right_data_content .image img {
   height: 50px;
   border-radius: 250px;
 }
 
-.userr_dashboard_content .right_data_content .image img:hover {
+.user_dashboard_admin_overview .right_data_content .image img:hover {
   opacity: 0.7;
 }
 
-.userr_dashboard_content .right_data_content .user_name {
+.user_dashboard_admin_overview .right_data_content .user_name {
   font-weight: bold !important;
   text-transform: capitalize !important;
 }
 
-.userr_dashboard_content .right_data_content .user_name a {
+.user_dashboard_admin_overview .right_data_content .user_name a {
   font-weight: bold !important;
   color: #2F3F5B !important;
 }
 
-.userr_dashboard_content .right_data_content .user_email a {
+.user_dashboard_admin_overview .right_data_content .user_email a {
   color: #2F3F5B !important;
 }
 
-.userr_dashboard_content .right_data_content .user_email a:hover {
+.user_dashboard_admin_overview .right_data_content .user_email a:hover {
   text-decoration: underline;
 }
 
-.userr_dashboard_content .right_data_content .invite_text {
+.user_dashboard_admin_overview .right_data_content .invite_text {
   font-size: 11px;
 }
 
-.userr_dashboard_content .right_data_content .invite_job a {
+.user_dashboard_admin_overview .right_data_content .invite_job a {
   color: #E1473E !important;
   text-decoration: underline;
 }
 
-.userr_dashboard_content .right_data_content .invite_job a:hover {
+.user_dashboard_admin_overview .right_data_content .invite_job a:hover {
   color: #2F3F5B !important;
   text-decoration: underline;
 }
 
-.userr_dashboard_content .right_data_content .invite_date {
+.user_dashboard_admin_overview .right_data_content .invite_date {
   font-size: 11px;
   color: #8ABFA1;
 }
 
-.userr_dashboard_content .right_data_content .user_cv_rating {
+.user_dashboard_admin_overview .right_data_content .user_cv_rating {
   text-align: center !important;
   font-size: 12px;
 }
 
-.userr_dashboard_content .right_data_content .tablerow  { 
+.user_dashboard_admin_overview .right_data_content .tablerow  { 
   display: table-row; 
   border-bottom: 1px solid #D4D4D4;
 }
 
-.userr_dashboard_content .right_data_content .tablecell { 
+.user_dashboard_admin_overview .right_data_content .tablecell { 
   display: table-cell; 
   padding: 10px 5px;
   vertical-align: middle;
   position: relative;
 }
 
-.userr_dashboard_content .right_data_content .new a {
+.user_dashboard_admin_overview .right_data_content .new a {
   text-align: center;
   background-color: #8ABFA1 !important;
   color: #fff !important;
@@ -414,7 +414,7 @@
   padding: 5px 15px !important;
 }
 
-.userr_dashboard_content .right_data_content .new a:hover {
+.user_dashboard_admin_overview .right_data_content .new a:hover {
   background-color: #2F3F5B !important;
   text-decoration: none !important;
 }
@@ -424,7 +424,7 @@
 //  lower_data_content
 // -----------------------------------
 
-.userr_dashboard_content .lower_data_content {
+.user_dashboard_admin_overview .lower_data_content {
   padding: 15px !important;
   margin-bottom: 30px;
   background-color: rgba(0, 0, 0, 0.05) !important;
@@ -433,16 +433,16 @@
 // -----------------------------------
 //  lower_data_content / bottom_data_content: adverts/index
 // -----------------------------------
-.userr_dashboard_content .job_info_section_one {
+.user_dashboard_admin_overview .job_info_section_one {
   margin-top: 15px;
 }
 
-.userr_dashboard_content .bottom_data_content {
+.user_dashboard_admin_overview .bottom_data_content {
   padding: 15px !important;
   background-color: rgba(255, 255, 255, 0.9) !important;
 }
 
-.userr_dashboard_content .bottom_data_content h1 {
+.user_dashboard_admin_overview .bottom_data_content h1 {
   background-color: rgba(0, 0, 0, 0.05) !important;
   font-size: 22px;
   text-align: left;
@@ -452,22 +452,22 @@
   color: #2F3F5B;
 }
 @media only screen and (max-width: 1200px) {
-  .userr_dashboard_content .bottom_data_content h1 {
+  .user_dashboard_admin_overview .bottom_data_content h1 {
     padding: 15px;
   }
 }
 
-.userr_dashboard_content .bottom_data_content h1 .h1_subtitle {
+.user_dashboard_admin_overview .bottom_data_content h1 .h1_subtitle {
   text-transform: lowercase !important;
   font-size: 12px !important;
 }
 @media only screen and (max-width: 1200px) {
-  .userr_dashboard_content .bottom_data_content h1 .h1_subtitle {
+  .user_dashboard_admin_overview .bottom_data_content h1 .h1_subtitle {
     margin-top: 5px;
   }
 }
 
-.userr_dashboard_content .bottom_data_content .status_colour_blue {
+.user_dashboard_admin_overview .bottom_data_content .status_colour_blue {
   font-size: 12px;
   background-color: #2F3F5B;
   padding: 4px 0px;
@@ -481,16 +481,16 @@
   cursor: pointer;
 }
 @media only screen and (max-width: 1200px) {
-  .userr_dashboard_content .bottom_data_content .status_colour_blue {
+  .user_dashboard_admin_overview .bottom_data_content .status_colour_blue {
     width: 100% !important;
   }
 }
 
-.userr_dashboard_content .bottom_data_content .status_colour_blue:hover {
+.user_dashboard_admin_overview .bottom_data_content .status_colour_blue:hover {
   opacity: 0.7;
 }
 
-.userr_dashboard_content .bottom_data_content .status_colour_red {
+.user_dashboard_admin_overview .bottom_data_content .status_colour_red {
   font-size: 12px;
   background-color: #E1473E;
   padding: 4px 0px;
@@ -504,16 +504,16 @@
   cursor: pointer;
 }
 @media only screen and (max-width: 1200px) {
-  .userr_dashboard_content .bottom_data_content .status_colour_red {
+  .user_dashboard_admin_overview .bottom_data_content .status_colour_red {
     width: 100% !important;
   }
 }
 
-.userr_dashboard_content .bottom_data_content .status_colour_red:hover {
+.user_dashboard_admin_overview .bottom_data_content .status_colour_red:hover {
   opacity: 0.7;
 }
 
-.userr_dashboard_content .bottom_data_content .status_colour_green {
+.user_dashboard_admin_overview .bottom_data_content .status_colour_green {
   font-size: 12px;
   background-color: #8ABFA1;
   padding: 4px 0px;
@@ -527,16 +527,16 @@
   cursor: pointer;
 }
 @media only screen and (max-width: 1200px) {
-  .userr_dashboard_content .bottom_data_content .status_colour_green {
+  .user_dashboard_admin_overview .bottom_data_content .status_colour_green {
     width: 100% !important;
   }
 }
 
-.userr_dashboard_content .bottom_data_content .status_colour_green:hover {
+.user_dashboard_admin_overview .bottom_data_content .status_colour_green:hover {
   opacity: 0.7;
 }
 
-.userr_dashboard_content .bottom_data_content .status_colour_yellow {
+.user_dashboard_admin_overview .bottom_data_content .status_colour_yellow {
   font-size: 12px;
   background-color: #fdb657;
   padding: 4px 0px;
@@ -550,16 +550,16 @@
   cursor: pointer;
 }
 @media only screen and (max-width: 1200px) {
-  .userr_dashboard_content .bottom_data_content .status_colour_yellow {
+  .user_dashboard_admin_overview .bottom_data_content .status_colour_yellow {
     width: 100% !important;
   }
 }
 
-.userr_dashboard_content .bottom_data_content .status_colour_yellow:hover {
+.user_dashboard_admin_overview .bottom_data_content .status_colour_yellow:hover {
   opacity: 0.7;
 }
 
-.userr_dashboard_content .bottom_data_content .status_colour_bluelight {
+.user_dashboard_admin_overview .bottom_data_content .status_colour_bluelight {
   font-size: 12px;
   background-color: #4d85b0;
   padding: 4px 0px;
@@ -573,21 +573,21 @@
   cursor: pointer;
 }
 @media only screen and (max-width: 1200px) {
-  .userr_dashboard_content .bottom_data_content .status_colour_bluelight {
+  .user_dashboard_admin_overview .bottom_data_content .status_colour_bluelight {
     width: 100% !important;
   }
 }
 
-.userr_dashboard_content .bottom_data_content .status_colour_bluelight:hover {
+.user_dashboard_admin_overview .bottom_data_content .status_colour_bluelight:hover {
   opacity: 0.7;
 }
 
-.userr_dashboard_content .bottom_data_content .bottom_inner_content {
+.user_dashboard_admin_overview .bottom_data_content .bottom_inner_content {
   max-height: 500px;
   overflow: scroll;
 }
 
-.userr_dashboard_content .bottom_data_content .table { 
+.user_dashboard_admin_overview .bottom_data_content .table { 
   font-family: "Lato", sans-serif;
   font-size: 14px;
   color: #2F3F5B;
@@ -596,67 +596,67 @@
   width: 100%;
 }
 
-.userr_dashboard_content .bottom_data_content .table .header {
+.user_dashboard_admin_overview .bottom_data_content .table .header {
   font-size: 15px;
   text-align: left;
   text-transform: capitalize;
 }
 
-.userr_dashboard_content .bottom_data_content .table .background {
+.user_dashboard_admin_overview .bottom_data_content .table .background {
   background-color: rgba(0, 0, 0, 0.05) !important;
 }
 
-.userr_dashboard_content .bottom_data_content .table  .tablerow .tablecell a { 
+.user_dashboard_admin_overview .bottom_data_content .table  .tablerow .tablecell a { 
   font-family: "Lato", sans-serif !important;
   font-size: 12px !important;
 }
 
-.userr_dashboard_content .bottom_data_content .table  .tablerow .tablecell a:hover { 
+.user_dashboard_admin_overview .bottom_data_content .table  .tablerow .tablecell a:hover { 
   text-decoration: underline !important;
 }
 
-.userr_dashboard_content .bottom_data_content .dashboard_view a {
+.user_dashboard_admin_overview .bottom_data_content .dashboard_view a {
   color: #2F3F5B !important;
   float: right !important;
 }
 
-.userr_dashboard_content .bottom_data_content .dashboard_view a:hover {
+.user_dashboard_admin_overview .bottom_data_content .dashboard_view a:hover {
   color: #E1473E !important;
 }
 
-.userr_dashboard_content .bottom_data_content .user_name a {
+.user_dashboard_admin_overview .bottom_data_content .user_name a {
   font-weight: bold !important;
   color: #2F3F5B !important;
   text-transform: capitalize;
 }
 
-.userr_dashboard_content .bottom_data_content .user_location a {
+.user_dashboard_admin_overview .bottom_data_content .user_location a {
   color: #8b8a8c !important;
 }
 
-.userr_dashboard_content .bottom_data_content .applied_job a {
+.user_dashboard_admin_overview .bottom_data_content .applied_job a {
   color: #E1473E !important;
 }
 
-.userr_dashboard_content .bottom_data_content .advert_title {
+.user_dashboard_admin_overview .bottom_data_content .advert_title {
   font-weight: bold !important;
   text-transform: capitalize !important;
 }
 
-.userr_dashboard_content .bottom_data_content .advert_title a {
+.user_dashboard_admin_overview .bottom_data_content .advert_title a {
   font-weight: bold !important;
   color: #2F3F5B !important;
 }
 
-.userr_dashboard_content .bottom_data_content .ref_title {
+.user_dashboard_admin_overview .bottom_data_content .ref_title {
   font-weight: bold !important;
 }
 
-.userr_dashboard_content .bottom_data_content .ref_id {
+.user_dashboard_admin_overview .bottom_data_content .ref_id {
   color: #E1473E !important;
 }
 
-.userr_dashboard_content .bottom_data_content .job_match_stat {
+.user_dashboard_admin_overview .bottom_data_content .job_match_stat {
   font-size: 12px;
   background-color: rgba(225, 71, 62, 0.85) !important;
   text-transform: lowercase;
@@ -669,12 +669,12 @@
   width: 60px;
 }
 
-.userr_dashboard_content .bottom_data_content .tablerow  { 
+.user_dashboard_admin_overview .bottom_data_content .tablerow  { 
   display: table-row; 
   border-bottom: 1px solid #D4D4D4;
 }
 
-.userr_dashboard_content .bottom_data_content .tablecell { 
+.user_dashboard_admin_overview .bottom_data_content .tablecell { 
   display: table-cell; 
   padding: 10px 5px;
   font-size: 12px;
@@ -682,7 +682,7 @@
   position: relative;
 }
 
-.userr_dashboard_content .bottom_data_content .faint_text {
+.user_dashboard_admin_overview .bottom_data_content .faint_text {
   color: #8b8a8c !important;
 }
 
@@ -690,7 +690,7 @@
   color: #8b8a8c !important;
 }
 
-.userr_dashboard_content .bottom_data_content .application a {
+.user_dashboard_admin_overview .bottom_data_content .application a {
   text-align: center;
   background-color: rgba(0, 0, 0, 0.05) !important;
   color: #2F3F5B !important;
@@ -700,12 +700,12 @@
   padding: 18px 0px !important;
 }
 
-.userr_dashboard_content .bottom_data_content .application a:hover {
+.user_dashboard_admin_overview .bottom_data_content .application a:hover {
   background-color: #2F3F5B !important;
   color: #fff !important;
 }
 
-.userr_dashboard_content .bottom_data_content .application_ex {
+.user_dashboard_admin_overview .bottom_data_content .application_ex {
   text-align: center;
   background-color: rgba(0, 0, 0, 0.05) !important;
   color: #2F3F5B !important;
@@ -715,14 +715,14 @@
   padding: 7px 0px !important;
 }
 
-.userr_dashboard_content .bottom_data_content .closed_expired_info {
+.user_dashboard_admin_overview .bottom_data_content .closed_expired_info {
   text-align: center;
   padding: 2px !important;
   color: #E1473E !important;
   border-radius: 5px !important;
 }
 
-.userr_dashboard_content .bottom_data_content .new a {
+.user_dashboard_admin_overview .bottom_data_content .new a {
   text-align: center;
   border-radius: 5px !important;
   font-family: "Lato", sans-serif;
@@ -738,14 +738,14 @@
   -o-transition: all 0.3s ease;
 }
 
-.userr_dashboard_content .bottom_data_content .new a:hover {
+.user_dashboard_admin_overview .bottom_data_content .new a:hover {
   background-color: #2F3F5B !important;
   color: #fff !important;
   text-decoration: none !important;
   -webkit-transition: all 0.3s ease;
 }
 
-.userr_dashboard_content .bottom_data_content .status_app_result {
+.user_dashboard_admin_overview .bottom_data_content .status_app_result {
   font-family: "Lato", sans-serif;
   font-size: 10px;
   text-transform: uppercase;
@@ -759,7 +759,7 @@
   max-width: 150px;
 }
 
-.userr_dashboard_content .bottom_data_content .status_result {
+.user_dashboard_admin_overview .bottom_data_content .status_result {
   font-family: "Lato", sans-serif;
   font-size: 10px;
   text-transform: uppercase;
@@ -774,36 +774,36 @@
   max-width: 150px;
 }
 
-.userr_dashboard_content .bottom_data_content .colour_green {
+.user_dashboard_admin_overview .bottom_data_content .colour_green {
   color: #fff;
   background-color: #8ABFA1;
   width: 100%;
 }
 
-.userr_dashboard_content .bottom_data_content .colour_red {
+.user_dashboard_admin_overview .bottom_data_content .colour_red {
   color: #fff;
   background-color: #E1473E;
   width: 100%;
 }
 
-.userr_dashboard_content .bottom_data_content .colour_blue {
+.user_dashboard_admin_overview .bottom_data_content .colour_blue {
   color: #fff;
   background-color: #2F3F5B;
   width: 100%;
 }
 
-.userr_dashboard_content .bottom_data_content .colour_yellow {
+.user_dashboard_admin_overview .bottom_data_content .colour_yellow {
   color: #fff;
   background-color: #fdb657;
   width: 100%;
 }
 
-.userr_dashboard_content .bottom_data_content .colour_tranparent_blue {
+.user_dashboard_admin_overview .bottom_data_content .colour_tranparent_blue {
   background-color: rgba(47, 63, 91, 0.1) !important;
   width: 100%;
 }
 
-.userr_dashboard_content .bottom_data_content .status_colour_pink {
+.user_dashboard_admin_overview .bottom_data_content .status_colour_pink {
   font-size: 12px;
   background-color: #CF8381;
   padding: 4px 0px;
@@ -817,12 +817,12 @@
   cursor: pointer;
 }
 @media only screen and (max-width: 1200px) {
-  .userr_dashboard_content .bottom_data_content .status_colour_pink {
+  .user_dashboard_admin_overview .bottom_data_content .status_colour_pink {
     width: 100% !important;
   }
 }
 
-.userr_dashboard_content .bottom_data_content .status_colour_pink:hover {
+.user_dashboard_admin_overview .bottom_data_content .status_colour_pink:hover {
   opacity: 0.7;
 }
 
@@ -831,12 +831,12 @@
 //  lower_data_content / lower_bottom_data_content: shared/content_userrs_company_adverts
 // -----------------------------------
 
-.userr_dashboard_content .lower_bottom_data_content {
+.user_dashboard_admin_overview .lower_bottom_data_content {
   padding: 15px !important;
   background-color: rgba(255, 255, 255, 0.9) !important;
 }
 
-.userr_dashboard_content .lower_bottom_data_content h1 {
+.user_dashboard_admin_overview .lower_bottom_data_content h1 {
   background-color: rgba(0, 0, 0, 0.05) !important;
   font-size: 22px;
   text-align: left;
@@ -846,27 +846,27 @@
   color: #2F3F5B;
 }
 @media only screen and (max-width: 1200px) {
-  .userr_dashboard_content .lower_bottom_data_content h1 {
+  .user_dashboard_admin_overview .lower_bottom_data_content h1 {
     padding: 15px;
   }
 }
 
-.userr_dashboard_content .lower_bottom_data_content h1 .h1_subtitle {
+.user_dashboard_admin_overview .lower_bottom_data_content h1 .h1_subtitle {
   text-transform: lowercase !important;
   font-size: 12px !important;
 }
 @media only screen and (max-width: 1200px) {
-  .userr_dashboard_content .lower_bottom_data_content h1 .h1_subtitle {
+  .user_dashboard_admin_overview .lower_bottom_data_content h1 .h1_subtitle {
     margin-top: 5px;
   }
 }
 
-.userr_dashboard_content .lower_bottom_data_content .bottom_inner_content {
+.user_dashboard_admin_overview .lower_bottom_data_content .bottom_inner_content {
   max-height: 500px;
   overflow: scroll;
 }
 
-.userr_dashboard_content .lower_bottom_data_content .table { 
+.user_dashboard_admin_overview .lower_bottom_data_content .table { 
   font-family: "Lato", sans-serif;
   font-size: 14px;
   color: #2F3F5B;
@@ -875,58 +875,58 @@
   width: 100%;
 }
 
-.userr_dashboard_content .lower_bottom_data_content .table .header {
+.user_dashboard_admin_overview .lower_bottom_data_content .table .header {
   font-size: 15px;
   text-align: left;
   text-transform: capitalize;
 }
 
-.userr_dashboard_content .lower_bottom_data_content .table .background {
+.user_dashboard_admin_overview .lower_bottom_data_content .table .background {
   background-color: rgba(0, 0, 0, 0.05) !important;
 }
 
-.userr_dashboard_content .lower_bottom_data_content .table  .tablerow .tablecell a { 
+.user_dashboard_admin_overview .lower_bottom_data_content .table  .tablerow .tablecell a { 
   font-family: "Lato", sans-serif !important;
   font-size: 12px !important;
 }
 
-.userr_dashboard_content .lower_bottom_data_content .table  .tablerow .tablecell a:hover { 
+.user_dashboard_admin_overview .lower_bottom_data_content .table  .tablerow .tablecell a:hover { 
   text-decoration: underline !important;
 }
 
-.userr_dashboard_content .lower_bottom_data_content .dashboard_view a {
+.user_dashboard_admin_overview .lower_bottom_data_content .dashboard_view a {
   color: #2F3F5B !important;
   float: right!important;
 }
 
-.userr_dashboard_content .lower_bottom_data_content .dashboard_view a:hover {
+.user_dashboard_admin_overview .lower_bottom_data_content .dashboard_view a:hover {
   color: #E1473E !important;
 }
 
-.userr_dashboard_content .lower_bottom_data_content .advert_title {
+.user_dashboard_admin_overview .lower_bottom_data_content .advert_title {
   font-weight: bold !important;
   text-transform: capitalize !important;
 }
 
-.userr_dashboard_content .lower_bottom_data_content .advert_title a {
+.user_dashboard_admin_overview .lower_bottom_data_content .advert_title a {
   font-weight: bold !important;
   color: #2F3F5B !important;
 }
 
-.userr_dashboard_content .lower_bottom_data_content .ref_title {
+.user_dashboard_admin_overview .lower_bottom_data_content .ref_title {
   font-weight: bold !important;
 }
 
-.userr_dashboard_content .lower_bottom_data_content .ref_id {
+.user_dashboard_admin_overview .lower_bottom_data_content .ref_id {
   color: #E1473E !important;
 }
 
-.userr_dashboard_content .lower_bottom_data_content .tablerow  { 
+.user_dashboard_admin_overview .lower_bottom_data_content .tablerow  { 
   display: table-row; 
   border-bottom: 1px solid #D4D4D4;
 }
 
-.userr_dashboard_content .lower_bottom_data_content .tablecell { 
+.user_dashboard_admin_overview .lower_bottom_data_content .tablecell { 
   display: table-cell; 
   padding: 10px 5px;
   font-size: 12px;
@@ -934,7 +934,7 @@
   position: relative;
 }
 
-.userr_dashboard_content .lower_bottom_data_content .faint_text {
+.user_dashboard_admin_overview .lower_bottom_data_content .faint_text {
   color: #8b8a8c !important;
 }
 
@@ -942,7 +942,7 @@
   color: #8b8a8c !important;
 }
 
-.userr_dashboard_content .lower_bottom_data_content .application a {
+.user_dashboard_admin_overview .lower_bottom_data_content .application a {
   text-align: center;
   background-color: rgba(0, 0, 0, 0.05) !important;
   color: #2F3F5B !important;
@@ -952,19 +952,19 @@
   padding: 18px 0px !important;
 }
 
-.userr_dashboard_content .lower_bottom_data_content .application a:hover {
+.user_dashboard_admin_overview .lower_bottom_data_content .application a:hover {
   background-color: #2F3F5B !important;
   color: #fff !important;
 }
 
-.userr_dashboard_content .lower_bottom_data_content .closed_expired_info {
+.user_dashboard_admin_overview .lower_bottom_data_content .closed_expired_info {
   text-align: center;
   padding: 2px !important;
   color: #E1473E !important;
   border-radius: 5px !important;
 }
 
-.userr_dashboard_content .lower_bottom_data_content .application_ex {
+.user_dashboard_admin_overview .lower_bottom_data_content .application_ex {
   text-align: center;
   background-color: rgba(0, 0, 0, 0.05) !important;
   color: #2F3F5B !important;
@@ -974,7 +974,7 @@
   padding: 7px 0px !important;
 }
 
-.userr_dashboard_content .lower_bottom_data_content .new a {
+.user_dashboard_admin_overview .lower_bottom_data_content .new a {
   text-align: center;
   
   border-radius: 5px !important;
@@ -991,14 +991,14 @@
   -o-transition: all 0.3s ease;
 }
 
-.userr_dashboard_content .lower_bottom_data_content .new a:hover {
+.user_dashboard_admin_overview .lower_bottom_data_content .new a:hover {
   background-color: #2F3F5B !important;
   color: #fff !important;
   text-decoration: none !important;
   -webkit-transition: all 0.3s ease;
 }
 
-.userr_dashboard_content .lower_bottom_data_content .status_result {
+.user_dashboard_admin_overview .lower_bottom_data_content .status_result {
   font-family: "Lato", sans-serif;
   font-size: 10px;
   text-transform: uppercase;
@@ -1012,36 +1012,36 @@
   max-width: 150px;
 }
 
-.userr_dashboard_content .lower_bottom_data_content .colour_green {
+.user_dashboard_admin_overview .lower_bottom_data_content .colour_green {
   color: #fff;
   background-color: #8ABFA1;
   width: 100%
 }
 
-.userr_dashboard_content .lower_bottom_data_content .colour_red {
+.user_dashboard_admin_overview .lower_bottom_data_content .colour_red {
   color: #fff;
   background-color: #E1473E;
   width: 100%
 }
 
-.userr_dashboard_content .lower_bottom_data_content .colour_blue {
+.user_dashboard_admin_overview .lower_bottom_data_content .colour_blue {
   color: #fff;
   background-color: #2F3F5B;
   width: 100%
 }
 
-.userr_dashboard_content .lower_bottom_data_content .colour_yellow {
+.user_dashboard_admin_overview .lower_bottom_data_content .colour_yellow {
   color: #fff;
   background-color: #fdb657;
   width: 100%
 }
 
-.userr_dashboard_content .lower_bottom_data_content .colour_tranparent_blue {
+.user_dashboard_admin_overview .lower_bottom_data_content .colour_tranparent_blue {
   background-color: rgba(47, 63, 91, 0.1) !important;
   width: 100%
 }
 
-.userr_dashboard_content .lower_bottom_data_content .favourited_colour_pink {
+.user_dashboard_admin_overview .lower_bottom_data_content .favourited_colour_pink {
   font-size: 12px;
   background-color: #CF8381;
   padding: 4px 0px;
@@ -1055,17 +1055,17 @@
   cursor: pointer;
 }
 @media only screen and (max-width: 1200px) {
-  .userr_dashboard_content .lower_bottom_data_content .favourited_colour_pink {
+  .user_dashboard_admin_overview .lower_bottom_data_content .favourited_colour_pink {
     width: 100% !important;
   }
 }
 
-.userr_dashboard_content .lower_bottom_data_content .favourited_colour_pink:hover {
+.user_dashboard_admin_overview .lower_bottom_data_content .favourited_colour_pink:hover {
   opacity: 0.7;
 }
 
 
-.userr_dashboard_content .lower_bottom_data_content .image {
+.user_dashboard_admin_overview .lower_bottom_data_content .image {
   width: 50px;
   height: 50px;
   background: url("img-profile-default.png") no-repeat;
@@ -1075,72 +1075,72 @@
   background-position: 50% 45%;
 }
 
-.userr_dashboard_content .lower_bottom_data_content .image img {
+.user_dashboard_admin_overview .lower_bottom_data_content .image img {
   height: 50px;
   border-radius: 250px;
 }
 
-.userr_dashboard_content .lower_bottom_data_content .image img:hover {
+.user_dashboard_admin_overview .lower_bottom_data_content .image img:hover {
   opacity: 0.7;
 }
 
 
-.userr_dashboard_content .lower_bottom_data_content .user_name {
+.user_dashboard_admin_overview .lower_bottom_data_content .user_name {
   font-weight: bold !important;
   text-transform: capitalize !important;
 }
 
-.userr_dashboard_content .lower_bottom_data_content .user_name a {
+.user_dashboard_admin_overview .lower_bottom_data_content .user_name a {
   font-weight: bold !important;
   color: #2F3F5B !important;
 }
 
-.userr_dashboard_content .lower_bottom_data_content .user_email a {
+.user_dashboard_admin_overview .lower_bottom_data_content .user_email a {
   color: #2F3F5B !important;
 }
 
-.userr_dashboard_content .lower_bottom_data_content .user_email a:hover {
+.user_dashboard_admin_overview .lower_bottom_data_content .user_email a:hover {
   text-decoration: underline;
 }
 
-.userr_dashboard_content .lower_bottom_data_content .user_tel a {
+.user_dashboard_admin_overview .lower_bottom_data_content .user_tel a {
   color: #2F3F5B !important;
 }
 
-.userr_dashboard_content .lower_bottom_data_content .user_tel a:hover {
+.user_dashboard_admin_overview .lower_bottom_data_content .user_tel a:hover {
   text-decoration: underline;
 }
 
-.userr_dashboard_content .lower_bottom_data_content .user_location a {
+.user_dashboard_admin_overview .lower_bottom_data_content .user_location a {
   color: #8b8a8c !important;
   text-transform: capitalize;
   font-size: 10px !important;
 }
 
-.userr_dashboard_content .lower_bottom_data_content .user_cv_rating {
+.user_dashboard_admin_overview .lower_bottom_data_content .user_cv_rating {
   text-align: center !important;
   font-size: 12px;
 }
 
-.userr_dashboard_content .lower_bottom_data_content .application {
+.user_dashboard_admin_overview .lower_bottom_data_content .application {
   font-size: 10px;
 }
 
-.userr_dashboard_content .lower_bottom_data_content .faint_text {
+.user_dashboard_admin_overview .lower_bottom_data_content .faint_text {
   color: #8b8a8c !important;
 }
 
-.userr_dashboard_content .lower_bottom_data_content .image_container {
+.user_dashboard_admin_overview .lower_bottom_data_content .image_container {
   background-color: rgba(0, 0, 0, 0.03) !important;
   padding: 5px;
   border-radius: 2px;
 }
 
-.userr_dashboard_content .lower_bottom_data_content .image {
+.user_dashboard_admin_overview .lower_bottom_data_content .image {
   margin: auto;
 }
 
-.userr_dashboard_content .lower_bottom_data_content .job_match_stat {
+.user_dashboard_admin_overview .lower_bottom_data_content .job_match_stat {
   background-color: rgba(225, 71, 62, 0.85) !important;
   text-transform: lowercase;
   padding: 10px;
@@ -1152,7 +1152,7 @@
   width: 60px;
 }
 
-.userr_dashboard_content .lower_bottom_data_content .status_app_result {
+.user_dashboard_admin_overview .lower_bottom_data_content .status_app_result {
   font-family: "Lato", sans-serif;
   font-size: 10px;
   text-transform: uppercase;
@@ -1166,7 +1166,7 @@
   width: 150px !important;
 }
 
-.userr_dashboard_content .lower_bottom_data_content .status_result {
+.user_dashboard_admin_overview .lower_bottom_data_content .status_result {
   font-family: "Lato", sans-serif;
   font-size: 10px;
   text-transform: uppercase;
@@ -1179,7 +1179,7 @@
   margin-bottom: 5px;
 }
 
-.userr_dashboard_content .lower_bottom_data_content .status_colour_blue {
+.user_dashboard_admin_overview .lower_bottom_data_content .status_colour_blue {
   font-size: 12px;
   background-color: #2F3F5B;
   padding: 4px 0px;
@@ -1193,16 +1193,16 @@
   cursor: pointer;
 }
 @media only screen and (max-width: 1200px) {
-  .userr_dashboard_content .lower_bottom_data_content .status_colour_blue {
+  .user_dashboard_admin_overview .lower_bottom_data_content .status_colour_blue {
     width: 100% !important;
   }
 }
 
-.userr_dashboard_content .lower_bottom_data_content .status_colour_blue:hover {
+.user_dashboard_admin_overview .lower_bottom_data_content .status_colour_blue:hover {
   opacity: 0.7;
 }
 
-.userr_dashboard_content .lower_bottom_data_content .status_colour_red {
+.user_dashboard_admin_overview .lower_bottom_data_content .status_colour_red {
   font-size: 12px;
   background-color: #E1473E;
   padding: 4px 0px;
@@ -1216,16 +1216,16 @@
   cursor: pointer;
 }
 @media only screen and (max-width: 1200px) {
-  .userr_dashboard_content .lower_bottom_data_content .status_colour_red {
+  .user_dashboard_admin_overview .lower_bottom_data_content .status_colour_red {
     width: 100% !important;
   }
 }
 
-.userr_dashboard_content .lower_bottom_data_content .status_colour_red:hover {
+.user_dashboard_admin_overview .lower_bottom_data_content .status_colour_red:hover {
   opacity: 0.7;
 }
 
-.userr_dashboard_content .lower_bottom_data_content .status_colour_green {
+.user_dashboard_admin_overview .lower_bottom_data_content .status_colour_green {
   font-size: 12px;
   background-color: #8ABFA1;
   padding: 4px 0px;
@@ -1239,16 +1239,16 @@
   cursor: pointer;
 }
 @media only screen and (max-width: 1200px) {
-  .userr_dashboard_content .lower_bottom_data_content .status_colour_green {
+  .user_dashboard_admin_overview .lower_bottom_data_content .status_colour_green {
     width: 100% !important;
   }
 }
 
-.userr_dashboard_content .lower_bottom_data_content .status_colour_green:hover {
+.user_dashboard_admin_overview .lower_bottom_data_content .status_colour_green:hover {
   opacity: 0.7;
 }
 
-.userr_dashboard_content .lower_bottom_data_content .status_colour_yellow {
+.user_dashboard_admin_overview .lower_bottom_data_content .status_colour_yellow {
   font-size: 12px;
   background-color: #fdb657;
   padding: 4px 0px;
@@ -1262,11 +1262,11 @@
   cursor: pointer;
 }
 
-.userr_dashboard_content .lower_bottom_data_content .status_colour_yellow:hover {
+.user_dashboard_admin_overview .lower_bottom_data_content .status_colour_yellow:hover {
   opacity: 0.7;
 }
 
-.userr_dashboard_content .lower_bottom_data_content .status_colour_bluelight {
+.user_dashboard_admin_overview .lower_bottom_data_content .status_colour_bluelight {
   font-size: 12px;
   background-color: #4d85b0;
   padding: 4px 0px;
@@ -1280,16 +1280,16 @@
   cursor: pointer;
 }
 
-.userr_dashboard_content .lower_bottom_data_content .status_colour_bluelight:hover {
+.user_dashboard_admin_overview .lower_bottom_data_content .status_colour_bluelight:hover {
   opacity: 0.7;
 }
 
-.userr_dashboard_content .lower_bottom_data_content .colour_tranparent_blue {
+.user_dashboard_admin_overview .lower_bottom_data_content .colour_tranparent_blue {
   background-color: rgba(47, 63, 91, 0.1) !important;
   width: 100%
 }
 
-.userr_dashboard_content .lower_bottom_data_content .status_colour_pink {
+.user_dashboard_admin_overview .lower_bottom_data_content .status_colour_pink {
   font-size: 12px;
   background-color: #CF8381;
   padding: 4px 0px;
@@ -1303,33 +1303,33 @@
   cursor: pointer;
 }
 @media only screen and (max-width: 1200px) {
-  .userr_dashboard_content .lower_bottom_data_content .status_colour_pink {
+  .user_dashboard_admin_overview .lower_bottom_data_content .status_colour_pink {
     width: 100% !important;
   }
 }
 
-.userr_dashboard_content .lower_bottom_data_content .status_colour_pink:hover {
+.user_dashboard_admin_overview .lower_bottom_data_content .status_colour_pink:hover {
   opacity: 0.7;
 }
 
-.userr_dashboard_content .apply_direct {
+.user_dashboard_admin_overview .apply_direct {
   background-color: rgba(47, 63, 91, 0.1) !important;
   padding: 3px 5px !important;
   margin: 5px 20px 0px 0px !important;
 }
 
-.userr_dashboard_content .apply_direct a {
+.user_dashboard_admin_overview .apply_direct a {
   font-size: 11px !important;
   color: #2F3F5B !important;
 }
 
-.userr_dashboard_content .apply_indirect {
+.user_dashboard_admin_overview .apply_indirect {
   background-color: rgba(225, 71, 62, 0.2) !important;
   padding: 3px 5px !important;
   margin: 5px 20px 0px 0px !important;
 }
 
-.userr_dashboard_content .apply_indirect a {
+.user_dashboard_admin_overview .apply_indirect a {
   font-size: 11px !important;
   color: #2F3F5B !important;
 }
@@ -1340,7 +1340,7 @@
 // -----------------------------------
 
 @media only screen and (max-width: 855px) {
-  .userr_dashboard_content .responsive_data {
+  .user_dashboard_admin_overview .responsive_data {
     width: 100% !important;
     padding: 15px !important;
   }
