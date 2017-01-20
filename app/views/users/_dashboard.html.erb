@@ -12,15 +12,7 @@
     <div class="right_inner_section">
       <!-- content -->
       <div class="user_general_settings_inner_section user_dashboard_section_main_content">
-        <h1>dashboard</h1>
-        <div>
-          <div>
-            <ul>
-              <li><button><%= link_to "create speed-social", new_user_event_path(current_user) %></button></li>
-              <li><button><%= link_to "create social", new_user_social_path(current_user) %></button></li>
-            </ul>
-          </div>
-        </div>
+        <div><%= render "user_dashboard_admin_overview" %></div>
       </div>
       <!-- content -->
     </div>
