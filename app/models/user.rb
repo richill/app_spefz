@@ -113,6 +113,10 @@ class User < ActiveRecord::Base
   scope :hosts, -> { joins(:category_managementgroup).where("category_managementgroups.name IN (?)", ["Management Group", "Event Management Group"]) }                                                                                    
   # display users that are in charge of hosting speed-events
 
+  scope :subcribed_users, -> () {where(["stripe_subscription_pymt_id IS NOT NULL or CAST(stripe_subscription_pymt_id as text) = ''"])}
+
+  scope :unsubcribed_users, -> () {where(["stripe_subscription_pymt_id IS NULL or CAST(stripe_subscription_pymt_id as text) = ''"])}
+
 
   def slug_users
     [
