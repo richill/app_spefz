@@ -49,6 +49,16 @@
   height: 60px;
 }
 
+.user_dashboard_admin_overview .minor_info {
+  color: #E34B51;
+  font-size: 10px;
+  font-weight: bold;
+  position: absolute;
+  top: 85px;
+  left: 100px;
+  letter-spacing: 1px;
+}
+
 .user_dashboard_admin_overview .header_icon {
   float: left;
   padding: 0px 20px;
@@ -90,7 +100,6 @@
 
 .user_dashboard_admin_overview .middle_data_content .middle_data_header {
   background-color: rgba(255, 255, 255, 0.9) !important;
-  // background-color: rgba(0, 0, 0, 0.05) !important;
   margin-top: 15px;
   margin-bottom: 2px;
   padding: 15px;
@@ -1345,6 +1354,11 @@
     padding: 15px !important;
   }
 }
+
+
+
+
+
 
 
 
