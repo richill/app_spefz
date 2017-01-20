@@ -39,7 +39,17 @@
               <div class="image"><%= link_to image_tag(user.image_url), user, target: "_blank" %></div>
             </div>
           </div>
-          <div class="tablecell"><div><span class="advert_title"><%# link_to truncate("#{application.advert.title}", length: 30), rabbit_advert_path(application.advert) %></span><br/><span class="faint_text"><%# link_to "#{application.advert.category_country.name}, #{application.advert.city}",  userr_advert_path(application.advert.userr, application.advert) %></span></div><div><span class="ref_title">reference #:</span> <span class="ref_id"><%# application.advert.reference %></span></div><div class="created_by">created by: <%# link_to "#{application.advert.userr.firstname} #{application.advert.userr.lastname}", userr_path(@userr) %></div><div>created: <%# application.advert.created_at.strftime("%b %d, %Y") %></div></div>
+          <div class="tablecell">
+            <div>
+              <span class="user_name"><%= "#{user.firstname} #{user.lastname}" %></span> 
+              <span class="ref_id"><%# application.advert.reference %></span>
+            </div>
+            <div class="created_by">created by: <%# link_to "#{application.advert.userr.firstname} #{application.advert.userr.lastname}", userr_path(@userr) %></div>
+            <div>created: <%# application.advert.created_at.strftime("%b %d, %Y") %></div>
+          </div>
+
+
+          
           <div class="tablecell"><div><%# application.advert.category_jobtype.name %></div><div>seeking: <%# application.advert.category_positiontype.name %></div></div>
           <div class="tablecell"><%# application.advert.currency %> <%# application.advert.category_price.name %><br/><%# application.advert.category_period.name %></div>
           <div class="tablecell"><div>Advert Deadline</div><div><%# application.advert.appdeadline.strftime("%b %d, %Y") %></div></div>

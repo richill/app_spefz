@@ -324,14 +324,14 @@
   color: #E1473E !important;
 }
 
+.user_dashboard_admin_overview .lower_data_inner_content .user_name {
+  font-weight: bold !important;
+  text-transform: capitalize !important;
+}
+
 .user_dashboard_admin_overview .lower_data_inner_content .user_name a {
   font-weight: bold !important;
   color: #2F3F5B !important;
-  text-transform: capitalize;
-}
-
-.user_dashboard_admin_overview .lower_data_inner_content .user_location a {
-  color: #8b8a8c !important;
 }
 
 .user_dashboard_admin_overview .lower_data_inner_content .applied_job a {
