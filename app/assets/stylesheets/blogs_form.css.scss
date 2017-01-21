@@ -126,6 +126,7 @@
   font-size: 15px !important;
   font-weight: 300 !important;
   text-transform: capitalize;
+  margin-top: 15px !important;
 }
 
 .user_general_settings_section .blog_edit_update_form .event_time {
@@ -227,13 +228,22 @@
 }
 
 
-#blog_category_blog_id {
+.user_general_settings_section .blog_edit_update_form #blog_category_blog_id {
   margin-bottom: 0px !important;
 }
 
-// .blog_twitter_link {
-//   margin-bottom: 30px !important;
-// }
+
+
+.user_general_settings_section .blog_edit_update_form .guest_blogger_content {
+  padding: 15px;
+  background-color: rgba(75, 180, 191, 0.2) !important;
+  margin: 20px 0px 30px !important;
+}
+
+.user_general_settings_section .blog_edit_update_form input[type="text"]:focus {
+  border: 1px solid rgba(75, 180, 191, 0.5) !important;
+  background-color: #fff !important;
+}
 
 
 

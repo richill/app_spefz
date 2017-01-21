@@ -185,7 +185,7 @@ $(document).ready(function() {
   $('#textarea_companyname_feedback').html(text_max_companyname + ' words remaining');
   $('#textarea_title_feedback').html(text_max_title + ' words remaining');
   $('#textarea_title_event').html(text_max_event_title + ' words remaining');
-  $('#text_max_event_blog').html(text_max_blog_title + ' words remaining');
+  $('#textarea_title_blog').html(text_max_blog_title + ' words remaining');
 
   $('#textarea').keyup(function() {
     var regex = /\s+/gi;
@@ -209,7 +209,7 @@ $(document).ready(function() {
     var regex = /\s+/gi;
     var text_length = $('#blog_title').val().trim().replace(regex, ' ').split(' ').length;
     var text_remaining = text_max_blog_title - text_length;
-    $('#text_max_event_blog').html(text_remaining + ' words remaining');
+    $('#textarea_title_blog').html(text_remaining + ' words remaining');
   });
 });
 

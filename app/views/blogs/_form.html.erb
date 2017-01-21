@@ -25,7 +25,7 @@
           <div class="form-inputs">
             <%= f.file_field :image %>
 
-            <%= f.input :blog_image_link, placeholder: "http://res.cloudinary.com/account/image/upload/v1474379672/happy-family.jpg" %>
+            <%= f.input :blog_image_link, label: "Blog Image [Image Link]", placeholder: "http://res.cloudinary.com/account/image/upload/v1474379672/happy-family.jpg" %>
             <div class="text_info">If unable to upload image for the blog. Place image link here</div> 
 
             <div class="blog_topic">
@@ -38,16 +38,24 @@
             <%= f.input :content %>
 
             <%= f.input :video_link, placeholder: "https://www.youtube.com/watch?v=MGsalg2f9js" %>
-            <div class="text_info">Have video content you would like post? Grab the Video link and place here.</div> 
-
-            <%= f.input :user_image_link, placeholder: "http://res.cloudinary.com/account/image/upload/v1480947078/img_profile_11_qzyh7b.png" %>
-            <div class="text_info">Place blogger's link image here</div> 
+            <div class="text_info">Have video content you would like post? Grab the Video link and place here.</div>
 
             <%= f.input :twitter_link, placeholder: "https://twitter.com/username" %>
-            <div class="text_info">Place blogger's twitter link here.</div>
+            <div class="text_info">Place your twitter link here. If posting on behalf of Guest Blogger, place blogger's twitter link here.</div> 
 
-            <%= f.input :user_link, placeholder: "https://mywebsite.com" %>
-            <div class="text_info">Place blogger's website link here.</div> 
+            <%= f.input :user_link, label: "website", placeholder: "https://mywebsite.com" %>
+            <div class="text_info">Place your website link here. If posting on behalf of Guest Blogger, place blogger's website link here.</div> 
+
+            <div class="guest_blogger_content">
+              <div class="text_info">*SECTION MUST ONLY BE COMPLETED IF BLOG IS BEING POSTED ON BEHALF OF GUEST BLOGGER</div>
+              <%= f.input :blogger_name, label: "Blogger's Name", placeholder: "Emma Thompson" %>
+              <div class="text_info">Posting a blog on behalf of another? Place blogger's name here.</div>
+
+              <%= f.input :user_image_link, label: "Blogger's Image [Image Link]", placeholder: "http://res.cloudinary.com/account/image/upload/v1480947078/img_profile_11_qzyh7b.png" %>
+              <div class="text_info">Posting a blog on behalf of another? Place blogger's link image here</div> 
+            </div>
+
+             
 
             
 
