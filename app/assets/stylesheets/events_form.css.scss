@@ -161,6 +161,7 @@
   word-spacing: 3px;
   background-color: rgba(75, 180, 191, 0.2) !important;
   padding: 5px 15px !important;
+  margin-bottom: 8px !important;
 }
 
 .user_general_settings_section .event_edit_update_form .current_gender_selection i {
@@ -199,50 +200,6 @@
   padding: 15px !important;
   margin-top: 5px !important;
   margin-bottom: 30px !important;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.user_general_settings_section .event_edit_update_form .speaker_details {
-  margin-bottom: 15px !important;
-  background-color: rgba(75, 180, 191, 0.2) !important;
-}
-
-.user_general_settings_section .event_edit_update_form .social_speakername {
-  width: 540px;
-  float: left;
-  padding: 15px;
-}
-
-.user_general_settings_section .event_edit_update_form #social_speakername {
-  height: 50px;
-}
-
-.user_general_settings_section .event_edit_update_form .social_speakerlinkedin {
-  width: 540px;
-  float: right;
-  padding: 15px;
-  height: 102px;
-}
-
-.user_general_settings_section .event_edit_update_form #social_speakerlinkedin {
-  height: 50px !important;
-  padding: 15px;
 }
 
 .user_general_settings_section .event_edit_update_form .save_btn {

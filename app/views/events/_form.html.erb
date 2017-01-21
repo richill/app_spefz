@@ -80,15 +80,27 @@
                   <span>
                     <% if @event.category_quantitygender.name == "both men & women" %>
                       <i class="fa fa-users" aria-hidden="true"></i>
+                      <span><%= @event.category_quantitygender.name %></span>
+                      <span class="divider">|</span>
+                      <span><%= @event.quantity %> space limit</span>
                     <% elsif @event.category_quantitygender.name == "only men" %>
                       <i class="fa fa-male" aria-hidden="true"></i>
-                    <% else @event.category_quantitygender.name == "only women" %>
+                      <span><%= @event.category_quantitygender.name %></span>
+                      <span class="divider">|</span>
+                      <span><%= @event.quantity %> space limit</span>
+                    <% elsif @event.category_quantitygender.name == "only women" %>
                       <i class="fa fa-female" aria-hidden="true"></i>
+                      <span><%= @event.category_quantitygender.name %></span>
+                      <span class="divider">|</span>
+                      <span><%= @event.quantity %> space limit</span>
+                    <% elsif @event.category_quantitygender.name == "both X men & X women" %>
+                      <i class="fa fa-male" aria-hidden="true"></i> <i class="fa fa-female" aria-hidden="true" style="margin-left:0px;"></i>
+                      <span><%= @event.category_quantitygender.name %></span>
+                      <span class="divider">|</span>
+                      <span><i class="fa fa-male" aria-hidden="true"></i> <%= @event.quantity_men %> space limit</span> / 
+                      <span><i class="fa fa-female" aria-hidden="true"></i> <%= @event.quantity_women %> space limit</span>
                     <% end %>
                   </span>
-                  <span><%= @event.category_quantitygender.name %></span>
-                  <span class="divider">|</span>
-                  <span><%= @event.quantity %> space limit</span>
                 </div>
               <% end %>
               <%= f.association :category_quantitygender, collection: CategoryQuantitygender.all, prompt: "select a category", label: "Quantity Gender Selection", input_html: { class: 'category_select' } %>
