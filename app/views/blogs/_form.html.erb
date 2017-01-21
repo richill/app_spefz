@@ -1,23 +1,57 @@
-<%= simple_form_for [@user, @blog] do |f| %>
-  <%= f.error_notification %>
+<div class= "medium-12 columns user_general_settings_section user_main_createblog_page">
 
-  <div class="form-inputs">
-    <%= f.file_field :image %>
-    <%= f.input :title %>
-    <%= f.input :content %>
-    <%= f.association :category_blog, collection: CategoryBlog.all, prompt: "select a category", label: "Blog Category" %>
-    <%= f.input :video_link %>
-    <%= f.input :user_image_link %>
-    <%= f.input :user_link %>
-    <%= f.input :blog_image_link %>
-    <%= f.input :twitter_link %>
-
-    <!-- hidden fields -->
-    <%= f.hidden_field :user_id %>
-    <!-- hidden fields -->
+  <!-- left_column_section -->
+  <div class="medium-2 columns left_column_section">
+    <%= render 'shared/content_user_adminpanel_left_column' %>
   </div>
+  <!-- left_column_section -->
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+  <!-- right_column_section -->
+  <div class="medium-10 columns right_column_section">
+    <div class="right_inner_section">
+      <!-- content -->
+      <div class="tree_link">
+        <span><i class="fa fa-user" aria-hidden="true"></i> <%= link_to "#{current_user.firstname}", user_path(current_user)%></span> <span class="fwd_sign">></span> <span><%= link_to "blogs", stats_blogs_user_path(current_user) %></span> <span class="fwd_sign">></span>
+        <% if action_name == 'new'  %>
+          <span>create blog</span>
+        <% else %>
+          <span>update blog</span>
+        <% end %>
+      </div>
+      <div class="user_general_settings_inner_section blog_edit_update_form">
+        <%= simple_form_for [@user, @blog] do |f| %>
+          <%= f.error_notification %>
+
+          <div class="form-inputs">
+            <%= f.file_field :image %>
+            <div class="blog_topic">
+              <div class="blog_label">blog title</div>
+              <%= f.text_field :title, label: "Blog Title", placeholder: "15 First Dates At Speed Dating!" %>
+              <div class="text_info">*maximum word count: 55 | *minmum: 40 | <span id="textarea_title_blog"></span></div> 
+            </div>
+
+            <%# f.file_field :image %>
+            <%# f.input :title %>
+            <%= f.input :content %>
+            <%= f.association :category_blog, collection: CategoryBlog.all, prompt: "select a category", label: "Blog Category" %>
+            <%= f.input :video_link %>
+            <%= f.input :user_image_link %>
+            <%= f.input :user_link %>
+            <%= f.input :blog_image_link %>
+            <%= f.input :twitter_link %>
+
+            <!-- hidden fields -->
+            <%= f.hidden_field :user_id %>
+            <!-- hidden fields -->
+          </div>
+
+          <div class="form-actions">
+            <%= f.button :submit %>
+          </div>
+        <% end %>
+      </div>
+      <!-- content -->
+    </div>
   </div>
-<% end %>
+  <!-- right_column_section -->
+</div>
