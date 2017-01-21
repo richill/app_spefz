@@ -1,53 +1,55 @@
-<%= simple_form_for [@user, @event] do |f| %>
-  <%= f.error_notification %>
+<div>
+  <%= simple_form_for [@user, @event] do |f| %>
+    <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.file_field :image %>
-    <%= f.input :close, label: 'Close Event' %>
-    <%= f.input :title, label: "Event Name", placeholder: "Speed Social - Graduate Professionals" %>
-    <%= f.input :description, label: "Description" %>
-    <%= f.association :category_topic, collection: CategoryTopic.all, prompt: "select a category", label: "Event Category" %>
-    <%= f.input :venuename, label: "venue name", placeholder: "Eclipse (South Kensington) (London)" %>
-    <%= f.input :address, label: "Location", placeholder: "address" %>
-    <%= f.input :city, label: false, placeholder: "city" %>
-    <%= f.association :category_country, collection: CategoryCountry.all, prompt: "select a country", placeholder: "Select Country", label: false %>
-    <%= f.input :postcode %>
-    <%= f.input :maplink %>
-    <%= f.input :date %>
-    <%= f.input :time, label: "Sart Time" %>
-    <%= f.input :time_end, label: "End Time" %>
-    <%= f.input :price, label: "Price" %>
+    <div class="form-inputs">
+      <%= f.file_field :image %>
+      <%= f.input :close, label: 'Close Event' %>
+      <%= f.input :title, label: "Event Name", placeholder: "Speed Social - Graduate Professionals" %>
+      <%= f.input :description, label: "Description" %>
+      <%= f.association :category_topic, collection: CategoryTopic.all, prompt: "select a category", label: "Event Category" %>
+      <%= f.input :venuename, label: "venue name", placeholder: "Eclipse (South Kensington) (London)" %>
+      <%= f.input :address, label: "Location", placeholder: "address" %>
+      <%= f.input :city, label: false, placeholder: "city" %>
+      <%= f.association :category_country, collection: CategoryCountry.all, prompt: "select a country", placeholder: "Select Country", label: false %>
+      <%= f.input :postcode %>
+      <%= f.input :maplink %>
+      <%= f.input :date %>
+      <%= f.input :time, label: "Sart Time" %>
+      <%= f.input :time_end, label: "End Time" %>
+      <%= f.input :price, label: "Price" %>
 
-    <%= f.association :category_quantitygender, collection: CategoryQuantitygender.all, prompt: "select a category", label: "Quantity Gender Selection", input_html: { class: 'category_select' } %>
-    <div class="general_gender_quantity_content">
-        <%= f.input :quantity, placeholder: "quantity", label: false %>
+      <%= f.association :category_quantitygender, collection: CategoryQuantitygender.all, prompt: "select a category", label: "Quantity Gender Selection", input_html: { class: 'category_select' } %>
+      <div class="general_gender_quantity_content">
+          <%= f.input :quantity, placeholder: "quantity", label: false %>
+      </div>
+      <div class="specific_gender_quantity_content">
+          <%= f.input :quantity_men, placeholder: "quantity men", label: "men" %>
+          <%= f.input :quantity_women, placeholder: "quantity women", label: "women" %>
+      </div>
+
+      <%= f.association :category_age, collection: CategoryAge.all, prompt: "select a category", label: "Age Group" %>
+      <%= f.text_field :tag_list, value: @event.tag_list.to_s, placeholder: "charity, education, social, music, social impact, travel, health, jazz..." %>
+
+      <div class="event_score_access">
+          <div><%= f.input :display_match, label: "Display Event Match %" %></div>
+          <div><%= f.input :event_score_access, label: "Event Score Access", placeholder: "3.5" %></div>
+      </div>
+
+      <div class="host_selection_section">
+          <div><%# f.association :hosts, collection: Host.all.order(:firstname), label_method: :firstname, label: false, as: :check_boxes %></div>
+      </div><br/>
+
+
+      <!-- hidden fields -->
+      <%= f.hidden_field :latitude %>
+      <%= f.hidden_field :longitude %>
+      <%= f.hidden_field :user_id %>
+      <!-- hidden fields -->
     </div>
-    <div class="specific_gender_quantity_content">
-        <%= f.input :quantity_men, placeholder: "quantity men", label: "men" %>
-        <%= f.input :quantity_women, placeholder: "quantity women", label: "women" %>
+
+    <div class="form-actions">
+      <%= f.button :submit %>
     </div>
-
-    <%= f.association :category_age, collection: CategoryAge.all, prompt: "select a category", label: "Age Group" %>
-    <%= f.text_field :tag_list, value: @event.tag_list.to_s, placeholder: "charity, education, social, music, social impact, travel, health, jazz..." %>
-
-    <div class="event_score_access">
-        <div><%= f.input :display_match, label: "Display Event Match %" %></div>
-        <div><%= f.input :event_score_access, label: "Event Score Access", placeholder: "3.5" %></div>
-    </div>
-
-    <div class="host_selection_section">
-        <div><%# f.association :hosts, collection: Host.all.order(:firstname), label_method: :firstname, label: false, as: :check_boxes %></div>
-    </div><br/>
-
-
-    <!-- hidden fields -->
-    <%= f.hidden_field :latitude %>
-    <%= f.hidden_field :longitude %>
-    <%= f.hidden_field :user_id %>
-    <!-- hidden fields -->
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
-<% end %>
+  <% end %>
+</div>

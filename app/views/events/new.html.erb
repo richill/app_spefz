@@ -1,5 +1,10 @@
-<h1>New Event</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Back', events_path %>
+<% if action_name == 'new'  %>
+  <% provide(:title, "Create Event") %>
+<% else %>
+  <% provide(:title, "Update Event") %>
+<% end %>
+<div>
+  <%= render 'shared/header' %>
+  <%= render 'form' %>
+  <%= render 'shared/footer' %>
+</div>
