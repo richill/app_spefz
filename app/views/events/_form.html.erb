@@ -11,10 +11,14 @@
     <div class="right_inner_section">
       <!-- content -->
       <div class="tree_link">
-        <span><i class="fa fa-user" aria-hidden="true"></i> <%= link_to "#{current_user.firstname}", user_path(current_user)%></span> <span class="fwd_sign">></span> <span>create event</span>
+        <span><i class="fa fa-user" aria-hidden="true"></i> <%= link_to "#{current_user.firstname}", user_path(current_user)%></span> <span class="fwd_sign">></span> 
+        <% if action_name == 'new'  %>
+          <span>create event</span>
+        <% else %>
+          <span>update event</span>
+        <% end %>
       </div>
-      <div class="user_general_settings_inner_section social_edit_update_form">
-        <div><%# render "user_dashboard_admin_overview" %></div>
+      <div class="user_general_settings_inner_section event_edit_update_form">
         <%= simple_form_for [@user, @event] do |f| %>
           <%= f.error_notification %>
 
@@ -37,25 +41,24 @@
 
             <%= f.association :category_quantitygender, collection: CategoryQuantitygender.all, prompt: "select a category", label: "Quantity Gender Selection", input_html: { class: 'category_select' } %>
             <div class="general_gender_quantity_content">
-                <%= f.input :quantity, placeholder: "quantity", label: false %>
+              <%= f.input :quantity, placeholder: "quantity", label: false %>
             </div>
             <div class="specific_gender_quantity_content">
-                <%= f.input :quantity_men, placeholder: "quantity men", label: "men" %>
-                <%= f.input :quantity_women, placeholder: "quantity women", label: "women" %>
+              <%= f.input :quantity_men, placeholder: "quantity men", label: "men" %>
+              <%= f.input :quantity_women, placeholder: "quantity women", label: "women" %>
             </div>
 
             <%= f.association :category_age, collection: CategoryAge.all, prompt: "select a category", label: "Age Group" %>
             <%= f.text_field :tag_list, value: @event.tag_list.to_s, placeholder: "charity, education, social, music, social impact, travel, health, jazz..." %>
 
             <div class="event_score_access">
-                <div><%= f.input :display_match, label: "Display Event Match %" %></div>
-                <div><%= f.input :event_score_access, label: "Event Score Access", placeholder: "3.5" %></div>
+              <div><%= f.input :display_match, label: "Display Event Match %" %></div>
+              <div><%= f.input :event_score_access, label: "Event Score Access", placeholder: "3.5" %></div>
             </div>
 
             <div class="host_selection_section">
-                <div><%# f.association :hosts, collection: Host.all.order(:firstname), label_method: :firstname, label: false, as: :check_boxes %></div>
+              <div><%# f.association :hosts, collection: Host.all.order(:firstname), label_method: :firstname, label: false, as: :check_boxes %></div>
             </div><br/>
-
 
             <!-- hidden fields -->
             <%= f.hidden_field :latitude %>
