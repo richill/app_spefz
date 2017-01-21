@@ -30,7 +30,7 @@
 
 .user_general_settings_section .event_edit_update_form .boolean {
   background-color: rgba(75, 180, 191, 0.2) !important;
-  padding: 10px !important;
+  padding: 8px !important;
 }
 
 .user_general_settings_section .event_edit_update_form .social_form_main_content input[type="text"]:focus {
@@ -188,6 +188,31 @@
 .user_general_settings_section .event_edit_update_form #event_category_age_id {
   height: 40px;
 }
+
+.user_general_settings_section .event_edit_update_form #event_display_match {
+  margin-bottom: 0px;
+  margin-right: 5px;
+}
+
+.event_score_access {
+  background-color: rgba(75, 180, 191, 0.2) !important;
+  padding: 15px !important;
+}
+
+
+.event_event_score_access {
+  margin-top: 15px;
+}
+
+
+
+
+
+
+
+
+
+
 
 
 
