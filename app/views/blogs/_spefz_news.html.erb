@@ -35,10 +35,16 @@
               <% @blogs.news.each do |blog| %>
                 <li class="medium-12 columns listed_blog">
                   <div class="medium-6 columns left_content">
-                    <div><%= link_to(image_tag("#{blog.image_url}", :alt =>  "image", :class =>"#"), user_blog_path(blog.user, blog)) %></div>
+                    <div class="blog_main_img_cover">
+                      <% if blog.blog_image_link.present? %>
+                        <%= link_to(cl_image_tag(blog.blog_image_link, :transformation=>[{:width => 10, :height => 10}]), blog_path(blog)) %>
+                      <% else %>
+                        <%= link_to(cl_image_tag(blog.image, :transformation=>[{:gravity=>"face", :width=>200, :height=>200, :crop=>"fill"}]), blog_path(blog)) %>
+                      <% end %>
+                    </div>
                   </div>
                   <div class="medium-6 columns right_content">
-                    <div class="blog_title"><%= link_to "#{blog.title}", user_blog_path(blog.user, blog) %></div>
+                    <div class="blog_title"><%= link_to "#{blog.title}", blog_path(blog) %></div>
                     <div class="blog_category_date">
                       <span>Category: </span>
                       <span class="blog_category"><%= link_to "#{blog.category_blog.name}", "#" %></span>
@@ -48,16 +54,32 @@
                     <div class="blog_user_details">
                       <span class="blog_img_cover">
                         <% if signed_in?  %>
-                          <%= link_to(image_tag("#{blog.user.image_url}", :alt =>  "image", :class =>"#"), user_path(blog.user)) %>
+                          <% if blog.user_image_link.present? %>
+                            <%= link_to(cl_image_tag(blog.user_image_link, :transformation=>[{:gravity=>"face", :width=>200, :height=>200, :crop=>"fill", :radius=>"max"}]), "#{blog.user_link}") %>
+                          <% else %>
+                            <%= link_to(cl_image_tag(blog.user.image, :transformation=>[{:gravity=>"face", :width=>200, :height=>200, :crop=>"fill", :radius=>"max"}]), user_path(blog.user)) %>
+                          <% end %>
                         <% else %>
-                          <%= link_to(image_tag("#{blog.user.image_url}", :alt =>  "image", :class =>"#"), "#") %>
+                          <% if blog.user_image_link.present? %>
+                            <%= link_to(cl_image_tag(blog.user_image_link, :transformation=>[{:gravity=>"face", :width=>200, :height=>200, :crop=>"fill", :radius=>"max"}]), "#{blog.user_link}") %>
+                          <% else %>
+                            <%= link_to(cl_image_tag(blog.user.image, :transformation=>[{:gravity=>"face", :width=>200, :height=>200, :crop=>"fill", :radius=>"max"}]), "#") %>
+                          <% end %>
                         <% end %>
                       </span>
                       <span>
                         <% if signed_in?  %>
-                          <%= link_to "#{blog.user.firstname}", user_path(blog.user) %>
+                          <% if blog.blogger_name.present? %>
+                            <%= link_to "#{blog.blogger_name}", "#{blog.user_link}" %>
+                          <% else %>
+                            <%= link_to "#{blog.user.firstname}", user_path(blog.user) %>
+                          <% end %>
                         <% else %>
-                          <%= link_to "#{blog.user.firstname}", "#" %>
+                          <% if blog.blogger_name.present? %>
+                            <%= link_to "#{blog.blogger_name}", "#{blog.user_link}" %>
+                          <% else %>
+                            <%= link_to "#{blog.user.firstname}", "#" %>
+                          <% end %>
                         <% end %>
                       </span>
                       <span class="divider">|</span>
@@ -73,7 +95,7 @@
                     </div>
                     <div class="blog_content_read">
                       <span class="blog_info_content"><%= truncate "#{blog.content}", length: 600 %></span>
-                      <span class="read_more"><%= link_to "read more", user_blog_path(blog.user, blog) %></span>
+                      <span class="read_more"><%= link_to "read more", blog_path(blog) %></span>
                       <% if signed_in? %>
                         <% if current_user.admin_pa_management_group || current_user.pa_administration_group %>
                           <span class="divider">|</span>

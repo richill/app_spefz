@@ -37,16 +37,32 @@
               <div class="blog_show_sub_content">
                 <span class="blog_img_cover">
                   <% if signed_in?  %>
-                    <%= link_to(cl_image_tag(@blog.user.image, :transformation=>[{:gravity=>"face", :width=>200, :height=>200, :crop=>"fill", :radius=>"max"}]), user_path(@blog.user)) %>
+                    <% if @blog.user_image_link.present? %>
+                      <%= link_to(cl_image_tag(@blog.user_image_link, :transformation=>[{:gravity=>"face", :width=>200, :height=>200, :crop=>"fill", :radius=>"max"}]), "#{@blog.user_link}") %>
+                    <% else %>
+                      <%= link_to(cl_image_tag(@blog.user.image, :transformation=>[{:gravity=>"face", :width=>200, :height=>200, :crop=>"fill", :radius=>"max"}]), user_path(@blog.user)) %>
+                    <% end %>
                   <% else %>
-                    <%= link_to(image_tag("#{@blog.user.image_url}", :alt =>  "image", :class =>"#"), "#") %>
+                    <% if @blog.user_image_link.present? %>
+                      <%= link_to(cl_image_tag(@blog.user_image_link, :transformation=>[{:gravity=>"face", :width=>200, :height=>200, :crop=>"fill", :radius=>"max"}]), "#{@blog.user_link}") %>
+                    <% else %>
+                      <%= link_to(cl_image_tag(@blog.user.image, :transformation=>[{:gravity=>"face", :width=>200, :height=>200, :crop=>"fill", :radius=>"max"}]), "#") %>
+                    <% end %>
                   <% end %>
                 </span>
                 <span>
                   <% if signed_in?  %>
-                    <%= link_to "#{@blog.user.firstname}", user_path(@blog.user) %>
+                    <% if @blog.blogger_name.present? %>
+                      <%= link_to "#{@blog.blogger_name}", "#{@blog.user_link}" %>
+                    <% else %>
+                      <%= link_to "#{@blog.user.firstname}", user_path(@blog.user) %>
+                    <% end %>
                   <% else %>
-                    <%= link_to "#{@blog.user.firstname}", "#" %>
+                  <% if @blog.blogger_name.present? %>
+                      <%= link_to "#{@blog.blogger_name}", "#{@blog.user_link}" %>
+                    <% else %>
+                      <%= link_to "#{@blog.user.firstname}", "#" %>
+                    <% end %>
                   <% end %>
                 </span>
                 <span class="divider">|</span>
@@ -76,7 +92,13 @@
                   <% end %>
                 <% end %>
               </div>
-              <div class="blog_show_img"><%= link_to(image_tag("#{@blog.image_url}", :alt =>  "image", :class =>"#"), user_blog_path(@blog.user, @blog)) %></div>
+              <div class="blog_show_img">
+                <% if @blog.blog_image_link.present? %>
+                  <%= link_to(cl_image_tag(@blog.blog_image_link, :transformation=>[{:width => 10, :height => 10}]), blog_path(@blog)) %>
+                <% else %>
+                  <%= link_to(cl_image_tag(@blog.image, :transformation=>[{:gravity=>"face", :width=>200, :height=>200, :crop=>"fill"}]), blog_path(@blog)) %>
+                <% end %>
+              </div>
               <div class="blog_info_content"><%= @blog.content %></div>
               <div class="share_icons"></div>
             </div>
