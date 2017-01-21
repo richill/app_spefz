@@ -67,39 +67,39 @@
   font-size: 15px;
 }
 
-.user_general_settings_section .event_edit_update_form .social_tags {
+.user_general_settings_section .event_edit_update_form .event_tags {
   margin-bottom: 15px;
 }
 
-.user_general_settings_section .event_edit_update_form .social_venuename {
+.user_general_settings_section .event_edit_update_form .event_venuename {
   width: 540px;
   float: left;
   margin-bottom: 15px;
 }
 
-.user_general_settings_section .event_edit_update_form .social_address {
+.user_general_settings_section .event_edit_update_form .event_address {
   width: 540px;
   float: right;
   margin-bottom: 15px;
 }
 
-.user_general_settings_section .event_edit_update_form .social_category_country {
+.user_general_settings_section .event_edit_update_form .event_category_country {
   width: 350px;
   float: left;
   margin-bottom: 15px;
 }
 
-.user_general_settings_section .event_edit_update_form #social_category_country_id {
+.user_general_settings_section .event_edit_update_form #event_category_country_id {
   height: 40px !important;
 }
 
-.user_general_settings_section .event_edit_update_form .social_city {
+.user_general_settings_section .event_edit_update_form .event_city {
   width: 350px;
   float: left;
   margin: 0px 29px 15px;
 }
 
-.user_general_settings_section .event_edit_update_form .social_postcode {
+.user_general_settings_section .event_edit_update_form .event_postcode {
   width: 350px;
   float: right;
   margin-bottom: 15px;
@@ -109,7 +109,7 @@
   margin-bottom: 15px;
 }
 
-.user_general_settings_section .event_edit_update_form #social_maplink {
+.user_general_settings_section .event_edit_update_form #event_maplink {
   margin-bottom: 0px;
 }
 
@@ -117,6 +117,7 @@
   background-color: rgba(75, 180, 191, 0.2) !important;
   padding: 15px !important;
   margin-bottom: 15px;
+  display: inline-block;
 }
 
 .user_general_settings_section .event_edit_update_form .event_label {
@@ -124,6 +125,16 @@
   font-size: 15px !important;
   font-weight: 300 !important;
   text-transform: capitalize;
+}
+
+
+.user_general_settings_section .event_edit_update_form .event_time {
+  float: left !important;
+  margin-right: 40px !important;
+}
+
+.user_general_settings_section .event_edit_update_form .event_time_end {
+  float: left;
 }
 
 .user_general_settings_section .event_edit_update_form #social_date {

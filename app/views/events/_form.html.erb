@@ -38,21 +38,55 @@
               <div class="text_info">*maximum word count: 55 | *minmum: 40 | <span id="textarea_title_event"></span></div> 
             </div>
 
+            <%= f.association :category_topic, collection: CategoryTopic.all, prompt: "select a category", label: "Event Category" %>
+            <%= f.input :description, label: "About Event", placeholder: "tell us about the event" %>
+
+            <div class="event_tags">
+              <div class="event_label">event tags</div>
+              <%= f.text_field :tag_list, value: @event.tag_list.to_s, placeholder: "charity, education, social, music, social impact, travel, health, jazz..." %>
+              <div class="text_info">Place word tags that best describes the event. This allows members to easily allocate the event.</div>
+            </div>
+
+            <div class="address_upper">
+              <%= f.input :venuename, label: "venue name", placeholder: "Eclipse (South Kensington) (London)" %>
+              <%= f.input :address, label: "Location", placeholder: "address" %>
+            </div>
+            <div class="clear"></div>
+
+            <div class="address_lower">
+              <%= f.association :category_country, collection: CategoryCountry.all, prompt: "select a country", placeholder: "Select Country", label: false %>
+              <%= f.input :city, label: false, placeholder: "city" %>
+              <%= f.input :postcode, label: false, placeholder:"postcode" %>
+            </div>
+            <div class="clear"></div>
+
+            <div class="map_link">
+              <%= f.input :maplink, label: "Google Map Link URL", placeholder: "https://www.google.co.uk/maps?q=Brasserie+Blanc+(Tower+Hill)+Trinity+Square+(Tower+of+London)+London+EC3N+4AA&um=1&ie=UTF-8&sa=X&ved=0ahUKEwjz_orD857QAhUsCMAKHV2nD2QQ_AUICCgB" %>
+              <div class="text_info">Copy and past the Google URL Link for the address/location of the social here. This allows members to access the location of the social on the web directly via a click of the address. <i class="fa fa-angle-double-right" aria-hidden="true"></i>Here is an example of how this will be displayed with the given address with the embeded link: <%= link_to "The Pepys, Stew Lane, London, EC4V 3PT", "https://www.google.co.uk/maps/place/The+Pepys/@51.510479,-0.0983617,17z/data=!3m1!4b1!4m5!3m4!1s0x487604aa3ade883b:0x10f9847b2204fa31!8m2!3d51.510479!4d-0.096173", target:"_blank" %></div>
+            </div>
+
+            <div class="medium-12 columns date_time">
+              <div class="event_label">date</div>
+              <%= f.text_field :date, label: false, class: "event_datepicker", placeholder: "dd/mm/yyyy", id: 'social_date' %>
+              <%= f.input :time, label: "Sart Time" %>
+              <%= f.input :time_end, label: "End Time" %>
+            </div>
+            <div class="clear"></div>
 
 
             <%# f.input :close, label: 'Close Event' %>
             <%# f.input :title, label: "Event Name", placeholder: "Speed Social - Graduate Professionals" %>
-            <%= f.input :description, label: "Description" %>
-            <%= f.association :category_topic, collection: CategoryTopic.all, prompt: "select a category", label: "Event Category" %>
-            <%= f.input :venuename, label: "venue name", placeholder: "Eclipse (South Kensington) (London)" %>
-            <%= f.input :address, label: "Location", placeholder: "address" %>
-            <%= f.input :city, label: false, placeholder: "city" %>
-            <%= f.association :category_country, collection: CategoryCountry.all, prompt: "select a country", placeholder: "Select Country", label: false %>
-            <%= f.input :postcode %>
-            <%= f.input :maplink %>
-            <%= f.input :date %>
-            <%= f.input :time, label: "Sart Time" %>
-            <%= f.input :time_end, label: "End Time" %>
+            <%# f.input :description, label: "Description" %>
+            <%# f.association :category_topic, collection: CategoryTopic.all, prompt: "select a category", label: "Event Category" %>
+            <%# f.input :venuename, label: "venue name", placeholder: "Eclipse (South Kensington) (London)" %>
+            <%# f.input :address, label: "Location", placeholder: "address" %>
+            <%# f.input :city, label: false, placeholder: "city" %>
+            <%# f.association :category_country, collection: CategoryCountry.all, prompt: "select a country", placeholder: "Select Country", label: false %>
+            <%# f.input :postcode %>
+            <%# f.input :maplink %>
+            <%# f.input :date %>
+            <%# f.input :time, label: "Sart Time" %>
+            <%# f.input :time_end, label: "End Time" %>
             <%= f.input :price, label: "Price" %>
 
             <%= f.association :category_quantitygender, collection: CategoryQuantitygender.all, prompt: "select a category", label: "Quantity Gender Selection", input_html: { class: 'category_select' } %>
@@ -65,7 +99,7 @@
             </div>
 
             <%= f.association :category_age, collection: CategoryAge.all, prompt: "select a category", label: "Age Group" %>
-            <%= f.text_field :tag_list, value: @event.tag_list.to_s, placeholder: "charity, education, social, music, social impact, travel, health, jazz..." %>
+            <%# f.text_field :tag_list, value: @event.tag_list.to_s, placeholder: "charity, education, social, music, social impact, travel, health, jazz..." %>
 
             <div class="event_score_access">
               <div><%= f.input :display_match, label: "Display Event Match %" %></div>
