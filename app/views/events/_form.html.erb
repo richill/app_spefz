@@ -103,55 +103,21 @@
             <div class="clear"></div>
 
             <div class="additional_options">
-              <%= f.input :price, label: "Price" %>
+              <%= f.input :price, label: "(£) Price", placeholder: "35" %>
               <%= f.association :category_age, collection: CategoryAge.all, prompt: "select a category", label: "Age Group" %>
             </div>
             <div class="clear"></div>
 
             <div class="event_score_access">
-              <%= f.input :display_match, label: "Display Event Match %" %>
-              <div class="text_info">If ticked (closed) the event will be removed from the list of speed-events. Members will no longer be able to view nor attend the event.</div>
               <%= f.input :event_score_access, label: "Event Score Access", placeholder: "3.5" %>
-              <div class="text_info">If ticked (closed) the event will be removed from the list of speed-events. Members will no longer be able to view nor attend the event.</div>
+              <div class="text_info" style="margin-bottom:15px;">*Maximum "Event Score Access" is "5". The "Event Score Access" sets the minimum standard to which members can attend an event. A member with a "Total Average Rating" of 3.5/5 will be unable to attend an event with a "Score Access" of "4", but will be able to attend all events with an "Event Score Access" "equal to" or "less" than "3.5".</div>
+
+              <%= f.input :display_match, label: "Display Event Match %" %>
+             <div class="text_info">The Match % diplays how close the member matches the event. The member's "Total Average Rating" & the "Event Score Access" are both automatically calculated to indicate how close a member matches the event and is likely to meet members in the event of the same initerest as themselve
+              <a href="#" data-reveal-id="myModal-match-info-example-img">view example</a>
+              <div><%= render 'shared/modal_match_info_example_img' %></div>
+             </div>
             </div>
-
-
-
-            <%# f.input :close, label: 'Close Event' %>
-            <%# f.input :title, label: "Event Name", placeholder: "Speed Social - Graduate Professionals" %>
-            <%# f.input :description, label: "Description" %>
-            <%# f.association :category_topic, collection: CategoryTopic.all, prompt: "select a category", label: "Event Category" %>
-            <%# f.input :venuename, label: "venue name", placeholder: "Eclipse (South Kensington) (London)" %>
-            <%# f.input :address, label: "Location", placeholder: "address" %>
-            <%# f.input :city, label: false, placeholder: "city" %>
-            <%# f.association :category_country, collection: CategoryCountry.all, prompt: "select a country", placeholder: "Select Country", label: false %>
-            <%# f.input :postcode %>
-            <%# f.input :maplink %>
-            <%# f.input :date %>
-            <%# f.input :time, label: "Sart Time" %>
-            <%# f.input :time_end, label: "End Time" %>
-            <%# f.input :price, label: "Price" %>
-
-            <%# f.association :category_quantitygender, collection: CategoryQuantitygender.all, prompt: "select a category", label: "Quantity Gender Selection", input_html: { class: 'category_select' } %>
-            <!-- <div class="general_gender_quantity_content">
-              <%# f.input :quantity, placeholder: "quantity", label: false %>
-            </div>
-            <div class="specific_gender_quantity_content">
-              <%# f.input :quantity_men, placeholder: "quantity men", label: "men" %>
-              <%# f.input :quantity_women, placeholder: "quantity women", label: "women" %>
-            </div> -->
-
-            <%# f.association :category_age, collection: CategoryAge.all, prompt: "select a category", label: "Age Group" %>
-            <%# f.text_field :tag_list, value: @event.tag_list.to_s, placeholder: "charity, education, social, music, social impact, travel, health, jazz..." %>
-
-            <!-- <div class="event_score_access">
-              <div><%# f.input :display_match, label: "Display Event Match %" %></div>
-              <div><%# f.input :event_score_access, label: "Event Score Access", placeholder: "3.5" %></div>
-            </div> -->
-
-            <div class="host_selection_section">
-              <div><%# f.association :hosts, collection: Host.all.order(:firstname), label_method: :firstname, label: false, as: :check_boxes %></div>
-            </div><br/>
 
             <!-- hidden fields -->
             <%= f.hidden_field :latitude %>
