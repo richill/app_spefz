@@ -24,21 +24,32 @@
 
           <div class="form-inputs">
             <%= f.file_field :image %>
+
+            <%= f.input :blog_image_link, placeholder: "http://res.cloudinary.com/account/image/upload/v1474379672/happy-family.jpg" %>
+            <div class="text_info">If unable to upload image for the blog. Place image link here</div> 
+
             <div class="blog_topic">
               <div class="blog_label">blog title</div>
               <%= f.text_field :title, label: "Blog Title", placeholder: "15 First Dates At Speed Dating!" %>
               <div class="text_info">*maximum word count: 55 | *minmum: 40 | <span id="textarea_title_blog"></span></div> 
             </div>
 
-            <%# f.file_field :image %>
-            <%# f.input :title %>
-            <%= f.input :content %>
             <%= f.association :category_blog, collection: CategoryBlog.all, prompt: "select a category", label: "Blog Category" %>
-            <%= f.input :video_link %>
-            <%= f.input :user_image_link %>
-            <%= f.input :user_link %>
-            <%= f.input :blog_image_link %>
-            <%= f.input :twitter_link %>
+            <%= f.input :content %>
+
+            <%= f.input :video_link, placeholder: "https://www.youtube.com/watch?v=MGsalg2f9js" %>
+            <div class="text_info">Have video content you would like post? Grab the Video link and place here.</div> 
+
+            <%= f.input :user_image_link, placeholder: "http://res.cloudinary.com/account/image/upload/v1480947078/img_profile_11_qzyh7b.png" %>
+            <div class="text_info">Place blogger's link image here</div> 
+
+            <%= f.input :twitter_link, placeholder: "https://twitter.com/username" %>
+            <div class="text_info">Place blogger's twitter link here.</div>
+
+            <%= f.input :user_link, placeholder: "https://mywebsite.com" %>
+            <div class="text_info">Place blogger's website link here.</div> 
+
+            
 
             <!-- hidden fields -->
             <%= f.hidden_field :user_id %>

@@ -22,6 +22,7 @@
   font-size: 15px !important;
   font-weight: 300 !important;
   text-transform: capitalize;
+  margin-top: 15px !important;
 }
 
 .user_general_settings_section .blog_edit_update_form .close_social_section {
@@ -224,6 +225,15 @@
   -moz-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
 }
+
+
+#blog_category_blog_id {
+  margin-bottom: 0px !important;
+}
+
+// .blog_twitter_link {
+//   margin-bottom: 30px !important;
+// }
 
 
 
