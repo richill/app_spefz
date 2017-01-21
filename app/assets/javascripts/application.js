@@ -180,8 +180,10 @@ $(document).ready(function() {
 $(document).ready(function() {
   var text_max_companyname = 20;
   var text_max_title = 55;
+  var text_max_event_title = 55;
   $('#textarea_companyname_feedback').html(text_max_companyname + ' words remaining');
   $('#textarea_title_feedback').html(text_max_title + ' words remaining');
+  $('#textarea_title_event').html(text_max_event_title + ' words remaining');
 
   $('#textarea').keyup(function() {
     var regex = /\s+/gi;
@@ -194,6 +196,12 @@ $(document).ready(function() {
     var text_length = $('#social_title').val().trim().replace(regex, ' ').split(' ').length;
     var text_remaining = text_max_title - text_length;
     $('#textarea_title_feedback').html(text_remaining + ' words remaining');
+  });
+  $('#event_title').keyup(function() {
+    var regex = /\s+/gi;
+    var text_length = $('#event_title').val().trim().replace(regex, ' ').split(' ').length;
+    var text_remaining = text_max_title - text_length;
+    $('#textarea_title_event').html(text_remaining + ' words remaining');
   });
 });
 

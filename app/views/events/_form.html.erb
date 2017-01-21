@@ -24,8 +24,24 @@
 
           <div class="form-inputs">
             <%= f.file_field :image %>
-            <%= f.input :close, label: 'Close Event' %>
-            <%= f.input :title, label: "Event Name", placeholder: "Speed Social - Graduate Professionals" %>
+
+            <% unless action_name == 'new' %>
+            <div class="close_social_section">
+              <%= f.input :close, label: 'Close Event' %>
+              <div class="text_info">If ticked (closed) the event will be removed from the list of speed-events. Members will no longer be able to view nor attend the event.</div>
+            </div>
+            <% end %>
+
+            <div class="event_topic">
+              <div class="event_label">discussion title</div>
+              <%= f.text_field :title, label: "Event Title", placeholder: "Speed Social - Graduate Professionals" %>
+              <div class="text_info">*maximum word count: 55 | *minmum: 40 | <span id="textarea_title_event"></span></div> 
+            </div>
+
+
+
+            <%# f.input :close, label: 'Close Event' %>
+            <%# f.input :title, label: "Event Name", placeholder: "Speed Social - Graduate Professionals" %>
             <%= f.input :description, label: "Description" %>
             <%= f.association :category_topic, collection: CategoryTopic.all, prompt: "select a category", label: "Event Category" %>
             <%= f.input :venuename, label: "venue name", placeholder: "Eclipse (South Kensington) (London)" %>
