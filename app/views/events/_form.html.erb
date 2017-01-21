@@ -73,6 +73,41 @@
             </div>
             <div class="clear"></div>
 
+            <div class="gender_selection_section">
+              <% if action_name == 'edit' %>
+                <div class="current_gender_selection">
+                  <span>Current Settings:</span>
+                  <span>
+                    <% if @event.category_quantitygender.name == "both men & women" %>
+                      <i class="fa fa-users" aria-hidden="true"></i>
+                    <% elsif @event.category_quantitygender.name == "only men" %>
+                      <i class="fa fa-male" aria-hidden="true"></i>
+                    <% else @event.category_quantitygender.name == "only women" %>
+                      <i class="fa fa-female" aria-hidden="true"></i>
+                    <% end %>
+                  </span>
+                  <span><%= @event.category_quantitygender.name %></span>
+                  <span class="divider">|</span>
+                  <span><%= @event.quantity %> space limit</span>
+                </div>
+              <% end %>
+              <%= f.association :category_quantitygender, collection: CategoryQuantitygender.all, prompt: "select a category", label: "Quantity Gender Selection", input_html: { class: 'category_select' } %>
+              <div class="general_gender_quantity_content">
+                <%= f.input :quantity, placeholder: "quantity", label: false %>
+              </div>
+              <div class="specific_gender_quantity_content">
+                  <%= f.input :quantity_men, placeholder: "quantity men", label: "men" %>
+                  <%= f.input :quantity_women, placeholder: "quantity women", label: "women" %>
+              </div>
+            </div>
+            <div class="clear"></div>
+
+            <div class="additional_options">
+              <%= f.input :price, label: "Price" %>
+              <%= f.association :category_age, collection: CategoryAge.all, prompt: "select a category", label: "Age Group" %>
+            </div>
+            <div class="clear"></div>
+
 
             <%# f.input :close, label: 'Close Event' %>
             <%# f.input :title, label: "Event Name", placeholder: "Speed Social - Graduate Professionals" %>
@@ -87,18 +122,18 @@
             <%# f.input :date %>
             <%# f.input :time, label: "Sart Time" %>
             <%# f.input :time_end, label: "End Time" %>
-            <%= f.input :price, label: "Price" %>
+            <%# f.input :price, label: "Price" %>
 
-            <%= f.association :category_quantitygender, collection: CategoryQuantitygender.all, prompt: "select a category", label: "Quantity Gender Selection", input_html: { class: 'category_select' } %>
-            <div class="general_gender_quantity_content">
-              <%= f.input :quantity, placeholder: "quantity", label: false %>
+            <%# f.association :category_quantitygender, collection: CategoryQuantitygender.all, prompt: "select a category", label: "Quantity Gender Selection", input_html: { class: 'category_select' } %>
+            <!-- <div class="general_gender_quantity_content">
+              <%# f.input :quantity, placeholder: "quantity", label: false %>
             </div>
             <div class="specific_gender_quantity_content">
-              <%= f.input :quantity_men, placeholder: "quantity men", label: "men" %>
-              <%= f.input :quantity_women, placeholder: "quantity women", label: "women" %>
-            </div>
+              <%# f.input :quantity_men, placeholder: "quantity men", label: "men" %>
+              <%# f.input :quantity_women, placeholder: "quantity women", label: "women" %>
+            </div> -->
 
-            <%= f.association :category_age, collection: CategoryAge.all, prompt: "select a category", label: "Age Group" %>
+            <%# f.association :category_age, collection: CategoryAge.all, prompt: "select a category", label: "Age Group" %>
             <%# f.text_field :tag_list, value: @event.tag_list.to_s, placeholder: "charity, education, social, music, social impact, travel, health, jazz..." %>
 
             <div class="event_score_access">
