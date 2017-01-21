@@ -14,12 +14,17 @@
       <div class="user_general_settings_inner_section user_socials_section_main_content">
         <h1>socials</h1>
         <ul>
-          <li>1.] all socials</li>
+          <li>1.] all socials / below prev yr:# - current yr:# </li>
           <li>2.] total active social</li>
           <li>3.] total active socials [mth]</li>
           <li>4.] total closed & expired socials</li>
           <li>5.] total host [users]</li>
           <li>6.] total hosts [spefz]</li>
+          <li>0.] groups - number of socials under each group 
+            <ul>
+              <li>eg: Family & Education | # of socials: 4 | # of users attending: 20 | Male: #12 #Female:8 | total money in: £3'000</li>
+            </ul>
+          </li>
         </ul>
         <button><%= link_to "create social", new_user_social_path(current_user) %></button>
       </div>

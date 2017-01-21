@@ -42,7 +42,7 @@
         <div class="header"> total active events [mth]</div>
         <div class="header_data">
           <span class="header_icon"><i class="fa fa-calendar-check-o" aria-hidden="true"></i></span><span><%= @events.created_this_month.live_events.open_events.count %></span>
-          <span class="minor_info">£4.5k [mth]</span>
+          <span class="minor_info">£4.5k [mth] <%= @events.live_events.open_events.count %></span>
         </div>
       </div>
     </div>
