@@ -215,4 +215,207 @@ $(document).ready(function() {
 
 
 
+/*=========================================
+    Users admin dashboard
+  =========================================*/
+
+$(document).ready(function() {
+  $('.stats_tab_01').click(function() {
+    $(".stats_tab_01_content").show();
+    $(".stats_tab_02_content").hide();
+    $(".stats_tab_03_content").hide();
+    $(".stats_tab_04_content").hide();
+    $(".stats_tab_05_content").hide();
+    $(".stats_tab_06_content").hide();
+    $(".stats_tab_07_content").hide();
+    $(".stats_tab_08_content").hide();
+    $(".stats_tab_09_content").hide();
+    $(".stats_tab_10_content").hide();
+    $(".stats_tab_11_content").hide();
+    $(".stats_tab_12_content").hide();
+  });
+  $('.stats_tab_02').click(function() {
+    $(".stats_tab_02_content").show();
+    $(".stats_tab_01_content").hide();
+    $(".stats_tab_03_content").hide();
+    $(".stats_tab_04_content").hide();
+    $(".stats_tab_05_content").hide();
+    $(".stats_tab_06_content").hide();
+    $(".stats_tab_07_content").hide();
+    $(".stats_tab_08_content").hide();
+    $(".stats_tab_09_content").hide();
+    $(".stats_tab_10_content").hide();
+    $(".stats_tab_11_content").hide();
+    $(".stats_tab_12_content").hide();
+  });
+  $('.stats_tab_03').click(function() {
+    $(".stats_tab_03_content").show();
+    $(".stats_tab_01_content").hide();
+    $(".stats_tab_02_content").hide();
+    $(".stats_tab_04_content").hide();
+    $(".stats_tab_05_content").hide();
+    $(".stats_tab_06_content").hide();
+    $(".stats_tab_07_content").hide();
+    $(".stats_tab_08_content").hide();
+    $(".stats_tab_09_content").hide();
+    $(".stats_tab_10_content").hide();
+    $(".stats_tab_11_content").hide();
+    $(".stats_tab_12_content").hide();
+  });
+  $('.stats_tab_04').click(function() {
+    $(".stats_tab_04_content").show();
+    $(".stats_tab_01_content").hide();
+    $(".stats_tab_02_content").hide();
+    $(".stats_tab_03_content").hide();
+    $(".stats_tab_05_content").hide();
+    $(".stats_tab_06_content").hide();
+    $(".stats_tab_07_content").hide();
+    $(".stats_tab_08_content").hide();
+    $(".stats_tab_09_content").hide();
+    $(".stats_tab_10_content").hide();
+    $(".stats_tab_11_content").hide();
+    $(".stats_tab_12_content").hide();
+  });
+  $('.stats_tab_05').click(function() {
+    $(".stats_tab_05_content").show();
+    $(".stats_tab_01_content").hide();
+    $(".stats_tab_02_content").hide();
+    $(".stats_tab_03_content").hide();
+    $(".stats_tab_04_content").hide();
+    $(".stats_tab_06_content").hide();
+    $(".stats_tab_07_content").hide();
+    $(".stats_tab_08_content").hide();
+    $(".stats_tab_09_content").hide();
+    $(".stats_tab_10_content").hide();
+    $(".stats_tab_11_content").hide();
+    $(".stats_tab_12_content").hide();
+  });
+  $('.stats_tab_06').click(function() {
+    $(".stats_tab_06_content").show();
+    $(".stats_tab_01_content").hide();
+    $(".stats_tab_02_content").hide();
+    $(".stats_tab_03_content").hide();
+    $(".stats_tab_04_content").hide();
+    $(".stats_tab_05_content").hide();
+    $(".stats_tab_07_content").hide();
+    $(".stats_tab_08_content").hide();
+    $(".stats_tab_09_content").hide();
+    $(".stats_tab_10_content").hide();
+    $(".stats_tab_11_content").hide();
+    $(".stats_tab_12_content").hide();
+  });
+  $('.stats_tab_07').click(function() {
+    $(".stats_tab_07_content").show();
+    $(".stats_tab_01_content").hide();
+    $(".stats_tab_02_content").hide();
+    $(".stats_tab_03_content").hide();
+    $(".stats_tab_04_content").hide();
+    $(".stats_tab_05_content").hide();
+    $(".stats_tab_06_content").hide();
+    $(".stats_tab_08_content").hide();
+    $(".stats_tab_09_content").hide();
+    $(".stats_tab_10_content").hide();
+    $(".stats_tab_11_content").hide();
+    $(".stats_tab_12_content").hide();
+  });
+  $('.stats_tab_08').click(function() {
+    $(".stats_tab_08_content").show();
+    $(".stats_tab_01_content").hide();
+    $(".stats_tab_02_content").hide();
+    $(".stats_tab_03_content").hide();
+    $(".stats_tab_04_content").hide();
+    $(".stats_tab_05_content").hide();
+    $(".stats_tab_06_content").hide();
+    $(".stats_tab_07_content").hide();
+    $(".stats_tab_09_content").hide();
+    $(".stats_tab_10_content").hide();
+    $(".stats_tab_11_content").hide();
+    $(".stats_tab_12_content").hide();
+  });
+  $('.stats_tab_09').click(function() {
+    $(".stats_tab_09_content").show();
+    $(".stats_tab_01_content").hide();
+    $(".stats_tab_02_content").hide();
+    $(".stats_tab_03_content").hide();
+    $(".stats_tab_04_content").hide();
+    $(".stats_tab_05_content").hide();
+    $(".stats_tab_06_content").hide();
+    $(".stats_tab_07_content").hide();
+    $(".stats_tab_08_content").hide();
+    $(".stats_tab_10_content").hide();
+    $(".stats_tab_11_content").hide();
+    $(".stats_tab_12_content").hide();
+  });
+  $('.stats_tab_10').click(function() {
+    $(".stats_tab_10_content").show();
+    $(".stats_tab_01_content").hide();
+    $(".stats_tab_02_content").hide();
+    $(".stats_tab_03_content").hide();
+    $(".stats_tab_04_content").hide();
+    $(".stats_tab_05_content").hide();
+    $(".stats_tab_06_content").hide();
+    $(".stats_tab_07_content").hide();
+    $(".stats_tab_08_content").hide();
+    $(".stats_tab_09_content").hide();
+    $(".stats_tab_11_content").hide();
+    $(".stats_tab_12_content").hide();
+  });
+  $('.stats_tab_11').click(function() {
+    $(".stats_tab_11_content").show();
+    $(".stats_tab_01_content").hide();
+    $(".stats_tab_02_content").hide();
+    $(".stats_tab_03_content").hide();
+    $(".stats_tab_04_content").hide();
+    $(".stats_tab_05_content").hide();
+    $(".stats_tab_06_content").hide();
+    $(".stats_tab_07_content").hide();
+    $(".stats_tab_08_content").hide();
+    $(".stats_tab_09_content").hide();
+    $(".stats_tab_10_content").hide();
+    $(".stats_tab_12_content").hide();
+  });
+  $('.stats_tab_012').click(function() {
+    $(".stats_tab_12_content").show();
+    $(".stats_tab_01_content").hide();
+    $(".stats_tab_02_content").hide();
+    $(".stats_tab_03_content").hide();
+    $(".stats_tab_04_content").hide();
+    $(".stats_tab_05_content").hide();
+    $(".stats_tab_06_content").hide();
+    $(".stats_tab_07_content").hide();
+    $(".stats_tab_08_content").hide();
+    $(".stats_tab_09_content").hide();
+    $(".stats_tab_10_content").hide();
+    $(".stats_tab_11_content").hide();
+  });
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

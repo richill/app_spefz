@@ -15,7 +15,7 @@
         <span><i class="fa fa-user" aria-hidden="true"></i> <%= link_to "#{current_user.firstname}", user_path(current_user)%></span> <span class="fwd_sign">></span> <span>analytics</span>
       </div>
       <div class="user_general_settings_inner_section user_dashboard_section_main_content">
-        <div><%= render "user_dashboard_admin_analytics" %></div>
+        <div><%= render "users/shared/user_dashboard_admin_analytics" %></div>
       </div>
       <!-- content -->
     </div>
