@@ -93,6 +93,9 @@ class UsersController < ApplicationController
   def inquiries
   end
 
+  def reports
+  end
+
   def network
     @search = current_user.friends.search(params[:q])
     @friends = @search.result(distinct: true)
