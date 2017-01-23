@@ -48,6 +48,15 @@
   padding: 5px 15px !important;
 }
 
+.user_general_settings_section .event_edit_update_form .text_info a {
+  color: #E34B51 !important;
+  font-weight: bold;
+}
+
+.user_general_settings_section .event_edit_update_form .text_info a:hover {
+  text-decoration: underline;
+}
+
 .user_general_settings_section .event_edit_update_form #event_close {
   margin-bottom: 0px;
   margin-right: 5px;

@@ -38,22 +38,13 @@
   margin-bottom: 15px;
 }
 
-.match_info_img_modal .match_info_img_content .upper_list li {
+.match_info_img_modal .match_info_img_content ul li {
   font-family: 'Lato', sans-serif;
-  font-size: 15px !important;
-  font-weight: 400 !important;
+  font-size: 14px !important;
+  font-weight: 300 !important;
   margin-bottom: 15px !important;
-}
-
-.match_info_img_modal .match_info_img_content .lower_list {
-  margin-top: 15px !important;
-}
-
-.match_info_img_modal .match_info_img_content .lower_list li {
-  font-size: 13px !important;
   letter-spacing: 1px;
-  // word-spacing: 1px;
-  margin-bottom: 5px !important;
+  word-spacing: 1px;
 }
 
 .match_info_img_modal .bold_content {
