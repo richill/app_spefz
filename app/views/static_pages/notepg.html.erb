@@ -69,8 +69,8 @@
             <!-- cards_controller -->
             <li class="listed_content">#.] <span class="listed_content_header">cards_controller:</span>
               <ul>
-                <li><u><b>can</b> action</u>: can edit / create / update / destroy</li>
                 <li><u><b>can</b> view</u>: can view index / show</li>
+                <li><u><b>can</b> action</u>: can edit / create / update / destroy</li>
               </ul>
             </li>
             <!-- comments_controller -->
@@ -245,8 +245,8 @@
             <!-- cards_controller -->
             <li class="listed_content">#.] <span class="listed_content_header">cards_controller:</span>
               <ul>
-                <li><u><b>can</b> action</u>: can edit / create / update / destroy</li>
                 <li><u><b>can</b> view</u>: can view index / show</li>
+                <li><u><b>can</b> action</u>: can edit / create / update / destroy</li>             
               </ul>
             </li>
             <!-- comments_controller -->
@@ -411,13 +411,19 @@
                 <li><u><b>can</b> view</u>: can view index / show / venues / networking_tips / dating_tips / spefz_news</li>
               </ul>
             </li>
+            <!-- cards_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">cards_controller:</span>
+              <ul>
+                <li><u><b>can</b> view</u>: can view index / show</li>
+                <li><u><b>cannot</b> action</u>: cannot edit / create / update / destroy</li>
+              </ul>
+            </li>
             <!-- comments_controller -->
             <li class="listed_content">#.] <span class="listed_content_header">comments_controller:</span>
               <ul>
                 <li><u><b>can</b> action</u>: can create</li>
-                <li><u><b>can</b> view</u>: can view index </li>
                 <li><u><b>cannot</b> action</u>: cannot edit / update / destroy </li>
-                <li><u><b>cannot</b> view</u>: cannot view show </li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show </li>
               </ul>
             </li>
             <!-- conversations_controller -->
@@ -582,6 +588,14 @@
                 <li><u><b>can</b> view</u>: can view index / show / venues / networking_tips / dating_tips / spefz_news</li>
               </ul>
             </li>
+            <!-- cards_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">cards_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can edit / create / update</li>
+                <li><u><b>can</b> view</u>: can view index / show</li>
+                <li><u><b>cannot</b> action</u>: cannot destroy</li>
+              </ul>
+            </li>
             <!-- comments_controller -->
             <li class="listed_content">#.] <span class="listed_content_header">comments_controller:</span>
               <ul>
@@ -643,8 +657,8 @@
             <!-- invites_controller -->
             <li class="listed_content">#.] <span class="listed_content_header">invites_controller:</span>
               <ul>
-                <li><u><b>can</b> action</u>: can create / edit / update</li>
-                <li><u><b>cannot</b> action</u>: cannot  destroy</li>
+                <li><u><b>can</b> action</u>: can create </li>
+                <li><u><b>cannot</b> action</u>: cannot  edit / update / destroy</li>
                 <li><u><b>cannot</b> view</u>: cannot view index / show</li>
               </ul>
             </li>
@@ -751,6 +765,13 @@
                 <li><u><b>can</b> view</u>: can view index / show / venues / networking_tips / dating_tips / spefz_news</li>
               </ul>
             </li>
+            <!-- cards_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">cards_controller:</span>
+              <ul>
+                <li><u><b>can</b> view</u>: can view index / show</li>
+                <li><u><b>cannot</b> action</u>: cannot edit / create / update / destroy</li>
+              </ul>
+            </li>
             <!-- comments_controller -->
             <li class="listed_content">#.] <span class="listed_content_header">comments_controller:</span>
               <ul>
@@ -771,8 +792,7 @@
               <ul>
                 <li><u><b>can</b> view</u>: can view index / show</li>
                 <li><u><b>cannot</b> view</u>: cannot view attendants</li>
-                <li><u><b>cannot</b> action</u>: cannot edit / create / update</li>
-                <li><u><b>cannot</b> action</u>: cannot destroy</li> <!-- cannot destroy but can close an event [boolean] -->
+                <li><u><b>cannot</b> action</u>: cannot edit / create / update / destroy</li> <!-- cannot destroy but can close an event [boolean] -->
               </ul>
             </li>
             <!-- favourite_events_controller -->
@@ -923,6 +943,13 @@
               <ul>
                 <li><u><b>cannot</b> action</u>: cannot edit / create / update / destroy</li>
                 <li><u><b>can</b> view</u>: can view index / show / venues / networking_tips / dating_tips / spefz_news</li>
+              </ul>
+            </li>
+            <!-- cards_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">cards_controller:</span>
+              <ul>
+                <li><u><b>can</b> view</u>: can view index / show</li>
+                <li><u><b>cannot</b> action</u>: cannot edit / create / update / destroy</li>
               </ul>
             </li>
             <!-- comments_controller -->
