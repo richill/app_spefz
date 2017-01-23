@@ -19,7 +19,7 @@ class CommentsController < ApplicationController
   def create
     @comment = @commentable.comments.new(comment_params)
     @comment.user = current_user
-    @social = Social.find(params[:social_id])
+    @social = Social.friendly.find(params[:social_id])
 
     respond_to do |format|
       if @comment.save
@@ -63,6 +63,6 @@ class CommentsController < ApplicationController
 
     def load_commentable
       resource, id = request.path.split('/')[1, 2]
-      @commentable = resource.singularize.classify.constantize.find(id)
+      @commentable = resource.singularize.classify.constantize.friendly.find(id)
     end
 end
