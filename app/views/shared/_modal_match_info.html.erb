@@ -1,7 +1,12 @@
 <span class="match_info_section">
-  <div id="myModal-match-info" class="reveal-modal match_info_modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
-    <div class="modal_header">we would like to hear from you. get in touch!</div>
-    <h2 id="modalTitle-contactus">info@spefz.com</h2>
+  <div id="myModal-match-info" class="reveal-modal invite_user_modal match_info_modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+    <h2 id="modalTitle-invite" class="header">match</h2>
+    <div class="invite_form">
+      <!-- content -->
+        content
+        <div class="invite_message">Hi <span class="invitation_names"><%= "#{current_user.firstname}!" %></span> your current match stats with the event is <span class="social_event_names"><%= event.match(current_user) %>%</span></div>
+      <!-- content -->
+    </div>
     <a class="close-reveal-modal cancel_button" aria-label="Close">&#215;</a>
   </div>
 </span>
