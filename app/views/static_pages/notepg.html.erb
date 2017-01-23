@@ -41,7 +41,7 @@
     <!-- ADMIN management/administration/development/account/sales_group/client_group - group_A -->
     <div class="medium-6 columns admin_mgt_adm_dev_acct_sales_froup">
       <div>
-        <div class="groups"><u>Groups A</u>: Management Group | Administration Group | Development Group | Account Group | Sales/Marketing Group | Event Mgt Group | Client Group</div>
+        <div class="groups"><u>Groups A</u>: Management Group | Administration Group | Account Group | Development Group | Event Mgt Group | Sales/Marketing Group | Client Guests Group | Client Group | Dummy Group</div>
         <div>
           <div class="auth_header">[authentication] can & cannot actions</div>
           <ul>
@@ -66,20 +66,24 @@
                 <li><u><b>can</b> view</u>: can view index / show / venues / networking_tips / dating_tips / spefz_news</li>
               </ul>
             </li>
+            <!-- cards_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">cards_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can edit / create / update / destroy</li>
+                <li><u><b>can</b> view</u>: can view index / show</li>
+              </ul>
+            </li>
             <!-- comments_controller -->
             <li class="listed_content">#.] <span class="listed_content_header">comments_controller:</span>
               <ul>
-                <li><u><b>can</b> action</u>: can create</li>
-                <li><u><b>can</b> view</u>: can view index </li>
-                <li><u><b>cannot</b> action</u>: cannot edit / update / destroy </li>
-                <li><u><b>cannot</b> view</u>: cannot view show </li>
+                <li><u><b>can</b> view</u>: can view index / show </li>
+                <li><u><b>can</b> action</u>: can edit / create / update /destroy</li>
               </ul>
             </li>
             <!-- contacts_controller -->
             <li class="listed_content">#.] <span class="listed_content_header">contacts_controller:</span>
               <ul>
-                <li><u><b>can</b> action</u>: can create / destroy</li>
-                <li><u><b>cannot</b> action</u>: cannot edit / update</li>
+                <li><u><b>can</b> action</u>: can edit / create / update / destroy</li>
                 <li><u><b>can</b> view</u>: can view index / show</li>
               </ul>
             </li>
@@ -93,7 +97,7 @@
             <!-- events_controller -->
             <li class="listed_content">#.] <span class="listed_content_header">events_controller:</span>
               <ul>
-                <li><u><b>can</b> action</u>: can edit / create / update /destroy</li>
+                <li><u><b>can</b> action</u>: can edit / create / update / destroy</li>
                 <li><u><b>can</b> view</u>: can view index / show / attendants</li>
               </ul>
             </li>
@@ -125,9 +129,8 @@
             <!-- invites_requests_controller -->
             <li class="listed_content">#.] <span class="listed_content_header">invites_requests_controller:</span>
               <ul>
-                <li><u><b>can</b> action</u>: can create / destroy </li>
-                <li><u><b>can</b> action</u>: cannot edit / update </li>
-                <li><u><b>can</b> view</u>: cannot view index / show</li>
+                <li><u><b>can</b> action</u>: can edit / create / update / destroy</li>
+                <li><u><b>can</b> view</u>: can view index / show</li>
               </ul>
             </li>
             <!-- invites_controller -->
@@ -214,7 +217,7 @@
     <!-- PRIMARY-ADMIN mgt_group - group_B -->
     <div class="medium-3 columns pa_mgt_group">
       <div>
-        <div class="groups"><u>Groups B</u>: Management Group</div>
+      <div class="groups"><u>Groups B</u>: Management Group</div>
         <div>
           <div class="auth_header">[authentication] can & cannot actions</div>
           <ul>
@@ -239,20 +242,24 @@
                 <li><u><b>can</b> view</u>: can view index / show / venues / networking_tips / dating_tips / spefz_news</li>
               </ul>
             </li>
+            <!-- cards_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">cards_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can edit / create / update / destroy</li>
+                <li><u><b>can</b> view</u>: can view index / show</li>
+              </ul>
+            </li>
             <!-- comments_controller -->
             <li class="listed_content">#.] <span class="listed_content_header">comments_controller:</span>
               <ul>
-                <li><u><b>can</b> action</u>: can create</li>
-                <li><u><b>can</b> view</u>: can view index </li>
-                <li><u><b>cannot</b> action</u>: cannot edit / update / destroy </li>
-                <li><u><b>cannot</b> view</u>: cannot view show </li>
+                <li><u><b>can</b> view</u>: can view index / show </li>
+                <li><u><b>can</b> action</u>: can edit / create / update /destroy</li>
               </ul>
             </li>
             <!-- contacts_controller -->
             <li class="listed_content">#.] <span class="listed_content_header">contacts_controller:</span>
               <ul>
-                <li><u><b>can</b> action</u>: can create / destroy</li>
-                <li><u><b>cannot</b> action</u>: cannot edit / update</li>
+                <li><u><b>can</b> action</u>: can edit / create / update / destroy</li>
                 <li><u><b>can</b> view</u>: can view index / show</li>
               </ul>
             </li>
@@ -266,7 +273,7 @@
             <!-- events_controller -->
             <li class="listed_content">#.] <span class="listed_content_header">events_controller:</span>
               <ul>
-                <li><u><b>can</b> action</u>: can edit / create / update /destroy</li>
+                <li><u><b>can</b> action</u>: can edit / create / update / destroy</li>
                 <li><u><b>can</b> view</u>: can view index / show / attendants</li>
               </ul>
             </li>
@@ -298,9 +305,8 @@
             <!-- invites_requests_controller -->
             <li class="listed_content">#.] <span class="listed_content_header">invites_requests_controller:</span>
               <ul>
-                <li><u><b>can</b> action</u>: can create / destroy </li>
-                <li><u><b>can</b> action</u>: cannot edit / update </li>
-                <li><u><b>can</b> view</u>: cannot view index / show</li>
+                <li><u><b>can</b> action</u>: can edit / create / update / destroy</li>
+                <li><u><b>can</b> view</u>: can view index / show</li>
               </ul>
             </li>
             <!-- invites_controller -->
@@ -894,7 +900,7 @@
     <!-- CLIENT management/administration/development/account/sales_group/client_group/client_group/dummy_group - group_F -->
     <div class="medium-6 columns admin_mgt_adm_dev_acct_sales_group">
       <div>
-        <div class="groups"><u>Groups F</u>: Management Group | Administration Group | Development Group | Account Group | Sales/Marketing Group | Event Mgt Group | Client Group | Client Guest Group | Dummy Group</div>
+        <div class="groups"><u>Groups F</u>: Management Group | Administration Group | Account Group | Development Group | Event Mgt Group | Sales/Marketing Group | Client Guests Group | Client Group | Dummy Group</div>
         <div>
           <div class="auth_header">[authentication] can & cannot actions</div>
           <ul>
