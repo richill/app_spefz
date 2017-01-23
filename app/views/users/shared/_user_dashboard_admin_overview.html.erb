@@ -12,7 +12,7 @@
         <div class="header"> total subscribed users</div>
         <div class="header_data"><span class="header_icon"><i class="fa fa-user-plus" aria-hidden="true"></i></span>
           <span><%= @users.subcribed_users.count %></span>
-          <span class="minor_info">£<%= (@users.subcribed_users.count) * (@premium_plan.price) %>/mth</span>
+          <div class="minor_info">£<%= (@users.subcribed_users.count) * (@premium_plan.price) %>/mth</div>
         </div>
       </div>
     </div>
