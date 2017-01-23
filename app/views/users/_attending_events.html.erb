@@ -105,8 +105,8 @@
                                     <span class="mid_divider">|</span> 
                                     <span class="category">Match:</span>
                                     <span class="category_info">
-                                      <a href="#" data-reveal-id="myModal-match-info"><%= event.match(current_user) %>%</a>
-                                      <%= render 'shared/modal_match_info' %> 
+                                      <a href="#<%= event.id %>" data-reveal-id="<%= dom_id(event) %>_event_match"><%= event.match(current_user) %>%</a>
+                                      <%= render partial: 'shared/modal_match_info', locals: { event: event } %>
                                     </span> 
                                   <% end %>
                                   <span class="mid_divider">|</span> 

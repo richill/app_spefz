@@ -112,8 +112,6 @@
             <span class="header">Match: </span> 
             <span class="content match_link_info">
               <a href="#<%= @event.id %>" data-reveal-id="<%= dom_id(@event) %>_event_match_show"><%= @event.match(current_user) %>%</a>
-              <!-- <a href="#" data-reveal-id="myModal-match-info"><%= @event.match(current_user) %>%</a> -->
-              <%# render 'shared/modal_match_info' %>
               <%= render partial: 'shared/modal_match_info_show', locals: { event: @event } %>
             </span>
           </li>

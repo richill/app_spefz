@@ -47,8 +47,8 @@
                         <span class="mid_divider">|</span> 
                         <span class="category">Match:</span>
                         <span class="match_info">
-                          <a href="#" data-reveal-id="myModal-match-info"><%= activity.trackable.match(current_user) %>%</a>
-                          <%= render 'shared/modal_match_info' %> 
+                          <a href="#<%= activity.trackable.id %>" data-reveal-id="<%= dom_id(activity.trackable) %>_event_match"><%= activity.trackable.match(current_user) %>%</a>
+                          <%= render partial: 'shared/modal_match_info', locals: { event: activity.trackable } %>
                         </span> 
                       <% end %>
                       <span class="mid_divider">|</span> 
