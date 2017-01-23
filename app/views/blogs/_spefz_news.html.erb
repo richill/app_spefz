@@ -26,93 +26,97 @@
     <!-- search -->
 
     <!-- content -->
-    <div class="medium-12 columns blog_index_content_section">
-      <div class="medium-12 columns content_container">
-        <div class="content_details">
-          <div class="blog_main_container">
-            <ul>
-              <!-- content -->
-              <% @blogs.news.each do |blog| %>
-                <li class="medium-12 columns listed_blog">
-                  <div class="medium-6 columns left_content">
-                    <div class="blog_main_img_cover">
-                      <% if blog.blog_image_link.present? %>
-                        <%= link_to(cl_image_tag(blog.blog_image_link, :transformation=>[{:width => 10, :height => 10}]), blog_path(blog)) %>
-                      <% else %>
-                        <%= link_to(cl_image_tag(blog.image, :transformation=>[{:gravity=>"face", :width=>200, :height=>200, :crop=>"fill"}]), blog_path(blog)) %>
-                      <% end %>
-                    </div>
-                  </div>
-                  <div class="medium-6 columns right_content">
-                    <div class="blog_title"><%= link_to "#{blog.title}", blog_path(blog) %></div>
-                    <div class="blog_category_date">
-                      <span>Category: </span>
-                      <span class="blog_category"><%= link_to "#{blog.category_blog.name}", "#" %></span>
-                      <span class="divider">|</span>
-                      <span><%= blog.created_at.strftime("%B %d, %Y") %></span>
-                    </div>
-                    <div class="blog_user_details">
-                      <span class="blog_img_cover">
-                        <% if signed_in?  %>
-                          <% if blog.user_image_link.present? %>
-                            <%= link_to(cl_image_tag(blog.user_image_link, :transformation=>[{:gravity=>"face", :width=>200, :height=>200, :crop=>"fill", :radius=>"max"}]), "#{blog.user_link}") %>
-                          <% else %>
-                            <%= link_to(cl_image_tag(blog.user.image, :transformation=>[{:gravity=>"face", :width=>200, :height=>200, :crop=>"fill", :radius=>"max"}]), user_path(blog.user)) %>
-                          <% end %>
+    <% if @blogs.dating.blank? %>
+      <%= render "shared/content_search_no_result_blog" %>
+    <% else %>
+      <div class="medium-12 columns blog_index_content_section">
+        <div class="medium-12 columns content_container">
+          <div class="content_details">
+            <div class="blog_main_container">
+              <ul>
+                <!-- blogs -->
+                <% @blogs.news.each do |blog| %>
+                  <li class="medium-12 columns listed_blog">
+                    <div class="medium-6 columns left_content">
+                      <div class="blog_main_img_cover">
+                        <% if blog.blog_image_link.present? %>
+                          <%= link_to(cl_image_tag(blog.blog_image_link, :transformation=>[{:width => 10, :height => 10}]), blog_path(blog)) %>
                         <% else %>
-                          <% if blog.user_image_link.present? %>
-                            <%= link_to(cl_image_tag(blog.user_image_link, :transformation=>[{:gravity=>"face", :width=>200, :height=>200, :crop=>"fill", :radius=>"max"}]), "#{blog.user_link}") %>
-                          <% else %>
-                            <%= link_to(cl_image_tag(blog.user.image, :transformation=>[{:gravity=>"face", :width=>200, :height=>200, :crop=>"fill", :radius=>"max"}]), "#") %>
-                          <% end %>
+                          <%= link_to(cl_image_tag(blog.image, :transformation=>[{:gravity=>"face", :width=>200, :height=>200, :crop=>"fill"}]), blog_path(blog)) %>
                         <% end %>
-                      </span>
-                      <span>
-                        <% if signed_in?  %>
-                          <% if blog.blogger_name.present? %>
-                            <%= link_to "#{blog.blogger_name}", "#{blog.user_link}" %>
-                          <% else %>
-                            <%= link_to "#{blog.user.firstname}", user_path(blog.user) %>
-                          <% end %>
-                        <% else %>
-                          <% if blog.blogger_name.present? %>
-                            <%= link_to "#{blog.blogger_name}", "#{blog.user_link}" %>
-                          <% else %>
-                            <%= link_to "#{blog.user.firstname}", "#" %>
-                          <% end %>
-                        <% end %>
-                      </span>
-                      <span class="divider">|</span>
-                      <%= link_to "#{blog.twitter_link}", target:"_blank" do %>
-                        <span><i class="fa fa-twitter" aria-hidden="true"></i></span>
-                        <span>twitter</span>
-                      <% end %>
-                      <span class="divider">|</span>
-                      <%= link_to "#{blog.user_link}", target:"_blank" do %>
-                        <span><i class="fa fa-user" aria-hidden="true"></i></span>
-                        <span>website</span>
-                      <% end %>
+                      </div>
                     </div>
-                    <div class="blog_content_read">
-                      <span class="blog_info_content"><%= truncate "#{blog.content}", length: 600 %></span>
-                      <span class="read_more"><%= link_to "read more", blog_path(blog) %></span>
-                      <% if signed_in? %>
-                        <% if current_user.admin_pa_management_group || current_user.pa_administration_group %>
-                          <span class="divider">|</span>
-                          <span class="read_more"><%= link_to "edit", edit_user_blog_path(blog.user, blog) %></span>
+                    <div class="medium-6 columns right_content">
+                      <div class="blog_title"><%= link_to "#{blog.title}", blog_path(blog) %></div>
+                      <div class="blog_category_date">
+                        <span>Category: </span>
+                        <span class="blog_category"><%= link_to "#{blog.category_blog.name}", "#" %></span>
+                        <span class="divider">|</span>
+                        <span><%= blog.created_at.strftime("%B %d, %Y") %></span>
+                      </div>
+                      <div class="blog_user_details">
+                        <span class="blog_img_cover">
+                          <% if signed_in?  %>
+                            <% if blog.user_image_link.present? %>
+                              <%= link_to(cl_image_tag(blog.user_image_link, :transformation=>[{:gravity=>"face", :width=>200, :height=>200, :crop=>"fill", :radius=>"max"}]), "#{blog.user_link}") %>
+                            <% else %>
+                              <%= link_to(cl_image_tag(blog.user.image, :transformation=>[{:gravity=>"face", :width=>200, :height=>200, :crop=>"fill", :radius=>"max"}]), user_path(blog.user)) %>
+                            <% end %>
+                          <% else %>
+                            <% if blog.user_image_link.present? %>
+                              <%= link_to(cl_image_tag(blog.user_image_link, :transformation=>[{:gravity=>"face", :width=>200, :height=>200, :crop=>"fill", :radius=>"max"}]), "#{blog.user_link}") %>
+                            <% else %>
+                              <%= link_to(cl_image_tag(blog.user.image, :transformation=>[{:gravity=>"face", :width=>200, :height=>200, :crop=>"fill", :radius=>"max"}]), "#") %>
+                            <% end %>
+                          <% end %>
+                        </span>
+                        <span>
+                          <% if signed_in?  %>
+                            <% if blog.blogger_name.present? %>
+                              <%= link_to "#{blog.blogger_name}", "#{blog.user_link}" %>
+                            <% else %>
+                              <%= link_to "#{blog.user.firstname}", user_path(blog.user) %>
+                            <% end %>
+                          <% else %>
+                            <% if blog.blogger_name.present? %>
+                              <%= link_to "#{blog.blogger_name}", "#{blog.user_link}" %>
+                            <% else %>
+                              <%= link_to "#{blog.user.firstname}", "#" %>
+                            <% end %>
+                          <% end %>
+                        </span>
+                        <span class="divider">|</span>
+                        <%= link_to "#{blog.twitter_link}", target:"_blank" do %>
+                          <span><i class="fa fa-twitter" aria-hidden="true"></i></span>
+                          <span>twitter</span>
                         <% end %>
-                      <% end %>
+                        <span class="divider">|</span>
+                        <%= link_to "#{blog.user_link}", target:"_blank" do %>
+                          <span><i class="fa fa-user" aria-hidden="true"></i></span>
+                          <span>website</span>
+                        <% end %>
+                      </div>
+                      <div class="blog_content_read">
+                        <span class="blog_info_content"><%= truncate "#{blog.content}", length: 600 %></span>
+                        <span class="read_more"><%= link_to "read more", blog_path(blog) %></span>
+                        <% if signed_in? %>
+                          <% if current_user.admin_pa_management_group || current_user.pa_administration_group %>
+                            <span class="divider">|</span>
+                            <span class="read_more"><%= link_to "edit", edit_user_blog_path(blog.user, blog) %></span>
+                          <% end %>
+                        <% end %>
+                      </div>
                     </div>
-                  </div>
-                </li>
-                <div class="clear"></div>
-              <% end %>
-              <!-- content -->
-            </ul>
+                  </li>
+                  <div class="clear"></div>
+                <% end %>
+                <!-- blogs -->
+              </ul>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    <% end %>
     <!-- content -->
 
   </div>
