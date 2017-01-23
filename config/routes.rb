@@ -49,6 +49,7 @@ Rails.application.routes.draw do
       get 'analytics'
       get 'company'
       get 'stats-users'
+      get 'groups'
       get 'stats-socials'
       get 'stats-events'
       get 'transactions'

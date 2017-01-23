@@ -78,6 +78,9 @@ class UsersController < ApplicationController
   def stats_socials
   end
 
+  def groups 
+  end
+
   def stats_events
   end
 
