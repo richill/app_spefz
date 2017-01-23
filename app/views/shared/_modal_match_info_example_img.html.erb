@@ -1,7 +1,23 @@
-<span class="match_info_example_img_section">
+<span class="match_img_info_section">
   <div id="myModal-match-info-example-img" class="reveal-modal match_info_img_modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
-    <div class="modal_header">we would like to hear from you. get in touch!</div>
-    <h2 id="modalTitle-contactus"><%= image_tag("img_match_info_img.png") %></h2>
+    <h2 id="modalTitle-match-info" class="header">display event match %</h2>
+    
+      <!-- content -->
+      <div class="match_info_img_main_container">
+
+        <div class="match_info_img_content"> 
+          <span>Hi</span>
+          <span class="bold_content"><%# "#{current_user.firstname}!" %></span> 
+          <span>your current match stats with the event <span class="bold_content"><%# "#{event.title}" %></span> is </span>
+          <span class="stats_cover"><%# event.match(current_user) %>%</span>
+        </div>
+
+        <div class="match_info_img_content" style="margin-bottom:0px;">
+          <%= image_tag("img_match_info_img.png") %>
+        </div>
+      </div>
+      <!-- content -->
+    
     <a class="close-reveal-modal cancel_button" aria-label="Close">&#215;</a>
   </div>
 </span>

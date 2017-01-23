@@ -1,16 +1,15 @@
 /*=========================================
-    Section: events index page | match
-    File: views / shared / _modal_match_info.html.erb
-    File: views / shared / _modal_match_info_show.html.erb
+    Section: events edit/create page | info on match image
+    File: views / shared / _modal_match_info_example_img.html.erb
   =========================================*/
 
-.match_info_modal {
+.match_info_img_modal {
   border-radius: 0px !important;
   border: 0px !important;
   padding: 0px !important;
 }
 
-.match_info_modal .header {
+.match_info_img_modal .header {
   padding: 5px 15px !important;
   font-size: 35px;
   border-bottom: 2px solid #58CDA6;
@@ -22,15 +21,15 @@
   margin-bottom: 0px !important;
 }
 
-.match_info_modal .cancel_button {
+.match_info_img_modal .cancel_button {
   color: #fff !important;
 }
 
-.match_info_modal .match_main_container {
+.match_info_img_modal .match_info_img_main_container {
   padding: 15px;
 }
 
-.match_info_modal .match_content {
+.match_info_img_modal .match_info_img_content {
   font-family: 'Lato', sans-serif;
   font-size: 15px !important;
   font-weight: 300 !important;
@@ -39,30 +38,30 @@
   margin-bottom: 15px;
 }
 
-.match_info_modal .match_content .upper_list li {
+.match_info_img_modal .match_info_img_content .upper_list li {
   font-family: 'Lato', sans-serif;
   font-size: 15px !important;
   font-weight: 400 !important;
   margin-bottom: 15px !important;
 }
 
-.match_info_modal .match_content .lower_list {
+.match_info_img_modal .match_info_img_content .lower_list {
   margin-top: 15px !important;
 }
 
-.match_info_modal .match_content .lower_list li {
+.match_info_img_modal .match_info_img_content .lower_list li {
   font-size: 13px !important;
   letter-spacing: 1px;
   // word-spacing: 1px;
   margin-bottom: 5px !important;
 }
 
-.match_info_modal .bold_content {
+.match_info_img_modal .bold_content {
   text-transform: capitalize;
   font-weight: bold !important;
 }
 
-.match_info_modal .stats_cover {
+.match_info_img_modal .stats_cover {
   font-weight: 300 !important;
   background-color: #E34B51;
   padding: 8px;
@@ -72,14 +71,14 @@
   margin-left: 5px;
 }
 
-.match_info_modal label {
+.match_info_img_modal label {
   font-family: 'Lato', sans-serif;
   font-size: 15px !important;
   font-weight: 300 !important;
   text-transform: capitalize;
 }
 
-.match_info_modal .match_content_info {
+.match_info_img_modal .match_info_img_content_info {
   font-family: 'Lato', sans-serif;
   font-size: 14px !important;
   font-weight: 300 !important;
@@ -88,17 +87,17 @@
   margin-bottom: 15px;
 }
 
-.match_info_modal img {
-  height: 50px;
-  width: 50px;
-  margin: 10px 0px;
-}
+// .match_info_img_modal img {
+//   height: 50px;
+//   width: 50px;
+//   margin: 10px 0px;
+// }
 
-.match_info_modal .divider {
+.match_info_img_modal .divider {
   margin: 10px 5px 10px 0px;
 }
 
-.match_info_modal input[type="submit"] {
+.match_info_img_modal input[type="submit"] {
   font-family: 'Lato', sans-serif;
   font-size: 13px;
   font-weight: 300;
@@ -116,14 +115,14 @@
   -o-transition: all 0.3s ease;
 }
 
-.match_info_modal input[type="submit"]:hover {
+.match_info_img_modal input[type="submit"]:hover {
   background-color: rgba(238, 170, 2, 0.6) !important;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
 }
 
-.match_info_modal .action_btn_decline a {
+.match_info_img_modal .action_btn_decline a {
   font-family: 'Lato', sans-serif;
   font-size: 13px;
   font-weight: 300;
@@ -140,7 +139,7 @@
   -o-transition: all 0.3s ease;
 }
 
-.match_info_modal .action_btn_decline a:hover {
+.match_info_img_modal .action_btn_decline a:hover {
   color: #fff !important;
   background-color: rgba(238, 170, 2, 0.6) !important;
   -webkit-transition: all 0.3s ease;
@@ -148,31 +147,32 @@
   -o-transition: all 0.3s ease;
 }
 
-.match_info_modal .checkbox {
+.match_info_img_modal .checkbox {
   float: left;
   margin-right: 10px;
 }
 
-.match_info_modal input[type="checkbox"] {
+.match_info_img_modal input[type="checkbox"] {
   margin-right: 5px;
   margin-bottom: 10px;
 }
 
-.match_info_modal .listed_network_members_header {
+.match_info_img_modal .listed_network_members_header {
   font-family: 'Lato', sans-serif;
   font-size: 13px;
   font-weight: 300;
   text-transform: capitalize !important;
 }
 
-.match_info_modal .listed_network_members {
+.match_info_img_modal .listed_network_members {
   background-color: rgba(88, 205, 166, 0.2) !important;
   text-transform: capitalize !important;
   padding: 15px;
   margin-bottom: 15px;
 }
 
-.match_info_modal .stat_percentage {
+
+.stat_percentage {
   color: #E34B51 !important;
   font-weight: bold !important;
   font-size: 16px !important;
