@@ -22,10 +22,10 @@
                           <% if card.card_status_open? %>
                             <%= link_to(image_tag("#{card.event.image_url}", :alt =>  "image", :class =>"#"), card) %>
                           <% else %>
-                            <%= link_to(image_tag("#{card.event.image_url}", :alt =>  "image", :class =>"#"), "#") %>
+                            <%= link_to(image_tag("#{card.event.image_url}", :alt =>  "image", :class =>"#"), event_path(card.event)) %>
                           <% end %>
                         <% else %>
-                          <%= link_to(image_tag("img_feed_07.png", :alt =>  "image", :class =>"#"), "#") %>
+                          <%= link_to(image_tag("img_feed_07.png", :alt =>  "image", :class =>"#"), event_path(card.event)) %>
                         <% end %>
                       </div>
                     </div>
@@ -36,7 +36,7 @@
                         <% if card.card_status_open? %>
                           <%= link_to "#{card.event.title}", card %>
                         <% else %>
-                          <%= link_to "#{card.event.title}", "#" %>
+                          <%= link_to "#{card.event.title}", event_path(card.event) %>
                         <% end %>
                       </div>
                       <div class="info"><i class="fa fa-map-marker" aria-hidden="true"></i> <%= card.event.venuename %></div>
