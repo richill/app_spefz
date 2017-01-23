@@ -377,8 +377,6 @@
     </div>
     <!-- end PRIMARY-ADMIN mgt_group -->
 
-
-
     <!-- PRIMARY-ADMIN admin_group - group_C -->
     <div class="medium-3 columns pa_adm_group">
       <div>
@@ -456,6 +454,14 @@
                 <li><u><b>cannot</b> view</u>: cannot view index / show</li>
               </ul>
             </li>
+            <!-- invites_requests_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">invites_requests_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can create</li>
+                <li><u><b>cannot</b> action</u>: cannot edit / update / destroy</li>
+                <li><u><b>cannot</b> view</u>: cannot view index / show</li>
+              </ul>
+            </li>
             <!-- invites_controller -->
             <li class="listed_content">#.] <span class="listed_content_header">invites_controller:</span>
               <ul>
@@ -475,7 +481,8 @@
             <li class="listed_content">#.] <span class="listed_content_header">payments_controller:</span>
               <ul>
                 <li><u><b>can</b> action</u>: can create </li>
-                <li><u><b>can</b> view</u>: can view index / show</li>
+                <li><u><b>can</b> view</u>: can view show</li>
+                <li><u><b>cannot</b> view</u>: cannot view index</li>
                 <li><u><b>cannot</b> action</u>: cannot edit / update / destroy </li>
               </ul>
             </li>
@@ -489,17 +496,18 @@
             <li class="listed_content">#.] <span class="listed_content_header">reports_controller:</span>
               <ul>
                 <li><u><b>can</b> action</u>: create / update</li>
+                <li><u><b>can</b> view</u>: can view show</li>
                 <li><u><b>cannot</b> action</u>: cannot edit / destroy</li>
-                <li><u><b>can</b> view</u>: can view index / show</li>
+                <li><u><b>cannot</b> view</u>: cannot view index</li>
               </ul>
             </li>
             <!-- signups_controller -->
             <li class="listed_content">#.] <span class="listed_content_header">signups_controller:</span>
               <ul>
                 <li><u><b>can</b> action</u>: can create </li>
-                <li><u><b>can</b> view</u>: can view index / show</li>
-                <li><u><b>can</b> action</u>: can edit / update </li>
-                <li><u><b>cannot</b> action</u>: cannot destroy </li>
+                <li><u><b>can</b> view</u>: can view show</li>
+                <li><u><b>cannot</b> action</u>: cannot destroy / edit / update </li>
+                <li><u><b>cannot</b> view</u>: cannot view index</li>
               </ul>
             </li>
             <!-- socials_controller -->
@@ -528,8 +536,8 @@
             <li class="listed_content">#.] <span class="listed_content_header">users_controller:</span>
               <ul>
                 <li><u><b>can</b> action</u>: can edit / create / update</li>
-                <li><u><b>can</b> view</u>: can view show / account / membership / settings / network / followings / followers</li>
-                <li><u><b>cannot</b> view</u>: cannot view index / dashboard / analytics / company / stats_users / stats_socials / stats_events / transactions / stats_blogs / inquiries</li>
+                <li><u><b>can</b> view</u>: can view show / account / membership / settings / network / followings / followers / attending_socials / attending_events / saved_socials / saved_events / live_socials / expired_socials</li>
+                <li><u><b>cannot</b> view</u>: cannot view index / dashboard / analytics / company / stats_users / stats_socials / groups / stats_events / transactions / stats_blogs / inquiries / reports</li>
                 <li><u><b>cannot</b> action</u>: cannot destroy </li>
               </ul>
             </li>
@@ -611,15 +619,25 @@
             <!-- hosts_controller -->
             <li class="listed_content">#.] <span class="listed_content_header">hosts_controller:</span>
               <ul>
-                <li><u><b>cannot</b> action</u>: cannot edit / create / update / destroy</li>
+                <li><u><b>can</b> action</u>: edit / create / update</li>
+                <li><u><b>can</b> view</u>: can show</li>
+                <li><u><b>cannot</b> action</u>: cannot destroy</li>
+                <li><u><b>cannot</b> view</u>: cannot view index</li>
+              </ul>
+            </li>
+            <!-- invites_requests_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">invites_requests_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can create </li>
+                <li><u><b>cannot</b> action</u>: cannot  edit / update / destroy</li>
                 <li><u><b>cannot</b> view</u>: cannot view index / show</li>
               </ul>
             </li>
             <!-- invites_controller -->
             <li class="listed_content">#.] <span class="listed_content_header">invites_controller:</span>
               <ul>
-                <li><u><b>can</b> action</u>: can create</li>
-                <li><u><b>cannot</b> action</u>: cannot edit / update / destroy</li>
+                <li><u><b>can</b> action</u>: can create / edit / update</li>
+                <li><u><b>cannot</b> action</u>: cannot  destroy</li>
                 <li><u><b>cannot</b> view</u>: cannot view index / show</li>
               </ul>
             </li>
@@ -687,8 +705,8 @@
             <li class="listed_content">#.] <span class="listed_content_header">users_controller:</span>
               <ul>
                 <li><u><b>can</b> action</u>: can edit / create / update</li>
-                <li><u><b>can</b> view</u>: can view show / account / membership / settings / network / followings / followers</li>
-                <li><u><b>cannot</b> view</u>: cannot view index / dashboard / analytics / company / stats_users / stats_socials / stats_events / transactions / stats_blogs / inquiries</li>
+                <li><u><b>can</b> view</u>: can view show / account / membership / settings / network / followings / followers / attending_socials / attending_events / saved_socials / saved_events / live_socials / expired_socials</li>
+                <li><u><b>cannot</b> view</u>: cannot view index / dashboard / analytics / company / stats_users / stats_socials / groups / stats_events / transactions / stats_blogs / inquiries / reports</li>
                 <li><u><b>cannot</b> action</u>: cannot destroy </li>
               </ul>
             </li>
@@ -874,7 +892,7 @@
     <!-- CLIENT management/administration/development/account/sales_group/client_group/client_group/dummy_group - group_F -->
     <div class="medium-6 columns admin_mgt_adm_dev_acct_sales_group">
       <div>
-        <div class="groups"><u>Groups F</u>: Management Group | Administration Group | Development Group | Account Group | Sales/Marketing Group | Event Mgt Group | Client Group | Client Group | Dummy Group</div>
+        <div class="groups"><u>Groups F</u>: Management Group | Administration Group | Development Group | Account Group | Sales/Marketing Group | Event Mgt Group | Client Group | Client Guest Group | Dummy Group</div>
         <div>
           <div class="auth_header">[authentication] can & cannot actions</div>
           <ul>
