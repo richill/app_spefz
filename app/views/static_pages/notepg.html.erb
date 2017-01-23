@@ -112,7 +112,7 @@
             <!-- friendships_controller -->
             <li class="listed_content">#.] <span class="listed_content_header">friendships_controller:</span>
               <ul>
-                <li><u><b>can</b> action</u>: can create / destroy </li>
+                <li><u><b>can</b> action</u>: can create / update / destroy / decline / cancel / delete</li>
               </ul>
             </li>
             <!-- hosts_controller -->
@@ -120,6 +120,14 @@
               <ul>
                 <li><u><b>can</b> action</u>: can edit / create / update / destroy</li>
                 <li><u><b>can</b> view</u>: can view index / show</li>
+              </ul>
+            </li>
+            <!-- invites_requests_controller -->
+            <li class="listed_content">#.] <span class="listed_content_header">invites_requests_controller:</span>
+              <ul>
+                <li><u><b>can</b> action</u>: can create / destroy </li>
+                <li><u><b>can</b> action</u>: cannot edit / update </li>
+                <li><u><b>can</b> view</u>: cannot view index / show</li>
               </ul>
             </li>
             <!-- invites_controller -->
@@ -173,7 +181,7 @@
             <!-- static_pages_controller -->
             <li class="listed_content">#.] <span class="listed_content_header">static_pages_controller:</span>
               <ul>
-                <li><u><b>can</b> view</u>: can view aboutpg / accountpg / cancellationsrefundpg / cookiepg / errorpermissionpg / errorpg / faqspg / helppg / homepg / imagepg / landingpg / messagesentpg / notepg / membershippg / partnerspg / paymentqueriespg / privacypg / termspg</li>
+                <li><u><b>can</b> view</u>: can view aboutpg / accountpg / cancellationsrefundpg / cookiepg / errorpermissionpg / errorpg / faqspg / helppg / homepg / imagepg / landingpg / messagesentpg / membershippg / notepg / partnerspg / paymentqueriespg / privacypg / termspg</li>
               </ul>
             </li>
             <!-- subscriptions_controller -->
@@ -187,7 +195,7 @@
             <li class="listed_content">#.] <span class="listed_content_header">users_controller:</span>
               <ul>
                 <li><u><b>can</b> action</u>: can edit / create / update / destroy </li>
-                <li><u><b>can</b> view</u>: can view index / show / account / membership / settings / dashboard / analytics / company / stats_users / stats_socials / stats_events / transactions / stats_blogs / inquiries / network / followings / followers</li>
+                <li><u><b>can</b> view</u>: can view index / show / account / membership / settings / dashboard / analytics / company / stats_users / stats_socials / groups / stats_events / transactions / stats_blogs / inquiries / reports / network / followings / followers / attending_socials / attending_events / saved_socials / saved_events / live_socials / expired_socials</li>
               </ul>
             </li>
           </ul>
