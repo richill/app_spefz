@@ -18,17 +18,18 @@
   background-color: #283041;
   font-family: 'Lato', sans-serif;
   font-weight: 300;
+  margin-bottom: 0px !important;
 }
 
 .match_info_modal .cancel_button {
   color: #fff !important;
 }
 
-.match_info_modal .invite_form {
-  padding: 8px 15px !important;
+.match_main_container {
+  padding: 15px;
 }
 
-.match_info_modal .invite_form .invite_message {
+.match_info_modal .match_content {
   font-family: 'Lato', sans-serif;
   font-size: 15px !important;
   font-weight: 300 !important;
@@ -37,29 +38,53 @@
   margin-bottom: 15px;
 }
 
-.match_info_modal .invite_form .invitation_names {
+.match_info_modal .match_content .upper_list li {
+  font-family: 'Lato', sans-serif;
+  font-size: 15px !important;
+  font-weight: 400 !important;
+  margin-bottom: 15px !important;
+}
+
+.match_info_modal .match_content .lower_list {
+  margin-top: 15px !important;
+}
+
+.match_info_modal .match_content .lower_list li {
+  font-size: 13px !important;
+  letter-spacing: 1px;
+  // word-spacing: 1px;
+  margin-bottom: 5px !important;
+}
+
+.match_info_modal .bold_content {
   text-transform: capitalize;
   font-weight: bold !important;
 }
 
-.match_info_modal .invite_form label {
+.match_info_modal .stats_cover {
+  font-weight: 300 !important;
+  background-color: #E34B51;
+  padding: 8px;
+  border-radius: 5px;
+  color: #fff;
+  letter-spacing: 1px;
+  margin-left: 5px;
+}
+
+.match_info_modal label {
   font-family: 'Lato', sans-serif;
   font-size: 15px !important;
   font-weight: 300 !important;
   text-transform: capitalize;
 }
 
-.match_info_modal .invite_form .invite_message_info {
+.match_info_modal .match_content_info {
   font-family: 'Lato', sans-serif;
   font-size: 14px !important;
   font-weight: 300 !important;
   background-color: rgba(88, 205, 166, 0.2) !important;
   padding: 5px 15px;
   margin-bottom: 15px;
-}
-
-.match_info_modal .invite_form #invite_social_id {
-  margin-bottom: 0px;
 }
 
 .match_info_modal img {
@@ -144,6 +169,14 @@
   text-transform: capitalize !important;
   padding: 15px;
   margin-bottom: 15px;
+}
+
+
+.stat_percentage {
+  color: #E34B51 !important;
+  font-weight: bold !important;
+  font-size: 16px !important;
+
 }
 
 

@@ -87,8 +87,7 @@
                           <li>
                             <div class="header">match</div> 
                             <div class="content match_link_info" style="margin-top:3px;">
-                              <a href="#" data-reveal-id="myModal-match-info"><%= event.match(current_user) %>%</a>
-                              <div><%# render 'shared/modal_match_info' %></div>
+                              <a href="#<%= event.id %>" data-reveal-id="<%= dom_id(event) %>_event_match"><%= event.match(current_user) %>%</a>
                               <div><%= render partial: 'shared/modal_match_info', locals: { event: event } %></div>
                             </div>
                           </li>
