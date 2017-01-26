@@ -4,7 +4,9 @@
   <div class="form-inputs">
     <div>Select Host:</div>
     <div class="medium-12 columns listed_hosts">
-      <%= f.association :users, collection: User.hosts.all.order(:firstname), label_method: :firstname, label: false, as: :check_boxes %><br/>
+      <%# f.association :users, collection: User.hosts.all.order(:firstname), label_method: :firstname, label: false, as: :check_boxes %>
+      <%# f.association :users, collection: User.hosts.all.order(:firstname), label_method: lambda { |user| image_tag("#{user.image}") "#{user.firstname} #{user.lastname}" }, label: false, as: :check_boxes %>
+      <%= f.association :users, collection: User.hosts.all.order(:firstname), label_method: lambda { |user| "#{user.firstname} #{user.lastname}" }, label: false, as: :check_boxes %><br/>
     </div>
     <div class="clear"></div>
     <%= f.association :event, collection: Event.live_events.all.order(:title), prompt: "please select the event", label_method: :title, label: 'Event' %>
@@ -14,3 +16,4 @@
     <%= f.button :submit %>
   </div>
 <% end %>
+<!-- cl_image_tag(@user.image) -->
