@@ -12,6 +12,18 @@
     <div>Hosts For the Event:</div>
     <div class="medium-12 columns listed_hosts">
       <b><%= @event.title %></b>
+      <div class="medium-12 columns event_image_content">
+        <ul>
+          <li>
+            <% if @event.image.present? %>
+              <div class="image_cover"><%= cl_image_tag(@event.image, :transformation=>[{:gravity=>"center", :width=>200, :height=>200, :crop=>"fill"}]) %></div>
+            <% else %>
+              <div class="image_cover"><%= image_tag("img_feed_07.png") %></div>
+            <% end %>
+          </li>
+          <li>details</li>
+        </ul>
+      </div>
     </div>
 
     <!-- hidden_field -->

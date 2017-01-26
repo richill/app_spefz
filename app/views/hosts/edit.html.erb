@@ -1,10 +1,10 @@
-
-
-<div class="eventhosts_inner_container">
-  <div class="header">Update Event Hosts</div>
-  <div class="content_list">
-    <div class="event_title">Event: <%= @event.title %></div>
-    <%= render 'hosts/form' %>
-  </div> 
-  <a class="close-reveal-modal cancel_button" aria-label="Close">&#215;</a>
+<div class="eventhosts_edit_background">
+  <div class="eventhosts_inner_container">
+    <div class="header">Update Event Hosts</div>
+    <div class="content_list">
+      <div class="event_title">Event: <%= link_to @event.title, event_path(@event) %></div>
+      <%= render 'hosts/form' %>
+    </div> 
+    <a class="close-reveal-modal cancel_button" aria-label="Close">&#215;</a>
+  </div>
 </div>
