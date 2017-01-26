@@ -35,7 +35,7 @@ class HostsController < ApplicationController
   def update
     respond_to do |format|
       if @host.update(host_params)
-        format.html { redirect_to([@host.event, @host], notice: 'Host was successfully updated.') }
+        format.html { redirect_to(event_path(@event), notice: 'Host was successfully updated.') }
         format.json { render :show, status: :ok, location: @host }
       else
         format.html { render :edit }
