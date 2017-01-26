@@ -12,7 +12,7 @@ class Payment < ActiveRecord::Base
   scope :valid_subscriptions, -> {where(['event_payment_date = ? OR event_payment_date IS ?', false, nil])}
   scope :status_success, -> {where(['status = ?', "success"])}
 
-  scope :events_with_successful_payments, -> {joins(:event).map(&:event)}
+  scope :events_with_successful_payments, -> {joins(:event).map(&:event).uniq}
   # payments.status_success.events_with_successful_payments
   # displays events with sucessful payments
 
