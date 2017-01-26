@@ -79,6 +79,7 @@ Rails.application.routes.draw do
 
   resources :events do
     resources :cards
+    resources :hosts
     member do
       get 'attendants'
     end

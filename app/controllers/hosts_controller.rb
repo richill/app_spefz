@@ -9,18 +9,21 @@ class HostsController < ApplicationController
   end
 
   def new
-    @host = Host.new
+    @event = Event.friendly.find(params[:event_id])
+    @host = @event.hosts.build
   end
 
   def edit
+    @event = Event.friendly.find(params[:event_id])
   end
 
   def create
-    @host = Host.new(host_params)
-
+    @event = Event.friendly.find(params[:event_id])
+    @event.host = Host.new(host_params)
+    @host = @event.host
     respond_to do |format|
       if @host.save
-        format.html { redirect_to user_event_path(@host.event.user, @host.event), notice: 'Host was successfully created.' }
+        format.html { redirect_to(event_path(@event), notice: 'Host was successfully created.') }
         format.json { render :show, status: :created, location: @host }
       else
         format.html { render :new }
@@ -32,7 +35,7 @@ class HostsController < ApplicationController
   def update
     respond_to do |format|
       if @host.update(host_params)
-        format.html { redirect_to user_event_path(@host.event.user, @host.event), notice: 'Host was successfully updated.' }
+        format.html { redirect_to([@host.event, @host], notice: 'Host was successfully updated.') }
         format.json { render :show, status: :ok, location: @host }
       else
         format.html { render :edit }
@@ -42,6 +45,8 @@ class HostsController < ApplicationController
   end
 
   def destroy
+    @event = Event.friendly.find(params[:event_id])
+    @host = @event.cards.find(params[:id])
     @host.destroy
     respond_to do |format|
       format.html { redirect_to hosts_url, notice: 'Host was successfully destroyed.' }
