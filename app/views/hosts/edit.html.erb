@@ -1,2 +1,4 @@
-<%= link_to "#{@host.event.title}", user_event_path(@host.event.user, @host.event) %>
-<%= render 'form' %>
+<div class="eventhosts_inner_container">
+  <%= link_to "#{@host.event.title}", user_event_path(@host.event.user, @host.event) %>
+  <%= render 'form' %>
+</div>
