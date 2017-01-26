@@ -20,7 +20,7 @@
     </div>
     <% if current_user.admin_pa_management_group || current_user.pa_event_mgt_group %>
       <div class="edit_host">
-        <%= link_to "Edit Host", edit_event_host_path(@event, @event.host), target:"_blank" %>
+        <%= link_to "Edit Host", edit_event_host_path(@event, @event.host) %>
       </div>
     <% end %>
   </div>

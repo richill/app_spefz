@@ -50,9 +50,12 @@
 }
 
 .cards_section .title_section {
-  background-color: rgba(88, 205, 166, 0.2) !important;
+  background-color: rgba(88, 205, 166, 0.3) !important;
   padding: 15px;
-  margin-bottom: 35px;
+  margin-bottom: 45px;
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.14);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.14);
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.14);
 }
 
 .cards_section .card_main_title {
@@ -60,6 +63,7 @@
   font-size: 50px;
   font-weight: 300;
   text-transform: capitalize;
+  text-shadow: 2px 2px #fff;
 }
 
 .cards_section .card_sub_title {
