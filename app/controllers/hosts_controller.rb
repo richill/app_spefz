@@ -46,7 +46,7 @@ class HostsController < ApplicationController
 
   def destroy
     @event = Event.friendly.find(params[:event_id])
-    @host = @event.cards.find(params[:id])
+    @host = @event.hosts.find(params[:id])
     @host.destroy
     respond_to do |format|
       format.html { redirect_to hosts_url, notice: 'Host was successfully destroyed.' }
