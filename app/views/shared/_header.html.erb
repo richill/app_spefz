@@ -63,7 +63,8 @@
           <% if @user_network_activities.unread_by(current_user).present?  %>
             <span id="notification_count_bell"><%= @user_network_activities.unread_by(current_user).count %></span>
           <% end %>
-          <div><%= link_to '', '#', id: "notificationLink_bell", class: "fa fa-bell" %></div>
+          <div><%= link_to 'hi', '#', id: "notificationLink_bell", class: "fa fa-bell" %></div>
+          <span><%# link_to 'view hello', activity_mark_as_viewed_path(activity_id: activity.id), method: :post %></span>
           <div id="notificationContainer_bell">
             <div id="notificationTitle_bell">
               <div class="dropdown_nottification_title"><%= link_to "Notifications", "#" %></div>
