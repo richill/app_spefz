@@ -1,13 +1,13 @@
 <div class="user_dashboard_admin_company">
   <!-- upper_data_content -->
   <div class="medium-12 columns upper_data_content" style="margin-bottom:0px;">
-    <div class="medium-2 columns left_data responsive_data">
+    <div class="medium-2 columns left_data responsive_data stats_tab_01">
       <div class="data_content">
         <div class="header"> total registered users</div>
         <div class="header_data"><span class="header_icon"><i class="fa fa-users" aria-hidden="true"></i></span><span><%= @users.all.count %></span></div>
       </div>
     </div>
-    <div class="medium-2 columns middle_data responsive_data">
+    <div class="medium-2 columns middle_data responsive_data stats_tab_02">
       <div class="data_content">
         <div class="header"> total subscribed users</div>
         <div class="header_data"><span class="header_icon"><i class="fa fa-user-plus" aria-hidden="true"></i></span>
@@ -16,78 +16,78 @@
         </div>
       </div>
     </div>
-    <div class="medium-2 columns middle_data responsive_data">
+    <div class="medium-2 columns middle_data responsive_data stats_tab_03">
       <div class="data_content">
         <div class="header"> total active socials</div>
         <div class="header_data"><span class="header_icon"><i class="fa fa-calendar-check-o" aria-hidden="true"></i></span><span><%= @socials.live_socials.open_socials.count %></span></div>
       </div>
     </div>
-    <div class="medium-2 columns middle_data responsive_data">
+    <div class="medium-2 columns middle_data responsive_data stats_tab_04">
       <div class="data_content">
         <div class="header"> total active socials [mth]</div>
         <div class="header_data"><span class="header_icon"><i class="fa fa-calendar-check-o" aria-hidden="true"></i></span><span><%= @socials.created_this_month.live_socials.open_socials.count %></span></div>
       </div>
     </div>
-    <div class="medium-2 columns middle_data responsive_data">
+    <div class="medium-2 columns middle_data responsive_data stats_tab_05">
       <div class="data_content">
         <div class="header"> total active events</div>
         <div class="header_data"><span class="header_icon"><i class="fa fa-calendar-check-o" aria-hidden="true"></i></span>
           <span><%= @events.live_events.open_events.count %></span>
-          <div class="minor_info">£16.5k [all]</div>
+          <div class="minor_info">£00.0k [all]</div>
         </div>
       </div>
     </div>
-    <div class="medium-2 columns right_data responsive_data">
+    <div class="medium-2 columns right_data responsive_data stats_tab_06">
       <div class="data_content">
         <div class="header"> total active events [mth]</div>
         <div class="header_data">
           <span class="header_icon"><i class="fa fa-calendar-check-o" aria-hidden="true"></i></span><span><%= @events.created_this_month.live_events.open_events.count %></span>
-          <div class="minor_info">£4.5k [mth]</div>
+          <div class="minor_info">£00.0k [mth]</div>
         </div>
       </div>
     </div>
   </div>
 
   <div class="medium-12 columns upper_data_content">
-    <div class="medium-2 columns left_data responsive_data">
+    <div class="medium-2 columns left_data responsive_data stats_tab_07">
       <div class="data_content">
         <div class="header"> spefz team</div>
-        <div class="header_data"><span class="header_icon"><i class="fa fa-users" aria-hidden="true"></i></span><span><%= @users.all.count %></span></div>
+        <div class="header_data"><span class="header_icon"><i class="fa fa-users" aria-hidden="true"></i></span><span>0</span></div>
       </div>
     </div>
-    <div class="medium-2 columns middle_data responsive_data">
+    <div class="medium-2 columns middle_data responsive_data stats_tab_08">
       <div class="data_content">
         <div class="header">  mamagement group</div>
         <div class="header_data"><span class="header_icon"><i class="fa fa-users" aria-hidden="true"></i></span>
-          <span><%= @users.subcribed_users.count %></span>
+          <span>0</span>
         </div>
       </div>
     </div>
-    <div class="medium-2 columns middle_data responsive_data">
+    <div class="medium-2 columns middle_data responsive_data stats_tab_09">
       <div class="data_content">
         <div class="header"> administration group</div>
-        <div class="header_data"><span class="header_icon"><i class="fa fa-users" aria-hidden="true"></i></span><span><%= @socials.live_socials.open_socials.count %></span></div>
+        <div class="header_data"><span class="header_icon"><i class="fa fa-users" aria-hidden="true"></i></span><span>0</span></div>
       </div>
     </div>
-    <div class="medium-2 columns middle_data responsive_data">
+    <div class="medium-2 columns middle_data responsive_data stats_tab_10">
       <div class="data_content">
         <div class="header"> event mgt group</div>
-        <div class="header_data"><span class="header_icon"><i class="fa fa-users" aria-hidden="true"></i></span><span><%= @socials.created_this_month.live_socials.open_socials.count %></span></div>
+        <div class="header_data"><span class="header_icon"><i class="fa fa-users" aria-hidden="true"></i></span><span>0</span></div>
       </div>
     </div>
-    <div class="medium-2 columns middle_data responsive_data">
+    <div class="medium-2 columns middle_data responsive_data stats_tab_11">
       <div class="data_content">
         <div class="header"> sales/mrkt group</div>
         <div class="header_data"><span class="header_icon"><i class="fa fa-rss" aria-hidden="true"></i></span>
-          <span><%= @events.live_events.open_events.count %></span>
+          <span>0</span>
         </div>
       </div>
     </div>
-    <div class="medium-2 columns right_data responsive_data">
+    <div class="medium-2 columns right_data responsive_data stats_tab_12">
       <div class="data_content">
         <div class="header"> dummy group</div>
         <div class="header_data">
-          <span class="header_icon"><i class="fa fa-rss" aria-hidden="true"></i></span><span><%= @events.created_this_month.live_events.open_events.count %></span>
+          <span class="header_icon"><i class="fa fa-rss" aria-hidden="true"></i></span><span>0</span>
         </div>
       </div>
     </div>
@@ -95,10 +95,76 @@
   <div class="clear"></div>
 
   <!-- table_data_content -->
-  <div class="medium-12 columns lower_data_content">
+  <div class="medium-12 columns lower_data_content stats_tab_01_content">
     <div class="medium-12 columns lower_data_inner_content">
-      note: display hosts under event management
-      <%# render 'data_info_registered_users' %>
+      1.] note: display hosts under event management;
+      total registered users
+    </div>
+  </div>
+
+  <div class="medium-12 columns lower_data_content stats_tab_02_content hide">
+    <div class="medium-12 columns lower_data_inner_content">
+      2.] total subscribed users
+    </div>
+  </div>
+
+  <div class="medium-12 columns lower_data_content stats_tab_03_content hide">
+    <div class="medium-12 columns lower_data_inner_content">
+      3.] total active socials
+    </div>
+  </div>
+
+  <div class="medium-12 columns lower_data_content stats_tab_04_content hide">
+    <div class="medium-12 columns lower_data_inner_content">
+      4.] total active socials [mth]
+    </div>
+  </div>
+
+  <div class="medium-12 columns lower_data_content stats_tab_05_content hide">
+    <div class="medium-12 columns lower_data_inner_content">
+      5.] total active events
+    </div>
+  </div>
+
+   <div class="medium-12 columns lower_data_content stats_tab_06_content hide">
+    <div class="medium-12 columns lower_data_inner_content">
+      6.] Total Active Events [Mth]
+    </div>
+  </div>
+
+  <div class="medium-12 columns lower_data_content stats_tab_07_content hide">
+    <div class="medium-12 columns lower_data_inner_content">
+      7.] spefz team
+    </div>
+  </div>
+
+  <div class="medium-12 columns lower_data_content stats_tab_08_content hide">
+    <div class="medium-12 columns lower_data_inner_content">
+      8.] mamagement group
+    </div>
+  </div>
+
+  <div class="medium-12 columns lower_data_content stats_tab_09_content hide">
+    <div class="medium-12 columns lower_data_inner_content">
+      9.] administration group
+    </div>
+  </div>
+
+  <div class="medium-12 columns lower_data_content stats_tab_10_content hide">
+    <div class="medium-12 columns lower_data_inner_content">
+      10.] event mgt group
+    </div>
+  </div>
+
+  <div class="medium-12 columns lower_data_content stats_tab_11_content hide">
+    <div class="medium-12 columns lower_data_inner_content">
+      11.] sales/mrkt group
+    </div>
+  </div>
+
+  <div class="medium-12 columns lower_data_content stats_tab_12_content hide">
+    <div class="medium-12 columns lower_data_inner_content">
+      11.] Dummy Group
     </div>
   </div>
 

@@ -378,7 +378,7 @@ $(document).ready(function() {
     $(".stats_tab_10_content").hide();
     $(".stats_tab_12_content").hide();
   });
-  $('.stats_tab_012').click(function() {
+  $('.stats_tab_12').click(function() {
     $(".stats_tab_12_content").show();
     $(".stats_tab_01_content").hide();
     $(".stats_tab_02_content").hide();
