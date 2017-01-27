@@ -2,7 +2,7 @@ class AttendingSocialsController < ApplicationController
   before_action :set_social
 
   def create
-    if Attendance.create(attendable: @social, user: current_user)
+    if Attendance.find_or_create_by(attendable: @social, user: current_user)
       redirect_to :back, notice: 'Attending Social'
     else
       redirect_to :back, alert: 'Something went wrong...*sad panda*'
