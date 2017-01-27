@@ -22,7 +22,8 @@ class SocialsController < ApplicationController
     respond_with(@socials)
   end
 
-  def show 
+  def show
+    @activity =  Activity.last 
     @invite_request = InviteRequest.new
     unless current_user.subscribed_social_access?(@social)
       @premium_plan = Subscription.find_by(title:"premium")

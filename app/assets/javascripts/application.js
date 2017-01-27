@@ -106,7 +106,8 @@ $(document).ready(function() {
       $("#notificationContainer_invites").fadeOut("slow");
       $("#notificationContainer_comment").fadeOut("slow");
       $("#notificationContainer_profile").fadeOut("slow");
-      return false;
+      //return false;
+      return true;
     });
     //Document Click hiding the popup 
     $(document).click(function() {
@@ -115,6 +116,10 @@ $(document).ready(function() {
     //Popup on click
     $("#notificationContainer_bell").click(function() {
       return true;
+    });
+    //prevents refreshing of the link_to/a tag link
+    $('.link-delete').bind('ajax:beforeSend', function() {
+      $('#notificationLink_bell').show();
     });
   });
 
@@ -389,10 +394,6 @@ $(document).ready(function() {
     $(".stats_tab_11_content").hide();
   });
 });
-
-
-
-
 
 
 
