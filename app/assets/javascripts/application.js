@@ -106,7 +106,6 @@ $(document).ready(function() {
       $("#notificationContainer_invites").fadeOut("slow");
       $("#notificationContainer_comment").fadeOut("slow");
       $("#notificationContainer_profile").fadeOut("slow");
-      //return false;
       return true;
     });
     //Document Click hiding the popup 

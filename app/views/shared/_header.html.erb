@@ -38,7 +38,6 @@
             <div id="notificationsBody_friendRequest" class="notifications">
               <%= render 'shared/content_dropdownbox_friendrequest' %>
             </div>
-            <!-- <div id="notificationFooter"><a href="#">See All</a></div> -->
           </div>
         </li>
 
@@ -55,7 +54,6 @@
             <div id="notificationsBody_invites" class="notifications">
               <%= render 'shared/content_dropdownbox_invites' %>
             </div>
-            <!-- <div id="notificationFooter"><a href="#">See All</a></div> -->
           </div>
         </li>
 
@@ -64,7 +62,6 @@
             <span id="notification_count_bell"><%= @user_network_activities.unread_by(current_user).count %></span>
           <% end %>
           <div>
-            <%# link_to '', '#', id: "notificationLink_bell", class: "fa fa-bell" %>
             <% if @user_network_activities.present? %>
               <%= link_to_if @activity.present?, '', activity_mark_as_viewed_path(activity_id: @activity.id), method: :post, id: "notificationLink_bell", class: "fa fa-bell link-delete", :remote => true %>
             <% else %>
@@ -79,7 +76,6 @@
             <div id="notificationsBody_bell" class="notifications">
               <%= render 'shared/content_dropdownbox_notification' %>
             </div>
-            <!-- <div id="notificationFooter"><a href="#">See All</a></div> -->
           </div>
         </li>
         <li class="notification_li">
@@ -87,14 +83,8 @@
             <span id="notification_count_comment"><%= unread_messages_count %></span>
           <% end %>
           <div><%= link_to '', message_inbox_path, id: "", class: "fa fa-comment" %></div>
-          <!-- <div><%# link_to '', "", id: "notificationLink_comment", class: "fa fa-comment" %></div> -->
-          <!-- <div id="notificationContainer_comment">
-            <div id="notificationTitle_comment">Messages</div>
-            <div id="notificationsBody_comment" class="notifications">
-              <%# render 'shared/content_dropdownbox_messages' %>
-            </div>
-          </div> -->
         </li>
+        
         <li class="notification_li">
           <div class="profile_img_cover">
             <% if current_user.image.present? %>
@@ -104,7 +94,6 @@
             <% end %>
           </div>
           <div id="notificationContainer_profile">
-            <!-- <div id="notificationTitle_profile">Notifications</div> -->
             <div id="notificationTitle_profile">
               <div class="dropdown_user_name"><%= link_to "#{current_user.firstname} #{current_user.lastname}", user_path(current_user) %></div>
               <div class="dropdown_user_membership">
@@ -118,7 +107,6 @@
             <div id="notificationsBody_profile" class="notifications">
               <%= render 'shared/content_dropdownbox_users_profile' %>
             </div>
-            <!-- <div id="notificationFooter"><a href="#">See All</a></div> -->
           </div>
         </li>
       </ul>

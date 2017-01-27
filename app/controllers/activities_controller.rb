@@ -15,14 +15,8 @@ class ActivitiesController < ApplicationController
 
   def mark_as_viewed
     @activity =  Activity.find(params[:activity_id]) 
-    # @activity.mark_as_read! :for => current_user
     @user_network_activities.mark_as_read! :all, :for => current_user
     redirect_to :back
-    # if @activity.trackable_type == "Social"
-    #   redirect_to @activity.trackable
-    # elsif @activity.trackable_type == "Attendance"
-    #   redirect_to @activity.trackable.attendable
-    # end
   end
 
   private
@@ -43,13 +37,13 @@ class ActivitiesController < ApplicationController
     @events = Event.all
   end
 
-  def setup_activity
-    @activity =  Activity.last
-  end
-
   def setup_user_network_activities
     # @user_network_activities = PublicActivity::Activity.order("created_at desc").where(owner_id: current_user.friends)
     @user_network_activities = Activity.order("created_at desc").where(owner_id: current_user.friends)
+  end
+
+  def setup_activity
+    @activity =  Activity.last
   end
 
   def setup_invite_form
