@@ -87,6 +87,7 @@ class SubscriptionsController < ApplicationController
 
   def setup_user_network_activities
     @user_network_activities = Activity.order("created_at desc").where(owner_id: current_user.friends)
+    @activity =  Activity.last
   end
   
   # Use callbacks to share common setup or constraints between actions.

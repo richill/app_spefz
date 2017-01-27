@@ -1,5 +1,5 @@
 class ActivitiesController < ApplicationController
-  before_filter :setup_friends, :setup_subscription, :setup_cards, :setup_events, :setup_invite_form, :setup_user_network_activities, :setup_activity
+  before_filter :setup_friends, :setup_subscription, :setup_cards, :setup_events, :setup_invite_form, :setup_user_network_activities
 
   def index
     @activities = Activity.order("created_at desc").where("trackable_type IN (?)", ["Social", "Event"]) 
@@ -40,9 +40,6 @@ class ActivitiesController < ApplicationController
   def setup_user_network_activities
     # @user_network_activities = PublicActivity::Activity.order("created_at desc").where(owner_id: current_user.friends)
     @user_network_activities = Activity.order("created_at desc").where(owner_id: current_user.friends)
-  end
-
-  def setup_activity
     @activity =  Activity.last
   end
 

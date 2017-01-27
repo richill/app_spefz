@@ -153,6 +153,7 @@ class UsersController < ApplicationController
 
   def setup_user_network_activities
     @user_network_activities = Activity.order("created_at desc").where(owner_id: current_user.friends)
+    @activity =  Activity.last
   end
 
   def set_user
