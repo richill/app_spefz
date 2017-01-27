@@ -8,6 +8,7 @@ class AttendingSocialsController < ApplicationController
       redirect_to :back, alert: 'Something went wrong...*sad panda*'
     end
   end
+
   
   def destroy
     Attendance.where(attendable_id: @social.id, user_id: current_user.id).first.destroy

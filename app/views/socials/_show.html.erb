@@ -119,7 +119,7 @@
                         <% unless current_user.attending_socials.exists?(id: @social.id)  %>
                           <% unless @social.sold_out? %> <!-- note: if ticket is sold out do not display attend button -->
                             <% if current_user.image? %>
-                              <div class="social_profile_btn btn_social_attend"><%= link_to 'Attend', attending_socials_path(social_id: @social), method: :post %></div>
+                              <div class="social_profile_btn btn_social_attend"><%= link_to 'Attend testing', attending_socials_path(social_id: @social), method: :post %></div>
                             <% else %>
                               <div class="social_profile_btn btn_social_attend"><%= link_to 'Attend', image_restriction_page_path %></div>
                             <% end %>
