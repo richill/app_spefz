@@ -11,23 +11,11 @@
   <div class="medium-10 columns right_column_section">
     <div class="right_inner_section">
       <!-- content -->
-      <div class="user_general_settings_inner_section user_statsusers_section_main_content">
-        <h1>groups</h1>
-        <ul>
-          <li>1.] total roles</li>
-          <li>2.] total groups</li>
-          <li>3.] total users</li>
-          <li>4.] admins</li>
-          <li>5.] primary admins</li>
-          <li>6.] client</li>
-
-          <li>1.] management group</li>
-          <li>2.] adminstration group</li>
-          <li>3.] event management group</li>
-          <li>4.] client group</li>
-          <li>5.] client guest group</li>
-          <li>6.] dummy group</li>
-        </ul>
+      <div class="tree_link">
+        <span><i class="fa fa-user" aria-hidden="true"></i> <%= link_to "#{current_user.firstname}", user_path(current_user)%></span> <span class="fwd_sign">></span> <span>stats users</span>
+      </div>
+      <div class="user_general_settings_inner_section user_dashboard_section_main_content">
+        <div><%= render "users/shared/user_dashboard_admin_groups" %></div>
       </div>
       <!-- content -->
     </div>
