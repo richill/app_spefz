@@ -1,0 +1,567 @@
+/*=========================================
+    Section: admin stats-socials page
+    File: views / users / _user_dashboard_admin_statsblogs.html.erb
+  =========================================*/
+
+// -----------------------------------
+//  upper_data_content
+// -----------------------------------
+
+.user_dashboard_admin_statsblogs .upper_data_content {
+  padding: 0px !important;
+  margin-bottom: 30px;
+  background-color: rgba(0, 0, 0, 0.05) !important;
+}
+
+.user_dashboard_admin_statsblogs .data_content {
+  text-align: center;
+  color: #2F3F5B;
+}
+
+.user_dashboard_admin_statsblogs .data_content .header {
+  font-family: 'Lato', sans-serif;
+  text-transform: capitalize;
+  background-color: #2F3F5B;
+  padding: 5px 0px;
+  color: #fff !important;
+  border: 1px solid #2F3F5B;
+  font-size: 11px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  word-spacing: 2px;
+}
+
+.user_dashboard_admin_statsblogs .header_data {
+  font-family: sans-serif;
+  font-size: 25px;
+  padding: 10px 0px;
+  border: 1px solid #D4D4D4;
+  border-bottom: 2px solid #D4D4D4;
+  background-color: rgba(255, 255, 255, 0.9) !important;
+  height: 70px;
+}
+
+.user_dashboard_admin_statsblogs .header_icon {
+  float: left;
+  padding: 0px 20px;
+  border-right: 1px solid #D4D4D4;
+  opacity: 0.8;
+  font-size: 25px;
+}
+
+.user_dashboard_admin_statsblogs .header_icon i {
+  color: #2F3F5B !important;
+}
+
+.user_dashboard_admin_statsblogs .minor_info {
+  color: #E34B51;
+  font-size: 10px;
+  font-weight: bold;
+  text-align: right;
+  margin-right: 15px;
+  letter-spacing: 1px;
+}
+
+.user_dashboard_admin_statsblogs .minor_divider {
+  color: #2F3F5B !important;
+  font-weight: 300;
+  margin: 0px 3px;
+}
+
+.user_dashboard_admin_statsblogs .left_data {
+  padding: 15px 5px 15px 15px;
+}
+
+.user_dashboard_admin_statsblogs .middle_data {
+  padding: 15px 5px;
+}
+
+.user_dashboard_admin_statsblogs .right_data {
+  padding: 15px 15px 15px 5px;
+}
+
+
+// -----------------------------------
+//  lower_data_content
+// -----------------------------------
+
+.user_dashboard_admin_statsblogs .lower_data_content {
+  padding: 15px !important;
+  margin-bottom: 30px;
+  background-color: rgba(0, 0, 0, 0.05) !important;
+}
+
+.user_dashboard_admin_statsblogs .job_info_section_one {
+  margin-top: 15px;
+}
+
+.user_dashboard_admin_statsblogs .lower_data_inner_content {
+  padding: 15px !important;
+  background-color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.user_dashboard_admin_statsblogs .lower_data_inner_content .image_container {
+  background-color: rgba(0, 0, 0, 0.03) !important;
+  padding: 5px;
+  border-radius: 2px;
+}
+
+.user_dashboard_admin_statsblogs .lower_data_inner_content .image {
+  margin: auto;
+}
+
+.user_dashboard_admin_statsblogs .lower_data_inner_content .image {
+  width: 50px;
+  height: 50px;
+  background: url("img-profile-default.png") no-repeat;
+  background-size: 60%;
+  background-color: rgba(0, 0, 0, 0.05) !important;
+  border-radius: 250px;
+  background-position: 50% 45%;
+}
+
+.user_dashboard_admin_statsblogs .lower_data_inner_content .image img {
+  height: 50px;
+  border-radius: 250px;
+}
+
+.user_dashboard_admin_statsblogs .lower_data_inner_content .image img:hover {
+  opacity: 0.7;
+}
+
+.user_dashboard_admin_statsblogs .lower_data_inner_content h1 {
+  background-color: rgba(0, 0, 0, 0.05) !important;
+  font-size: 22px;
+  text-align: left;
+  text-transform: capitalize;
+  padding: 10px 5px;
+  font-family: "Lato", sans-serif;
+  color: #2F3F5B;
+}
+@media only screen and (max-width: 1200px) {
+  .user_dashboard_admin_statsblogs .lower_data_inner_content h1 {
+    padding: 15px;
+  }
+}
+
+.user_dashboard_admin_statsblogs .lower_data_inner_content h1 .h1_subtitle {
+  text-transform: lowercase !important;
+  font-size: 12px !important;
+}
+@media only screen and (max-width: 1200px) {
+  .user_dashboard_admin_statsblogs .lower_data_inner_content h1 .h1_subtitle {
+    margin-top: 5px;
+  }
+}
+
+.user_dashboard_admin_statsblogs .lower_data_inner_content .status_colour_blue {
+  font-size: 12px;
+  font-weight: 300 !important;
+  letter-spacing: 1px;
+  background-color: #2F3F5B;
+  padding: 4px 0px;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 2px;
+  margin-right: 5px;
+  width: 100px;
+  text-align: center;
+  display: inline-block;
+  cursor: pointer;
+}
+@media only screen and (max-width: 1200px) {
+  .user_dashboard_admin_statsblogs .lower_data_inner_content .status_colour_blue {
+    width: 100% !important;
+  }
+}
+
+.user_dashboard_admin_statsblogs .lower_data_inner_content .status_colour_blue:hover {
+  opacity: 0.7;
+}
+
+.user_dashboard_admin_statsblogs .lower_data_inner_content .status_colour_red {
+  font-size: 12px;
+  font-weight: 300 !important;
+  letter-spacing: 1px;
+  background-color: #E1473E;
+  padding: 4px 0px;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 2px;
+  margin-right: 5px;
+  width: 100px;
+  text-align: center;
+  display: inline-block;
+  cursor: pointer;
+}
+@media only screen and (max-width: 1200px) {
+  .user_dashboard_admin_statsblogs .lower_data_inner_content .status_colour_red {
+    width: 100% !important;
+  }
+}
+
+.user_dashboard_admin_statsblogs .lower_data_inner_content .status_colour_red:hover {
+  opacity: 0.7;
+}
+
+.user_dashboard_admin_statsblogs .lower_data_inner_content .status_colour_green {
+  font-size: 12px;
+  font-weight: 300 !important;
+  letter-spacing: 1px;
+  background-color: #8ABFA1;
+  padding: 4px 0px;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 2px;
+  margin-right: 5px;
+  width: 100px;
+  text-align: center;
+  display: inline-block;
+  cursor: pointer;
+}
+@media only screen and (max-width: 1200px) {
+  .user_dashboard_admin_statsblogs .lower_data_inner_content .status_colour_green {
+    width: 100% !important;
+  }
+}
+
+.user_dashboard_admin_statsblogs .lower_data_inner_content .status_colour_green:hover {
+  opacity: 0.7;
+}
+
+.user_dashboard_admin_statsblogs .lower_data_inner_content .status_colour_yellow {
+  font-size: 12px;
+  font-weight: 300 !important;
+  letter-spacing: 1px;
+  background-color: #fdb657;
+  padding: 4px 0px;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 2px;
+  margin-right: 5px;
+  width: 100px;
+  text-align: center;
+  display: inline-block;
+  cursor: pointer;
+}
+@media only screen and (max-width: 1200px) {
+  .user_dashboard_admin_statsblogs .lower_data_inner_content .status_colour_yellow {
+    width: 100% !important;
+  }
+}
+
+.user_dashboard_admin_statsblogs .lower_data_inner_content .status_colour_yellow:hover {
+  opacity: 0.7;
+}
+
+.user_dashboard_admin_statsblogs .lower_data_inner_content .status_colour_bluelight {
+  font-size: 12px;
+  font-weight: 300 !important;
+  letter-spacing: 1px;
+  background-color: #4d85b0;
+  padding: 4px 0px;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 2px;
+  margin-right: 5px;
+  width: 100px;
+  text-align: center;
+  display: inline-block;
+  cursor: pointer;
+}
+@media only screen and (max-width: 1200px) {
+  .user_dashboard_admin_statsblogs .lower_data_inner_content .status_colour_bluelight {
+    width: 100% !important;
+  }
+}
+
+.user_dashboard_admin_statsblogs .lower_data_inner_content .status_colour_bluelight:hover {
+  opacity: 0.7;
+}
+
+.user_dashboard_admin_statsblogs .lower_data_inner_content .bottom_inner_content {
+  max-height: 100px;
+  overflow: scroll;
+}
+
+.user_dashboard_admin_statsblogs .lower_data_inner_content .table { 
+  font-family: "Lato", sans-serif;
+  font-size: 14px;
+  color: #2F3F5B;
+  display: table; 
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.user_dashboard_admin_statsblogs .lower_data_inner_content .table .header {
+  font-size: 15px;
+  text-align: left;
+  text-transform: capitalize;
+}
+
+.user_dashboard_admin_statsblogs .lower_data_inner_content .table .background {
+  background-color: rgba(0, 0, 0, 0.05) !important;
+}
+
+.user_dashboard_admin_statsblogs .lower_data_inner_content .table  .tablerow .tablecell a { 
+  font-family: "Lato", sans-serif !important;
+  font-size: 12px !important;
+}
+
+.user_dashboard_admin_statsblogs .lower_data_inner_content .table  .tablerow .tablecell a:hover { 
+  text-decoration: underline !important;
+}
+
+.user_dashboard_admin_statsblogs .lower_data_inner_content .dashboard_view a {
+  color: #2F3F5B !important;
+  float: right !important;
+}
+
+.user_dashboard_admin_statsblogs .lower_data_inner_content .dashboard_view a:hover {
+  color: #E1473E !important;
+}
+
+.user_dashboard_admin_statsblogs .lower_data_inner_content .user_name {
+  font-weight: bold !important;
+  text-transform: capitalize !important;
+}
+
+.user_dashboard_admin_statsblogs .lower_data_inner_content .user_name a {
+  font-weight: bold !important;
+  color: #2F3F5B !important;
+}
+
+.user_dashboard_admin_statsblogs .lower_data_inner_content .applied_job a {
+  color: #E1473E !important;
+}
+
+.user_dashboard_admin_statsblogs .lower_data_inner_content .advert_title {
+  font-weight: bold !important;
+  text-transform: capitalize !important;
+}
+
+.user_dashboard_admin_statsblogs .lower_data_inner_content .advert_title a {
+  font-weight: bold !important;
+  color: #2F3F5B !important;
+}
+
+.user_dashboard_admin_statsblogs .lower_data_inner_content .ref_title {
+  font-weight: bold !important;
+}
+
+.user_dashboard_admin_statsblogs .lower_data_inner_content .ref_id {
+  color: #E1473E !important;
+}
+
+.user_dashboard_admin_statsblogs .lower_data_inner_content .overall_rate {
+  font-size: 12px;
+  font-weight: 400 !important;
+  background-color: rgba(225, 71, 62, 0.85) !important;
+  text-transform: capitalize;
+  padding: 10px;
+  color: #fff;
+  font-weight: bold;
+  margin-right: 5px;
+  text-align: center;
+  border-radius: 200px;
+  width: 60px;
+}
+
+.user_dashboard_admin_statsblogs .lower_data_inner_content .tablerow  { 
+  display: table-row; 
+  border-bottom: 1px solid #D4D4D4;
+}
+
+.user_dashboard_admin_statsblogs .lower_data_inner_content .tablecell { 
+  display: table-cell; 
+  padding: 10px 5px;
+  font-size: 12px;
+  vertical-align: middle;
+  position: relative;
+}
+
+.user_dashboard_admin_statsblogs .lower_data_inner_content .faint_text_format {
+  color: #8b8a8c !important;
+  font-weight: 300;
+  text-transform: capitalize;
+}
+
+.faint_text_format a {
+  color: #8b8a8c !important;
+}
+
+.user_dashboard_admin_statsblogs .lower_data_inner_content .main_text_format {
+  color: #2F3F5B !important;
+  font-weight: 400;
+}
+
+.user_dashboard_admin_statsblogs .lower_data_inner_content .main_text_format a {
+  color: #2F3F5B !important;
+  font-weight: 400;
+}
+
+.user_dashboard_admin_statsblogs .lower_data_inner_content .application a {
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.05) !important;
+  color: #2F3F5B !important;
+  border-radius: 5px !important;
+  display: inline-block;
+  width: 100%;
+  padding: 18px 0px !important;
+}
+
+.user_dashboard_admin_statsblogs .lower_data_inner_content .application a:hover {
+  background-color: #2F3F5B !important;
+  color: #fff !important;
+}
+
+.user_dashboard_admin_statsblogs .lower_data_inner_content .application_ex {
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.05) !important;
+  color: #2F3F5B !important;
+  border-radius: 5px !important;
+  display: inline-block;
+  width: 100%;
+  padding: 7px 0px !important;
+}
+
+.user_dashboard_admin_statsblogs .lower_data_inner_content .closed_expired_info {
+  text-align: center;
+  padding: 2px !important;
+  color: #E1473E !important;
+  border-radius: 5px !important;
+}
+
+.user_dashboard_admin_statsblogs .lower_data_inner_content .new a {
+  text-align: center;
+  border-radius: 5px !important;
+  font-family: "Lato", sans-serif;
+  font-size: 12px !important;
+  width: 100% !important;
+  display: inline-block;
+  padding: 3px 0px !important;
+  background-color: rgba(47, 63, 91, 0.1) !important;
+  color: #2F3F5B !important;
+  max-width: 150px;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+.user_dashboard_admin_statsblogs .lower_data_inner_content .new a:hover {
+  background-color: #2F3F5B !important;
+  color: #fff !important;
+  text-decoration: none !important;
+  -webkit-transition: all 0.3s ease;
+}
+
+.user_dashboard_admin_statsblogs .lower_data_inner_content .status_app_result {
+  font-family: "Lato", sans-serif;
+  font-size: 10px;
+  text-transform: uppercase;
+  border-radius: 5px;
+  text-align: center;
+  width: 100%;
+  text-transform: uppercase;
+  padding: 5px 25px;
+  text-align: center;
+  margin-bottom: 5px;
+  max-width: 150px;
+}
+
+.user_dashboard_admin_statsblogs .lower_data_inner_content .status_result {
+  font-family: "Lato", sans-serif;
+  font-size: 10px;
+  text-transform: uppercase;
+  border-radius: 5px;
+  text-align: center;
+  background-color: #E1473E;
+  width: 100%;
+  text-transform: uppercase;
+  padding: 5px 25px;
+  text-align: center;
+  margin-bottom: 5px;
+  max-width: 150px;
+}
+
+.user_dashboard_admin_statsblogs .lower_data_inner_content .colour_green {
+  color: #fff;
+  background-color: #8ABFA1;
+  width: 100%;
+}
+
+.user_dashboard_admin_statsblogs .lower_data_inner_content .colour_red {
+  color: #fff;
+  background-color: #E1473E;
+  width: 100%;
+}
+
+.user_dashboard_admin_statsblogs .lower_data_inner_content .colour_blue {
+  color: #fff;
+  background-color: #2F3F5B;
+  width: 100%;
+}
+
+.user_dashboard_admin_statsblogs .lower_data_inner_content .colour_yellow {
+  color: #fff;
+  background-color: #fdb657;
+  width: 100%;
+}
+
+.user_dashboard_admin_statsblogs .lower_data_inner_content .colour_tranparent_blue {
+  background-color: rgba(47, 63, 91, 0.1) !important;
+  width: 100%;
+}
+
+.user_dashboard_admin_statsblogs .lower_data_inner_content .status_colour_pink {
+  font-size: 12px;
+  background-color: #CF8381;
+  padding: 4px 0px;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 2px;
+  margin-right: 5px;
+  width: 100px;
+  text-align: center;
+  display: inline-block;
+  cursor: pointer;
+}
+@media only screen and (max-width: 1200px) {
+  .user_dashboard_admin_statsblogs .lower_data_inner_content .status_colour_pink {
+    width: 100% !important;
+  }
+}
+
+.user_dashboard_admin_statsblogs .lower_data_inner_content .status_colour_pink:hover {
+  opacity: 0.7;
+}
+
+
+
+
+// -----------------------------------
+//  responsive
+// -----------------------------------
+
+@media only screen and (max-width: 855px) {
+  .user_dashboard_admin_statsblogs .responsive_data {
+    width: 100% !important;
+    padding: 15px !important;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
