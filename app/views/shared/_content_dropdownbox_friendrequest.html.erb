@@ -16,7 +16,13 @@
             </div>
 
             <div class="user_info_section">
-              <div class="friend_request_name"><%= link_to truncate("#{requester.firstname} #{requester.lastname}", length: 23), user_path(requester) %></div>
+              <div class="friend_request_name">
+                <% if current_user.admin_pa_management_group %>
+                  <%= link_to truncate("#{requester.firstname} #{requester.lastname}", length: 23), user_path(requester) %>
+                <% else %>
+                  <%= link_to truncate(current_user.name_shortner(requester), length: 23), user_path(requester) %>
+                <% end %>
+              </div>
               <div class="user_profession"><%= truncate(requester.profession, length: 23) %></div>
             </div>
 
