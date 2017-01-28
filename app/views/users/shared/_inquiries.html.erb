@@ -11,23 +11,11 @@
   <div class="medium-10 columns right_column_section">
     <div class="right_inner_section">
       <!-- content -->
-      <div class="user_general_settings_inner_section user_inquiries_section_main_content">
-        <h1>inquiries</h1>
-        <ul>
-          <li>1.] total contacts</li>
-          <li>2.] total contacts [General Enquiry]</li>
-          <li>3.] total contacts [Technical Support]</li>
-          <li>4.] total contacts [Partnership]</li>
-          <li>5.] total contacts [Compliants]</li>
-          <li>6.] total contacts [Feedback]</li>
-
-          <li>1.] total contacts [Creating a Social]</li>
-          <li>2.] total contacts [Booking an Event]</li>
-          <li>3.] total contacts [Advertising on Spefz]</li>
-          <li>4.] total contacts [End Subscription Plan]</li>
-          <li>5.] total contacts [Delete Account]</li>
-          <li>6.] total contacts [I would love to work at Spefz]</li>
-        </ul>
+      <div class="tree_link">
+        <span><i class="fa fa-user" aria-hidden="true"></i> <%= link_to "#{current_user.firstname}", user_path(current_user)%></span> <span class="fwd_sign">></span> <span>inquiries</span>
+      </div>
+      <div class="user_general_settings_inner_section user_dashboard_section_main_content">
+        <div><%= render "users/shared/user_dashboard_admin_inquiries" %></div>
       </div>
       <!-- content -->
     </div>
