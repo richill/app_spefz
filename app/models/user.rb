@@ -286,6 +286,15 @@ class User < ActiveRecord::Base
     friends.include?(other_user)
   end
 
+  #displays user full name if both users are friends
+  def name_shortner(other_user)
+    if friends.include?(other_user)
+      "#{other_user.firstname} #{other_user.lastname}"
+    else
+      "#{other_user.firstname} " + "#{other_user.lastname}"[0,1] + "."
+    end
+  end
+
   #returns true if user has sent an invite to other_user
   def invited?(other_user)
     sent_invites.include?(other_user)
