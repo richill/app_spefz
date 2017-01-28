@@ -29,6 +29,15 @@
         <button><%= link_to "create social", new_user_social_path(current_user) %></button>
       </div>
       <!-- content -->
+      
+      <!-- content -->
+      <div class="tree_link">
+        <span><i class="fa fa-user" aria-hidden="true"></i> <%= link_to "#{current_user.firstname}", user_path(current_user)%></span> <span class="fwd_sign">></span> <span>stats users</span>
+      </div>
+      <div class="user_general_settings_inner_section user_dashboard_section_main_content">
+        <div><%= render "users/shared/user_dashboard_admin_statssocials" %></div>
+      </div>
+      <!-- content -->
     </div>
   </div>
   <!-- right_column_section -->
