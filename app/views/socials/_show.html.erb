@@ -198,6 +198,17 @@
             </li>
           <% end %>
         </ul>
+      <% else %>
+        <ul class="inline-list right">
+          <li>
+            <div class="social_profile_btn btn_closed_info"><%= link_to "social closed or expired", edit_user_social_path(@social.user, @social) %></div>
+          </li>
+          <li>
+            <% if @social.user == current_user %>
+            <div class="social_profile_btn btn_edit"><%= link_to "edit", edit_user_social_path(@social.user, @social) %></div>
+            <% end %>
+          </li>
+        </ul>
       <% end %>
     </div>
   </div>

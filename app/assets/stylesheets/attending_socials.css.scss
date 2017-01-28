@@ -4,7 +4,8 @@
     File: views / users / _attending_events.html.erb
     File: views / users / _saved_socials.html.erb
     File: views / users / _saved_events.html.erb
-    File: views / users / _created_socials.html.erb
+    File: views / users / _live_socials.html.erb
+    File: views / users / _expired_socials.html.erb
   =========================================*/
 
 .user_attending_save_created_section .attending_save_created_inner_section {
@@ -1279,11 +1280,19 @@ border-radius: 200px;
   margin-right: 8px;
 }
 
-.category_info a {
+.user_attending_save_created_section .category_info a {
   color: rgba(225, 71, 62, 0.7) !important;
 }
 
-.category_info a:hover {
+.user_attending_save_created_section .category_info a:hover {
+  color: rgba(88, 205, 166, 0.5) !important;
+}
+
+.user_attending_save_created_section .edit_link a {
+  color: rgba(225, 71, 62, 0.7) !important;
+}
+
+.user_attending_save_created_section .edit_link a:hover {
   color: rgba(88, 205, 166, 0.5) !important;
 }
 

@@ -105,6 +105,10 @@
                                   <span class="mid_divider">|</span>
                                   <span class="category">Category:</span> 
                                   <span class="category_info"><%= link_to "#{social.category_topic.name}", socials_path(q: {category_topic_name_eq: social.category_topic.name}) %></span>
+                                  <% if social.user == current_user %>
+                                    <span class="mid_divider">|</span>
+                                    <span class="edit_link"><%= link_to "Edit Social", edit_user_social_path(social.user, social) %></span>
+                                  <% end %>
                                 </div>
                                 <div class="divider"></div>
                                 <div class="description"><%= truncate(social.description, length: 200) %></div>
