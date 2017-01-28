@@ -29,7 +29,7 @@
               </div>
               <div class="date_country_info"> 
                 <span>invited by:</span>
-                <span><%= link_to "#{invite.user.firstname} #{invite.user.lastname}", user_path(invite.user) %></span>
+                <span><%= link_to current_user.name_shortner(invite.user), user_path(invite.user) %></span>
               </div>
             </div>
 
@@ -94,7 +94,7 @@
               </div>
               <div class="date_country_info"> 
                 <span>invite request from:</span>
-                <span><%= link_to "#{invite_request.user.firstname}", user_path(invite_request.user) %></span>
+                <span><%= link_to current_user.name_shortner(invite_request.user), user_path(invite_request.user) %></span>
               </div>
             </div>
             <div class="action_btn_section_attending">

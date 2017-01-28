@@ -91,7 +91,13 @@
 
             <!-- info_middle -->
             <div class="medium-7 columns info_middle">
-              <div class="user_name"><%= link_to "#{attendant.user.firstname} #{attendant.user.lastname}", user_path(attendant.user) %></div>
+              <div class="user_name">
+                <% if attendant.user == current_user || current_user.admin_pa_management_group %>
+                  <%= link_to "#{attendant.user.firstname} #{attendant.user.lastname}", user_path(attendant.user) %>
+                <% else %>
+                  <%= link_to current_user.name_shortner(attendant.user), user_path(attendant.user) %>
+                <% end %>
+              </div>
               <% if attendant.user.profession? %>
                 <div class="user_profession"><i class="fa fa-briefcase" aria-hidden="true"></i> <%= attendant.user.profession %></div>
               <% else %>
