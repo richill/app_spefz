@@ -11,28 +11,8 @@
   <div class="medium-10 columns right_column_section">
     <div class="right_inner_section">
       <!-- content -->
-      <div class="user_general_settings_inner_section user_socials_section_main_content">
-        <h1>socials</h1>
-        <ul>
-          <li>1.] all socials / below prev yr:# - current yr:# </li>
-          <li>2.] total active social</li>
-          <li>3.] total active socials [mth]</li>
-          <li>4.] total closed & expired socials</li>
-          <li>5.] total host [users]</li>
-          <li>6.] total hosts [spefz]</li>
-          <li>0.] groups - number of socials under each group 
-            <ul>
-              <li>eg: Family & Education | # of socials: 4 | # of users attending: 20 | Male: #12 #Female:8 | total money in: £3'000</li>
-            </ul>
-          </li>
-        </ul>
-        <button><%= link_to "create social", new_user_social_path(current_user) %></button>
-      </div>
-      <!-- content -->
-      
-      <!-- content -->
       <div class="tree_link">
-        <span><i class="fa fa-user" aria-hidden="true"></i> <%= link_to "#{current_user.firstname}", user_path(current_user)%></span> <span class="fwd_sign">></span> <span>stats users</span>
+        <span><i class="fa fa-user" aria-hidden="true"></i> <%= link_to "#{current_user.firstname}", user_path(current_user)%></span> <span class="fwd_sign">></span> <span>stats users</span> <span class="tree_link_btn"><%= link_to "create social", new_user_social_path(current_user) %></span>
       </div>
       <div class="user_general_settings_inner_section user_dashboard_section_main_content">
         <div><%= render "users/shared/user_dashboard_admin_statssocials" %></div>

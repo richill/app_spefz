@@ -102,6 +102,30 @@
   -o-transition: all 0.3s ease; 
 }
 
+.user_general_settings_section .right_inner_section .tree_link_btn a {
+  background-color: #E34B51;
+  padding: 6px 15px;
+  margin-left: 15px !important;
+  border: 1px solid #E34B51;
+  border-radius: 3px;
+  color: #fff !important;
+  font-weight: 300;
+  letter-spacing: 1px;
+  word-spacing: 2px;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease;
+} 
+
+.user_general_settings_section .right_inner_section .tree_link_btn a:hover {
+  background-color: #2F3F5B !important;
+  border: 1px solid #2F3F5B;
+  color: #fff !important;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease;
+} 
+
 .user_general_settings_section .right_inner_section .fwd_sign {
   margin: 0px 5px;
 }
