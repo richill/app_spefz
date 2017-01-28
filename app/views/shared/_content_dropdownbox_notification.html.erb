@@ -29,7 +29,7 @@
                 </div>
                 <div class="date_country_info"> 
                   <span>hosted by:</span>
-                  <span><%= link_to "#{activity.trackable.user.firstname} #{activity.trackable.user.lastname}", user_path(activity.trackable.user) %></span>
+                  <span><%= link_to current_user.name_shortner(activity.trackable.user), user_path(activity.trackable.user) %></span>
                 </div>
               </div>
               <div class="action_btn_section_attending action_btn_card_section"> 
@@ -63,7 +63,7 @@
                   </div>
                   <div class="date_country_info"> 
                     <span>attending:</span>
-                    <span><%= link_to "#{activity.trackable.user.firstname} #{activity.trackable.user.lastname}", user_path(activity.trackable.user) %></span>
+                    <span><%= link_to current_user.name_shortner(activity.trackable.user), user_path(activity.trackable.user) %></span>
                   </div>
                 </div>
                 <div class="action_btn_section_attending action_btn_card_section"> 
