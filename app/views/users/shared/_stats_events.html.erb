@@ -11,37 +11,11 @@
   <div class="medium-10 columns right_column_section">
     <div class="right_inner_section">
       <!-- content -->
-      <div class="user_general_settings_inner_section user_statsevents_section_main_content">
-        <h1>stats events old</h1>
-        <ul>
-          <li>1.] all events [yr]/ [total amt below]</li>
-          <li>2.] total active events / [total amt below]</li>
-          <li>3.] total active events [mth] / [total amt below]</li>
-          <li>4.] total closed & expired events</li>
-          <li>5.] total unbooked events (events users hve not yet booked to attend)</li>
-          <li>6.] overall avg ratings of events</li>
-          <li>0.] groups - number of events under each group 
-            <ul>
-              <li>eg: Family & Education | # of events: 4 | # of users attending: 20 | Male: #12 #Female:8 | total money in: £3'000</li>
-            </ul>
-          </li>
-        </ul>
-
-        <h1>stats events new</h1>
-        <ul>
-          <li>1.] all events / [total amt below]</li>
-          <li>2.] total events [current_year]/ [total amt below] - looking at open/closed/active/expired</li>
-          <li>3.] total events [current_month]/ [total amt below] - looking at open/closed/active/expired</li>
-          <li>4.] total active events / [total amt below]</li>
-          <li>5.] total unbooked events (events users hve not yet booked to attend)</li>
-          <li>6.] overall avg ratings of events</li>
-          <li>0.] groups - number of events under each group 
-            <ul>
-              <li>eg: Family & Education | # of events: 4 | # of users attending: 20 | Male: #12 #Female:8 | total money in: £3'000</li>
-            </ul>
-          </li>
-        </ul>
-        <button><%= link_to "create speed-social", new_user_event_path(current_user) %></button>
+      <div class="tree_link">
+        <span><i class="fa fa-user" aria-hidden="true"></i> <%= link_to "#{current_user.firstname}", user_path(current_user)%></span> <span class="fwd_sign">></span> <span>events</span> <span class="tree_link_btn"><%= link_to "create event", new_user_event_path(current_user) %></span>
+      </div>
+      <div class="user_general_settings_inner_section user_dashboard_section_main_content">
+        <div><%= render "users/shared/user_dashboard_admin_statsevents" %></div>
       </div>
       <!-- content -->
     </div>
