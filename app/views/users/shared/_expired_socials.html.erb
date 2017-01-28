@@ -54,7 +54,7 @@
 
           <!-- expired_socials -->
           <% if current_user.socials.expired_or_closed_socials.present? %>
-            <% current_user.socials.expired_or_closed_socials.each do |social| %>
+            <% current_user.socials.expired_or_closed_socials.desc_order.each do |social| %>
               <ul class="inline-list">
                 <div class="social_event_list">
                   <div class="cd-timeline-block">

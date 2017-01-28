@@ -54,7 +54,7 @@
 
           <!-- attending_events -->
           <% if Event.live_events.open_events.booked_events(current_user).present? %>
-            <% Event.live_events.open_events.booked_events(current_user).each do |event| %>
+            <% Event.live_events.open_events.asc_order.booked_events(current_user).each do |event| %>
               <ul class="inline-list">
                 <div class="social_event_list">
                   <div class="cd-timeline-block">

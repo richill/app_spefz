@@ -54,7 +54,7 @@
 
           <!-- saved_events -->
           <% if current_user.favourite_events.live_events.open_events.present? %>
-            <% current_user.favourite_events.live_events.open_events.each do |event| %>
+            <% current_user.favourite_events.live_events.open_events.asc_order.each do |event| %>
               <ul class="inline-list">
                 <div class="social_event_list">
                   <div class="cd-timeline-block">

@@ -54,7 +54,7 @@
 
           <!-- attending_socials -->
           <% if current_user.attending_socials.live_socials.open_socials.present? %>
-            <% current_user.attending_socials.live_socials.open_socials.each do |social| %>
+            <% current_user.attending_socials.live_socials.open_socials.asc_order.each do |social| %>
               <ul class="inline-list">
                 <div class="social_event_list">
                   <div class="cd-timeline-block">
