@@ -11,27 +11,11 @@
   <div class="medium-10 columns right_column_section">
     <div class="right_inner_section">
       <!-- content -->
+      <div class="tree_link">
+        <span><i class="fa fa-user" aria-hidden="true"></i> <%= link_to "#{current_user.firstname}", user_path(current_user)%></span> <span class="fwd_sign">></span> <span>transactions</span> <span class="tree_link_btn"><%= link_to "view payments", payments_path, target: "_blank" %></span>
+      </div>
       <div class="user_general_settings_inner_section user_dashboard_section_main_content">
-        <h1>transactions</h1>
-        <ul>
-          <li>1.] total subscribed users [£amt] / [below #]</li>
-          <li>2.] total subscribed users [male] [£amt] / [below #]</li>
-          <li>3.] total subscribed users [female] [£amt] / [below #]</li>
-          <li>4.] total booked events [£amt all] / [below #]</li>
-          <li>5.] total booked events [£amt mth] / [below #]</li>
-          <li>6.] total money in (current_month) [total subscribed users [£amt/mth] + total booked events [£amt mth]]</li>
-        </ul>
-
-        <h1>payments content</h1>
-        <ul>
-          <li>firstname</li>
-          <li>lastname</li>
-          <li>spefz_payment_ref</li>
-          <li>product</li>
-          <li>stripe_customer_id</li>
-          <li>stripe_subscription_id</li>
-          <li>stripe_payment_id</li>
-        </ul>
+        <div><%= render "users/shared/user_dashboard_admin_transactions" %></div>
       </div>
       <!-- content -->
     </div>
