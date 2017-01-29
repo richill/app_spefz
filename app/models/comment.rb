@@ -1,5 +1,4 @@
 class Comment < ActiveRecord::Base
-
   include ActsAsCommentable::Comment
 
   validates_presence_of :content, presence: true, message: "can't be blank"
