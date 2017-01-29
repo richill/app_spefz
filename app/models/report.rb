@@ -1,4 +1,6 @@
 class Report < ActiveRecord::Base
+  validates_presence_of :content, presence: true, message: "can't be blank"
+  validates_presence_of :category_report, presence: true, message: "please select a category"
   belongs_to :category_report
   belongs_to :social
   belongs_to :event

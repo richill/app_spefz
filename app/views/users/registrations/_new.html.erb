@@ -32,6 +32,7 @@
                   <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), placeholder: "Password", label: false %>
                   <%= f.input :password_confirmation, required: true, placeholder: "Password Confirmation", label: false %>
                   <%= f.date_field :birthdate, placeholder: "Birthdate" %>
+                  <div class="error_msg">can't be blank</div>
                   <%= f.association :category_gender, collection: CategoryGender.all, required: true, prompt: "select gender", label: 'Gender', label: false %>
                 </div>
                 <div class="form-actions">

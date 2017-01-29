@@ -14,6 +14,11 @@ class User < ActiveRecord::Base
   acts_as_taggable
   acts_as_messageable
 
+  validates_presence_of :firstname, presence: true, message: "can't be blank"
+  validates_presence_of :lastname, presence: true, message: "can't be blank"
+  validates_presence_of :birthdate, presence: true, message: "can't be blank"
+  validates_presence_of :category_gender, presence: true, message: "please select a category"
+
   belongs_to :category_gender 
   belongs_to :category_role 
   belongs_to :category_managementgroup 

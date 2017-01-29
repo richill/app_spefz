@@ -1,4 +1,5 @@
 class Invite < ActiveRecord::Base
+  validates_presence_of :social, presence: true, message: "please select a category"
   belongs_to :user
   belongs_to :social
   belongs_to :event

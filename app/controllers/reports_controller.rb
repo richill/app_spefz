@@ -24,7 +24,7 @@ class ReportsController < ApplicationController
         format.html { redirect_to :back, notice: 'Report was successfully sent.' }
         format.json { render :show, status: :created, location: @report }
       else
-        format.html { render :new }
+        format.html { redirect_to :back, alert: 'Report was not sent.' }
         format.json { render json: @report.errors, status: :unprocessable_entity }
       end
     end

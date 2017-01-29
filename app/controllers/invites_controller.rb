@@ -25,7 +25,7 @@ class InvitesController < ApplicationController
         format.html { redirect_to :back, notice: 'Invite was successfully sent' }
         format.json { render :show, status: :created, location: @invite }
       else
-        format.html { render :new }
+        format.html { redirect_to :back, alert: 'Invite was not sent.' }
         format.json { render json: @invite.errors, status: :unprocessable_entity }
       end
     end
