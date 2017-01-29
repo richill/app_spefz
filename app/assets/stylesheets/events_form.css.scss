@@ -22,6 +22,7 @@
   font-size: 15px !important;
   font-weight: 300 !important;
   text-transform: capitalize;
+  margin-top: 14px;
 }
 
 .user_general_settings_section .event_edit_update_form .close_social_section {
@@ -76,10 +77,6 @@
   font-size: 15px;
 }
 
-.user_general_settings_section .event_edit_update_form .event_tags {
-  margin-bottom: 15px;
-}
-
 .user_general_settings_section .event_edit_update_form .event_venuename {
   width: 540px;
   float: left;
@@ -95,7 +92,6 @@
 .user_general_settings_section .event_edit_update_form .event_category_country {
   width: 350px;
   float: left;
-  margin-bottom: 15px;
 }
 
 .user_general_settings_section .event_edit_update_form #event_category_country_id {
@@ -105,17 +101,16 @@
 .user_general_settings_section .event_edit_update_form .event_city {
   width: 350px;
   float: left;
-  margin: 0px 29px 15px;
+  margin: 0px 29px 0px;
 }
 
 .user_general_settings_section .event_edit_update_form .event_postcode {
   width: 350px;
   float: right;
-  margin-bottom: 15px;
 }
 
 .user_general_settings_section .event_edit_update_form .map_link {
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
 .user_general_settings_section .event_edit_update_form #event_maplink {
@@ -157,8 +152,7 @@
 
 .user_general_settings_section .event_edit_update_form .gender_selection_section {
   background-color: rgba(75, 180, 191, 0.2) !important;
-  padding: 15px;
-  margin-bottom: 15px;
+  padding: 1px 15px 15px 15px;
 }
 
 .user_general_settings_section .event_edit_update_form .current_gender_selection {
@@ -206,8 +200,8 @@
 
 .user_general_settings_section .event_edit_update_form .event_score_access {
   background-color: rgba(75, 180, 191, 0.2) !important;
-  padding: 15px !important;
-  margin-top: 5px !important;
+  padding: 1px 15px 15px 15px !important;
+  margin-top: 20px !important;
   margin-bottom: 30px !important;
 }
 
