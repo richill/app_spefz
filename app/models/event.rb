@@ -9,7 +9,6 @@ class Event < ActiveRecord::Base
   
   acts_as_taggable
 
-  # validate :date_cannot_be_in_the_past
   validates_presence_of :title, presence: true, message: "can't be blank"
   validates_presence_of :description, presence: true, message: "can't be blank"
   validates_presence_of :address, presence: true, message: "can't be blank"
@@ -20,19 +19,11 @@ class Event < ActiveRecord::Base
   validates_presence_of :date, presence: true, message: "please select a date"
   validates_presence_of :time, presence: true, message: "please select a time"
   validates_presence_of :city, presence: true, message: "can't be blank"
-
-
-  validates_numericality_of :quantity, presence: true, message: "can't be blank"
-
-
+  # validates_numericality_of :quantity, presence: true, message: "can't be blank"
   validates_presence_of :category_age, presence: true, message: "please select a category"
   validates_presence_of :category_country, presence: true, message: "please select a category"
-
-
-  validates_numericality_of :quantity_men, presence: true, message: "can't be blank"
-  validates_numericality_of :quantity_women, presence: true, message: "can't be blank"
-
-
+  # validates_numericality_of :quantity_men, presence: true, message: "can't be blank"
+  # validates_numericality_of :quantity_women, presence: true, message: "can't be blank"
   validates_presence_of :category_quantitygender, presence: true, message: "please select a category"
   validates_presence_of :venuename, presence: true, message: "can't be blank"
   validates_presence_of :price, presence: true, message: "can't be blank"
@@ -41,14 +32,17 @@ class Event < ActiveRecord::Base
   validates_presence_of :maplink, presence: true, message: "can't be blank"
   validates_numericality_of :event_score_access, allow_nil: true
   validates :event_score_access, numericality: { less_than: 5, allow_nil: true }
+  validates_presence_of :tag_list, presence: true, message: "can't be blank"
+  validate :date_cannot_be_in_the_past
+  # validates :category_quantitygender_content
 
-  def category_quantitygender_content
-    if category_quantitygender_id.present? && quantity.blank? || quantity_men.blank? || quantity_women.blank?
-      errors.add(:quantity, "can't be blank")
-      errors.add(:quantity_men, "can't be blank")
-      errors.add(:quantity_women, "can't be blank")
-    end
-  end
+  # def category_quantitygender_content
+  #   if category_quantitygender_id.present? && quantity.blank? || quantity_men.blank? || quantity_women.blank?
+  #     errors.add(:quantity, "can't be blank")
+  #     errors.add(:quantity_men, "can't be blank")
+  #     errors.add(:quantity_women, "can't be blank")
+  #   end
+  # end
 
 
   has_one :host

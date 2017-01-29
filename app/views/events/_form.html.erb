@@ -41,8 +41,7 @@
             <%= f.input :description, label: "About Event", placeholder: "tell us about the event" %>
 
             <div class="event_tags">
-              <div class="event_label">event tags</div>
-              <%= f.text_field :tag_list, value: @event.tag_list.to_s, placeholder: "charity, education, social, music, social impact, travel, health, jazz..." %>
+              <%= f.input :tag_list, value: @event.tag_list.to_s, placeholder: "charity, education, social, music, social impact, travel, health, jazz...", label: "Event Tags" %>
               <div class="text_info">Place word tags that best describes the event. This allows members to easily allocate the event.</div>
             </div>
 
