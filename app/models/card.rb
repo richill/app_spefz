@@ -1,5 +1,8 @@
 class Card < ActiveRecord::Base
   acts_as_readable :on => :created_at
+
+  validates_presence_of :title, presence: true, message: "can't be blank"
+  validates_presence_of :event_id, presence: true, message: "can't be blank"
   
   belongs_to :event
   has_many :payments, through: :event
