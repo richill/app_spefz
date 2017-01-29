@@ -36,15 +36,6 @@ class Event < ActiveRecord::Base
   validate :date_cannot_be_in_the_past
   # validates :category_quantitygender_content
 
-  # def category_quantitygender_content
-  #   if category_quantitygender_id.present? && quantity.blank? || quantity_men.blank? || quantity_women.blank?
-  #     errors.add(:quantity, "can't be blank")
-  #     errors.add(:quantity_men, "can't be blank")
-  #     errors.add(:quantity_women, "can't be blank")
-  #   end
-  # end
-
-
   has_one :host
   has_one :card
   
@@ -150,12 +141,21 @@ class Event < ActiveRecord::Base
     score = stars_total / (star_count.nonzero? || 1)
   end
 
-  #events can not be created in the past
+  #validations: events can not be created in the past
   def date_cannot_be_in_the_past
     if date.present? && date <= Date.today
       errors.add(:date, "event date can not be in the past")
     end
   end
+
+  #validations
+  # def category_quantitygender_content
+  #   if category_quantitygender_id.present? && quantity.blank? || quantity_men.blank? || quantity_women.blank?
+  #     errors.add(:quantity, "can't be blank")
+  #     errors.add(:quantity_men, "can't be blank")
+  #     errors.add(:quantity_women, "can't be blank")
+  #   end
+  # end
   
   #checks if current user has paid to attend event
   def current_user_attending_paid?(user)
