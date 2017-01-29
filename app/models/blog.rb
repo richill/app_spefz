@@ -6,7 +6,7 @@ class Blog < ActiveRecord::Base
   validates_presence_of :content, presence: true, message: "can't be blank"
   validates :content, length: { minimum: 100 }
   validates_presence_of :user_id, presence: true, message: "can't be blank"
-  validates_presence_of :category_blog_id, presence: true, message: "can't be blank"
+  validates_presence_of :category_blog, presence: true, message: "please select a category"
   validates_presence_of :user_link, presence: true, message: "can't be blank"
   validates_presence_of :twitter_link, presence: true, message: "can't be blank"
   validate :image_or_blogimagelink_or_videolink
