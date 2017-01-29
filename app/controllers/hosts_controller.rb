@@ -26,7 +26,7 @@ class HostsController < ApplicationController
         format.html { redirect_to(event_path(@event), notice: 'Host was successfully created.') }
         format.json { render :show, status: :created, location: @host }
       else
-        format.html { render :back }
+        format.html { redirect_to :back, alert: 'Hosts for the event was not created.' }
         format.json { render json: @host.errors, status: :unprocessable_entity }
       end
     end
