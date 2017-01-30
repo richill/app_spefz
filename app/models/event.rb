@@ -19,11 +19,8 @@ class Event < ActiveRecord::Base
   validates_presence_of :date, presence: true, message: "please select a date"
   validates_presence_of :time, presence: true, message: "please select a time"
   validates_presence_of :city, presence: true, message: "can't be blank"
-  # validates_numericality_of :quantity, presence: true, message: "can't be blank"
   validates_presence_of :category_age, presence: true, message: "please select a category"
   validates_presence_of :category_country, presence: true, message: "please select a category"
-  # validates_numericality_of :quantity_men, presence: true, message: "can't be blank"
-  # validates_numericality_of :quantity_women, presence: true, message: "can't be blank"
   validates_presence_of :category_quantitygender, presence: true, message: "please select a category"
   validates_presence_of :venuename, presence: true, message: "can't be blank"
   validates_presence_of :price, presence: true, message: "can't be blank"
@@ -35,6 +32,9 @@ class Event < ActiveRecord::Base
   validates_presence_of :tag_list, presence: true, message: "can't be blank"
   validate :date_cannot_be_in_the_past
   # validates :category_quantitygender_content
+  # validates_numericality_of :quantity, presence: true, message: "can't be blank"
+  # validates_numericality_of :quantity_men, presence: true, message: "can't be blank"
+  # validates_numericality_of :quantity_women, presence: true, message: "can't be blank"
 
   has_one :host
   has_one :card
