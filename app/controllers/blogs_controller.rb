@@ -15,47 +15,63 @@ class BlogsController < ApplicationController
 
   def new
     @user = User.friendly.find(params[:user_id])
-    @blog = @user.blogs.build
+    if current_user.admin_pa_management_group || current_user.pa_administration_group
+      @blog = @user.blogs.build
+    else
+      redirect_to errorpermission_path
+    end
   end
 
   def edit
     @user = User.friendly.find(params[:user_id])
-    unless current_user.admin_pa_management_group || current_user.admin_pa_management_group
+    unless current_user.admin_pa_management_group || current_user.pa_administration_group
       redirect_to errorpermission_path
     end
   end
 
   def create
     @user = User.friendly.find(params[:user_id])
-    @blog = @user.blogs.create(blog_params)
-    respond_to do |format|
-      if @blog.save
-        format.html { redirect_to([@blog.user, @blog], notice: 'Blog was successfully created.') }
-        format.json  { render json: @blog, status: :created, location: @blog }
-      else
-        format.html { render action: "new" }
-        format.json  { render json: @blog.errors, status: :unprocessable_entity }
+    if current_user.admin_pa_management_group || current_user.pa_administration_group
+      @blog = @user.blogs.create(blog_params)
+      respond_to do |format|
+        if @blog.save
+          format.html { redirect_to([@blog.user, @blog], notice: 'Blog was successfully created.') }
+          format.json  { render json: @blog, status: :created, location: @blog }
+        else
+          format.html { render action: "new" }
+          format.json  { render json: @blog.errors, status: :unprocessable_entity }
+        end
       end
+    else
+      redirect_to errorpermission_path
     end
   end
 
   def update
-    respond_to do |format|
-      if @blog.update_attributes(blog_params)
-        format.html { redirect_to([@blog.user, @blog], notice: 'Blog was successfully updated.') }
-        format.json { head :no_content }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @blog.errors, status: :unprocessable_entity }
+    if current_user.admin_pa_management_group || current_user.pa_administration_group
+      respond_to do |format|
+        if @blog.update_attributes(blog_params)
+          format.html { redirect_to([@blog.user, @blog], notice: 'Blog was successfully updated.') }
+          format.json { head :no_content }
+        else
+          format.html { render action: "edit" }
+          format.json { render json: @blog.errors, status: :unprocessable_entity }
+        end
       end
+    else
+      redirect_to errorpermission_path
     end
   end
 
   def destroy
-    @user = User.friendly.find(params[:user_id])
-    @blog = @user.blogs.find(params[:id])
-    @blog.destroy
-    redirect_to blogs_path
+    if current_user.admin_pa_management_group || current_user.pa_administration_group
+      @user = User.friendly.find(params[:user_id])
+      @blog = @user.blogs.find(params[:id])
+      @blog.destroy
+      redirect_to blogs_path
+    else
+      redirect_to errorpermission_path
+    end
   end
 
   def venues
