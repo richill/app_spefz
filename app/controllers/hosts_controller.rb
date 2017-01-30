@@ -10,7 +10,6 @@ class HostsController < ApplicationController
   end
 
   def show
-    if current_user.admin_pa_management_group
     unless current_user.admin_pa_management_group
       redirect_to errorpermission_path
     end
@@ -86,11 +85,11 @@ class HostsController < ApplicationController
   end
 
   private
-    def set_host
-      @host = Host.find(params[:id])
-    end
+  def set_host
+    @host = Host.find(params[:id])
+  end
 
-    def host_params
-      params.require(:host).permit(:event_id, user_ids: [])
-    end
+  def host_params
+    params.require(:host).permit(:event_id, user_ids: [])
+  end
 end
