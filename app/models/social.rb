@@ -20,6 +20,7 @@ class Social < ActiveRecord::Base
   validates_presence_of :time, presence: true, message: "please select a time"
   validates_presence_of :city, presence: true, message: "can't be blank"
   validates_presence_of :category_age, presence: true, message: "please select a category"
+  validates_presence_of :category_invite, presence: true, message: "please select a category"
   validates_presence_of :category_country, presence: true, message: "please select a category"
   validates_presence_of :category_quantitygender, presence: true, message: "please select a category"
   validates_presence_of :venuename, presence: true, message: "can't be blank"
