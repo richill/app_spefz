@@ -1,5 +1,6 @@
 class InvitesController < ApplicationController
   before_action :set_invite, only: [:show, :edit, :update, :destroy]
+  before_filter :setup_subscription
 
   def index
     if current_user.admin_pa_management_group
@@ -30,32 +31,39 @@ class InvitesController < ApplicationController
   end
 
   def create
-    @invite = Invite.new(invite_params)
-    @invite.status = "pending"
+    if current_user.subscribed_access?
+      @invite = Invite.new(invite_params)
+      @invite.status = "pending"
 
-    respond_to do |format|
-      if @invite.save
-        MailerInvitemember.invitememeber(@invite).deliver
-        format.html { redirect_to :back, notice: 'Invite was successfully sent' }
-        format.json { render :show, status: :created, location: @invite }
-      else
-        format.html { redirect_to :back, alert: 'Invite was not sent.' }
-        format.json { render json: @invite.errors, status: :unprocessable_entity }
+      respond_to do |format|
+        if @invite.save
+          MailerInvitemember.invitememeber(@invite).deliver
+          format.html { redirect_to :back, notice: 'Invite was successfully sent' }
+          format.json { render :show, status: :created, location: @invite }
+        else
+          format.html { redirect_to :back, alert: 'Invite was not sent.' }
+          format.json { render json: @invite.errors, status: :unprocessable_entity }
+        end
       end
+    else
+      redirect_to subscription_path(@premium_plan)
     end
   end
 
   def update
-    @invite.status = "declined"
-
-    respond_to do |format|
-      if @invite.update(invite_params)
-        format.html { redirect_to :back }
-        format.json { render :show, status: :ok, location: @invite }
-      else
-        format.html { render :edit }
-        format.json { render json: @invite.errors, status: :unprocessable_entity }
+    if current_user.subscribed_access?
+      @invite.status = "declined"
+      respond_to do |format|
+        if @invite.update(invite_params)
+          format.html { redirect_to :back }
+          format.json { render :show, status: :ok, location: @invite }
+        else
+          format.html { render :edit }
+          format.json { render json: @invite.errors, status: :unprocessable_entity }
+        end
       end
+    else
+      redirect_to subscription_path(@premium_plan)
     end
   end
 
@@ -72,11 +80,15 @@ class InvitesController < ApplicationController
   end
 
   private
-    def set_invite
-      @invite = Invite.find(params[:id])
-    end
+  def setup_subscription
+    @premium_plan = Subscription.find_by(title:"premium") 
+  end
+  
+  def set_invite
+    @invite = Invite.find(params[:id])
+  end
 
-    def invite_params
-      params.require(:invite).permit(:invitee_id, :social_id, :event_id, :status, :user_id, user_ids: [])
-    end
+  def invite_params
+    params.require(:invite).permit(:invitee_id, :social_id, :event_id, :status, :user_id, user_ids: [])
+  end
 end

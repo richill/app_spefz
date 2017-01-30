@@ -2,7 +2,7 @@ class FavouriteSocialsController < ApplicationController
   before_action :authenticate_user!, :set_social
   
   def create
-    if Favourite.create(favourited: @social, user: current_user)
+    if Favourite.find_or_create_by(favourited: @social, user: current_user)
       redirect_to :back, notice: 'Social has been Saved'
     else
       redirect_to :back, alert: 'Something went wrong...*sad panda*'

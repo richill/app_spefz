@@ -2,7 +2,7 @@ class FavouriteEventsController < ApplicationController
   before_action :authenticate_user!, :set_event
   
   def create
-    if Favourite.create(favourited: @event, user: current_user)
+    if Favourite.find_or_create_by(favourited: @event, user: current_user)
       redirect_to :back, notice: 'Event has been Saved'
     else
       redirect_to :back, alert: 'Something went wrong...*sad panda*'

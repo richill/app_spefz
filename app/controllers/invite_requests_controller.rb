@@ -1,5 +1,6 @@
 class InviteRequestsController < ApplicationController
   before_action :authenticate_user!, :set_invite_request, only: [:show, :edit, :update, :destroy]
+  before_filter :setup_subscription
 
   def index
     if current_user.admin_pa_management_group
@@ -30,17 +31,21 @@ class InviteRequestsController < ApplicationController
   end
 
   def create
-    @invite_request = InviteRequest.new(invite_request_params)
-    @invite_request.status = "pending"
+    if current_user.subscribed_access?
+      @invite_request = InviteRequest.new(invite_request_params)
+      @invite_request.status = "pending"
 
-    respond_to do |format|
-      if @invite_request.save
-        format.html { redirect_to :back, notice: 'Invite request was successfully sent.' }
-        format.json { render :show, status: :created, location: @invite_request }
-      else
-        format.html { render :new }
-        format.json { render json: @invite_request.errors, status: :unprocessable_entity }
+      respond_to do |format|
+        if @invite_request.save
+          format.html { redirect_to :back, notice: 'Invite request was successfully sent.' }
+          format.json { render :show, status: :created, location: @invite_request }
+        else
+          format.html { render :new }
+          format.json { render json: @invite_request.errors, status: :unprocessable_entity }
+        end
       end
+    else
+      redirect_to subscription_path(@premium_plan)
     end
   end
 
@@ -73,11 +78,15 @@ class InviteRequestsController < ApplicationController
   end
 
   private
-    def set_invite_request
-      @invite_request = InviteRequest.find(params[:id])
-    end
+  def setup_subscription
+    @premium_plan = Subscription.find_by(title:"premium") 
+  end
 
-    def invite_request_params
-      params.require(:invite_request).permit(:user_id, :inviter_id, :social_id, :event_id, :status)
-    end
+  def set_invite_request
+    @invite_request = InviteRequest.find(params[:id])
+  end
+
+  def invite_request_params
+    params.require(:invite_request).permit(:user_id, :inviter_id, :social_id, :event_id, :status)
+  end
 end
