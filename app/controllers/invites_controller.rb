@@ -2,17 +2,31 @@ class InvitesController < ApplicationController
   before_action :set_invite, only: [:show, :edit, :update, :destroy]
 
   def index
-    @invites = Invite.all
+    if current_user.admin_pa_management_group
+      @invites = Invite.all
+    else
+      redirect_to errorpermission_path
+    end
   end
 
   def show
+    unless current_user.admin_pa_management_group
+      redirect_to errorpermission_path
+    end
   end
 
   def new
-    @invite = Invite.new
+    if current_user.admin_pa_management_group
+      @invite = Invite.new
+    else
+      redirect_to errorpermission_path
+    end
   end
 
   def edit
+    unless current_user.admin_pa_management_group
+      redirect_to errorpermission_path
+    end
   end
 
   def create
@@ -46,10 +60,14 @@ class InvitesController < ApplicationController
   end
 
   def destroy
-    @invite.destroy
-    respond_to do |format|
-      format.html { redirect_to invites_url, notice: 'Invite was successfully destroyed.' }
-      format.json { head :no_content }
+    if current_user.admin_pa_management_group
+      @invite.destroy
+      respond_to do |format|
+        format.html { redirect_to invites_url, notice: 'Invite was successfully destroyed.' }
+        format.json { head :no_content }
+      end
+    else
+      redirect_to errorpermission_path
     end
   end
 

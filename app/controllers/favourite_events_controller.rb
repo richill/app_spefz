@@ -1,5 +1,5 @@
 class FavouriteEventsController < ApplicationController
-  before_action :set_event
+  before_action :authenticate_user!, :set_event
   
   def create
     if Favourite.create(favourited: @event, user: current_user)

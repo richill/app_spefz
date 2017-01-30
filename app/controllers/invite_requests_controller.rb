@@ -1,18 +1,32 @@
 class InviteRequestsController < ApplicationController
-  before_action :set_invite_request, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, :set_invite_request, only: [:show, :edit, :update, :destroy]
 
   def index
-    @invite_requests = InviteRequest.all
+    if current_user.admin_pa_management_group
+      @invite_requests = InviteRequest.all
+    else
+      redirect_to errorpermission_path
+    end
   end
 
   def show
+    unless current_user.admin_pa_management_group
+      redirect_to errorpermission_path
+    end
   end
 
   def new
-    @invite_request = InviteRequest.new
+    if current_user.admin_pa_management_group
+     @invite_request = InviteRequest.new
+    else
+      redirect_to errorpermission_path
+    end
   end
 
   def edit
+    unless current_user.admin_pa_management_group
+      redirect_to errorpermission_path
+    end
   end
 
   def create
@@ -31,22 +45,30 @@ class InviteRequestsController < ApplicationController
   end
 
   def update
-    respond_to do |format|
-      if @invite_request.update(invite_request_params)
-        format.html { redirect_to :back, notice: 'Invite request was successfully updated.' }
-        format.json { render :show, status: :ok, location: @invite_request }
-      else
-        format.html { render :edit }
-        format.json { render json: @invite_request.errors, status: :unprocessable_entity }
+    if current_user.admin_pa_management_group
+      respond_to do |format|
+        if @invite_request.update(invite_request_params)
+          format.html { redirect_to :back, notice: 'Invite request was successfully updated.' }
+          format.json { render :show, status: :ok, location: @invite_request }
+        else
+          format.html { render :edit }
+          format.json { render json: @invite_request.errors, status: :unprocessable_entity }
+        end
       end
+    else
+      redirect_to errorpermission_path
     end
   end
 
   def destroy
-    @invite_request.destroy
-    respond_to do |format|
-      format.html { redirect_to :back, notice: 'Invite request was successfully declined.' }
-      format.json { head :no_content }
+    if current_user.admin_pa_management_group
+      @invite_request.destroy
+      respond_to do |format|
+        format.html { redirect_to :back, notice: 'Invite request was successfully declined.' }
+        format.json { head :no_content }
+      end
+    else
+      redirect_to errorpermission_path
     end
   end
 

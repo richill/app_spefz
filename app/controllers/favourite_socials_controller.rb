@@ -1,5 +1,5 @@
 class FavouriteSocialsController < ApplicationController
-  before_action :set_social
+  before_action :authenticate_user!, :set_social
   
   def create
     if Favourite.create(favourited: @social, user: current_user)
