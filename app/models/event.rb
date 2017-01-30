@@ -36,11 +36,11 @@ class Event < ActiveRecord::Base
   # validates_numericality_of :quantity_men, presence: true, message: "can't be blank"
   # validates_numericality_of :quantity_women, presence: true, message: "can't be blank"
 
-  has_one :host
-  has_one :card
+  has_one :host, dependent: :destroy
+  has_one :card, dependent: :destroy
   
-  has_many :payments 
-  has_many :reports
+  has_many :payments, dependent: :destroy
+  has_many :reports, dependent: :destroy
   
   belongs_to :user
   belongs_to :category_topic

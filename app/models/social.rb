@@ -34,8 +34,8 @@ class Social < ActiveRecord::Base
   has_many :comments, as: :commentable, dependent: :destroy
 
   has_many :attendances, as: :attendable, dependent: :destroy
-  has_many :reports
-  has_many :invites
+  has_many :reports, dependent: :destroy
+  has_many :invites, dependent: :destroy
   
   belongs_to :user
   belongs_to :category_topic

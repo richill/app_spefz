@@ -30,9 +30,9 @@ class User < ActiveRecord::Base
   has_many :payments
   has_many :blogs
   has_many :reports
-  has_many :invites, dependent: :destroy
-  has_many :events, dependent: :destroy
+  has_many :events
   has_many :socials, dependent: :destroy
+  has_many :invites, dependent: :destroy
   has_many :favourites, dependent: :destroy
   has_many :favourite_socials, through: :favourites, source: :favourited, source_type: 'Social', dependent: :destroy
   has_many :favourite_events, through: :favourites, source: :favourited, source_type: 'Event', dependent: :destroy
@@ -51,17 +51,17 @@ class User < ActiveRecord::Base
   has_many :passive_relationships, class_name: "Relationship", foreign_key: "followed_id", dependent: :destroy
   has_many :followers, through: :passive_relationships, source: :follower
 
-  has_many :friendships
+  has_many :friendships, dependent: :destroy
   has_many :friends, -> { where(friendships: { status: "accepted"}) }, through: :friendships
   has_many :requested_friends, -> { where(friendships: { status: "requested"}) }, through: :friendships, source: :friend #this is like recieved_request
   has_many :pending_friends, -> { where(friendships: { status: "pending"}) }, through: :friendships, source: :friend #this is like sent_request
 
-  has_many :invites
+  has_many :invites, dependent: :destroy
   has_many :sent_invites, -> { where(invites: { status: "pending"}) }, through: :invites, source: :invitee
   has_many :recieved_invites, -> { where(invites: { status: "pending"}) }, class_name: "Invite", foreign_key: "invitee_id", dependent: :destroy
   has_many :declined_invites, -> { where(invites: { status: "declined"}) }, through: :invites, source: :invitee
 
-  has_many :invite_requests
+  has_many :invite_requests, dependent: :destroy
   has_many :sent_invite_requests, -> { where(invite_requests: { status: "pending"}) }, through: :invite_requests, source: :inviter
   has_many :recieved_invite_requests, -> { where(invite_requests: { status: "pending"}) }, class_name: "InviteRequest", foreign_key: "inviter_id", dependent: :destroy
   has_many :declined_invite_requests, -> { where(invite_requests: { status: "declined"}) }, through: :invite_requests, source: :inviter
