@@ -212,9 +212,13 @@ class UsersController < ApplicationController
 
   private
   def setup_friends
-    @user = User.find(current_user.id)
-    # @user = User.friendly.find(params[:id])
-    @friend = User.find_by_email(params[:id])
+    if action_name == 'edit'
+      @user = User.friendly.find(params[:id])
+      @friend = User.find_by_email(params[:id])
+    else
+      @user = User.find(current_user.id)
+      @friend = User.find_by_email(params[:id])
+    end
   end
 
   def setup_subscription
