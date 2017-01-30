@@ -13,7 +13,7 @@
 // --------left_column_section--------
 .user_general_settings_section .left_column_section {
   background-color: #283041;
-  min-height: 1800px;
+  min-height: 2500px;
 }
 
 // @media only screen and (max-width: 1365px) {
@@ -71,6 +71,10 @@
 }
 
 // --------right_column_section--------
+.user_general_settings_section .right_column_section {
+  height: 2500px;
+}
+
 @media only screen and (min-width: 1750px) {
   .user_general_settings_inner_section  {
     width: 1420px;
