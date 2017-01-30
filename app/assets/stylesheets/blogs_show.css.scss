@@ -292,8 +292,19 @@
   margin: 0px 5px !important;
 }
 
+.blogs_show_section .blog_show_img {
+  width: 100%;
+  height: 775px;
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
+
 .blogs_show_section .blog_show_img img {
-  width: 100% !important;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
 }
 
 .blogs_show_section .blog_info_content {
