@@ -293,7 +293,7 @@ class User < ActiveRecord::Base
 
   #displays user full name if both users are friends
   def name_shortner(other_user)
-    if friends.include?(other_user)
+    if friends.include?(other_user) || self.lastname == other_user.lastname
       "#{other_user.firstname} #{other_user.lastname}"
     else
       "#{other_user.firstname} " + "#{other_user.lastname}"[0,1] + "."

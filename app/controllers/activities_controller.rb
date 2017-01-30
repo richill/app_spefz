@@ -1,4 +1,5 @@
 class ActivitiesController < ApplicationController
+  before_action :authenticate_user!
   before_filter :setup_friends, :setup_subscription, :setup_cards, :setup_events, :setup_invite_form, :setup_user_network_activities
 
   def index
