@@ -3,10 +3,17 @@ class ContactsController < ApplicationController
   before_filter :setup_friends, :setup_subscription, :setup_cards, :setup_events, :setup_invite_form, :setup_user_network_activities
 
   def index
-    @contacts = Contact.all
+    if current_user.admin_pa_management_group || current_user.pa_administration_group
+      @contacts = Contact.all
+    else
+      redirect_to errorpermission_path
+    end
   end
 
   def show
+    unless current_user.admin_pa_management_group || current_user.pa_administration_group
+      redirect_to errorpermission_path
+    end
   end
 
   def new
@@ -15,6 +22,9 @@ class ContactsController < ApplicationController
   end
 
   def edit
+    unless current_user.admin_pa_management_group || current_user.pa_administration_group
+      redirect_to errorpermission_path
+    end
   end
 
   def create
@@ -33,22 +43,30 @@ class ContactsController < ApplicationController
   end
 
   def update
-    respond_to do |format|
-      if @contact.update(contact_params)
-        format.html { redirect_to @contact, notice: 'Contact was successfully updated.' }
-        format.json { render :show, status: :ok, location: @contact }
-      else
-        format.html { render :edit }
-        format.json { render json: @contact.errors, status: :unprocessable_entity }
+    if current_user.admin_pa_management_group || current_user.pa_administration_group
+      respond_to do |format|
+        if @contact.update(contact_params)
+          format.html { redirect_to @contact, notice: 'Contact was successfully updated.' }
+          format.json { render :show, status: :ok, location: @contact }
+        else
+          format.html { render :edit }
+          format.json { render json: @contact.errors, status: :unprocessable_entity }
+        end
       end
+    else
+      redirect_to errorpermission_path
     end
   end
 
   def destroy
-    @contact.destroy
-    respond_to do |format|
-      format.html { redirect_to contacts_url, notice: 'Contact was successfully destroyed.' }
-      format.json { head :no_content }
+    if current_user.admin_pa_management_group
+      @contact.destroy
+      respond_to do |format|
+        format.html { redirect_to contacts_url, notice: 'Contact was successfully destroyed.' }
+        format.json { head :no_content }
+      end
+    else
+      redirect_to errorpermission_path
     end
   end
 

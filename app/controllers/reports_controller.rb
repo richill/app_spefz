@@ -1,11 +1,18 @@
 class ReportsController < ApplicationController
-  before_action :set_report, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, :set_report, only: [:show, :edit, :update, :destroy]
 
   def index
-    @reports = Report.all
+    if current_user.admin_pa_management_group || current_user.pa_administration_group
+      @reports = Report.all
+    else
+      redirect_to errorpermission_path
+    end
   end
 
   def show
+    unless current_user.admin_pa_management_group || current_user.pa_administration_group
+      redirect_to errorpermission_path
+    end
   end
 
   def new
@@ -13,6 +20,9 @@ class ReportsController < ApplicationController
   end
 
   def edit
+    unless current_user.admin_pa_management_group || current_user.pa_administration_group
+      redirect_to errorpermission_path
+    end
   end
 
   def create
@@ -31,31 +41,39 @@ class ReportsController < ApplicationController
   end
 
   def update
-    respond_to do |format|
-      if @report.update(report_params)
-        format.html { redirect_to :back, notice: 'Report was successfully updated.' }
-        format.json { render :show, status: :ok, location: @report }
-      else
-        format.html { render :edit }
-        format.json { render json: @report.errors, status: :unprocessable_entity }
+    if current_user.admin_pa_management_group || current_user.pa_administration_group
+      respond_to do |format|
+        if @report.update(report_params)
+          format.html { redirect_to :back, notice: 'Report was successfully updated.' }
+          format.json { render :show, status: :ok, location: @report }
+        else
+          format.html { render :edit }
+          format.json { render json: @report.errors, status: :unprocessable_entity }
+        end
       end
+    else
+      redirect_to errorpermission_path
     end
   end
 
   def destroy
-    @report.destroy
-    respond_to do |format|
-      format.html { redirect_to reports_url, notice: 'Report was successfully destroyed.' }
-      format.json { head :no_content }
+    if current_user.admin_pa_management_group ||
+      @report.destroy
+      respond_to do |format|
+        format.html { redirect_to reports_url, notice: 'Report was successfully destroyed.' }
+        format.json { head :no_content }
+      end
+    else
+      redirect_to errorpermission_path
     end
   end
 
   private
-    def set_report
-      @report = Report.find(params[:id])
-    end
+  def set_report
+    @report = Report.find(params[:id])
+  end
 
-    def report_params
-      params.require(:report).permit(:content, :category_report_id, :event_id, :social_id, :user_id, :reference, :reporter_id)
-    end
+  def report_params
+    params.require(:report).permit(:content, :category_report_id, :event_id, :social_id, :user_id, :reference, :reporter_id)
+  end
 end
