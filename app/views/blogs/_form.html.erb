@@ -15,7 +15,7 @@
         <% if action_name == 'new'  %>
           <span>create blog</span>
         <% else %>
-          <span>update blog</span>
+          <span>update blog</span> <span class="tree_link_btn"><%= link_to 'delete blog', stats_blogs_user_path(@blog, @blog.user), method: :delete, data: { confirm: 'Are you sure?' } %></span>
         <% end %>
       </div>
       <div class="user_general_settings_inner_section blog_edit_update_form">

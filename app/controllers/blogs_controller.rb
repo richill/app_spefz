@@ -89,12 +89,16 @@ class BlogsController < ApplicationController
   end
 
   def setup_invite_form
-    @invite = Invite.new
+    if signed_in?
+      @invite = Invite.new
+    end
   end
 
   def setup_user_network_activities
-    @user_network_activities = Activity.order("created_at desc").where(owner_id: current_user.friends)
-    @activity =  Activity.last
+    if signed_in?
+      @user_network_activities = Activity.order("created_at desc").where(owner_id: current_user.friends)
+      @activity =  Activity.last
+    end
   end
 
   def set_blog
