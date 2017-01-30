@@ -51,8 +51,7 @@
                 <%= f.input :description, label: "About Social", placeholder: "tell us about your social" %>
 
                 <div class="social_tags">
-                  <div class="social_label">social tags</div>
-                  <%= f.text_field :tag_list, value: @social.tag_list.to_s, placeholder: "chess, jogging, dogs, skipping, gym, startups, entreprenuers, jazz" %>
+                  <%= f.input :tag_list, value: @social.tag_list.to_s, placeholder: "chess, jogging, dogs, skipping, gym, startups, entreprenuers, jazz", label: "Social Tags" %>
                   <div class="text_info">Place word tags that best describes the social. This allows members to easily allocate your social.</div>
                 </div>
             
