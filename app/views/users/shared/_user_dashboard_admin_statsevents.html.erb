@@ -7,7 +7,9 @@
         <div class="header_data">
           <span class="header_icon"><i class="fa fa-calendar" aria-hidden="true"></i></span>
           <span>0</span>
-          <div class="minor_info">£0.0K [all]</div>
+          <% if current_user.admin_pa_management_group %>
+            <div class="minor_info">£0.0K [all]</div>
+          <% end %>
         </div>
       </div>
     </div>
@@ -16,7 +18,9 @@
         <div class="header"> total active events</div>
         <div class="header_data"><span class="header_icon"><i class="fa fa-calendar-check-o" aria-hidden="true"></i></span>
           <span>0</span>
-          <div class="minor_info">£0.0K [all]</div>
+          <% if current_user.admin_pa_management_group %>
+            <div class="minor_info">£0.0K [all]</div>
+          <% end %>
         </div>
       </div>
     </div>
@@ -26,7 +30,9 @@
         <div class="header_data">
           <span class="header_icon"><i class="fa fa-calendar-check-o" aria-hidden="true"></i></span>
           <span>0</span>
-          <div class="minor_info">£0.0K [mth]</div>
+          <% if current_user.admin_pa_management_group %>
+            <div class="minor_info">£0.0K [mth]</div>
+          <% end %>
         </div>
       </div>
     </div>
@@ -36,7 +42,9 @@
         <div class="header_data">
           <span class="header_icon"><i class="fa fa-calendar-times-o" aria-hidden="true"></i></span>
           <span>0</span>
-          <div class="minor_info">£0.0K [all]</div>
+          <% if current_user.admin_pa_management_group %>
+            <div class="minor_info">£0.0K [all]</div>
+          <% end %>
         </div>
       </div>
     </div>
@@ -45,7 +53,9 @@
         <div class="header"> total unbooked events</div>
         <div class="header_data"><span class="header_icon"><i class="fa fa-calendar-times-o" aria-hidden="true"></i></span>
           <span>0</span>
-          <div class="minor_info">0/mth <span class="minor_divider">|</span> 0/yr</div>
+          <% if current_user.admin_pa_management_group %>
+            <div class="minor_info">0/mth <span class="minor_divider">|</span> 0/yr</div>
+          <% end %>
         </div>
       </div>
     </div>
@@ -55,7 +65,9 @@
         <div class="header_data">
           <span class="header_icon"><i class="fa fa-star" aria-hidden="true"></i></span>
           <span>0</span>
-          <div class="minor_info">0 [events]</div>
+          <% if current_user.admin_pa_management_group %>
+            <div class="minor_info">0 [events]</div>
+          <% end %>
         </div>
       </div>
     </div>

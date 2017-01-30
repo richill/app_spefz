@@ -1,93 +1,101 @@
 <!-- _content_user_adminpanel_left_column-->
 <div class="left_inner_section">
   <ul>
-    <li>
-      <div class="list_options active">
-        <%= link_to dashboard_user_path(current_user) do %>
-        <span><i class="fa fa-tachometer" aria-hidden="true"></i></span>
-        <span class="option_header">overview</span>
-        <% end %>
-      </div>
-    </li>
-    <li>
-      <div class="list_options">
-        <%= link_to analytics_user_path(current_user) do %>
-        <span><i class="fa fa-bar-chart" aria-hidden="true"></i></span>
-        <span class="option_header">analytics</span>
-        <% end %>
-      </div>
-    </li>
-    <li>
-      <div class="list_options">
-        <%= link_to company_user_path(current_user) do %>
-        <span><i class="fa fa-building-o" aria-hidden="true"></i></span>
-        <span class="option_header">spefz ltd</span>
-        <% end %>
-      </div>
-    </li>
-    <li>
-      <div class="list_options">
-        <%= link_to stats_users_user_path(current_user) do %>
-        <span><i class="fa fa-user" aria-hidden="true"></i></span>
-        <span class="option_header">users</span>
-        <% end %>
-      </div>
-    </li>
-    <li>
-      <div class="list_options">
-        <%= link_to groups_user_path(current_user) do %>
+    <% if current_user.admin_pa_management_group %>
+      <li>
+        <div class="list_options active">
+          <%= link_to dashboard_user_path(current_user) do %>
+          <span><i class="fa fa-tachometer" aria-hidden="true"></i></span>
+          <span class="option_header">overview</span>
+          <% end %>
+        </div>
+      </li>
+      <li>
+        <div class="list_options">
+          <%= link_to analytics_user_path(current_user) do %>
+          <span><i class="fa fa-bar-chart" aria-hidden="true"></i></span>
+          <span class="option_header">analytics</span>
+          <% end %>
+        </div>
+      </li>
+      <li>
+        <div class="list_options">
+          <%= link_to company_user_path(current_user) do %>
+          <span><i class="fa fa-building-o" aria-hidden="true"></i></span>
+          <span class="option_header">spefz ltd</span>
+          <% end %>
+        </div>
+      </li>
+      <li>
+        <div class="list_options">
+          <%= link_to stats_users_user_path(current_user) do %>
           <span><i class="fa fa-user" aria-hidden="true"></i></span>
-          <span class="option_header">groups</span>
-        <% end %>
-      </div>
-    </li>
-    <li>
-      <div class="list_options">
-        <%= link_to stats_socials_user_path(current_user) do %>
-          <span><i class="fa fa-calendar" aria-hidden="true"></i></span>
-          <span class="option_header">socials</span>
-        <% end %>
-      </div>
-    </li>
-    <li>
-      <div class="list_options">
-        <%= link_to stats_events_user_path(current_user) do %>
-          <span><i class="fa fa-calendar-check-o" aria-hidden="true"></i></span>
-          <span class="option_header">events</span>
-        <% end %>
-      </div>
-    </li>
-    <li>
-      <div class="list_options">
-        <%= link_to transactions_user_path(current_user) do %>
-          <span><i class="fa fa-credit-card" aria-hidden="true"></i></span>
-          <span class="option_header">transactions</span>
-        <% end %>
-      </div>
-    </li>
-    <li>
-      <div class="list_options">
-        <%= link_to stats_blogs_user_path(current_user) do %>
-          <span><i class="fa fa-pencil-square-o" aria-hidden="true"></i></span>
-          <span class="option_header">blogs</span>
-        <% end %>
-      </div>
-    </li>
-    <li>
-      <div class="list_options">
-        <%= link_to inquiries_user_path(current_user) do %>
-          <span><i class="fa fa-rss" aria-hidden="true"></i></span>
-          <span class="option_header">inquiries</span>
-        <% end %>
-      </div>
-    </li>
-    <li>
-      <div class="list_options">
-        <%= link_to reports_user_path(current_user) do %>
-          <span><i class="fa fa-rss" aria-hidden="true"></i></span>
-          <span class="option_header">report</span>
-        <% end %>
-      </div>
-    </li>
+          <span class="option_header">users</span>
+          <% end %>
+        </div>
+      </li>
+      <li>
+        <div class="list_options">
+          <%= link_to groups_user_path(current_user) do %>
+            <span><i class="fa fa-user" aria-hidden="true"></i></span>
+            <span class="option_header">groups</span>
+          <% end %>
+        </div>
+      </li>
+    <% end %>
+    <% if current_user.admin_pa_management_group || current_user.pa_event_mgt_group %>
+      <li>
+        <div class="list_options">
+          <%= link_to stats_socials_user_path(current_user) do %>
+            <span><i class="fa fa-calendar" aria-hidden="true"></i></span>
+            <span class="option_header">socials</span>
+          <% end %>
+        </div>
+      </li>
+      <li>
+        <div class="list_options">
+          <%= link_to stats_events_user_path(current_user) do %>
+            <span><i class="fa fa-calendar-check-o" aria-hidden="true"></i></span>
+            <span class="option_header">events</span>
+          <% end %>
+        </div>
+      </li>
+    <% end %>
+    <% if current_user.admin_pa_management_group %>
+      <li>
+        <div class="list_options">
+          <%= link_to transactions_user_path(current_user) do %>
+            <span><i class="fa fa-credit-card" aria-hidden="true"></i></span>
+            <span class="option_header">transactions</span>
+          <% end %>
+        </div>
+      </li>
+    <% end %>
+    <% if current_user.admin_pa_management_group || current_user.pa_administration_group %>
+      <li>
+        <div class="list_options">
+          <%= link_to stats_blogs_user_path(current_user) do %>
+            <span><i class="fa fa-pencil-square-o" aria-hidden="true"></i></span>
+            <span class="option_header">blogs</span>
+          <% end %>
+        </div>
+      </li>
+      <li>
+        <div class="list_options">
+          <%= link_to inquiries_user_path(current_user) do %>
+            <span><i class="fa fa-rss" aria-hidden="true"></i></span>
+            <span class="option_header">inquiries</span>
+          <% end %>
+        </div>
+      </li>
+      <li>
+        <div class="list_options">
+          <%= link_to reports_user_path(current_user) do %>
+            <span><i class="fa fa-rss" aria-hidden="true"></i></span>
+            <span class="option_header">report</span>
+          <% end %>
+        </div>
+      </li>
+    <% end %>
   </ul>
 </div>

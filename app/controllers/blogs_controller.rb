@@ -20,6 +20,9 @@ class BlogsController < ApplicationController
 
   def edit
     @user = User.friendly.find(params[:user_id])
+    unless current_user.admin_pa_management_group || current_user.admin_pa_management_group
+      redirect_to errorpermission_path
+    end
   end
 
   def create

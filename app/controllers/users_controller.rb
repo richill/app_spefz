@@ -31,107 +31,189 @@ class UsersController < ApplicationController
         redirect_to image_restriction_page_path
       end
     else
-      @premium_plan = Subscription.find_by(title:"premium")
       redirect_to subscription_path(@premium_plan)
     end
     # allows current_user to only see their profile page and not other memebers if they do not have a profile image & if not subscribed
   end
 
   def edit
+    unless current_user.admin_pa_management_group || current_user == @user
+      redirect_to errorpermission_path
+    end
   end
 
   def update
-    @user.update(user_params)
-    redirect_to @user
+    if current_user.admin_pa_management_group || current_user == @user
+      @user.update(user_params)
+      redirect_to @user
+    else
+      redirect_to errorpermission_path
+    end
   end
 
   def account
-    @user_payments = @user.payments.valid_payments.status_success.order("created_at desc")
-    @user_subscription = @user.payments.valid_subscriptions.status_success.order("created_at desc")
+    if current_user.admin_pa_management_group || current_user == @user
+      @user_payments = @user.payments.valid_payments.status_success.order("created_at desc")
+      @user_subscription = @user.payments.valid_subscriptions.status_success.order("created_at desc")
+    else
+      redirect_to errorpermission_path
+    end
   end
 
   def membership
+    unless current_user.admin_pa_management_group || current_user == @user
+      redirect_to errorpermission_path
+    end
   end
 
   def settings
+    unless current_user.admin_pa_management_group || current_user == @user
+      redirect_to errorpermission_path
+    end
   end
 
   def dashboard
-    @users = User.all
-    @socials = Social.all
-    @events = Event.all
+    if current_user.admin_pa_management_group
+      @users = User.all
+      @socials = Social.all
+      @events = Event.all
+    else
+      redirect_to errorpermission_path
+    end
   end
 
   def analytics
+    unless current_user.admin_pa_management_group
+      redirect_to errorpermission_path
+    end
   end
 
   def company
-    @users = User.all
-    @socials = Social.all
-    @events = Event.all
-    @payments = Payment.all
+    if current_user.admin_pa_management_group
+      @users = User.all
+      @socials = Social.all
+      @events = Event.all
+      @payments = Payment.all
+    else
+      redirect_to errorpermission_path
+    end
   end
 
   def stats_users
+    unless current_user.admin_pa_management_group
+      redirect_to errorpermission_path
+    end
   end
 
   def stats_socials
+    unless current_user.admin_pa_management_group || current_user.pa_event_mgt_group
+      redirect_to errorpermission_path
+    end
   end
 
-  def groups 
+  def groups
+    unless current_user.admin_pa_management_group
+      redirect_to errorpermission_path
+    end 
   end
 
   def stats_events
+    unless current_user.admin_pa_management_group || current_user.pa_event_mgt_group
+      redirect_to errorpermission_path
+    end 
   end
 
   def transactions
+    unless current_user.admin_pa_management_group
+      redirect_to errorpermission_path
+    end 
   end
 
   def stats_blogs
+    unless current_user.admin_pa_management_group || current_user.pa_administration_group
+      redirect_to errorpermission_path
+    end 
   end
 
   def inquiries
+    unless current_user.admin_pa_management_group || current_user.pa_administration_group
+      redirect_to errorpermission_path
+    end 
   end
 
   def reports
+    unless current_user.admin_pa_management_group || current_user.pa_administration_group
+      redirect_to errorpermission_path
+    end 
   end
 
   def network
-    @search = current_user.friends.search(params[:q])
-    @friends = @search.result(distinct: true)
+    if current_user.admin_pa_management_group || current_user == @user
+      @search = current_user.friends.search(params[:q])
+      @friends = @search.result(distinct: true)
+    else
+      redirect_to errorpermission_path
+    end
   end
 
   def followings
-    @search = current_user.followings.search(params[:q])
-    @followings = @search.result(distinct: true)
+    if current_user.admin_pa_management_group || current_user == @user
+      @search = current_user.followings.search(params[:q])
+      @followings = @search.result(distinct: true)
+    else
+      redirect_to errorpermission_path
+    end
   end
 
   def followers
-    @search = current_user.followers.search(params[:q])
-    @followers = @search.result(distinct: true)
+    if current_user.admin_pa_management_group || current_user == @user
+      @search = current_user.followers.search(params[:q])
+      @followers = @search.result(distinct: true)
+    else
+      redirect_to errorpermission_path
+    end
   end
 
-  def attending_socials 
+  def attending_socials
+    unless current_user.admin_pa_management_group || current_user == @user
+      redirect_to errorpermission_path
+    end  
   end
 
   def attending_events 
+    unless current_user.admin_pa_management_group || current_user == @user
+      redirect_to errorpermission_path
+    end 
   end
 
   def saved_socials 
+    unless current_user.admin_pa_management_group || current_user == @user
+      redirect_to errorpermission_path
+    end 
   end
 
   def saved_events 
+    unless current_user.admin_pa_management_group || current_user == @user
+      redirect_to errorpermission_path
+    end 
   end
 
   def live_socials 
+    unless current_user.admin_pa_management_group || current_user == @user
+      redirect_to errorpermission_path
+    end 
   end
 
   def expired_socials 
+    unless current_user.admin_pa_management_group || current_user == @user
+      redirect_to errorpermission_path
+    end 
   end
 
   private
   def setup_friends
     @user = User.find(current_user.id)
+    # @user = User.friendly.find(params[:id])
     @friend = User.find_by_email(params[:id])
   end
 
