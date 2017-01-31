@@ -34,6 +34,7 @@
                   <%= f.date_field :birthdate, placeholder: "Birthdate" %>
                   <div class="error_msg">can't be blank</div>
                   <%= f.association :category_gender, collection: CategoryGender.all, required: true, prompt: "select gender", label: 'Gender', label: false %>
+                  <%= f.association :category_country, collection: CategoryCountry.all, required: true, prompt: "select country", label: 'Country', label: false %>
                 </div>
                 <div class="form-actions">
                   <%= f.button :submit, "Sign up" %>
