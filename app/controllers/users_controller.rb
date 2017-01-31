@@ -117,7 +117,12 @@ class UsersController < ApplicationController
   end
 
   def groups
-    unless current_user.admin_pa_management_group
+    if current_user.admin_pa_management_group
+      @users = User.all
+      @socials = Social.all
+      @events = Event.all
+      @payments = Payment.all
+    else
       redirect_to errorpermission_path
     end 
   end
