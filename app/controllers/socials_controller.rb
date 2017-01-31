@@ -16,11 +16,11 @@ class SocialsController < ApplicationController
     @report = Report.new
   end
 
-  def user_socials
-    @user = User.friendly.find(params[:user_id])
-    @socials = @user.socials.order("created_at DESC")
-    respond_with(@socials)
-  end
+  # def user_socials
+  #   @user = User.friendly.find(params[:user_id])
+  #   @socials = @user.socials.order("created_at DESC")
+  #   respond_with(@socials)
+  # end
 
   def show
     @invite_request = InviteRequest.new
@@ -49,41 +49,56 @@ class SocialsController < ApplicationController
   end
 
   def edit
+    unless current_user.subscribed_social_access?(@social)
+      @premium_plan = Subscription.find_by(title:"premium")
+      redirect_to subscription_path(@premium_plan)
+    end
   end
 
   def create
-    @user = User.friendly.find(params[:user_id])
-    @social = @user.socials.create(social_params)
+    if current_user.subscribed_access?
+      @user = User.friendly.find(params[:user_id])
+      @social = @user.socials.create(social_params)
 
-    respond_to do |format|
-      if @social.save
-        format.html { redirect_to([@social.user, @social], notice: 'Social was successfully created.') }
-        format.json  { render json: @social, status: :created, location: @social }
-      else
-        format.html { render action: "new" }
-        format.json  { render json: @social.errors, status: :unprocessable_entity }
+      respond_to do |format|
+        if @social.save
+          format.html { redirect_to([@social.user, @social], notice: 'Social was successfully created.') }
+          format.json  { render json: @social, status: :created, location: @social }
+        else
+          format.html { render action: "new" }
+          format.json  { render json: @social.errors, status: :unprocessable_entity }
+        end
       end
+    else
+      redirect_to subscription_path(@premium_plan)
     end
-    @premium_plan = Subscription.find_by(title:"premium")
   end
 
   def update
-    respond_to do |format|
-      if @social.update_attributes(social_params)
-        format.html { redirect_to([@social.user, @social], notice: 'Social was successfully updated.') }
-        format.json { head :no_content }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @social.errors, status: :unprocessable_entity }
+    if current_user.subscribed_social_access?(@social)
+      respond_to do |format|
+        if @social.update_attributes(social_params)
+          format.html { redirect_to([@social.user, @social], notice: 'Social was successfully updated.') }
+          format.json { head :no_content }
+        else
+          format.html { render action: "edit" }
+          format.json { render json: @social.errors, status: :unprocessable_entity }
+        end
       end
+    else
+      redirect_to subscription_path(@premium_plan)
     end
   end
 
   def destroy
-    @user = User.friendly.find(params[:user_id])
-    @social = @user.socials.find(params[:id])
-    @social.destroy
-    redirect_to socials_path
+    if current_user.admin_pa_management_group
+      @user = User.friendly.find(params[:user_id])
+      @social = @user.socials.find(params[:id])
+      @social.destroy
+      redirect_to socials_path
+    else
+      redirect_to errorpermission_path
+    end
   end
 
   private
