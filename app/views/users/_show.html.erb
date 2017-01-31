@@ -16,9 +16,11 @@
           <div class="user_name"><%= current_user.name_shortner(@user) %></div>
           <div class="user_location">
             <span>
-              <i class="fa fa-map-pin" aria-hidden="true"></i> 
-              <span>london</span>, 
-              <span>united kingdom</span>
+              <i class="fa fa-map-pin" aria-hidden="true"></i>
+              <% if @user.city? %> 
+                <span><%= @user.city %></span>,
+              <% end %> 
+              <span><%= @user.category_country.name %></span>
             </span>
             <% if @user.profession? %>
               <span class="divider">|</span>
