@@ -18,6 +18,7 @@ class User < ActiveRecord::Base
   validates_presence_of :lastname, presence: true, message: "can't be blank"
   validates_presence_of :birthdate, presence: true, message: "can't be blank"
   validates_presence_of :category_gender, presence: true, message: "please select a category"
+  validates_presence_of :category_country, presence: true, message: "please select a category"
 
   belongs_to :category_gender 
   belongs_to :category_role 
