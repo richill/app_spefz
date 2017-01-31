@@ -67,11 +67,14 @@ class Event < ActiveRecord::Base
 
   scope :expired_or_closed_events, -> { where('close = ? OR date < ?', true, Date.current) }
 
-  scope :live_events, -> {where(['date >= ?', Date.current])}
+  scope :live_events, -> {where(['date >= ?', Date.current])} 
 
   scope :closed_events, -> {where(['close = ?', true])}
 
   scope :open_events, -> {where(['close = ? OR close IS ?', false, nil])}
+
+  scope :total_price_for_events, -> { joins(:payments).sum("events.price") }
+  #sums the total payments for all open/live/expired events
 
   scope :booked_events, -> (user) { joins(payments: :user).where(users: { id: user.id }) }
   #terminal: events.booked_events(current_user)
@@ -80,23 +83,15 @@ class Event < ActiveRecord::Base
   scope :booked_events_with_cards, -> (user) { joins(:card, payments: :user).where(users: { id: user.id }) }
   #displays all events with cards that have been booked/paid by a user
 
-  # scope :live_or_open_events, -> {where(close = 'f' OR close IS NULL) AND (date >= '2016-11-19')}
-
   scope :created_this_month, -> { where(created_at: Time.now.beginning_of_month..Time.now.end_of_month) }
+  #event created in current month
+
+  scope :held_this_month, -> { where(date: Time.now.beginning_of_month..Time.now.end_of_month) }
+  #events held in current month (eg: could be created in 10.03.2014 held for current month)
 
   def event_with_payments_sum(event)
     self.payments.to_a.map(&:price).sum
   end
-
-  def self.active_events
-    active_events = live_events.open_events
-    active_events.all.each do |event|
-      event.price * event.payments.count
-    end
-  end
-
-
-
 
   def slug_events
     [
