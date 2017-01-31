@@ -53,14 +53,16 @@
             <% else %>
               <%= "-" %>
             <% end %>
-          </td> <td>[<%= payment.event_id %>]</td>
+          </td> 
+          <td>[<%= payment.event_id %>]</td>
           <td>
             <% if payment.subscription_id? %>
               <%= payment.subscription.reference %>
             <% else %>
               <%= "-" %>
             <% end %>
-          </td> <td>[<%= payment.subscription_id %>]</td>
+          </td> 
+          <td>[<%= payment.subscription_id %>]</td>
           <td>
             <% if payment.event_id? %>
               <%= payment.event.title %>

@@ -114,11 +114,13 @@ class User < ActiveRecord::Base
   scope :management_group, ->() { joins(:category_managementgroup).where('category_managementgroups.name' => "Management Group") }                                                                                       
   # all users in management_group
 
-  scope :management_group, ->() { joins(:category_managementgroup).where('category_managementgroups.name' => "Sales/Marketing Group") }                                                                                       
+  scope :sales_mrkt_group, ->() { joins(:category_managementgroup).where('category_managementgroups.name' => "Sales/Marketing Group") }                                                                                       
   # all users in sales_marketing_group
 
   scope :hosts, -> { joins(:category_managementgroup).where("category_managementgroups.name IN (?)", ["Management Group", "Event Management Group"]) }                                                                                    
   # display users that are in charge of hosting speed-events
+
+  scope :spefz_team, -> { joins(:category_role).where("category_roles.name IN (?)", ["Admin", "Primary Admin"]) }
 
   scope :subcribed_users, -> () {where(["stripe_subscription_pymt_id IS NOT NULL or CAST(stripe_subscription_pymt_id as text) = ''"])}
 

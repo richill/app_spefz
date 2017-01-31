@@ -88,6 +88,16 @@ class Event < ActiveRecord::Base
     self.payments.to_a.map(&:price).sum
   end
 
+  def self.active_events
+    active_events = live_events.open_events
+    active_events.all.each do |event|
+      event.price * event.payments.count
+    end
+  end
+
+
+
+
   def slug_events
     [
       :title

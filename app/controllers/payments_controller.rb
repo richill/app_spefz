@@ -103,7 +103,7 @@ class PaymentsController < ApplicationController
       respond_to do |format|
         if @payment.save
           MailerPaymentuserreceipt.paymentreceipt(@payment).deliver
-          format.html { redirect_to user_path(current_user), notice: 'Your Subscription Payment was successful.' }
+          format.html { redirect_to account_user_path(current_user), notice: 'Your Subscription Payment was successful.' }
           format.json { render :show, status: :created, location: @payment }
         else
           format.html { redirect_to new_payment_path(subscription_id: @subscription.id), alert: 'Ensure all fields are completed'}
@@ -186,7 +186,6 @@ class PaymentsController < ApplicationController
       respond_to do |format|
         if @payment.save
           MailerPaymentuserreceipt.paymentreceipt(@payment).deliver
-          # format.html { redirect_to user_event_path(@payment.user, @payment.event), notice: 'Your Booking Payment was successful.' }
           format.html { redirect_to account_user_path(current_user), notice: 'Your Booking Payment was successful.' }
           format.json { render :show, status: :created, location: @payment }
         else

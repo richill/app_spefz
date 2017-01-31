@@ -13,6 +13,7 @@ class Payment < ActiveRecord::Base
   scope :status_success, -> {where(['status = ?', "success"])}
 
   scope :events_with_successful_payments, -> {joins(:event).map(&:event).uniq}
+  # payments.joins(:event).map(&:event).uniq.count
   # payments.status_success.events_with_successful_payments
   # displays events with sucessful payments
 
