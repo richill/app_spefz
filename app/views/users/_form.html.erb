@@ -26,6 +26,9 @@
             <%= f.input :profession, placeholder: "risk management" %>
             <%= f.association :category_gender, collection: CategoryGender.all, prompt: "select a category", label: "Gender" %>
             <div class="clear"></div>
+            <%= f.association :category_country, collection: CategoryCountry.all, prompt: "select a category", label: "Country" %>
+            <%= f.input :city, placeholder: "London" %>
+            <div class="clear"></div>
             <div class="label_interest">interest</div>
             <%= f.text_field :tag_list, value: @user.tag_list.to_s, placeholder: "chess, jogging, dogs, skipping, gym, startups, entreprenuers, jazz..." %>
             <%= f.input :description, label: "about me", placeholder: "Tell us a bit about yourself, what you like doing and where you like going." %>
