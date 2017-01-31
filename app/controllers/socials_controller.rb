@@ -1,6 +1,6 @@
 class SocialsController < ApplicationController
   respond_to :html, :xml, :json
-  before_action :set_social, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, :set_social, only: [:show, :edit, :update, :destroy]
   before_filter :setup_friends, :setup_subscription, :setup_cards, :setup_events, :setup_invite_form, :setup_user_network_activities
   impressionist :actions=>[:show]
 

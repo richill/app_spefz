@@ -12,6 +12,9 @@ class PaymentsController < ApplicationController
   end
 
   def show
+    unless current_user.admin_pa_management_group
+      redirect_to errorpermission_path
+    end
   end
 
   def new
@@ -27,6 +30,9 @@ class PaymentsController < ApplicationController
   end
 
   def edit
+    unless current_user.admin_pa_management_group
+      redirect_to errorpermission_path
+    end
   end
 
   def create
@@ -192,30 +198,38 @@ class PaymentsController < ApplicationController
   end
 
   def update
-    respond_to do |format|
-      if @payment.update(payment_params)
-        format.html { redirect_to @payment, notice: 'Payment was successfully updated.' }
-        format.json { render :show, status: :ok, location: @payment }
-      else
-        format.html { render :edit }
-        format.json { render json: @payment.errors, status: :unprocessable_entity }
+    if current_user.admin_pa_management_group
+      respond_to do |format|
+        if @payment.update(payment_params)
+          format.html { redirect_to @payment, notice: 'Payment was successfully updated.' }
+          format.json { render :show, status: :ok, location: @payment }
+        else
+          format.html { render :edit }
+          format.json { render json: @payment.errors, status: :unprocessable_entity }
+        end
       end
+    else
+      redirect_to errorpermission_path
     end
   end
 
   def destroy
-    #destroy here represents unsubscribe
-    customer = Stripe::Customer.retrieve(current_user.stripe_id)
-    customer.subscriptions.retrieve(current_user.stripe_subscription_pymt_id).delete
-    current_user.update(stripe_subscription_pymt_id: nil)
-    current_user.update(recent_subscription_pymt_date: nil)
+    if current_user.admin_pa_management_group
+      #destroy here represents unsubscribe
+      customer = Stripe::Customer.retrieve(current_user.stripe_id)
+      customer.subscriptions.retrieve(current_user.stripe_subscription_pymt_id).delete
+      current_user.update(stripe_subscription_pymt_id: nil)
+      current_user.update(recent_subscription_pymt_date: nil)
 
-    redirect_to user_path(current_user), notice: "Payment Plan Successfully Cancelled"
-    # @payment.destroy
-    # respond_to do |format|
-    #   format.html { redirect_to payments_url, notice: 'Payment was successfully destroyed.' }
-    #   format.json { head :no_content }
-    # end
+      redirect_to user_path(current_user), notice: "Payment Plan Successfully Cancelled"
+      # @payment.destroy
+      # respond_to do |format|
+      #   format.html { redirect_to payments_url, notice: 'Payment was successfully destroyed.' }
+      #   format.json { head :no_content }
+      # end
+    else
+      redirect_to errorpermission_path
+    end
   end
 
   private
