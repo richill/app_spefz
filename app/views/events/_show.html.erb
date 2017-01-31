@@ -186,7 +186,7 @@
                 <div class="specific_location">
                   <%= link_to "#{@event.maplink}", target:"_blank" do %>
                     <b><%= "#{@event.venuename}" %></b>
-                    <div><%= "#{@event.address}, london, United Kingdom, #{@event.postcode}" %></div>
+                    <div><%= "#{@event.address}, #{@event.city}, #{@event.category_country}, #{@event.postcode}" %></div>
                   <% end %>
                 </div>
                 <div><%= link_to(image_tag("http://maps.googleapis.com/maps/api/staticmap?key=AIzaSyBhy3b2NyD-pwNVd_dBFllN9sXDYVsCnJ4&size=400x500&sensor=false&markers=#{@event.latitude}%2C#{@event.longitude}"), "#{@event.maplink}", target:"_blank") %></div>

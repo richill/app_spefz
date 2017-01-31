@@ -46,7 +46,12 @@
           <div class="tablecell">
             <div class="main_text_format">e: <%= mail_to "#{user.email}", "#{user.email}" %></div>
             <div class="faint_text_format"><%= user.profession %></div>
-            <div class="faint_text_format">london, united kingdom</div> 
+            <div class="faint_text_format">
+              <% if user.city? %>
+                <span><%= user.city %>,</span>
+              <% end %>
+              <span><%= user.category_country.name %></span>
+            </div> 
           </div>
           <div class="tablecell">
             <div class="faint_text_format">Role</div> 
@@ -129,7 +134,12 @@
           <div class="tablecell">
             <div class="main_text_format">e: <%= mail_to "#{user.email}", "#{user.email}" %></div>
             <div class="faint_text_format"><%= user.profession %></div>
-            <div class="faint_text_format">london, united kingdom</div> 
+            <div class="faint_text_format">
+              <% if user.city? %>
+                <span><%= user.city %>,</span>
+              <% end %>
+              <span><%= user.category_country.name %></span>
+            </div> 
           </div>
           <div class="tablecell">
             <div class="faint_text_format">Role</div> 
@@ -212,7 +222,12 @@
           <div class="tablecell">
             <div class="main_text_format">e: <%= mail_to "#{user.email}", "#{user.email}" %></div>
             <div class="faint_text_format"><%= user.profession %></div>
-            <div class="faint_text_format">london, united kingdom</div> 
+            <div class="faint_text_format">
+              <% if user.city? %>
+                <span><%= user.city %>,</span>
+              <% end %>
+              <span><%= user.category_country.name %></span>
+            </div> 
           </div>
           <div class="tablecell">
             <div class="faint_text_format">Role</div> 
