@@ -1,21 +1,44 @@
-<%= simple_form_for(@venue) do |f| %>
-  <%= f.error_notification %>
+<div class= "medium-12 columns user_general_settings_section user_main_dashboard_page">
 
-  <div class="form-inputs">
-    <%= f.input :venuename %>
-    <%= f.input :address %>
-    <%= f.input :postcode %>
-    <%= f.input :maplink %>
-    <%= f.input :website %>
-    <%= f.input :station %>
-    <%= f.input :price %>
-    <%= f.input :min_capacity %>
-    <%= f.input :eventmanager %>
-    <%= f.input :contact %>
-    <%= f.input :image %>
+  <!-- left_column_section -->
+  <div class="medium-2 columns left_column_section">
+    <%= render 'shared/content_user_adminpanel_left_column' %>
   </div>
+  <!-- left_column_section -->
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+
+  <!-- right_column_section -->
+  <div class="medium-10 columns right_column_section">
+    <div class="right_inner_section">
+      <!-- content -->
+      <div class="tree_link">
+        <span><i class="fa fa-user" aria-hidden="true"></i> <%= link_to "#{current_user.firstname}", user_path(current_user)%></span> <span class="fwd_sign">></span> <span><%= link_to "events", stats_events_user_path(current_user) %></span> <span class="fwd_sign">></span> <span><%= link_to "venues", venues_path %></span> <span class="fwd_sign">></span> <span>create venue</span>
+      </div>
+      <div class="user_general_settings_inner_section venue_edit_update_form">
+        <%= simple_form_for(@venue) do |f| %>
+          <%= f.error_notification %>
+
+          <div class="form-inputs">
+            <%= f.file_field :image %>
+            <%= f.input :venuename %>
+            <%= f.input :website %>
+            <%= f.input :address %>
+            <%= f.input :postcode %>
+            <%= f.input :maplink %>
+            <%= f.input :station, label: "Closet Station" %>
+            <%= f.input :price, label: "Price (£)" %>
+            <%= f.input :min_capacity %>
+            <%= f.input :eventmanager, label: "Event Manager" %>
+            <%= f.input :contact %>
+          </div>
+
+          <div class="form-actions">
+            <%= f.button :submit %>
+          </div>
+        <% end %>
+      </div>
+      <!-- content -->
+    </div>
   </div>
-<% end %>
+  <!-- right_column_section -->
+</div>

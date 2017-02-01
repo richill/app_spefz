@@ -1,6 +1,10 @@
-<% provide(:title, "Venues") %>
+<% if action_name == 'new'  %>
+  <% provide(:title, "Create Venue") %>
+<% else %>
+  <% provide(:title, "Update Venue") %>
+<% end %>
 <div>
   <%= render 'shared/header' %>
-  <%= render 'venues/new' %>
+  <%= render 'form' %>
   <%= render 'shared/footer' %>
 </div>
