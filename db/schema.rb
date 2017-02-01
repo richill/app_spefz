@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170201153827) do
+ActiveRecord::Schema.define(version: 20170201160237) do
 
   create_table "activities", force: :cascade do |t|
     t.integer  "trackable_id"
@@ -609,6 +609,7 @@ ActiveRecord::Schema.define(version: 20170201153827) do
     t.string   "website"
     t.integer  "category_country_id"
     t.string   "city"
+    t.text     "note"
   end
 
 end

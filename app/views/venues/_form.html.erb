@@ -20,20 +20,21 @@
 
           <div class="form-inputs">
             <%= f.file_field :image %>
-            <%= f.input :venuename %>
-            <%= f.input :website %>
-            <%= f.input :address %>
-            <%= f.input :postcode %>
+            <%= f.input :venuename, label: "Venue Name", placeholder: "Pullman Hotel (Golden Arrow Bar)" %>
+            <%= f.input :website, placeholder: "http://www.pullmanhotels.com" %>
+            <%= f.input :address, placeholder: "100 - 110 Euston Road" %>
+            <%= f.input :postcode, placeholder: "NW1 2AJ" %>
             <div class="clear"></div>
             <div class="address_lower">
               <%= f.association :category_country, collection: CategoryCountry.all, prompt: "select a country", placeholder: "Select Country" %>
-              <%= f.input :city, placeholder: "city" %>
+              <%= f.input :city, placeholder: "London" %>
             </div>
             <div class="clear"></div>
-            <%= f.input :maplink %>
-            <%= f.input :station, label: "Closet Station" %>
-            <%= f.input :price, label: "Price (£)" %>
-            <%= f.input :min_capacity %>
+            <%= f.input :maplink, label: "Map Link", placeholder: "https://www.google.co.uk/maps?q=Pullman+Hotel+(Golden+Arrow+Bar),+100+-+110+Euston+Road,+NW1+2AJ&ion=1&espv=2&bav=on.2,or.r_cp.&bvm=bv.145822982,d.d24&biw=1366&bih=609&dpr=1&um=1&ie=UTF-8&sa=X&ved=0ahUKEwiF6pC-ou_RAhVLJ8AKHd9wBmsQ_AUIBigB" %>
+            <%= f.input :station, label: "Closet Station", placeholder: "Kings Cross St. Pancrease" %>
+            <%= f.input :price, label: "Price (£) / hr", placeholder: "200" %>
+            <%= f.input :min_capacity, label: "Minimum Capacity", placeholder: "35" %>
+            <%= f.input :note, label: "Notes" %>
             <div class="clear"></div>
             <div class="event_manager_details">
               <%= f.input :eventmanager, label: "Event Manager", placeholder: "Dr. Nelson Larbi" %>
