@@ -77,8 +77,8 @@
                 </div>
 
                 <div class="tablecell">
-                  <div class="faint_text_format">Address</div> 
-                  <div class="main_text_format"><%= link_to "#{venue.address}", "#{venue.maplink}", target: "_blank" %></div>
+                  <div class="faint_text_format">Address</div>
+                  <div class="main_text_format"><%= link_to (truncate "#{venue.address}", length: 30), "#{venue.maplink}" %></div>
                   <div class="main_text_format"><%= link_to "#{venue.postcode}", "#{venue.maplink}", target: "_blank" %></div>
                 </div>
 

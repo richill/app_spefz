@@ -1,0 +1,36 @@
+/*=========================================
+    Section: admin venue page
+    File: views / shared / _modal_venue_note.html.erb
+    File: views / users / _user_dashboard_admin_venues.html.erb
+  =========================================*/
+
+// #myModal-users-aboutme {
+//   background: url("img_background_main.png") repeat;
+//   border-radius: 0px !important;
+//   border: 0px !important;
+//   padding: 0px !important;
+// }
+
+.venue_note_container {
+  background-color: #fff !important;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+}
+
+.venue_note_container .header {
+  padding: 5px 15px !important;
+  font-size: 35px;
+  border-bottom: 2px solid #58CDA6;
+  text-transform: capitalize;
+  color: #fff !important;
+  background-color: #283041;
+}
+
+.venue_note_container .description {
+  padding: 15px !important;
+  min-height: 100px;
+}
+
+.venue_note_container .cancel_button {
+  color: #fff !important;
+}
