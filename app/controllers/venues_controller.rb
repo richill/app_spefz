@@ -1,5 +1,6 @@
 class VenuesController < ApplicationController
-  before_action :set_venue, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, :set_venue, only: [:show, :edit, :update, :destroy]
+  before_filter :setup_friends, :setup_subscription, :setup_cards, :setup_events, :setup_invite_form, :setup_user_network_activities
 
   # GET /venues
   # GET /venues.json
@@ -62,13 +63,37 @@ class VenuesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_venue
-      @venue = Venue.find(params[:id])
-    end
+  def setup_friends
+    @user = User.find(current_user.id)
+    @friend = User.find_by_email(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def venue_params
-      params.require(:venue).permit(:venuename, :address, :postcode, :maplink, :station, :price, :min_capacity, :eventmanager, :contact, :image)
-    end
+  def setup_subscription
+    @premium_plan = Subscription.find_by(title:"premium") 
+  end
+
+  def setup_cards
+    @cards = Card.all
+  end
+
+  def setup_events
+    @events = Event.all
+  end
+
+  def setup_invite_form
+    @invite = Invite.new
+  end
+
+  def setup_user_network_activities
+    @user_network_activities = Activity.order("created_at desc").where(owner_id: current_user.friends)
+    @activity =  Activity.last
+  end
+
+  def set_venue
+    @venue = Venue.find(params[:id])
+  end
+
+  def venue_params
+    params.require(:venue).permit(:venuename, :address, :postcode, :maplink, :station, :price, :min_capacity, :eventmanager, :contact, :image)
+  end
 end
