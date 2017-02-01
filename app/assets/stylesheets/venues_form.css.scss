@@ -77,17 +77,44 @@
   font-size: 15px;
 }
 
-.user_general_settings_section .venue_edit_update_form .event_venuename {
+.user_general_settings_section .venue_edit_update_form .venue_venuename {
   width: 540px;
   float: left;
   margin-bottom: 15px;
 }
 
-.user_general_settings_section .venue_edit_update_form .event_address {
+.user_general_settings_section .venue_edit_update_form .venue_website {
   width: 540px;
   float: right;
   margin-bottom: 15px;
 }
+
+.user_general_settings_section .venue_edit_update_form .venue_address {
+  width: 540px;
+  float: left;
+  margin-bottom: 15px;
+}
+
+.user_general_settings_section .venue_edit_update_form .venue_postcode {
+  width: 540px;
+  float: right;
+  margin-bottom: 15px;
+}
+
+.user_general_settings_section .venue_edit_update_form .venue_eventmanager {
+  width: 540px;
+  float: left;
+  margin-bottom: 15px;
+}
+
+.user_general_settings_section .venue_edit_update_form .venue_contact {
+  width: 540px;
+  float: right;
+  margin-bottom: 15px;
+}
+
+
+
 
 .user_general_settings_section .venue_edit_update_form .event_category_country {
   width: 350px;
