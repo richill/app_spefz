@@ -2,63 +2,76 @@ class VenuesController < ApplicationController
   before_action :authenticate_user!, :set_venue, only: [:show, :edit, :update, :destroy]
   before_filter :setup_friends, :setup_subscription, :setup_cards, :setup_events, :setup_invite_form, :setup_user_network_activities
 
-  # GET /venues
-  # GET /venues.json
   def index
-    @venues = Venue.all
+    if current_user.admin_pa_management_group || current_user.pa_event_mgt_group
+      @venues = Venue.all
+    else
+      redirect_to errorpermission_path
+    end
   end
 
-  # GET /venues/1
-  # GET /venues/1.json
   def show
+    unless current_user.admin_pa_management_group || current_user.pa_event_mgt_group
+      redirect_to errorpermission_path
+    end
   end
 
-  # GET /venues/new
   def new
-    @venue = Venue.new
+    if current_user.admin_pa_management_group || current_user.pa_event_mgt_group
+      @venue = Venue.new
+    else
+      redirect_to errorpermission_path
+    end
   end
 
-  # GET /venues/1/edit
   def edit
+    unless current_user.admin_pa_management_group || current_user.pa_event_mgt_group
+      redirect_to errorpermission_path
+    end
   end
 
-  # POST /venues
-  # POST /venues.json
   def create
-    @venue = Venue.new(venue_params)
-
-    respond_to do |format|
-      if @venue.save
-        format.html { redirect_to @venue, notice: 'Venue was successfully created.' }
-        format.json { render :show, status: :created, location: @venue }
-      else
-        format.html { render :new }
-        format.json { render json: @venue.errors, status: :unprocessable_entity }
+    if current_user.admin_pa_management_group || current_user.pa_event_mgt_group
+      @venue = Venue.new(venue_params)
+      respond_to do |format|
+        if @venue.save
+          format.html { redirect_to venues_path, notice: 'Venue was successfully created.' }
+          format.json { render :show, status: :created, location: @venue }
+        else
+          format.html { render :new }
+          format.json { render json: @venue.errors, status: :unprocessable_entity }
+        end
       end
+    else
+      redirect_to errorpermission_path
     end
   end
 
-  # PATCH/PUT /venues/1
-  # PATCH/PUT /venues/1.json
   def update
-    respond_to do |format|
-      if @venue.update(venue_params)
-        format.html { redirect_to @venue, notice: 'Venue was successfully updated.' }
-        format.json { render :show, status: :ok, location: @venue }
-      else
-        format.html { render :edit }
-        format.json { render json: @venue.errors, status: :unprocessable_entity }
+    if current_user.admin_pa_management_group || current_user.pa_event_mgt_group
+      respond_to do |format|
+        if @venue.update(venue_params)
+          format.html { redirect_to venues_path, notice: 'Venue was successfully updated.' }
+          format.json { render :show, status: :ok, location: @venue }
+        else
+          format.html { render :edit }
+          format.json { render json: @venue.errors, status: :unprocessable_entity }
+        end
       end
+    else
+      redirect_to errorpermission_path
     end
   end
 
-  # DELETE /venues/1
-  # DELETE /venues/1.json
   def destroy
-    @venue.destroy
-    respond_to do |format|
-      format.html { redirect_to venues_url, notice: 'Venue was successfully destroyed.' }
-      format.json { head :no_content }
+    if current_user.admin_pa_management_group
+      @venue.destroy
+      respond_to do |format|
+        format.html { redirect_to venues_url, notice: 'Venue was successfully destroyed.' }
+        format.json { head :no_content }
+      end
+    else
+      redirect_to errorpermission_path
     end
   end
 
