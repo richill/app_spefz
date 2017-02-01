@@ -1,5 +1,6 @@
-<h1>New Venue</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Back', venues_path %>
+<% provide(:title, "Venues") %>
+<div>
+  <%= render 'shared/header' %>
+  <%= render 'venues/new' %>
+  <%= render 'shared/footer' %>
+</div>
