@@ -103,10 +103,11 @@ class VenuesController < ApplicationController
   end
 
   def set_venue
-    @venue = Venue.find(params[:id])
+    @venue = Venue.friendly.find(params[:id])
+    # @venue = Venue.find(params[:id])
   end
 
   def venue_params
-    params.require(:venue).permit(:venuename, :address, :postcode, :maplink, :station, :price, :min_capacity, :eventmanager, :contact, :image, :website, :category_country_id, :city, :note)
+    params.require(:venue).permit(:venuename, :address, :postcode, :maplink, :station, :price, :min_capacity, :eventmanager, :contact, :image, :website, :category_country_id, :city, :note, :slug)
   end
 end

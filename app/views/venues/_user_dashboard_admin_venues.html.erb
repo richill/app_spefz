@@ -89,37 +89,69 @@
 
                 <div class="tablecell">
                   <div class="faint_text_format">Price (£) / hr</div> 
-                  <div class="main_text_format"><%= venue.price %></div>
+                  <div class="main_text_format">
+                    <% if venue.price? %>
+                      <%= venue.price %>
+                    <% else %>
+                      <%= "-" %>
+                    <% end %>
+                  </div>
                 </div>
 
                 <div class="tablecell">
-                  <div class="faint_text_format">Min. Capcaity</div> 
-                  <div class="main_text_format"><%= venue.min_capacity %></div>
+                  <div class="faint_text_format">Min. Cap.</div> 
+                  <div class="main_text_format">
+                    <% if venue.min_capacity? %>
+                      <%= venue.min_capacity %>
+                    <% else %>
+                      <%= "-" %>
+                    <% end %>
+                  </div>
                 </div>
 
                 <div class="tablecell">
                   <div class="faint_text_format">Event Manager</div> 
-                  <div class="main_text_format"><%= venue.eventmanager %></div>
+                  <div class="main_text_format">
+                    <% if venue.eventmanager? %>
+                      <%= venue.eventmanager %>
+                    <% else %>
+                      <%= "-" %>
+                    <% end %>
+                  </div>
                 </div>
 
                 <div class="tablecell">
                   <div class="faint_text_format">Contact</div> 
-                  <div class="main_text_format"><%= venue.contact %></div>
+                  <div class="main_text_format">
+                    <% if venue.contact? %>
+                      <%= venue.contact %>
+                    <% else %>
+                      <%= "-" %>
+                    <% end %>
+                  </div>
                 </div>
 
                 <div class="tablecell">
                   <div class="faint_text_format">Actions</div> 
                   <div class="main_text_format">
                     <ul>
-                      <li><%= link_to 'Show', venue %></li>
+                      <% if current_user.admin_pa_management_group %>
+                        <!-- <li><%= link_to 'Show', venue %></li> -->
+                      <% end %>
                       <li><%= link_to 'Edit', edit_venue_path(venue) %></li>
-                      <li><%= link_to 'Destroy', venue, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+                      <% if current_user.admin_pa_management_group %>
+                        <li><%= link_to 'Destroy', venue, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+                      <% end %>
+                      <% if venue.note? %> 
+                        <li>
+                          <a href="#<%= venue.id %>" data-reveal-id="<%= dom_id(venue) %>_venuenote">Note</a>
+                          <%= render partial: 'shared/modal_venue_note', locals: { venue: venue } %>
+                        </li>
+                      <% end %>
                     </ul>
                   </div>
                 </div>
 
-             
-            
               </div>
             <% end %>
           </div>
