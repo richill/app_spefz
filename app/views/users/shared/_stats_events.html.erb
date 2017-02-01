@@ -12,7 +12,7 @@
     <div class="right_inner_section">
       <!-- content -->
       <div class="tree_link">
-        <span><i class="fa fa-user" aria-hidden="true"></i> <%= link_to "#{current_user.firstname}", user_path(current_user)%></span> <span class="fwd_sign">></span> <span>events</span> <span class="tree_link_btn"><%= link_to "create event", new_user_event_path(current_user) %></span>
+        <span><i class="fa fa-user" aria-hidden="true"></i> <%= link_to "#{current_user.firstname}", user_path(current_user)%></span> <span class="fwd_sign">></span> <span>events</span> <span class="tree_link_btn"><%= link_to "create event", new_user_event_path(current_user) %></span><span class="tree_link_btn"><%= link_to "view venues", venues_path %></span>
       </div>
       <div class="user_general_settings_inner_section user_dashboard_section_main_content">
         <div><%= render "users/shared/user_dashboard_admin_statsevents" %></div>
