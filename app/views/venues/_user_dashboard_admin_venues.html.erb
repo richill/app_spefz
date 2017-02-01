@@ -47,7 +47,26 @@
   <div class="medium-12 columns lower_data_content stats_tab_01_content">
     <div class="medium-12 columns lower_data_inner_content">
       <!-- search -->
-        search
+      <div class="medium-12 columns search_container">
+        <div class="search_inner_container">        
+          <%= search_form_for(@search) do |f| %>
+          <ul class="search_fields_left">
+            <li class="field select_role"><%= f.text_field :venuename_cont, placeholder: 'search venue name eg: bar soho'%></li>
+            <li class="field select_mgtgroup"><%= f.text_field :postcode_cont, placeholder: 'search poscode eg: W1D 6DG'%></li>
+          </ul>   
+
+          <ul class="search_fields_right">
+            <li><%= f.submit 'search' %></li> 
+            <li class="field btn_all">
+              <%= link_to users_path do %>
+                <i class="fa fa-users" aria-hidden="true"></i>
+              <% end %>
+            </li>
+            <li class="field select_user_name"><%= f.text_field :eventmanager_cont, placeholder: 'search name eg: kofi'%></li>
+          </ul>        
+          <% end %>
+        </div>
+      </div>
       <!-- search -->
       <!-- listed venues -->
       <h1>listed venues [<%= @venues.all.count %>]
