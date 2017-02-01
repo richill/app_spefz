@@ -1,43 +1,194 @@
-<p id="notice"><%= notice %></p>
+<div class="user_dashboard_admin_overview user_dashboard_admin_venues">
+  <!-- upper_data_content -->
+  <div class="medium-12 columns upper_data_content">
+    <div class="medium-2 columns left_data responsive_data stats_tab_01">
+      <div class="data_content">
+        <div class="header"> n/a</div>
+        <div class="header_data"><span class="header_icon"><i class="fa fa-users" aria-hidden="true"></i></span><span>0</span></div>
+      </div>
+    </div>
+    <div class="medium-2 columns middle_data responsive_data stats_tab_02">
+      <div class="data_content">
+        <div class="header"> n/a</div>
+        <div class="header_data"><span class="header_icon"><i class="fa fa-user-plus" aria-hidden="true"></i></span>
+          <span>0</span>
+          <div class="minor_info">£0.00/mth</div>
+        </div>
+      </div>
+    </div>
+    <div class="medium-2 columns middle_data responsive_data stats_tab_03">
+      <div class="data_content">
+        <div class="header"> n/a</div>
+        <div class="header_data"><span class="header_icon"><i class="fa fa-calendar" aria-hidden="true"></i></span><span>0</span></div>
+      </div>
+    </div>
+    <div class="medium-2 columns middle_data responsive_data stats_tab_04">
+      <div class="data_content">
+        <div class="header"> n/a</div>
+        <div class="header_data"><span class="header_icon"><i class="fa fa-calendar" aria-hidden="true"></i></span><span>0</span></div>
+      </div>
+    </div>
+    <div class="medium-2 columns middle_data responsive_data stats_tab_05">
+      <div class="data_content">
+        <div class="header"> n/a</div>
+        <div class="header_data"><span class="header_icon"><i class="fa fa-calendar-check-o" aria-hidden="true"></i></span><span>0</span></div>
+      </div>
+    </div>
+    <div class="medium-2 columns right_data responsive_data stats_tab_06">
+      <div class="data_content">
+        <div class="header"> n/a</div>
+        <div class="header_data"><span class="header_icon"><i class="fa fa-calendar-check-o" aria-hidden="true"></i></span><span>0</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="clear"></div>
 
-<h1>Listing Venues</h1>
+  <!-- table_data_content -->
+  <div class="medium-12 columns lower_data_content stats_tab_01_content">
+    <div class="medium-12 columns lower_data_inner_content">
+      <!-- listed venues -->
+      <h1>listed venues [<%= @venues.all.count %>]
+        <span id="status_users_all" class="status_colour_blue">all [<%# @users.all.count %>]</span>
+        <span id="status_users_male" class="status_colour_blue">male [<%# @users.males.count %>]</span>
+        <span id="status_users_female" class="status_colour_blue">female [<%# @users.females.count %>]</span>
+        <div class="h1_subtitle"><i class="fa fa-info-circle"></i> displays all registered users on the platform [ordered by user last name]</div>
+      </h1>
+      <div id="status_users_all_content">
+        <div class="bottom_inner_content">
+          <div class="table">
+            <div class="tablerow">
+              <div class="tablecell header background">all registered users</div>
+              <div class="tablecell background"></div>
+              <div class="tablecell background"></div>
+              <div class="tablecell background"></div>
+              <div class="tablecell background"></div>
+              <div class="tablecell background"></div>
+              <div class="tablecell background"></div>
+              <div class="tablecell background"></div>
+            </div>
+            <% @users.order("lastname asc").each do |user| %>
+              <div class="tablerow">
+                <div class="tablecell" style="width:16%">
+                  <% if user_signed_in? %>
+                    <% if current_user.admin_pa_management_group %>
+                      <% if user.dummy_group %>
+                        <div class="banner_ribbon_wrapper_green_index">
+                          <div class="banner_ribbon_name_index">DUMMY</div>
+                        </div>
+                      <% end %>
+                    <% end %>
+                  <% end %>
+                  <div class="image_container">
+                    <div class="image"><%= link_to image_tag(user.image_url), user, target: "_blank" %></div>
+                  </div>
+                </div>
+                <div class="tablecell">
+                  <div class="user_name"><%= "#{user.firstname} #{user.lastname}" %></div>
+                  <div class="ref_id"><%= user.reference %></div>
+                  <% if user.subscribed? %>
+                    <div class="ref_id"><%= "subscribed" %></div>
+                  <% else %>
+                    <div class="faint_text_format"><%= "unsubscribed" %></div> 
+                  <% end %>
+                </div>
+                <div class="tablecell">
+                  <div class="main_text_format">e: <%= mail_to "#{user.email}", "#{user.email}" %></div>
+                  <div class="faint_text_format"><%= user.profession %></div>
+                  <div class="faint_text_format">
+                    <% if user.city? %>
+                      <span><%= user.city %>,</span>
+                    <% end %>
+                    <span><%= user.category_country.name %></span>
+                  </div> 
+                </div>
+                <div class="tablecell">
+                  <div class="faint_text_format">Role</div> 
+                  <div class="main_text_format"><%= user.category_role.name %></div>
+                </div>
+                <div class="tablecell">
+                  <div class="faint_text_format">Group</div> 
+                  <div class="main_text_format"><%= user.category_managementgroup.name %></div>
+                </div>
+                <div class="tablecell">
+                  <div class="overall_rate">
+                    <div>Rate</div>
+                    <div><%= number_with_precision(user.overall_ratings, precision: 1) %></div>
+                  </div>
+                </div>
+                <div class="tablecell">
+                  <div>
+                    <span class="main_text_format"><%= user.socials.live_socials.open_socials.count %></span>
+                    <span class="faint_text_format"> :Created Socials</span> 
+                  </div>
+                  <div>
+                    <span class="main_text_format"><%= user.events.live_events.open_events.count %></span>
+                    <span class="faint_text_format"> :Created Events</span> 
+                  </div>
+                </div>
+                <div class="tablecell">
+                  <div>
+                    <span class="main_text_format"><%= user.attending_socials.live_socials.open_socials.count %></span>
+                    <span class="faint_text_format"> :Attending Socials</span> 
+                  </div>
+                  <div>
+                    <span class="main_text_format"><%= @events.booked_events(user).live_events.open_events.count %></span>
+                    <span class="faint_text_format"> :Booked Events</span> 
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+      <!-- listed venues -->
+    </div>
+  </div>
+  <div class="clear"></div>
+</div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Venuename</th>
-      <th>Address</th>
-      <th>Postcode</th>
-      <th>Maplink</th>
-      <th>Station</th>
-      <th>Price</th>
-      <th>Min capacity</th>
-      <th>Eventmanager</th>
-      <th>Contact</th>
-      <th>Image</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @venues.each do |venue| %>
+
+
+<div class="old_content hide">
+  <h1>Listing Venues</h1>
+  <table>
+    <thead>
       <tr>
-        <td><%= venue.venuename %></td>
-        <td><%= venue.address %></td>
-        <td><%= venue.postcode %></td>
-        <td><%= venue.maplink %></td>
-        <td><%= venue.station %></td>
-        <td><%= venue.price %></td>
-        <td><%= venue.min_capacity %></td>
-        <td><%= venue.eventmanager %></td>
-        <td><%= venue.contact %></td>
-        <td><%= venue.image %></td>
-        <td><%= link_to 'Show', venue %></td>
-        <td><%= link_to 'Edit', edit_venue_path(venue) %></td>
-        <td><%= link_to 'Destroy', venue, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Venuename</th>
+        <th>Address</th>
+        <th>Postcode</th>
+        <th>Maplink</th>
+        <th>Station</th>
+        <th>Price</th>
+        <th>Min capacity</th>
+        <th>Eventmanager</th>
+        <th>Contact</th>
+        <th>Image</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @venues.each do |venue| %>
+        <tr>
+          <td><%= venue.venuename %></td>
+          <td><%= venue.address %></td>
+          <td><%= venue.postcode %></td>
+          <td><%= venue.maplink %></td>
+          <td><%= venue.station %></td>
+          <td><%= venue.price %></td>
+          <td><%= venue.min_capacity %></td>
+          <td><%= venue.eventmanager %></td>
+          <td><%= venue.contact %></td>
+          <td><%= venue.image %></td>
+          <td><%= link_to 'Show', venue %></td>
+          <td><%= link_to 'Edit', edit_venue_path(venue) %></td>
+          <td><%= link_to 'Destroy', venue, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <br>
+</div>
+
+
