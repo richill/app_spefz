@@ -46,6 +46,9 @@
   <!-- table_data_content -->
   <div class="medium-12 columns lower_data_content stats_tab_01_content">
     <div class="medium-12 columns lower_data_inner_content">
+      <!-- search -->
+        search
+      <!-- search -->
       <!-- listed venues -->
       <h1>listed venues [<%= @venues.all.count %>]
         <div class="h1_subtitle"><i class="fa fa-info-circle"></i> displays all registered users on the platform [ordered by user last name]</div>
@@ -68,7 +71,13 @@
               <div class="tablerow">
                 <div class="tablecell" style="width:16%">
                   <div class="image_container">
-                    <div class="image"><%# link_to image_tag(venue.image_url), venue, target: "_blank" %></div>
+                    <div class="image">
+                      <% if venue.image.blank? %>
+                        <%= link_to(image_tag("img-profile-company-default.png"), "#{venue.website}", target: "_blank") %>
+                      <% else %>
+                        <%= link_to image_tag(venue.image_url), venue, target: "_blank" %>
+                      <% end %>
+                    </div>
                   </div>
                 </div>
                 <div class="tablecell">
