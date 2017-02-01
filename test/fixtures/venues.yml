@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  venuename: MyString
+  address: MyString
+  postcode: MyString
+  maplink: MyText
+  station: MyString
+  price: 9.99
+  min_capacity: MyString
+  eventmanager: MyString
+  contact: MyString
+  image: MyString
+
+two:
+  venuename: MyString
+  address: MyString
+  postcode: MyString
+  maplink: MyText
+  station: MyString
+  price: 9.99
+  min_capacity: MyString
+  eventmanager: MyString
+  contact: MyString
+  image: MyString

@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  resources :venues
+
   resources :invite_requests
 
   post '/rate' => 'rater#create', :as => 'rate'
