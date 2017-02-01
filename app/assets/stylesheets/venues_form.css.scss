@@ -101,6 +101,65 @@
   margin-bottom: 15px;
 }
 
+.user_general_settings_section .venue_edit_update_form .venue_category_country {
+  width: 540px;
+  float: left;
+}
+
+.user_general_settings_section .venue_edit_update_form #venue_category_country_id {
+  height: 40px !important;
+}
+
+.user_general_settings_section .venue_edit_update_form .venue_city {
+  width: 540px;
+  float: right;
+}
+
+.user_general_settings_section .venue_edit_update_form .map_link {
+  margin-bottom: 20px;
+}
+
+.user_general_settings_section .venue_edit_update_form #venue_maplink {
+  margin-bottom: 0px;
+}
+
+.user_general_settings_section .venue_edit_update_form .save_btn {
+  margin: 30px 0px;
+}
+
+.user_general_settings_section .venue_edit_update_form input[type="text"]:focus {
+  border: 1px solid rgba(75, 180, 191, 0.5) !important;
+  background-color: #fff !important;
+}
+
+.user_general_settings_section .venue_edit_update_form .event_manager_details {
+  margin-top: 15px !important;
+  margin-bottom: 15px !important;
+  background-color: rgba(75, 180, 191, 0.2) !important;
+}
+
+.user_general_settings_section .venue_edit_update_form .venue_eventmanager {
+  width: 540px;
+  float: left;
+  padding: 0px 15px;
+}
+
+.user_general_settings_section .venue_edit_update_form #venue_eventmanager {
+  height: 50px;
+}
+
+.user_general_settings_section .venue_edit_update_form .venue_contact {
+  width: 540px;
+  float: right;
+  padding: 0px 15px;
+  height: 102px;
+}
+
+.user_general_settings_section .venue_edit_update_form #venue_contact {
+  height: 50px !important;
+  padding: 15px;
+}
+
 .user_general_settings_section .venue_edit_update_form .venue_eventmanager {
   width: 540px;
   float: left;
@@ -111,134 +170,6 @@
   width: 540px;
   float: right;
   margin-bottom: 15px;
-}
-
-
-
-
-.user_general_settings_section .venue_edit_update_form .event_category_country {
-  width: 350px;
-  float: left;
-}
-
-.user_general_settings_section .venue_edit_update_form #event_category_country_id {
-  height: 40px !important;
-}
-
-.user_general_settings_section .venue_edit_update_form .event_city {
-  width: 350px;
-  float: left;
-  margin: 0px 29px 0px;
-}
-
-.user_general_settings_section .venue_edit_update_form .event_postcode {
-  width: 350px;
-  float: right;
-}
-
-.user_general_settings_section .venue_edit_update_form .map_link {
-  margin-bottom: 20px;
-}
-
-.user_general_settings_section .venue_edit_update_form #event_maplink {
-  margin-bottom: 0px;
-}
-
-.user_general_settings_section .venue_edit_update_form .date_time {
-  background-color: rgba(75, 180, 191, 0.2) !important;
-  padding: 15px !important;
-  margin-bottom: 15px;
-  display: inline-block;
-}
-
-.user_general_settings_section .venue_edit_update_form .event_label {
-  font-family: 'Lato', sans-serif;
-  font-size: 15px !important;
-  font-weight: 300 !important;
-  text-transform: capitalize;
-}
-
-.user_general_settings_section .venue_edit_update_form .event_time {
-  float: left !important;
-  margin-right: 40px !important;
-}
-
-.user_general_settings_section .venue_edit_update_form .event_time_end {
-  float: left;
-}
-
-.user_general_settings_section .venue_edit_update_form #event_date {
-  width: 170px;
-  margin-bottom: 15px !important;
-}
-
-.user_general_settings_section .venue_edit_update_form .time {
-  width: 170px;
-  margin: 0px;
-}
-
-.user_general_settings_section .venue_edit_update_form .gender_selection_section {
-  background-color: rgba(75, 180, 191, 0.2) !important;
-  padding: 1px 15px 15px 15px;
-}
-
-.user_general_settings_section .venue_edit_update_form .current_gender_selection {
-  font-family: 'Lato', sans-serif;
-  font-size: 12px !important;
-  font-weight: 300 !important;
-  text-transform: capitalize;
-  letter-spacing: 1px;
-  word-spacing: 3px;
-  background-color: rgba(75, 180, 191, 0.2) !important;
-  padding: 5px 15px !important;
-  margin-bottom: 8px !important;
-}
-
-.user_general_settings_section .venue_edit_update_form .current_gender_selection i {
-  margin-left: 10px;
-}
-
-.user_general_settings_section .venue_edit_update_form .current_gender_selection .divider {
-  margin: 0px 5px;
-}
-
-.user_general_settings_section .venue_edit_update_form .event_price {
-  width: 540px;
-  float: left;
-}
-
-.user_general_settings_section .venue_edit_update_form #event_price {
-  height: 40px;
-}
-
-.user_general_settings_section .venue_edit_update_form .event_category_age {
-  width: 540px;
-  float: right;
-}
-
-.user_general_settings_section .venue_edit_update_form #event_category_age_id {
-  height: 40px;
-}
-
-.user_general_settings_section .venue_edit_update_form #event_display_match {
-  margin-bottom: 0px;
-  margin-right: 5px;
-}
-
-.user_general_settings_section .venue_edit_update_form .event_score_access {
-  background-color: rgba(75, 180, 191, 0.2) !important;
-  padding: 1px 15px 15px 15px !important;
-  margin-top: 20px !important;
-  margin-bottom: 30px !important;
-}
-
-.user_general_settings_section .venue_edit_update_form .save_btn {
-  margin: 30px 0px;
-}
-
-.user_general_settings_section .venue_edit_update_form input[type="text"]:focus {
-  border: 1px solid rgba(75, 180, 191, 0.5) !important;
-  background-color: #fff !important;
 }
 
 .user_general_settings_section .venue_edit_update_form input[type="submit"] {

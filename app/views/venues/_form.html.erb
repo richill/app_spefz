@@ -24,12 +24,24 @@
             <%= f.input :website %>
             <%= f.input :address %>
             <%= f.input :postcode %>
+            <div class="clear"></div>
+            <div class="address_lower">
+              <%= f.association :category_country, collection: CategoryCountry.all, prompt: "select a country", placeholder: "Select Country" %>
+              <%= f.input :city, placeholder: "city" %>
+            </div>
+            <div class="clear"></div>
             <%= f.input :maplink %>
             <%= f.input :station, label: "Closet Station" %>
             <%= f.input :price, label: "Price (£)" %>
             <%= f.input :min_capacity %>
-            <%= f.input :eventmanager, label: "Event Manager" %>
-            <%= f.input :contact %>
+            <div class="clear"></div>
+            <div class="event_manager_details">
+              <%= f.input :eventmanager, label: "Event Manager", placeholder: "Dr. Nelson Larbi" %>
+              <%= f.input :contact, label: "Contact", placeholder: "0208-958-7999" %>
+              <div class="clear"></div>
+              <div class="text_info">If you would like to have a speaker present at the social, kindly write in the full name of the speaker and place in the linked in web address of the speaker. We highly recommend socials to have speakers present, this enables active conversation set around the topic of the event, and attracts more attendees to the event. </div>
+            </div>
+            <div class="clear"></div>
           </div>
 
           <div class="form-actions">
