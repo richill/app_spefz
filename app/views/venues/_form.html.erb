@@ -12,7 +12,14 @@
     <div class="right_inner_section">
       <!-- content -->
       <div class="tree_link">
-        <span><i class="fa fa-user" aria-hidden="true"></i> <%= link_to "#{current_user.firstname}", user_path(current_user)%></span> <span class="fwd_sign">></span> <span><%= link_to "events", stats_events_user_path(current_user) %></span> <span class="fwd_sign">></span> <span><%= link_to "venues", venues_path %></span> <span class="fwd_sign">></span> <span>create venue</span>
+        <span><i class="fa fa-user" aria-hidden="true"></i> <%= link_to "#{current_user.firstname}", user_path(current_user)%></span> <span class="fwd_sign">></span> <span><%= link_to "events", stats_events_user_path(current_user) %></span> <span class="fwd_sign">></span> <span><%= link_to "venues", venues_path %></span> <span class="fwd_sign">></span> 
+        <span>
+          <% if action_name == 'new'  %>
+            create venue
+          <% else %>
+            edit venue
+          <% end %>
+        </span>
       </div>
       <div class="user_general_settings_inner_section venue_edit_update_form">
         <%= simple_form_for(@venue) do |f| %>
