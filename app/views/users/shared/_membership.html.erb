@@ -56,6 +56,68 @@
             <% end %>
           </div>
 
+
+          <!-- workings -->
+            <div class="subscription_notes">
+              <div class="subscribed_memeber">
+                <div class="header">workings</div>
+                <div class="sub_header_info">To end your premium member subscription plan, please do <%= link_to "contact us", contact_us_path %> or click the button <%= link_to "cancel subscription", contact_us_path %> above</div>
+                <!-- card_details -->
+                  <div class="payment_form_stripe">
+                    <form accept-charset="UTF-8" action="/payments" class="simple_form new_payment" method="post" id="payment-form" id="new_payment" novalidate="novalidate">
+                      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+                      <%= hidden_field_tag(:subscription_title, "spefz #{@subscription.title} plan") %>
+                      <span class="payment-errors"></span>
+                      <div class="form-inputs">
+                        <div class="form-row">
+                          <label class="hide">
+                            <span>Email</span>
+                            <input type="email" id="payment_email" name="payment[email]" value=<%="#{current_user.email}"%> data-stripe="">
+                          </label>
+                        </div>
+                        <div class="form-row">
+                          <label class="hide">
+                            <span>subscription_id & user_id</span>
+                            <input type="text" id="payment_subscription_id" name="payment[subscription_id]" value=<%="#{@subscription_id}"%> data-stripe="">
+                            <input type="text" id="payment_userr_id" name="payment[current_user.id]" value=<%="#{current_user.id}"%> data-stripe="">
+                          </label>
+                        </div>
+                        <div class="form-row row_card_number">
+                          <label>
+                            <span class="card_title"><i class="fa fa-lock" aria-hidden="true"></i> *Card Number</span>
+                            <input <% if Rails.env.development? %> class= "card_number" value="4242 4242 4242 4242"<% end %> type="text" size="20" data-stripe="number" placeholder="1234 1234 1234 1234">
+                          </label>
+                        </div>
+                        <div class="form-row row_cvv">
+                          <label>
+                            <span class="card_title"><i class="fa fa-lock" aria-hidden="true"></i> *CVV</span><span data-tooltip aria-haspopup="true" class="tip-right" title="The CVV number is a 3 or 4 digit security code printed on the front or back of your card."><i class="fa fa-info-circle cvv_icon" aria-hidden="true"></i></span>
+                            <input <% if Rails.env.development? %> class= "cvc_number" value="123"<% end %> type="text" size="4" data-stripe="cvc" placeholder="123">
+                          </label>
+                        </div>
+                        <div class="form-row row_exp">
+                          <label>
+                            <div class="card_title"><i class="fa fa-lock" aria-hidden="true"></i> *Expiration (MM/YYYY)</div>
+                            <div class="exp_date_container">
+                              <input <% if Rails.env.development? %>value="12"<% end %> type="text" size="2" data-stripe="exp_month" class="exp_mth" placeholder="MM"> 
+                              <span class="exp_divider"> / </span>
+                              <input <% if Rails.env.development? %>value="2020"<% end %> type="text" size="2" data-stripe="exp_year" class="exp_yr" placeholder="YYYY">
+                            </div>
+                          </label>
+                        </div>
+                      </div>
+
+                      <div class="clear"></div>
+
+                      <div class="form-actions">
+                        <input class="button" name="commit" type="submit" value="Subscribe Now!">
+                      </div>
+                    </form>
+                  </div>
+                <!-- card_details -->
+              </div>
+            </div>
+          <!-- workings -->
+
           <% if current_user.subscribed? %>
             <div class="subscription_notes">
               <div class="subscribed_memeber">
