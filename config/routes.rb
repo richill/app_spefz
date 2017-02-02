@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  resource :bankcard
+
   resources :venues
 
   resources :invite_requests

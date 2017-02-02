@@ -60,28 +60,41 @@
           <!-- workings -->
             <div class="subscription_notes">
               <div class="subscribed_memeber">
-                <div class="header">workings</div>
+                <div class="header">workings | registered card</div>
                 <div class="sub_header_info">To end your premium member subscription plan, please do <%= link_to "contact us", contact_us_path %> or click the button <%= link_to "cancel subscription", contact_us_path %> above</div>
                 <!-- card_details -->
+                  <div>
+                    <% if current_user.card_type == "Visa" %>
+                      <label><%= image_tag("img_card_visa.png") %> Current Card Details</label>
+                    <% elsif current_user.card_type == "MasterCard" %>
+                      <label><%= image_tag("img_card_mc_01.png") %> Current Card Details</label>
+                    <% else %>
+                      <label><%= image_tag("img_card_mc.png") %> Current Card Details</label>
+                    <% end %>
+                  </div>
+                  <div class="set_content" style="margin-bottom: 15px;">
+                    <span class="title"><%= current_user.card_type %> **** **** **** <%= current_user.card_last4 %></span> <br/>
+                    <span class="title">Expires: <%= current_user.card_exp_month %> / <%= current_user.card_exp_year %></span>
+                  </div>
                   <div class="payment_form_stripe">
-                    <form accept-charset="UTF-8" action="/payments" class="simple_form new_payment" method="post" id="payment-form" id="new_payment" novalidate="novalidate">
+                    <form accept-charset="UTF-8" action="/bankcard" class="simple_form new_payment" method="put" id="payment-form" id="new_payment" novalidate="novalidate">
                       <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-                      <%= hidden_field_tag(:subscription_title, "spefz #{@subscription.title} plan") %>
+                      <%# hidden_field_tag(:subscription_title, "spefz #{@subscription.title} plan") %>
                       <span class="payment-errors"></span>
                       <div class="form-inputs">
-                        <div class="form-row">
+                        <!-- <div class="form-row">
                           <label class="hide">
                             <span>Email</span>
                             <input type="email" id="payment_email" name="payment[email]" value=<%="#{current_user.email}"%> data-stripe="">
                           </label>
-                        </div>
-                        <div class="form-row">
+                        </div> -->
+                        <!-- <div class="form-row">
                           <label class="hide">
                             <span>subscription_id & user_id</span>
                             <input type="text" id="payment_subscription_id" name="payment[subscription_id]" value=<%="#{@subscription_id}"%> data-stripe="">
                             <input type="text" id="payment_userr_id" name="payment[current_user.id]" value=<%="#{current_user.id}"%> data-stripe="">
                           </label>
-                        </div>
+                        </div> -->
                         <div class="form-row row_card_number">
                           <label>
                             <span class="card_title"><i class="fa fa-lock" aria-hidden="true"></i> *Card Number</span>
@@ -109,7 +122,7 @@
                       <div class="clear"></div>
 
                       <div class="form-actions">
-                        <input class="button" name="commit" type="submit" value="Subscribe Now!">
+                        <input class="button" name="commit" type="submit" value="Update Card">
                       </div>
                     </form>
                   </div>
