@@ -17,7 +17,7 @@
         </div>
         <div class="user_general_settings_inner_section user_account_section">
 
-          <% unless @user.subscribed? || @user_payments.present?  %>
+          <% unless @user.subscribed? || @user_payments.present? || @user.recent_subscription_cancel_date.present? %>
             <div class="paymt_cover no_subscription_event_paymts">
               <div class="pymt_header">no transactions</div>
               <div class="pymt_sub_header" style="padding: 15px 10px; margin-bottom: 15px;">
@@ -31,7 +31,7 @@
             </div>
           <% end %>
           
-          <%# if @user.subscribed? %>
+          <% if @user.subscribed? || @user.recent_subscription_cancel_date.present? %>
             <div class="paymt_cover subscription_paymts">
               <div class="pymt_header">subscription</div>
               <div class="pymt_sub_header">
@@ -47,7 +47,13 @@
                       <th>subscription</th>
                       <th>price</th>
                       <th>subscription ref</th>
-                      <th>subscription date</th>
+                      <th>
+                        <% if @user.subscribed? %>
+                          subscription date
+                        <% else %>
+                          subscription cancelation date
+                        <% end %>
+                      </th>
                       <th>status</th>
                     </tr>
                   </thead>
@@ -55,14 +61,22 @@
                     <tr>
                       <td><%= @user.reference %></td>
                       <td><%= @user.email %></td>
+                      <td>Premium Plan</td>
+                      <td>£<%= number_with_precision(15, precision: 2) %>/mth</td>
                       <td>
                         <% if @user.subscribed? %>
-                          <span>Premium Plan</span>
+                          <%= @user.stripe_subscription_pymt_id %>
+                        <% else %>
+                          <span style="color:#E34B51;">not a subscribed memebr</span>
                         <% end %>
                       </td>
-                      <td>£<%= number_with_precision(15, precision: 2) %>/mth</td>
-                      <td><%# @user.stripe_subscription_pymt_id %></td>
-                      <td><%# @user.recent_subscription_pymt_date.strftime("%a, %d %b %Y") %> | <%# @user.recent_subscription_pymt_date.strftime("%I:%M %p") %></td>
+                      <td>
+                        <% if @user.subscribed? %>
+                          <%= @user.recent_subscription_pymt_date.strftime("%a, %d %b %Y") %> | <%= @user.recent_subscription_pymt_date.strftime("%I:%M %p") %>
+                        <% else %>
+                          <%= @user.recent_subscription_cancel_date.strftime("%a, %d %b %Y") %> | <%= @user.recent_subscription_cancel_date.strftime("%I:%M %p") %>
+                        <% end %>
+                      </td>
                       <td>
                         <% if @user.subscribed? %>
                           <span style="color:#58CDA6;">active</span>
@@ -75,9 +89,15 @@
                   </tbody>
                 </table>
               </div>
-              <div class="minor_notes">*Subscription payment made on the <%# @user.recent_subscription_pymt_date.strftime("%dth") %> of each month</div>
+              <div class="minor_notes">
+                <% if @user.subscribed? %>
+                  <span>*Subscription payment made on the <%= @user.recent_subscription_pymt_date.strftime("%dth") %> of each month</span>
+                <% else %>
+                  <span style="color:#E34B51;">*Subscription monthly payment has been successfully cancelled.</span>
+                <% end %>
+              </div>
             </div>
-          <%# end %>
+          <% end %>
           
           <% if @user_payments.present? %>
           <div class="paymt_cover event_paymts">

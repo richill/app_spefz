@@ -68,6 +68,7 @@ class PaymentsController < ApplicationController
         card_exp_year: params[:card_exp_year],
         card_type: params[:card_brand],
         recent_subscription_pymt_date: DateTime.now
+        recent_subscription_cancel_date: nil
       )
 
       # TODO: invoice.paid or invoice["paid"]
