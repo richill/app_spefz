@@ -219,6 +219,7 @@ class PaymentsController < ApplicationController
       customer.subscriptions.retrieve(current_user.stripe_subscription_pymt_id).delete
       current_user.update(stripe_subscription_pymt_id: nil)
       current_user.update(recent_subscription_pymt_date: nil)
+      current_user.update(recent_subscription_cancel_date: DateTime.now)
 
       redirect_to membership_user_path(current_user), notice: "Payment Plan Successfully Cancelled"
       # @payment.destroy

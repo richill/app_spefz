@@ -31,7 +31,7 @@
             </div>
           <% end %>
           
-          <% if @user.subscribed? %>
+          <%# if @user.subscribed? %>
             <div class="paymt_cover subscription_paymts">
               <div class="pymt_header">subscription</div>
               <div class="pymt_sub_header">
@@ -61,8 +61,8 @@
                         <% end %>
                       </td>
                       <td>£<%= number_with_precision(15, precision: 2) %>/mth</td>
-                      <td><%= @user.stripe_subscription_pymt_id %></td>
-                      <td><%= @user.recent_subscription_pymt_date.strftime("%a, %d %b %Y") %> | <%= @user.recent_subscription_pymt_date.strftime("%I:%M %p") %></td>
+                      <td><%# @user.stripe_subscription_pymt_id %></td>
+                      <td><%# @user.recent_subscription_pymt_date.strftime("%a, %d %b %Y") %> | <%# @user.recent_subscription_pymt_date.strftime("%I:%M %p") %></td>
                       <td>
                         <% if @user.subscribed? %>
                           <span style="color:#58CDA6;">active</span>
@@ -75,9 +75,9 @@
                   </tbody>
                 </table>
               </div>
-              <div class="minor_notes">*Subscription payment made on the <%= @user.recent_subscription_pymt_date.strftime("%dth") %> of each month</div>
+              <div class="minor_notes">*Subscription payment made on the <%# @user.recent_subscription_pymt_date.strftime("%dth") %> of each month</div>
             </div>
-          <% end %>
+          <%# end %>
           
           <% if @user_payments.present? %>
           <div class="paymt_cover event_paymts">
