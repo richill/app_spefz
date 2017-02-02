@@ -67,7 +67,7 @@ class PaymentsController < ApplicationController
         card_exp_month: params[:card_exp_month],
         card_exp_year: params[:card_exp_year],
         card_type: params[:card_brand],
-        recent_subscription_pymt_date: DateTime.now
+        recent_subscription_pymt_date: DateTime.now,
         recent_subscription_cancel_date: nil
       )
 
@@ -222,7 +222,7 @@ class PaymentsController < ApplicationController
       current_user.update(recent_subscription_pymt_date: nil)
       current_user.update(recent_subscription_cancel_date: DateTime.now)
 
-      redirect_to membership_user_path(current_user), notice: "Payment Plan Successfully Cancelled"
+      redirect_to account_user_path(current_user), notice: "Payment Plan Successfully Cancelled"
       # @payment.destroy
       # respond_to do |format|
       #   format.html { redirect_to payments_url, notice: 'Payment was successfully destroyed.' }

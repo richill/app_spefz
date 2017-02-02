@@ -15,7 +15,7 @@ class SubscriptionsController < ApplicationController
   # GET /subscriptions/1
   # GET /subscriptions/1.json
   def show
-    if current_user == @user
+    unless current_user.subscribed?
       @premium_plan = Subscription.find_by(title:"premium")
     else
       redirect_to errorpermission_path
