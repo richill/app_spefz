@@ -77,7 +77,8 @@
                     <span class="title">Expires: <%= current_user.card_exp_month %> / <%= current_user.card_exp_year %></span>
                   </div>
                   <div class="payment_form_stripe">
-                    <form accept-charset="UTF-8" action="/bankcard" class="simple_form new_payment" method="put" id="payment-form" id="new_payment" novalidate="novalidate">
+                    <%= form_tag bankcard_path, method: :put, id: "payment-form", :onclick => "return validateform();" do %>
+                    <!-- <form accept-charset="UTF-8" action="/bankcard" class="simple_form new_payment" method="put" id="payment-form" id="new_payment" novalidate="novalidate"> -->
                       <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
                       <%# hidden_field_tag(:subscription_title, "spefz #{@subscription.title} plan") %>
                       <span class="payment-errors"></span>
@@ -122,9 +123,12 @@
                       <div class="clear"></div>
 
                       <div class="form-actions">
-                        <input class="button" name="commit" type="submit" value="Update Card">
+                        <div class="btn_update"><input class="button" name="commit" type="submit" value="Update Card" onclick="myFunction()"></div> 
+                        <div class="btn_cancel"><%= link_to 'Cancel Monthly Payment Plan', payment_path(current_user.payments.last), method: :delete %></div>
+                        <!-- <input class="button" name="commit" type="submit" value="Update Card"> -->
                       </div>
-                    </form>
+                    <!-- </form> -->
+                    <% end %>
                   </div>
                 <!-- card_details -->
               </div>

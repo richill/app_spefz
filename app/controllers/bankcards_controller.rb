@@ -4,7 +4,7 @@ class BankcardsController < ApplicationController
   def update
     begin
       customer = Stripe::Customer.retrieve(current_user.stripe_id)
-      subscription = customer.subscriptions.retrieve(current_user.stripe_payment_id)
+      subscription = customer.subscriptions.retrieve(current_user.stripe_subscription_pymt_id)
       subscription.plan = subscription.plan.id
       subscription.source = params[:stripeToken]
       subscription.save
@@ -15,9 +15,9 @@ class BankcardsController < ApplicationController
         card_exp_year: params[:card_exp_year],
         card_type: params[:card_brand]
       )
-      redirect_to membership_user(current_user), notice: "Card details was successfully updated"
+      redirect_to membership_user_path(current_user), notice: "Card details was successfully updated"
     rescue Stripe::InvalidRequestError => e
-      redirect_to membership_user(current_user), alert: "Card details are invalid"
+      redirect_to membership_user_path(current_user), alert: "Card details are invalid"
       # redirect_to membership_user(current_user), alert: e.message
     end   
   end 

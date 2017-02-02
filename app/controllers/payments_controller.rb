@@ -213,22 +213,22 @@ class PaymentsController < ApplicationController
   end
 
   def destroy
-    if current_user.admin_pa_management_group
+    #if current_user.admin_pa_management_group
       #destroy here represents unsubscribe
       customer = Stripe::Customer.retrieve(current_user.stripe_id)
       customer.subscriptions.retrieve(current_user.stripe_subscription_pymt_id).delete
       current_user.update(stripe_subscription_pymt_id: nil)
       current_user.update(recent_subscription_pymt_date: nil)
 
-      redirect_to user_path(current_user), notice: "Payment Plan Successfully Cancelled"
+      redirect_to membership_user_path(current_user), notice: "Payment Plan Successfully Cancelled"
       # @payment.destroy
       # respond_to do |format|
       #   format.html { redirect_to payments_url, notice: 'Payment was successfully destroyed.' }
       #   format.json { head :no_content }
       # end
-    else
-      redirect_to errorpermission_path
-    end
+    # else
+    #   redirect_to errorpermission_path
+    # end
   end
 
   private
