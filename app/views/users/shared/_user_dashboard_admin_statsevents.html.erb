@@ -52,7 +52,7 @@
       <div class="data_content">
         <div class="header"> total unbooked live events</div>
         <div class="header_data"><span class="header_icon"><i class="fa fa-calendar-times-o" aria-hidden="true"></i></span>
-          <span><%= @events.events_with_no_bookings.live_events.open_events.count %></span>
+          <span><%= @events.unbooked_events.live_events.open_events.count %></span>
         </div>
       </div>
     </div>

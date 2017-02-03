@@ -80,10 +80,11 @@ class Event < ActiveRecord::Base
   #terminal: events.booked_events(current_user)
   #displays all events that have been booked/paid by a user
 
+  scope :unbooked_events, -> { includes(:payments).where(payments: { event_id: nil }) }
+  #displays all events that have not been booked/paid by users | events that do not have payments
+
   scope :booked_events_with_cards, -> (user) { joins(:card, payments: :user).where(users: { id: user.id }) }
   #displays all events with cards that have been booked/paid by a user
-
-  scope :events_with_no_bookings, -> { includes(:payments).where(payments: { event_id: nil }) }
 
   scope :created_this_month, -> { where(created_at: Time.now.beginning_of_month..Time.now.end_of_month) }
   #event created in current month
