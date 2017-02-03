@@ -6,8 +6,8 @@
         <div class="header"> total subscribed users</div>
         <div class="header_data">
           <span class="header_icon"><i class="fa fa-users" aria-hidden="true"></i></span>
-          <span>0</span>
-          <div class="minor_info">£0.0k/mth <span class="minor_divider">|</span> £0.0k/yr</div>
+          <span><%= @users.subcribed_users.count %></span>
+          <div class="minor_info">£<%= (@users.subcribed_users.count) * (@premium_plan.price) %>/mth</div>
         </div>
       </div>
     </div>
@@ -15,8 +15,8 @@
       <div class="data_content">
         <div class="header"> subscribed users [male]</div>
         <div class="header_data"><span class="header_icon"><i class="fa fa-male" aria-hidden="true"></i></span>
-          <span>0</span>
-          <div class="minor_info">£0.0k [mth]</div>
+          <span><%= @users.males.subcribed_users.count %></span>
+          <div class="minor_info">£<%= (@users.males.subcribed_users.count) * (@premium_plan.price) %> [mth]</div>
         </div>
       </div>
     </div>
@@ -25,8 +25,8 @@
         <div class="header"> subscribed users [female]</div>
         <div class="header_data">
           <span class="header_icon"><i class="fa fa-female" aria-hidden="true"></i></span>
-          <span>0</span>
-          <div class="minor_info">£0.0k [mth]</div>
+          <span><%= @users.females.subcribed_users.count %></span>
+          <div class="minor_info">£<%= (@users.females.subcribed_users.count) * (@premium_plan.price) %> [mth]</div>
         </div>
       </div>
     </div>
@@ -35,8 +35,8 @@
         <div class="header"> booked active events</div>
         <div class="header_data">
           <span class="header_icon"><i class="fa fa-calendar-check-o" aria-hidden="true"></i></span>
-          <span>0</span>
-          <div class="minor_info">£0.0k [all]</div>
+          <span><%= (@events.live_events.open_events).count - (@events.live_events.open_events.unbooked_events).count %></span>
+          <div class="minor_info">£<%= @events.total_price_for_events %> [all]</div>
         </div>
       </div>
     </div>
@@ -44,8 +44,8 @@
       <div class="data_content">
         <div class="header"> booked active events [mth]</div>
         <div class="header_data"><span class="header_icon"><i class="fa fa-calendar-check-o" aria-hidden="true"></i></span>
-          <span>0</span>
-          <div class="minor_info">£0.0k [mth]</div>
+          <span><%= (@events.held_this_month.live_events.open_events).count - (@events.held_this_month.live_events.open_events.unbooked_events).count %></span>
+          <div class="minor_info">£<%= @events.held_this_month.total_price_for_events %> [mth]</div>
         </div>
       </div>
     </div>
@@ -54,8 +54,8 @@
         <div class="header"> money in [Sub & Events]</div>
         <div class="header_data">
           <span class="header_icon"><i class="fa fa-gbp" aria-hidden="true"></i></span>
-          <span>£0.0k</span>
-          <div class="minor_info">£0.0k/mth <span class="minor_divider">|</span> £0.0k/yr</div>
+          <span>£<%= ((@users.subcribed_users.count) * (@premium_plan.price)) + (@events.held_this_month.live_events.open_events.total_price_for_events) %></span>
+          <div class="minor_info">total amt in mth</div>
         </div>
       </div>
     </div>
