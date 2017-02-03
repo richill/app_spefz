@@ -119,19 +119,26 @@ class User < ActiveRecord::Base
   scope :sales_mrkt_group, ->() { joins(:category_managementgroup).where('category_managementgroups.name' => "Sales/Marketing Group") }                                                                                       
   # all users in sales_marketing_group
 
-  scope :hosts, -> { joins(:category_managementgroup).where("category_managementgroups.name IN (?)", ["Management Group", "Event Management Group"]) }                                                                                    
-  # display users that are in charge of hosting speed-events
-
   scope :spefz_team, -> { joins(:category_role).where("category_roles.name IN (?)", ["Admin", "Primary Admin"]) }
 
   scope :subcribed_users, -> () {where(["stripe_subscription_pymt_id IS NOT NULL or CAST(stripe_subscription_pymt_id as text) = ''"])}
 
   scope :unsubcribed_users, -> () {where(["stripe_subscription_pymt_id IS NULL or CAST(stripe_subscription_pymt_id as text) = ''"])}
 
-  scope :client_users_with_active_scoails, -> { joins(:socials, :category_role).clients.uniq.flat_map(&:socials) }
+  scope :live_socials, -> { joins(:socials).where(['socials.date >= ?', Date.current])}
 
-  scope :spefz_team_active_scoails, -> { joins(:socials, :category_role).admins.primary_admins.uniq.flat_map(&:socials) }
+  scope :open_socials, -> { joins(:socials).where(['socials.close = ? OR close IS ?', false, nil])}
 
+  scope :hosts, -> { joins(:category_managementgroup).where("category_managementgroups.name IN (?)", ["Management Group", "Event Management Group"]) }                                                                                    
+  # display users that are in charge of hosting speed-events
+
+  scope :hosts_client_users_with_active_socials, -> { joins(:socials, :category_role).clients.uniq.live_socials.open_socials}
+  # displays host in role: client who have created live_open socials
+
+  scope :hosts_spefz_team_active_socials, -> { joins(:socials, :category_role).admins_and_primaryadmins.uniq.live_socials.open_socials }
+  # displays host in role: admin & primary_admin role who have created live_open socials
+  # scope :hosts_client_users_with_active_socials, -> { joins(:socials, :category_role).clients.uniq.live_socials.open_socials.map(&:socials)}
+  # above displays live socials created by host in role: admin & primary_admin
 
 
   def slug_users
