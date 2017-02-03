@@ -1,3 +1,182 @@
+<div class="user_dashboard_admin_venues user_dashboard_admin_payments">
+  <!-- upper_data_content -->
+  <div class="medium-12 columns upper_data_content hide">
+    <div class="medium-2 columns left_data responsive_data stats_tab_01">
+      <div class="data_content">
+        <div class="header"> n/a</div>
+        <div class="header_data"><span class="header_icon"><i class="fa fa-users" aria-hidden="true"></i></span><span>0</span></div>
+      </div>
+    </div>
+    <div class="medium-2 columns middle_data responsive_data stats_tab_02">
+      <div class="data_content">
+        <div class="header"> n/a</div>
+        <div class="header_data"><span class="header_icon"><i class="fa fa-user-plus" aria-hidden="true"></i></span>
+          <span>0</span>
+          <div class="minor_info">£0.00/mth</div>
+        </div>
+      </div>
+    </div>
+    <div class="medium-2 columns middle_data responsive_data stats_tab_03">
+      <div class="data_content">
+        <div class="header"> n/a</div>
+        <div class="header_data"><span class="header_icon"><i class="fa fa-calendar" aria-hidden="true"></i></span><span>0</span></div>
+      </div>
+    </div>
+    <div class="medium-2 columns middle_data responsive_data stats_tab_04">
+      <div class="data_content">
+        <div class="header"> n/a</div>
+        <div class="header_data"><span class="header_icon"><i class="fa fa-calendar" aria-hidden="true"></i></span><span>0</span></div>
+      </div>
+    </div>
+    <div class="medium-2 columns middle_data responsive_data stats_tab_05">
+      <div class="data_content">
+        <div class="header"> n/a</div>
+        <div class="header_data"><span class="header_icon"><i class="fa fa-calendar-check-o" aria-hidden="true"></i></span><span>0</span></div>
+      </div>
+    </div>
+    <div class="medium-2 columns right_data responsive_data stats_tab_06">
+      <div class="data_content">
+        <div class="header"> n/a</div>
+        <div class="header_data"><span class="header_icon"><i class="fa fa-calendar-check-o" aria-hidden="true"></i></span><span>0</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="clear"></div>
+
+  <!-- table_data_content -->
+  <div class="medium-12 columns lower_data_content stats_tab_01_content">
+    <div class="medium-12 columns lower_data_inner_content">
+      <!-- search -->
+      <div class="medium-12 columns search_container">
+        <div class="search_inner_container">        
+          <%= search_form_for(@search) do |f| %>
+          <ul class="search_fields_left">
+            <li class="field select_role"><%= f.text_field :email_cont, placeholder: 'venue name eg: bar soho'%></li>
+            <li class="field select_mgtgroup"><%= f.text_field :email_cont, placeholder: 'poscode eg: W1D 6DG'%></li>
+          </ul>   
+
+          <ul class="search_fields_right">
+            <li><%= f.submit 'search' %></li> 
+            <li class="field btn_all">
+              <%= link_to venues_path do %>
+                <i class="fa fa-building" aria-hidden="true"></i>
+              <% end %>
+            </li>
+            <li class="field select_user_name"><%= f.text_field :email_cont, placeholder: 'event manager eg: kofi'%></li>
+          </ul>        
+          <% end %>
+        </div>
+      </div>
+      <!-- search -->
+      <!-- listed payments -->
+      <h1>listed payments [<%= @payments.all.count %>]
+        <div class="h1_subtitle"><i class="fa fa-info-circle"></i> displays all payments on the platform</div>
+      </h1>
+      <div id="status_users_all_content">
+        <div class="bottom_inner_content">
+          <div class="table">
+            <div class="tablerow">
+              <div class="tablecell header background">all listed payments</div>
+              <div class="tablecell background"></div>
+              <div class="tablecell background"></div>
+              <div class="tablecell background"></div>
+              <div class="tablecell background"></div>
+              <div class="tablecell background"></div>
+              <div class="tablecell background"></div>
+              <div class="tablecell background"></div>
+              <div class="tablecell background"></div>
+            </div>
+            <% @payments.each do |payment| %>
+              <div class="tablerow">
+                <div class="tablecell">
+                  <div class="user_name"><%= "#{payment.user.firstname} #{payment.user.lastname}" %></div>
+                  <div class="ref_id"><%= payment.user.reference %></div>
+                  <% if payment.user.subscribed? %>
+                    <div class="ref_id"><%= "subscribed" %></div>
+                  <% else %>
+                    <div class="faint_text_format"><%= "unsubscribed" %></div> 
+                  <% end %>
+                </div>
+
+                <div class="tablecell">
+                  <div class="main_text_format">e: <%= mail_to "#{payment.user.email}", "#{payment.user.email}" %></div>
+                  <div class="faint_text_format"><%= payment.user.profession %></div>
+                  <div class="faint_text_format">
+                    <% if payment.user.city? %>
+                      <span><%= payment.user.city %>,</span>
+                    <% end %>
+                    <span><%= payment.user.category_country.name %></span>
+                  </div> 
+                </div>
+
+                <div class="tablecell">
+                  <div class="main_text_format">
+                    <% if payment.event_id? %>
+                      <div style="color:#4BB4BF;"><%= "payment" %></div>
+                      <div class="ref_id"><%= payment.reference %></div>
+                      <div class="faint_text_format"><%# payment.event_payment_date.strftime("%a, %d %b %Y") %></div>
+                    <% elsif payment.subscription_id? %>
+                      <div style="color:#58CDA6;"><%= "subscription" %></div> 
+                      <div class="ref_id"><%= payment.reference %></div>
+                      <div class="faint_text_format"><%# payment.subscription_payment_date %></div>
+                    <% end %>
+                  </div>
+                </div>
+
+                <div class="tablecell">
+                  <div class="main_text_format">
+                    <% if payment.event_id? %>
+                      <div class="faint_text_format">Event Ref</div> 
+                      <div><%= link_to payment.event.reference, event_path(payment.event), target:"_blank" %></div>
+                      <div><%= link_to (truncate "#{payment.event.title}", length: 25), event_path(payment.event), target:"_blank" %></div>
+                    <% elsif payment.subscription_id? %>
+                      <div class="faint_text_format">Subscription Ref</div> 
+                      <div><%= payment.subscription.reference %></div>
+                      <div><%= payment.subscription.title %> plan</div>
+                    <% end %>
+                  </div>
+                </div>
+
+                <div class="tablecell">
+                  <div class="faint_text_format">[Stripe] Customer_id</div> 
+                  <div class="main_text_format">
+                    <%= payment.stripe_customer_id %>
+                  </div>
+                </div>
+
+                <div class="tablecell">
+                  <div class="faint_text_format">[Stripe] Sub_id</div> 
+                  <div class="main_text_format">
+                    <%= payment.stripe_subscription_id %>
+                  </div>
+                </div>
+
+
+                <div class="tablecell">
+                  <div class="faint_text_format">Card</div> 
+                  <div class="main_text_format">
+                    <div><%= payment.user_card_type %> | <%= payment.user_card_last4 %></div>
+                    <div><%= payment.user_card_exp_month %> / <%= payment.user_card_exp_year %></div>
+                  </div>
+                </div>
+
+        
+
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+      <!-- listed payments -->
+    </div>
+  </div>
+  <div class="clear"></div>
+</div>
+
+
+
+
+
 <div class="not_needed_content">
   <p id="notice"><%= notice %></p>
 

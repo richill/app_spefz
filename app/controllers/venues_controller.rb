@@ -4,8 +4,6 @@ class VenuesController < ApplicationController
 
   def index
     if current_user.admin_pa_management_group || current_user.pa_event_mgt_group
-      #@venues = Venue.all
-
       @search = Venue.search(params[:q])
       @venues = @search.result(distinct: true)
     else
