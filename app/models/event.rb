@@ -142,6 +142,38 @@ class Event < ActiveRecord::Base
     end while self.class.exists?(reference: reference)
   end
 
+  # displays the overall average rating of all events that have been & have not been rated on the platform
+  def self.overall_ratings_with_zero_ratings
+    events = Event.all
+    rating_sum = events.map(&:overall_ratings).sum
+    rating_count = events.map(&:overall_ratings).count
+    avg_score = rating_sum / rating_count
+    avg_score.round(1)
+  end
+
+  def self.overall_ratings_with_zero_ratings_count
+    events = Event.all
+    rating_count = events.map(&:overall_ratings).count
+  end
+
+  # displays the overall average rating of all events that have been rated on the platform
+  def self.overall_ratings_without_zero_ratings
+    events = Event.all
+    all_ratings = events.map(&:overall_ratings)
+    refined_ratings = all_ratings - [0]
+    refined_ratings_sum = refined_ratings.sum
+    refined_ratings_count = refined_ratings.count
+    avg_score = refined_ratings_sum / refined_ratings_count
+    avg_score.round(1)
+  end
+
+  def self.overall_ratings_without_zero_ratings_count
+    events = Event.all
+    all_ratings = events.map(&:overall_ratings)
+    refined_ratings = all_ratings - [0]
+    refined_ratings_count = refined_ratings.count
+  end
+
   #displays the overall avaerage rating for an event
   def overall_ratings
     array = Rate.where(rateable_id: id, rateable_type: 'Event')
