@@ -87,6 +87,8 @@ class User < ActiveRecord::Base
   scope :primary_admins, ->() { joins(:category_role).where('category_roles.name' => "Primary Admin") }                                                                                       
   # all users in primary_admin role
 
+  scope : :admins_and_primaryadmins, -> { joins(:category_role).where("category_roles.name IN (?)", ["Admin", "Primary Admin"]) }
+
   scope :clients, ->() { joins(:category_role).where('category_roles.name' => "Client") }                                                                                       
   # all users in client role
 
@@ -126,9 +128,9 @@ class User < ActiveRecord::Base
 
   scope :unsubcribed_users, -> () {where(["stripe_subscription_pymt_id IS NULL or CAST(stripe_subscription_pymt_id as text) = ''"])}
 
-  scope :client_users_with_active_scoails, -> { joins(:socials, :category_role).clients.flat_map(&:socials) }
+  scope :client_users_with_active_scoails, -> { joins(:socials, :category_role).clients.uniq.flat_map(&:socials) }
 
-  scope :spefz_team_active_scoails, -> { joins(:socials, :category_role).admins.primary_admins.flat_map(&:socials) }
+  scope :spefz_team_active_scoails, -> { joins(:socials, :category_role).admins.primary_admins.uniq.flat_map(&:socials) }
 
 
 
