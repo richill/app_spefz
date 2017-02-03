@@ -126,6 +126,9 @@ class User < ActiveRecord::Base
 
   scope :unsubcribed_users, -> () {where(["stripe_subscription_pymt_id IS NULL or CAST(stripe_subscription_pymt_id as text) = ''"])}
 
+  scope :client_users_with_active_scoails, -> { joins(:socials, :category_managementgroup).client_group.flat_map(&:socials) }
+
+
 
   def slug_users
     [
