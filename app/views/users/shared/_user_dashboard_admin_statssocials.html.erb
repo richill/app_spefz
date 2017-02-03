@@ -7,7 +7,6 @@
         <div class="header_data">
           <span class="header_icon"><i class="fa fa-calendar" aria-hidden="true"></i></span>
           <span><%= @socials.all.count %></span>
-          <div class="minor_info"><%= @socials.held_this_month.count %>/mth <span class="minor_divider">|</span> <%= @socials.held_this_year.count %>/yr</div>
         </div>
       </div>
     </div>
@@ -31,7 +30,6 @@
         <div class="header_data">
           <span class="header_icon"><i class="fa fa-calendar-times-o" aria-hidden="true"></i></span>
           <span><%= @socials.expired_or_closed_socials.count %></span>
-          <div class="minor_info">0/mth <span class="minor_divider">|</span> 0/yr</div>
         </div>
       </div>
     </div>
@@ -39,7 +37,7 @@
       <div class="data_content">
         <div class="header"> total host [users]</div>
         <div class="header_data"><span class="header_icon"><i class="fa fa-users" aria-hidden="true"></i></span>
-          <span>0</span>
+          <span><%= @users.hosts_client_users_with_active_socials.count %></span>
         </div>
       </div>
     </div>
@@ -47,7 +45,7 @@
       <div class="data_content">
         <div class="header"> total host [spefz]</div>
         <div class="header_data">
-          <span class="header_icon"><i class="fa fa-users" aria-hidden="true"></i></span><span>0</span>
+          <span class="header_icon"><i class="fa fa-users" aria-hidden="true"></i></span><span><%= @users.hosts_spefz_team_active_socials.count %></span>
         </div>
       </div>
     </div>

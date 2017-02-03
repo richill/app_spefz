@@ -73,10 +73,6 @@ class Social < ActiveRecord::Base
   scope :held_this_year, -> { where(date: Time.now.beginning_of_year..Time.now.end_of_year) }
 
 
-  #scope :client_users_with_active_scoails, -> socials.live_socials.open_socials.map(&:user).uniq.count
-  # scope :client_users_with_active_scoails, -> { joins(:user).live_socials.open_socials.map(&:user).uniq } 
-
-
   def slug_socials
     [
       :title

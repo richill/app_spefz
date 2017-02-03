@@ -133,9 +133,14 @@ class UsersController < ApplicationController
   end
 
   def stats_events
-    unless current_user.admin_pa_management_group || current_user.pa_event_mgt_group
+    if current_user.admin_pa_management_group || current_user.pa_event_mgt_group
+      @users = User.all
+      @socials = Social.all
+      @events = Event.all
+      @payments = Payment.all
+    else
       redirect_to errorpermission_path
-    end 
+    end
   end
 
   def transactions
