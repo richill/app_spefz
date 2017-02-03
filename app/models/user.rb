@@ -87,7 +87,7 @@ class User < ActiveRecord::Base
   scope :primary_admins, ->() { joins(:category_role).where('category_roles.name' => "Primary Admin") }                                                                                       
   # all users in primary_admin role
 
-  scope : :admins_and_primaryadmins, -> { joins(:category_role).where("category_roles.name IN (?)", ["Admin", "Primary Admin"]) }
+  scope :admins_and_primaryadmins, -> { joins(:category_role).where("category_roles.name IN (?)", ["Admin", "Primary Admin"]) }
 
   scope :clients, ->() { joins(:category_role).where('category_roles.name' => "Client") }                                                                                       
   # all users in client role
