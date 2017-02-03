@@ -70,6 +70,9 @@ class Social < ActiveRecord::Base
   scope :held_this_month, -> { where(date: Time.now.beginning_of_month..Time.now.end_of_month) }
   #socials held in current month (eg: could be created in 10.03.2014 held for current month)
 
+  scope :held_this_year, -> { where(date: Time.now.beginning_of_year..Time.now.end_of_year) }
+
+
   def slug_socials
     [
       :title
