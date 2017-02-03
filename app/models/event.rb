@@ -27,7 +27,7 @@ class Event < ActiveRecord::Base
   validates_numericality_of :price, allow_nil: true
   validates_presence_of :time_end, presence: true, message: "can't be blank"
   validates_presence_of :maplink, presence: true, message: "can't be blank"
-  validates_numericality_of :event_score_access, allow_nil: true
+  # validates_numericality_of :event_score_access, allow_nil: true
   validates :event_score_access, numericality: { less_than: 5, allow_nil: true }
   validates_presence_of :tag_list, presence: true, message: "can't be blank"
   validate :date_cannot_be_in_the_past
@@ -83,11 +83,14 @@ class Event < ActiveRecord::Base
   scope :booked_events_with_cards, -> (user) { joins(:card, payments: :user).where(users: { id: user.id }) }
   #displays all events with cards that have been booked/paid by a user
 
+  scope :events_with_no_bookings, -> { includes(:payments).where(payments: { event_id: nil }) }
+
   scope :created_this_month, -> { where(created_at: Time.now.beginning_of_month..Time.now.end_of_month) }
   #event created in current month
 
   scope :held_this_month, -> { where(date: Time.now.beginning_of_month..Time.now.end_of_month) }
   #events held in current month (eg: could be created in 10.03.2014 held for current month)
+
 
   def event_with_payments_sum(event)
     self.payments.to_a.map(&:price).sum
@@ -112,10 +115,11 @@ class Event < ActiveRecord::Base
     # event_access: 2  | event_access_percentage: (event_access/5)*100: 50%
     # match: (event_access_percentage/user_rating_percentage)*100:      83.3%
     # match.round(0) = 83%
-    if self.event_score_access.blank?
-      if self.event_score_access.blank?
-        event_access = self.event_score_access = user.overall_ratings
-      end
+    # if self.event_score_access.blank?
+    #   event_access = self.event_score_access = user.overall_ratings
+    # end
+    if self.event_score_access = 0
+      event_access = self.event_score_access = user.overall_ratings
     end
     user_rating = user.overall_ratings
     user_rating_percentage = (user_rating/5)*100

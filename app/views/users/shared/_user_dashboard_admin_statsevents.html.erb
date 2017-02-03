@@ -50,12 +50,9 @@
     </div>
     <div class="medium-2 columns middle_data responsive_data stats_tab_05">
       <div class="data_content">
-        <div class="header"> total unbooked events</div>
+        <div class="header"> total unbooked live events</div>
         <div class="header_data"><span class="header_icon"><i class="fa fa-calendar-times-o" aria-hidden="true"></i></span>
-          <span>0</span>
-          <% if current_user.admin_pa_management_group %>
-            <div class="minor_info">0/mth <span class="minor_divider">|</span> 0/yr</div>
-          <% end %>
+          <span><%= @events.events_with_no_bookings.live_events.open_events.count %></span>
         </div>
       </div>
     </div>
