@@ -13,6 +13,8 @@ class Contact < ActiveRecord::Base
 
   before_create :generate_reference_number
 
+  scope :inquiry_resolved, -> {where(status: 'Resolved')}
+  scope :inquiry_unresolved, -> {where(status: ['Unresolved', nil])}
   scope :general_enquiry, ->() { joins(:category_enquiry).where('category_enquirys.name' => "General Enquiry") }    
   scope :technical_support, ->() { joins(:category_enquiry).where('category_enquirys.name' => "Technical Support") } 
   scope :partnership, ->() { joins(:category_enquiry).where('category_enquirys.name' => "Partnership") } 
