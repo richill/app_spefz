@@ -18,7 +18,10 @@ class Blog < ActiveRecord::Base
   scope :news, ->() { joins(:category_blog).where('category_blogs.name' => "News") }    
   scope :venues, ->() { joins(:category_blog).where('category_blogs.name' => "Venues") } 
   scope :networking, ->() { joins(:category_blog).where('category_blogs.name' => "Networking Tips") } 
-  scope :dating, ->() { joins(:category_blog).where('category_blogs.name' => "Dating Tips") } 
+  scope :dating, ->() { joins(:category_blog).where('category_blogs.name' => "Dating Tips") }
+
+  scope :created_this_month, -> { where(created_at: Time.now.beginning_of_month..Time.now.end_of_month) }
+  #blogs created in current month 
 
   def slug_blogs
     [
