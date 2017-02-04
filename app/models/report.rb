@@ -11,6 +11,10 @@ class Report < ActiveRecord::Base
 
   scope :inappropriate_content, ->() { joins(:category_report).where('category_reports.name' => "Inappropriate content or behaviour") }
   scope :spam_commercial, ->() { joins(:category_report).where('category_reports.name' => "Spamming / commercial") }
+  scope :report_users, -> {where("user_id IS NOT NULL")}
+  scope :report_socials, -> {where("social_id IS NOT NULL")}
+  scope :report_events, -> {where("event_id IS NOT NULL")}
+
 
   def generate_reference_number
     begin
