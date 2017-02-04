@@ -9,6 +9,12 @@ class Report < ActiveRecord::Base
 
   before_create :generate_reference_number
 
+  scope :suggestions, ->() { joins(:category_report).where('category_reports.name' => "Suggestions") }
+  scope :suggestions, ->() { joins(:category_report).where('category_reports.name' => "Suggestions") }
+  scope :suggestions, ->() { joins(:category_report).where('category_reports.name' => "Suggestions") }
+  scope :suggestions, ->() { joins(:category_report).where('category_reports.name' => "Suggestions") }
+  scope :suggestions, ->() { joins(:category_report).where('category_reports.name' => "Suggestions") }
+
   def generate_reference_number
     begin
       reference_length = 6
