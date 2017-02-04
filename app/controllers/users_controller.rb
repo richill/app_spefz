@@ -155,21 +155,36 @@ class UsersController < ApplicationController
   end
 
   def stats_blogs
-    unless current_user.admin_pa_management_group || current_user.pa_administration_group
+    if current_user.admin_pa_management_group || current_user.pa_administration_group
+      @users = User.all
+      @socials = Social.all
+      @events = Event.all
+      @payments = Payment.all
+    else
       redirect_to errorpermission_path
-    end 
+    end
   end
 
   def inquiries
-    unless current_user.admin_pa_management_group || current_user.pa_administration_group
+    if current_user.admin_pa_management_group || current_user.pa_administration_group
+      @users = User.all
+      @socials = Social.all
+      @events = Event.all
+      @payments = Payment.all
+    else
       redirect_to errorpermission_path
-    end 
+    end
   end
 
   def reports
-    unless current_user.admin_pa_management_group || current_user.pa_administration_group
+    if current_user.admin_pa_management_group || current_user.pa_administration_group
+      @users = User.all
+      @socials = Social.all
+      @events = Event.all
+      @payments = Payment.all
+    else
       redirect_to errorpermission_path
-    end 
+    end
   end
 
   def network
