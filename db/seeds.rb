@@ -72,11 +72,8 @@ cqg03 = CategoryQuantitygender.create!(name:'both men & women')
 cqg04 = CategoryQuantitygender.create!(name:'both X men & X women')
 
 CategoryReport.delete_all
-crt01 = CategoryReport.create!(name:'Spam or scam')
-crt02 = CategoryReport.create!(name:'Offensive language')
-crt03 = CategoryReport.create!(name:'Poor spelling or grammar')
-crt04 = CategoryReport.create!(name:'Incorrect information')
-crt05 = CategoryReport.create!(name:'Discriminatory')
+crt01 = CategoryReport.create!(name:'Inappropriate content or behaviour')
+crt02 = CategoryReport.create!(name:'Spamming / commercial')
 
 CategoryTopic.delete_all
 ct01 = CategoryTopic.create!(name:'Activity Social')

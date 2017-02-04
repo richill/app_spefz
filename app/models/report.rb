@@ -9,11 +9,8 @@ class Report < ActiveRecord::Base
 
   before_create :generate_reference_number
 
-  scope :suggestions, ->() { joins(:category_report).where('category_reports.name' => "Suggestions") }
-  scope :suggestions, ->() { joins(:category_report).where('category_reports.name' => "Suggestions") }
-  scope :suggestions, ->() { joins(:category_report).where('category_reports.name' => "Suggestions") }
-  scope :suggestions, ->() { joins(:category_report).where('category_reports.name' => "Suggestions") }
-  scope :suggestions, ->() { joins(:category_report).where('category_reports.name' => "Suggestions") }
+  scope :inappropriate_content, ->() { joins(:category_report).where('category_reports.name' => "Inappropriate content or behaviour") }
+  scope :spam_commercial, ->() { joins(:category_report).where('category_reports.name' => "Spamming / commercial") }
 
   def generate_reference_number
     begin
