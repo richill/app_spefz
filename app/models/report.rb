@@ -15,7 +15,6 @@ class Report < ActiveRecord::Base
   scope :report_socials, -> {where("social_id IS NOT NULL")}
   scope :report_events, -> {where("event_id IS NOT NULL")}
 
-
   def generate_reference_number
     begin
       reference_length = 6
