@@ -28,7 +28,7 @@ class Event < ActiveRecord::Base
   validates_presence_of :time_end, presence: true, message: "can't be blank"
   validates_presence_of :maplink, presence: true, message: "can't be blank"
   # validates_numericality_of :event_score_access, allow_nil: true
-  # validates :event_score_access, numericality: { less_than: 5, allow_nil: true }
+  validates :event_score_access, numericality: { less_than: 5, greater_than_or_equal_to: 0, allow_nil: true }
   validates_presence_of :tag_list, presence: true, message: "can't be blank"
   validate :date_cannot_be_in_the_past
   # validates :category_quantitygender_content
@@ -116,12 +116,9 @@ class Event < ActiveRecord::Base
     # event_access: 2  | event_access_percentage: (event_access/5)*100: 50%
     # match: (event_access_percentage/user_rating_percentage)*100:      83.3%
     # match.round(0) = 83%
-    if self.event_score_access.blank?
+    if self.event_score_access.blank? || self.event_score_access <= "0"
       event_access = self.event_score_access = user.overall_ratings
     end
-    # if self.event_score_access = 0
-    #   event_access = self.event_score_access = user.overall_ratings
-    # end
     user_rating = user.overall_ratings
     user_rating_percentage = (user_rating/5)*100
     event_access = self.event_score_access.to_f
