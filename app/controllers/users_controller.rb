@@ -172,6 +172,7 @@ class UsersController < ApplicationController
       @socials = Social.all
       @events = Event.all
       @payments = Payment.all
+      @contacts = Contact.all
     else
       redirect_to errorpermission_path
     end
@@ -183,6 +184,7 @@ class UsersController < ApplicationController
       @socials = Social.all
       @events = Event.all
       @payments = Payment.all
+      @reports = Report.all
     else
       redirect_to errorpermission_path
     end
