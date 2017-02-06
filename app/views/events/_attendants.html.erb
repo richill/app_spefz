@@ -334,7 +334,7 @@
                       </div>
                     </div>
                     <div class="clear"></div>
-                    <% if current_user.admin_pa_management_group || current_user.hosts %>
+                    <% if current_user.admin_pa_management_group %>
                     <div class="user_roles">
                       <span><i class="fa fa-user" aria-hidden="true"></i></span>
                       <span><%= truncate(attendant.user.category_role.name, length: 25) %></span>
