@@ -92,7 +92,10 @@ class Event < ActiveRecord::Base
   scope :held_this_month, -> { where(date: Time.now.beginning_of_month..Time.now.end_of_month) }
   #events held in current month (eg: could be created in 10.03.2014 held for current month)
 
-
+  def location
+    [address, city, category_country_id].compact.join(', ')
+  end
+  
   def event_with_payments_sum(event)
     self.payments.to_a.map(&:price).sum
   end
@@ -211,10 +214,6 @@ class Event < ActiveRecord::Base
 
   def expired_or_closed_event
     self.date < Date.current || self.close == true
-  end
-
-  def location
-    [address, city, category_country_id].compact.join(', ')
   end
 
   def self.desc_order

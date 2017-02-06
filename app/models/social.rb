@@ -72,6 +72,9 @@ class Social < ActiveRecord::Base
 
   scope :held_this_year, -> { where(date: Time.now.beginning_of_year..Time.now.end_of_year) }
 
+  def location
+    [address, city, category_country_id].compact.join(', ')
+  end
 
   def slug_socials
     [
@@ -102,10 +105,6 @@ class Social < ActiveRecord::Base
 
   def expired_or_closed_social
     self.date < Date.current || self.close == true
-  end
-
-  def location
-    [address, city, category_country_id].compact.join(', ')
   end
 
   def generate_reference_number
