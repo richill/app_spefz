@@ -513,12 +513,6 @@
   margin: 5px;
 }
 
-
-
-// ---------------------------
-//   workings
-// ---------------------------
-
 .attendants_section .event_inner_info_container .capacity {
   background-color: rgba(88, 205, 166, 0.15) !important;
   padding: 5px 10px;
@@ -563,10 +557,25 @@
 
 
 
+// ---------------------------
+//   workings
+// ---------------------------
 
+.user_roles .fa-star {
+  float: left;
+  margin-right: 5px;
+  margin-top: 4px;
+}
 
+.user_roles .rate_title {
+  float: left;
+  margin-right: 5px;
+  margin-top: 2px;
+}
 
-
+.user_roles .rate_stars {
+  float: left;
+}
 
 
 
