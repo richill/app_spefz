@@ -140,6 +140,11 @@ class User < ActiveRecord::Base
   # scope :hosts_client_users_with_active_socials, -> { joins(:socials, :category_role).clients.uniq.live_socials.open_socials.map(&:socials)}
   # above displays live socials created by host in role: admin & primary_admin
 
+  scope :users_with_no_ratings, -> { select {|user| user.overall_ratings == 0 }}
+  # users_with_no_ratings = users.select {|user| user.overall_ratings == 0 }.count
+
+  scope :users_with_ratings, -> { select {|user| user.overall_ratings > 0 }}
+  # users_with_ratings = users.select {|user| user.overall_ratings > 0 }.count
 
   def slug_users
     [

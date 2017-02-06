@@ -92,6 +92,12 @@ class Event < ActiveRecord::Base
   scope :held_this_month, -> { where(date: Time.now.beginning_of_month..Time.now.end_of_month) }
   #events held in current month (eg: could be created in 10.03.2014 held for current month)
 
+  scope :events_with_no_ratings, -> { select {|event| event.overall_ratings == 0 }}
+  # events_with_no_ratings = events.select {|event| event.overall_ratings == 0 }.count
+
+  scope :events_with_ratings, -> { select {|event| event.overall_ratings > 0 }}
+  # events_with_ratings = events.select {|event| event.overall_ratings > 0 }.count
+
   def location
     [address, city, category_country_id].compact.join(', ')
   end

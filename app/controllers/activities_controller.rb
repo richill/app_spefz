@@ -11,7 +11,7 @@ class ActivitiesController < ApplicationController
   end
 
   def followings 
-    @activities = Activity.order("created_at desc").where(owner_id: current_user.followings)
+    @activities = Activity.order("created_at desc").where(owner_id: current_user.followings).where("trackable_type IN (?)", ["Social", "Event"]) 
   end
 
   def mark_as_viewed
