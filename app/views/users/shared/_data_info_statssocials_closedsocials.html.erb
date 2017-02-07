@@ -1,0 +1,74 @@
+<h1>closed socials [<%= @socials.expired_or_closed_socials.count %>]
+  <div class="h1_subtitle"><i class="fa fa-info-circle"></i> displays all closed socials on the platform [ordered by date held]</div>
+</h1>
+
+<div id="">
+  <div class="bottom_inner_content">
+    <div class="table">
+      <div class="tablerow">
+        <div class="tablecell header background">all closed socials</div>
+        <div class="tablecell background"></div>
+        <div class="tablecell background"></div>
+        <div class="tablecell background"></div>
+        <div class="tablecell background"></div>
+        <div class="tablecell background"></div>
+        <div class="tablecell background"></div>
+        <div class="tablecell background"></div>
+      </div>
+      <% @socials.expired_or_closed_socials.order("date asc").each do |social| %>
+        <div class="tablerow">
+          <div class="tablecell" style="width:16%">
+            <div class="image_container">
+              <div class="image"><%= link_to image_tag(social.image_url), social, target: "_blank" %></div>
+            </div>
+          </div>
+          <div class="tablecell">
+            <div class="user_name"><%= truncate "#{social.title}", length: 30 %></div>
+            <div class="ref_id"><%= social.reference %></div>
+            <span class="faint_text_format">created: <%= social.created_at.strftime("%a, %d %b %Y") %></span>
+          </div>
+          <div class="tablecell">
+            <div class="faint_text_format">date</div> 
+            <div class="main_text_format">
+              <%= social.date.strftime("%a, %d %b %Y") %>
+            </div>
+          </div>
+          <div class="tablecell">
+            <div class="faint_text_format">
+              <span><%= social.category_country.name %></span>
+            </div> 
+            <div class="faint_text_format">
+              <% if social.city? %>
+                <span><%= social.city %></span>
+              <% end %>
+            </div>
+          </div>
+          <div class="tablecell">
+            <div class="faint_text_format">Category</div> 
+            <div class="main_text_format">
+              <% if social.category_topic.present? %>
+                <%= social.category_topic.name %>
+              <% else %>
+                <%= "-" %>
+              <% end %>
+            </div>
+          </div>
+          <div class="tablecell">
+            <div class="faint_text_format">Age-Group</div> 
+            <div class="main_text_format"><%= social.category_age.name %></div>
+          </div>
+          <div class="tablecell">
+            <div class="faint_text_format">attendants</div> 
+            <div class="main_text_format"><%= social.attendances.count %></div>
+          </div>
+          <div class="tablecell">
+            <div class="faint_text_format">host</div> 
+            <div class="main_text_format"><%= link_to "#{social.user.firstname} #{social.user.lastname}", user_path(social.user), target: "_blank" %></div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="clear"></div>
