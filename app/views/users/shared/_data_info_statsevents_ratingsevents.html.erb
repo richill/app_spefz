@@ -1,0 +1,184 @@
+<h1>event ratings [<%= @events.expired_or_closed_events.events_with_ratings.count %>]
+  <span id="status_statsevents_rated" class="status_colour_pink">rated [<%= @events.expired_or_closed_events.events_with_no_ratings.count %>]</span>
+  <span id="status_statsevents_nonrated" class="status_colour_pink">non-rated [<%= @events.expired_or_closed_events.events_with_no_ratings.count %>]</span>
+  <div class="h1_subtitle"><i class="fa fa-info-circle"></i> displays all rated closed events on the platform [ordered by date held]</div>
+</h1>
+
+<div id="status_statsevents_rated_content">
+  <div class="bottom_inner_content">
+    <div class="table">
+      <div class="tablerow">
+        <div class="tablecell header background">rated events</div>
+        <div class="tablecell background"></div>
+        <div class="tablecell background"></div>
+        <div class="tablecell background"></div>
+        <div class="tablecell background"></div>
+        <div class="tablecell background"></div>
+        <div class="tablecell background"></div>
+        <div class="tablecell background"></div>
+        <div class="tablecell background"></div>
+      </div>
+      <% @events.expired_or_closed_events.events_with_ratings.each do |event| %>
+        <div class="tablerow">
+          <div class="tablecell" style="width:16%">
+            <div class="image_container">
+              <div class="image"><%= link_to image_tag(event.image_url), event, target: "_blank" %></div>
+            </div>
+          </div>
+          <div class="tablecell">
+            <div class="user_name"><%= truncate "#{event.title}", length: 30 %></div>
+            <div class="ref_id"><%= event.reference %></div>
+            <span class="faint_text_format">created: <%= event.created_at.strftime("%a, %d %b %Y") %></span>
+          </div>
+          <div class="tablecell">
+            <div class="faint_text_format">date</div> 
+            <div class="main_text_format"><%= event.date.strftime("%a, %d %b %Y") %></div>
+            <div class="ref_id">£<%= event.price %></div>
+          </div>
+          <div class="tablecell">
+            <div class="faint_text_format">
+              <span><%= event.category_country.name %></span>
+            </div> 
+            <div class="faint_text_format">
+              <% if event.city? %>
+                <span><%= event.city %></span>
+              <% end %>
+            </div>
+          </div>
+          <div class="tablecell">
+            <div class="faint_text_format">Category</div> 
+            <div class="main_text_format">
+              <% if event.category_topic.present? %>
+                <%= event.category_topic.name %>
+              <% else %>
+                <%= "-" %>
+              <% end %>
+            </div>
+          </div>
+          <div class="tablecell">
+            <div class="faint_text_format">Age-Group</div> 
+            <div class="main_text_format"><%= event.category_age.name %></div>
+          </div>
+          <div class="tablecell">
+            <div class="overall_rate">
+              <div>Rate</div>
+              <div><%= number_with_precision(event.overall_ratings, precision: 1) %></div>
+            </div>
+          </div>
+          <div class="tablecell">
+            <div>
+              <span class="main_text_format"><%= event.payments.count %>:</span> <span class="faint_text_format">attendants</span> 
+            </div>
+            <div>
+              <span>Amt: </span><span class="ref_id">£<%= (event.price) * (event.payments.count) %></span>
+            </div>
+          </div>
+          <div class="tablecell">
+            <div class="faint_text_format">host</div> 
+            <% if event.host.present? %>
+              <div class="main_text_format">
+                <ul style="margin-bottom:0px;">
+                  <% event.host.users.each do |host| %>
+                  <li class="main_text_format"><%= link_to "#{host.firstname} #{host.lastname}", user_path(host), target: "_blank" %></li>
+                  <% end %>
+                </ul>
+              </div>
+            <% else %>
+              <%= "-" %>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div id="status_statsevents_nonrated_content hide">
+  <div class="bottom_inner_content">
+    <div class="table">
+      <div class="tablerow">
+        <div class="tablecell header background">non-rated events</div>
+        <div class="tablecell background"></div>
+        <div class="tablecell background"></div>
+        <div class="tablecell background"></div>
+        <div class="tablecell background"></div>
+        <div class="tablecell background"></div>
+        <div class="tablecell background"></div>
+        <div class="tablecell background"></div>
+        <div class="tablecell background"></div>
+      </div>
+      <% @events.expired_or_closed_events.events_with_no_ratings.each do |event| %>
+        <div class="tablerow">
+          <div class="tablecell" style="width:16%">
+            <div class="image_container">
+              <div class="image"><%= link_to image_tag(event.image_url), event, target: "_blank" %></div>
+            </div>
+          </div>
+          <div class="tablecell">
+            <div class="user_name"><%= truncate "#{event.title}", length: 30 %></div>
+            <div class="ref_id"><%= event.reference %></div>
+            <span class="faint_text_format">created: <%= event.created_at.strftime("%a, %d %b %Y") %></span>
+          </div>
+          <div class="tablecell">
+            <div class="faint_text_format">date</div> 
+            <div class="main_text_format"><%= event.date.strftime("%a, %d %b %Y") %></div>
+            <div class="ref_id">£<%= event.price %></div>
+          </div>
+          <div class="tablecell">
+            <div class="faint_text_format">
+              <span><%= event.category_country.name %></span>
+            </div> 
+            <div class="faint_text_format">
+              <% if event.city? %>
+                <span><%= event.city %></span>
+              <% end %>
+            </div>
+          </div>
+          <div class="tablecell">
+            <div class="faint_text_format">Category</div> 
+            <div class="main_text_format">
+              <% if event.category_topic.present? %>
+                <%= event.category_topic.name %>
+              <% else %>
+                <%= "-" %>
+              <% end %>
+            </div>
+          </div>
+          <div class="tablecell">
+            <div class="faint_text_format">Age-Group</div> 
+            <div class="main_text_format"><%= event.category_age.name %></div>
+          </div>
+          <div class="tablecell">
+            <div class="overall_rate">
+              <div>Rate</div>
+              <div><%= number_with_precision(event.overall_ratings, precision: 1) %></div>
+            </div>
+          </div>
+          <div class="tablecell">
+            <div>
+              <span class="main_text_format"><%= event.payments.count %>:</span> <span class="faint_text_format">attendants</span> 
+            </div>
+            <div>
+              <span>Amt: </span><span class="ref_id">£<%= (event.price) * (event.payments.count) %></span>
+            </div>
+          </div>
+          <div class="tablecell">
+            <div class="faint_text_format">host</div> 
+            <% if event.host.present? %>
+              <div class="main_text_format">
+                <ul style="margin-bottom:0px;">
+                  <% event.host.users.each do |host| %>
+                  <li class="main_text_format"><%= link_to "#{host.firstname} #{host.lastname}", user_path(host), target: "_blank" %></li>
+                  <% end %>
+                </ul>
+              </div>
+            <% else %>
+              <%= "-" %>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+<div class="clear"></div>
