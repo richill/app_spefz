@@ -1,6 +1,5 @@
-total socials
 <h1>socials [<%= @socials.count %>]
-  <div class="h1_subtitle"><i class="fa fa-info-circle"></i> displays all socials on the platform [ordered by user last name]</div>
+  <div class="h1_subtitle"><i class="fa fa-info-circle"></i> displays all socials on the platform [ordered by date held]</div>
 </h1>
 
 <div id="">
@@ -58,18 +57,14 @@ total socials
             <div class="faint_text_format">Age-Group</div> 
             <div class="main_text_format"><%= social.category_age.name %></div>
           </div>
-
           <div class="tablecell">
             <div class="faint_text_format">attendants</div> 
             <div class="main_text_format"><%= social.attendances.count %></div>
           </div>
-
           <div class="tablecell">
             <div class="faint_text_format">host</div> 
-            <div class="main_text_format"><%= "#{social.user.firstname} #{social.user.lastname}" %></div>
+            <div class="main_text_format"><%= link_to "#{social.user.firstname} #{social.user.lastname}", user_path(social.user), target: "_blank" %></div>
           </div>
-
-       
         </div>
       <% end %>
     </div>
