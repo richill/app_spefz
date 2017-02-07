@@ -1,14 +1,14 @@
 1.] Total Registered Users
 <h1>registered users [<%= @users.all.count %>]
-  <span id="status_users_all" class="status_colour_blue">all [<%= @users.all.count %>]</span>
-  <span id="status_users_male" class="status_colour_blue">male [<%= @users.males.count %>]</span>
-  <span id="status_users_female" class="status_colour_blue">female [<%= @users.females.count %>]</span>
-  <span id="status_users_female" class="status_colour_blue">rated [<%= @users.females.count %>]</span>
-  <span id="status_users_female" class="status_colour_blue">non-rated [<%= @users.females.count %>]</span>
+  <span id="status_statsusers_all" class="status_colour_blue">all [<%= @users.all.count %>]</span>
+  <span id="status_statsusers_male" class="status_colour_blue">male [<%= @users.males.count %>]</span>
+  <span id="status_statsusers_female" class="status_colour_blue">female [<%= @users.females.count %>]</span>
+  <span id="status_statsusers_rated" class="status_colour_blue">rated [<%= @users.females.count %>]</span>
+  <span id="status_statsusers_nonrated" class="status_colour_blue">non-rated [<%= @users.females.count %>]</span>
   <div class="h1_subtitle"><i class="fa fa-info-circle"></i> displays all registered users on the platform [ordered by user last name]</div>
 </h1>
 
-<div id="status_users_all_content">
+<div id="status_statsusers_all_content">
   <div class="bottom_inner_content">
     <div class="table">
       <div class="tablerow">
@@ -96,7 +96,7 @@
   </div>
 </div>
 
-<div id="status_users_male_content" class="hide">
+<div id="status_statsusers_male_content" class="hide">
   <div class="bottom_inner_content">
     <div class="table">
       <div class="tablerow">
@@ -184,7 +184,7 @@
   </div>
 </div>
 
-<div id="status_users_female_content" class="hide">
+<div id="status_statsusers_female_content" class="hide">
   <div class="bottom_inner_content">
     <div class="table">
       <div class="tablerow">
