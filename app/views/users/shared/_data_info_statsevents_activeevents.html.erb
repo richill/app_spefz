@@ -6,7 +6,8 @@
   <div class="bottom_inner_content">
     <div class="table">
       <div class="tablerow">
-        <div class="tablecell header background">all active events</div>
+        <div class="tablecell header background">active events</div>
+        <div class="tablecell background"></div>
         <div class="tablecell background"></div>
         <div class="tablecell background"></div>
         <div class="tablecell background"></div>
@@ -18,7 +19,7 @@
       </div>
       <% @events.live_events.open_events.order("date asc").each do |event| %>
         <div class="tablerow">
-          <div class="tablecell" style="width:16%">
+          <div class="tablecell" style="width:10%">
             <div class="image_container">
               <div class="image"><%= link_to image_tag(event.image_url), event, target: "_blank" %></div>
             </div>
@@ -58,6 +59,12 @@
             <div class="main_text_format"><%= event.category_age.name %></div>
           </div>
           <div class="tablecell">
+            <div class="access_score">
+              <div>Access</div>
+              <div><%= number_with_precision(event.event_score_access, precision: 1) %></div>
+            </div>
+          </div>
+          <div class="tablecell">
             <div class="overall_rate">
               <div>Rate</div>
               <div><%= number_with_precision(event.overall_ratings, precision: 1) %></div>
@@ -67,9 +74,11 @@
             <div>
               <span class="main_text_format"><%= event.payments.count %>:</span> <span class="faint_text_format">attendants</span> 
             </div>
-            <div>
-              <span>Amt: </span><span class="ref_id">£<%= (event.price) * (event.payments.count) %></span>
-            </div>
+            <% if current_user.admin_pa_management_group %>
+              <div>
+                <span>Amt: </span><span class="ref_id">£<%= (event.price) * (event.payments.count) %></span>
+              </div>
+            <% end %>
           </div>
           <div class="tablecell">
             <div class="faint_text_format">host</div> 

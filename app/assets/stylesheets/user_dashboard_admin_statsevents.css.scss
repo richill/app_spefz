@@ -353,6 +353,20 @@
   color: #E1473E !important;
 }
 
+.user_dashboard_admin_statsevents .lower_data_inner_content .access_score {
+  font-size: 12px;
+  font-weight: 400 !important;
+  background-color: rgba(88, 205, 166, 0.9) !important;
+  text-transform: capitalize;
+  padding: 10px;
+  color: #fff;
+  font-weight: bold;
+  margin-right: 5px;
+  text-align: center;
+  border-radius: 200px;
+  width: 60px;
+}
+
 .user_dashboard_admin_statsevents .lower_data_inner_content .overall_rate {
   font-size: 12px;
   font-weight: 400 !important;
