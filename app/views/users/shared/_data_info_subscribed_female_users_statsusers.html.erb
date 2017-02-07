@@ -1,4 +1,4 @@
-<h1>subscribed users [<%= @users.subcribed_users.females.count %>]
+<h1>subscribed females [<%= @users.subcribed_users.females.count %>]
   <div class="h1_subtitle"><i class="fa fa-info-circle"></i> displays all subscribed female users on the platform [ordered by user last name]</div>
 </h1>
 
@@ -6,7 +6,7 @@
   <div class="bottom_inner_content">
     <div class="table">
       <div class="tablerow">
-        <div class="tablecell header background">subscribed females</div>
+        <div class="tablecell header background">females</div>
         <div class="tablecell background"></div>
         <div class="tablecell background"></div>
         <div class="tablecell background"></div>
@@ -17,7 +17,7 @@
       </div>
       <% @users.subcribed_users.females.order("lastname asc").each do |user| %>
         <div class="tablerow">
-          <div class="tablecell" style="width:16%">
+          <div class="tablecell" style="width:10%">
             <% if user_signed_in? %>
               <% if current_user.admin_pa_management_group %>
                 <% if user.dummy_group %>

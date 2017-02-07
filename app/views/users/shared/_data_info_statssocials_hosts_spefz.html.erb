@@ -9,7 +9,7 @@
   <div class="bottom_inner_content">
     <div class="table">
       <div class="tablerow">
-        <div class="tablecell header background">all spefz hosts</div>
+        <div class="tablecell header background">spefz hosts</div>
         <div class="tablecell background"></div>
         <div class="tablecell background"></div>
         <div class="tablecell background"></div>
@@ -20,7 +20,7 @@
       </div>
       <% @users.hosts_spefz_team_active_socials.order("lastname asc").each do |user| %>
         <div class="tablerow">
-          <div class="tablecell" style="width:16%">
+          <div class="tablecell" style="width:10%">
             <% if user_signed_in? %>
               <% if current_user.admin_pa_management_group %>
                 <% if user.dummy_group %>
@@ -108,7 +108,7 @@
       </div>
       <% @users.males.hosts_spefz_team_active_socials.order("lastname asc").each do |user| %>
         <div class="tablerow">
-          <div class="tablecell" style="width:16%">
+          <div class="tablecell" style="width:10%">
             <% if user_signed_in? %>
               <% if current_user.admin_pa_management_group %>
                 <% if user.dummy_group %>
@@ -196,7 +196,7 @@
       </div>
       <% @users.females.hosts_spefz_team_active_socials.order("lastname asc").each do |user| %>
         <div class="tablerow">
-          <div class="tablecell" style="width:16%">
+          <div class="tablecell" style="width:10%">
             <% if user_signed_in? %>
               <% if current_user.admin_pa_management_group %>
                 <% if user.dummy_group %>

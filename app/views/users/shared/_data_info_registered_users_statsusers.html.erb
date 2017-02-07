@@ -11,7 +11,7 @@
   <div class="bottom_inner_content">
     <div class="table">
       <div class="tablerow">
-        <div class="tablecell header background">all registered users</div>
+        <div class="tablecell header background">registered</div>
         <div class="tablecell background"></div>
         <div class="tablecell background"></div>
         <div class="tablecell background"></div>
@@ -22,7 +22,7 @@
       </div>
       <% @users.order("lastname asc").each do |user| %>
         <div class="tablerow">
-          <div class="tablecell" style="width:16%">
+          <div class="tablecell" style="width:10%">
             <% if user_signed_in? %>
               <% if current_user.admin_pa_management_group %>
                 <% if user.dummy_group %>
@@ -99,7 +99,7 @@
   <div class="bottom_inner_content">
     <div class="table">
       <div class="tablerow">
-        <div class="tablecell header background">male members</div>
+        <div class="tablecell header background">males</div>
         <div class="tablecell background"></div>
         <div class="tablecell background"></div>
         <div class="tablecell background"></div>
@@ -110,7 +110,7 @@
       </div>
       <% @users.males.order("lastname asc").each do |user| %>
         <div class="tablerow">
-          <div class="tablecell" style="width:16%">
+          <div class="tablecell" style="width:10%">
             <% if user_signed_in? %>
               <% if current_user.admin_pa_management_group %>
                 <% if user.dummy_group %>
@@ -187,7 +187,7 @@
   <div class="bottom_inner_content">
     <div class="table">
       <div class="tablerow">
-        <div class="tablecell header background">female members</div>
+        <div class="tablecell header background">females</div>
         <div class="tablecell background"></div>
         <div class="tablecell background"></div>
         <div class="tablecell background"></div>
@@ -198,7 +198,7 @@
       </div>
       <% @users.females.order("lastname asc").each do |user| %>
         <div class="tablerow">
-          <div class="tablecell" style="width:16%">
+          <div class="tablecell" style="width:10%">
             <% if user_signed_in? %>
               <% if current_user.admin_pa_management_group %>
                 <% if user.dummy_group %>
@@ -275,7 +275,7 @@
   <div class="bottom_inner_content">
     <div class="table">
       <div class="tablerow">
-        <div class="tablecell header background">rated members</div>
+        <div class="tablecell header background">rated</div>
         <div class="tablecell background"></div>
         <div class="tablecell background"></div>
         <div class="tablecell background"></div>
@@ -286,7 +286,7 @@
       </div>
       <% @users.users_with_ratings.each do |user| %>
         <div class="tablerow">
-          <div class="tablecell" style="width:16%">
+          <div class="tablecell" style="width:10%">
             <% if user_signed_in? %>
               <% if current_user.admin_pa_management_group %>
                 <% if user.dummy_group %>
@@ -355,7 +355,7 @@
   <div class="bottom_inner_content">
     <div class="table">
       <div class="tablerow">
-        <div class="tablecell header background">non-rated members</div>
+        <div class="tablecell header background">non-rated</div>
         <div class="tablecell background"></div>
         <div class="tablecell background"></div>
         <div class="tablecell background"></div>
@@ -366,7 +366,7 @@
       </div>
       <% @users.users_with_no_ratings.each do |user| %>
         <div class="tablerow">
-          <div class="tablecell" style="width:16%">
+          <div class="tablecell" style="width:10%">
             <% if user_signed_in? %>
               <% if current_user.admin_pa_management_group %>
                 <% if user.dummy_group %>
