@@ -1,4 +1,4 @@
-<h1>events [<%= @events.live_events.open_events.count %>]
+<h1>active events [<%= @events.live_events.open_events.count %>]
   <div class="h1_subtitle"><i class="fa fa-info-circle"></i> displays all active events on the platform [ordered by date held]</div>
 </h1>
 
@@ -30,9 +30,8 @@
           </div>
           <div class="tablecell">
             <div class="faint_text_format">date</div> 
-            <div class="main_text_format">
-              <%= event.date.strftime("%a, %d %b %Y") %>
-            </div>
+            <div class="main_text_format"><%= event.date.strftime("%a, %d %b %Y") %></div>
+            <div class="ref_id">£<%= event.price %></div>
           </div>
           <div class="tablecell">
             <div class="faint_text_format">
@@ -65,8 +64,12 @@
             </div>
           </div>
           <div class="tablecell">
-            <div class="faint_text_format">attendants</div> 
-            <div class="main_text_format"><%= event.payments.count %></div>
+            <div>
+              <span class="main_text_format"><%= event.payments.count %>:</span> <span class="faint_text_format">attendants</span> 
+            </div>
+            <div>
+              <span>Amt: </span><span class="ref_id">£<%= (event.price) * (event.payments.count) %></span>
+            </div>
           </div>
           <div class="tablecell">
             <div class="faint_text_format">host</div> 
