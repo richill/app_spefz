@@ -76,7 +76,8 @@
         <div class="bottom_inner_content">
           <div class="table">
             <div class="tablerow">
-              <div class="tablecell header background">all listed payments</div>
+              <div class="tablecell header background">payments</div>
+              <div class="tablecell background"></div>
               <div class="tablecell background"></div>
               <div class="tablecell background"></div>
               <div class="tablecell background"></div>
@@ -88,7 +89,7 @@
             </div>
             <% @payments.each do |payment| %>
               <div class="tablerow">
-                <div class="tablecell">
+                <div class="tablecell" style="width:10%">
                   <div class="user_name"><%= link_to "#{payment.user.firstname} #{payment.user.lastname}", user_path(payment.user), target:"_blank" %></div>
                   <div class="ref_id"><%= payment.user.reference %></div>
                   <% if payment.user.subscribed? %>
@@ -114,11 +115,23 @@
                     <% if payment.event_id? %>
                       <div style="color:#4BB4BF;"><%= "payment" %></div>
                       <div class="ref_id"><%= payment.reference %></div>
-                      <div class="faint_text_format"><%# payment.event_payment_date.strftime("%a, %d %b %Y") %></div>
+                      <div class="faint_text_format">
+                        <% if payment.event_payment_date.present? %>
+                          <%= payment.event_payment_date.strftime("%a, %d %b %Y") %>
+                        <% else %>
+                          <%= "-" %>
+                        <% end %>
+                      </div>
                     <% elsif payment.subscription_id? %>
                       <div style="color:#58CDA6;"><%= "subscription" %></div> 
                       <div class="ref_id"><%= payment.reference %></div>
-                      <div class="faint_text_format"><%# payment.subscription_payment_date %></div>
+                      <div class="faint_text_format">
+                        <% if payment.subscription_payment_date.present? %>
+                          <%= payment.subscription_payment_date.strftime("%a, %d %b %Y") %>
+                        <% else %>
+                          <%= "-" %>
+                        <% end %>
+                      </div>
                     <% end %>
                   </div>
                 </div>
@@ -144,13 +157,21 @@
                   </div>
                 </div>
 
-                <div class="tablecell">
-                  <div class="faint_text_format">[Stripe] Sub_id</div> 
-                  <div class="main_text_format">
-                    <%= payment.stripe_subscription_id %>
+                <% if payment.stripe_payment_id == "none" %>
+                  <div class="tablecell">
+                    <div class="faint_text_format">[Stripe] Sub_id</div> 
+                    <div class="main_text_format">
+                      <%= payment.stripe_subscription_id %>
+                    </div>
                   </div>
-                </div>
-
+                <% else %>
+                  <div class="tablecell">
+                    <div class="faint_text_format">[Stripe] Payment_id</div> 
+                    <div class="main_text_format">
+                      <%= payment.stripe_payment_id %>
+                    </div>
+                  </div>
+                <% end %>
 
                 <div class="tablecell">
                   <div class="faint_text_format">Card</div> 
