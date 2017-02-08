@@ -119,6 +119,9 @@ cmr07 = CategoryManagementgroup.create!(name:'Event Management Group')
 cmr08 = CategoryManagementgroup.create!(name:'Management Group') #superior group
 cmr09 = CategoryManagementgroup.create!(name:'Sales/Marketing Group')
 
+Subscription.delete_all
+sb01 = Subscription.create!(title:'premium', price: 15.0)
+
 
 
 
