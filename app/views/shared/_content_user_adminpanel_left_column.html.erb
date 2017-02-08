@@ -3,8 +3,8 @@
   <ul>
     <% if current_user.admin_pa_management_group %>
       <li>
-        <div class="list_options active">
-          <%= link_to dashboard_user_path(current_user) do %>
+        <div class="list_options">
+          <%= link_to dashboard_user_path(current_user), :class => is_active?("dashboard") do %>
           <span><i class="fa fa-tachometer" aria-hidden="true"></i></span>
           <span class="option_header">overview</span>
           <% end %>
@@ -12,7 +12,7 @@
       </li>
       <li>
         <div class="list_options">
-          <%= link_to analytics_user_path(current_user) do %>
+          <%= link_to analytics_user_path(current_user), :class => is_active?("analytics") do %>
           <span><i class="fa fa-bar-chart" aria-hidden="true"></i></span>
           <span class="option_header">analytics</span>
           <% end %>
@@ -20,7 +20,7 @@
       </li>
       <li>
         <div class="list_options">
-          <%= link_to company_user_path(current_user) do %>
+          <%= link_to company_user_path(current_user), :class => is_active?("company") do %>
           <span><i class="fa fa-building-o" aria-hidden="true"></i></span>
           <span class="option_header">spefz ltd</span>
           <% end %>
@@ -28,7 +28,7 @@
       </li>
       <li>
         <div class="list_options">
-          <%= link_to stats_users_user_path(current_user) do %>
+          <%= link_to stats_users_user_path(current_user), :class => is_active?("stats_users") do %>
           <span><i class="fa fa-user" aria-hidden="true"></i></span>
           <span class="option_header">users</span>
           <% end %>
@@ -36,7 +36,7 @@
       </li>
       <li>
         <div class="list_options">
-          <%= link_to groups_user_path(current_user) do %>
+          <%= link_to groups_user_path(current_user), :class => is_active?("groups") do %>
             <span><i class="fa fa-user" aria-hidden="true"></i></span>
             <span class="option_header">groups</span>
           <% end %>
@@ -46,7 +46,7 @@
     <% if current_user.admin_pa_management_group || current_user.pa_event_mgt_group %>
       <li>
         <div class="list_options">
-          <%= link_to stats_socials_user_path(current_user) do %>
+          <%= link_to stats_socials_user_path(current_user), :class => is_active?("stats_socials") do %>
             <span><i class="fa fa-calendar" aria-hidden="true"></i></span>
             <span class="option_header">socials</span>
           <% end %>
@@ -54,7 +54,7 @@
       </li>
       <li>
         <div class="list_options">
-          <%= link_to stats_events_user_path(current_user) do %>
+          <%= link_to stats_events_user_path(current_user), :class => is_active?("stats_events") do %>
             <span><i class="fa fa-calendar-check-o" aria-hidden="true"></i></span>
             <span class="option_header">events</span>
           <% end %>
@@ -64,7 +64,7 @@
     <% if current_user.admin_pa_management_group %>
       <li>
         <div class="list_options">
-          <%= link_to transactions_user_path(current_user) do %>
+          <%= link_to transactions_user_path(current_user), :class => is_active?("transactions") do %>
             <span><i class="fa fa-credit-card" aria-hidden="true"></i></span>
             <span class="option_header">transactions</span>
           <% end %>
@@ -74,7 +74,7 @@
     <% if current_user.admin_pa_management_group || current_user.pa_administration_group %>
       <li>
         <div class="list_options">
-          <%= link_to stats_blogs_user_path(current_user) do %>
+          <%= link_to stats_blogs_user_path(current_user), :class => is_active?("stats_blogs") do %>
             <span><i class="fa fa-pencil-square-o" aria-hidden="true"></i></span>
             <span class="option_header">blogs</span>
           <% end %>
@@ -82,7 +82,7 @@
       </li>
       <li>
         <div class="list_options">
-          <%= link_to inquiries_user_path(current_user) do %>
+          <%= link_to inquiries_user_path(current_user), :class => is_active?("inquiries") do %>
             <span><i class="fa fa-rss" aria-hidden="true"></i></span>
             <span class="option_header">inquiries</span>
           <% end %>
@@ -90,7 +90,7 @@
       </li>
       <li>
         <div class="list_options">
-          <%= link_to reports_user_path(current_user) do %>
+          <%= link_to reports_user_path(current_user), :class => is_active?("reports") do %>
             <span><i class="fa fa-rss" aria-hidden="true"></i></span>
             <span class="option_header">report</span>
           <% end %>
