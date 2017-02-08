@@ -52,7 +52,7 @@
           <%= search_form_for(@search) do |f| %>
           <ul class="search_fields_left">
             <li class="field select_role"><%= f.text_field :reference_cont, placeholder: 'payment ref eg: SPz_nC8myG'%></li>
-            <li class="field select_mgtgroup"><%# f.text_field :email_cont, placeholder: 'poscode eg: W1D 6DG'%></li>
+            <li class="field select_mgtgroup"><%# f.text_field :user_id_cont, placeholder: 'user ref eg: SPz_mq_Mfy'%></li>
           </ul>   
 
           <ul class="search_fields_right">
@@ -100,7 +100,13 @@
                 </div>
 
                 <div class="tablecell">
-                  <div class="main_text_format">e: <%= mail_to "#{payment.user.email}", "#{payment.user.email}" %></div>
+                  <div class="main_text_format" style="text-transform:lowercase;">
+                    <% if current_user.admin_pa_management_group %>
+                      <span>e: <%= mail_to "#{payment.user.email}", "#{payment.user.email}" %></span>
+                    <% else %>
+                      <span>e: <%= link_to "#{payment.user.email}", "#{payment.user.email}" %></span>
+                    <% end %>
+                  </div>
                   <div class="faint_text_format"><%= payment.user.profession %></div>
                   <div class="faint_text_format">
                     <% if payment.user.city? %>
