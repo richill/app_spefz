@@ -235,7 +235,18 @@
                     <% end %>
                   </div>
                   <div class="location_info">location only displayed to host & attendees</div>
-                  <div><%= link_to(image_tag("http://maps.googleapis.com/maps/api/staticmap?key=#{ENV['SP_GOOGLE_API_SECRET_KEY']}&size=400x500&sensor=false&markers=#{@social.latitude}%2C#{@social.longitude}"), "#{@social.maplink}", target:"_blank") %></div>
+                  
+                  <%# if @social.latitude.present? && @social.longitude.present? %>
+                    <!-- <div><%# link_to(image_tag("http://maps.googleapis.com/maps/api/staticmap?key=#{ENV['SP_GOOGLE_API_SECRET_KEY']}&size=400x500&sensor=false&markers=#{@social.latitude}%2C#{@social.longitude}"), "#{@social.maplink}", target:"_blank") %></div> -->
+                  <%# else %>
+                    <%= link_to "#{@social.maplink}", target:"_blank" do %>
+                    <div class="map_container">
+                      <span class="img_map_content">click to view map</span>
+                      <span class="img_map"><%= image_tag("img_map_01.png") %></span>
+                    </div>
+                    <% end %>
+                  <%# end %>
+
                   <div class="divider"></div>
                   <div><i class="fa fa-calendar" aria-hidden="true"></i> <%= @social.date.strftime("%a, %d %b %Y") %> | <%= @social.time.strftime("%I:%M %p") %> </div>
                 </div>

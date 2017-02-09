@@ -1078,6 +1078,30 @@
 }
 
 
+// ---------------------------
+//   workings
+// ---------------------------
+
+.social_profile_page_section .column_left .map_container {
+  position: relative;
+}
+
+.social_profile_page_section .column_left .img_map_content {
+  position: absolute;
+  color: #fff !important;
+  background-color: rgba(225, 71, 62, 0.7) !important;
+  z-index: 1;
+  right: 44px;
+  text-transform: capitalize;
+  padding: 15px 20px;
+  top: 125px;
+  letter-spacing: 1px;
+  border-radius: 3px;
+}
+
+.social_profile_page_section .column_left .img_map {
+  opacity: 0.6;
+}
 
 
 

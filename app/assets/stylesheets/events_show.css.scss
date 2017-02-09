@@ -1076,6 +1076,30 @@
 
 
 
+// ---------------------------
+//   workings
+// ---------------------------
+
+.events_show_inner_section .column_left .map_container {
+  position: relative;
+}
+
+.events_show_inner_section .column_left .img_map_content {
+  position: absolute;
+  color: #fff !important;
+  background-color: rgba(225, 71, 62, 0.7) !important;
+  z-index: 1;
+  right: 58px;
+  text-transform: capitalize;
+  padding: 15px 20px;
+  top: 140px;
+  letter-spacing: 1px;
+  border-radius: 3px;
+}
+
+.events_show_inner_section .column_left .img_map {
+  opacity: 0.6;
+}
 
 
 

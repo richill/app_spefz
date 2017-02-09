@@ -189,9 +189,16 @@
                     <div><%= "#{@event.address}, #{@event.city}, #{@event.category_country.name}, #{@event.postcode}" %></div>
                   <% end %>
                 </div>
-                <% if @event.latitude.present? &&  @event.longitude.present? %>
-                  <div><%= link_to(image_tag("http://maps.googleapis.com/maps/api/staticmap?key=#{ENV['SP_GOOGLE_API_SECRET_KEY']}&size=400x500&sensor=false&markers=#{@event.latitude}%2C#{@event.longitude}"), "#{@event.maplink}", target:"_blank") %></div>
-                <% end %>
+                <%# if @event.latitude.present? && @event.longitude.present? %>
+                  <!-- <div><%# link_to(image_tag("http://maps.googleapis.com/maps/api/staticmap?key=#{ENV['SP_GOOGLE_API_SECRET_KEY']}&size=400x500&sensor=false&markers=#{@event.latitude}%2C#{@event.longitude}"), "#{@event.maplink}", target:"_blank") %></div> -->
+                <%# else %>
+                  <%= link_to "#{@event.maplink}", target:"_blank" do %>
+                  <div class="map_container">
+                    <span class="img_map_content">click to view map</span>
+                    <span class="img_map"><%= image_tag("img_map_01.png") %></span>
+                  </div>
+                  <% end %>
+                <%# end %>
               </div>
             </div>
           </div>
