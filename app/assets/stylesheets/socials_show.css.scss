@@ -677,6 +677,35 @@
   border-bottom: 1px solid rgba(75, 180, 191, 0.3);
 }
 
+.social_profile_page_section .column_left .map_container {
+  position: relative;
+}
+
+.social_profile_page_section .column_left .map_container:hover {
+  position: relative;
+  background-color: rgba(225, 71, 62, 0.2) !important;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+.social_profile_page_section .column_left .img_map_content {
+  position: absolute;
+  color: #fff !important;
+  background-color: rgba(225, 71, 62, 0.7) !important;
+  z-index: 1;
+  right: 44px;
+  text-transform: capitalize;
+  padding: 15px 20px;
+  top: 125px;
+  letter-spacing: 1px;
+  border-radius: 3px;
+}
+
+.social_profile_page_section .column_left .img_map {
+  opacity: 0.6;
+}
+
 .social_profile_page_section .column_left .left_container .aboutme_container {
   background-color: #4BB4BF !important;
   color: #fff !important;
@@ -1078,30 +1107,7 @@
 }
 
 
-// ---------------------------
-//   workings
-// ---------------------------
 
-.social_profile_page_section .column_left .map_container {
-  position: relative;
-}
-
-.social_profile_page_section .column_left .img_map_content {
-  position: absolute;
-  color: #fff !important;
-  background-color: rgba(225, 71, 62, 0.7) !important;
-  z-index: 1;
-  right: 44px;
-  text-transform: capitalize;
-  padding: 15px 20px;
-  top: 125px;
-  letter-spacing: 1px;
-  border-radius: 3px;
-}
-
-.social_profile_page_section .column_left .img_map {
-  opacity: 0.6;
-}
 
 
 
