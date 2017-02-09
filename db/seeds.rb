@@ -23,9 +23,6 @@ cb04 = CategoryBlog.create!(name:'Dating Tips')
 
 CategoryCountry.delete_all
 cc01 = CategoryCountry.create!(name:'United Kingdom')
-cc02 = CategoryCountry.create!(name:'United States')
-cc03 = CategoryCountry.create!(name:'Ghana')
-cc04 = CategoryCountry.create!(name:'Nigeria')
 
 CategoryContactclient.delete_all
 ccc01 = CategoryContactclient.create!(name:'Spefz Member')
