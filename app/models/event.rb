@@ -63,7 +63,7 @@ class Event < ActiveRecord::Base
   scope :events_access_above_user_score, -> (user) {where(['event_score_access > ?', user.overall_ratings])}
   #displays all events with event_score_access above user overall rating
 
-  scope :event_access_blank_or_null, -> () {where(["event_score_access IS NULL or CAST(event_score_access as text) = ''"])}
+  #scope :event_access_blank_or_null, -> () {where(["event_score_access IS NULL or CAST(event_score_access as text) = ''"])}
   #displays all events with event_score_access that nil or ""
   
   scope :expired_events, -> {where(['date < ?', Date.current])}
