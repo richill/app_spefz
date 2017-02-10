@@ -54,11 +54,14 @@ class Event < ActiveRecord::Base
   geocoded_by :location                               # can also be an IP address
   after_validation :geocode, if: :address_changed?    # auto-fetch coordinates
 
-  scope :events_access_below_user_score, -> (user) {where(['event_score_access <= ? OR event_score_access IS ? OR event_score_access IS ?', user.overall_ratings, nil, ""])}
-  #displays all events with event_score_access above user overall rating
+  # scope :events_access_below_user_score, -> (user) {where(['event_score_access <= ? OR event_score_access IS ? OR event_score_access IS ?', user.overall_ratings, nil, ""])}
+  # #displays all events with event_score_access below user overall rating
+
+  scope :events_access_below_user_score, -> (user) {where(['event_score_access <= ?', user.overall_ratings])}
+  #displays all events with event_score_access below user overall rating
 
   scope :events_access_above_user_score, -> (user) {where(['event_score_access > ?', user.overall_ratings])}
-  #displays all events with event_score_access below user overall rating
+  #displays all events with event_score_access above user overall rating
 
   scope :event_access_blank_or_null, -> () {where(["event_score_access IS NULL or CAST(event_score_access as text) = ''"])}
   #displays all events with event_score_access that nil or ""
