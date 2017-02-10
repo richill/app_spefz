@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170202214851) do
+ActiveRecord::Schema.define(version: 20170210203906) do
 
   create_table "activities", force: :cascade do |t|
     t.integer  "trackable_id"
@@ -213,7 +213,7 @@ ActiveRecord::Schema.define(version: 20170202214851) do
     t.boolean  "close"
     t.string   "reference"
     t.string   "slug"
-    t.string   "event_score_access"
+    t.integer  "event_score_access"
     t.boolean  "display_match"
   end
 
