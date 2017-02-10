@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170210203906) do
+ActiveRecord::Schema.define(version: 20170202214851) do
 
   create_table "activities", force: :cascade do |t|
     t.integer  "trackable_id"
@@ -213,7 +213,7 @@ ActiveRecord::Schema.define(version: 20170210203906) do
     t.boolean  "close"
     t.string   "reference"
     t.string   "slug"
-    t.integer  "event_score_access"
+    t.string   "event_score_access"
     t.boolean  "display_match"
   end
 
@@ -243,24 +243,10 @@ ActiveRecord::Schema.define(version: 20170210203906) do
   add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id"
   add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
 
-  create_table "friends", force: :cascade do |t|
-    t.string   "email"
+  create_table "friendships", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
-
-  create_table "friendships", force: :cascade do |t|
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.integer  "user_id"
-    t.integer  "friend_id"
-    t.string   "status"
-    t.datetime "accepted_at"
-  end
-
-  add_index "friendships", ["friend_id"], name: "index_friendships_on_friend_id"
-  add_index "friendships", ["user_id", "friend_id"], name: "index_friendships_on_user_id_and_friend_id", unique: true
-  add_index "friendships", ["user_id"], name: "index_friendships_on_user_id"
 
   create_table "hosts", force: :cascade do |t|
     t.integer  "event_id"
