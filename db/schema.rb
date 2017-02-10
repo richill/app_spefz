@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170210205847) do
+ActiveRecord::Schema.define(version: 20170210211336) do
 
   create_table "activities", force: :cascade do |t|
     t.integer  "trackable_id"
@@ -246,6 +246,9 @@ ActiveRecord::Schema.define(version: 20170210205847) do
   create_table "friendships", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "user_id"
+    t.integer  "friend_id"
+    t.string   "status"
   end
 
   create_table "hosts", force: :cascade do |t|
