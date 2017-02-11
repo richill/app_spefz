@@ -53,7 +53,6 @@ class UsersController < ApplicationController
 
   def account
     if current_user.admin_pa_management_group || current_user == @user
-      #@user_payments = Event.booked_events(@user).order("created_at desc")
       @user_payments = @user.payments.valid_payments.status_success.order("created_at desc")
       @user_subscription = @user.payments.valid_subscriptions.status_success.order("created_at desc")
     else

@@ -8,8 +8,12 @@ class Payment < ActiveRecord::Base
   scope :by_females, -> { joins(user: :category_gender).where(category_genders: { name: 'Female' }) }
   scope :by_males, -> { joins(user: :category_gender).where(category_genders: { name: 'Male' }) }
 
-  scope :valid_payments, -> {where(['subscription_payment_date = ? OR subscription_payment_date IS ?', false, nil])}
-  scope :valid_subscriptions, -> {where(['event_payment_date = ? OR event_payment_date IS ?', false, nil])}
+  scope :valid_payments, -> {where(['subscription_payment_date = ?', "none"])}
+  # scope :valid_payments, -> {where(['subscription_payment_date = ? OR subscription_payment_date IS ?', false, nil])}
+
+  scope :valid_subscriptions, -> {where(['event_payment_date = ?', "none"])}
+  # scope :valid_subscriptions, -> {where(['event_payment_date = ? OR event_payment_date IS ?', false, nil])}
+
   scope :status_success, -> {where(['status = ?', "success"])}
 
   scope :created_this_month, -> { where(created_at: Time.now.beginning_of_month..Time.now.end_of_month) }

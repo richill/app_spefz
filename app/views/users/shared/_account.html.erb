@@ -17,7 +17,7 @@
         </div>
         <div class="user_general_settings_inner_section user_account_section">
 
-          <%# unless @user.subscribed? || @user_payments.present? || @user.recent_subscription_cancel_date.present? %>
+          <% unless @user.subscribed? || @user_payments.present? || @user.recent_subscription_cancel_date.present? %>
             <div class="paymt_cover no_subscription_event_paymts">
               <div class="pymt_header">no transactions</div>
               <div class="pymt_sub_header" style="padding: 15px 10px; margin-bottom: 15px;">
@@ -29,7 +29,7 @@
                 <span>You have not made any recent payments to attend an event/speed-social <span class="divider">|</span> <span class="info_link"><%= link_to "view speed-socials",  events_path %></span></span>
               </div>
             </div>
-          <%# end %>
+          <% end %>
           
           <% if @user.subscribed? || @user.recent_subscription_cancel_date.present? %>
             <div class="paymt_cover subscription_paymts">
@@ -99,7 +99,7 @@
             </div>
           <% end %>
           
-          <%# if @user_payments.present? %>
+          <% if @user_payments.present? %>
           <div class="paymt_cover event_paymts">
             <div class="pymt_header">event payments</div>
             <div class="pymt_sub_header">
@@ -133,7 +133,7 @@
               </table>
             </div>    
           </div>
-          <%# end %>
+          <% end %>
 
         </div>
       </div>
