@@ -80,6 +80,7 @@ class PaymentsController < ApplicationController
           stripe_payment_id: "none",
           subscription_payment_date: DateTime.now,
           event_payment_date: "none",
+          event_payment_date_status: "none",
           user_card_type: params[:card_brand],
           user_card_last4: params[:card_last4],
           user_card_exp_month: params[:card_exp_month],
@@ -151,6 +152,7 @@ class PaymentsController < ApplicationController
           stripe_subscription_id: "none",
           stripe_payment_id: charge.id,
           subscription_payment_date: "none",
+          subscription_payment_date_status: "none",
           event_payment_date: DateTime.now,
           user_card_type: params[:card_brand],
           user_card_last4: params[:card_last4],
@@ -267,6 +269,6 @@ class PaymentsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def payment_params
-    params.require(:payment).permit(:email, :user_id, :subscription_id, :reference, :event_id)
+    params.require(:payment).permit(:email, :user_id, :subscription_id, :reference, :event_id, :event_payment_date_status, :subscription_payment_date_status)
   end
 end
