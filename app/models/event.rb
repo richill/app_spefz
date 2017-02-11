@@ -156,7 +156,7 @@ class Event < ActiveRecord::Base
     events = Event.all
     rating_sum = events.map(&:overall_ratings).sum
     rating_count = events.map(&:overall_ratings).count
-    avg_score = rating_sum / rating_count
+    avg_score = rating_sum / (rating_count.nonzero? || 1)
     avg_score.round(1)
   end
 
@@ -172,7 +172,7 @@ class Event < ActiveRecord::Base
     refined_ratings = all_ratings - [0]
     refined_ratings_sum = refined_ratings.sum
     refined_ratings_count = refined_ratings.count
-    avg_score = refined_ratings_sum / refined_ratings_count
+    avg_score = refined_ratings_sum / (refined_ratings_count.nonzero? || 1)
     avg_score.round(1)
   end
 
