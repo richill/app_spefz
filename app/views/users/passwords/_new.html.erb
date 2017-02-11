@@ -9,7 +9,7 @@
             <ul>
               <li><%= link_to "Sign up", new_user_registration_path %></li>
               <li><%= link_to "How it works", ".howitworksheader", rel: "relativeanchor" %></li>
-              <li><%= link_to "About us", ".aboutusheader", rel: "relativeanchor" %></li>
+              <li><%= link_to "About us", about_us_path, rel: "relativeanchor" %></li>
             </ul>
           </span>
         </div>
@@ -59,7 +59,7 @@
         </div>
         <div class="footer_links">
           <ul class="inline-list">
-            <li><%= link_to "about us", ".aboutusheader", rel: "relativeanchor" %></li>
+            <li><%= link_to "about us", about_us_path, rel: "relativeanchor" %></li>
             <li><%= link_to "how it works", ".howitworksheader", rel: "relativeanchor" %></li>
             <li><%= link_to "signup", new_user_registration_path %></li>
             <li><%= link_to "we are hiring!", "https://angel.co/spefz/jobs?utm_source=startup_profile_header", target: "_blank" %></li>

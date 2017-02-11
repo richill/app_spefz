@@ -1,35 +1,40 @@
 <div id="myModal-users-followers" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
   <div class="userfollowings_inner_container">
     <div class="header">Followers [<%= @user.followers.count %>]</div>
-    <div class="content_list">
-      <ul>
-        <% @user.passive_relationships.each do |user| %>
-          <li>
+    <% if @user.passive_relationships.present? %>
+      <div class="content_list">
+        <ul>
+          <% @user.passive_relationships.each do |user| %>
+            <li>
+              <div class="image_section">
+                <span class="img_cover">
+                  <% if user.follower.image_url.present? %>
+                    <%= link_to(image_tag(user.follower.image_url, :alt =>  "image", :class =>"#", id: ""), user_path(user.follower)) %>
+                  <% else %>
+                    <%= link_to(image_tag("img-profile-image-default.png", :alt =>  "image", :class =>"#", id: ""), user_path(user.follower)) %>
+                  <% end %>
+                </span>
+              </div>
 
-            <div class="image_section">
-              <span class="img_cover">
-                <% if user.follower.image_url.present? %>
-                  <%= link_to(image_tag(user.follower.image_url, :alt =>  "image", :class =>"#", id: ""), user_path(user.follower)) %>
-                <% else %>
-                  <%= link_to(image_tag("img-profile-image-default.png", :alt =>  "image", :class =>"#", id: ""), user_path(user.follower)) %>
-                <% end %>
-              </span>
-            </div>
+              <div class="user_info_section">
+                <div class="follower_following_name"><%= link_to truncate("#{user.follower.firstname} #{user.follower.lastname}", length: 25), user_path(user.follower) %></div>
+              <div class="user_profession"><%= truncate(user.follower.profession, length: 25) %></div>
+              </div>
 
-            <div class="user_info_section">
-              <div class="follower_following_name"><%= link_to truncate("#{user.follower.firstname} #{user.follower.lastname}", length: 25), user_path(user.follower) %></div>
-            <div class="user_profession"><%= truncate(user.follower.profession, length: 25) %></div>
-            </div>
-
-            <div class="action_btn_section hide">         
-              <span class="follow_unfollow_form btn"><%= link_to "unfollow", user, method: :delete, html: { method: :delete }, remote: true %></span>
-            </div>
-
-          </li>
-          <div class="clear"></div>
-        <% end %>
-      </ul>
-    </div> 
+              <div class="action_btn_section hide">         
+                <span class="follow_unfollow_form btn"><%= link_to "unfollow", user, method: :delete, html: { method: :delete }, remote: true %></span>
+              </div>
+            </li>
+            <div class="clear"></div>
+          <% end %>
+        </ul>
+      </div>
+    <% else %>
+      <div class="content_list">
+        <div class="no_content_info">you currently have no followers</div>
+      </div>
+    <% end %> 
     <a class="close-reveal-modal cancel_button" aria-label="Close">&#215;</a>
   </div>
+  <div class="link_container"><%= link_to "view all", followers_user_path(current_user) %></div>
 </div>
