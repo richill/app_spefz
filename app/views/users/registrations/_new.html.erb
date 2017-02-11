@@ -7,7 +7,7 @@
           <span class="logo"><%= link_to(image_tag("img_spefz_logo.png", :alt =>  "alt text", :class =>"#"), root_path) %><span class="logo_text">pefz</span></span>
           <span class="links">
             <ul>
-              <li><%= link_to "Sign in", user_session_path %></li>
+              <li><%= link_to "Sign in", signin_path %></li>
               <li><%= link_to "How it works", root_path, class: "howitworksheader", rel: "relativeanchor" %></li>
               <li><%= link_to "About us", about_us_path, rel: "relativeanchor" %></li>
             </ul>
@@ -43,7 +43,7 @@
               <div class="terms_info">By clicking on the "Sign up" button, you agree to our <%= link_to "Terms & Conditions", terms_path %> </div>
             </div>
           </div>
-          <div class="signup_inner_bottom_content">Already a Spefz Member? <%= link_to "Sign in now", user_session_path %></div>
+          <div class="signup_inner_bottom_content">Already a Spefz Member? <%= link_to "Sign in now", signin_path %></div>
         </div>
       </div>
       <!-- banner content -->
