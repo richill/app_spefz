@@ -37,6 +37,10 @@ Rails.application.routes.draw do
   resources :favourite_events, only: [:create, :destroy]
   resources :attending_events, only: [:create, :destroy]
 
+  devise_scope :user do
+    get 'signin', to: 'devise/sessions#new', as: "user_session" #signin_path
+    get 'signup', to: 'devise/registrations#new', as: "new_user_registration" # custom path to sign_up/registration
+  end
 
   devise_for :users, controllers: {registrations: 'users/registrations'}, defaults: { format: 'html' }
   resources :users do
