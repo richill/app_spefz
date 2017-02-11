@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170210211336) do
+ActiveRecord::Schema.define(version: 20170211154827) do
 
   create_table "activities", force: :cascade do |t|
     t.integer  "trackable_id"
@@ -383,8 +383,8 @@ ActiveRecord::Schema.define(version: 20170210211336) do
     t.integer  "user_id"
     t.integer  "subscription_id"
     t.string   "reference"
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
     t.integer  "event_id"
     t.string   "stripe_customer_id"
     t.string   "stripe_subscription_id"
@@ -396,6 +396,8 @@ ActiveRecord::Schema.define(version: 20170210211336) do
     t.integer  "user_card_exp_month"
     t.integer  "user_card_exp_year"
     t.string   "status"
+    t.string   "event_payment_date_status"
+    t.string   "subscription_payment_date_status"
   end
 
   create_table "rates", force: :cascade do |t|
