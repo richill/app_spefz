@@ -10,62 +10,66 @@
               <div class="card_main_title">my social cards</div>
               <div class="card_sub_title">View listed members whom attended the events you were at and connect</div>
             </div>
-            <ul>
-              <!-- event_card -->
-              <% @user_event_cards.each do |card| %>
-                <li class="medium-12 columns listed_event_cards">
-                  <div class="medium-12 columns image_content_info">
-                    <!-- left_evt content -->
-                    <div class="left_evt">
-                      <div class="img_cover">
-                        <% if card.event.image.present? %>
-                          <% if card.card_status_open? %>
-                            <%= link_to(image_tag("#{card.event.image_url}", :alt =>  "image", :class =>"#"), card) %>
+            <% if @user_event_cards.present? %>
+              <ul>
+                <!-- event_card -->
+                <% @user_event_cards.each do |card| %>
+                  <li class="medium-12 columns listed_event_cards">
+                    <div class="medium-12 columns image_content_info">
+                      <!-- left_evt content -->
+                      <div class="left_evt">
+                        <div class="img_cover">
+                          <% if card.event.image.present? %>
+                            <% if card.card_status_open? %>
+                              <%= link_to(image_tag("#{card.event.image_url}", :alt =>  "image", :class =>"#"), card) %>
+                            <% else %>
+                              <%= link_to(image_tag("#{card.event.image_url}", :alt =>  "image", :class =>"#"), event_path(card.event)) %>
+                            <% end %>
                           <% else %>
-                            <%= link_to(image_tag("#{card.event.image_url}", :alt =>  "image", :class =>"#"), event_path(card.event)) %>
+                            <%= link_to(image_tag("img_feed_07.png", :alt =>  "image", :class =>"#"), event_path(card.event)) %>
                           <% end %>
-                        <% else %>
-                          <%= link_to(image_tag("img_feed_07.png", :alt =>  "image", :class =>"#"), event_path(card.event)) %>
-                        <% end %>
+                        </div>
                       </div>
-                    </div>
 
-                    <!-- middle_evt content -->
-                    <div class="middle_evt">
-                      <div class="title">
-                        <% if card.card_status_open? %>
-                          <%= link_to "#{card.event.title}", card %>
-                        <% else %>
-                          <%= link_to "#{card.event.title}", event_path(card.event) %>
-                        <% end %>
+                      <!-- middle_evt content -->
+                      <div class="middle_evt">
+                        <div class="title">
+                          <% if card.card_status_open? %>
+                            <%= link_to "#{card.event.title}", card %>
+                          <% else %>
+                            <%= link_to "#{card.event.title}", event_path(card.event) %>
+                          <% end %>
+                        </div>
+                        <div class="info"><i class="fa fa-map-marker" aria-hidden="true"></i> <%= card.event.venuename %></div>
+                        <div class="info"><i class="fa fa-calendar" aria-hidden="true"></i> <%= card.event.date.strftime("%A, %d %b") %></div>
+                        <div class="info"><i class="fa fa-clock-o" aria-hidden="true"></i> <%= card.event.time.strftime("%H:%M") %>h - <%= card.event.time_end.strftime("%H:%M") %>h</div>
+                        <div class="info city_country"><i class="fa fa-map-pin" aria-hidden="true"></i> <%= card.event.city %>, <%= card.event.category_country.name %></div>
                       </div>
-                      <div class="info"><i class="fa fa-map-marker" aria-hidden="true"></i> <%= card.event.venuename %></div>
-                      <div class="info"><i class="fa fa-calendar" aria-hidden="true"></i> <%= card.event.date.strftime("%A, %d %b") %></div>
-                      <div class="info"><i class="fa fa-clock-o" aria-hidden="true"></i> <%= card.event.time.strftime("%H:%M") %>h - <%= card.event.time_end.strftime("%H:%M") %>h</div>
-                      <div class="info city_country"><i class="fa fa-map-pin" aria-hidden="true"></i> <%= card.event.city %>, <%= card.event.category_country.name %></div>
-                    </div>
-                    
-                    <!-- right_evt content -->
-                    <div class="right_evt">
-                      <div class="right_evt_container">
-                        <% if card.card_status_open? %>
-                          <div class="btn_card_status_open"><%= link_to "view attendees & connect", card %></div>
-                          <div class="rate_conainer">
-                            <span class="rate_title">Rate Event:</span>
-                            <span class="rate_stars"><%= rating_for card.event, 'atmosphere', cancel_place: "right", disable_after_rate: true %></span>
-                          </div>
-                        <% else %>
-                          <div class="btn_card_status_pending"><%= link_to "not yet open", '#' %></div>
-                        <% end %>
+                      
+                      <!-- right_evt content -->
+                      <div class="right_evt">
+                        <div class="right_evt_container">
+                          <% if card.card_status_open? %>
+                            <div class="btn_card_status_open"><%= link_to "view attendees & connect", card %></div>
+                            <div class="rate_conainer">
+                              <span class="rate_title">Rate Event:</span>
+                              <span class="rate_stars"><%= rating_for card.event, 'atmosphere', cancel_place: "right", disable_after_rate: true %></span>
+                            </div>
+                          <% else %>
+                            <div class="btn_card_status_pending"><%= link_to "not yet open", '#' %></div>
+                          <% end %>
+                        </div>
                       </div>
-                    </div>
 
-                  </div>
-                  <div class="clear"></div>
-                </li>
-              <% end %>
-              <!-- event_card -->
-            </ul>
+                    </div>
+                    <div class="clear"></div>
+                  </li>
+                <% end %>
+                <!-- event_card -->
+              </ul>
+            <% else %>
+              <div><%= render 'shared/content_card_no_result' %></div>
+            <% end %>
           </div>
         </div>
       </div>
