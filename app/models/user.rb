@@ -73,6 +73,7 @@ class User < ActiveRecord::Base
   before_create :generate_reference_number
   before_create :assign_user_to_role_and_group
   before_create :assign_user_to_invitationoption
+  before_create :dob_check
 
 
   # ---- gender -----
@@ -347,6 +348,35 @@ class User < ActiveRecord::Base
     now = Time.now.utc.to_date
     now.year - birthdate.year - (birthdate.to_date.change(:year => now.year) > now ? 1 : 0)
   end
+
+  # def dob_check
+  #   (self.birthdate.to_date + 18.years) < Date.today
+  # end
+
+  def old_enough?
+    (self.birthdate.to_date + 18.years) < Date.today
+  end
+
+  def dob_check
+    if old_enough?
+      return true
+    else
+      errors.add(:birthdate, "must be older than 18 years")
+      return false
+    end
+  end
+
+  # def cannot_be_an_admin
+  #   if category_role.name == "Admin"
+  #     admin_users = company.userrs.detect { |u| u.category_role.name == "Admin" }
+  #     if admin_users.nil? #if the admin is not present the validation passes
+  #       return true
+  #     else
+  #       errors.add(:category_role, "*an admin already exists for the account - must select primary admin")
+  #       return false
+  #     end
+  #   end
+  # end
 
   # user can attend certains events depending on their age and event age group || no complete
   # def age_limit(event_id)

@@ -69,6 +69,13 @@
   padding: 25px;
 }
 
+@media only screen and (max-width: 670px) {
+  .users_sessions_new_section .signup_container {
+    margin: 0px 0px 0px;
+    padding: 15px;
+  }
+}
+
 .signup_name label {
   color: #fff !important;
 }
