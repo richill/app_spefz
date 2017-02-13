@@ -1,94 +1,13 @@
 <div class="users_sessions_new_section">
-  <div class="medium-12 columns users_inner_sessions_new_section upper_section">
-    <div class="banner_inner_section">
-      <!-- header -->
-      <div class="header_section">
-        <div class="logo_links_section">
-          <span class="logo"><%= link_to(image_tag("img_spefz_logo.png", :alt =>  "alt text", :class =>"#"), root_path) %><span class="logo_text">pefz</span></span>
-          <span class="links">
-            <ul>
-              <li><%= link_to "Sign up", new_user_registration_path %></li>
-              <li><%= link_to "How it works", root_path, class: "howitworksheader", rel: "relativeanchor" %></li>
-              <li><%= link_to "About us", about_us_path, rel: "relativeanchor" %></li>
-            </ul>
-          </span>
-        </div>
-      </div>
-
-      <!-- banner content -->
-      <div class="signup_content signupheader">
-        <div class="signup_inner_content">
-          <div class="signup_inner_upper_content">We use <%= link_to "cookies", terms_cookie_policy_path %>. If you use our website, we shall assume that you are happy with the use of cookies as described in our <%= link_to "privacy policy", terms_privacy_path %>.</div>
-          <div class="signup_inner_middle_content">
-            <h1>Welcome Back!</h1>
-            <div class="sub_header">Discover the most interesting socials and discussions happening around you.</div>
-            <div>
-
-              <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-                <div class="form-inputs">
-                  <%= f.input :email, required: false, autofocus: true, placeholder: "Email", label: false %>
-                  <%= f.input :password, required: false, placeholder: "Password", label: false %>
-                  <%# f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-                </div>
-                <div class="form-actions">
-                  <%= f.button :submit, "Sign in" %>
-                </div>
-              <% end %>
-
-              <div class="terms_info"><%= render "users/shared/links" %></div>
-            </div>
-          </div>
-          <div class="signup_inner_bottom_content">Not a Spefz Member? <%= link_to "Create an account", new_user_registration_path %></div>
-        </div>
-      </div>
-      <!-- banner content -->
-    </div>
-  </div>
-
-  <!-- footer -->
-  <div class="medium-12 columns lower_section">
-    <div class="medium-12 columns background_dark">
-      <div class="header_section">
-        <div class="header">find out more about us</div>
-        <div class="sub_header">we like to keep our members up to date via social media</div>
-      </div>
-      <div class="medium-12 columns content_details">
-        <div class="social_media">
-          <%= link_to '', 'https://www.facebook.com/Spefz-258495281186318/', class: "fa fa-facebook-square", target:"_blank" %>
-          <%= link_to '', 'https://twitter.com/spefz', class: "fa fa-twitter-square", target:"_blank" %>
-          <% link_to '', 'https://www.instagram.com/spefz/', class: "fa fa-linkedin-square", target:"_blank" %>
-          <%= link_to '', 'https://www.instagram.com/spefz/', class: "fa fa-instagram", target:"_blank" %>
-        </div>
-        <div class="footer_links">
-          <ul class="inline-list">
-            <li><%= link_to "about us", about_us_path, rel: "relativeanchor" %></li>
-            <li><%= link_to "how it works", root_path, class: "howitworksheader", rel: "relativeanchor" %></li>
-            <li><%= link_to "signup", new_user_registration_path %></li>
-            <li><%= link_to "we are hiring!", "https://angel.co/spefz/jobs?utm_source=startup_profile_header", target: "_blank" %></li>
-            <li>
-              <a href="#" data-reveal-id="myModal-contactus">contact us</a>
-              <div><%= render 'shared/modal_contactus' %></div>
-            </li>
-          </ul>
-        </div>
-        <div class="copyright_content">Copyright © 2017 Spefz App | ARTLoe Technologies Ltd</div>
-      </div>
-    </div>
-  </div>
-  <!-- footer -->
-</div>
-
-<div class="landingpage_singedout_section">
   <div class="medium-12 columns banner_singedout_section upper_section">
     <div class="banner_inner_section">
       <!-- header -->
       <div class="header_section">
         <div class="logo_links_section">
           <span class="logo"><%= link_to(image_tag("img_spefz_logo.png", :alt =>  "alt text", :class =>"#"), root_path) %></span>
-          <!-- <span class="logo_title">Spef<span>z</span></span> -->
           <span class="links">
             <ul>
-              <li><%= link_to "We are Hiring!", "https://angel.co/spefz/jobs?utm_source=startup_profile_header", target: "_blank" %></li>
+              <li><%= link_to "Sign up", new_user_registration_path %></li>
               <li><%= link_to "How it works", ".howitworksheader", rel: "relativeanchor" %></li>
               <li><%= link_to "About us", ".aboutusheader", rel: "relativeanchor" %></li>
             </ul>
@@ -99,11 +18,10 @@
       <!-- banner content -->
       <div class="banner_content signupheader">
         <h1>Meet New People, Enjoy Your City</h1>
-        <div class="sub_header">Discover the most interesting socials and discussions happening around you.</div>
+        <div class="sub_header">Welcome! Discover the most interesting socials & discussions happening around you.</div>
         <div class="signup_container">
           <!-- working content -->
           <div>
-            <%# render 'signups/form' %>
             <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
               <div class="form-inputs">
                 <%= f.input :email, required: false, autofocus: true, placeholder: "Email", label: false %>
@@ -115,7 +33,8 @@
               </div>
             <% end %>
           </div>
-          <div class="launch_info">launching in 2016</div>
+          <div class="signup_inner_upper_content">We use <%= link_to "cookies", terms_cookie_policy_path %>. If you use our website, we shall assume that you are happy with the use of cookies as described in our <%= link_to "privacy policy", terms_privacy_path %>.</div>
+          <div class="terms_info"><%= render "users/shared/links" %></div>
           <!-- working content -->
         </div>
       </div>
@@ -423,15 +342,11 @@
         </div>
         <div class="footer_links">
           <ul class="inline-list">
-            <li><%= link_to "about us", ".aboutusheader", rel: "relativeanchor" %></li>
+            <li><%= link_to "about us", about_us_path %></li>
             <li><%= link_to "how it works", ".howitworksheader", rel: "relativeanchor" %></li>
-            <li><%= link_to "signup", ".signupheader", rel: "relativeanchor"  %></li>
+            <li><%= link_to "signup", new_user_registration_path  %></li>
             <li><%= link_to "we are hiring!", "https://angel.co/spefz/jobs?utm_source=startup_profile_header", target: "_blank" %></li>
-            <li>
-              <a href="#" data-reveal-id="myModal-contactus">contact us</a>
-              <div><%# render 'shared/modal_contactus' %></div>
-              <div><%# render 'shared/modal_match_info' %></div>
-            </li>
+            <li><%= link_to "contact us", contact_us_path %></li>
           </ul>
         </div>
         <div class="copyright_content">Copyright © 2017 Spefz App | ARTLoe Technologies Ltd</div>

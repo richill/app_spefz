@@ -38,6 +38,7 @@ Rails.application.routes.draw do
   resources :attending_events, only: [:create, :destroy]
 
   devise_scope :user do
+    root  'devise/sessions#new'
     get 'signin', to: 'devise/sessions#new' #signin_path
     get 'signup', to: 'devise/registrations#new', as: "new_user_registration" # custom path to sign_up/registration
     #get 'signin', to: 'devise/sessions#new', as: "user_session" #signin_path
@@ -111,7 +112,7 @@ Rails.application.routes.draw do
   end
   
   #static pages
-  root  'static_pages#homepg'
+  # root  'static_pages#homepg'
   get   'about-us',                       to: 'static_pages#aboutpg'
   get   'error',                          to: 'static_pages#errorpg'
   get   'errorpermission',                to: 'static_pages#errorpermissionpg'

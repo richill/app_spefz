@@ -3,7 +3,7 @@
     File: views / users / sessions / _new.html.erb
   =========================================*/
 
-.landingpage_singedout_section .banner_singedout_section {
+.users_sessions_new_section .banner_singedout_section {
   background-color: green;
   background: url("img_background.jpg") no-repeat;
   background-position: 0% 60%;
@@ -11,13 +11,13 @@
   padding: 0px !important;
 }
 
-.landingpage_singedout_section .banner_singedout_section .banner_inner_section {
+.users_sessions_new_section .banner_singedout_section .banner_inner_section {
   background-color: rgba(0,0,0,0.6) !important;
   text-align: center;
   height: 650px;
 }
 
-.landingpage_singedout_section .banner_singedout_section h1 {
+.users_sessions_new_section .banner_singedout_section h1 {
   font-family: 'Lato', sans-serif;
   font-size: 48px;
   font-weight: 200;
@@ -28,889 +28,37 @@
   word-spacing: 3px;
 }
 @media only screen and (max-width: 670px) {
-  .landingpage_singedout_section .banner_singedout_section h1  {
+  .users_sessions_new_section .banner_singedout_section h1  {
     font-size: 30px;
   }
 }
 
-.landingpage_singedout_section .banner_singedout_section .banner_content {
+.users_sessions_new_section .banner_singedout_section .banner_content {
   margin: auto;
-  padding: 25px 15px;
-  margin-top: 50px;
-}
-@media only screen and (min-width: 940px) {
-  .landingpage_singedout_section .banner_singedout_section .banner_content {
-    width: 900px;
-    padding: 50px 0px;
-    text-align: left;
-  }
-}
-
-.landingpage_singedout_section .banner_singedout_section .sub_header {
-  font-family: "Lato", sans-serif;
-  font-size: 16px;
-  font-weight: 200;
-  color: #fff;
-  text-align: center;
-  word-spacing: 1px;
-  letter-spacing: 1px;
-}
-
-@media only screen and (max-width: 670px) {
-  .landingpage_singedout_section .banner_singedout_section .sub_header {
-    font-size: 15px;
-  }
-}
-
-.landingpage_singedout_section .signup_container {
-  background-color: rgba(255, 255, 255, 0.08) !important;
-  margin: 25px 0px 0px;
-  padding: 25px;
-}
-
-.signup_name label {
-  color: #fff !important;
-}
-
-.landingpage_singedout_section #user_email {
-  font-family: "Lato", sans-serif;
-  box-shadow: none !important;
-  outline: 0 !important;
-  padding: 0px 15px !important;
-  height: 50px;
-  color: #fff;
-  font-weight: 200 !important;
-  font-size: 18px;
-  width: 394px;
-  float: left;
-  margin-right: 30px;
-  background-color: transparent;
-  border: 1px solid #fff !important;
-}
-@media only screen and (max-width: 520px) {
-  .landingpage_singedout_section #user_email {
-    font-size: 15px;
-  }
-}
-@media only screen and (max-width: 940px) {
-  .landingpage_singedout_section #user_email {
-    width: 100%;
-    margin-right: 0px;
-  }
-}
-
-.landingpage_singedout_section #user_password {
-  font-family: "Lato", sans-serif;
-  box-shadow: none !important;
-  outline: 0 !important;
-  padding: 0px 15px !important;
-  height: 50px;
-  color: #fff;
-  font-weight: 200 !important;
-  font-size: 18px;
-  width: 394px;
-  float: right;
-  background-color: transparent;
-  border: 1px solid #fff !important;
-}
-@media only screen and (max-width: 520px) {
-  .landingpage_singedout_section #user_password {
-    font-size: 15px;
-  }
-}
-@media only screen and (max-width: 940px) {
-  .landingpage_singedout_section #user_password {
-    width: 100%;
-    margin-right: 0px;
-  }
-}
-
-.landingpage_singedout_section input[type="submit"] {
-  margin-bottom: 0px !important;
-  width: 100%;
-  background-color: rgba(225,71,62,0.7) !important;
-  font-weight: 200;
-  letter-spacing: 2px;
-  font-size: 18px;
-}
-
-.landingpage_singedout_section input[type="submit"]:hover {
-  background-color: rgba(47,63,91,0.7) !important;
-}
-
-.landingpage_singedout_section .notified_text {
-  color: #2F3F5B;
-  font-size: 13px;
-  text-align: center;
-  margin-top: 5px;
-}
-
-@media only screen and (max-width: 640px) {
-.landingpg_footer_section .social_media {
-    margin: 15px auto !important;
-    width: 270px !important;
-  }
-}
-
-@media only screen and (max-width: 800px) {
-  .landingpage_singedout_section .banner_singedout_section p {
-    font-size: 18px !important;
-  }
-}
-
-.landingpage_singedout_section .signedout_content_section .point {
-  margin-top: 15px !important
-}
-
-.landingpage_singedout_section .header_section {
-  padding: 15px 0px !important;
-}
-
-.landingpage_singedout_section .logo_links_section {
-  text-align: left;
-  margin: auto;
-}
-@media only screen and (min-width: 970px) {
-  .landingpage_singedout_section .logo_links_section {
-    width: 960px !important;
-  }
-}
-@media only screen and (max-width: 970px) {
-  .landingpage_singedout_section .logo_links_section {
-    padding: 0px 15px !important;
-  }
-}
-
-.landingpage_singedout_section .logo img {
-  width: 65px;
-  border-radius: 2px;
-  -webkit-transition: all 0.3s ease; 
-  -moz-transition: all 0.3s ease; 
-  -o-transition: all 0.3s ease; 
-}
-
-.landingpage_singedout_section .logo img:hover {
-  background-color: rgba(255, 255, 255, 0.1) !important;
-  padding: 15px;
-  -webkit-transition: all 0.3s ease; 
-  -moz-transition: all 0.3s ease; 
-  -o-transition: all 0.3s ease; 
-}
-
-.landingpage_singedout_section .logo_title {
-  font-family: "Lato", sans-serif;
-  font-size: 30px;
-  font-weight: 200;
-  color: #fff;
-}
-
-.landingpage_singedout_section .links {
-  float: right;
-  display: inline-block;
-}
-@media only screen and (max-width: 490px) {
-  .landingpage_singedout_section .links {
-    display: none !important;
-  }
-}
-
-.landingpage_singedout_section .links ul {
-  list-style-type: none;
-  padding: 14px 0px;
-  margin: 0px !important;
-}
-
-.landingpage_singedout_section .links ul li {
-  float: right;
-  margin-top: 3px;
-}
-
-.landingpage_singedout_section .links ul li a {
-  font-family: "Lato", sans-serif;
-  font-size: 18px;
-  font-weight: 200;
-  color: #fff !important;
-  background-color: rgba(255, 255, 255, 0.1) !important;
-  padding: 15px;
-  margin-left: 5px;
-  -webkit-transition: all 0.3s ease; 
-  -moz-transition: all 0.3s ease; 
-  -o-transition: all 0.3s ease; 
-}
-
-.landingpage_singedout_section .links ul li a:hover {
-  background-color: rgba(47,63,91,0.3) !important;
-  -webkit-transition: all 0.3s ease; 
-  -moz-transition: all 0.3s ease; 
-  -o-transition: all 0.3s ease; 
-}
-
-.landingpage_singedout_section .launch_info {
-  font-family: "Lato", sans-serif;
-  font-size: 10px;
-  font-weight: 200;
-  color: #fff;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  margin-top: 8px;
-  text-align: center;
-}
-
-.landingpage_singedout_section .lower_section {
-  padding: 0px !important;
-}
-
-.landingpage_singedout_section .content_container {
-  padding: 30px 0px !important;
-  background-color: red;
-  background: url("img_background_main.png") repeat;
-}
-
-.landingpage_singedout_section .header_section {
-  padding: 15px 0px;
-}
-
-.landingpage_singedout_section .header {
-  font-family: "Lato", sans-serif;
-  font-size: 35px;
-  font-weight: 300;
-  letter-spacing: 1px;
-  text-transform: capitalize;
-  text-align: center;
-  padding: 0px 15px !important;
-}
-
-.landingpage_singedout_section .sub_header {
-  font-family: "Lato", sans-serif;
-  font-size: 15px;
-  font-weight: 400;
-  letter-spacing: 1px;
-  text-transform: capitalize;
-  text-align: center;
-  padding: 15px !important;
-}
-
-.content_details {
-  padding: 15px 0px !important;
-}
-
-.landingpage_singedout_section .feed_container ul {
-  list-style-type: none;
-  margin: 0px !important;
-}
-
-.landingpage_singedout_section .feed_container ul li {
-  margin-bottom: 15px !important;
-}
-
-.landingpage_singedout_section .feed_container {
-  margin: auto;
-}
-@media only screen and (min-width: 1522px) {
-.landingpage_singedout_section .feed_container {
-    width: 1500px;
-  }
-}
-
-.landingpage_singedout_section .feed_inner_section {
-  // background-color: green;
-  background-color: #fff;
-  margin-bottom: 30px;
-}
-
-.landingpage_singedout_section .feed {
-  position: relative;
-}
-
-.landingpage_singedout_section .feed_header {
-  font-family: "Lato", sans-serif;
-  font-weight: 300;
-  color: #fff;
-  word-spacing: 3px;
-  text-transform: uppercase;
-  background-color: rgba(47,63,91,0.5) !important;
-  position: absolute;
-  z-index: 1000;
-  height: 80px;
-  width: 100%;
-  padding: 10px 15px;
-}
-
-.landingpage_singedout_section .feed_date {
-  margin-bottom: 3px;
-}
-
-.landingpage_singedout_section .feed_location {
-  margin-bottom: 3px;
-}
-@media screen and (min-width: 640px) and (max-width: 1145px) {
- .landingpage_singedout_section .feed_location {
-  display: none;
-  } 
-}
-
-.landingpage_singedout_section .feed_header .date {
-  margin-right: 5px;
-}
-
-.landingpage_singedout_section .feed_header .location {
-  margin-right: 10px;
-  margin-left: 2px;
-} 
-
-.landingpage_singedout_section .feed_header .price {
-  margin-right: 10px;
-  margin-left: 2px;
-} 
-
-.landingpage_singedout_section .feed_img img {
-  width: 100%;
-}
-
-.landingpage_singedout_section .feed_user {
-  width: 20%;
-  margin: auto;
-  height: 20%;
-  position: relative;
-}
-
-.landingpage_singedout_section .feed_user img {
-  position: absolute;
-  z-index: 1000;
-  bottom: -20px;
-  background-color: #fff;
-  padding: 2px;
-}
-
-.landingpage_singedout_section .feed_sub_title {
-  margin-top: 25px;
-  text-align: center;
-  border-bottom: 1px solid #f8f8f9;
-}
-
-.landingpage_singedout_section .feed_organizer {
-  font-family: "Lato", sans-serif;
-  font-size: 12px;
-  font-weight: 400;
-  color: #888888;
-  text-transform: uppercase;
-}
-
-.landingpage_singedout_section .feed_title {
-  font-family: "Lato", sans-serif;
-  font-size: 20px;
-  font-weight: bold;
-  color: #283041;
-  text-transform: uppercase;
-  margin-bottom: 15px;
-  line-height: 25px;
-}
-
-.landingpage_singedout_section .feed_comments_container {
-  padding: 10px;
-}
-@media only screen and (max-width: 960px) {
-  .landingpage_singedout_section .feed_comments_container {
-    display: none;
-  }
-}
-
-.landingpage_singedout_section .feed_comments_container ul li {
-  margin: 0px !important;  
-}
-
-.landingpage_singedout_section .feed_inner_comment_section {
-  padding: 5px !important;
-}
-
-.landingpage_singedout_section .feed_comments_container img {
-  border-radius: 2px;
-  padding-right: 5px !important;
-}
-
-.landingpage_singedout_section .feed_comment_img {
-  padding: 0px !important;
-}
-
-.landingpage_singedout_section .feed_comment {
-  padding: 0px !important;
-}
-
-.landingpage_singedout_section .feed_comment span {
-  font-family: "Lato", sans-serif;
-  color: #283041;
-  background-color: rgba(47,63,91,0.02) !important;
-  padding: 5px !important;
-}
-
-.landingpage_singedout_section .feed_comment span b a {
-  font-family: "Lato", sans-serif;
-  color: #E34B51 !important;
-  margin-right: 5px;
-}
-
-.landingpage_singedout_section .feed_comment span b a:hover {
-  text-decoration: underline;
-}
-
-.landingpage_singedout_section .booking {
-  border-top: 1px solid #f8f8f9;
-  padding: 15px;
-}
-
-.landingpage_singedout_section .booking a {
-  font-family: "Lato", sans-serif;
-  color: #fff !important;
-  text-transform: uppercase;
-  padding: 15px;
-  background-color: #E34B51;
-  width: 100% !important;
-  display: inline-block;
-  text-align: center;
-  -webkit-transition: all 0.3s ease; 
-  -moz-transition: all 0.3s ease; 
-  -o-transition: all 0.3s ease; 
-}
-
-.landingpage_singedout_section .booking a:hover {
-  background-color: #58CDA6 !important;
-  -webkit-transition: all 0.3s ease; 
-  -moz-transition: all 0.3s ease; 
-  -o-transition: all 0.3s ease; 
-}
-
-.landingpage_singedout_section .background_dark {
-  padding: 30px 0px !important;
-  background-size: cover;
-  background: url("img_background_main_02.png") repeat;
-  height: 600px;
-}
-@media only screen and (max-width: 600px) {
-  .landingpage_singedout_section .background_dark {
-    height: 750px;
-  }
-}
-
-.landingpage_singedout_section .background_dark .header {
-  color: #fff !important;
-}
-
-.landingpage_singedout_section .background_dark .sub_header {
-  color: #fff !important;
-  font-weight: 200 !important;
-}
-
-.landingpage_singedout_section .social_media {
-  text-align: center;
-}
-
-.landingpage_singedout_section .social_media a {
-  color: #fff !important;
-  font-size: 60px;
   padding: 0px 15px;
-  -webkit-transition: all 0.3s ease; 
-  -moz-transition: all 0.3s ease; 
-  -o-transition: all 0.3s ease; 
-}
-
-.landingpage_singedout_section .social_media a:hover {
-  color: #E34B51 !important;
-  -webkit-transition: all 0.3s ease; 
-  -moz-transition: all 0.3s ease; 
-  -o-transition: all 0.3s ease; 
-}
-
-.landingpage_singedout_section .phone_img_container {
-  width: 295px;
-  margin: auto;
-  margin-top: 25px;
-}
-
-.landingpage_singedout_section .apple_store_img_container {
-  position: absolute;
-  top: 350px;
-  right: 250px;
-  position: relative;
-}
-
-.landingpage_singedout_section .apple_store_img_container img {
-  border-radius: 3px;
-  position: absolute;
-  bottom: 700px;
-}
-@media only screen and (max-width: 815px) {
-  .landingpage_singedout_section .apple_store_img_container img {
-    display: none;
-  }
-}
-
-.landingpage_singedout_section .howitworks_container {
-  background-color: rgba(47,63,91,0.1) !important;
-  text-align: center;
-  padding: 15px;
-}
-
-.landingpage_singedout_section .howitworks_container i {
-  opacity: 0.8;
-}
-
-.landingpage_singedout_section .howitworks_container .fa-mobile {
-  font-size: 100px;
-  color: #283041;
-}
-
-.landingpage_singedout_section .howitworks_container .fa-calendar {
-  font-size: 60px;
-  color: #283041;
-  margin: 20px;
-}
-
-.landingpage_singedout_section .howitworks_container .fa-user-plus {
-  font-size: 60px;
-  color: #283041;
-  margin: 20px;
-}
-
-.landingpage_singedout_section .howitworks_container .fa-users {
-  font-size: 60px;
-  color: #283041;
-  margin: 20px;
-}
-
-.landingpage_singedout_section .howitworks_container .cover_number {
-  background-color: #E34B51;
-  width: 40px;
-  padding: 10px;
-  margin: auto;
-  border-radius: 2px;
-  font-size: 15px;
-  color: #fff;
-  margin-bottom: 15px;
-}
-
-.landingpage_singedout_section .howitworks_container .header_main {
-  font-size: 20px;
-  text-transform: capitalize;
-  margin-bottom: 10px;
-}
-
-.landingpage_singedout_section .howitworks_container .header_sub {
-  text-transform: capitalize;
-  font-size: 12px; 
-  color: #888888;
-}
-
-.landingpage_singedout_section .footer_links {
-  border-top: 1px solid #393838;
-  border-bottom: 1px solid #393838;
-  padding: 20px;
-  margin: auto;
-  margin-top: 40px;
-}
-
-.landingpage_singedout_section .footer_links ul {
-  margin-bottom: 0px !important;
-}
-@media only screen and (min-width: 500px) {
-  .landingpage_singedout_section .footer_links ul {
-    width: 500px;
-    margin: auto;
-  }
-}
-
-@media only screen and (max-width: 500px) {
-  .landingpage_singedout_section .footer_links ul li {
-    width: 100% !important;
-    text-align: center !important;
-    padding: 15px 0px !important;
-  }
-}
-
-.landingpage_singedout_section .footer_links a {
-  font-family: "Lato", sans-serif;
-  color: #fff !important;
-  font-weight: 300;
-  letter-spacing: 1px;
-  text-transform: capitalize;
-}
-
-
-.landingpage_singedout_section .footer_links a:hover {
-  color: #E34B51 !important;
-}
-
-.landingpage_singedout_section .copyright_content {
-  font-family: "Lato", sans-serif;
-  color: #fff;
-  font-size: 10px;
-  font-weight: 300;
-  letter-spacing: 1px;
-  text-transform: capitalize;
-  margin: auto;
-  margin-top: 25px;
-  text-align: center;
-}
-
-.landingpage_singedout_section .aboutus {
-  font-family: "Lato", sans-serif;
-  font-size: 15px;
-  font-weight: 400;
-  letter-spacing: 1px;
-  text-align: center;
-  padding: 0px 15px !important;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*=========================================
-    Section: signin page [old content]
-    File: views / users / sessions / _new.html.erb
-  =========================================*/
-
-.users_sessions_new_section .users_inner_sessions_new_section {
-  background: url("img_background_main.png") repeat;
-  padding: 0px !important;
-}
-
-.users_sessions_new_section .users_inner_sessions_new_section .banner_inner_section {
-  text-align: center;
-}
-
-.users_sessions_new_section .users_inner_sessions_new_section h1 {
-  font-family: 'Lato', sans-serif;
-  font-size: 48px;
-  font-weight: 300;
-  text-align: center;
-  margin: 0px;
-  color: #283041;
-  text-transform: capitalize;
-  word-spacing: 3px;
-}
-@media only screen and (max-width: 670px) {
-  .users_sessions_new_section .users_inner_sessions_new_section h1  {
-    font-size: 30px;
-  }
-}
-
-.users_sessions_new_section .users_inner_sessions_new_section .signup_content {
-  margin: auto;
-  padding: 25px 15px;
-}
-@media only screen and (min-width: 940px) {
-  .users_sessions_new_section .users_inner_sessions_new_section .signup_content {
-    width: 900px;
-    padding: 50px 0px 130px;
-    text-align: left;
-  }
-}
-
-.users_sessions_new_section .signup_inner_content {
-  background-color: #fff;
-  width: 600px;
-  margin: auto;
-}
-
-.users_sessions_new_section .signup_inner_upper_content {
-  font-family: "Lato", sans-serif;
-  font-weight: 300;
-  word-spacing: 2px;
-  color: #fff;
-  background-color: #58CDA6;
-  padding: 25px;
-  text-align: center;
-  line-height: 25px;
-}
-
-.users_sessions_new_section .signup_inner_upper_content a {
-  color: #fff !important;
-  text-decoration: underline;
-  -webkit-transition: all 0.3s ease; 
-  -moz-transition: all 0.3s ease; 
-  -o-transition: all 0.3s ease; 
-}
-
-.users_sessions_new_section .signup_inner_upper_content a:hover {
-  color: #283041 !important;
-  -webkit-transition: all 0.3s ease; 
-  -moz-transition: all 0.3s ease; 
-  -o-transition: all 0.3s ease; 
-}
-
-.users_sessions_new_section .signup_inner_middle_content {
-  background-color: #fff;
-  padding: 30px 60px;
-}
-
-.users_sessions_new_section .signup_inner_middle_content label {
-  font-family: "Lato", sans-serif;
-  color: #454d53;
-  font-size: 15px;
-  margin-bottom: 5px;
-}
-
-.users_sessions_new_section .signup_inner_middle_content #user_firstname {
-  font-family: "Lato", sans-serif;
-  box-shadow: none !important;
-  padding: 0px 15px !important;
-  height: 50px;
-  color: #454d53;
-  font-size: 15px;
-}
-
-.users_sessions_new_section .signup_inner_middle_content #user_lastname {
-  font-family: "Lato", sans-serif;
-  box-shadow: none !important;
-  padding: 0px 15px !important;
-  height: 50px;
-  color: #454d53;
-  font-size: 15px;
-}
-
-.users_sessions_new_section .signup_inner_middle_content #user_email {
-  font-family: "Lato", sans-serif;
-  box-shadow: none !important;
-  padding: 0px 15px !important;
-  height: 50px;
-  color: #454d53;
-  font-size: 15px;
-}
-
-
-.users_sessions_new_section .signup_inner_middle_content #user_password {
-  font-family: "Lato", sans-serif;
-  box-shadow: none !important;
-  padding: 0px 15px !important;
-  height: 50px;
-  color: #454d53;
-  font-size: 15px;
-}
-
-.users_sessions_new_section .signup_inner_middle_content #user_password_confirmation {
-  font-family: "Lato", sans-serif;
-  box-shadow: none !important;
-  padding: 0px 15px !important;
-  height: 50px;
-  color: #454d53;
-  font-size: 15px;
-}
-
-.users_sessions_new_section .signup_inner_middle_content #user_birthdate {
-  font-family: "Lato", sans-serif;
-  box-shadow: none !important;
-  padding: 0px 15px !important;
-  height: 50px;
-  color: #454d53;
-  font-size: 15px;
-}
-
-.users_sessions_new_section .signup_inner_middle_content #user_category_gender_id {
-  font-family: "Lato", sans-serif;
-  box-shadow: none !important;
-  padding: 0px 15px !important;
-  height: 50px;
-  color: #454d53;
-  font-size: 15px;
-  margin-bottom: 35px;
-}
-
-.users_sessions_new_section .signup_inner_middle_content .terms_info {
-  font-family: "Lato", sans-serif;
-  font-weight: 300;
-  word-spacing: 2px;
-  color: #283041;
   margin-top: 5px;
 }
-
-.users_sessions_new_section .signup_inner_middle_content .terms_info a {
-  color: #283041 !important;
-  text-decoration: underline;
-  -webkit-transition: all 0.3s ease; 
-  -moz-transition: all 0.3s ease; 
-  -o-transition: all 0.3s ease; 
+@media only screen and (min-width: 940px) {
+  .users_sessions_new_section .banner_singedout_section .banner_content {
+    width: 900px;
+    padding: 25px 0px;
+    text-align: left;
+    margin-top: 50px;
+  }
 }
 
-.users_sessions_new_section .signup_inner_middle_content .terms_info a:hover {
-  color: #E34B51 !important;
-  text-decoration: underline;
-  -webkit-transition: all 0.3s ease; 
-  -moz-transition: all 0.3s ease; 
-  -o-transition: all 0.3s ease; 
-}
-.users_sessions_new_section .signup_inner_bottom_content {
-  font-family: "Lato", sans-serif;
-  font-weight: 300;
-  word-spacing: 2px;
-  color: #fff;
-  background-color: #283041;
-  padding: 25px;
-  text-align: center;
-  line-height: 25px;
-}
-
-.users_sessions_new_section .signup_inner_bottom_content a {
-  color: #fff !important;
-  text-decoration: underline;
-  -webkit-transition: all 0.3s ease; 
-  -moz-transition: all 0.3s ease; 
-  -o-transition: all 0.3s ease; 
-}
-
-.users_sessions_new_section .signup_inner_bottom_content a:hover {
-  color: #E34B51 !important;
-  -webkit-transition: all 0.3s ease; 
-  -moz-transition: all 0.3s ease; 
-  -o-transition: all 0.3s ease; 
-}
-
-.users_sessions_new_section .users_inner_sessions_new_section .sub_header {
+.users_sessions_new_section .banner_singedout_section .sub_header {
   font-family: "Lato", sans-serif;
   font-size: 16px;
-  font-weight: 300;
-  color: #283041;
+  font-weight: 200;
+  color: #fff;
   text-align: center;
   word-spacing: 1px;
   letter-spacing: 1px;
 }
 
 @media only screen and (max-width: 670px) {
-  .users_sessions_new_section .users_inner_sessions_new_section .sub_header {
+  .users_sessions_new_section .banner_singedout_section .sub_header {
     font-size: 15px;
   }
 }
@@ -925,7 +73,7 @@
   color: #fff !important;
 }
 
-.users_sessions_new_section #signup_name {
+.users_sessions_new_section #user_email {
   font-family: "Lato", sans-serif;
   box-shadow: none !important;
   outline: 0 !important;
@@ -941,18 +89,18 @@
   border: 1px solid #fff !important;
 }
 @media only screen and (max-width: 520px) {
-  .users_sessions_new_section #signup_name {
+  .users_sessions_new_section #user_email {
     font-size: 15px;
   }
 }
 @media only screen and (max-width: 940px) {
-  .users_sessions_new_section #signup_name {
+  .users_sessions_new_section #user_email {
     width: 100%;
     margin-right: 0px;
   }
 }
 
-.users_sessions_new_section #signup_email {
+.users_sessions_new_section #user_password {
   font-family: "Lato", sans-serif;
   box-shadow: none !important;
   outline: 0 !important;
@@ -963,16 +111,16 @@
   font-size: 18px;
   width: 394px;
   float: right;
-  background-color: transparent;
+  background-color: transparent !important;
   border: 1px solid #fff !important;
 }
 @media only screen and (max-width: 520px) {
-  .users_sessions_new_section #signup_email {
+  .users_sessions_new_section #user_password {
     font-size: 15px;
   }
 }
 @media only screen and (max-width: 940px) {
-  .users_sessions_new_section #signup_email {
+  .users_sessions_new_section #user_password {
     width: 100%;
     margin-right: 0px;
   }
@@ -991,61 +139,6 @@
   background-color: rgba(47,63,91,0.7) !important;
 }
 
-.users_sessions_new_section .btn_signin a {
-  font-family: "Lato", sans-serif;
-  font-size: 18px !important;
-  font-weight: 300 !important;
-  color: #fff !important;
-  margin-bottom: 15px !important;
-  width: 100%;
-  background-color: rgba(88, 205, 166, 0.7) !important;
-  letter-spacing: 2px;
-  display: inline-block;
-  padding: 15px;
-  text-align: center;
-  -webkit-transition: all 0.3s ease; 
-  -moz-transition: all 0.3s ease; 
-  -o-transition: all 0.3s ease; 
-}
-@media only screen and (min-width: 490px) {
-  .users_sessions_new_section .btn_signin a {
-    display: none !important;
-  }
-}
-
-.users_sessions_new_section .btn_signin a:hover {
-  background-color: rgba(47, 63, 91, 0.7) !important;
-  -webkit-transition: all 0.3s ease; 
-  -moz-transition: all 0.3s ease; 
-  -o-transition: all 0.3s ease; 
-}
-
-
-.users_sessions_new_section .btn_signup a {
-  font-family: "Lato", sans-serif;
-  font-size: 18px !important;
-  font-weight: 300 !important;
-  color: #fff !important;
-  margin-bottom: 0px !important;
-  width: 100%;
-  background-color: rgba(225, 71, 62, 0.7) !important;
-  letter-spacing: 2px;
-  display: inline-block;
-  padding: 15px;
-  text-align: center;
-  -webkit-transition: all 0.3s ease; 
-  -moz-transition: all 0.3s ease; 
-  -o-transition: all 0.3s ease; 
-}
-
-.users_sessions_new_section .btn_signup a:hover {
-  background-color: rgba(47, 63, 91, 0.7) !important;
-  -webkit-transition: all 0.3s ease; 
-  -moz-transition: all 0.3s ease; 
-  -o-transition: all 0.3s ease; 
-}
-
-
 .users_sessions_new_section .notified_text {
   color: #2F3F5B;
   font-size: 13px;
@@ -1061,7 +154,7 @@
 }
 
 @media only screen and (max-width: 800px) {
-  .users_sessions_new_section .users_inner_sessions_new_section p {
+  .users_sessions_new_section .banner_singedout_section p {
     font-size: 18px !important;
   }
 }
@@ -1092,24 +185,17 @@
 .users_sessions_new_section .logo img {
   width: 65px;
   border-radius: 2px;
-  background-color: rgba(225, 71, 62, 0.7) !important;
   -webkit-transition: all 0.3s ease; 
   -moz-transition: all 0.3s ease; 
   -o-transition: all 0.3s ease; 
 }
 
 .users_sessions_new_section .logo img:hover {
-  background-color: rgba(88, 205, 166, 0.5) !important;
+  background-color: rgba(255, 255, 255, 0.1) !important;
   padding: 15px;
   -webkit-transition: all 0.3s ease; 
   -moz-transition: all 0.3s ease; 
   -o-transition: all 0.3s ease; 
-}
-
-.users_sessions_new_section .logo_text {
-  font-size: 25px;
-  font-weight: bold;
-  color: rgba(47, 63, 91, 0.7) !important;
 }
 
 .users_sessions_new_section .logo_title {
@@ -1143,9 +229,9 @@
 .users_sessions_new_section .links ul li a {
   font-family: "Lato", sans-serif;
   font-size: 18px;
-  font-weight: 300;
+  font-weight: 200;
   color: #fff !important;
-  background-color: rgba(225, 71, 62, 0.7) !important;
+  background-color: rgba(255, 255, 255, 0.1) !important;
   padding: 15px;
   margin-left: 5px;
   -webkit-transition: all 0.3s ease; 
@@ -1154,7 +240,7 @@
 }
 
 .users_sessions_new_section .links ul li a:hover {
-  background-color: rgba(88, 205, 166, 0.5) !important;
+  background-color: rgba(47,63,91,0.3) !important;
   -webkit-transition: all 0.3s ease; 
   -moz-transition: all 0.3s ease; 
   -o-transition: all 0.3s ease; 
@@ -1169,6 +255,66 @@
   text-transform: uppercase;
   margin-top: 8px;
   text-align: center;
+}
+
+.signup_inner_upper_content {
+  font-family: "Lato", sans-serif;
+  font-size: 10px;
+  font-weight: 200;
+  color: #fff !important;
+  text-align: center;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+  margin-top: 8px;
+}
+
+.signup_inner_upper_content a {
+  font-family: "Lato", sans-serif;
+  font-size: 10px;
+  font-weight: 200;
+  color: #fff !important;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-decoration: underline !important;
+  margin-top: 8px;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease; 
+}
+
+.users_sessions_new_section .signup_inner_upper_content a:hover {
+  color: #E34B51 !important;
+  text-decoration: underline;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease; 
+}
+
+.users_sessions_new_section .terms_info {
+  margin-top: 15px;
+  text-align: center !important;
+}
+
+.users_sessions_new_section .terms_info a {
+  font-family: "Lato", sans-serif;
+  font-size: 10px;
+  font-weight: 200;
+  color: #fff !important;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 8px;
+  text-align: center !important;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease; 
+}
+
+.users_sessions_new_section .terms_info a:hover {
+  color: #E34B51 !important;
+  text-decoration: underline;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease; 
 }
 
 .users_sessions_new_section .lower_section {
@@ -1396,7 +542,8 @@
 
 .users_sessions_new_section .background_dark {
   padding: 30px 0px !important;
-  background-color: #283041;
+  background-size: cover;
+  background: url("img_background_main_02.png") repeat;
   height: 600px;
 }
 @media only screen and (max-width: 600px) {
@@ -1548,6 +695,7 @@
   text-transform: capitalize;
 }
 
+
 .users_sessions_new_section .footer_links a:hover {
   color: #E34B51 !important;
 }
@@ -1572,15 +720,5 @@
   text-align: center;
   padding: 0px 15px !important;
 }
-
-
-
-
-
-
-
-
-
-
 
 
