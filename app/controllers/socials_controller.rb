@@ -49,6 +49,9 @@ class SocialsController < ApplicationController
   end
 
   def edit
+    unless @social.user.email == current_user.email
+      redirect_to errorpermission_path
+    end
     unless current_user.subscribed_social_access?(@social)
       @premium_plan = Subscription.find_by(title:"premium")
       redirect_to subscription_path(@premium_plan)

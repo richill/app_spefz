@@ -37,13 +37,13 @@ class UsersController < ApplicationController
   end
 
   def edit
-    unless current_user.admin_pa_management_group || current_user == @user
+    unless current_user == @user
       redirect_to errorpermission_path
     end
   end
 
   def update
-    if current_user.admin_pa_management_group || current_user == @user
+    if current_user == @user
       @user.update(user_params)
       redirect_to @user
     else
