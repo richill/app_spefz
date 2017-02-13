@@ -31,7 +31,7 @@
                   <%= f.input :email, required: true, autofocus: true, placeholder: "Email", label: false %>
                   <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), placeholder: "Password", label: false %>
                   <%= f.input :password_confirmation, required: true, placeholder: "Password Confirmation", label: false %>
-                  <%= f.input :birthdate, placeholder: "dd/mm/yyyy", label: false, start_year: 1800 %>
+                  <%= f.input :birthdate, placeholder: "dd/mm/yyyy", label: false, start_year: 1937 %>
                   <div class="clear"></div>
                   <%= f.association :category_gender, collection: CategoryGender.all, required: true, prompt: "select gender", label: 'Gender', label: false %>
                   <%= f.association :category_country, collection: CategoryCountry.all, required: true, prompt: "select country", label: 'Country', label: false %>
