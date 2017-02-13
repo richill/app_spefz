@@ -8,6 +8,7 @@
     <%= javascript_include_tag "vendor/modernizr" %>
     <%= csrf_meta_tags %>
     <%= favicon_link_tag 'img-logo-five.png' %>
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <%= tag :meta, name: "stripe-key", content: Rails.application.secrets.stripe_publishable_key %>
     <% if Rails.env.production? %>
     <script>
@@ -20,7 +21,6 @@
       ga('send', 'pageview');
     </script>
     <% end %>
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
   </head>
 
   <body>
