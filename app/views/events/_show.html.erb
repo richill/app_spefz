@@ -133,7 +133,7 @@
             <% else %>
               <% if current_user.image? %>
                 <% unless @event.expired_or_closed_event %>
-                  <li><span><div class="event_show_btn btn_event_booknow"><%= link_to 'Book Now!', new_payment_path(event_id: @event.id, user: current_user.id), target:"_blank" %></div></span></li>
+                  <li><span><div class="event_show_btn btn_event_booknow"><%= link_to 'Book Now!', new_payment_path(event_id: @event.id, user: current_user.id) %></div></span></li>
                 <% end %>
               <% else %>
                 <li><span><div class="event_show_btn btn_event_booknow"><%= link_to 'Book Now!', image_restriction_page_path %></div></span></li>
