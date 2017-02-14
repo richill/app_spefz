@@ -235,7 +235,7 @@
 
 @media only screen and (max-width: 1215px) {
   .blogs_section .blog_main_container {
-    padding: 15px !important
+    padding: 15px !important;
   }
 }
 
@@ -246,11 +246,17 @@
 
 .blogs_section .listed_blog {
   background-color: #fff;
-  padding: 18px !important;
+  padding: 0px !important;
   margin-bottom: 35px;
   box-shadow: 0 3px 0 rgba(47, 63, 91, 0.1);
   border-radius: 5px;
 }
+@media only screen and (min-width: 285px) {
+  .blogs_section .listed_blog {
+    padding: 18px !important;
+  }
+}
+
 
 .blogs_section .left_content {
   padding: 0px !important;
@@ -377,6 +383,12 @@
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
+}
+
+@media only screen and (max-width: 285px) {
+  .blogs_section .right_content .blog_user_details {
+    font-size: 0px; 
+  }
 }
 
 .blogs_section .right_content .blog_user_details a {
