@@ -42,8 +42,12 @@
 
 .users_registrations_new_section .signup_inner_content {
   background-color: #fff;
-  width: 600px;
   margin: auto;
+}
+@media only screen and (min-width: 640px) {
+  .users_registrations_new_section .signup_inner_content {
+    width: 600px;
+  }
 }
 
 .users_registrations_new_section .signup_inner_upper_content {
@@ -74,7 +78,12 @@
 
 .users_registrations_new_section .signup_inner_middle_content {
   background-color: #fff;
-  padding: 30px 60px;
+  padding: 30px 15px;
+}
+@media only screen and (min-width: 640px) {
+  .users_registrations_new_section .signup_inner_middle_content {
+    padding: 30px 60px;
+  }
 }
 
 .users_registrations_new_section .signup_inner_middle_content label {
@@ -896,7 +905,6 @@
 }
 
 .users_registrations_new_section #user_birthdate_1i {
-  width: 150px;
   font-family: "Lato", sans-serif;
   box-shadow: none !important;
   padding: 0px 15px !important;
@@ -907,10 +915,15 @@
   background-color: transparent;
   float: left;
   margin-right: 15px;
+  margin-bottom: 15px
+}
+@media only screen and (min-width: 632px) {
+  .users_registrations_new_section #user_birthdate_1i {
+    width: 150px;
+  }
 }
 
 .users_registrations_new_section #user_birthdate_2i {
-  width: 150px;
   font-family: "Lato", sans-serif;
   box-shadow: none !important;
   padding: 0px 15px !important;
@@ -921,11 +934,16 @@
   background-color: transparent;
   float: left;
   margin-right: 15px;
+  margin-bottom: 15px
+}
+@media only screen and (min-width: 632px) {
+  .users_registrations_new_section #user_birthdate_2i {
+    width: 150px;
+  }
 }
 
 
 .users_registrations_new_section #user_birthdate_3i {
-  width: 150px;
   font-family: "Lato", sans-serif;
   box-shadow: none !important;
   padding: 0px 15px !important;
@@ -935,6 +953,12 @@
   margin-bottom: 0px;
   background-color: transparent;
   float: left;
+  margin-bottom: 15px
+}
+@media only screen and (min-width: 632px) {
+  .users_registrations_new_section #user_birthdate_3i {
+    width: 150px;
+  }
 }
 
 
