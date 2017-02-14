@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170211161048) do
+ActiveRecord::Schema.define(version: 20170214115350) do
 
   create_table "activities", force: :cascade do |t|
     t.integer  "trackable_id"
@@ -244,11 +244,12 @@ ActiveRecord::Schema.define(version: 20170211161048) do
   add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
 
   create_table "friendships", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
     t.integer  "user_id"
     t.integer  "friend_id"
     t.string   "status"
+    t.datetime "accepted_at"
   end
 
   create_table "hosts", force: :cascade do |t|
