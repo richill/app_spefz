@@ -1,6 +1,7 @@
 Mailboxer.setup do |config|
 
   #Configures if your application uses or not email sending for Notifications and Messages
+  #True to activate mailboxer / false to deactivate Mailboxer
   # config.uses_emails = true
   config.uses_emails = false
 
