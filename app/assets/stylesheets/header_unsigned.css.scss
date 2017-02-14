@@ -1,9 +1,9 @@
 /*===================================================
-    Page: header user signedin nav
-    File: views/shared/_header.html.erb
+    Page: header user un-signedin nav
+    File: views/shared/_header_unsigned.html.erb
   ===================================================*/
 
-.nav_user_section {
+.nav_user_section_header_unsigned {
   background-color: #283041;
   padding: 10px;
   border-bottom: 1px solid #393838;
@@ -11,20 +11,24 @@
   -webkit-box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
-.nav_user_section .nav_user_inner_section {
+.nav_user_section_header_unsigned .nav_user_inner_section {
   margin: auto ;
-  width: 1170px;
+}
+@media only screen and (min-width: 1900px) {
+  .nav_user_section_header_unsigned .nav_user_inner_section {
+    width: 1170px;
+  }
 }
 
-.nav_user_section .nav_list ul {
+.nav_user_section_header_unsigned .nav_list ul {
   margin: 0px !important;
 }
 
-.nav_user_section .nav_list .left .logo_text {
+.nav_user_section_header_unsigned .nav_list .left .logo_text {
   margin-left: 0px;
 }
 
-.nav_user_section .nav_list .left .logo_text a {
+.nav_user_section_header_unsigned .nav_list .left .logo_text a {
   font-family: 'Lato', sans-serif;
   font-size: 22px !important;
   font-weight: 300;
@@ -37,7 +41,7 @@
   -o-transition: all 0.3s ease; 
 }
 
-.nav_user_section .nav_list .left .logo_text a:hover {
+.nav_user_section_header_unsigned .nav_list .left .logo_text a:hover {
   // color: #38a581 !important;
   color: #E34B51  !important;
   // font-weight: bold !important;
@@ -46,7 +50,7 @@
   -o-transition: all 0.3s ease; 
 }
 
-.nav_user_section .nav_list ul .link {
+.nav_user_section_header_unsigned .nav_list ul .link {
   font-family: 'Lato', sans-serif;
   font-size: 12px !important;
   font-weight: 300;
@@ -56,14 +60,14 @@
   margin-bottom: 11px !important;
 }
 
-.nav_user_section .nav_list ul .link a {
+.nav_user_section_header_unsigned .nav_list ul .link a {
   color: #fff !important;
   -webkit-transition: all 0.3s ease; 
   -moz-transition: all 0.3s ease; 
   -o-transition: all 0.3s ease; 
 }
 
-.nav_user_section .nav_list ul .link a:hover {
+.nav_user_section_header_unsigned .nav_list ul .link a:hover {
   text-decoration: underline;
   -webkit-transition: all 0.3s ease; 
   -moz-transition: all 0.3s ease; 
@@ -92,7 +96,7 @@
   background-color: #58CDA6 !important;
 }
 
-.nav_user_section .notification_li .fa-users {
+.nav_user_section_header_unsigned .notification_li .fa-users {
   color: #fff !important;
   margin-top: 10px;
   font-size: 18px;
@@ -101,7 +105,7 @@
   -o-transition: all 0.3s ease;
 }
 
-.nav_user_section .notification_li .fa-calendar-check-o {
+.nav_user_section_header_unsigned .notification_li .fa-calendar-check-o {
   color: #fff !important;
   margin-top: 10px;
   font-size: 18px;
@@ -110,7 +114,7 @@
   -o-transition: all 0.3s ease;
 }
 
-.nav_user_section .notification_li .fa-bell {
+.nav_user_section_header_unsigned .notification_li .fa-bell {
   color: #fff !important;
   margin-top: 10px;
   font-size: 18px;
@@ -119,7 +123,7 @@
   -o-transition: all 0.3s ease;
 }
 
-.nav_user_section .notification_li .fa-comment {
+.nav_user_section_header_unsigned .notification_li .fa-comment {
   color: #fff !important;
   margin-top: 10px;
   font-size: 18px;
@@ -128,7 +132,7 @@
   -o-transition: all 0.3s ease;
 }
 
-.nav_user_section .notification_li .fa-users:hover {
+.nav_user_section_header_unsigned .notification_li .fa-users:hover {
   color: #E34B51 !important;
   margin-top: 10px;
   font-size: 18px;
@@ -137,7 +141,7 @@
   -o-transition: all 0.3s ease;
 }
 
-.nav_user_section .notification_li .fa-calendar-check-o:hover {
+.nav_user_section_header_unsigned .notification_li .fa-calendar-check-o:hover {
   color: #E34B51 !important;
   margin-top: 10px;
   font-size: 18px;
@@ -146,7 +150,7 @@
   -o-transition: all 0.3s ease;
 }
 
-.nav_user_section .notification_li .fa-bell:hover {
+.nav_user_section_header_unsigned .notification_li .fa-bell:hover {
   color: #E34B51 !important;
   margin-top: 10px;
   font-size: 18px;
@@ -155,7 +159,7 @@
   -o-transition: all 0.3s ease;
 }
 
-.nav_user_section .notification_li .fa-comment:hover {
+.nav_user_section_header_unsigned .notification_li .fa-comment:hover {
   color: #E34B51 !important;
   margin-top: 10px;
   font-size: 18px;
@@ -164,7 +168,7 @@
   -o-transition: all 0.3s ease;
 }
 
-.nav_user_section .dropdown_nottification_title a {
+.nav_user_section_header_unsigned .dropdown_nottification_title a {
   font-family: 'Lato', sans-serif !important;
   font-size: 25px !important;
   color: #283041 !important;
@@ -175,21 +179,21 @@
   word-spacing: 0px !important;
 }
 
-.nav_user_section .dropdown_nottification_info {
+.nav_user_section_header_unsigned .dropdown_nottification_info {
   font-family: 'Lato', sans-serif !important;
   font-size: 12px !important;
   text-transform: capitalize !important;
   margin-top: 5px;
 }
 
-.nav_user_section .dropdown_nottification_info i {
+.nav_user_section_header_unsigned .dropdown_nottification_info i {
   font-size: 12px !important;
   color: #283041 !important;
   margin-right: 2px;
 }
 
 /*----- notifications_friendRequest -----*/
-.nav_user_section #notification_count_friendRequest {
+.nav_user_section_header_unsigned #notification_count_friendRequest {
   font-family: 'Lato', sans-serif;
   padding: 0px 6px 0px 5px;
   // background-color: #E34B51;
@@ -203,11 +207,11 @@
   font-size: 11px;
 }
 
-.nav_user_section #notificationLink_friendRequest:hover {
+.nav_user_section_header_unsigned #notificationLink_friendRequest:hover {
   background-color: transparent;
 }
 
-.nav_user_section #notificationContainer_friendRequest {
+.nav_user_section_header_unsigned #notificationContainer_friendRequest {
   background-color: #fff;
   border: 1px solid rgba(100, 100, 100, .4);
   -webkit-box-shadow: 0 3px 8px rgba(0, 0, 0, .25);
@@ -220,7 +224,7 @@
   display: none; /*info: Enable this after jquery implementation*/ 
 }
 
-.nav_user_section #notificationContainer_friendRequest:before { /*info: Popup Arrow*/
+.nav_user_section_header_unsigned #notificationContainer_friendRequest:before { /*info: Popup Arrow*/
   content: '';
   display: block;
   position: absolute;
@@ -233,7 +237,7 @@
   margin-left: 318px;
 }
 
-.nav_user_section #notificationTitle_friendRequest {
+.nav_user_section_header_unsigned #notificationTitle_friendRequest {
   padding: 14px 15px;
   font-size: 13px;
   z-index: 1000;
@@ -244,12 +248,12 @@
   text-align: left;
 }
 
-.nav_user_section #notificationsBody_friendRequest {
+.nav_user_section_header_unsigned #notificationsBody_friendRequest {
   padding: 0px 0px 0px 0px !important;
   // min-height: 300px;
 }
 
-.nav_user_section #notificationFooter_friendRequest {
+.nav_user_section_header_unsigned #notificationFooter_friendRequest {
   background-color: #e9eaed;
   text-align: center;
   font-weight: bold;
@@ -259,7 +263,7 @@
 }
 
 /*----- notifications_invites -----*/
-.nav_user_section #notification_count_invites {
+.nav_user_section_header_unsigned #notification_count_invites {
   font-family: 'Lato', sans-serif;
   padding: 0px 6px 0px 5px;
   // background-color: #E34B51;
@@ -273,11 +277,11 @@
   font-size: 11px;
 }
 
-.nav_user_section #notificationLink_invites:hover {
+.nav_user_section_header_unsigned #notificationLink_invites:hover {
   background-color: transparent;
 }
 
-.nav_user_section #notificationContainer_invites {
+.nav_user_section_header_unsigned #notificationContainer_invites {
   background-color: #fff;
   border: 1px solid rgba(100, 100, 100, .4);
   -webkit-box-shadow: 0 3px 8px rgba(0, 0, 0, .25);
@@ -290,7 +294,7 @@
   display: none; /*info: Enable this after jquery implementation*/ 
 }
 
-.nav_user_section #notificationContainer_invites:before { /*info: Popup Arrow*/
+.nav_user_section_header_unsigned #notificationContainer_invites:before { /*info: Popup Arrow*/
   content: '';
   display: block;
   position: absolute;
@@ -303,7 +307,7 @@
   margin-left: 318px;
 }
 
-.nav_user_section #notificationTitle_invites {
+.nav_user_section_header_unsigned #notificationTitle_invites {
   padding: 14px 15px;
   font-size: 13px;
   z-index: 1000;
@@ -314,12 +318,12 @@
   text-align: left;
 }
 
-.nav_user_section #notificationsBody_invites {
+.nav_user_section_header_unsigned #notificationsBody_invites {
   padding: 0px 0px 0px 0px !important;
   // min-height: 300px;
 }
 
-.nav_user_section #notificationFooter_invites {
+.nav_user_section_header_unsigned #notificationFooter_invites {
   background-color: #e9eaed;
   text-align: center;
   font-weight: bold;
@@ -329,7 +333,7 @@
 }
 
 /*----- notifications_bell -----*/
-.nav_user_section #notification_count_bell {
+.nav_user_section_header_unsigned #notification_count_bell {
   font-family: 'Lato', sans-serif;
   padding: 0px 6px 0px 5px;
   // background-color: #E34B51;
@@ -343,11 +347,11 @@
   font-size: 11px;
 }
 
-.nav_user_section #notificationLink_bell:hover {
+.nav_user_section_header_unsigned #notificationLink_bell:hover {
   background-color: transparent;
 }
 
-.nav_user_section #notificationContainer_bell {
+.nav_user_section_header_unsigned #notificationContainer_bell {
   background-color: #fff;
   border: 1px solid rgba(100, 100, 100, .4);
   -webkit-box-shadow: 0 3px 8px rgba(0, 0, 0, .25);
@@ -360,7 +364,7 @@
   display: none; /*info: Enable this after jquery implementation*/ 
 }
 
-.nav_user_section #notificationContainer_bell:before { /*info: Popup Arrow*/
+.nav_user_section_header_unsigned #notificationContainer_bell:before { /*info: Popup Arrow*/
   content: '';
   display: block;
   position: absolute;
@@ -373,7 +377,7 @@
   margin-left: 318px;
 }
 
-.nav_user_section #notificationTitle_bell {
+.nav_user_section_header_unsigned #notificationTitle_bell {
   padding: 14px 15px;
   font-size: 13px;
   z-index: 1000;
@@ -384,11 +388,11 @@
   text-align: left;
 }
 
-.nav_user_section #notificationsBody_bell {
+.nav_user_section_header_unsigned #notificationsBody_bell {
   padding: 0px 0px 0px 0px !important;
 }
 
-.nav_user_section #notificationFooter_bell {
+.nav_user_section_header_unsigned #notificationFooter_bell {
   background-color: #e9eaed;
   text-align: center;
   font-weight: bold;
@@ -398,7 +402,7 @@
 }
 
 /*----- notifications_comment -----*/
-.nav_user_section #notification_count_comment {
+.nav_user_section_header_unsigned #notification_count_comment {
   font-family: 'Lato', sans-serif;
   padding: 0px 6px 0px 5px;
   // background-color: #E34B51;
@@ -412,11 +416,11 @@
   font-size: 11px;
 }
 
-.nav_user_section #notificationLink_comment:hover {
+.nav_user_section_header_unsigned #notificationLink_comment:hover {
   background-color: transparent;
 }
 
-.nav_user_section #notificationContainer_comment {
+.nav_user_section_header_unsigned #notificationContainer_comment {
   background-color: #fff;
   border: 1px solid rgba(100, 100, 100, .4);
   -webkit-box-shadow: 0 3px 8px rgba(0, 0, 0, .25);
@@ -429,7 +433,7 @@
   display: none; /*info: Enable this after jquery implementation*/ 
 }
 
-.nav_user_section #notificationContainer_comment:before { /*info: Popup Arrow*/
+.nav_user_section_header_unsigned #notificationContainer_comment:before { /*info: Popup Arrow*/
   content: '';
   display: block;
   position: absolute;
@@ -442,7 +446,7 @@
   margin-left: 318px;
 }
 
-.nav_user_section #notificationTitle_comment {
+.nav_user_section_header_unsigned #notificationTitle_comment {
   padding: 8px;
   font-size: 13px;
   background-color: #ffffff;
@@ -452,12 +456,12 @@
   color: #41494f;
 }
 
-.nav_user_section #notificationsBody_comment {
+.nav_user_section_header_unsigned #notificationsBody_comment {
   padding: 0px 0px 0px 0px !important;
   min-height: 300px;
 }
 
-.nav_user_section #notificationFooter_comment {
+.nav_user_section_header_unsigned #notificationFooter_comment {
   background-color: #e9eaed;
   text-align: center;
   font-weight: bold;
@@ -468,24 +472,24 @@
 
 
 /*----- notifications_profile -----*/
-.nav_user_section .nav_list .right .profile_img_cover {
+.nav_user_section_header_unsigned .nav_list .right .profile_img_cover {
   border-radius: 200px;
 }
 
-.nav_user_section .nav_list .right .profile_img_cover img {
+.nav_user_section_header_unsigned .nav_list .right .profile_img_cover img {
   border-radius: 200px !important;
   width: 35px;
   height: 35px;
 }
 
-.nav_user_section .nav_list .right .profile_img_cover .img_default img {
+.nav_user_section_header_unsigned .nav_list .right .profile_img_cover .img_default img {
   border-radius: 200px !important;
   width: 35px;
   height: 35px;
   opacity: 0.65 !important;
 }
 
-.nav_user_section #notification_count_profile {
+.nav_user_section_header_unsigned #notification_count_profile {
   font-family: 'Lato', sans-serif;
   padding: 0px 6px 0px 5px;
   // background-color: #E34B51;
@@ -499,11 +503,11 @@
   font-size: 11px;
 }
 
-.nav_user_section #notificationLink_profile:hover {
+.nav_user_section_header_unsigned #notificationLink_profile:hover {
   background-color: transparent;
 }
 
-.nav_user_section #notificationContainer_profile {
+.nav_user_section_header_unsigned #notificationContainer_profile {
   background-color: #fff;
   color: #283041 !important;
   border: 1px solid rgba(100, 100, 100, .4);
@@ -518,7 +522,7 @@
   display: none; /*info: Enable this after jquery implementation*/ 
 }
 
-.nav_user_section #notificationContainer_profile:before { /*info: Popup Arrow*/
+.nav_user_section_header_unsigned #notificationContainer_profile:before { /*info: Popup Arrow*/
   content: '';
   display: block;
   position: absolute;
@@ -532,7 +536,7 @@
   margin-left: 327px;
 }
 
-.nav_user_section #notificationTitle_profile {
+.nav_user_section_header_unsigned #notificationTitle_profile {
   padding: 14px 15px;
   font-size: 13px;
   z-index: 1000;
@@ -542,12 +546,12 @@
   color: #41494f;
 }
 
-.nav_user_section #notificationsBody_profile {
+.nav_user_section_header_unsigned #notificationsBody_profile {
   padding: 0px 0px 0px 0px !important;
   min-height: 245px;
 }
 
-.nav_user_section #notificationFooter_profile {
+.nav_user_section_header_unsigned #notificationFooter_profile {
   background-color: #e9eaed;
   text-align: center;
   font-weight: bold;
@@ -556,7 +560,7 @@
   border-top: 1px solid #dddddd;
 }
 
-.nav_user_section #notificationTitle_profile .dropdown_user_name a {
+.nav_user_section_header_unsigned #notificationTitle_profile .dropdown_user_name a {
   font-family: 'Lato', sans-serif !important;
   font-size: 25px !important;
   color: #4BB4BF !important;
@@ -570,36 +574,36 @@
   -o-transition: all 0.3s ease; 
 }
 
-.nav_user_section #notificationTitle_profile .dropdown_user_name a:hover {
+.nav_user_section_header_unsigned #notificationTitle_profile .dropdown_user_name a:hover {
   color: #E34B51 !important;
   -webkit-transition: all 0.3s ease; 
   -moz-transition: all 0.3s ease; 
   -o-transition: all 0.3s ease; 
 }
 
-.nav_user_section #notificationTitle_profile .dropdown_user_membership {
+.nav_user_section_header_unsigned #notificationTitle_profile .dropdown_user_membership {
   font-family: 'Lato', sans-serif !important;
   font-size: 12px !important;
   text-transform: capitalize !important;
   margin-top: 5px;
 }
 
-.nav_user_section #notificationTitle_profile .dropdown_user_membership i {
+.nav_user_section_header_unsigned #notificationTitle_profile .dropdown_user_membership i {
   font-size: 12px !important;
   text-transform: capitalize !important;
   color: #283041 !important;
   margin-right: 2px;
 }
 
-.nav_user_section #notificationTitle_profile .dropdown_user_membership .divider {
+.nav_user_section_header_unsigned #notificationTitle_profile .dropdown_user_membership .divider {
   margin: 0px 5px !important;
 }
 
-.nav_user_section #notificationTitle_profile .dropdown_user_membership a {
+.nav_user_section_header_unsigned #notificationTitle_profile .dropdown_user_membership a {
   color: #E34B51 !important;
 }
 
-.nav_user_section #notificationTitle_profile .dropdown_user_membership a:hover {
+.nav_user_section_header_unsigned #notificationTitle_profile .dropdown_user_membership a:hover {
   text-decoration: underline;
 }
 
