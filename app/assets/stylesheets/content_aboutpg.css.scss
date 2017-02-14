@@ -149,18 +149,22 @@
 .aboutus_section .team_members ul {
   margin: 0px !important;
   list-style-type: none;
-  margin: auto !important;
   margin-bottom: 50px !important;
 }
 @media only screen and (min-width: 680px) {
   .aboutus_section .team_members ul {
     width: 660px;
+    margin: auto !important;
   }
 }
 
 .aboutus_section .team_members ul li {
-  float: left;
   margin: 25px 25px 0px 25px !important;
+}
+@media only screen and (min-width: 555px) {
+  .aboutus_section .team_members ul li {
+    float: left;
+  }
 }
 
 .aboutus_section .sub_team_img {
