@@ -76,6 +76,11 @@
   float: right;
   margin-right: 2px;
 }
+@media only screen and (max-width: 1215px) {
+  .blogs_section .search_right_content li  {
+    display: none; 
+  }
+}
 
 .blogs_section .search_right_content .search_box {
   width: 300px;
