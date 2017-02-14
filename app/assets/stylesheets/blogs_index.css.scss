@@ -72,6 +72,12 @@
   border-bottom: 3px solid #E34B51 !important;
 }
 
+@media only screen and (max-width: 530px) {
+  .blogs_section .responsive_display {
+    display: none;
+  }
+}
+
 .blogs_section .search_right_content li {
   float: right;
   margin-right: 2px;
@@ -224,6 +230,12 @@
   .blogs_section .content_details {
     width: 1170px;
     margin: auto;
+  }
+}
+
+@media only screen and (max-width: 1215px) {
+  .blogs_section .blog_main_container {
+    padding: 15px !important
   }
 }
 
@@ -415,19 +427,8 @@
 
 
 
-// ------------------------------
-//     workings
-// ------------------------------
 
-
-
-@media only screen and (max-width: 1215px) {
-  .blogs_section .blog_main_container {
-    padding: 15px !important
-  }
-}
-
-
+ 
 
 
 
