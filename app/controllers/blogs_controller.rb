@@ -1,7 +1,7 @@
 class BlogsController < ApplicationController
   respond_to :html, :xml, :json
   before_action :set_blog, only: [:show, :edit, :update, :destroy]
-  before_filter :setup_subscription, :setup_cards, :setup_events, :setup_invite_form, :setup_user_network_activities
+  before_filter :setup_friends, :setup_subscription, :setup_cards, :setup_events, :setup_invite_form, :setup_user_network_activities
 
   def index
     @search = Blog.order("created_at DESC").search(params[:q])
@@ -95,6 +95,13 @@ class BlogsController < ApplicationController
   end
 
   private
+  def setup_friends
+    if signed_in?
+    @user = User.find(current_user.id)
+    @friend = User.find_by_email(params[:id])
+    end
+  end
+
   def setup_subscription
     @premium_plan = Subscription.find_by(title:"premium") 
   end
