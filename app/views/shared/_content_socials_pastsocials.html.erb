@@ -33,7 +33,7 @@
                   <div class="header">space</div> 
                   <div class="content">
                     <!-- male -->
-                    <% if social.category_quantitygender.name == "only men" %>
+                    <% if social.category_quantitygendersocial.name == "only men" %>
                       <span>
                         <% if social.sold_out? %>
                           <span class="content_soldout">sold out</span>
@@ -43,7 +43,7 @@
                       </span>
 
                     <!-- female -->
-                    <% elsif social.category_quantitygender.name == "only women" %>
+                    <% elsif social.category_quantitygendersocial.name == "only women" %>
                       <span>
                         <% if social.sold_out? %>
                           <span class="content_soldout">sold out</span>
@@ -53,7 +53,7 @@
                       </span>
                       
                     <!-- male & female -->
-                    <% else social.category_quantitygender.name == "both men & women" %>
+                    <% else social.category_quantitygendersocial.name == "both men & women" %>
                       <span>
                         <% if social.sold_out? %>
                           <span class="content_soldout">sold out</span>
@@ -68,15 +68,15 @@
                   <div class="header">attendees</div> 
                   <div class="content">
                     <!-- male -->
-                    <% if social.category_quantitygender.name == "only men" %>
+                    <% if social.category_quantitygendersocial.name == "only men" %>
                       <span><%= social.total_attendance_to_male_only_social %></span>
 
                     <!-- female -->
-                    <% elsif social.category_quantitygender.name == "only women" %>
+                    <% elsif social.category_quantitygendersocial.name == "only women" %>
                       <span><%= social.total_attendance_to_female_only_social %></span>
                       
                     <!-- male & female -->
-                    <% else social.category_quantitygender.name == "both men & women" %>
+                    <% else social.category_quantitygendersocial.name == "both men & women" %>
                       <span><%= social.attendances.count %></span>
                     <% end %>
                   </div>
@@ -89,8 +89,8 @@
                   <% else %>
                     <li class="btn_attend">
                       <!-- attend button -->
-                      <% if social.category_quantitygender.name == "only women" && current_user.category_gender.name == "Female" || 
-                            social.category_quantitygender.name == "only men" && current_user.category_gender.name == "Male" %>
+                      <% if social.category_quantitygendersocial.name == "only women" && current_user.category_gender.name == "Female" || 
+                            social.category_quantitygendersocial.name == "only men" && current_user.category_gender.name == "Male" %>
                         <% unless current_user.attending_socials.exists?(id: social.id) %>
                           <% unless social.sold_out? %> <!-- note: if ticket is sold out do not display attend button -->
                             <div class="social_profile_btn btn_social_attend"><%= link_to 'Attend', attending_socials_path(social_id: social), method: :post %></div>
@@ -98,7 +98,7 @@
                         <% else %>
                           <div class="social_profile_btn btn_social_unattend"><%= link_to 'Un-Attend Social', attending_social_path(social), method: :delete %></div>
                         <% end %>
-                      <% elsif social.category_quantitygender.name == "both men & women" && current_user.category_gender.name == "Male" || social.category_quantitygender.name == "both men & women" && current_user.category_gender.name == "Female" %>
+                      <% elsif social.category_quantitygendersocial.name == "both men & women" && current_user.category_gender.name == "Male" || social.category_quantitygendersocial.name == "both men & women" && current_user.category_gender.name == "Female" %>
                         <% unless current_user.attending_socials.exists?(id: social.id)  %>
                           <% unless social.sold_out? %> <!-- note: if ticket is sold out do not display attend button -->
                             <div class="social_profile_btn btn_social_attend"><%= link_to 'Attend', attending_socials_path(social_id: social), method: :post %></div>
