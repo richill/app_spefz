@@ -45,7 +45,7 @@ a{color:#37aadc}
                 User Ref: <%= @report.user.reference %> 
               </p>
               <p style="font-family:Arial, Helvetica, sans-serif;font-size:14px;line-height:22px;text-transform:capitalize;font-weight:bold;">
-                User Name: <%= link_to "#{@report.user.firtsname} #{@report.user.lastname}", user_path(@report.user) %>
+                User Name: <%= link_to "#{@report.user.firtsname} #{@report.user.lastname}", user_url(@report.user) %>
               </p>
               <p style="font-family:Arial, Helvetica, sans-serif;font-size:14px;line-height:22px;text-transform:capitalize;font-weight:bold;">
                 Type of Report: <%= @report.category_report.name %>
@@ -58,7 +58,7 @@ a{color:#37aadc}
                 Social Ref: <%= @report.social.reference %> 
               </p>
               <p style="font-family:Arial, Helvetica, sans-serif;font-size:14px;line-height:22px;text-transform:capitalize;font-weight:bold;">
-                Social Title: <%= link_to @report.social.title, social_path(@report.social) %>
+                Social Title: <%= link_to @report.social.title, social_url(@report.social) %>
               </p>
               <p style="font-family:Arial, Helvetica, sans-serif;font-size:14px;line-height:22px;text-transform:capitalize;font-weight:bold;">
                 Type of Report: <%= @report.category_report.name %>
@@ -71,7 +71,7 @@ a{color:#37aadc}
                 Social Ref: <%= @report.event.reference %> 
               </p>
               <p style="font-family:Arial, Helvetica, sans-serif;font-size:14px;line-height:22px;text-transform:capitalize;font-weight:bold;">
-                Social Title: <%= link_to @report.event.title, event_path(@report.event) %>
+                Social Title: <%= link_to @report.event.title, event_url(@report.event) %>
               </p>
               <p style="font-family:Arial, Helvetica, sans-serif;font-size:14px;line-height:22px;text-transform:capitalize;font-weight:bold;">
                 Type of Report: <%= @report.category_report.name %>
@@ -80,7 +80,7 @@ a{color:#37aadc}
             <% end %>
 
 
-            <div style="font-family:Arial, Helvetica, sans-serif;font-size:12px;background-color:#F9F9F9;padding:15px;">Reported by: <%= link_to "#{@report.reporter.firstname} #{@report.reporter.lastname}", user_path(@report.reporter) %> | Email: <%= link_to "#{@report.reporter.email}", user_path(@report.reporter) %> | Ref: <%= @report.reporter.reference %></div>
+            <div style="font-family:Arial, Helvetica, sans-serif;font-size:12px;background-color:#F9F9F9;padding:15px;">Reported by: <%= link_to "#{@report.reporter.firstname} #{@report.reporter.lastname}", user_url(@report.reporter) %> | Email: <%= link_to "#{@report.reporter.email}", user_url(@report.reporter) %> | Ref: <%= @report.reporter.reference %></div>
             
             <p style="font-family:Arial, Helvetica, sans-serif;font-size:14px;line-height:22px;background-color:#F9F9F9;padding:15px;">
               <%= @report.content %>

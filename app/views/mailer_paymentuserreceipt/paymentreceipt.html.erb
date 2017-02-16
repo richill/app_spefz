@@ -63,7 +63,7 @@ a{color:#37aadc}
                 <% end %>
                 <span style="font-size:25px;margin-top:12px;display:inline-block;text-transform:capitalize;"><%= "#{@payment.user.firstname} #{@payment.user.lastname}" %></span><br/>
                 <span style="text-transform:capitalize;margin-left:2px;">welcome on board!</span><br/>
-                <span style="margin-left:2px;">Complete your ptofile <span style="text-transform:capitalize;"><%= "#{@payment.user.firstname}" %></span> <span style="margin: 0px 5px 0px 5px;">|</span> <%= link_to "view profile", user_path(@payment.user), {style: "font-family:Arial, Helvetica, sans-serif;color:#b6584f;font-size:12px"} %></span>
+                <span style="margin-left:2px;">Complete your ptofile <span style="text-transform:capitalize;"><%= "#{@payment.user.firstname}" %></span> <span style="margin: 0px 5px 0px 5px;">|</span> <%= link_to "view profile", user_url(@payment.user), {style: "font-family:Arial, Helvetica, sans-serif;color:#b6584f;font-size:12px"} %></span>
               </p>
               <!-- subscription_id -->
 
@@ -84,7 +84,7 @@ a{color:#37aadc}
                 <% end %>
                 <span style="font-size:16px;margin-top:8px;display:inline-block;text-transform:capitalize;"><%= truncate "#{@payment.event.title}", length: 35 %></span><br/>
                 <span style="text-transform:capitalize;margin-left:2px;"><%= @payment.event.date.strftime("%a, %d %b %Y") %> <span style="margin: 0px 5px 0px 5px;">|</span> <%= @payment.event.time.strftime("%I:%M %p") %></span><br/>
-                <span style="margin-left:2px;">Find out more about the event <span style="margin: 0px 5px 0px 5px;">|</span> <%= link_to "view", event_path(@payment.event), {style: "font-family:Arial, Helvetica, sans-serif;color:#b6584f;font-size:12px"} %></span>
+                <span style="margin-left:2px;">Find out more about the event <span style="margin: 0px 5px 0px 5px;">|</span> <%= link_to "view", event_url(@payment.event), {style: "font-family:Arial, Helvetica, sans-serif;color:#b6584f;font-size:12px"} %></span>
               </p>
 
               <p style="font-family:Arial, Helvetica, sans-serif;font-size:12px;line-height:22px;background-color:#F9F9F9;padding:15px;">
