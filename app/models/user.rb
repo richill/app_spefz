@@ -13,6 +13,7 @@ class User < ActiveRecord::Base
   acts_as_reader
   acts_as_taggable
   acts_as_messageable
+  is_impressionable
 
   validates_presence_of :firstname, presence: true, message: "can't be blank"
   validates_presence_of :lastname, presence: true, message: "can't be blank"

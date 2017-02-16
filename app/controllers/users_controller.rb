@@ -22,6 +22,7 @@ class UsersController < ApplicationController
     @user = User.friendly.find(params[:id])
     @friend = User.friendly.find(params[:id])
     @logged_in_user = current_user if signed_in?
+    impressionist(@user)
     @report = Report.new
     if current_user.subscribed_access? || current_user == @user
       if current_user.image? || current_user == @user
