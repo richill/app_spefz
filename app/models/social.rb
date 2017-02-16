@@ -9,30 +9,30 @@ class Social < ActiveRecord::Base
   acts_as_taggable
   is_impressionable
 
-  # validates_presence_of :title, presence: true, message: "can't be blank"
-  # validates_presence_of :description, presence: true, message: "can't be blank"
-  # validates_presence_of :address, presence: true, message: "can't be blank"
-  # validates_presence_of :postcode, presence: true, message: "can't be blank"
-  # validates_presence_of :user_id, presence: true, message: "can't be blank"
-  # validates_presence_of :category_topic, presence: true, message: "please select a category"
-  # validates_presence_of :image, presence: true, message: "must upload an image"
-  # # validates :image_url, allow_blank: :true, format: {
-  # #   with: %r{\.(gif|jpg|png)$}i,
-  # #   message: "must be a url for gif, jpg or png image"
-  # # } 
-  # validates_presence_of :date, presence: true, message: "please select a date"
-  # validates_presence_of :time, presence: true, message: "please select a time"
-  # validates_presence_of :city, presence: true, message: "can't be blank"
-  # validates_presence_of :category_age, presence: true, message: "please select a category"
-  # validates_presence_of :category_invite, presence: true, message: "please select a category"
-  # validates_presence_of :category_country, presence: true, message: "please select a category"
-  # validates_presence_of :category_quantitygendersocial, presence: true, message: "please select a category"
-  # validates_presence_of :category_quantitygender, presence: true, message: "please select a category"
-  # validates_presence_of :venuename, presence: true, message: "can't be blank"
-  # validates_presence_of :maplink, presence: true, message: "can't be blank"
-  # # validates_numericality_of :quantity, presence: true, message: "can't be blank"
-  # # validates_numericality_of :quantity_men, presence: true, message: "can't be blank"
-  # # validates_numericality_of :quantity_women, presence: true, message: "can't be blank"
+  validates_presence_of :title, presence: true, message: "can't be blank"
+  validates_presence_of :description, presence: true, message: "can't be blank"
+  validates_presence_of :address, presence: true, message: "can't be blank"
+  validates_presence_of :postcode, presence: true, message: "can't be blank"
+  validates_presence_of :user_id, presence: true, message: "can't be blank"
+  validates_presence_of :category_topic, presence: true, message: "please select a category"
+  validates_presence_of :image, presence: true, message: "must upload an image"
+  # validates :image_url, allow_blank: :true, format: {
+  #   with: %r{\.(gif|jpg|png)$}i,
+  #   message: "must be a url for gif, jpg or png image"
+  # } 
+  validates_presence_of :date, presence: true, message: "please select a date"
+  validates_presence_of :time, presence: true, message: "please select a time"
+  validates_presence_of :city, presence: true, message: "can't be blank"
+  validates_presence_of :category_age, presence: true, message: "please select a category"
+  validates_presence_of :category_invite, presence: true, message: "please select a category"
+  validates_presence_of :category_country, presence: true, message: "please select a category"
+  validates_presence_of :category_quantitygendersocial, presence: true, message: "please select a category"
+  validates_presence_of :category_quantitygender, presence: true, message: "please select a category"
+  validates_presence_of :venuename, presence: true, message: "can't be blank"
+  validates_presence_of :maplink, presence: true, message: "can't be blank"
+  # validates_numericality_of :quantity, presence: true, message: "can't be blank"
+  # validates_numericality_of :quantity_men, presence: true, message: "can't be blank"
+  # validates_numericality_of :quantity_women, presence: true, message: "can't be blank"
 
 
   # acts_as_commentable
