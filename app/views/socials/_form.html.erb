@@ -100,13 +100,9 @@
                     </div>
                   <% end %>
                   <%= f.association :category_quantitygendersocial, collection: CategoryQuantitygendersocial.all, prompt: "select a category", label: "Quantity Gender Selection", input_html: { class: 'category_select' } %>
-                  <div class="">
+                  <div>
                     <%= f.input :quantity, placeholder: "quantity", label: false %>
                   </div>
-                  <!-- <div class="specific_gender_quantity_content">
-                      <%= f.input :quantity_men, placeholder: "quantity men", label: "men" %>
-                      <%= f.input :quantity_women, placeholder: "quantity women", label: "women" %>
-                  </div> -->
                 </div>
                 <div class="clear"></div>
 

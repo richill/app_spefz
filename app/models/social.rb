@@ -30,9 +30,7 @@ class Social < ActiveRecord::Base
   validates_presence_of :category_quantitygender, presence: true, message: "please select a category"
   validates_presence_of :venuename, presence: true, message: "can't be blank"
   validates_presence_of :maplink, presence: true, message: "can't be blank"
-  # validates_numericality_of :quantity, presence: true, message: "can't be blank"
-  # validates_numericality_of :quantity_men, presence: true, message: "can't be blank"
-  # validates_numericality_of :quantity_women, presence: true, message: "can't be blank"
+  validates_numericality_of :quantity, presence: true, message: "can't be blank"
 
 
   # acts_as_commentable
