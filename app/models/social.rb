@@ -26,6 +26,7 @@ class Social < ActiveRecord::Base
   validates_presence_of :category_age, presence: true, message: "please select a category"
   validates_presence_of :category_invite, presence: true, message: "please select a category"
   validates_presence_of :category_country, presence: true, message: "please select a category"
+  validates_presence_of :category_quantitygendersocial, presence: true, message: "please select a category"
   validates_presence_of :category_quantitygender, presence: true, message: "please select a category"
   validates_presence_of :venuename, presence: true, message: "can't be blank"
   validates_presence_of :maplink, presence: true, message: "can't be blank"
@@ -122,11 +123,11 @@ class Social < ActiveRecord::Base
 
   #selection
   def selection_BothAndOnly_men_and_women
-    self.category_quantitygender.name == "only men" || self.category_quantitygender.name == "only women" || self.category_quantitygender.name == "both men & women"
+    self.category_quantitygendersocial.name == "only men" || self.category_quantitygendersocial.name == "only women" || self.category_quantitygendersocial.name == "both men & women"
   end
 
   def selection_BothX_men_and_women
-    self.category_quantitygender.name == "both X men & X women"
+    self.category_quantitygendersocial.name == "both X men & X women"
   end
 
   #remaining_space
