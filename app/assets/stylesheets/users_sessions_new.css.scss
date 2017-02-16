@@ -559,6 +559,15 @@
   }
 }
 
+.users_sessions_new_section .footer_section {
+  height: 770px;
+}
+@media only screen and (max-width: 600px) {
+  .users_sessions_new_section .footer_section {
+    height: 840px;
+  }
+}
+
 .users_sessions_new_section .background_dark .header {
   color: #fff !important;
 }
@@ -676,21 +685,74 @@
   margin-top: 40px;
 }
 
+// .users_sessions_new_section .footer_links ul {
+//   margin-bottom: 0px !important;
+// }
+// @media only screen and (min-width: 500px) {
+//   .users_sessions_new_section .footer_links ul {
+//     width: 500px;
+//     margin: auto;
+//   }
+// }
+
+// @media only screen and (max-width: 500px) {
+//   .users_sessions_new_section .footer_links ul li {
+//     width: 100% !important;
+//     text-align: center !important;
+//     padding: 15px 0px !important;
+//   }
+// }
+
+// .users_sessions_new_section .footer_links a {
+//   font-family: "Lato", sans-serif;
+//   color: #fff !important;
+//   font-weight: 300;
+//   letter-spacing: 1px;
+//   text-transform: capitalize;
+// }
+
+
+// .users_sessions_new_section .footer_links a:hover {
+//   color: #E34B51 !important;
+// }
+
+// .users_sessions_new_section .copyright_content {
+//   font-family: "Lato", sans-serif;
+//   color: #fff;
+//   font-size: 10px;
+//   font-weight: 300;
+//   letter-spacing: 1px;
+//   text-transform: capitalize;
+//   margin: auto;
+//   margin-top: 25px;
+//   text-align: center;
+// }
+
+// .users_sessions_new_section .aboutus {
+//   font-family: "Lato", sans-serif;
+//   font-size: 15px;
+//   font-weight: 400;
+//   letter-spacing: 1px;
+//   text-align: center;
+//   padding: 0px 15px !important;
+// }
+
 .users_sessions_new_section .footer_links ul {
   margin-bottom: 0px !important;
 }
-@media only screen and (min-width: 500px) {
+@media only screen and (min-width: 760px) {
   .users_sessions_new_section .footer_links ul {
-    width: 500px;
+    width: 690px;
     margin: auto;
   }
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 760px) {
   .users_sessions_new_section .footer_links ul li {
     width: 100% !important;
     text-align: center !important;
     padding: 15px 0px !important;
+    margin: 0px;
   }
 }
 
@@ -701,7 +763,6 @@
   letter-spacing: 1px;
   text-transform: capitalize;
 }
-
 
 .users_sessions_new_section .footer_links a:hover {
   color: #E34B51 !important;
@@ -715,7 +776,7 @@
   letter-spacing: 1px;
   text-transform: capitalize;
   margin: auto;
-  margin-top: 25px;
+  padding: 15px 0px;
   text-align: center;
 }
 
@@ -727,5 +788,6 @@
   text-align: center;
   padding: 0px 15px !important;
 }
+
 
 
