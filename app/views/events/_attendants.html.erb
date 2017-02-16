@@ -19,6 +19,7 @@
               </div>        
               <div>
                 <span><%= link_to @event.title, user_event_path(@event.user, @event) %></span>
+                [<%= link_to " #{@event.impressionist_count(filter: :ip_address)}", event_path(@event), id: "", class: "fa fa-eye" %>]
                 <% if @event.sold_out? %>
                   <span class="mini_sold_out">[sold out!]</span>
                 <% end %>

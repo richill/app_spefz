@@ -8,6 +8,7 @@ class Event < ActiveRecord::Base
   ratyrate_rateable "atmosphere"
   
   acts_as_taggable
+  is_impressionable
 
   validates_presence_of :title, presence: true, message: "can't be blank"
   validates_presence_of :description, presence: true, message: "can't be blank"

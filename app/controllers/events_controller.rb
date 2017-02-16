@@ -15,6 +15,8 @@ class EventsController < ApplicationController
   end
 
   def show
+    @event = Event.friendly.find(params[:id])
+    impressionist(@event)
     @host = Host.new
     @card = Card.new
     unless @event.event_access_below_user_score(current_user) || @current_user.admin_pa_management_group || current_user.pa_event_mgt_group
