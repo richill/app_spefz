@@ -23,6 +23,8 @@ class SocialsController < ApplicationController
   # end
 
   def show
+    @social = Social.friendly.find(params[:id])
+    impressionist(@social)
     @invite_request = InviteRequest.new
     unless current_user.subscribed_social_access?(@social)
       @premium_plan = Subscription.find_by(title:"premium")
