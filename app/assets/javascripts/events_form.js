@@ -1,6 +1,6 @@
 /*=========================================
     Section: events form page
-    File: views / socials / _form.html.erb
+    File: views / events / _form.html.erb
   =========================================*/
 
 // filter on gender attendance

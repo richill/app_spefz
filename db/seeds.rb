@@ -62,16 +62,16 @@ cio01 = CategoryInviteoption.create!(name:'Only members in my network')
 cio02 = CategoryInviteoption.create!(name:'Every member')
 cio03 = CategoryInviteoption.create!(name:'No one')
 
-CategoryQuantitygendersocial.delete_all
-cqg01 = CategoryQuantitygendersocial.create!(name:'only men')
-cqg02 = CategoryQuantitygendersocial.create!(name:'only women')
-cqg03 = CategoryQuantitygendersocial.create!(name:'both men & women')
-
 CategoryQuantitygender.delete_all
 cqg01 = CategoryQuantitygender.create!(name:'only men')
 cqg02 = CategoryQuantitygender.create!(name:'only women')
 cqg03 = CategoryQuantitygender.create!(name:'both men & women')
 cqg04 = CategoryQuantitygender.create!(name:'both X men & X women')
+
+CategoryQuantitygendersocial.delete_all
+cqg01 = CategoryQuantitygendersocial.create!(name:'only men')
+cqg02 = CategoryQuantitygendersocial.create!(name:'only women')
+cqg03 = CategoryQuantitygendersocial.create!(name:'both men & women')
 
 CategoryReport.delete_all
 crt01 = CategoryReport.create!(name:'Inappropriate content or behaviour')
