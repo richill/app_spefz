@@ -52,7 +52,7 @@
 
   <!-- footer -->
   <div class="medium-12 columns lower_section">
-    <div class="medium-12 columns background_dark">
+    <div class="medium-12 columns background_dark footer_section">
       <div class="header_section">
         <div class="header">find out more about us</div>
         <div class="sub_header">we like to keep our members up to date via social media</div>
@@ -67,13 +67,13 @@
         <div class="footer_links">
           <ul class="inline-list">
             <li><%= link_to "about us", about_us_path, rel: "relativeanchor" %></li>
-            <li><%= link_to "how it works", root_path, class: "howitworksheader", rel: "relativeanchor" %></li>
-            <li><%= link_to "signup", new_user_registration_path %></li>
+            <li><%= link_to "blog", blogs_path %></li>
+            <li><%= link_to "terms", terms_path %></li>
+            <li><%= link_to "privacy", terms_privacy_path %></li>
+            <li><%= link_to "help", help_path %></li>
             <li><%= link_to "we are hiring!", "https://angel.co/spefz/jobs?utm_source=startup_profile_header", target: "_blank" %></li>
-            <li>
-              <a href="#" data-reveal-id="myModal-contactus">contact us</a>
-              <div><%= render 'shared/modal_contactus' %></div>
-            </li>
+            <li><%= link_to "become a partner", help_partners_path %></li>
+            <li><%= link_to "contact us", contact_us_path %></li>
           </ul>
         </div>
         <div class="copyright_content">Copyright © 2017 Spefz App | ARTLoe Technologies Ltd</div>

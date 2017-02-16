@@ -727,12 +727,14 @@
 
 .users_registrations_new_section .background_dark {
   padding: 30px 0px !important;
+  background-size: cover;
   background-color: #283041;
-  height: 600px;
+  height: 770px;
+  border-top: 1px solid #393838;
 }
 @media only screen and (max-width: 600px) {
   .users_registrations_new_section .background_dark {
-    height: 750px;
+    height: 840px;
   }
 }
 
@@ -853,57 +855,6 @@
   margin-top: 40px;
 }
 
-.users_registrations_new_section .footer_links ul {
-  margin-bottom: 0px !important;
-}
-@media only screen and (min-width: 500px) {
-  .users_registrations_new_section .footer_links ul {
-    width: 500px;
-    margin: auto;
-  }
-}
-
-@media only screen and (max-width: 500px) {
-  .users_registrations_new_section .footer_links ul li {
-    width: 100% !important;
-    text-align: center !important;
-    padding: 15px 0px !important;
-  }
-}
-
-.users_registrations_new_section .footer_links a {
-  font-family: "Lato", sans-serif;
-  color: #fff !important;
-  font-weight: 300;
-  letter-spacing: 1px;
-  text-transform: capitalize;
-}
-
-.users_registrations_new_section .footer_links a:hover {
-  color: #E34B51 !important;
-}
-
-.users_registrations_new_section .copyright_content {
-  font-family: "Lato", sans-serif;
-  color: #fff;
-  font-size: 10px;
-  font-weight: 300;
-  letter-spacing: 1px;
-  text-transform: capitalize;
-  margin: auto;
-  margin-top: 25px;
-  text-align: center;
-}
-
-.users_registrations_new_section .aboutus {
-  font-family: "Lato", sans-serif;
-  font-size: 15px;
-  font-weight: 400;
-  letter-spacing: 1px;
-  text-align: center;
-  padding: 0px 15px !important;
-}
-
 .users_registrations_new_section #user_birthdate_1i {
   font-family: "Lato", sans-serif;
   box-shadow: none !important;
@@ -942,7 +893,6 @@
   }
 }
 
-
 .users_registrations_new_section #user_birthdate_3i {
   font-family: "Lato", sans-serif;
   box-shadow: none !important;
@@ -961,11 +911,63 @@
   }
 }
 
-
 .users_registrations_new_section .user_birthdate {
   margin-bottom: 20px !important;
     height: 50px !important;
 }
+
+.users_registrations_new_section .footer_links ul {
+  margin-bottom: 0px !important;
+}
+@media only screen and (min-width: 760px) {
+  .users_registrations_new_section .footer_links ul {
+    width: 690px;
+    margin: auto;
+  }
+}
+
+@media only screen and (max-width: 760px) {
+  .users_registrations_new_section .footer_links ul li {
+    width: 100% !important;
+    text-align: center !important;
+    padding: 15px 0px !important;
+    margin: 0px;
+  }
+}
+
+.users_registrations_new_section .footer_links a {
+  font-family: "Lato", sans-serif;
+  color: #fff !important;
+  font-weight: 300;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+}
+
+.users_registrations_new_section .footer_links a:hover {
+  color: #E34B51 !important;
+}
+
+.users_registrations_new_section .copyright_content {
+  font-family: "Lato", sans-serif;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+  margin: auto;
+  padding: 15px 0px;
+  text-align: center;
+}
+
+.users_registrations_new_section .aboutus {
+  font-family: "Lato", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-align: center;
+  padding: 0px 15px !important;
+}
+
 
 
 
