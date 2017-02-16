@@ -47,7 +47,6 @@ class Social < ActiveRecord::Base
   belongs_to :category_age
   belongs_to :category_country
   belongs_to :category_invite
-  belongs_to :category_quantitygender
   belongs_to :category_quantitygendersocial
 
   mount_uploader :image, ImageUploader
