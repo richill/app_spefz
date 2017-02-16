@@ -86,20 +86,21 @@
                     <div class="current_gender_selection">
                       <span>Current Settings:</span>
                       <span>
-                        <% if @social.category_quantitygender.name == "both men & women" %>
+                        <% if @social.category_quantitygendersocial.name == "both men & women" %>
                           <i class="fa fa-users" aria-hidden="true"></i>
-                        <% elsif @social.category_quantitygender.name == "only men" %>
+                        <% elsif @social.category_quantitygendersocial.name == "only men" %>
                           <i class="fa fa-male" aria-hidden="true"></i>
-                        <% else @social.category_quantitygender.name == "only women" %>
+                        <% else @social.category_quantitygendersocial.name == "only women" %>
                           <i class="fa fa-female" aria-hidden="true"></i>
                         <% end %>
                       </span>
-                      <span><%= @social.category_quantitygender.name %></span>
+                      <span><%= @social.category_quantitygendersocial.name %></span>
                       <span class="divider">|</span>
                       <span><%= @social.quantity %> space limit</span>
                     </div>
                   <% end %>
                   <%# f.association :category_quantitygender, collection: CategoryQuantitygender.all, prompt: "select a category", label: "Quantity Gender Selection", input_html: { class: 'category_select' } %>
+                  <%= f.association :category_quantitygendersocial, collection: CategoryQuantitygendersocial.all, prompt: "select a category", label: "Quantity Gender Selection", input_html: { class: 'category_select' } %>
                   <div class="general_gender_quantity_content">
                     <%= f.input :quantity, placeholder: "quantity", label: false %>
                   </div>
