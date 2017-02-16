@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170216112551) do
+ActiveRecord::Schema.define(version: 20170216114800) do
 
   create_table "activities", force: :cascade do |t|
     t.integer  "trackable_id"
@@ -496,7 +496,6 @@ ActiveRecord::Schema.define(version: 20170216112551) do
     t.text     "speakerlinkedin"
     t.integer  "quantity_men"
     t.integer  "quantity_women"
-    t.integer  "category_quantitygender_id"
     t.string   "venuename"
     t.text     "maplink"
     t.boolean  "close"
