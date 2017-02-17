@@ -7,10 +7,10 @@
         <div>
           <ul class="search_left_content">
             <li><%= link_to "Blogs", blogs_path %></li>
-            <li><%= link_to "Venues", venues_blogs_path %></li>
-            <li><%= link_to "Networking Tips", networking_tips_blogs_path %></li>
-            <li><%= link_to "Dating Tips", dating_tips_blogs_path %></li>
-            <li><%= link_to "SPefz News", spefz_news_blogs_path %></li>
+            <li class="responsive_display"><%= link_to "Venues", venues_blogs_path %></li>
+            <li class="responsive_display"><%= link_to "Networking Tips", networking_tips_blogs_path %></li>
+            <li class="responsive_display"><%= link_to "Dating Tips", dating_tips_blogs_path %></li>
+            <li class="responsive_display"><%= link_to "SPefz News", spefz_news_blogs_path %></li>
           </ul>
           <ul class="search_right_content">
             <li>
@@ -50,7 +50,7 @@
                     <% end %>
                   <% end %>
                 </span>
-                <span>
+                <span class="responsive_display">
                   <% if signed_in?  %>
                     <% if @blog.blogger_name.present? %>
                       <%= link_to "#{@blog.blogger_name}", "#{@blog.user_link}" %>
@@ -71,19 +71,23 @@
                   <span>twitter</span>
                 <% end %>
                 <span class="divider">|</span>
-                <%= link_to "#{@blog.user_link}", target:"_blank" do %>
-                  <span><i class="fa fa-user" aria-hidden="true"></i></span>
-                  <span>website</span>
-                <% end %>
-                <span class="divider">|</span>
+                <span class="responsive_display">
+                  <%= link_to "#{@blog.user_link}", target:"_blank" do %>
+                    <span><i class="fa fa-user" aria-hidden="true"></i></span>
+                    <span>website</span>
+                  <% end %>
+                  <span class="divider">|</span>
+                </span>
                 <span>
                   <a href="#" data-reveal-id="myModal-share-buttons" class:"socialicon_cover_fb"><i class="fa fa-share-alt" aria-hidden="true"></i> share</a>
                   <span><%= render 'shared/modal_share_buttons' %></span>
                 </span>
                 <span class="divider">|</span>
-                <span>Category: </span>
-                <span class="blog_category"><%= link_to "#{@blog.category_blog.name}", "#" %></span>
-                <span class="divider">|</span>
+                <span class="responsive_display">
+                  <span>Category: </span>
+                  <span class="blog_category"><%= link_to "#{@blog.category_blog.name}", "#" %></span>
+                  <span class="divider">|</span>
+                </span>
                 <span><%= @blog.created_at.strftime("%B %d, %Y") %></span>
                 <% if signed_in? %>
                   <% if current_user.admin_pa_management_group || current_user.pa_administration_group %>
