@@ -157,7 +157,7 @@
   height: 88px;
   overflow: hidden;
   position: absolute;
-  z-index: 1;
+  z-index: 10;
 }
 
 .socials_section .banner .ribbon-green {
@@ -466,6 +466,19 @@
   border-radius: 3px;
 }
 
+.socials_section .socialupcoming_text a {
+  color: #fff !important;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease;
+}
+
+.socials_section .socialupcoming_text a:hover {
+  color: #283041 !important;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease;
+}
 
 
 

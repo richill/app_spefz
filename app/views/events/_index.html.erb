@@ -47,7 +47,13 @@
                 <li class="medium-12 columns listed_events">
                   <div class="eventupcoming_main_cover">
                     <% if event.upcoming_event? %>
-                      <div class="eventupcoming_cover"><span class="eventupcoming_text">coming soon</span></div>
+                      <div class="eventupcoming_cover">
+                        <% if current_user.admin_pa_management_group || current_user.pa_event_mgt_group %>
+                          <span class="eventupcoming_text"><%= link_to "coming soon", edit_user_event_path(event.user, event) %></span>
+                        <% else %>
+                          <span class="eventupcoming_text">coming soon</span>
+                        <% end %>
+                      </div>
                     <% end %>
                     <div class="medium-12 columns image_content_info">
                       <!-- sold out -->

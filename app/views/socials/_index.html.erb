@@ -47,7 +47,13 @@
                   <li class="medium-3 columns">
                     <div class="socialupcoming_main_cover">
                       <% if social.upcoming_social? %>
-                        <div class="socialupcoming_cover"><span class="socialupcoming_text">coming soon</span></div>
+                        <div class="socialupcoming_cover">
+                          <% if current_user.admin_pa_management_group || current_user.pa_event_mgt_group %>
+                            <span class="socialupcoming_text"><%= link_to "coming soon", edit_user_social_path(social.user, social) %></span>
+                          <% else %>
+                            <span class="socialupcoming_text">coming soon</span>
+                          <% end %>
+                        </div>
                       <% end %>
                       <div class="social_inner_section">
                         <% if social.sold_out? %>
