@@ -27,7 +27,6 @@ class Social < ActiveRecord::Base
   validates_presence_of :category_invite, presence: true, message: "please select a category"
   validates_presence_of :category_country, presence: true, message: "please select a category"
   validates_presence_of :category_quantitygendersocial, presence: true, message: "please select a category"
-  validates_presence_of :category_quantitygender, presence: true, message: "please select a category"
   validates_presence_of :venuename, presence: true, message: "can't be blank"
   validates_presence_of :maplink, presence: true, message: "can't be blank"
   validates_numericality_of :quantity, presence: true, message: "can't be blank"
