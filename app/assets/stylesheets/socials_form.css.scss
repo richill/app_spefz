@@ -29,6 +29,10 @@
   margin: 0px 0px 15px;
 }
 
+.user_general_settings_section .social_edit_update_form .upcoming_social_section {
+  margin: 0px 0px 15px;
+}
+
 .user_general_settings_section .social_edit_update_form .boolean {
   background-color: rgba(75, 180, 191, 0.2) !important;
   padding: 10px !important;
@@ -50,6 +54,11 @@
 }
 
 .user_general_settings_section .social_edit_update_form #social_close {
+  margin-bottom: 0px;
+  margin-right: 5px;
+}
+
+.user_general_settings_section .social_edit_update_form #social_upcoming_social {
   margin-bottom: 0px;
   margin-right: 5px;
 }

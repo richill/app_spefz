@@ -437,11 +437,11 @@
 //   workings
 // -------------------------------
 
-.socialupcoming_main_cover {
+.socials_section .socialupcoming_main_cover {
   position: relative;
 }
 
-.socialupcoming_cover {
+.socials_section .socialupcoming_cover {
   background-color: rgba(40, 48, 45, 0.5) !important;
   height: 434px;
   width: 263px;
@@ -450,7 +450,7 @@
   opacity: 0.9;
 }
 
-.socialupcoming_text {
+.socials_section .socialupcoming_text {
   position: absolute;
   font-family: "Lato", sans-serif;
   font-weight: 300;

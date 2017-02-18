@@ -46,7 +46,9 @@
                 <% @socials.asc_order.each do |social| %>
                   <li class="medium-3 columns">
                     <div class="socialupcoming_main_cover">
-                      <div class="socialupcoming_cover"><span class="socialupcoming_text">coming soon</span></div>
+                      <% if social.upcoming_social? %>
+                        <div class="socialupcoming_cover"><span class="socialupcoming_text">coming soon</span></div>
+                      <% end %>
                       <div class="social_inner_section">
                         <% if social.sold_out? %>
                           <div class="banner">
