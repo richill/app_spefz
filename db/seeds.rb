@@ -125,14 +125,215 @@ Subscription.delete_all
 sb01 = Subscription.create!(title:'premium', price: 15.0, reference: 'SPz_x4Hrmg')
 
 
+Venue.delete_all
+vn01 = Venue.new(
+  venuename: 'DSTRKT', 
+  address: '9 rupert street',
+  postcode: 'W1D 6DG',
+  maplink: 'https://www.google.co.uk/maps/place/DSTRKT+London/@51.510398,-0.1345497,17z/data=!3m1!4b1!4m5!3m4!1s0x487604d3c9fed13f:0xf849d7c87bee3afa!8m2!3d51.510398!4d-0.132361',
+  station: 'picadilly circus',
+  contact: '020 7317 9120',
+  website: 'http://www.dstrkt-london.com/home',
+  category_country_id: cc01.id,
+  city: 'london'
+  )
+vn01.save!
 
+Venue.delete_all
+vn02 = Venue.new(
+  venuename: 'core (cockatil lounge)', 
+  address: '10 - 15 queen street (aldermary house)',
+  postcode: 'EC4N 1TX',
+  maplink: 'https://www.google.co.uk/maps?client=safari&rls=en&oe=UTF-8&gfe_rd=cr&q=core+(cocktail+lounge)+10+-+15+queen+street+(aldermary+house)+EC4N+1TX&um=1&ie=UTF-8&sa=X&ved=0ahUKEwij4O_49ZnSAhVsLsAKHUwYCPwQ_AUICCgB',
+  station: 'maison house',
+  contact: '020 7618 9020',
+  website: 'http://www.corebar.co.uk',
+  category_country_id: cc01.id,
+  city: 'london'
+  )
+vn02.save!
 
+Venue.delete_all
+vn03 = Venue.new(
+  venuename: 'fifty 9', 
+  address: 'lansdowne house (59 berkeley square)',
+  postcode: 'W1J 6ER',
+  maplink: 'https://www.google.co.uk/maps/place/Fifty9+Bar/@51.5090151,-0.1467647,17z/data=!3m1!4b1!4m5!3m4!1s0x487605296f787695:0x39ecb096cf5737cc!8m2!3d51.5090151!4d-0.144576',
+  station: 'green park',
+  contact: '020 7758 8255',
+  website: 'http://www.fifty9bar.co.uk/venue-details/',
+  category_country_id: cc01.id,
+  city: 'london'
+  )
+vn03.save!
 
+Venue.delete_all
+vn04 = Venue.new(
+  venuename: 'pullman hotel (golden arrow bar)', 
+  address: '100 - 110 euston road',
+  postcode: 'NW1 2AJ',
+  maplink: 'https://www.google.co.uk/maps/place/Pullman+London+St+Pancras+Hotel/@51.5286903,-0.1301617,17z/data=!3m1!4b1!4m5!3m4!1s0x48761b3b18eb8f91:0xc259269dc1c840ab!8m2!3d51.5286903!4d-0.127973',
+  station: 'kings cross',
+  contact: '020 7666 9192',
+  website: 'http://www.pullmanhotels.com/gb/hotel-5309-pullman-london-st-pancras/index.shtml',
+  category_country_id: cc01.id,
+  city: 'london'
+  )
+vn04.save!
 
+Venue.delete_all
+vn05 = Venue.new(
+  venuename: 'eclipse (south kensington)', 
+  address: '158 old brompton road',
+  postcode: 'SW5 0BA',
+  maplink: 'https://www.google.co.uk/maps/place/Eclipse/@51.4908941,-0.1853982,17z/data=!3m1!4b1!4m5!3m4!1s0x4876056123dde00d:0xf86cbc359b63767a!8m2!3d51.4908941!4d-0.1832095',
+  station: 'gloucester road',
+  contact: '020 7259 2577',
+  website: 'http://www.eclipsebars.com',
+  category_country_id: cc01.id,
+  city: 'london'
+  )
+vn05.save!
 
+Venue.delete_all
+vn06 = Venue.new(
+  venuename: 'the alice', 
+  address: '133 Houndsditch',
+  postcode: 'EC3A 7BX',
+  maplink: 'https://www.google.co.uk/maps?client=safari&rls=en&q=the+alice+133+Houndsditch+EC3A+7BX&oe=UTF-8&gfe_rd=cr&um=1&ie=UTF-8&sa=X&ved=0ahUKEwjFkpmB-JnSAhWGLMAKHcVGBHwQ_AUICCgB',
+  station: 'aldgate',
+  contact: '020 7929 0902',
+  website: 'http://www.alicelondon.co.uk',
+  category_country_id: cc01.id,
+  city: 'london'
+  )
+vn06.save!
 
+Venue.delete_all
+vn07 = Venue.new(
+  venuename: 'jewel (piccadilly)', 
+  address: '4 - 6 glasshouse street',
+  postcode: 'W1B 5DQ',
+  maplink: 'https://www.google.co.uk/maps?client=safari&rls=en&q=jewel+(piccadilly)+4+-+6+glasshouse+street+W1B+5DQ&oe=UTF-8&gfe_rd=cr&um=1&ie=UTF-8&sa=X&ved=0ahUKEwjdk5Gw-JnSAhUhAcAKHdQ1DlMQ_AUICCgB',
+  station: 'picadilly circus',
+  contact: '020 7439 4990',
+  website: 'http://www.jewelpiccadilly.co.uk',
+  category_country_id: cc01.id,
+  city: 'london'
+  )
+vn07.save!
 
+Venue.delete_all
+vn08 = Venue.new(
+  venuename: 'bar soho', 
+  address: '23 - 25 old compton street',
+  postcode: 'W1D 5JL',
+  maplink: 'content',
+  station: 'leicester square',
+  contact: '020 7439 0439',
+  website: 'http://www.barsoho.co.uk',
+  category_country_id: cc01.id,
+  city: 'london'
+  )
+vn08.save!
 
+# Venue.delete_all
+# vn09 = Venue.new(
+#   venuename: 'content', 
+#   address: 'content',
+#   postcode: 'content',
+#   maplink: 'content',
+#   station: 'content',
+#   contact: 'content',
+#   website: 'content',
+#   category_country_id: cc01.id,
+#   city: 'london'
+#   )
+# vn09.save!
+
+# Venue.delete_all
+# vn10 = Venue.new(
+#   venuename: 'content', 
+#   address: 'content',
+#   postcode: 'content',
+#   maplink: 'content',
+#   station: 'content',
+#   contact: 'content',
+#   website: 'content',
+#   category_country_id: cc01.id,
+#   city: 'london'
+#   )
+# vn10.save!
+
+# Venue.delete_all
+# vn11 = Venue.new(
+#   venuename: 'content', 
+#   address: 'content',
+#   postcode: 'content',
+#   maplink: 'content',
+#   station: 'content',
+#   contact: 'content',
+#   website: 'content',
+#   category_country_id: cc01.id,
+#   city: 'london'
+#   )
+# vn11.save!
+
+# Venue.delete_all
+# vn12 = Venue.new(
+#   venuename: 'content', 
+#   address: 'content',
+#   postcode: 'content',
+#   maplink: 'content',
+#   station: 'content',
+#   contact: 'content',
+#   website: 'content',
+#   category_country_id: cc01.id,
+#   city: 'london'
+#   )
+# vn12.save!
+
+# Venue.delete_all
+# vn13 = Venue.new(
+#   venuename: 'content', 
+#   address: 'content',
+#   postcode: 'content',
+#   maplink: 'content',
+#   station: 'content',
+#   contact: 'content',
+#   website: 'content',
+#   category_country_id: cc01.id,
+#   city: 'london'
+#   )
+# vn13.save!
+
+# Venue.delete_all
+# vn14 = Venue.new(
+#   venuename: 'content', 
+#   address: 'content',
+#   postcode: 'content',
+#   maplink: 'content',
+#   station: 'content',
+#   contact: 'content',
+#   website: 'content',
+#   category_country_id: cc01.id,
+#   city: 'london'
+#   )
+# vn14.save!
+
+# Venue.delete_all
+# vn15 = Venue.new(
+#   venuename: 'content', 
+#   address: 'content',
+#   postcode: 'content',
+#   maplink: 'content',
+#   station: 'content',
+#   contact: 'content',
+#   website: 'content',
+#   category_country_id: cc01.id,
+#   city: 'london'
+#   )
+# vn15.save!
 
 
 
