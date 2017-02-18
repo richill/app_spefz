@@ -26,10 +26,17 @@
             <%= f.file_field :image %>
 
             <% unless action_name == 'new' %>
-            <div class="close_social_section">
+            <div class="close_event_section">
               <%= f.input :close, label: 'Close Event' %>
               <div class="text_info">If ticked (closed) the event will be removed from the list of speed-events. Members will no longer be able to view nor attend the event.</div>
             </div>
+            <% end %>
+
+            <% if current_user.admin_pa_management_group || current_user.pa_event_mgt_group %>
+              <div class="upcoming_event_section">
+                <%= f.input :upcoming_event, label: 'An Upcoming Event' %>
+                <div class="text_info">If ticked the event will be displayed as an upcoming event to the public. Members will not be able to view nor attend the event.</div>
+              </div>
             <% end %>
 
             <div class="event_topic">

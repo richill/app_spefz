@@ -25,7 +25,11 @@
   margin-top: 15px;
 }
 
-.user_general_settings_section .event_edit_update_form .close_social_section {
+.user_general_settings_section .event_edit_update_form .close_event_section {
+  margin: 0px 0px 15px;
+}
+
+.user_general_settings_section .event_edit_update_form .upcoming_event_section {
   margin: 0px 0px 15px;
 }
 
@@ -59,6 +63,11 @@
 }
 
 .user_general_settings_section .event_edit_update_form #event_close {
+  margin-bottom: 0px;
+  margin-right: 5px;
+}
+
+.user_general_settings_section .event_edit_update_form #event_upcoming_event {
   margin-bottom: 0px;
   margin-right: 5px;
 }
