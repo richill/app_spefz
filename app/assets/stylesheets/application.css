@@ -202,6 +202,10 @@ small {
   right: 5px !important;
 }
 
+#ui-datepicker-div {
+  z-index: 1000 !important;
+}
+
 /*----------------------------------------
     Dummy banner - User Index
 ----------------------------------------*/
