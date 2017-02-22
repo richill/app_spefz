@@ -56,6 +56,8 @@ class Social < ActiveRecord::Base
 
   scope :expired_or_closed_socials, -> {where('close = ? OR date < ?', true, Date.current)}
 
+  scope :super_close, -> {where('super_close = ?', true)}
+
   scope :live_socials, -> {where(['date >= ?', Date.current])}
 
   scope :closed_socials, -> {where(close: true)}
