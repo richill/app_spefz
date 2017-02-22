@@ -57,7 +57,7 @@ a{color:#37aadc}
               
               <p style="font-family:Arial, Helvetica, sans-serif;font-size:12px;line-height:22px;background-color:#F9F9F9;padding:15px;height:80px;">
                 <% if @payment.user.image.present? %>
-                  <%= cl_image_tag(@payment.user.image, :transformation=>[{:gravity=>"face", :width=>80, :height=>80, :crop=>"fill", :radius=>"max", style: "border:0;display:block;border-radius:200px;float:left; margin-right:10px;"}]) %>
+                  <span style="border:0;display:block;border-radius:200px;float:left;margin-right:10px;"><%= cl_image_tag(@payment.user.image, :transformation=>[{:gravity=>"face", :width=>80, :height=>80, :crop=>"fill", :radius=>"max"}]) %></span>
                 <% else %>
                   <%= image_tag("img-profile-image-default.png", style: "height:80px;width:80px;border:0;display:block;border-radius:200px;float:left;margin-right:10px;") %>
                 <% end %>
@@ -78,7 +78,7 @@ a{color:#37aadc}
 
               <p style="font-family:Arial, Helvetica, sans-serif;font-size:12px;line-height:22px;background-color:#F9F9F9;padding:15px;height:80px;">
                 <% if @payment.event.image.present? %>
-                  <%= cl_image_tag(@payment.event.image, :transformation=>[{:gravity=>"face", :width=>80, :height=>130, :crop=>"fill", style: "border:0;display:block;border-radius:0px;float:left; margin-right:10px;"}]) %>
+                  <span style="border:0;display:block;border-radius:0px;float:left; margin-right:10px;"><%= cl_image_tag(@payment.event.image, :transformation=>[{:gravity=>"face", :width=>80, :height=>80, :crop=>"fill"}]) %></span>
                 <% else %>
                   <%= image_tag("img-profile-image-default.png", style: "height:80px;width:130px;border:0;display:block;border-radius:0px;float:left;margin-right:10px;") %>
                 <% end %>
