@@ -2,9 +2,11 @@
   <div id="<%= dom_id(social) %>_impression" class="reveal-modal report_modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
     <h2 id="myModal-report-header">Report this social | <%= truncate "#{social.title}", length: 40 %></h2> 
     <div class="content_info">
-      <% social.impressions.each do |impression| %>
-        <%= impression.user_id %>
-      <% end %>
+      <ul>
+        <% social.impressions.uniq.each do |impression| %>
+          <li><%= impression.user_id %></li>
+        <% end %>
+      </ul>
     </div>
     <a class="close-reveal-modal cancel_button" aria-label="Close">&#215;</a>
   </div>
