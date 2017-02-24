@@ -189,5 +189,13 @@ class Social < ActiveRecord::Base
   def self.asc_order
     order('date ASC')
   end
+
+  # def impression_users
+  #   self.impressions.select("DISTINCT ON (impressions.ip_address) * ")
+  # end
+
+  # @messages = Message.select("DISTINCT ON (messages.conversation_id) * ")
+  #                  .where("messages.sender_id = (?) OR messages.recipient_id = (?)", current_user.id, current_user.id)
+  #                  .group("messages.conversation_id, messages.updated_at, messages.id, messages.sender_id, messages.recipient_id, messages.sender_deleted, messages.recipient_deleted, messages.body, messages.read_at, messages.ancestry, messages.ancestry_depth, messages.created_at")
 end
 
