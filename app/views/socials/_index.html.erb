@@ -165,7 +165,19 @@
                         <div class="icons">
                           <div class="icon_list">
                             <ul>
-                              <li><%= link_to " #{social.impressionist_count(filter: :ip_address)}", '#', id: "", class: "fa fa-eye" %></li>
+                              <!-- <li><%# link_to " #{social.impressionist_count(filter: :ip_address)}", '#', id: "", class: "fa fa-eye" %></li> -->
+                              
+
+
+                              <li>
+                                <a href="#<%= social.id %>" data-reveal-id="<%= dom_id(social) %>_impression" class="fa fa-eye"><%= social.impressionist_count(filter: :ip_address) %></a>
+                                <span><%= render partial: 'shared/modal_social_impressions', locals: { social: social } %></span>
+                              </li>
+
+
+                        
+
+
                               <li><%= link_to " #{social.comments.count}", '#', id: "", class: "fa fa-comments-o" %></li>
                               <% if social.selection_BothX_men_and_women %>
                                 <li>
