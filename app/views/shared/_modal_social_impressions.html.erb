@@ -4,10 +4,12 @@
     <div class="content_info">
       <ul>
         <% social.impressions.uniq.each do |impression| %>
-          <li><%= impression.user_id %></li>
+          <li><%= impression.user_id %> <%= link_to User.find(impression.user_id).firstname, user_path(impression.user_id) %></li>
         <% end %>
       </ul>
     </div>
     <a class="close-reveal-modal cancel_button" aria-label="Close">&#215;</a>
   </div>
 </div> 
+
+

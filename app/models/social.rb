@@ -190,5 +190,7 @@ class Social < ActiveRecord::Base
     order('date ASC')
   end
 
+
+
 end
 
