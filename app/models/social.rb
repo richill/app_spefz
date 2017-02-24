@@ -189,8 +189,5 @@ class Social < ActiveRecord::Base
   def self.asc_order
     order('date ASC')
   end
-
-
-
 end
 

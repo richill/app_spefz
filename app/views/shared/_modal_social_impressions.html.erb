@@ -3,7 +3,7 @@
     <h2 id="myModal-report-header">Report this social | <%= truncate "#{social.title}", length: 40 %></h2> 
     <div class="content_info">
       <ul>
-        <% social.impressions.uniq.each do |impression| %>
+        <% social.impressions.group(:ip_address).each do |impression| %>
           <li><%= impression.user_id %> <%= link_to User.find(impression.user_id).firstname, user_path(impression.user_id) %></li>
         <% end %>
       </ul>
