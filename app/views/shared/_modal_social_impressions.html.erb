@@ -1,10 +1,26 @@
-<div class="report_modal_container">
-  <div id="<%= dom_id(social) %>_impression" class="reveal-modal report_modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
-    <h2 id="myModal-report-header">Report this social | <%= truncate "#{social.title}", length: 40 %></h2> 
+<div class="social_impressions_container">
+  <div id="<%= dom_id(social) %>_impression" class="reveal-modal social_impressions_modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+    <h2 id="myModal-social-impressions-header"><%= truncate "#{social.title}", length: 56 %></h2> 
+    <div class="impression_count"># of impressions by :ip_address: [<span class="figure"><%= social.impressionist_count(filter: :ip_address) %></span>]</div>
     <div class="content_info">
       <ul>
         <% social.impressions.group(:ip_address).each do |impression| %>
-          <li><%= impression.user_id %> <%= link_to User.find(impression.user_id).firstname, user_path(impression.user_id) %></li>
+          <li>
+            <div class="image_section">
+              <span class="img_cover">
+                <% if User.find(impression.user_id).image_url.present? %>
+                  <%= link_to(image_tag(User.find(impression.user_id).image_url, :alt =>  "image", :class =>"#", id: ""), user_path(impression.user_id)) %>
+                <% else %>
+                  <%= link_to(image_tag("img-profile-image-default.png", :alt =>  "image", :class =>"#", id: ""), user_path(impression.user_id)) %>
+                <% end %>
+              </span>
+            </div>
+
+            <div class="user_info_section">
+              <div class="follower_following_name"><%= link_to truncate("#{User.find(impression.user_id).firstname} #{User.find(impression.user_id).lastname}", length: 25), user_path(impression.user_id) %></div>
+            <div class="user_profession"><%= truncate(User.find(impression.user_id).profession, length: 25) %></div>
+            </div>
+          </li>
         <% end %>
       </ul>
     </div>
