@@ -13,8 +13,6 @@
         <%# @user.select("DISTINCT(badges.id), badges.*").badges.order("badges.id").order("badges.created_at DESC") %>
         <%# social.impressions.select {|impression| impression.ip_address } %>
         
-
-
         <% social.impressions.group(:ip_address).each do |impression| %>
           <li>
             <div class="image_section">
