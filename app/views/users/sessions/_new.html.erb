@@ -50,7 +50,7 @@
         <div class="event_container">
           <ul>
             <!-- events -->
-            <% Event.asc_order.live_events.each do |event| %>
+            <% Event.asc_order.live_events.limit(20).each do |event| %>
             <li class="medium-12 columns listed_events">
               <div class="eventupcoming_main_cover">
                 <% if event.upcoming_event? %>
@@ -187,6 +187,82 @@
 
   <!--content_socials -->
   <div class="medium-12 columns lower_section">
+    <div class="medium-12 columns content_container">
+      <div class="header_section">
+        <div class="header">explore your city with new people</div>
+        <div class="sub_header">do more of things you like and discover your surroundings</div>
+      </div>
+      <div class="medium-12 columns content_details">
+        <div class="feed_container">
+          <ul>
+            <!-- socials -->
+            <% Social.asc_order.live_socials.limit(4).each do |social| %>
+              <li class="medium-3 columns">
+              <div class="feed_inner_section">
+                <div class="feed">
+                  <div class="feed_header">
+                    <div class="feed_date"><i class="fa fa-calendar date"></i> <%= social.date.strftime("%a, %d %b %Y") %> | <%= social.time.strftime("%I:%M %p") %></div>
+                    <div class="feed_location"><i class="fa fa-map-pin location"></i> <%= social.category_country.name %>, <%= social.city %></div>
+                    <div class="feed_price">
+                      <i class="fa fa-male age"></i>
+                      <span>Age: <%= social.category_age.name %></span>
+                    </div>
+                  </div>
+                  <div class="feed_img"><%= link_to(cl_image_tag(social.image, :transformation=>[{:gravity=>"face", :width=>200, :height=>200, :crop=>"fill"}]), social_path(social)) %></div>
+                  <div class="feed_user">
+                    <% if social.user.image.present? %>
+                      <div><%= link_to(cl_image_tag(social.user.image, :transformation=>[{:gravity=>"face", :width=>200, :height=>200, :crop=>"fill"}]), user_path(social.user)) %></div>
+                    <% else %>
+                      <div class="img_default"><%= link_to(image_tag("img-profile-image-default.png", :alt =>  "alt text", :class =>"#"), user_path(social.user)) %></div>
+                    <% end %>
+                  </div>
+                  <div class="clear"></div>
+                  <div class="feed_sub_title">
+                    <div class="feed_organizer">
+                      <span>drinks with</span>
+                      <span>
+                        <% if social.companyname.present? %>
+                          <%= truncate(social.companyname, length: 20) %>
+                        <% else %>
+                          <%= truncate(social.user.firstname, length: 20) %>
+                        <% end %>
+                      </span>
+                    </div>
+                    <div class="feed_title"><%= truncate(social.title, length: 55) %></div>
+                  </div>
+                </div>
+                <% if social.comments.present? %>
+                  <div class="feed_comments_container">
+                    <ul>
+                      <!-- comments -->
+                      <% social.comments.limit(2).each do |comment| %>
+                      <li>
+                        <ul class="inline-list feed_inner_comment_section">
+                          <li class="medium-2 columns feed_comment_img"><%= link_to(cl_image_tag(comment.user.image, :transformation=>[{:gravity=>"face", :width=>200, :height=>200, :crop=>"fill"}]), social_path(social)) %></li>
+                          <li class="medium-10 columns feed_comment"><span><b><%= link_to "#{comment.user.firstname}", "#" %></b> <%= truncate("#{comment.content}", length: 90) %></span></li>
+                        </ul>
+                      </li>
+                      <% end %>
+                      <!-- comments -->
+                    </ul>
+                  </div>
+                <% end %>
+                <div class="booking">
+                  <div><%= link_to "attend", "#" %></div>
+                </div>
+              </div>
+            </li>
+            <% end %>
+            <!-- socials -->
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--content_socials -->
+
+  <!--content_socials_old -->
+  <div class="medium-12 columns lower_section hide">
     <div class="medium-12 columns content_container">
       <div class="header_section">
         <div class="header">explore your city with new people</div>
@@ -360,7 +436,7 @@
       </div>
     </div>
   </div>
-  <!--content_socials -->
+  <!--content_socials_old -->
 
   <!--content -->
   <div class="medium-12 columns lower_section">

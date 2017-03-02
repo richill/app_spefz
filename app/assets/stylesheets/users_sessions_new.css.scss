@@ -436,6 +436,11 @@
   margin-left: 2px;
 } 
 
+.users_sessions_new_section .feed_header .age {
+  margin-right: 10px;
+  margin-left: 2px;
+} 
+
 .users_sessions_new_section .feed_img img {
   width: 100%;
 }
@@ -471,12 +476,14 @@
 
 .users_sessions_new_section .feed_title {
   font-family: "Lato", sans-serif;
-  font-size: 20px;
+  font-size: 19px;
+  margin-top: 5px;
   font-weight: bold;
   color: #283041;
   text-transform: uppercase;
   margin-bottom: 15px;
   line-height: 25px;
+  padding: 0px 5px;
 }
 
 .users_sessions_new_section .feed_comments_container {
