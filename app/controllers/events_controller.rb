@@ -102,30 +102,40 @@ class EventsController < ApplicationController
   end
 
   def preview
-    
+    @event = Event.friendly.find(params[:id])
   end
 
   private
   def setup_friends
-    @user = User.find(current_user.id)
-    @friend = User.find_by_email(params[:id])
+    if signed_in?
+      @user = User.find(current_user.id)
+      @friend = User.find_by_email(params[:id])
+    end
   end
 
   def setup_subscription
-    @premium_plan = Subscription.find_by(title:"premium") 
+    if signed_in?
+      @premium_plan = Subscription.find_by(title:"premium") 
+    end
   end
 
   def setup_cards
-    @cards = Card.all
+    if signed_in?
+      @cards = Card.all
+    end
   end
 
   def setup_invite_form
-    @invite = Invite.new
+    if signed_in?
+      @invite = Invite.new
+    end
   end
 
   def setup_user_network_activities
-    @user_network_activities = Activity.order("created_at desc").where(owner_id: current_user.friends)
-    @activity =  Activity.last
+    if signed_in?
+      @user_network_activities = Activity.order("created_at desc").where(owner_id: current_user.friends)
+      @activity =  Activity.last
+    end
   end
 
   def set_event
