@@ -76,7 +76,7 @@
                         <% if event.image.present? %>
                         <%= link_to(cl_image_tag(event.image, :transformation=>[{:gravity=>"center", :width=>200, :height=>200, :crop=>"fill"}]), preview_event_path(event)) %>
                         <% else %>
-                          <%= link_to(image_tag("img_feed_07.png", :alt =>  "image", :class =>"#"), event_path(event)) %>
+                          <%= link_to(image_tag("img_feed_07.png", :alt =>  "image", :class =>"#"), preview_event_path(event)) %>
                         <% end %>
                       </div>
                     <% end %>
@@ -84,7 +84,7 @@
 
                   <!-- middle_evt content -->
                   <div class="middle_evt">
-                    <div class="title"><%= link_to "#{event.title}", event_path(event) %></div>
+                    <div class="title"><%= link_to "#{event.title}", preview_event_path(event) %></div>
                     <div class="info"><i class="fa fa-map-marker" aria-hidden="true"></i> <%= event.venuename %></div>
                     <div class="info"><i class="fa fa-calendar" aria-hidden="true"></i> <%= event.date.strftime("%A, %d %b") %></div>
                     <div class="info"><i class="fa fa-clock-o" aria-hidden="true"></i> <%= event.time.strftime("%H:%M") %>h - <%= event.time_end.strftime("%H:%M") %>h</div>
@@ -156,20 +156,10 @@
                       <div class="month"><span><%= event.date.strftime("%b") %></span> <span class="divider">|</span> <span><%= event.date.strftime("%a") %></span></div>
 
                       <% if event.sold_out? %>
-                        <div class="btn_soldout"><%= link_to "sold out!", event_path(event) %></div>
+                        <div class="btn_soldout"><%= link_to "sold out!", preview_event_path(event) %></div>
                       <% else %>
-                        <div class="btn_booknow"><%= link_to "book now!", event_path(event) %></div>
+                        <div class="btn_booknow"><%= link_to "book now!", preview_event_path(event) %></div>
                       <% end %>
-                      
-                      <div class="btn_save_unsave_section">
-                        <% if current_user %>
-                          <% unless current_user.favourite_events.exists?(id: event.id)  %>
-                            <div class="btn_save"><%= link_to 'Save', favourite_events_path(event_id: event), method: :post %></div>
-                          <% else %>
-                            <div class="btn_unsave"><%= link_to 'Un-Save', favourite_event_path(event), method: :delete %></div>
-                          <% end %>
-                        <% end %>
-                      </div>
                     </div>
                   </div>
                   <!-- right_evt content -->
@@ -188,7 +178,7 @@
 
   <!--content_socials -->
   <div class="medium-12 columns lower_section">
-    <div class="medium-12 columns content_container">
+    <div class="medium-12 columns content_container" style="padding-top:0px;">
       <div class="header_section">
         <div class="header">explore your city with new people</div>
         <div class="sub_header">do more of things you like and discover your surroundings</div>

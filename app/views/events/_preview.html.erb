@@ -1,1 +1,186 @@
-<h1>i am the preview</h1>
+<!-- <h1>i am the preview</h1> -->
+<div class="medium-12 columns events_show_preview_inner_section">
+
+  <!-- upper section -->
+  <div class="medium-12 columns upper_section">
+    <div class="profile_banner">
+      <div class="medium-12 columns event_inner_banner">
+        <div class="header"><%= render 'shared/header_preview' %></div>
+        <div class="medium-12 columns upper_event_content">
+          <div class="medium-12 columns evt_details_cover">
+            <div class="evt_details_container">
+
+              <!-- left_evt_details -->
+              <div class="medium-3 columns left_evt_details">
+                <!-- sold out -->
+                <% if @event.sold_out? %>
+                  <div class="banner">
+                    <div class="ribbon-wrapper-green">
+                      <div class="ribbon-green">sold out</div>
+                    </div>
+                  </div>
+                <% end %>
+                <!-- sold out -->
+                <% if @event.image.present? %>
+                  <div class="image_cover"><%= cl_image_tag(@event.image, :transformation=>[{:gravity=>"center", :width=>200, :height=>200, :crop=>"fill"}]) %></div>
+                <% else %>
+                  <div class="image_cover"><%= image_tag("img_feed_07.png") %></div>
+                <% end %>
+              </div>
+
+              <!-- right_evt_details -->
+              <div class="medium-9 columns right_evt_details">
+                <div class="title"><%= @event.title %></div>
+                <div class="info"><i class="fa fa-map-marker" aria-hidden="true"></i> <%= @event.venuename %></div>
+                <div class="info"><i class="fa fa-calendar" aria-hidden="true"></i> <%= @event.date.strftime("%A, %d %b") %></div>
+                <div class="info"><i class="fa fa-clock-o" aria-hidden="true"></i> <%= @event.time.strftime("%H:%M") %>h - <%= @event.time_end.strftime("%H:%M") %>h</div>
+                <div class="info city_country">
+                  <span><i class="fa fa-map-pin" aria-hidden="true"></i> <%= @event.city %>, <%= @event.category_country.name %></span>
+                  <span class="divider">|</span>
+                  <span class="share_content">
+                    <a href="#" data-reveal-id="myModal-share-buttons" class:"socialicon_cover_fb"><i class="fa fa-share-alt" aria-hidden="true"></i> share</a>
+                    <span><%= render 'shared/modal_share_buttons' %></span>
+                  </span>
+                </div> 
+                <div class="price">
+                  <% if @event.expired_or_closed_event %>
+                    <span>Event Closed</span>
+                  <% else %>
+                    <span>£<%= number_with_precision(@event.price, precision: 2) %></span>
+                  <% end %>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- middle section -->
+  <div class="medium-12 columns middle_section">
+    <div class="middle_inner_section">
+      <ul class="inline-list left">
+        <!-- event_gender_selection_display -->
+        <% if @event.selection_BothX_men_and_women %>
+          <li>
+            <span class="content_gender"><i class="fa fa-male" aria-hidden="true"></i> </span>
+            <% if @event.sold_out_Xmen? %>
+              <span class="content content_soldout">sold out</span>
+            <% else %>
+              <span class="content content_available">available</span>
+            <% end %>
+          </li>
+          <li><span>|</span></li>
+          <li>
+            <span class="content_gender"><i class="fa fa-female" aria-hidden="true"></i> </span>
+            <% if @event.sold_out_Xwomen? %>
+              <span class="content content_soldout">sold out</span>
+            <% else %>
+              <span class="content content_available">available</span>
+            <% end %>
+          </li>
+        <% elsif @event.selection_BothAndOnly_men_and_women %>
+          <li>
+            <% if @event.category_quantitygender.name == "only men" %>
+              <span class="content_gender"><i class="fa fa-male" aria-hidden="true"></i> </span>
+              <span class="content_text">[Only Men]</span>
+            <% elsif @event.category_quantitygender.name == "only women" %>
+              <span class="content_gender"><i class="fa fa-female" aria-hidden="true"></i> </span>
+              <span class="content_text">[Only Women]</span>
+            <% elsif @event.category_quantitygender.name == "both men & women" %>
+              <span class="content_gender"><i class="fa fa-users" aria-hidden="true"></i> </span>
+              <span class="content_text">[Both Men & Women]</span>
+            <% end %>
+            <% if @event.sold_out? %>
+              <span class="content content_soldout">sold out</span>
+            <% else %>
+              <span class="content content_available">available</span>
+            <% end %>
+          </li>
+        <% end %>
+        <!-- event_gender_selection_display -->
+        <li><span>|</span></li>
+        <li>
+          <span class="header">Age Group:</span>
+          <span class="content"><%= @event.category_age.name %></span>
+        </li>
+      </ul>
+      <ul class="inline-list right">
+        <li><span><div class="event_show_btn btn_event_signin"><%= link_to 'Signin to Book Now!', signin_path %></div></span></li>
+        <li><span><div class="btn_event_signup"><%= link_to 'Signup to Book Now!', new_user_registration_path %></div></span></li>
+      </ul>
+    </div>
+  </div>
+
+
+  <!-- lower section -->
+  <div class="medium-12 columns lower_section">
+    <div class="lower_inner_section">
+      <!-- left column -->
+      <div class="medium-3 columns column_left">
+        <!-- about social -->
+        <div class="medium-12 columns left_container">
+          <div class="medium-12 columns left_inner_container location_container">
+            <div class="header"><div class="header_content"><i class="fa fa-map-marker" aria-hidden="true"></i> location</div></div>
+            <div class="content">
+              <div class="content_info">
+                <div class="specific_location">
+                  <%= link_to "#{@event.maplink}", target:"_blank" do %>
+                    <b><%= "#{@event.venuename}" %></b>
+                    <div><%= "#{@event.address}, #{@event.city}, #{@event.category_country.name}, #{@event.postcode}" %></div>
+                  <% end %>
+                </div>
+                <%= link_to "#{@event.maplink}", target:"_blank" do %>
+                <div class="map_container">
+                  <span class="img_map_content">click to view map</span>
+                  <span class="img_map"><%= image_tag("img_map_01.png") %></span>
+                </div>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- middle column -->
+      <div class="medium-6 columns column_middle">
+        <div class="left_container middle_container">
+          <div class="medium-12 columns middle_inner_container">
+            <div class="medium-12 columns header">
+              <div class="medium-12 columns header_content event_itinerary">event details</div>
+            </div>
+            <div class="clear"></div>
+            <div class="content">
+              <div class="content_info event_itinerary_content"><%= render 'shared/content_event_itinerary' %></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- right column -->
+      <!-- event_host -->
+      <div class="medium-3 columns column_right">
+        <div class="medium-12 columns right_container">
+          <div class="medium-12 columns right_inner_container host_container">
+            <div class="header"><div class="header_content"><i class="fa fa-user" aria-hidden="true"></i> <%= link_to "host", "#" %></div></div>
+            <div class="content">
+              <div class="content_info" style="padding: 0px 15px 15px;">
+                <div><%= render 'shared/content_events_about_host' %></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+

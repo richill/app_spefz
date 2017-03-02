@@ -18,13 +18,17 @@
         <% end %>
       </ul>
     </div>
-    <% if current_user.admin_pa_management_group || current_user.pa_event_mgt_group %>
-      <div class="edit_host">
-        <%= link_to "Edit Host", edit_event_host_path(@event, @event.host) %>
-      </div>
+
+    <% if signed_in? %>
+      <% if current_user.admin_pa_management_group || current_user.pa_event_mgt_group %>
+        <div class="edit_host">
+          <%= link_to "Edit Host", edit_event_host_path(@event, @event.host) %>
+        </div>
+      <% end %>
     <% end %>
   </div>
 <% else %>
+  <% if signed_in? %>
   <% if current_user.admin_pa_management_group || current_user.pa_event_mgt_group %>
     <div class="event_host_section">
       <div class="listed_hosts">
@@ -35,6 +39,7 @@
         </div>
       </div>
     </div>
+  <% end %>
   <% else %>
     <div class="event_host_section">
       <div class="listed_hosts">
