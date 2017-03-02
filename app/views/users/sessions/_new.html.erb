@@ -223,7 +223,7 @@
                       <span>drinks with</span>
                       <span>
                         <% if social.company_image.present? && social.speakername.present? %>
-                          <%= link_to(truncate("#{social.speakername}", length: 20), "#{social.speakerlinkedin}", target: "_blank") %>
+                          <span><%= link_to(truncate("#{social.speakername}", length: 20), "#{social.speakerlinkedin}", target: "_blank") %></span>
                         <% elsif social.company_image.present? && social.speakername.blank? %>
                           <%= truncate("Spefz", length: 20) %>
                         <% else %>
