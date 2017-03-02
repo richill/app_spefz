@@ -380,6 +380,11 @@
   }
 }
 
+.users_sessions_new_section .event_container {
+  margin: auto;
+  width: 1170px !important;
+}
+
 .users_sessions_new_section .feed_inner_section {
   // background-color: green;
   background-color: #fff;
@@ -806,7 +811,11 @@
 
 .users_sessions_new_section .content_details {
   padding: 15px 0px !important;
-  width: 1170px;
+  margin: auto;
+}
+
+.users_sessions_new_section .event_content_details {
+  padding: 15px 0px !important;
   margin: auto;
 }
 
