@@ -229,22 +229,26 @@
                     <div class="feed_title"><%= truncate(social.title, length: 55) %></div>
                   </div>
                 </div>
-                <% if social.comments.present? %>
-                  <div class="feed_comments_container">
-                    <ul>
-                      <!-- comments -->
-                      <% social.comments.limit(3).each do |comment| %>
-                      <li>
-                        <ul class="inline-list feed_inner_comment_section">
-                          <li class="medium-2 columns feed_comment_img"><%= link_to(cl_image_tag(comment.user.image, :transformation=>[{:gravity=>"face", :width=>200, :height=>200, :crop=>"fill"}]), social_path(social)) %></li>
-                          <li class="medium-10 columns feed_comment"><span><b><%= link_to "#{comment.user.firstname}", "#" %></b> <%= truncate("#{comment.content}", length: 90) %></span></li>
-                        </ul>
-                      </li>
-                      <% end %>
-                      <!-- comments -->
-                    </ul>
-                  </div>
+                <!-- comments -->
+                <% unless social.upcoming_social? %>
+                  <% if social.comments.present? %>
+                    <div class="feed_comments_container">
+                      <ul>
+                        <!-- comments_list -->
+                        <% social.comments.limit(3).each do |comment| %>
+                        <li>
+                          <ul class="inline-list feed_inner_comment_section">
+                            <li class="medium-2 columns feed_comment_img"><%= link_to(cl_image_tag(comment.user.image, :transformation=>[{:gravity=>"face", :width=>200, :height=>200, :crop=>"fill"}]), social_path(social)) %></li>
+                            <li class="medium-10 columns feed_comment"><span><b><%= link_to "#{comment.user.firstname}", "#" %></b> <%= truncate("#{comment.content}", length: 90) %></span></li>
+                          </ul>
+                        </li>
+                        <% end %>
+                        <!-- comments_list -->
+                      </ul>
+                    </div>
+                  <% end %>
                 <% end %>
+                <!-- comments -->
                 <div class="booking">
                   <div><%= link_to "attend", "#" %></div>
                 </div>
