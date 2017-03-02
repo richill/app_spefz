@@ -45,7 +45,7 @@
     <div class="medium-12 columns content_container">
       <div class="header_section">
         <!-- <div class="header">explore your city with new people</div> -->
-        <div class="header" style="text-shadow:rgba(40, 48, 45, 0.8) 4px 2px 8px;">join UK's favourite speed-social events</div>
+        <div class="header" style="text-shadow:rgba(40, 48, 45, 0.6) 4px 2px 8px;">join UK's favourite speed-social events</div>
         <div class="sub_header">do more of things you like and discover your surroundings</div>
       </div>
       <div class="medium-12 columns event_content_details">
@@ -181,7 +181,7 @@
   <div class="medium-12 columns lower_section">
     <div class="medium-12 columns content_container" style="padding-top:0px;">
       <div class="header_section">
-        <div class="header" style="text-shadow:rgba(40, 48, 45, 0.8) 4px 2px 8px;">explore your city with new people</div>
+        <div class="header" style="text-shadow:rgba(40, 48, 45, 0.6) 4px 2px 8px;">explore your city with new people</div>
         <div class="sub_header">do more of things you like and discover your surroundings</div>
       </div>
       <div class="medium-12 columns content_details">
@@ -227,7 +227,7 @@
                   <div class="feed_comments_container">
                     <ul>
                       <!-- comments -->
-                      <% social.comments.limit(2).each do |comment| %>
+                      <% social.comments.limit(3).each do |comment| %>
                       <li>
                         <ul class="inline-list feed_inner_comment_section">
                           <li class="medium-2 columns feed_comment_img"><%= link_to(cl_image_tag(comment.user.image, :transformation=>[{:gravity=>"face", :width=>200, :height=>200, :crop=>"fill"}]), social_path(social)) %></li>
