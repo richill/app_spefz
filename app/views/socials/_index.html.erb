@@ -84,18 +84,24 @@
                           <!-- <div class="social_img"><%# link_to(image_tag("#{social.image_url}", :alt =>  "image", :class =>"#"), social_path(social)) %></div> -->
                           <div class="social_img"><%= link_to(cl_image_tag(social.image, :transformation=>[{:gravity=>"face", :width=>200, :height=>200, :crop=>"fill"}]), social_path(social)) %></div>
                           <div class="social_user">
-                            <% if social.user.image.present? %>
-                              <div><%= link_to(cl_image_tag(social.user.image, :transformation=>[{:gravity=>"face", :width=>200, :height=>200, :crop=>"fill"}]), user_path(social.user)) %></div>
+                            <% if social.company_image? %>
+                              <div class="img_default"><%= link_to(image_tag("img-logo-five.png", :alt =>  "alt text", :class =>"#"), "#") %></div>
                             <% else %>
-                              <div class="img_default"><%= link_to(image_tag("img-profile-image-default.png", :alt =>  "alt text", :class =>"#"), user_path(social.user)) %></div>
+                              <% if social.user.image.present? %>
+                                <div><%= link_to(cl_image_tag(social.user.image, :transformation=>[{:gravity=>"face", :width=>200, :height=>200, :crop=>"fill"}]), user_path(social.user)) %></div>
+                              <% else %>
+                                <div class="img_default"><%= link_to(image_tag("img-profile-image-default.png", :alt =>  "alt text", :class =>"#"), user_path(social.user)) %></div>
+                              <% end %>
                             <% end %>
                           </div>
                           <div class="clear"></div>
                           <div class="social_sub_title">
                             <div class="social_organizer">drinks with 
                               <span>
-                                <% if social.companyname.present? %>
-                                  <%= truncate(social.companyname, length: 20) %>
+                                <% if social.company_image.present? && social.speakername.present? %>
+                                  <%= link_to(truncate("#{social.speakername}", length: 20), "#{social.speakerlinkedin}", target: "_blank") %>
+                                <% elsif social.company_image.present? && social.speakername.blank? %>
+                                  <%= truncate("Spefz", length: 20) %>
                                 <% else %>
                                   <%= truncate(social.user.firstname, length: 20) %>
                                 <% end %>

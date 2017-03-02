@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170218134918) do
+ActiveRecord::Schema.define(version: 20170302153331) do
 
   create_table "activities", force: :cascade do |t|
     t.integer  "trackable_id"
@@ -502,6 +502,7 @@ ActiveRecord::Schema.define(version: 20170218134918) do
     t.string   "slug"
     t.integer  "category_quantitygendersocial_id"
     t.boolean  "upcoming_social"
+    t.boolean  "company_image"
   end
 
   add_index "socials", ["slug"], name: "index_socials_on_slug", unique: true

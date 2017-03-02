@@ -41,12 +41,15 @@
                     <%= f.input :upcoming_social, label: 'An Upcoming Social' %>
                     <div class="text_info">If ticked the social will be displayed as an upcoming social to the public. Members will not be able to view nor attend the social.</div>
                   </div>
+                  <div class="upcoming_social_section">
+                    <%= f.input :company_image, label: 'Use company image' %>
+                    <div class="text_info">If ticked the company image will be displayed.</div>
+                  </div>
                 <% end %>
 
                 <div class="company_info_section hide">
                   <%= f.text_field :companyname, label: false, placeholder: "HSBC Private Bank", id: "textarea" %>
-                  <div class="text_info">*maximum word count: 20 | <span id="textarea_companyname_feedback"></span>
-                  </div>
+                  <div class="text_info">*maximum word count: 20 | <span id="textarea_companyname_feedback"></span></div>
                 </div>
 
                 <div class="discussion_topic">
