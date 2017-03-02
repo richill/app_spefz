@@ -101,6 +101,10 @@ class EventsController < ApplicationController
     end
   end
 
+  def preview
+    
+  end
+
   private
   def setup_friends
     @user = User.find(current_user.id)

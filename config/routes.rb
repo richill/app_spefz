@@ -92,6 +92,7 @@ Rails.application.routes.draw do
     resources :hosts
     member do
       get 'attendants'
+      get 'preview'
     end
   end
 
