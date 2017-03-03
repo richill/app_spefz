@@ -180,6 +180,7 @@
   </div>
   <!--content_events -->
 
+  <% if Social.present? %>
   <!--content_socials -->
   <div class="medium-12 columns lower_section">
     <div class="medium-12 columns content_container" style="padding-top:0px;">
@@ -270,8 +271,8 @@
     </div>
   </div>
   <!--content_socials -->
-
-  <!--content_socials_old -->
+  <% else %>
+  <!--content_socials_dummy -->
   <div class="medium-12 columns lower_section hide">
     <div class="medium-12 columns content_container">
       <div class="header_section">
@@ -446,7 +447,8 @@
       </div>
     </div>
   </div>
-  <!--content_socials_old -->
+  <!--content_socials_dummy -->
+  <% end %>
 
   <!--content -->
   <div class="medium-12 columns lower_section">
