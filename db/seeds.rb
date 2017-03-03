@@ -237,104 +237,243 @@ vn08 = Venue.new(
   )
 vn08.save!
 
-# Venue.delete_all
-# vn09 = Venue.new(
-#   venuename: 'content', 
-#   address: 'content',
-#   postcode: 'content',
-#   maplink: 'content',
-#   station: 'content',
-#   contact: 'content',
-#   website: 'content',
-#   category_country_id: cc01.id,
-#   city: 'london'
-#   )
-# vn09.save!
+Venue.delete_all
+vn09 = Venue.new(
+  venuename: 'village', 
+  address: '81 wardour street',
+  postcode: 'W1D 6QD',
+  maplink: 'https://www.google.co.uk/maps?q=village+81+wardour+street+W1D+6QD&um=1&ie=UTF-8&sa=X&ved=0ahUKEwjGkYKqsbrSAhXILsAKHTlADpcQ_AUICCgB',
+  station: 'picadilly circus',
+  contact: '020 7434 2124',
+  website: 'http://www.village-soho.co.uk/',
+  category_country_id: cc01.id,
+  city: 'london'
+  )
+vn09.save!
 
-# Venue.delete_all
-# vn10 = Venue.new(
-#   venuename: 'content', 
-#   address: 'content',
-#   postcode: 'content',
-#   maplink: 'content',
-#   station: 'content',
-#   contact: 'content',
-#   website: 'content',
-#   category_country_id: cc01.id,
-#   city: 'london'
-#   )
-# vn10.save!
+Venue.delete_all
+vn10 = Venue.new(
+  venuename: 'the somers town ', 
+  address: '60 chalton street',
+  postcode: 'NW1 1HS',
+  maplink: 'https://www.google.co.uk/maps?q=the+somers+town+60+chalton+street+NW1+1HS&um=1&ie=UTF-8&sa=X&ved=0ahUKEwic26vbsbrSAhXlCcAKHeTMDUEQ_AUICCgB',
+  station: 'euston',
+  contact: '020 7387 7377',
+  website: 'http://www.thesomerstowncoffeehouse.co.uk/',
+  category_country_id: cc01.id,
+  city: 'london'
+  )
+vn10.save!
 
-# Venue.delete_all
-# vn11 = Venue.new(
-#   venuename: 'content', 
-#   address: 'content',
-#   postcode: 'content',
-#   maplink: 'content',
-#   station: 'content',
-#   contact: 'content',
-#   website: 'content',
-#   category_country_id: cc01.id,
-#   city: 'london'
-#   )
-# vn11.save!
+Venue.delete_all
+vn11 = Venue.new(
+  venuename: 'kanaloa', 
+  address: '18 lime office court (shoe lane)',
+  postcode: 'EC4A 3BQ',
+  maplink: 'https://www.google.co.uk/maps?q=kanaloa+18+lime+office+court+(shoe+lane)+EC4A+3BQ&um=1&ie=UTF-8&sa=X&ved=0ahUKEwjnuO61srrSAhUXM8AKHYcfCTgQ_AUICCgB',
+  station: 'chancery lane',
+  contact: '020 7842 0620',
+  website: 'http://www.kanaloaclub.com/',
+  category_country_id: cc01.id,
+  city: 'london'
+  )
+vn11.save!
 
-# Venue.delete_all
-# vn12 = Venue.new(
-#   venuename: 'content', 
-#   address: 'content',
-#   postcode: 'content',
-#   maplink: 'content',
-#   station: 'content',
-#   contact: 'content',
-#   website: 'content',
-#   category_country_id: cc01.id,
-#   city: 'london'
-#   )
-# vn12.save!
+Venue.delete_all
+vn12 = Venue.new(
+  venuename: 'the pepys ', 
+  address: 'stew lane (off upper thames street)',
+  postcode: 'EC4V 3PT',
+  maplink: 'https://www.google.co.uk/maps?q=the+pepys+stew+lane+(off+upper+thames+street)+EC4V+3PT&um=1&ie=UTF-8&sa=X&ved=0ahUKEwjf0ubosrrSAhURM8AKHX3HD6cQ_AUICCgB',
+  station: 'maison house',
+  contact: '020 7489 1871',
+  website: 'http://www.thepepys.co.uk/',
+  category_country_id: cc01.id,
+  city: 'london'
+  )
+vn12.save!
 
-# Venue.delete_all
-# vn13 = Venue.new(
-#   venuename: 'content', 
-#   address: 'content',
-#   postcode: 'content',
-#   maplink: 'content',
-#   station: 'content',
-#   contact: 'content',
-#   website: 'content',
-#   category_country_id: cc01.id,
-#   city: 'london'
-#   )
-# vn13.save!
+Venue.delete_all
+vn13 = Venue.new(
+  venuename: 'vivat bacchus (farringdon)', 
+  address: '47 farringdon street, (entrance on charterhouse street)',
+  postcode: 'EC4A 4LL ',
+  maplink: 'https://www.google.co.uk/maps?q=vivat+bacchus+(farringdon)+47+farringdon+street,+(entrance+on+charterhouse+street)+EC4A+4LL&um=1&ie=UTF-8&sa=X&ved=0ahUKEwiWhYGQs7rSAhVLAsAKHd1XCZMQ_AUICCgB',
+  station: 'chancery lane',
+  contact: '020 7353 2648',
+  website: 'http://www.vivatbacchus.co.uk/',
+  category_country_id: cc01.id,
+  city: 'london'
+  )
+vn13.save!
 
-# Venue.delete_all
-# vn14 = Venue.new(
-#   venuename: 'content', 
-#   address: 'content',
-#   postcode: 'content',
-#   maplink: 'content',
-#   station: 'content',
-#   contact: 'content',
-#   website: 'content',
-#   category_country_id: cc01.id,
-#   city: 'london'
-#   )
-# vn14.save!
+Venue.delete_all
+vn14 = Venue.new(
+  venuename: '155 bar & kitchen ', 
+  address: '155 farringdon road',
+  postcode: 'EC1R 3AD',
+  maplink: 'https://www.google.co.uk/maps?q=155+bar+%26+kitchen+155+farringdon+road+EC1R+3AD&um=1&ie=UTF-8&sa=X&ved=0ahUKEwiFhaezs7rSAhXrCsAKHfftA-kQ_AUICCgB',
+  station: 'farringdon',
+  contact: '020 3675 8847',
+  website: 'http://155barandkitchen.com/',
+  category_country_id: cc01.id,
+  city: 'london'
+  )
+vn14.save!
 
-# Venue.delete_all
-# vn15 = Venue.new(
-#   venuename: 'content', 
-#   address: 'content',
-#   postcode: 'content',
-#   maplink: 'content',
-#   station: 'content',
-#   contact: 'content',
-#   website: 'content',
-#   category_country_id: cc01.id,
-#   city: 'london'
-#   )
-# vn15.save!
+Venue.delete_all
+vn15 = Venue.new(
+  venuename: 'millennium hotel (avista bar) ', 
+  address: '44 grosvenor square',
+  postcode: 'W1K 2HP',
+  maplink: 'https://www.google.co.uk/maps/place/Millennium+Hotel+London+Mayfair/@51.5106308,-0.1531141,17z/data=!3m1!4b1!4m5!3m4!1s0x4876052d6b73b09f:0xec099f42b74eea8!8m2!3d51.5106308!4d-0.1509254',
+  station: 'bond street',
+  contact: '020 7629 9400',
+  website: 'https://www.millenniumhotels.com/en/london/millennium-hotel-london-mayfair/?cid=gplaces',
+  category_country_id: cc01.id,
+  city: 'london'
+  )
+vn15.save!
 
+Venue.delete_all
+vn16 = Venue.new(
+  venuename: 'brasserie blanc (threadneedle street)', 
+  address: '60 threadneedle street',
+  postcode: 'EC2R 8HP',
+  maplink: 'https://www.google.co.uk/maps?q=brasserie+blanc+(threadneedle+street)+60+threadneedle+street+EC2R+8HP&um=1&ie=UTF-8&sa=X&ved=0ahUKEwjZ7_CQtLrSAhVLDcAKHUPBD9sQ_AUICCgB',
+  station: 'bank',
+  contact: '020 7710 9440',
+  website: 'http://brasserieblanc.com/restaurants/threadneedle-street/',
+  category_country_id: cc01.id,
+  city: 'london'
+  )
+vn16.save!
+
+Venue.delete_all
+vn17 = Venue.new(
+  venuename: 'tibits', 
+  address: '12 - 14 heddon street',
+  postcode: 'W1B 4DA',
+  maplink: 'https://www.google.co.uk/maps?safe=strict&espv=2&q=tibits+12+-+14+heddon+street+W1B+4DA&bav=on.2,or.r_cp.&biw=1366&bih=609&dpr=1&ion=1&um=1&ie=UTF-8&sa=X&ved=0ahUKEwi7gb-1tLrSAhWlDMAKHQxwDMwQ_AUIBigB',
+  station: 'picadilly circus',
+  contact: '020 7758 4110',
+  website: 'http://www.tibits.ch/en/home.html',
+  category_country_id: cc01.id,
+  city: 'london'
+  )
+vn17.save!
+
+Venue.delete_all
+vn18 = Venue.new(
+  venuename: 'amber', 
+  address: '1 ropemaker street (city point building)',
+  postcode: 'EC2Y 9AW',
+  maplink: 'https://www.google.co.uk/maps?q=amber+1+ropemaker+street+(city+point+building)+EC2Y+9AW&um=1&ie=UTF-8&sa=X&ved=0ahUKEwjCwoTitLrSAhVjBsAKHVIyCj4Q_AUICCgB',
+  station: 'liverpool street',
+  contact: '020 7382 1690',
+  website: 'http://amber-bar.co.uk/',
+  category_country_id: cc01.id,
+  city: 'london'
+  )
+vn18.save!
+
+Venue.delete_all
+vn19 = Venue.new(
+  venuename: 'forge', 
+  address: '24 cornhill',
+  postcode: 'EC3V 3ND',
+  maplink: 'https://www.google.co.uk/maps?q=forge+24+cornhill+EC3V+3ND&um=1&ie=UTF-8&sa=X&ved=0ahUKEwjb9L6FtbrSAhUHKsAKHWtiCfsQ_AUICCgB',
+  station: 'bank',
+  contact: '020 7337 6767',
+  website: 'http://www.forgedinlondon.com/',
+  category_country_id: cc01.id,
+  city: 'london'
+  )
+vn19.save!
+
+Venue.delete_all
+vn20 = Venue.new(
+  venuename: 'salvador and amanda', 
+  address: '1 vernon place',
+  postcode: 'WC1A 2EP ',
+  maplink: 'https://www.google.co.uk/maps?q=salvador+and+amanda+1+vernon+place+WC1A+2EP&um=1&ie=UTF-8&sa=X&ved=0ahUKEwimwemhtbrSAhXHAsAKHdOoDI0Q_AUICCgB',
+  station: 'holbon',
+  contact: '020 7430 9600',
+  website: 'http://www.salvadorandamanda.com/',
+  category_country_id: cc01.id,
+  city: 'london'
+  )
+vn20.save!
+
+Venue.delete_all
+vn21 = Venue.new(
+  venuename: 'the gable', 
+  address: '25 moorgate',
+  postcode: 'EC2R 6AR',
+  maplink: 'https://www.google.co.uk/maps?q=the+gable+25+moorgate+EC2R+6AR&um=1&ie=UTF-8&sa=X&ved=0ahUKEwjS3JDYtbrSAhWoLcAKHbIqB64Q_AUICCgB',
+  station: 'bank',
+  contact: '020 7330 0950',
+  website: 'http://www.thegable.co.uk/',
+  category_country_id: cc01.id,
+  city: 'london'
+  )
+vn21.save!
+
+Venue.delete_all
+vn22 = Venue.new(
+  venuename: 'all bar one bishopsgate', 
+  address: '175 bishopsgate',
+  postcode: 'EC2M 3YD',
+  maplink: 'https://www.google.co.uk/maps?q=all+bar+one+bishopsgate+175+bishopsgate+EC2M+3YD&um=1&ie=UTF-8&sa=X&ved=0ahUKEwj1uNr1tbrSAhWFJsAKHZgWAXMQ_AUICCgB',
+  station: 'liverpool street',
+  contact: '020 7256 9450',
+  website: 'http://www.allbarone.co.uk/national-search/london/all-bar-one-bishopsgate',
+  category_country_id: cc01.id,
+  city: 'london'
+  )
+vn22.save!
+
+Venue.delete_all
+vn23 = Venue.new(
+  venuename: 'rileys sports bar', 
+  address: '80 haymarket',
+  postcode: 'SW1Y 4TE',
+  maplink: 'https://www.google.co.uk/maps?q=rileys+sports+bar+80+haymarket+SW1Y+4TE&um=1&ie=UTF-8&sa=X&ved=0ahUKEwic-K2ytrrSAhWhC8AKHfCuBJYQ_AUICCgB',
+  station: 'picadilly circus',
+  contact: '020 7930 0393',
+  website: 'http://www.rileyssportsbars.co.uk/',
+  category_country_id: cc01.id,
+  city: 'london'
+  )
+vn23.save!
+
+Venue.delete_all
+vn24 = Venue.new(
+  venuename: 'woolgate bar and brasserie', 
+  address: '25 basinghall street',
+  postcode: 'EC2V 5HA',
+  maplink: 'https://www.google.co.uk/maps?q=woolgate+bar+and+brasserie+(davy%27s)+25+basinghall+street+EC2V+5HA&um=1&ie=UTF-8&sa=X&ved=0ahUKEwjLg5TntrrSAhVrCMAKHbr7BVQQ_AUICCgB',
+  station: 'bank',
+  contact: '020 7600 5216',
+  website: 'http://www.davy.co.uk/wine-bar/davys-at-woolgate/',
+  category_country_id: cc01.id,
+  city: 'london'
+  )
+vn24.save!
+
+Venue.delete_all
+vn25 = Venue.new(
+  venuename: 'the sterling bar at the gherkin', 
+  address: '30 saint mary axe',
+  postcode: 'EC3A 8BF',
+  maplink: 'https://www.google.co.uk/maps?q=the+sterling+bar+at+the+gherkin+30+st+mary+axe+EC3A+8BF&um=1&ie=UTF-8&sa=X&ved=0ahUKEwjHh-yPt7rSAhWlHsAKHXy-A3QQ_AUICCgB',
+  station: 'aldgate',
+  contact: '020 7929 3641',
+  website: 'http://www.thesterlingbar.co.uk/',
+  category_country_id: cc01.id,
+  city: 'london'
+  )
+vn25.save!
 
 
 
