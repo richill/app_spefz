@@ -1,5 +1,5 @@
-<div class="users_passwords_new_section">
-  <div class="medium-12 columns users_inner_passwords_new_section upper_section">
+<div class="users_confirmations_new_section">
+  <div class="medium-12 columns users_inner_confirmations_new_section upper_section">
     <div class="banner_inner_section">
       <!-- header -->
       <div class="header_section">
@@ -20,23 +20,25 @@
         <div class="signup_inner_content">
           <div class="signup_inner_upper_content">We use <%= link_to "cookies", terms_cookie_policy_path %>. If you use our website, we shall assume that you are happy with the use of cookies as described in our <%= link_to "privacy policy", terms_privacy_path %>.</div>
           <div class="signup_inner_middle_content">
-            <h1>Forgot your password?</h1>
-            <div class="sub_header">Instructions for resetting password would be sent to your stated email address.</div>
+            <h1>Re-send confirmation</h1>
+            <div class="sub_header">Instructions for activating your spefz account would be sent to your stated email address.</div>
             <div>
 
-              <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+              <%= simple_form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
                 <%= f.error_notification %>
+                <%= f.full_error :confirmation_token %>
                 <div class="form-inputs">
                   <%= f.input :email, required: true, autofocus: true, placeholder: "Email", label: false %>
                 </div>
                 <div class="form-actions">
-                  <%= f.button :submit, "Reset password" %>
+                  <%= f.button :submit, "Resend confirmation instructions" %>
                 </div>
               <% end %>
  
             </div>
           </div>
           <div class="signup_inner_bottom_content">Already a Spefz Member? <%= link_to "Sign in now", signin_path %></div>
+          <div class="signup_inner_bottom_content">Forgot Password? <%= link_to "Click here", new_user_password_path %></div>  
         </div>
       </div>
       <!-- banner content -->
@@ -76,3 +78,4 @@
   </div>
   <!-- footer -->
 </div>
+

@@ -1,18 +1,18 @@
 /*=========================================
-    Section: signup page
-    File: views / users / registrations / _new.html.erb
+    Section: re-send email confirmation
+    File: views / users / confirmations / _new.html.erb
   =========================================*/
 
-.users_registrations_new_section .users_inner_registrations_new_section {
+.users_confirmations_new_section .users_inner_confirmations_new_section {
   background: url("img_background_main.png") repeat;
   padding: 0px !important;
 }
 
-.users_registrations_new_section .users_inner_registrations_new_section .banner_inner_section {
+.users_confirmations_new_section .users_inner_confirmations_new_section .banner_inner_section {
   text-align: center;
 }
 
-.users_registrations_new_section .users_inner_registrations_new_section h1 {
+.users_confirmations_new_section .users_inner_confirmations_new_section h1 {
   font-family: 'Lato', sans-serif;
   font-size: 48px;
   font-weight: 300;
@@ -23,34 +23,34 @@
   word-spacing: 3px;
 }
 @media only screen and (max-width: 670px) {
-  .users_registrations_new_section .users_inner_registrations_new_section h1  {
+  .users_confirmations_new_section .users_inner_confirmations_new_section h1  {
     font-size: 30px;
   }
 }
 
-.users_registrations_new_section .users_inner_registrations_new_section .signup_content {
+.users_confirmations_new_section .users_inner_confirmations_new_section .signup_content {
   margin: auto;
   padding: 25px 15px;
 }
 @media only screen and (min-width: 940px) {
-  .users_registrations_new_section .users_inner_registrations_new_section .signup_content {
+  .users_confirmations_new_section .users_inner_confirmations_new_section .signup_content {
     width: 900px;
     padding: 50px 0px 130px;
     text-align: left;
   }
 }
 
-.users_registrations_new_section .signup_inner_content {
+.users_confirmations_new_section .signup_inner_content {
   background-color: #fff;
   margin: auto;
 }
 @media only screen and (min-width: 640px) {
-  .users_registrations_new_section .signup_inner_content {
+  .users_confirmations_new_section .signup_inner_content {
     width: 600px;
   }
 }
 
-.users_registrations_new_section .signup_inner_upper_content {
+.users_confirmations_new_section .signup_inner_upper_content {
   font-family: "Lato", sans-serif;
   font-weight: 300;
   word-spacing: 2px;
@@ -61,7 +61,7 @@
   line-height: 25px;
 }
 
-.users_registrations_new_section .signup_inner_upper_content a {
+.users_confirmations_new_section .signup_inner_upper_content a {
   color: #fff !important;
   text-decoration: underline;
   -webkit-transition: all 0.3s ease; 
@@ -69,93 +69,31 @@
   -o-transition: all 0.3s ease; 
 }
 
-.users_registrations_new_section .signup_inner_upper_content a:hover {
+.users_confirmations_new_section .signup_inner_upper_content a:hover {
   color: #283041 !important;
   -webkit-transition: all 0.3s ease; 
   -moz-transition: all 0.3s ease; 
   -o-transition: all 0.3s ease; 
 }
 
-.users_registrations_new_section .signup_inner_middle_content {
+.users_confirmations_new_section .signup_inner_middle_content {
   background-color: #fff;
   padding: 30px 15px;
 }
 @media only screen and (min-width: 640px) {
-  .users_registrations_new_section .signup_inner_middle_content {
+  .users_confirmations_new_section .signup_inner_middle_content {
     padding: 30px 60px;
   }
 }
 
-.users_registrations_new_section .signup_inner_middle_content label {
+.users_confirmations_new_section .signup_inner_middle_content label {
   font-family: "Lato", sans-serif;
   color: #454d53;
   font-size: 15px;
   margin-bottom: 5px;
 }
 
-.users_registrations_new_section .signup_inner_middle_content #user_firstname {
-  font-family: "Lato", sans-serif;
-  box-shadow: none !important;
-  padding: 0px 15px !important;
-  height: 50px;
-  color: #454d53;
-  font-size: 15px;
-  border: 1px solid #cccccc !important;
-}
-
-.users_registrations_new_section .signup_inner_middle_content #user_lastname {
-  font-family: "Lato", sans-serif;
-  box-shadow: none !important;
-  padding: 0px 15px !important;
-  height: 50px;
-  color: #454d53;
-  font-size: 15px;
-  border: 1px solid #cccccc !important;
-  margin-top: 15px !important;
-}
-
-.users_registrations_new_section .signup_inner_middle_content #user_email {
-  font-family: "Lato", sans-serif;
-  font-weight: 300 !important;
-  box-shadow: none !important;
-  padding: 0px 15px !important;
-  height: 50px;
-  color: #454d53;
-  font-size: 15px;
-  margin-top: 15px;
-}
-
-.users_registrations_new_section .signup_inner_middle_content #user_password {
-  font-family: "Lato", sans-serif;
-  font-weight: 300 !important;
-  box-shadow: none !important;
-  padding: 0px 15px !important;
-  height: 50px;
-  color: #454d53;
-  font-size: 15px;
-}
-
-.users_registrations_new_section .signup_inner_middle_content #user_password_confirmation {
-  font-family: "Lato", sans-serif;
-  font-weight: 300 !important;
-  box-shadow: none !important;
-  padding: 0px 15px !important;
-  height: 50px;
-  color: #454d53;
-  font-size: 15px;
-}
-
-.users_registrations_new_section .signup_inner_middle_content #user_birthdate {
-  font-family: "Lato", sans-serif;
-  box-shadow: none !important;
-  padding: 0px 15px !important;
-  height: 50px;
-  color: #454d53;
-  font-size: 15px;
-  margin-bottom: 0px;
-}
-
-.users_registrations_new_section .signup_inner_middle_content #user_category_gender_id {
+.users_confirmations_new_section .signup_inner_middle_content #user_firstname {
   font-family: "Lato", sans-serif;
   box-shadow: none !important;
   padding: 0px 15px !important;
@@ -164,7 +102,7 @@
   font-size: 15px;
 }
 
-.users_registrations_new_section .signup_inner_middle_content #user_category_country_id {
+.users_confirmations_new_section .signup_inner_middle_content #user_lastname {
   font-family: "Lato", sans-serif;
   box-shadow: none !important;
   padding: 0px 15px !important;
@@ -173,14 +111,54 @@
   font-size: 15px;
 }
 
-.users_registrations_new_section .error_msg {
-  font-size: 10px;
-  color: #E34B51;
-  margin-top: 1px;
-  margin-bottom: 15px;
+.users_confirmations_new_section .signup_inner_middle_content #user_email {
+  font-family: "Lato", sans-serif;
+  box-shadow: none !important;
+  padding: 0px 15px !important;
+  height: 50px;
+  color: #454d53;
+  font-size: 15px;
 }
 
-.users_registrations_new_section .signup_inner_middle_content .terms_info {
+
+.users_confirmations_new_section .signup_inner_middle_content #user_password {
+  font-family: "Lato", sans-serif;
+  box-shadow: none !important;
+  padding: 0px 15px !important;
+  height: 50px;
+  color: #454d53;
+  font-size: 15px;
+}
+
+.users_confirmations_new_section .signup_inner_middle_content #user_password_confirmation {
+  font-family: "Lato", sans-serif;
+  box-shadow: none !important;
+  padding: 0px 15px !important;
+  height: 50px;
+  color: #454d53;
+  font-size: 15px;
+}
+
+.users_confirmations_new_section .signup_inner_middle_content #user_birthdate {
+  font-family: "Lato", sans-serif;
+  box-shadow: none !important;
+  padding: 0px 15px !important;
+  height: 50px;
+  color: #454d53;
+  font-size: 15px;
+}
+
+.users_confirmations_new_section .signup_inner_middle_content #user_category_gender_id {
+  font-family: "Lato", sans-serif;
+  box-shadow: none !important;
+  padding: 0px 15px !important;
+  height: 50px;
+  color: #454d53;
+  font-size: 15px;
+  margin-bottom: 35px;
+}
+
+.users_confirmations_new_section .signup_inner_middle_content .terms_info {
   font-family: "Lato", sans-serif;
   font-weight: 300;
   word-spacing: 2px;
@@ -188,7 +166,7 @@
   margin-top: 5px;
 }
 
-.users_registrations_new_section .signup_inner_middle_content .terms_info a {
+.users_confirmations_new_section .signup_inner_middle_content .terms_info a {
   color: #283041 !important;
   text-decoration: underline;
   -webkit-transition: all 0.3s ease; 
@@ -196,14 +174,14 @@
   -o-transition: all 0.3s ease; 
 }
 
-.users_registrations_new_section .signup_inner_middle_content .terms_info a:hover {
+.users_confirmations_new_section .signup_inner_middle_content .terms_info a:hover {
   color: #E34B51 !important;
   text-decoration: underline;
   -webkit-transition: all 0.3s ease; 
   -moz-transition: all 0.3s ease; 
   -o-transition: all 0.3s ease; 
 }
-.users_registrations_new_section .signup_inner_bottom_content {
+.users_confirmations_new_section .signup_inner_bottom_content {
   font-family: "Lato", sans-serif;
   font-weight: 300;
   word-spacing: 2px;
@@ -214,7 +192,7 @@
   line-height: 25px;
 }
 
-.users_registrations_new_section .signup_inner_bottom_content a {
+.users_confirmations_new_section .signup_inner_bottom_content a {
   color: #fff !important;
   text-decoration: underline;
   -webkit-transition: all 0.3s ease; 
@@ -222,14 +200,14 @@
   -o-transition: all 0.3s ease; 
 }
 
-.users_registrations_new_section .signup_inner_bottom_content a:hover {
+.users_confirmations_new_section .signup_inner_bottom_content a:hover {
   color: #E34B51 !important;
   -webkit-transition: all 0.3s ease; 
   -moz-transition: all 0.3s ease; 
   -o-transition: all 0.3s ease; 
 }
 
-.users_registrations_new_section .users_inner_registrations_new_section .sub_header {
+.users_confirmations_new_section .users_inner_confirmations_new_section .sub_header {
   font-family: "Lato", sans-serif;
   font-size: 16px;
   font-weight: 300;
@@ -240,12 +218,12 @@
 }
 
 @media only screen and (max-width: 670px) {
-  .users_registrations_new_section .users_inner_registrations_new_section .sub_header {
+  .users_confirmations_new_section .users_inner_confirmations_new_section .sub_header {
     font-size: 15px;
   }
 }
 
-.users_registrations_new_section .signup_container {
+.users_confirmations_new_section .signup_container {
   background-color: rgba(255, 255, 255, 0.08) !important;
   margin: 25px 0px 0px;
   padding: 25px;
@@ -255,7 +233,7 @@
   color: #fff !important;
 }
 
-.users_registrations_new_section #signup_name {
+.users_confirmations_new_section #signup_name {
   font-family: "Lato", sans-serif;
   box-shadow: none !important;
   outline: 0 !important;
@@ -271,18 +249,18 @@
   border: 1px solid #fff !important;
 }
 @media only screen and (max-width: 520px) {
-  .users_registrations_new_section #signup_name {
+  .users_confirmations_new_section #signup_name {
     font-size: 15px;
   }
 }
 @media only screen and (max-width: 940px) {
-  .users_registrations_new_section #signup_name {
+  .users_confirmations_new_section #signup_name {
     width: 100%;
     margin-right: 0px;
   }
 }
 
-.users_registrations_new_section #signup_email {
+.users_confirmations_new_section #signup_email {
   font-family: "Lato", sans-serif;
   box-shadow: none !important;
   outline: 0 !important;
@@ -297,32 +275,31 @@
   border: 1px solid #fff !important;
 }
 @media only screen and (max-width: 520px) {
-  .users_registrations_new_section #signup_email {
+  .users_confirmations_new_section #signup_email {
     font-size: 15px;
   }
 }
 @media only screen and (max-width: 940px) {
-  .users_registrations_new_section #signup_email {
+  .users_confirmations_new_section #signup_email {
     width: 100%;
     margin-right: 0px;
   }
 }
 
-.users_registrations_new_section input[type="submit"] {
+.users_confirmations_new_section input[type="submit"] {
   margin-bottom: 0px !important;
   width: 100%;
   background-color: rgba(225,71,62,0.7) !important;
   font-weight: 200;
   letter-spacing: 2px;
   font-size: 18px;
-  margin-top: 25px;
 }
 
-.users_registrations_new_section input[type="submit"]:hover {
+.users_confirmations_new_section input[type="submit"]:hover {
   background-color: rgba(47,63,91,0.7) !important;
 }
 
-.users_registrations_new_section .btn_signin a {
+.users_confirmations_new_section .btn_signin a {
   font-family: "Lato", sans-serif;
   font-size: 18px !important;
   font-weight: 300 !important;
@@ -339,12 +316,12 @@
   -o-transition: all 0.3s ease; 
 }
 @media only screen and (min-width: 490px) {
-  .users_registrations_new_section .btn_signin a {
+  .users_confirmations_new_section .btn_signin a {
     display: none !important;
   }
 }
 
-.users_registrations_new_section .btn_signin a:hover {
+.users_confirmations_new_section .btn_signin a:hover {
   background-color: rgba(47, 63, 91, 0.7) !important;
   -webkit-transition: all 0.3s ease; 
   -moz-transition: all 0.3s ease; 
@@ -352,7 +329,7 @@
 }
 
 
-.users_registrations_new_section .btn_signup a {
+.users_confirmations_new_section .btn_signup a {
   font-family: "Lato", sans-serif;
   font-size: 18px !important;
   font-weight: 300 !important;
@@ -369,7 +346,7 @@
   -o-transition: all 0.3s ease; 
 }
 
-.users_registrations_new_section .btn_signup a:hover {
+.users_confirmations_new_section .btn_signup a:hover {
   background-color: rgba(47, 63, 91, 0.7) !important;
   -webkit-transition: all 0.3s ease; 
   -moz-transition: all 0.3s ease; 
@@ -377,7 +354,7 @@
 }
 
 
-.users_registrations_new_section .notified_text {
+.users_confirmations_new_section .notified_text {
   color: #2F3F5B;
   font-size: 13px;
   text-align: center;
@@ -392,35 +369,35 @@
 }
 
 @media only screen and (max-width: 800px) {
-  .users_registrations_new_section .users_inner_registrations_new_section p {
+  .users_confirmations_new_section .users_inner_confirmations_new_section p {
     font-size: 18px !important;
   }
 }
 
-.users_registrations_new_section .signedout_content_section .point {
+.users_confirmations_new_section .signedout_content_section .point {
   margin-top: 15px !important
 }
 
-.users_registrations_new_section .header_section {
+.users_confirmations_new_section .header_section {
   padding: 15px 0px !important;
 }
 
-.users_registrations_new_section .logo_links_section {
+.users_confirmations_new_section .logo_links_section {
   text-align: left;
   margin: auto;
 }
 @media only screen and (min-width: 970px) {
-  .users_registrations_new_section .logo_links_section {
+  .users_confirmations_new_section .logo_links_section {
     width: 960px !important;
   }
 }
 @media only screen and (max-width: 970px) {
-  .users_registrations_new_section .logo_links_section {
+  .users_confirmations_new_section .logo_links_section {
     padding: 0px 15px !important;
   }
 }
 
-.users_registrations_new_section .logo img {
+.users_confirmations_new_section .logo img {
   width: 65px;
   border-radius: 2px;
   background-color: rgba(225, 71, 62, 0.7) !important;
@@ -429,7 +406,7 @@
   -o-transition: all 0.3s ease; 
 }
 
-.users_registrations_new_section .logo img:hover {
+.users_confirmations_new_section .logo img:hover {
   background-color: rgba(88, 205, 166, 0.5) !important;
   padding: 15px;
   -webkit-transition: all 0.3s ease; 
@@ -437,41 +414,41 @@
   -o-transition: all 0.3s ease; 
 }
 
-.users_registrations_new_section .logo_text {
+.users_confirmations_new_section .logo_text {
   font-size: 25px;
   font-weight: bold;
   color: rgba(47, 63, 91, 0.7) !important;
 }
 
-.users_registrations_new_section .logo_title {
+.users_confirmations_new_section .logo_title {
   font-family: "Lato", sans-serif;
   font-size: 30px;
   font-weight: 200;
   color: #fff;
 }
 
-.users_registrations_new_section .links {
+.users_confirmations_new_section .links {
   float: right;
   display: inline-block;
 }
 @media only screen and (max-width: 490px) {
-  .users_registrations_new_section .links {
+  .users_confirmations_new_section .links {
     display: none !important;
   }
 }
 
-.users_registrations_new_section .links ul {
+.users_confirmations_new_section .links ul {
   list-style-type: none;
   padding: 14px 0px;
   margin: 0px !important;
 }
 
-.users_registrations_new_section .links ul li {
+.users_confirmations_new_section .links ul li {
   float: right;
   margin-top: 3px;
 }
 
-.users_registrations_new_section .links ul li a {
+.users_confirmations_new_section .links ul li a {
   font-family: "Lato", sans-serif;
   font-size: 18px;
   font-weight: 300;
@@ -484,14 +461,14 @@
   -o-transition: all 0.3s ease; 
 }
 
-.users_registrations_new_section .links ul li a:hover {
+.users_confirmations_new_section .links ul li a:hover {
   background-color: rgba(88, 205, 166, 0.5) !important;
   -webkit-transition: all 0.3s ease; 
   -moz-transition: all 0.3s ease; 
   -o-transition: all 0.3s ease; 
 }
 
-.users_registrations_new_section .launch_info {
+.users_confirmations_new_section .launch_info {
   font-family: "Lato", sans-serif;
   font-size: 10px;
   font-weight: 200;
@@ -502,21 +479,21 @@
   text-align: center;
 }
 
-.users_registrations_new_section .lower_section {
+.users_confirmations_new_section .lower_section {
   padding: 0px !important;
 }
 
-.users_registrations_new_section .content_container {
+.users_confirmations_new_section .content_container {
   padding: 30px 0px !important;
   background-color: red;
   background: url("img_background_main.png") repeat;
 }
 
-.users_registrations_new_section .header_section {
+.users_confirmations_new_section .header_section {
   padding: 15px 0px;
 }
 
-.users_registrations_new_section .header {
+.users_confirmations_new_section .header {
   font-family: "Lato", sans-serif;
   font-size: 35px;
   font-weight: 300;
@@ -526,7 +503,7 @@
   padding: 0px 15px !important;
 }
 
-.users_registrations_new_section .sub_header {
+.users_confirmations_new_section .sub_header {
   font-family: "Lato", sans-serif;
   font-size: 15px;
   font-weight: 400;
@@ -540,35 +517,35 @@
   padding: 15px 0px !important;
 }
 
-.users_registrations_new_section .feed_container ul {
+.users_confirmations_new_section .feed_container ul {
   list-style-type: none;
   margin: 0px !important;
 }
 
-.users_registrations_new_section .feed_container ul li {
+.users_confirmations_new_section .feed_container ul li {
   margin-bottom: 15px !important;
 }
 
-.users_registrations_new_section .feed_container {
+.users_confirmations_new_section .feed_container {
   margin: auto;
 }
 @media only screen and (min-width: 1522px) {
-.users_registrations_new_section .feed_container {
+.users_confirmations_new_section .feed_container {
     width: 1500px;
   }
 }
 
-.users_registrations_new_section .feed_inner_section {
+.users_confirmations_new_section .feed_inner_section {
   // background-color: green;
   background-color: #fff;
   margin-bottom: 30px;
 }
 
-.users_registrations_new_section .feed {
+.users_confirmations_new_section .feed {
   position: relative;
 }
 
-.users_registrations_new_section .feed_header {
+.users_confirmations_new_section .feed_header {
   font-family: "Lato", sans-serif;
   font-weight: 300;
   color: #fff;
@@ -582,45 +559,45 @@
   padding: 10px 15px;
 }
 
-.users_registrations_new_section .feed_date {
+.users_confirmations_new_section .feed_date {
   margin-bottom: 3px;
 }
 
-.users_registrations_new_section .feed_location {
+.users_confirmations_new_section .feed_location {
   margin-bottom: 3px;
 }
 @media screen and (min-width: 640px) and (max-width: 1145px) {
- .users_registrations_new_section .feed_location {
+ .users_confirmations_new_section .feed_location {
   display: none;
   } 
 }
 
-.users_registrations_new_section .feed_header .date {
+.users_confirmations_new_section .feed_header .date {
   margin-right: 5px;
 }
 
-.users_registrations_new_section .feed_header .location {
+.users_confirmations_new_section .feed_header .location {
   margin-right: 10px;
   margin-left: 2px;
 } 
 
-.users_registrations_new_section .feed_header .price {
+.users_confirmations_new_section .feed_header .price {
   margin-right: 10px;
   margin-left: 2px;
 } 
 
-.users_registrations_new_section .feed_img img {
+.users_confirmations_new_section .feed_img img {
   width: 100%;
 }
 
-.users_registrations_new_section .feed_user {
+.users_confirmations_new_section .feed_user {
   width: 20%;
   margin: auto;
   height: 20%;
   position: relative;
 }
 
-.users_registrations_new_section .feed_user img {
+.users_confirmations_new_section .feed_user img {
   position: absolute;
   z-index: 1000;
   bottom: -20px;
@@ -628,13 +605,13 @@
   padding: 2px;
 }
 
-.users_registrations_new_section .feed_sub_title {
+.users_confirmations_new_section .feed_sub_title {
   margin-top: 25px;
   text-align: center;
   border-bottom: 1px solid #f8f8f9;
 }
 
-.users_registrations_new_section .feed_organizer {
+.users_confirmations_new_section .feed_organizer {
   font-family: "Lato", sans-serif;
   font-size: 12px;
   font-weight: 400;
@@ -642,7 +619,7 @@
   text-transform: uppercase;
 }
 
-.users_registrations_new_section .feed_title {
+.users_confirmations_new_section .feed_title {
   font-family: "Lato", sans-serif;
   font-size: 20px;
   font-weight: bold;
@@ -652,59 +629,59 @@
   line-height: 25px;
 }
 
-.users_registrations_new_section .feed_comments_container {
+.users_confirmations_new_section .feed_comments_container {
   padding: 10px;
 }
 @media only screen and (max-width: 960px) {
-  .users_registrations_new_section .feed_comments_container {
+  .users_confirmations_new_section .feed_comments_container {
     display: none;
   }
 }
 
-.users_registrations_new_section .feed_comments_container ul li {
+.users_confirmations_new_section .feed_comments_container ul li {
   margin: 0px !important;  
 }
 
-.users_registrations_new_section .feed_inner_comment_section {
+.users_confirmations_new_section .feed_inner_comment_section {
   padding: 5px !important;
 }
 
-.users_registrations_new_section .feed_comments_container img {
+.users_confirmations_new_section .feed_comments_container img {
   border-radius: 2px;
   padding-right: 5px !important;
 }
 
-.users_registrations_new_section .feed_comment_img {
+.users_confirmations_new_section .feed_comment_img {
   padding: 0px !important;
 }
 
-.users_registrations_new_section .feed_comment {
+.users_confirmations_new_section .feed_comment {
   padding: 0px !important;
 }
 
-.users_registrations_new_section .feed_comment span {
+.users_confirmations_new_section .feed_comment span {
   font-family: "Lato", sans-serif;
   color: #283041;
   background-color: rgba(47,63,91,0.02) !important;
   padding: 5px !important;
 }
 
-.users_registrations_new_section .feed_comment span b a {
+.users_confirmations_new_section .feed_comment span b a {
   font-family: "Lato", sans-serif;
   color: #E34B51 !important;
   margin-right: 5px;
 }
 
-.users_registrations_new_section .feed_comment span b a:hover {
+.users_confirmations_new_section .feed_comment span b a:hover {
   text-decoration: underline;
 }
 
-.users_registrations_new_section .booking {
+.users_confirmations_new_section .booking {
   border-top: 1px solid #f8f8f9;
   padding: 15px;
 }
 
-.users_registrations_new_section .booking a {
+.users_confirmations_new_section .booking a {
   font-family: "Lato", sans-serif;
   color: #fff !important;
   text-transform: uppercase;
@@ -718,14 +695,25 @@
   -o-transition: all 0.3s ease; 
 }
 
-.users_registrations_new_section .booking a:hover {
+.users_confirmations_new_section .booking a:hover {
   background-color: #58CDA6 !important;
   -webkit-transition: all 0.3s ease; 
   -moz-transition: all 0.3s ease; 
   -o-transition: all 0.3s ease; 
 }
 
-.users_registrations_new_section .background_dark {
+// .users_confirmations_new_section .background_dark {
+//   padding: 30px 0px !important;
+//   background-color: #283041;
+//   height: 600px;
+// }
+// @media only screen and (max-width: 600px) {
+//   .users_confirmations_new_section .background_dark {
+//     height: 750px;
+//   }
+// }
+
+.users_confirmations_new_section .background_dark {
   padding: 30px 0px !important;
   background-size: cover;
   background-color: #283041;
@@ -733,25 +721,25 @@
   border-top: 1px solid #393838;
 }
 @media only screen and (max-width: 600px) {
-  .users_registrations_new_section .background_dark {
+  .users_confirmations_new_section .background_dark {
     height: 840px;
   }
 }
 
-.users_registrations_new_section .background_dark .header {
+.users_confirmations_new_section .background_dark .header {
   color: #fff !important;
 }
 
-.users_registrations_new_section .background_dark .sub_header {
+.users_confirmations_new_section .background_dark .sub_header {
   color: #fff !important;
   font-weight: 200 !important;
 }
 
-.users_registrations_new_section .social_media {
+.users_confirmations_new_section .social_media {
   text-align: center;
 }
 
-.users_registrations_new_section .social_media a {
+.users_confirmations_new_section .social_media a {
   color: #fff !important;
   font-size: 60px;
   padding: 0px 15px;
@@ -760,71 +748,71 @@
   -o-transition: all 0.3s ease; 
 }
 
-.users_registrations_new_section .social_media a:hover {
+.users_confirmations_new_section .social_media a:hover {
   color: #E34B51 !important;
   -webkit-transition: all 0.3s ease; 
   -moz-transition: all 0.3s ease; 
   -o-transition: all 0.3s ease; 
 }
 
-.users_registrations_new_section .phone_img_container {
+.users_confirmations_new_section .phone_img_container {
   width: 295px;
   margin: auto;
   margin-top: 25px;
 }
 
-.users_registrations_new_section .apple_store_img_container {
+.users_confirmations_new_section .apple_store_img_container {
   position: absolute;
   top: 350px;
   right: 250px;
   position: relative;
 }
 
-.users_registrations_new_section .apple_store_img_container img {
+.users_confirmations_new_section .apple_store_img_container img {
   border-radius: 3px;
   position: absolute;
   bottom: 700px;
 }
 @media only screen and (max-width: 815px) {
-  .users_registrations_new_section .apple_store_img_container img {
+  .users_confirmations_new_section .apple_store_img_container img {
     display: none;
   }
 }
 
-.users_registrations_new_section .howitworks_container {
+.users_confirmations_new_section .howitworks_container {
   background-color: rgba(47,63,91,0.1) !important;
   text-align: center;
   padding: 15px;
 }
 
-.users_registrations_new_section .howitworks_container i {
+.users_confirmations_new_section .howitworks_container i {
   opacity: 0.8;
 }
 
-.users_registrations_new_section .howitworks_container .fa-mobile {
+.users_confirmations_new_section .howitworks_container .fa-mobile {
   font-size: 100px;
   color: #283041;
 }
 
-.users_registrations_new_section .howitworks_container .fa-calendar {
+.users_confirmations_new_section .howitworks_container .fa-calendar {
   font-size: 60px;
   color: #283041;
   margin: 20px;
 }
 
-.users_registrations_new_section .howitworks_container .fa-user-plus {
+.users_confirmations_new_section .howitworks_container .fa-user-plus {
   font-size: 60px;
   color: #283041;
   margin: 20px;
 }
 
-.users_registrations_new_section .howitworks_container .fa-users {
+.users_confirmations_new_section .howitworks_container .fa-users {
   font-size: 60px;
   color: #283041;
   margin: 20px;
 }
 
-.users_registrations_new_section .howitworks_container .cover_number {
+.users_confirmations_new_section .howitworks_container .cover_number {
   background-color: #E34B51;
   width: 40px;
   padding: 10px;
@@ -835,19 +823,19 @@
   margin-bottom: 15px;
 }
 
-.users_registrations_new_section .howitworks_container .header_main {
+.users_confirmations_new_section .howitworks_container .header_main {
   font-size: 20px;
   text-transform: capitalize;
   margin-bottom: 10px;
 }
 
-.users_registrations_new_section .howitworks_container .header_sub {
+.users_confirmations_new_section .howitworks_container .header_sub {
   text-transform: capitalize;
   font-size: 12px; 
   color: #888888;
 }
 
-.users_registrations_new_section .footer_links {
+.users_confirmations_new_section .footer_links {
   border-top: 1px solid #393838;
   border-bottom: 1px solid #393838;
   padding: 20px;
@@ -855,78 +843,18 @@
   margin-top: 40px;
 }
 
-.users_registrations_new_section #user_birthdate_1i {
-  font-family: "Lato", sans-serif;
-  box-shadow: none !important;
-  padding: 0px 15px !important;
-  height: 50px;
-  color: #454d53;
-  font-size: 15px;
-  margin-bottom: 0px;
-  background-color: transparent;
-  float: left;
-  margin-right: 15px;
-  margin-bottom: 15px
-}
-@media only screen and (min-width: 632px) {
-  .users_registrations_new_section #user_birthdate_1i {
-    width: 150px;
-  }
-}
-
-.users_registrations_new_section #user_birthdate_2i {
-  font-family: "Lato", sans-serif;
-  box-shadow: none !important;
-  padding: 0px 15px !important;
-  height: 50px;
-  color: #454d53;
-  font-size: 15px;
-  margin-bottom: 0px;
-  background-color: transparent;
-  float: left;
-  margin-right: 15px;
-  margin-bottom: 15px
-}
-@media only screen and (min-width: 632px) {
-  .users_registrations_new_section #user_birthdate_2i {
-    width: 150px;
-  }
-}
-
-.users_registrations_new_section #user_birthdate_3i {
-  font-family: "Lato", sans-serif;
-  box-shadow: none !important;
-  padding: 0px 15px !important;
-  height: 50px;
-  color: #454d53;
-  font-size: 15px;
-  margin-bottom: 0px;
-  background-color: transparent;
-  float: left;
-  margin-bottom: 15px
-}
-@media only screen and (min-width: 632px) {
-  .users_registrations_new_section #user_birthdate_3i {
-    width: 150px;
-  }
-}
-
-.users_registrations_new_section .user_birthdate {
-  margin-bottom: 20px !important;
-}
-
-.users_registrations_new_section .footer_links ul {
+.users_confirmations_new_section .footer_links ul {
   margin-bottom: 0px !important;
 }
 @media only screen and (min-width: 760px) {
-  .users_registrations_new_section .footer_links ul {
+  .users_confirmations_new_section .footer_links ul {
     width: 690px;
     margin: auto;
   }
 }
 
 @media only screen and (max-width: 760px) {
-  .users_registrations_new_section .footer_links ul li {
+  .users_confirmations_new_section .footer_links ul li {
     width: 100% !important;
     text-align: center !important;
     padding: 15px 0px !important;
@@ -934,7 +862,7 @@
   }
 }
 
-.users_registrations_new_section .footer_links a {
+.users_confirmations_new_section .footer_links a {
   font-family: "Lato", sans-serif;
   color: #fff !important;
   font-weight: 300;
@@ -942,11 +870,11 @@
   text-transform: capitalize;
 }
 
-.users_registrations_new_section .footer_links a:hover {
+.users_confirmations_new_section .footer_links a:hover {
   color: #E34B51 !important;
 }
 
-.users_registrations_new_section .copyright_content {
+.users_confirmations_new_section .copyright_content {
   font-family: "Lato", sans-serif;
   color: #fff;
   font-size: 10px;
@@ -958,7 +886,7 @@
   text-align: center;
 }
 
-.users_registrations_new_section .aboutus {
+.users_confirmations_new_section .aboutus {
   font-family: "Lato", sans-serif;
   font-size: 15px;
   font-weight: 400;
@@ -967,24 +895,15 @@
   padding: 0px 15px !important;
 }
 
-.users_registrations_new_section label {
-  font-family: 'Lato', sans-serif;
-  font-size: 12px !important;
-  font-weight: 300 !important;
-  text-transform: capitalize;
-  text-align: left !important;
-}
-
-.users_registrations_new_section .banner_register_upper_img img {
-  opacity: 0.6;
-  border-bottom: 1px solid rgba(225, 71, 62, 0.7);
-  margin-bottom: 15px;
-}
-
-.users_registrations_new_section .banner_register_bottom_img {
+.users_confirmations_new_section .banner_party_bottom_img {
   opacity: 0.8;
   border-bottom: 1px solid rgba(225, 71, 62, 0.7); 
 }
+
+
+
+
+
 
 
 
