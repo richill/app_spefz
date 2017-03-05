@@ -43,7 +43,7 @@ a{color:#37aadc}
           <td align="left">
               
             <p style="font-family:Arial, Helvetica, sans-serif;font-size:14px;line-height:22px;font-weight:bold;">
-              <span style="color:#b6584f">Hi <%= @email %></span>!
+              Hi <span style="color:#b6584f">Hi <%= @email, {:style => 'color: #b6584f'} %></span>!
             </p>
             
             <p style="font-family:Arial, Helvetica, sans-serif;font-size:14px;line-height:22px;background-color:#F9F9F9;padding:15px;">
