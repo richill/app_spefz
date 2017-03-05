@@ -28,9 +28,9 @@ class SubscriptionsController < ApplicationController
   end
 
   def edit
-    # unless current_user.admin_pa_management_group
-    #   redirect_to errorpermission_path
-    # end
+    unless current_user.admin_pa_management_group
+      redirect_to errorpermission_path
+    end
   end
 
   def create
@@ -51,7 +51,7 @@ class SubscriptionsController < ApplicationController
   end
 
   def update
-    #if current_user.admin_pa_management_group
+    if current_user.admin_pa_management_group
       respond_to do |format|
         if @subscription.update(subscription_params)
           format.html { redirect_to @subscription, notice: 'Subscription was successfully updated.' }
@@ -61,9 +61,9 @@ class SubscriptionsController < ApplicationController
           format.json { render json: @subscription.errors, status: :unprocessable_entity }
         end
       end
-    #else
-      #redirect_to errorpermission_path
-    #end
+    else
+      redirect_to errorpermission_path
+    end
   end
 
   def destroy

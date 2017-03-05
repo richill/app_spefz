@@ -2,8 +2,8 @@ class Subscription < ActiveRecord::Base
   extend FriendlyId
   friendly_id :slug_subscriptions, use: :slugged
 
-  # validates_presence_of :title, presence: true, message: "can't be blank"
-  # validates_presence_of :price, presence: true, message: "can't be blank"
+  validates_presence_of :title, presence: true, message: "can't be blank"
+  validates_presence_of :price, presence: true, message: "can't be blank"
   
   has_many :payments, dependent: :destroy
   
