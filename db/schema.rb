@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170302153331) do
+ActiveRecord::Schema.define(version: 20170305165322) do
 
   create_table "activities", force: :cascade do |t|
     t.integer  "trackable_id"
@@ -513,7 +513,10 @@ ActiveRecord::Schema.define(version: 20170302153331) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "reference"
+    t.string   "slug"
   end
+
+  add_index "subscriptions", ["slug"], name: "index_subscriptions_on_slug", unique: true
 
   create_table "taggings", force: :cascade do |t|
     t.integer  "tag_id"

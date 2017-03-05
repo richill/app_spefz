@@ -2,8 +2,6 @@ class SubscriptionsController < ApplicationController
   before_action :authenticate_user!, :set_subscription, only: [:show, :edit, :update, :destroy]
   before_filter :setup_friends, :setup_subscription, :setup_cards, :setup_events, :setup_invite_form, :setup_user_network_activities
 
-  # GET /subscriptions
-  # GET /subscriptions.json
   def index
     if current_user.admin_pa_management_group
       @subscriptions = Subscription.all
@@ -12,17 +10,15 @@ class SubscriptionsController < ApplicationController
     end
   end
 
-  # GET /subscriptions/1
-  # GET /subscriptions/1.json
   def show
     unless current_user.subscribed?
-      @premium_plan = Subscription.find_by(title:"premium")
+      # @premium_plan = Subscription.find_by(title:"premium")
+      @subscription = Subscription.friendly.find_by(title:"premium")
     else
       redirect_to errorpermission_path
     end
   end
 
-  # GET /subscriptions/new
   def new
     if current_user.admin_pa_management_group
       @subscription = Subscription.new
@@ -31,15 +27,12 @@ class SubscriptionsController < ApplicationController
     end
   end
 
-  # GET /subscriptions/1/edit
   def edit
-    unless current_user.admin_pa_management_group
-      redirect_to errorpermission_path
-    end
+    # unless current_user.admin_pa_management_group
+    #   redirect_to errorpermission_path
+    # end
   end
 
-  # POST /subscriptions
-  # POST /subscriptions.json
   def create
     if current_user.admin_pa_management_group
       @subscription = Subscription.new(subscription_params)
@@ -57,10 +50,8 @@ class SubscriptionsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /subscriptions/1
-  # PATCH/PUT /subscriptions/1.json
   def update
-    if current_user.admin_pa_management_group
+    #if current_user.admin_pa_management_group
       respond_to do |format|
         if @subscription.update(subscription_params)
           format.html { redirect_to @subscription, notice: 'Subscription was successfully updated.' }
@@ -70,15 +61,14 @@ class SubscriptionsController < ApplicationController
           format.json { render json: @subscription.errors, status: :unprocessable_entity }
         end
       end
-    else
-      redirect_to errorpermission_path
-    end
+    #else
+      #redirect_to errorpermission_path
+    #end
   end
 
-  # DELETE /subscriptions/1
-  # DELETE /subscriptions/1.json
   def destroy
     if current_user.admin_pa_management_group
+      @subscription = Subscription.friendly.find(params[:id])
       @subscription.destroy
       respond_to do |format|
         format.html { redirect_to subscriptions_url, notice: 'Subscription was successfully destroyed.' }
@@ -118,11 +108,12 @@ class SubscriptionsController < ApplicationController
   
   # Use callbacks to share common setup or constraints between actions.
   def set_subscription
-    @subscription = Subscription.find(params[:id])
+    # @subscription = Subscription.find(params[:id])
+    @subscription = Subscription.friendly.find(params[:id])
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def subscription_params
-    params.require(:subscription).permit(:title, :price)
+    params.require(:subscription).permit(:title, :price, :slug)
   end
 end
