@@ -43,15 +43,16 @@ a{color:#37aadc}
           <td align="left">
               
             <p style="font-family:Arial, Helvetica, sans-serif;font-size:14px;line-height:22px;font-weight:bold;">
-              <span style="text-transform:capitalize;">Hi <%= @email %></span>!
+              <!-- <span>Hi <%= @email %></span>! -->
+              <span>Hi <%= @user.firstname %></span>!
             </p>
             
             <p style="font-family:Arial, Helvetica, sans-serif;font-size:14px;line-height:22px;background-color:#F9F9F9;padding:15px;">
               Welcome to Spefz! We are excited to have you on board as a member! You can confirm your account email through the link below:
             </p>
 
-            <p style="font-family:Arial, Helvetica, sans-serif;font-size:14px;line-height:22px;background-color:#F9F9F9;padding:15px;color:#b6584f">
-              <%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %>
+            <p style="font-family:Arial, Helvetica, sans-serif;font-size:14px;line-height:22px;background-color:#F9F9F9;padding:15px;">
+              <%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token), {:style => 'color: #b6584f'} %>
             </p>
             
             <p style="font-family:Arial, Helvetica, sans-serif;font-size:12px;line-height:22px;margin-top:20px;">
