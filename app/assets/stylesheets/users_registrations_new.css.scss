@@ -975,16 +975,20 @@
   text-align: left !important;
 }
 
-.users_registrations_new_section .banner_register_upper_img img {
+.users_registrations_new_section .banner_register_upper_img {
   opacity: 0.6;
-  border-bottom: 1px solid rgba(225, 71, 62, 0.7);
-  margin-bottom: 15px;
+  height: 100px;
+  border-bottom: 3px solid rgba(225, 71, 62, 0.7);
+  background: url("img_banner_party_01.png") repeat;
 }
 
 .users_registrations_new_section .banner_register_bottom_img {
   opacity: 0.8;
-  border-bottom: 1px solid rgba(225, 71, 62, 0.7); 
+  height: 100px;
+  border-bottom: 3px solid rgba(225, 71, 62, 0.7);
+  background: url("img_banner_party_01.png") repeat;
 }
+
 
 
 
