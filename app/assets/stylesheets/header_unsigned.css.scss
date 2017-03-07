@@ -192,6 +192,13 @@
   margin-right: 2px;
 }
 
+@media only screen and (max-width: 350px) {
+  .nav_user_section_header_unsigned .responsive_view {
+    display: none !important;
+  }
+}
+
+
 /*----- notifications_friendRequest -----*/
 .nav_user_section_header_unsigned #notification_count_friendRequest {
   font-family: 'Lato', sans-serif;
@@ -789,6 +796,7 @@
     display: none !important;
   }
 }
+
 
 
 
