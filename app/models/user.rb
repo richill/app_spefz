@@ -372,10 +372,5 @@ class User < ActiveRecord::Base
   # def confirmation_required?
   #   false
   # end
-  def confirmation_required?
-    if Rails.env.development?
-      false
-    end
-  end
 end
 
