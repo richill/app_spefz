@@ -120,8 +120,7 @@
       <!-- left column -->
       <div class="medium-3 columns column_left">
         <!-- about me -->
-        <% if current_user.id == @user.id %>
-          <% if current_user.description? %>
+        <% if @user.description? %>
           <div class="medium-12 columns left_container">
             <div class="medium-12 columns left_inner_container aboutme_container">
               <div class="header"><div class="header_content"><i class="fa fa-user" aria-hidden="true"></i> about me</div></div>
@@ -134,7 +133,7 @@
               </div>
             </div>
           </div>
-          <% else %>
+        <% elsif current_user.id == @user.id %>
           <div class="medium-12 columns left_container">
             <div class="medium-12 columns left_inner_container aboutme_container">
               <div class="header"><div class="header_content"><i class="fa fa-user" aria-hidden="true"></i> about me</div></div>
@@ -145,7 +144,6 @@
               </div>
             </div>
           </div>
-          <% end %>
         <% end %>
 
         <!-- interests -->
