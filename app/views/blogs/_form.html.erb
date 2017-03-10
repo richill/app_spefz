@@ -35,7 +35,8 @@
 
             <%= f.association :category_blog, collection: CategoryBlog.all, prompt: "select a category", label: "Blog Category" %>
             <%= javascript_include_tag Ckeditor.cdn_url %>
-            <%= f.input :content %>
+            <%= f.cktext_area :content, value: @blog.content, id: 'sometext' %>
+            <%# f.input :content %>
 
             <%= f.input :video_link, placeholder: "https://www.youtube.com/watch?v=MGsalg2f9js" %>
             <div class="text_info">Have video content you would like post? Grab the Video link and place here.</div>
