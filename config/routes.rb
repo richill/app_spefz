@@ -111,6 +111,8 @@ Rails.application.routes.draw do
       post :untrash
     end
   end
+
+  mount Ckeditor::Engine => '/ckeditor'
   
   #static pages
   # root  'static_pages#homepg'

@@ -20,6 +20,7 @@
 //= require turbolinks
 //= require jquery.raty
 //= require ratyrate
+//= require ckeditor/init
 //= require_tree .
 
 $(function(){ $(document).foundation(); });

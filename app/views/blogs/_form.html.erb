@@ -34,6 +34,7 @@
             </div>
 
             <%= f.association :category_blog, collection: CategoryBlog.all, prompt: "select a category", label: "Blog Category" %>
+            <%= javascript_include_tag Ckeditor.cdn_url %>
             <%= f.input :content %>
 
             <%= f.input :video_link, placeholder: "https://www.youtube.com/watch?v=MGsalg2f9js" %>
