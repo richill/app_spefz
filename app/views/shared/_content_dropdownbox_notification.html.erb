@@ -9,14 +9,24 @@
               <div class="image_section">
                 <span class="img_cover">
                   <% if activity.trackable.image_url.present? %>
-                    <%= link_to(cl_image_tag(activity.trackable.image, :transformation=>[{:gravity=>"center", :width=>65, :height=>65, :crop=>"fill"}]), social_path(activity.trackable)) %>
+                    <% if activity.trackable.upcoming_social? %>
+                      <%= link_to(cl_image_tag(activity.trackable.image, style:"opacity:0.5;", :transformation=>[{:gravity=>"center", :width=>65, :height=>65, :crop=>"fill"}]), '#') %>
+                    <% else %>
+                      <%= link_to(cl_image_tag(activity.trackable.image, :transformation=>[{:gravity=>"center", :width=>65, :height=>65, :crop=>"fill"}]), social_path(activity.trackable)) %>
+                    <% end %>
                   <% else %>
-                    <%= link_to(image_tag("img-profile-image-default.png", :alt =>  "image", :class =>"#", id: ""), social_path(activity.trackable)) %>
+                    <%= link_to(image_tag("img-profile-company-default.png", :alt =>  "image", :class =>"#", id: ""), social_path(activity.trackable)) %>
                   <% end %>
                 </span>
               </div>
               <div class="info_section">
-                <div class="title"><%= link_to truncate("#{activity.trackable.title}", length: 30), social_path(activity.trackable) %></div>
+                <div class="title">
+                  <% if activity.trackable.upcoming_social? %>
+                    <%= link_to truncate("#{activity.trackable.title}", length: 30), '#' %>
+                  <% else %>
+                    <%= link_to truncate("#{activity.trackable.title}", length: 30), social_path(activity.trackable) %>
+                  <% end %>
+                </div>
                 <div class="date_country_info" style="margin-top:2px;">
                   <span><%= activity.trackable.date.strftime("%a, %d %b %Y") %></span> 
                   <span class="divider">|</span> 
@@ -29,12 +39,31 @@
                 </div>
                 <div class="date_country_info"> 
                   <span>hosted by:</span>
-                  <span><%= link_to current_user.name_shortner(activity.trackable.user), user_path(activity.trackable.user) %></span>
+                  <span>
+                    <% if activity.trackable.company_image.present? %>
+                      <%= link_to "Spefz Team", about_us_path %>
+                    <% else %>
+                      <%= link_to current_user.name_shortner(activity.trackable.user), user_path(activity.trackable.user) %>
+                    <% end %>
+                  </span>
                 </div>
               </div>
               <div class="action_btn_section_attending action_btn_card_section"> 
-                <div class="img_container"><%= link_to(cl_image_tag(activity.trackable.user.image, :transformation=>[{:gravity=>"face", :width=>35, :height=>35, :crop=>"fill", :radius=>"max"}]), user_path(activity.trackable.user)) %></div>
-                <span class="btn btn_view_card"><%= link_to 'view', "#" %></span>
+                <div class="img_container">
+                  <% if activity.trackable.company_image.present? %>
+                    <%= link_to(image_tag("img-logo-five.png", style: "width:32px; border-radius:200px;"), about_us_path) %>
+                  <% else %>
+                    <%= link_to(cl_image_tag(activity.trackable.user.image, :transformation=>[{:gravity=>"face", :width=>35, :height=>35, :crop=>"fill", :radius=>"max"}]), user_path(activity.trackable.user)) %>
+                  <% end %>
+                </div>
+                <span class="btn btn_view_card">
+                  
+                  <% if activity.trackable.upcoming_social? %>
+                    <%= link_to 'upcoming', "#", style:"padding:8px 0px !important; height: 35px" %>
+                  <% else %>
+                    <%= link_to 'view', social_path(activity.trackable) %>
+                  <% end %>
+                </span>
               </div>
             </li>
           <% elsif activity.trackable_type == "Attendance" %>

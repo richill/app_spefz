@@ -13,7 +13,7 @@
   font-size: 16px;
   font-weight: bold;
   text-transform: capitalize;
-  color: #283041 !important;
+  color: #2F3F5B !important;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
@@ -208,6 +208,34 @@ border-radius: 200px;
   height: 105px;
 }
 
+.user_activity_inner_section .image_cover {
+  position: relative;
+}
+
+.user_activity_inner_section .inner_img_cover {
+  background-color: rgba(255, 255, 255, 0.4) !important;
+  width: 150px;
+  height: 105px;
+  position: absolute;
+}
+
+.user_activity_inner_section .inner_img_text {
+  font-family: "Lato", sans-serif;
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-align: center;
+  text-transform: capitalize;
+  color: #fff;
+  padding: 8px 15px;
+  border-radius: 2px;
+  background-color: rgba(225, 71, 62, 0.9) !important;
+  height: 34px;
+  width: 110px;
+  left: 26px;
+  top: 38px;
+  position: absolute;
+}
+
 .user_activity_inner_section .activity_list .info {
   font-family: 'Lato', sans-serif;
   color: #414249 !important;
@@ -334,10 +362,6 @@ border-radius: 200px;
 .user_activity_inner_section .activity_list .remove_fav a {
   color: #E34B51 !important;
 }
-
-// ------------------------------
-//     workings
-// ------------------------------
 
 
 
