@@ -103,7 +103,9 @@
                   <%= link_to(cl_image_tag(@blog.image, :transformation=>[{:gravity=>"face", :width=>1300, :height=>900, :crop=>"fill"}]), blog_path(@blog)) %>
                 <% end %>
               </div>
-              <div class="blog_info_content"><%= @blog.content %></div>
+              <div class="blog_info_content">
+                <%= raw(@blog.content) %>
+              </div>
               <div class="share_icons"></div>
             </div>
             <!-- content -->
