@@ -68,7 +68,11 @@
                           <div class="image_content right_side_content">
                             <div class="social_event_feed_img_cover">
                               <% if social.user.image.present? %>
-                                <%= link_to(cl_image_tag(social.user.image, :transformation=>[{:gravity=>"face", :width=>200, :height=>200, :crop=>"fill", :radius=>"max"}]), user_path(current_user)) %>
+                                <% if social.company_image.present? %>
+                                  <%= link_to(image_tag("img-logo-five.png"), about_us_path) %>
+                                <% else %>
+                                  <%= link_to(cl_image_tag(social.user.image, :transformation=>[{:gravity=>"face", :width=>200, :height=>200, :crop=>"fill", :radius=>"max"}]), user_path(current_user)) %>
+                                <% end %>
                               <% else %>
                                 <%= image_tag("img-profile-image-default.png") %>
                               <% end %>
@@ -82,7 +86,13 @@
                             <div class="title"><%= link_to social.title, social_path(social) %></div>
                             <div class="host">
                               <span>Hosted by</span>
-                              <span><%= link_to social.user.firstname, social.user if social.user %></span>
+                              <span>
+                                <% if social.upcoming_social? || social.company_image.present? %>
+                                  <%= link_to "Spefz Team", about_us_path  %>
+                                <% else %>
+                                  <%= link_to social.user.firstname, social.user %>
+                                <% end %>
+                              </span>
                             </div>
                             <div class="social_event_content">
                               <div class="image_cover">
@@ -95,7 +105,15 @@
                                   </div>
                                 <% end %>
                                 <!-- sold out -->
-                                <span><%= link_to(cl_image_tag(social.image, :transformation=>[{:gravity=>"center", :width=>150, :height=>105, :crop=>"fill"}]), social_path(social)) %></span>
+                                <span>
+                                  <% if social.upcoming_social? %>
+                                    <div class="inner_img_cover"></div>
+                                    <div class="inner_img_text"> coming soon</div>
+                                    <%= link_to(cl_image_tag(social.image, :transformation=>[{:gravity=>"center", :width=>150, :height=>105, :crop=>"fill"}]), social_path(social)) %>
+                                  <% else %>
+                                    <%= link_to(cl_image_tag(social.image, :transformation=>[{:gravity=>"center", :width=>150, :height=>105, :crop=>"fill"}]), social_path(social)) %>
+                                  <% end %>
+                                </span>
                               </div>
                               <div class="social_event_details">
                                 <div class="info"><i class="fa fa-calendar" aria-hidden="true"></i> <%= social.date.strftime("%A, %d %b") %> <span class="mid_divider">|</span> <%= social.time.strftime("%I:%M %p") %></div>
