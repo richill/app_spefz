@@ -12,7 +12,8 @@
 <% elsif !@event.card.present? && !current_user.admin_pa_management_group || current_user.pa_event_mgt_group %>
   <div class="event_card_section">
     <div class="information_section">
-      <div class="view_card_pending", style="margin-top:15px;" ><%= link_to "not yet opened", '#' %></div>
+      <div class="card_text">view card to connect with members from the event</div>
+      <div class="view_card_pending"><%= link_to "not yet opened", '#' %></div>
     </div>
   </div> 
 <% else %>
