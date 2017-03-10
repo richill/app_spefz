@@ -36,7 +36,7 @@
               <div class="host">
                 <span>Hosted by</span>
                 <span>
-                  <% if activity.trackable.company_image.present? %>
+                  <% if activity.trackable.upcoming_social? || activity.trackable.company_image.present? %>
                     <%= link_to "Spefz Team", about_us_path %>
                   <% else %>
                     <%= link_to activity.owner.firstname, activity.owner if activity.owner %>

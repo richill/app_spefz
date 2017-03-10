@@ -10,7 +10,7 @@
                 <span class="img_cover">
                   <% if activity.trackable.image_url.present? %>
                     <% if activity.trackable.upcoming_social? %>
-                      <%= link_to(cl_image_tag(activity.trackable.image, style:"opacity:0.5;", :transformation=>[{:gravity=>"center", :width=>65, :height=>65, :crop=>"fill"}]), '#') %>
+                      <%= link_to(cl_image_tag(activity.trackable.image, style:"opacity:0.5;cursor:text;", :transformation=>[{:gravity=>"center", :width=>65, :height=>65, :crop=>"fill"}]), '#') %>
                     <% else %>
                       <%= link_to(cl_image_tag(activity.trackable.image, :transformation=>[{:gravity=>"center", :width=>65, :height=>65, :crop=>"fill"}]), social_path(activity.trackable)) %>
                     <% end %>
@@ -40,7 +40,7 @@
                 <div class="date_country_info"> 
                   <span>hosted by:</span>
                   <span>
-                    <% if activity.trackable.company_image.present? %>
+                    <% if activity.trackable.upcoming_social? || activity.trackable.company_image.present? %>
                       <%= link_to "Spefz Team", about_us_path %>
                     <% else %>
                       <%= link_to current_user.name_shortner(activity.trackable.user), user_path(activity.trackable.user) %>
