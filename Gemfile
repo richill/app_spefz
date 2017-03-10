@@ -32,6 +32,7 @@ gem 'social-share-button'
 gem 'ratyrate'
 gem 'unread'
 gem 'thin'
+gem 'ckeditor'
 
 group :development, :test do
   gem 'sqlite3'
