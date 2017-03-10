@@ -40,6 +40,13 @@
                     <a href="#" data-reveal-id="myModal-share-buttons" class:"socialicon_cover_fb"><i class="fa fa-share-alt" aria-hidden="true"></i> share</a>
                     <span><%= render 'shared/modal_share_buttons' %></span>
                   </span>
+                  <span class="divider">|</span>
+                  <span class="mail_content">
+                    <i class="fa fa-envelope" aria-hidden="true"></i> 
+                    <%= mail_to "", "invite", subject: "Spefz | Invitation to: #{@event.title}", 
+                                              body: "Hi, I would like to invite you to the Event: '#{@event.title}' - website: #{request.original_url}.",
+                                              class: "invite_friend" %>
+                  </span>
                 </div> 
                 <div class="price">
                   <% if @event.expired_or_closed_event %>

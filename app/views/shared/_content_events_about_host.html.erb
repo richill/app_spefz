@@ -28,18 +28,39 @@
     <% end %>
   </div>
 <% else %>
-  <% if signed_in? %>
-  <% if current_user.admin_pa_management_group || current_user.pa_event_mgt_group %>
-    <div class="event_host_section">
-      <div class="listed_hosts">
-        <div class="no_host_text">currently no hosts for this event</div>
-        <div class="add_host">
-          <a href="#" data-reveal-id="myModal-events-hosts">Add Hosts</a>
-          <div><%= render 'shared/modal_event_hosts' %></div>
+    <% if signed_in? %>
+      <% if current_user.admin_pa_management_group || current_user.pa_event_mgt_group %>
+        <div class="event_host_section">
+          <div class="listed_hosts">
+            <div class="no_host_text">currently no hosts for this event</div>
+            <div class="add_host">
+              <a href="#" data-reveal-id="myModal-events-hosts">Add Hosts</a>
+              <div><%= render 'shared/modal_event_hosts' %></div>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  <% end %>
+      <% else %>
+        <div class="event_host_section">
+          <div class="listed_hosts">
+            <ul>
+              <li>
+                <span class="host"><%= link_to (image_tag("img-profile-image-default.png")), "#" %></span>
+                <div class="host_details">
+                  <div>Meet your host</div>
+                  <div class="host_name"><%= link_to "Assigning Host", "#" %></div>
+                </div>
+              </li>
+              <li>
+                <span class="host"><%= link_to (image_tag("img-profile-image-default.png")), "#" %></span>
+                <div class="host_details">
+                  <div>Meet your host</div>
+                  <div class="host_name"><%= link_to "Assigning Host", "#" %></div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      <% end %>
   <% else %>
     <div class="event_host_section">
       <div class="listed_hosts">
@@ -63,5 +84,9 @@
     </div>
   <% end %>
 <% end %>
+
+
+
+
 
 

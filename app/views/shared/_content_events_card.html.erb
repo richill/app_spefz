@@ -1,14 +1,20 @@
 <% if @event.card.present? %>
   <div class="event_card_section">
-      <div class="information_section">
-        <div class="card_text">view card to connect with members from the event</div>
-        <% if @event.card.card_status_open? %>
-          <div class="view_card_open"><%= link_to "view card", event_card_path(@event, @event.card) %></div>
-        <% else %>
-          <div class="view_card_pending"><%= link_to "not yet opened", '#' %></div>
-        <% end %>
-      </div>
+    <div class="information_section">
+      <div class="card_text">view card to connect with members from the event</div>
+      <% if @event.card.card_status_open? %>
+        <div class="view_card_open"><%= link_to "view card", event_card_path(@event, @event.card) %></div>
+      <% else %>
+        <div class="view_card_pending"><%= link_to "not yet opened", '#' %></div>
+      <% end %>
     </div>
+  </div>
+<% elsif !@event.card.present? && !current_user.admin_pa_management_group || current_user.pa_event_mgt_group %>
+  <div class="event_card_section">
+    <div class="information_section">
+      <div class="view_card_pending", style="margin-top:15px;" ><%= link_to "not yet opened", '#' %></div>
+    </div>
+  </div> 
 <% else %>
   <% if current_user.admin_pa_management_group || current_user.pa_event_mgt_group %>
     <div class="event_card_section">
@@ -24,3 +30,8 @@
 <% end %>
 
 
+
+   
+
+
+  
