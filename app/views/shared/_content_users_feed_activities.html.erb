@@ -1,3 +1,4 @@
+hello
 <div class="activity_list">
   <% if activity.trackable %>
     <div class="cd-timeline-block">
@@ -11,7 +12,11 @@
             <div class="image_content right_side_content">
               <div class="activity_feed_img_cover">
                 <% if activity.owner.image.present? %>
-                  <%= link_to(cl_image_tag(activity.owner.image, :transformation=>[{:gravity=>"face", :width=>200, :height=>200, :crop=>"fill", :radius=>"max"}]), user_path(activity.owner)) %>
+                  <% if activity.trackable.company_image.present? %>
+                    <%= link_to(image_tag("img-logo-five.png"), about_us_path) %>
+                  <% else %>
+                    <%= link_to(cl_image_tag(activity.owner.image, :transformation=>[{:gravity=>"face", :width=>200, :height=>200, :crop=>"fill", :radius=>"max"}]), user_path(activity.owner)) %>
+                  <% end %>
                 <% else %>
                   <%= link_to(image_tag("img-profile-image-default.png"), user_path(activity.owner)) %>
                 <% end %>
