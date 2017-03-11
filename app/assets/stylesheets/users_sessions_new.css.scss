@@ -964,6 +964,18 @@
   -o-transition: all 0.3s ease;
 }
 
+@media only screen and (min-width: 1030px) {
+  .users_sessions_new_section .event_container .title .responsive_display_small {
+    display: none; 
+  }
+}
+
+@media only screen and (max-width: 1030px) {
+  .users_sessions_new_section .event_container .title .responsive_display_large {
+    display: none; 
+  }
+}
+
 .users_sessions_new_section .middle_evt .info {
   margin-bottom: 8px;
   letter-spacing: 1px;
@@ -1301,6 +1313,13 @@
   z-index: 10;
   opacity: 0.9;
 }
+@media only screen and (max-width: 1030px) {
+  .users_sessions_new_section .eventupcoming_cover {
+    width: 235px;
+    height: 528px;
+    background-color: #000;
+  }
+}
 
 .users_sessions_new_section .eventupcoming_text {
   position: absolute;
@@ -1316,6 +1335,11 @@
   top: 100px;
   letter-spacing: 2px;
   border-radius: 3px;
+}
+@media only screen and (max-width: 1030px) {
+  .users_sessions_new_section .eventupcoming_text {
+    left: 47px;
+  }
 }
 
 .users_sessions_new_section .eventupcoming_text a {
