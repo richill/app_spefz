@@ -992,6 +992,18 @@
   margin-right: 5px;
 }
 
+@media only screen and (min-width: 1030px) {
+  .users_sessions_new_section .event_container .info .responsive_display_small {
+    display: none; 
+  }
+}
+
+@media only screen and (max-width: 1030px) {
+  .users_sessions_new_section .event_container .info .responsive_display_large {
+    display: none; 
+  }
+}
+
 .users_sessions_new_section .middle_evt .fa-map-marker {
   margin-right: 8px;
   font-size: 19px;
