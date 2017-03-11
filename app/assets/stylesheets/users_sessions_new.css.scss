@@ -388,16 +388,12 @@
   }
 }
 
+@media only screen and (min-width: 1170px) {
 .users_sessions_new_section .event_container {
-  margin: auto;
-  width: 1170px !important;
+    margin: auto;
+    width: 1170px !important;
+  }
 }
-// @media only screen and (min-width: 1170px) {
-// .users_sessions_new_section .event_container {
-//     margin: auto;
-//     width: 1170px !important;
-//   }
-// }
 
 .users_sessions_new_section .feed_inner_section {
   background-color: #fff;
@@ -817,15 +813,14 @@
   font-size: 15px;
   font-weight: bold;
   padding: 0px !important;
-  width: 1140px;
   background-color: #fff;
   border-bottom: 2px solid rgba(225, 71, 62, 0.3) !important;
 }
-// @media only screen and (min-width: 1170px) {
-//   .users_sessions_new_section .image_content_info {
-//     width: 1140px;
-//   }
-// }
+@media only screen and (min-width: 1170px) {
+  .users_sessions_new_section .image_content_info {
+    width: 1140px;
+  }
+}
 
 .users_sessions_new_section .banner .ribbon-wrapper-green {
   width: 85px;
@@ -893,13 +888,12 @@
   padding: 15px;
   float: left;
   margin-right: 8px; 
-  width: 655px;
 }
-// @media only screen and (min-width: 1170px) {
-//   .users_sessions_new_section .socialupcoming_text {
-//     width: 655px;
-//   }
-// }
+@media only screen and (min-width: 1170px) {
+  .users_sessions_new_section .socialupcoming_text {
+    width: 655px;
+  }
+}
 
 .users_sessions_new_section .event_container .title {
   margin-bottom: 12px;
@@ -1040,10 +1034,16 @@
 
 // ------ right_evt -------
 .users_sessions_new_section .right_evt {
-  padding: 5px 1px 5px 5px;
+  padding: 5px;
   text-align: center;
-  float: left;
+  float: right;
   width: 215px;
+}
+@media only screen and (min-width: 1170px) {
+  .users_sessions_new_section .socialupcoming_text {
+    padding: 5px 1px 5px 5px;
+    float: left;
+  }
 }
 
 .users_sessions_new_section .right_evt .right_evt_container {
