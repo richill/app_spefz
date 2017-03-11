@@ -808,6 +808,13 @@
   padding: 0px 15px !important;
   margin-right: 2px !important;
 }
+@media only screen and (max-width: 1030px) {
+  .users_sessions_new_section .event_container ul li {
+    // width: 280px;
+    width: 30.3%;
+    float: left !important;
+  }
+}
 
 .users_sessions_new_section .image_content_info {
   font-size: 15px;
@@ -876,6 +883,11 @@
   height: 250px;
   background-color: rgba(40, 48, 45, 0.1) !important;
 }
+@media only screen and (max-width: 1030px) {
+  .users_sessions_new_section .left_evt .img_cover {
+    margin-bottom: 15px;
+  }
+}
 
 .users_sessions_new_section .left_evt img {
   width: 250px;
@@ -887,11 +899,12 @@
 .users_sessions_new_section .middle_evt {
   padding: 15px;
   float: left;
-  margin-right: 8px; 
 }
 @media only screen and (min-width: 1170px) {
-  .users_sessions_new_section .socialupcoming_text {
+  .users_sessions_new_section .middle_evt {
     width: 655px;
+    float: left;
+    margin-right: 8px; 
   }
 }
 
