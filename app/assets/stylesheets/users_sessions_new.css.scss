@@ -394,6 +394,24 @@
     width: 1170px !important;
   }
 }
+@media screen and (min-width: 800px) and (max-width: 1030px) {
+.users_sessions_new_section .event_container {
+    margin: auto;
+    width: 801px;
+  }
+}
+@media screen and (min-width: 530px) and (max-width: 800px) {
+.users_sessions_new_section .event_container {
+    margin: auto;
+    width: 535px;
+  }
+}
+@media screen and (max-width: 530px) {
+.users_sessions_new_section .event_container {
+    margin: auto;
+    width: 265px;
+  }
+}
 
 .users_sessions_new_section .feed_inner_section {
   background-color: #fff;
@@ -810,10 +828,8 @@
 }
 @media only screen and (max-width: 1030px) {
   .users_sessions_new_section .event_container ul .listed_events {
-    width: 280px;
+    width: 265px;
     float: left !important;
-    // width: 30.3%;
-    // background-color: rgba(40, 48, 45, 0.5) !important;
   }
 }
 
@@ -862,7 +878,11 @@
 // ------ left_evt -------
 .users_sessions_new_section .left_evt {
   float: left;
-  margin-right: 8px;
+}
+@media only screen and (min-width: 1030px) {
+  .users_sessions_new_section .left_evt {
+    margin-right: 8px;
+  }
 }
 
 .users_sessions_new_section .img_shade_cover {
@@ -880,13 +900,17 @@
 }
 
 .users_sessions_new_section .left_evt .img_cover {
-  width: 250px;
   height: 250px;
   background-color: rgba(40, 48, 45, 0.1) !important;
 }
 @media only screen and (max-width: 1030px) {
   .users_sessions_new_section .left_evt .img_cover {
     margin-bottom: 10px;
+  }
+}
+@media only screen and (min-width: 1030px) {
+  .users_sessions_new_section .left_evt .img_cover {
+    width: 250px;
   }
 }
 
@@ -1341,13 +1365,6 @@
   }
 }
 
-
-
-// -----------------------------
-//   workings
-// -----------------------------
-
-// 1170px
 
 
 
