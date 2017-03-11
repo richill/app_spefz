@@ -1306,9 +1306,8 @@
 }
 
 .users_sessions_new_section .eventupcoming_cover {
-  background-color: rgba(255,255,255, 0.5) !important;
   height: 251px;
-  width: 1140px;
+  width: 100%;
   position: absolute;
   z-index: 10;
   opacity: 0.9;
@@ -1317,7 +1316,6 @@
   .users_sessions_new_section .eventupcoming_cover {
     width: 235px;
     height: 528px;
-    background-color: #000;
   }
 }
 
