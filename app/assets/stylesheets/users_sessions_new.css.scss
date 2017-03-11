@@ -802,17 +802,18 @@
   margin: 0px !important;
 }
 
-.users_sessions_new_section .event_container ul li {
+.users_sessions_new_section .event_container ul .listed_events {
   list-style-type: none;
   margin-bottom: 30px;
   padding: 0px 15px !important;
   margin-right: 2px !important;
 }
 @media only screen and (max-width: 1030px) {
-  .users_sessions_new_section .event_container ul li {
-    // width: 280px;
-    width: 30.3%;
+  .users_sessions_new_section .event_container ul .listed_events {
+    width: 280px;
     float: left !important;
+    // width: 30.3%;
+    // background-color: rgba(40, 48, 45, 0.5) !important;
   }
 }
 
@@ -885,7 +886,7 @@
 }
 @media only screen and (max-width: 1030px) {
   .users_sessions_new_section .left_evt .img_cover {
-    margin-bottom: 15px;
+    margin-bottom: 10px;
   }
 }
 
@@ -898,12 +899,15 @@
 // ------ middle_evt -------
 .users_sessions_new_section .middle_evt {
   padding: 15px;
-  float: left;
+}
+@media only screen and (min-width: 1030px) {
+  .users_sessions_new_section .middle_evt {
+    float: left;
+  }
 }
 @media only screen and (min-width: 1170px) {
   .users_sessions_new_section .middle_evt {
     width: 655px;
-    float: left;
     margin-right: 8px; 
   }
 }
@@ -922,6 +926,12 @@
   -moz-transition: all 0.3s ease; 
   -o-transition: all 0.3s ease;
 }
+@media only screen and (max-width: 1030px) {
+  .users_sessions_new_section .event_container .title a {
+    font-size: 18px;
+    line-height: 25px;
+  }
+}
 
 .users_sessions_new_section .event_container .title a:hover {
   color: #E34B51 !important;
@@ -934,6 +944,11 @@
   margin-bottom: 8px;
   letter-spacing: 1px;
   text-transform: capitalize;
+}
+@media only screen and (max-width: 1030px) {
+  .users_sessions_new_section .middle_evt .info {
+    font-size: 11px !important;
+  }
 }
 
 .users_sessions_new_section .info i {
@@ -959,6 +974,11 @@
   border-top: 1px solid #ededf3;
   margin: 20px 0px;
 }
+@media only screen and (max-width: 1030px) {
+  .users_sessions_new_section .middle_evt .divider  {
+    margin: 15px 0px;
+  }
+}
 
 .users_sessions_new_section .middle_evt_bottom_info li {
   font-size: 12px;
@@ -968,13 +988,30 @@
   margin-right: 35px !important;
   background-color: transparent !important;
 }
+@media only screen and (max-width: 1030px) {
+  .users_sessions_new_section .middle_evt_bottom_info li  {
+    width: 100%;
+    margin: 0px !important;
+    text-align: center !important;
+  }
+}
+
+@media only screen and (max-width: 1030px) {
+  .users_sessions_new_section .middle_evt_bottom_info .responsive_display  {
+    display: none;
+  }
+}
 
 .users_sessions_new_section .middle_evt_bottom_info .header {
   font-size: 15px !important;
   font-weight: bold;
   color: #414249 !important;
   padding: 0px !important;
-  text-align: left !important;
+}
+@media only screen and (min-width: 1030px) {
+  .users_sessions_new_section .middle_evt_bottom_info .header  {
+    text-align: left !important;
+  }
 }
 
 .users_sessions_new_section .middle_evt_bottom_info .content_header {
@@ -987,6 +1024,12 @@
 .users_sessions_new_section .middle_evt_bottom_info .content {
   margin-top: 5px;
   font-size: 18px;
+}
+@media only screen and (max-width: 1030px) {
+  .users_sessions_new_section .middle_evt_bottom_info .content  {
+    margin-top: 12px;
+    font-size: 12px;
+  }
 }
 
 .users_sessions_new_section .middle_evt_bottom_info .content a {
@@ -1053,9 +1096,14 @@
   width: 215px;
 }
 @media only screen and (min-width: 1170px) {
-  .users_sessions_new_section .socialupcoming_text {
+  .users_sessions_new_section .right_evt {
     padding: 5px 1px 5px 5px;
     float: left;
+  }
+}
+@media only screen and (max-width: 1030px) {
+  .users_sessions_new_section .right_evt {
+    display: none;
   }
 }
 
