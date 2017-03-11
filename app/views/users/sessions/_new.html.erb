@@ -183,9 +183,10 @@
   </div>
   <!--content_events -->
 
-  <% if Social.live_socials.open_socials.all.count > 0 %>
   <!--content_socials -->
-  <div class="medium-12 columns lower_section">
+  <!--content_socials_live -->
+  <% if Social.live_socials.open_socials.all.count > 0 %>
+  <div class="medium-12 columns lower_section socials_live">
     <div class="medium-12 columns content_container" style="padding-top:0px;">
       <div class="header_section">
         <div class="header" style="text-shadow:rgba(40, 48, 45, 0.6) 4px 2px 8px;">explore your city with new people</div>
@@ -273,10 +274,11 @@
       </div>
     </div>
   </div>
-  <!--content_socials -->
-  <% elsif Social.live_socials.open_socials.all.count == 0 %>
+  <!--content_socials_live -->
+  
   <!--content_socials_dummy -->
-  <div class="medium-12 columns lower_section">
+  <%# elsif Social.live_socials.open_socials.all.count == 0 %>
+  <div class="medium-12 columns lower_section socials_dummy">
     <div class="medium-12 columns content_container">
       <div class="header_section">
         <div class="header" style="text-shadow:rgba(40, 48, 45, 0.8) 4px 2px 8px;">explore your city with new people</div>
@@ -452,6 +454,7 @@
   </div>
   <!--content_socials_dummy -->
   <% end %>
+  <!--content_socials -->
 
   <!--content -->
   <div class="medium-12 columns lower_section">

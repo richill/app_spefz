@@ -1387,6 +1387,18 @@
   }
 }
 
+@media only screen and (min-width: 1030px) {
+  .users_sessions_new_section .socials_dummy {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 1030px) {
+  .users_sessions_new_section .socials_live {
+    display: none;
+  }
+}
+
 
 
 
