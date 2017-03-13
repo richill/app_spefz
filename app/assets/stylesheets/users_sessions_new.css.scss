@@ -906,11 +906,12 @@
 @media only screen and (max-width: 1030px) {
   .users_sessions_new_section .left_evt .img_cover {
     margin-bottom: 10px;
+    width: 235px !important;
   }
 }
-@media only screen and (min-width: 1030px) {
+@media only screen and (min-width: 1031px) {
   .users_sessions_new_section .left_evt .img_cover {
-    width: 235px !important;
+    width: 250px !important;
   }
 }
 
