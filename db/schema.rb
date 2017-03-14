@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170305165322) do
+ActiveRecord::Schema.define(version: 20170314121559) do
 
   create_table "activities", force: :cascade do |t|
     t.integer  "trackable_id"
@@ -222,6 +222,8 @@ ActiveRecord::Schema.define(version: 20170305165322) do
     t.boolean  "display_match"
     t.integer  "event_score_access"
     t.boolean  "upcoming_event"
+    t.string   "agerange_info"
+    t.boolean  "agerange"
   end
 
   add_index "events", ["slug"], name: "index_events_on_slug", unique: true
