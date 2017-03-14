@@ -197,7 +197,7 @@
                   <% end %>
                 </div>
                 <%# if @event.latitude.present? && @event.longitude.present? %>
-                  <!-- <div><%# link_to(image_tag("http://maps.googleapis.com/maps/api/staticmap?key=#{ENV['SP_GOOGLE_API_SECRET_KEY']}&size=400x500&sensor=false&markers=#{@event.latitude}%2C#{@event.longitude}"), "#{@event.maplink}", target:"_blank") %></div> -->
+                  <!-- <div><%# link_to(image_tag("https://maps.googleapis.com/maps/api/staticmap?key=#{ENV['SP_GOOGLE_API_SECRET_KEY']}&size=400x500&sensor=false&markers=#{@event.latitude}%2C#{@event.longitude}"), "#{@event.maplink}", target:"_blank") %></div> -->
                 <%# else %>
                   <%= link_to "#{@event.maplink}", target:"_blank" do %>
                   <div class="map_container">
