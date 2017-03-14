@@ -40,7 +40,13 @@
                       <div class="info"><i class="fa fa-calendar" aria-hidden="true"></i> <%= activity.trackable.date.strftime("%A, %d %b") %> <span class="mid_divider">|</span> <%= activity.trackable.time.strftime("%I:%M %p") %></div>
                       <div class="info"><i class="fa fa-map-pin" aria-hidden="true"></i> <%= activity.trackable.city %>, <%= activity.trackable.category_country.name %></div>
                       <div class="info">
-                        <span><i class="fa fa-male" aria-hidden="true"></i> <%= activity.trackable.category_age.name %></span>
+                        <span><i class="fa fa-male" aria-hidden="true"></i> 
+                          <% if activity.trackable.agerange? %>
+                            <%= activity.trackable.agerange_info %>
+                          <% else %>
+                            <%= activity.trackable.category_age.name %>
+                          <% end %>
+                        </span>
                         <span class="mid_divider">|</span>
                         <span class="category">Category:</span> 
                         <span class="category_info"><%= link_to "#{activity.trackable.category_topic.name}", events_path(q: {category_topic_name_eq: activity.trackable.category_topic.name}) %></span>
