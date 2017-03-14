@@ -20,7 +20,7 @@ class Event < ActiveRecord::Base
   validates_presence_of :date, presence: true, message: "please select a date"
   validates_presence_of :time, presence: true, message: "please select a time"
   validates_presence_of :city, presence: true, message: "can't be blank"
-  validates_presence_of :category_age, presence: true, message: "please select a category"
+  # validates_presence_of :category_age, presence: true, message: "please select a category"
   validates_presence_of :category_country, presence: true, message: "please select a category"
   validates_presence_of :category_quantitygender, presence: true, message: "please select a category"
   validates_presence_of :venuename, presence: true, message: "can't be blank"
@@ -32,6 +32,7 @@ class Event < ActiveRecord::Base
   validates :event_score_access, numericality: { less_than: 5, greater_than_or_equal_to: 0, allow_nil: true }
   validates_presence_of :tag_list, presence: true, message: "can't be blank"
   validate :date_cannot_be_in_the_past
+  validate :categoryage_or_agerange_info
   # validates :category_quantitygender_content
   # validates_numericality_of :quantity, presence: true, message: "can't be blank"
   # validates_numericality_of :quantity_men, presence: true, message: "can't be blank"
@@ -320,6 +321,12 @@ class Event < ActiveRecord::Base
   #only_women       | quantity
   #both_male_women  | quantity
   #Xmale_Xwomen     | quantiy_men & quantity_women
+  
+  def categoryage_or_agerange_info
+    if category_age_id.blank? && agerange_info.blank?
+      errors.add(:base, "Specify or select age range, not both")
+    end
+  end
 end
 
 

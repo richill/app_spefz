@@ -111,7 +111,13 @@
         <li><span>|</span></li>
         <li>
           <span class="header">Age Group:</span>
-          <span class="content"><%= @event.category_age.name %></span>
+          <span class="content">
+            <% if @event.agerange? %>
+              <%= @event.agerange_info %>
+            <% else %>
+              <%= @event.category_age.name %>
+            <% end %>
+          </span>
         </li>
         <% if @event.display_event_match? %>
           <li><span>|</span></li>

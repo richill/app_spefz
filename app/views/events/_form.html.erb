@@ -123,24 +123,16 @@
               <%= f.input :price, label: "Price (£)", placeholder: "35" %>
               <%= f.association :category_age, collection: CategoryAge.all, prompt: "select a category", label: "Age Group" %>
             </div>
+
             <div class="clear"></div>
 
-
-
-
-            <!-- working here -->
             <div class="preference_age_range_section">
               <%= f.input :agerange, label: "Use Age Range Preference" %> 
               <%= f.input :agerange_info, label: false, placeholder: "20 - 45" %>
               <div class="clear"></div>
               <div class="text_info">The Match % diplays how close the member matches the event. The member's "Total Average Rating" & the "Event Score Access" are both automatically calculated to indicate how close a member matches the event and is likely to meet members in the event of the same initerest and calibre as themselves</div>
             </div>
-            <!-- working here -->
-
-
-
-
-
+            
             <div class="clear"></div>
 
             <div class="event_score_access">

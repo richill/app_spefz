@@ -92,7 +92,15 @@
                         <div>
                           <ul class="inline-list middle_evt_bottom_info">
                             <li><div class="header">price</div> <div class="content_header" style="margin-top:7px;">£<%= number_with_precision(event.price, precision: 2) %> </div></li>
-                            <li><div class="header">age group</div> <div class="content" style="margin-top:7px;"><%= event.category_age.name %></div></li>
+                            <li><div class="header">age group</div> 
+                              <div class="content" style="margin-top:7px;">
+                                <% if event.agerange? %>
+                                  <%= event.agerange_info %>
+                                <% else %>
+                                  <%= event.category_age.name %>
+                                <% end %>
+                              </div>
+                            </li>
                             <% if event.display_event_match? %>
                             <li>
                               <div class="header">match</div> 
