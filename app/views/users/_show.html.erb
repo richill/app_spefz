@@ -8,7 +8,7 @@
         <div class="upper_profile_content">
           <div class="profile_img_main_cover">
             <% if @user.image.present? %>
-              <div><%= cl_image_tag(@user.image, :transformation=>[{:gravity=>"face", :width=>200, :height=>200, :crop=>"fill", :radius=>"max", :secure => true}]) %></div>
+              <div><%= cl_image_tag(@user.image, :transformation=>[{:gravity=>"face", :width=>200, :height=>200, :crop=>"fill", :radius=>"max"}], :secure => true) %></div>
             <% else %>
               <div class="img_default"><%= image_tag("img-profile-image-default.png") %></div>
             <% end %>
