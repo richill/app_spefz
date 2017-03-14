@@ -56,7 +56,13 @@
           </div>
           <div class="tablecell">
             <div class="faint_text_format">Age-Group</div> 
-            <div class="main_text_format"><%= event.category_age.name %></div>
+            <div class="main_text_format">
+              <% if event.agerange? %>
+                <%= event.agerange_info %>
+              <% else %>
+                <%= event.category_age.name %>
+              <% end %>
+            </div>
           </div>
           <div class="tablecell">
             <div class="access_score">
