@@ -13,6 +13,7 @@ elsif Rails.env.production?
     config.api_key = ENV["CLOUDINARY_API_KEY"]
     config.api_secret = ENV["CLOUDINARY_API_SECRET_KEY"]
     config.cdn_subdomain = true
+    config.secure = true
   end
 end
 
