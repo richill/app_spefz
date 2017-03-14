@@ -97,7 +97,14 @@
                                 <div class="info"><i class="fa fa-calendar" aria-hidden="true"></i> <%= event.date.strftime("%A, %d %b") %> <span class="mid_divider">|</span> <%= event.time.strftime("%I:%M %p") %></div>
                                 <div class="info"><i class="fa fa-map-pin" aria-hidden="true"></i> <%= event.city %>, <%= event.category_country.name %></div>
                                 <div class="info">
-                                  <span><i class="fa fa-male" aria-hidden="true"></i> <%= event.category_age.name %></span>
+                                  <span>
+                                    <i class="fa fa-male" aria-hidden="true"></i> 
+                                    <% if event.agerange? %>
+                                      <%= event.agerange_info %>
+                                    <% else %>
+                                      <%= event.category_age.name %>
+                                    <% end %>
+                                  </span>
                                   <span class="mid_divider">|</span>
                                   <span class="category">Category:</span> 
                                   <span class="category_info"><%= link_to "#{event.category_topic.name}", socials_path(q: {category_topic_name_eq: event.category_topic.name}) %></span>

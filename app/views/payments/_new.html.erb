@@ -26,7 +26,14 @@
                     <div><i class="fa fa-map-marker" aria-hidden="true"></i> <%= @event.venuename %></div>
                     <div><i class="fa fa-calendar" aria-hidden="true"></i> <%= @event.date.strftime("%a, %d %b %Y") %> <span class="divider">|</span> <%= @event.time.strftime("%H:%M") %>h - <%= @event.time_end.strftime("%H:%M") %>h</div>
                     <div><i class="fa fa-map-pin" aria-hidden="true"></i> <%= @event.city %>, <%= @event.category_country.name %></div>
-                    <div><i class="fa fa-male" aria-hidden="true"></i> <%= @event.category_age.name %></div>
+                    <div>
+                      <i class="fa fa-male" aria-hidden="true"></i> 
+                      <% if @event.agerange? %>
+                        <%= @event.agerange_info %>
+                      <% else %>
+                        <%= @event.category_age.name %>
+                      <% end %>
+                    </div>
                   </div>
                 </div>
                 <div><%= cl_image_tag(@event.image, :transformation=>[{:gravity=>"center", :width=>200, :height=>200, :crop=>"fill"}]) %></div>
