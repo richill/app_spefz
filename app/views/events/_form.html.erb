@@ -125,6 +125,24 @@
             </div>
             <div class="clear"></div>
 
+
+
+
+            <!-- working here -->
+            <div class="preference_age_range_section">
+              <%= f.input :agerange, label: "Use Age Range Preference" %> 
+              <%= f.input :agerange_info, label: false, placeholder: "20 - 45" %>
+              <div class="clear"></div>
+              <div class="text_info">The Match % diplays how close the member matches the event. The member's "Total Average Rating" & the "Event Score Access" are both automatically calculated to indicate how close a member matches the event and is likely to meet members in the event of the same initerest and calibre as themselves</div>
+            </div>
+            <!-- working here -->
+
+
+
+
+
+            <div class="clear"></div>
+
             <div class="event_score_access">
               <%= f.input :event_score_access, label: "Event Score Access", placeholder: "3.5" %>
               <div class="text_info" style="margin-bottom:15px;">*Maximum "Event Score Access" is "5" & minimum is 1. The "Event Score Access" sets the minimum standard to which members can attend an event. A member with a "Total Average Rating" of 3.5/5 will be unable to attend an event with a "Score Access" of "4", but will be able to attend all events with an "Event Score Access" "equal to" or "less" than "3.5".</div>

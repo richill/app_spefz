@@ -207,6 +207,43 @@
   margin-right: 5px;
 }
 
+
+// --------- working here ---------
+
+.user_general_settings_section .event_edit_update_form .preference_age_range_section {
+  background-color: rgba(75, 180, 191, 0.2) !important;
+  padding: 15px !important;
+  margin-top: 20px !important;
+  margin-bottom: 30px !important;
+  display: inline-block;
+}
+
+.user_general_settings_section .event_edit_update_form .preference_age_range_section .boolean {
+  background-color: rgba(75, 180, 191, 0.2) !important;
+  margin-top: 0px !important;
+  float: left;
+}
+
+.user_general_settings_section #event_agerange {
+  margin-bottom: 0px;
+  margin-right: 5px;
+  // float: left;
+}
+
+.user_general_settings_section .event_agerange_info {
+  margin-bottom: 15px !important;
+  float: left;
+  width: 858px;
+}
+
+.user_general_settings_section #event_agerange_info {
+  padding: 26px 20px !important;
+  border: 1px solid #4BB4BF !important;
+}
+
+// --------- working here ---------
+
+
 .user_general_settings_section .event_edit_update_form .event_score_access {
   background-color: rgba(75, 180, 191, 0.2) !important;
   padding: 1px 15px 15px 15px !important;
