@@ -96,15 +96,18 @@
                           <span>website</span>
                         <% end %>
                       </div>
-                      <div class="blog_content_read">
-                        <span class="blog_info_content"><%= truncate "#{blog.content}", length: 600 %></span>
-                        <span class="read_more"><%= link_to "read more", blog_path(blog) %></span>
-                        <% if signed_in? %>
-                          <% if current_user.admin_pa_management_group || current_user.pa_administration_group %>
-                            <span class="divider">|</span>
-                            <span class="read_more"><%= link_to "edit", edit_user_blog_path(blog.user, blog) %></span>
+                      <div class="blog_content_read"> 
+                        <span class="blog_info_content"><%= raw blog.content.truncate(500) %></span>
+                        <div class="clear"></div>
+                        <div class="readmore_edit_section">
+                          <span class="read_more"><%= link_to "read more", blog_path(blog) %></span>
+                          <% if signed_in? %>
+                            <% if current_user.admin_pa_management_group || current_user.pa_administration_group %>
+                              <span class="divider">|</span>
+                              <span class="read_more"><%= link_to "edit", edit_user_blog_path(blog.user, blog) %></span>
+                            <% end %>
                           <% end %>
-                        <% end %>
+                        </div>
                       </div>
                     </div>
                   </li>

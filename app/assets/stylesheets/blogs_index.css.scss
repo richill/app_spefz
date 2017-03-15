@@ -421,6 +421,31 @@
   margin: 10px 0px;
 }
 
+.blogs_section .right_content .blog_info_content p {
+  font-family: "Lato", sans-serif;
+  font-size: 12px;
+  word-spacing: 3px;
+  color: #7C93A7;
+  font-weight: 300;
+  letter-spacing: 1px;
+  margin: 10px 0px;
+}
+
+.blogs_section .right_content .blog_info_content li {
+  font-family: "Lato", sans-serif;
+  font-size: 12px;
+  word-spacing: 3px;
+  color: #7C93A7;
+  font-weight: 300;
+  letter-spacing: 1px;
+  float: left;
+  margin-right: 5px;
+}
+
+.blogs_section .readmore_edit_section {
+  margin-top: 5px;
+}
+
 .blogs_section .right_content .read_more a {
   font-family: 'Lato', sans-serif;
   color: #414249 !important;
@@ -433,10 +458,6 @@
 .blogs_section .right_content .read_more a:hover {
   text-decoration: underline;
 }
-
-
-
-
  
 
 
