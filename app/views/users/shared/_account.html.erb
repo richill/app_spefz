@@ -62,7 +62,7 @@
                       <td><%= @user.reference %></td>
                       <td><%= @user.email %></td>
                       <td>Premium Plan</td>
-                      <td>£<%= number_with_precision(15, precision: 2) %>/mth</td>
+                      <td>£<%= number_with_precision(18, precision: 2) %>/mth</td>
                       <td>
                         <% if @user.subscribed? %>
                           <%= @user.stripe_subscription_pymt_id %>
