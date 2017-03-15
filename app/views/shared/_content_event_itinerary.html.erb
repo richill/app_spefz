@@ -5,7 +5,20 @@
   <b>Itinerary</b>
   <div class="event_schedule">
     <ul>
-      <li class="sub-header">Speed Social Night</li>
+      <li>
+        <span class="sub-header">Speed Social Night</span>
+        <span style="margin:0px 5px;">|</span>
+        <span>
+          <span class="sub-header">Age Group: </span> 
+          <span>
+            <% if @event.agerange? %>
+              <%= @event.agerange_info %>
+            <% else %>
+              <%= @event.category_age.name %> 
+            <% end %>
+          </span>
+        </span>
+      </li>
       <li><i class="fa fa-caret-right" aria-hidden="true"></i> 18:30 - Registration opens</li>
       <li><i class="fa fa-caret-right" aria-hidden="true"></i> 19:00 - Speed Social begins</li>
       <li><i class="fa fa-caret-right" aria-hidden="true"></i> 19:45 approx - Break for drinks and chatting</li>
