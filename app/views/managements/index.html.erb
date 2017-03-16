@@ -1,29 +1,6 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Listing Managements</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Venuecost</th>
-      <th>Hostcost</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @managements.each do |management| %>
-      <tr>
-        <td><%= management.venuecost %></td>
-        <td><%= management.hostcost %></td>
-        <td><%= link_to 'Show', management %></td>
-        <td><%= link_to 'Edit', edit_management_path(management) %></td>
-        <td><%= link_to 'Destroy', management, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Management', new_management_path %>
+<% provide(:title, "Management") %>
+<div>
+  <%= render 'shared/header' %>
+  <%= render 'managements/index' %>
+  <%= render 'shared/footer' %>
+</div>
