@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  resources :managements
+
   resource :bankcard
 
   resources :venues

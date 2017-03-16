@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Venuecost:</strong>
+  <%= @management.venuecost %>
+</p>
+
+<p>
+  <strong>Hostcost:</strong>
+  <%= @management.hostcost %>
+</p>
+
+<%= link_to 'Edit', edit_management_path(@management) %> |
+<%= link_to 'Back', managements_path %>

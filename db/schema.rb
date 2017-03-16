@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170314121559) do
+ActiveRecord::Schema.define(version: 20170316132811) do
 
   create_table "activities", force: :cascade do |t|
     t.integer  "trackable_id"
@@ -379,6 +379,13 @@ ActiveRecord::Schema.define(version: 20170314121559) do
 
   add_index "mailboxer_receipts", ["notification_id"], name: "index_mailboxer_receipts_on_notification_id"
   add_index "mailboxer_receipts", ["receiver_id", "receiver_type"], name: "index_mailboxer_receipts_on_receiver_id_and_receiver_type"
+
+  create_table "managements", force: :cascade do |t|
+    t.decimal  "venuecost"
+    t.decimal  "hostcost"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "overall_averages", force: :cascade do |t|
     t.integer  "rateable_id"
