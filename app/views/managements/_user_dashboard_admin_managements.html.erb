@@ -28,14 +28,14 @@
               <li>80</li> -->
               <li><%= management.event.payments.count %></li>
               <li><%= number_with_precision(management.event.price, precision: 2) %></li>
-              <li><%= number_with_precision(management.event.payments.count * management.event.price, precision: 0) %></li>
+              <li><%= number_with_precision(management.ticket_sales, precision: 0) %></li>
               <li class="negative"><%= number_with_precision(management.venuecost, precision: 0) %></li>
               <li><%= management.event.host.users.count %></li>
-              <li class="negative"><%= management.event.host.users.count * 50 %></li>
-              <li class="negative">1'760</li>
-              <li class="negative">5'240</li>
-              <li class="negative">2'000</li>
-              <li class="total_amt">1'144</li>
+              <li class="negative"><%= management.cost_host %></li>
+              <li class="negative"><%= number_with_precision(management.vat, precision: 0) %></li>
+              <li class="negative"><%= number_with_precision(management.revenue, precision: 0) %></li>
+              <li class="negative">deposit</li>
+              <li class="total_amt"><%= number_with_precision(management.profit, precision: 0, separator: ',', delimiter: '.') %></li>
             <% end %>
           </ul>
           <div class="clear"></div>
