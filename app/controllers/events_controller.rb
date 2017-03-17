@@ -19,13 +19,13 @@ class EventsController < ApplicationController
     impressionist(@event)
     @host = Host.new
     @card = Card.new
-    if @event.upcoming_event? && !current_user.admin_pa_management_group || !current_user.pa_event_mgt_group
+    unless @event.upcoming_event? && current_user.admin_pa_management_group || current_user.pa_event_mgt_group
       redirect_to errorpermission_path
-    else
-      unless @event.event_access_below_user_score(current_user) || @current_user.admin_pa_management_group || current_user.pa_event_mgt_group
-        redirect_to errorpermission_path
-        #directs user to access_restricted page if event_access_score is > user average rating
-      end
+      #directs user to access_restricted page if event is stated as an upcoming event and user is not within group admin_pa_management_group or pa_event_mgt_group
+    end
+    unless @event.event_access_below_user_score(current_user) || @current_user.admin_pa_management_group || current_user.pa_event_mgt_group
+      redirect_to errorpermission_path
+      #directs user to access_restricted page if event_access_score is > user average rating
     end
   end
 
