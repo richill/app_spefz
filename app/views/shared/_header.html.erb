@@ -58,7 +58,7 @@
         </li>
 
         <li class="notification_li">
-          <% if @user_network_activities.unread_by(current_user).present?  %>
+          <% if @user_network_activities.unread_by(current_user).present? %>
             <span id="notification_count_bell"><%= @user_network_activities.unread_by(current_user).count %></span>
           <% end %>
           <div>
