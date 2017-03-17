@@ -2,7 +2,11 @@
   <div class="share_button_inner_container">
     <div class="header">Share</div>
     <div class="content_list">
-      <%= social_share_button_tag("#{@blog.title}") %>
+      <% if @event %>
+        <%= social_share_button_tag("#{@event.title}") %>
+      <% elsif @blog %>
+        <%= social_share_button_tag("#{@blog.title}") %>
+      <% end %>
     </div> 
     <a class="close-reveal-modal cancel_button" aria-label="Close">&#215;</a>
   </div>
