@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   
-  resources :managements
+  resources :managements do
+    member do
+      get 'details'
+    end
+  end
 
   resource :bankcard
 
