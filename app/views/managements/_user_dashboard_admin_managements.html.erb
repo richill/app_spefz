@@ -22,8 +22,9 @@
             <li>dept/pymt (£):</li>
             <li class="total_amt">profit (£):</li>
           </ul>
-          <ul class="content">
+          
             <% @managements.each do |management| %>
+            <ul class="content">
               <!-- <li>80</li>
               <li>80</li> -->
               <li><%= management.event.payments.count %></li>
@@ -36,11 +37,12 @@
               <li class="negative"><%= number_with_precision(management.revenue, precision: 0) %></li>
               <li class="negative">deposit</li>
               <li class="total_amt"><%= number_with_precision(management.profit, precision: 0, separator: ',', delimiter: '.') %></li>
+            </ul>
+            <div class="clear"></div>
+            <div class="link_btn view_btn"><%= link_to "details", details_management_path(management) %></div>
             <% end %>
-          </ul>
-          <div class="clear"></div>
-          <div class="link_btn view_btn"><%= link_to "view" %></div>
-          <div class="link_btn edit_btn"><%= link_to "edit" %></div>
+          
+          
         </div>
       </div>
     </div>
