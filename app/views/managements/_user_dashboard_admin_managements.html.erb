@@ -26,12 +26,12 @@
             <% @managements.each do |management| %>
               <!-- <li>80</li>
               <li>80</li> -->
-              <li>160</li>
-              <li>55.00</li>
-              <li>8'800</li>
-              <li class="negative">1'600</li>
-              <li>4</li>
-              <li class="negative">200</li>
+              <li><%= management.event.payments.count %></li>
+              <li><%= number_with_precision(management.event.price, precision: 2) %></li>
+              <li><%= number_with_precision(management.event.payments.count * management.event.price, precision: 0) %></li>
+              <li class="negative"><%= number_with_precision(management.venuecost, precision: 0) %></li>
+              <li><%= management.event.host.users.count %></li>
+              <li class="negative"><%= management.event.host.users.count * 50 %></li>
               <li class="negative">1'760</li>
               <li class="negative">5'240</li>
               <li class="negative">2'000</li>

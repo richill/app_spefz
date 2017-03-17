@@ -19,7 +19,7 @@ class EventsController < ApplicationController
     impressionist(@event)
     @host = Host.new
     @card = Card.new
-    if @event.upcoming_event? && !current_user.admin_pa_management_group || current_user.pa_event_mgt_group
+    if @event.upcoming_event? && !current_user.admin_pa_management_group || !current_user.pa_event_mgt_group
       redirect_to errorpermission_path
     else
       unless @event.event_access_below_user_score(current_user) || @current_user.admin_pa_management_group || current_user.pa_event_mgt_group
