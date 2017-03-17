@@ -1,6 +1,8 @@
 <div class="user_dashboard_admin_managements">
   <!-- upper_data_content -->
   <div class="medium-12 columns upper_data_content">
+
+    <!-- financial block -->
     <div class="medium-2 columns left_data responsive_data stats_tab_01">
       <div class="data_content">
         <div class="header"> jan 2017</div>
@@ -17,7 +19,7 @@
             <li>VAT 20% (£):</li>
             <li>revenue (£):</li>
             <li>dept/pymt (£):</li>
-            <li>profit (£):</li>
+            <li class="total_amt">profit (£):</li>
           </ul>
           <ul class="content">
             <li>80</li>
@@ -25,17 +27,23 @@
             <li>160</li>
             <li>55.00</li>
             <li>8'800</li>
-            <li>1'600</li>
+            <li class="negative">1'600</li>
             <li>4</li>
-            <li>200</li>
-            <li>1'760</li>
-            <li>5'240</li>
-            <li>2'000</li>
-            <li>1'144</li>
+            <li class="negative">200</li>
+            <li class="negative">1'760</li>
+            <li class="negative">5'240</li>
+            <li class="negative">2'000</li>
+            <li class="total_amt">1'144</li>
           </ul>
+          <div class="clear"></div>
+          <div class="link_btn view_btn"><%= link_to "view" %></div>
+          <div class="link_btn edit_btn"><%= link_to "edit" %></div>
         </div>
       </div>
     </div>
+    <!-- financial block -->
+
+
     <div class="medium-2 columns middle_data responsive_data stats_tab_02">
       <div class="data_content">
         <div class="header"> Jan wk1</div>
