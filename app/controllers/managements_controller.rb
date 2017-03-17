@@ -82,6 +82,6 @@ class ManagementsController < ApplicationController
   end
 
   def management_params
-    params.require(:management).permit(:venuecost, :hostcost)
+    params.require(:management).permit(:venuecost, :hostcost, :date, :event_id)
   end
 end

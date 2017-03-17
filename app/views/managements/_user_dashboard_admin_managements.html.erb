@@ -2,6 +2,7 @@
   <!-- upper_data_content -->
   <div class="medium-12 columns upper_data_content">
 
+
     <!-- financial block -->
     <div class="medium-2 columns left_data responsive_data stats_tab_01">
       <div class="data_content">
@@ -22,18 +23,20 @@
             <li class="total_amt">profit (£):</li>
           </ul>
           <ul class="content">
-            <!-- <li>80</li>
-            <li>80</li> -->
-            <li>160</li>
-            <li>55.00</li>
-            <li>8'800</li>
-            <li class="negative">1'600</li>
-            <li>4</li>
-            <li class="negative">200</li>
-            <li class="negative">1'760</li>
-            <li class="negative">5'240</li>
-            <li class="negative">2'000</li>
-            <li class="total_amt">1'144</li>
+            <% @managements.each do |management| %>
+              <!-- <li>80</li>
+              <li>80</li> -->
+              <li>160</li>
+              <li>55.00</li>
+              <li>8'800</li>
+              <li class="negative">1'600</li>
+              <li>4</li>
+              <li class="negative">200</li>
+              <li class="negative">1'760</li>
+              <li class="negative">5'240</li>
+              <li class="negative">2'000</li>
+              <li class="total_amt">1'144</li>
+            <% end %>
           </ul>
           <div class="clear"></div>
           <div class="link_btn view_btn"><%= link_to "view" %></div>
