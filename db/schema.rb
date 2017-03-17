@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170316132811) do
+ActiveRecord::Schema.define(version: 20170317135737) do
 
   create_table "activities", force: :cascade do |t|
     t.integer  "trackable_id"
@@ -385,6 +385,7 @@ ActiveRecord::Schema.define(version: 20170316132811) do
     t.decimal  "hostcost"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.date     "date"
   end
 
   create_table "overall_averages", force: :cascade do |t|
