@@ -50,6 +50,9 @@ class ManagementsController < ApplicationController
     end
   end
 
+  def details  
+  end
+
   private
   def setup_friends
     @user = User.find(current_user.id)
