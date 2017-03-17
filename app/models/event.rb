@@ -134,8 +134,8 @@ class Event < ActiveRecord::Base
     if self.event_score_access.blank? || self.event_score_access <= 0
       event_access = self.event_score_access = 100
     else
-      user_rating = user.overall_ratings
-      user_rating_percentage = (user_rating/5)*100
+      user_rating = user.overall_ratings                                        
+      user_rating_percentage = (user_rating/5)*100                              
       event_access = self.event_score_access.to_f
       event_access_percentage = (event_access/5)*100
       match = (event_access_percentage/user_rating_percentage)*100 
