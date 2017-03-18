@@ -40,7 +40,7 @@
                 <li class="total_amt"><%= number_with_precision(management.profit, precision: 0) %></li>
               </ul>
               <div class="clear"></div>
-              <div class="mgt_event"><%= link_to "#{management.event.title}", event_path(management.event), target:"_blank" %></div>
+              <div class="mgt_event"><%= link_to (truncate "#{management.event.title}", length: 45), event_path(management.event), target:"_blank" %></div>
               <div class="link_btn view_btn"><%= link_to "details", details_managements_path %></div>
               <div class="link_btn edit_btn"><%= link_to "edit", edit_management_path(management) %></div>
               <div class="link_btn edit_btn"><%= link_to 'destroy', management, method: :delete, data: { confirm: 'Are you sure?' } %></div>
