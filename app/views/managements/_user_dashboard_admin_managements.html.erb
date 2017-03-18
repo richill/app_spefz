@@ -2,7 +2,6 @@
   <!-- upper_data_content -->
   <div class="medium-12 columns upper_data_content">
     <!-- financial block --> 
-    <%# @managements.each do |management| %>
     <% @managements.group_by(&:monthyear).each do |monthyear, event_id| %>
       <div>Storage: <%= monthyear %></div>
       <ul>

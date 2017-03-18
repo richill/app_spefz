@@ -3,7 +3,8 @@ class ManagementsController < ApplicationController
   before_filter :setup_friends, :setup_subscription, :setup_cards, :setup_events, :setup_invite_form, :setup_user_network_activities
 
   def index
-    @managements = Management.all
+    #@managements = Management.order("monthyear desc")
+    @managements = Management.order("date desc")
   end
 
   def show
