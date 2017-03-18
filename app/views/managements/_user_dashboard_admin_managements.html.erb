@@ -1,55 +1,61 @@
 <div class="user_dashboard_admin_managements">
   <!-- upper_data_content -->
   <div class="medium-12 columns upper_data_content">
+    <!-- financial block --> 
+    <%# @managements.each do |management| %>
+    <% @managements.group_by(&:monthyear).each do |monthyear, event_id| %>
+      <div>Storage: <%= monthyear %></div>
+      <ul>
+      <% event_id.each do |management| %>
+        <li class="medium-3 columns left_data responsive_data stats_tab_01">
+          <div class="data_content">
+            <div class="header"><%= management.event.date.strftime("%a, %d %b %Y") %></div>
+            <div class="header_data">
+              <ul class="title">
+                <!--  <li>att. male:</li>
+                <li>att. female:</li> -->
+                <li>total att:</li>
+                <li>ticket (£):</li>
+                <li>sales (£):</li>
+                <li>venue cost (£):</li>
+                <li>host count:</li>
+                <li>host cost (£):</li>
+                <li>VAT 20% (£):</li>
+                <li>revenue (£):</li>
+                <li>dept/pymt (£):</li>
+                <li class="total_amt">profit (£):</li>
+              </ul>
 
-
+              <ul class="content">
+                <!-- <li>80</li>
+                <li>80</li> -->
+                <li><%= management.event.payments.count %></li>
+                <li><%= number_with_precision(management.event.price, precision: 2) %></li>
+                <li><%= number_with_precision(management.ticket_sales, precision: 0) %></li>
+                <li class="negative"><%= number_with_precision(management.venuecost, precision: 0) %></li>
+                <li><%= management.host_count %></li>
+                <li class="negative"><%= management.host_cost %></li>
+                <li class="negative"><%= number_with_precision(management.vat, precision: 0) %></li>
+                <li><%= number_with_precision(management.revenue, precision: 0) %></li>
+                <li class="negative">deposit</li>
+                <li class="total_amt"><%= number_with_precision(management.profit, precision: 0) %></li>
+              </ul>
+              <div class="clear"></div>
+              <div class="mgt_event"><%= link_to "#{management.event.title}", event_path(management.event), target:"_blank" %></div>
+              <div class="link_btn view_btn"><%= link_to "details", details_managements_path %></div>
+              <div class="link_btn edit_btn"><%= link_to "edit", edit_management_path(management) %></div>
+              <div class="link_btn edit_btn"><%= link_to 'destroy', management, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+            </div>
+          </div>
+        </li>
+      <% end %>
+      <div class="clear"></div>
+      </ul>
+    <% end %>
     <!-- financial block -->
-    <div class="medium-2 columns left_data responsive_data stats_tab_01">
-      <div class="data_content">
-        <div class="header"> jun 2017</div>
-        <div class="header_data">
-          <ul class="title">
-           <!--  <li>att. male:</li>
-            <li>att. female:</li> -->
-            <li>total att:</li>
-            <li>ticket (£):</li>
-            <li>sales (£):</li>
-            <li>venue cost (£):</li>
-            <li>host count:</li>
-            <li>host cost (£):</li>
-            <li>VAT 20% (£):</li>
-            <li>revenue (£):</li>
-            <li>dept/pymt (£):</li>
-            <li class="total_amt">profit (£):</li>
-          </ul>
-          
-            <% @managements.each do |management| %>
-            <ul class="content">
-              <!-- <li>80</li>
-              <li>80</li> -->
-              <li><%= management.event.payments.count %></li>
-              <li><%= number_with_precision(management.event.price, precision: 2) %></li>
-              <li><%= number_with_precision(management.ticket_sales, precision: 0) %></li>
-              <li class="negative"><%= number_with_precision(management.venuecost, precision: 0) %></li>
-              <li><%= management.event.host.users.count %></li>
-              <li class="negative"><%= management.cost_host %></li>
-              <li class="negative"><%= number_with_precision(management.vat, precision: 0) %></li>
-              <li class="negative"><%= number_with_precision(management.revenue, precision: 0) %></li>
-              <li class="negative">deposit</li>
-              <li class="total_amt"><%= number_with_precision(management.profit, precision: 0, separator: ',', delimiter: '.') %></li>
-            </ul>
-            <div class="clear"></div>
-            <div class="link_btn view_btn"><%= link_to "details", details_management_path(management) %></div>
-            <% end %>
-          
-          
-        </div>
-      </div>
-    </div>
-    <!-- financial block -->
 
 
-    <div class="medium-2 columns middle_data responsive_data stats_tab_02">
+    <div class="medium-2 columns middle_data responsive_data stats_tab_02 hide">
       <div class="data_content">
         <div class="header"> may 2017</div>
         <div class="header_data">
@@ -88,7 +94,7 @@
       </div>
     </div>
 
-    <div class="medium-2 columns middle_data responsive_data stats_tab_03">
+    <div class="medium-2 columns middle_data responsive_data stats_tab_03 hide">
       <div class="data_content">
         <div class="header"> apr 2017</div>
         <div class="header_data">
@@ -127,7 +133,7 @@
       </div>
     </div>
 
-    <div class="medium-2 columns middle_data responsive_data stats_tab_04">
+    <div class="medium-2 columns middle_data responsive_data stats_tab_04 hide">
       <div class="data_content">
         <div class="header"> mar 2017</div>
         <div class="header_data">
@@ -166,7 +172,7 @@
       </div>
     </div>
 
-    <div class="medium-2 columns middle_data responsive_data stats_tab_05">
+    <div class="medium-2 columns middle_data responsive_data stats_tab_05 hide">
       <div class="data_content">
         <div class="header"> feb 2017</div>
         <div class="header_data">
@@ -204,7 +210,8 @@
         </div>
       </div>
     </div>
-    <div class="medium-2 columns right_data responsive_data stats_tab_06">
+
+    <div class="medium-2 columns right_data responsive_data stats_tab_06 hide">
       <div class="data_content">
         <div class="header"> jan 2017</div>
         <div class="header_data">

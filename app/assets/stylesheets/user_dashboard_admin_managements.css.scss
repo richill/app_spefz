@@ -152,10 +152,23 @@
   background-color: rgba(225, 71, 62, 0.7) !important;
 }
 
-.view_btn {
-  margin-top: 10px !important;
+// .view_btn {
+//   margin-top: 10px !important;
+// }
+
+.mgt_event a {
+  font-size: 9px !important;
+  background-color: rgba(75, 180, 191, 0.2) !important;
+  display: inline-block;
+  margin-top: 5px;
+  padding: 5px;
+  width: 100%;
 }
 
+
+.mgt_event a:hover {
+  background-color: rgba(225, 71, 62, 0.1) !important;
+}
 
 
 

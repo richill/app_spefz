@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   
   resources :managements do
-    member do
+    collection do
       get 'details'
     end
   end

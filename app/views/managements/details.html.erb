@@ -1,1 +1,11 @@
 <h1>i am the details page</h1>
+<% Management.all.group_by(&:monthyear).each do |monthyear, events| %>
+  Storage: <%= monthyear %>
+  <ul>
+  <% events.each do |management| %>
+    <li>(<%= management.event.title %>): <%= management.event.price %></li>
+  <% end %>
+  </ul>
+<% end %>
+
+<div><%= link_to "management", managements_path %></div>

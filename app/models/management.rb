@@ -5,8 +5,20 @@ class Management < ActiveRecord::Base
     self.event.payments.count * self.event.price
   end
 
-  def cost_host
-    self.event.host.users.count * 50
+  def host_count
+    if self.event.host == nil
+      0
+    else
+      self.event.host.users.count
+    end
+  end
+
+  def host_cost
+    if self.event.host == nil
+      0 * 50
+    else
+      self.event.host.users.count * 50
+    end
   end
 
   def vat
@@ -14,7 +26,7 @@ class Management < ActiveRecord::Base
   end
 
   def revenue
-    ticket_sales - (self.venuecost + cost_host + vat)
+    ticket_sales - (self.venuecost + host_cost + vat)
   end
 
   def deposit

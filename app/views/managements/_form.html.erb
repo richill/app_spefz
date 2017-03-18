@@ -4,6 +4,8 @@
   <div class="form-inputs">
     <%= f.input :date, placeholder: "dd/mm/yyyy", label: "Date" %>
     <%= f.association :event, collection: Event.all, prompt: "select an event", label: "Event" %>
+    <%= f.input :monthyear %>
+    <%= f.input :week %>
     <%= f.input :venuecost %>
     <%= f.input :hostcost %>
   </div>
