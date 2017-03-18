@@ -10,16 +10,20 @@
 .user_dashboard_admin_managements .upper_data_content {
   padding: 0px !important;
   margin-bottom: 30px;
-  background-color: rgba(0, 0, 0, 0.05) !important;
 }
 
 .user_dashboard_admin_managements .upper_data_content ul {
-  margin: 0px !important;
+  margin: 0px;
 }
 
 .user_dashboard_admin_managements .data_content {
   text-align: center;
   color: #2F3F5B;
+}
+
+.user_dashboard_admin_managements .mgt_data_content {
+  background-color: rgba(0, 0, 0, 0.05) !important;
+  margin-bottom: 15px !important
 }
 
 .user_dashboard_admin_managements .data_content .header {
@@ -101,6 +105,17 @@
 //  workings
 // -----------------------------------
 
+.group_title {
+  font-family: 'Lato', sans-serif;
+  font-weight: bold;
+  letter-spacing: 1px;
+  padding: 8px 15px;
+  color: #2F3F5B;
+  border-bottom: 1px solid rgba(47,63,91, 0.1);
+  // color: #fff;
+  // background-color: rgba(47,63,91, 0.8) !important;
+}
+
 .header_data ul {
   list-style-type: none;
 }
@@ -163,7 +178,7 @@
 
 .mgt_event a {
   font-size: 9px !important;
-  background-color: rgba(75, 180, 191, 0.2) !important;
+  background-color: rgba(47,63,91, 0.08) !important;
   display: inline-block;
   margin-top: 5px;
   padding: 5px;
