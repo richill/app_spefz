@@ -143,7 +143,8 @@ class Event < ActiveRecord::Base
         100
         #displays 100% if user has no ratings & event_access_is_blank_or_null
       else
-        match_result = match.round(0)
+        # match_result = match.round(0)
+        match_result = match
       end
     end
   end
