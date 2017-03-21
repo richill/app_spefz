@@ -1,12 +1,12 @@
-<h1>subscribed users [<%= @users.subcribed_users.count %>]
-  <div class="h1_subtitle"><i class="fa fa-info-circle"></i> displays all subscribed users on the platform [ordered by user last name]</div>
+<h1>spefz team [<%= @users.spefz_team.count %>]
+  <div class="h1_subtitle"><i class="fa fa-info-circle"></i> displays all spefz team members on the platform [ordered by user last name]</div>
 </h1>
 
-<div id="">
+<div id="status_users_all_content">
   <div class="bottom_inner_content">
     <div class="table">
       <div class="tablerow">
-        <div class="tablecell header background">subscribed</div>
+        <div class="tablecell header background">spefz team</div>
         <div class="tablecell background"></div>
         <div class="tablecell background"></div>
         <div class="tablecell background"></div>
@@ -15,7 +15,7 @@
         <div class="tablecell background"></div>
         <div class="tablecell background"></div>
       </div>
-      <% @users.subcribed_users.order("lastname asc").each do |user| %>
+      <% @users.spefz_team.order("lastname asc").each do |user| %>
         <div class="tablerow">
           <div class="tablecell" style="width:10%">
             <% if user_signed_in? %>
@@ -95,5 +95,4 @@
     </div>
   </div>
 </div>
-
 <div class="clear"></div>
