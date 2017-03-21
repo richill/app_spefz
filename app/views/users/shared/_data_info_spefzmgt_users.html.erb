@@ -1,0 +1,98 @@
+<h1>spefz management group [<%= @users.management_group.count %>]
+  <div class="h1_subtitle"><i class="fa fa-info-circle"></i> displays all spefz team members in the management group on the platform [ordered by user last name]</div>
+</h1>
+
+<div id="status_users_all_content">
+  <div class="bottom_inner_content">
+    <div class="table">
+      <div class="tablerow">
+        <div class="tablecell header background">mgt group</div>
+        <div class="tablecell background"></div>
+        <div class="tablecell background"></div>
+        <div class="tablecell background"></div>
+        <div class="tablecell background"></div>
+        <div class="tablecell background"></div>
+        <div class="tablecell background"></div>
+        <div class="tablecell background"></div>
+      </div>
+      <% @users.management_group.order("lastname asc").each do |user| %>
+        <div class="tablerow">
+          <div class="tablecell" style="width:10%">
+            <% if user_signed_in? %>
+              <% if current_user.admin_pa_management_group %>
+                <% if user.dummy_group %>
+                  <div class="banner_ribbon_wrapper_green_index">
+                    <div class="banner_ribbon_name_index">DUMMY</div>
+                  </div>
+                <% end %>
+              <% end %>
+            <% end %>
+            <div class="image_container">
+              <div class="image">
+                <% if user.image.present? %>
+                  <%= link_to image_tag(user.image_url), user, target: "_blank" %>
+                <% else %>
+                  <%= link_to image_tag("img-profile-image-default.png"), user, target: "_blank" %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+          <div class="tablecell">
+            <div class="user_name"><%= link_to "#{user.firstname} #{user.lastname}", user, target: "_blank" %></div>
+            <div class="ref_id"><%= user.reference %></div>
+            <% if user.subscribed? %>
+              <div class="ref_id"><%= "subscribed" %></div>
+            <% else %>
+              <div class="faint_text_format"><%= "unsubscribed" %></div> 
+            <% end %>
+          </div>
+          <div class="tablecell">
+            <div class="main_text_format">e: <%= mail_to "#{user.email}", "#{user.email}" %></div>
+            <div class="faint_text_format"><%= user.profession %></div>
+            <div class="faint_text_format">
+              <% if user.city? %>
+                <span><%= user.city %>,</span>
+              <% end %>
+              <span><%= user.category_country.name %></span>
+            </div> 
+          </div>
+          <div class="tablecell">
+            <div class="faint_text_format">Role</div> 
+            <div class="main_text_format"><%= user.category_role.name %></div>
+          </div>
+          <div class="tablecell">
+            <div class="faint_text_format">Group</div> 
+            <div class="main_text_format"><%= user.category_managementgroup.name %></div>
+          </div>
+          <div class="tablecell">
+            <div class="overall_rate">
+              <div>Rate</div>
+              <div><%= number_with_precision(user.overall_ratings, precision: 1) %></div>
+            </div>
+          </div>
+          <div class="tablecell">
+            <div>
+              <span class="main_text_format"><%= user.socials.live_socials.open_socials.count %></span>
+              <span class="faint_text_format"> :Created Socials</span> 
+            </div>
+            <div>
+              <span class="main_text_format"><%= user.events.live_events.open_events.count %></span>
+              <span class="faint_text_format"> :Created Events</span> 
+            </div>
+          </div>
+          <div class="tablecell">
+            <div>
+              <span class="main_text_format"><%= user.attending_socials.live_socials.open_socials.count %></span>
+              <span class="faint_text_format"> :Attending Socials</span> 
+            </div>
+            <div>
+              <span class="main_text_format"><%= @events.booked_events(user).live_events.open_events.count %></span>
+              <span class="faint_text_format"> :Booked Events</span> 
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+<div class="clear"></div>
