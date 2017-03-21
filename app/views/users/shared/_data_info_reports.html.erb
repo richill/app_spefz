@@ -1,0 +1,73 @@
+<h1>reports [<%= @reports.count %>]
+  <div class="h1_subtitle"><i class="fa fa-info-circle"></i> displays all reports on the platform [ordered by date held]</div>
+</h1>
+
+<div id="">
+  <div class="bottom_inner_content">
+    <div class="table">
+      <div class="tablerow">
+        <div class="tablecell header background">reports</div>
+        <div class="tablecell background"></div>
+        <div class="tablecell background"></div>
+        <div class="tablecell background"></div>
+        <div class="tablecell background"></div>
+        <div class="tablecell background"></div>
+        <div class="tablecell background"></div>
+      </div>
+      <% @reports.order("created_at asc").each do |report| %>
+        <div class="tablerow">
+          <div class="tablecell">
+            <% if report.event_id? %>
+              "Event"
+            <% elsif report.social_id? %>
+              "Social"
+            <% elsif report.user_id? %>
+              "User"
+            <% end %>
+            <div class="ref_id"><%= report.reference %></div>
+          </div>
+          <div class="tablecell">
+            <div class="faint_text_format">reported subject</div> 
+            <div class="main_text_format">
+              <% if report.event_id? %>
+                <%= link_to (truncate "#{report.event.title}", length: 30), event_path(report.event), target:"_blank" %>
+              <% elsif report.social_id? %>
+                <%= link_to (truncate "#{report.social.title}", length: 30), social_path(report.social), target:"_blank" %>
+                <div class="main_text_format"><%= mail_to "#{report.social.user.email}" %></div>
+              <% elsif report.user_id? %>
+                <%= link_to (truncate "#{report.user.firstname} #{report.user.lastname}", length: 30), user_path(report.user), target:"_blank" %>
+                <div class="main_text_format"><%= mail_to "#{report.user.email}" %></div>
+              <% end %>
+            </div>
+          </div>
+          <div class="tablecell">
+            <div class="faint_text_format">report category</div> 
+            <div class="main_text_format">
+              <%= "#{report.category_report.name}" %>
+            </div>
+          </div>
+          <div class="tablecell">
+            <div class="faint_text_format">created date</div> 
+            <div class="main_text_format">
+              <%= report.created_at.strftime("%a, %d %b %Y") %>
+            </div>
+          </div>
+          <div class="tablecell">
+            <div class="faint_text_format">reported by</div> 
+            <div class="main_text_format">
+              <%= link_to "#{report.reporter.firstname} #{report.reporter.lastname}", user_path(report.reporter), target:"_blank" %>
+            </div>
+            <div class="main_text_format"><%= mail_to "#{report.reporter.email}" %></div>
+          </div>
+          <div class="tablecell" style="width:30%">
+            <div class="main_text_format">
+              <%= report.content %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="clear"></div>

@@ -1,0 +1,73 @@
+<h1>delete account [<%= @contacts.delete_account.count %>]
+  <div class="h1_subtitle"><i class="fa fa-info-circle"></i> displays all delete account on the platform [ordered by date held]</div>
+</h1>
+
+<div id="">
+  <div class="bottom_inner_content">
+    <div class="table">
+      <div class="tablerow">
+        <div class="tablecell header background">delete account</div>
+        <div class="tablecell background"></div>
+        <div class="tablecell background"></div>
+        <div class="tablecell background"></div>
+        <div class="tablecell background"></div>
+        <div class="tablecell background"></div>
+        <div class="tablecell background"></div>
+      </div>
+      <% @contacts.delete_account.order("created_at asc").each do |contact| %>
+        <div class="tablerow">
+          <div class="tablecell">
+            <div class="user_name"><%= truncate "#{contact.category_enquiry.name}", length: 30 %></div>
+            <div class="ref_id"><%= contact.reference %></div>
+          </div>
+          <div class="tablecell">
+            <div class="faint_text_format">client category</div> 
+            <div class="main_text_format">
+              <%= "#{contact.category_contactclient.name}" %>
+            </div>
+          </div>
+          <div class="tablecell">
+            <div class="faint_text_format">created date</div> 
+            <div class="main_text_format">
+              <%= contact.created_at.strftime("%a, %d %b %Y") %>
+            </div>
+          </div>
+          <div class="tablecell">
+            <div class="faint_text_format">reported by</div> 
+            <div class="main_text_format">
+              <%= "#{contact.firstname} #{contact.lastname}" %>
+            </div>
+          </div>
+          <div class="tablecell">
+            <div class="faint_text_format">company</div> 
+            <div class="main_text_format">
+              <% if contact.companyname?  %>
+                <%= "#{contact.companyname}" %>
+              <% else %>
+                <%= "-"  %>
+              <% end %>
+            </div>
+          </div>
+          <div class="tablecell">
+            <div class="faint_text_format">tel</div> 
+            <div class="main_text_format">
+              <% if contact.tel?  %>
+                <%= "#{contact.tel}" %>
+              <% else %>
+                <%= "-"  %>
+              <% end %>
+            </div>
+          </div>
+          <div class="tablecell">
+            <div class="faint_text_format">content</div> 
+            <div class="main_text_format">
+              <%= contact.message %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="clear"></div>

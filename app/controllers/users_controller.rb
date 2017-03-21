@@ -174,6 +174,7 @@ class UsersController < ApplicationController
       @events = Event.all
       @payments = Payment.all
       @contacts = Contact.all
+      @contacts = Contact.all
     else
       redirect_to errorpermission_path
     end

@@ -45,7 +45,7 @@ a{color:#37aadc}
                 User Ref: <%= @report.user.reference %> 
               </p>
               <p style="font-family:Arial, Helvetica, sans-serif;font-size:14px;line-height:22px;text-transform:capitalize;font-weight:bold;">
-                User Name: <%= link_to "#{@report.user.firtsname} #{@report.user.lastname}", user_url(@report.user) %>
+                User Name: <%= link_to "#{@report.user.firstname} #{@report.user.lastname}", user_url(@report.user) %>
               </p>
               <p style="font-family:Arial, Helvetica, sans-serif;font-size:14px;line-height:22px;text-transform:capitalize;font-weight:bold;">
                 Type of Report: <%= @report.category_report.name %>
