@@ -66,6 +66,7 @@
 <div class="userinviterequests_inner_container_middle_divider"></div>
 
 <!-- invite requests -->
+<div class="hide">
 <% if current_user.recieved_invite_requests.present? %>
   <div class="userinviterequests_inner_container">
     <div class="content_list">
@@ -112,8 +113,8 @@
     <div class="content_list_none">you currently have no invite request notifications</div> 
   </div>
 <% end %>
-
 <div class="userinviterequests_inner_container_middle_divider"></div>
+</div>
 
 <!-- cards -->
 <% if @cards.cards_with_booked_events(current_user).unread_by(current_user).present? %>

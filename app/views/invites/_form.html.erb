@@ -10,7 +10,7 @@
         <% if current_user.uninvited_friends(social).present? %>
           <%= f.association :users, collection: current_user.uninvited_friends(social), label_method: :firstname, label: false, as: :check_boxes %>
         <% else %>
-          <div style="color:#4BB4BF">you currently have no members in your network!</div>
+          <div style="color:#4BB4BF">you either have no members in your network or have invited all members in your network!</div>
         <% end %>
       </div>
       <!-- hidden_field -->
