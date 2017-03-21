@@ -1,0 +1,29 @@
+<h1>spefz groups [<%= CategoryManagementgroup.count %>]
+  <div class="h1_subtitle"><i class="fa fa-info-circle"></i> displays all spefz set groups on the platform</div>
+</h1>
+
+<div id="status_users_all_content">
+  <div class="bottom_inner_content">
+    <div class="table">
+      <div class="tablerow">
+        <div class="tablecell header background">Groups</div>
+        <div class="tablecell background"></div>
+        <div class="tablecell background"></div>
+      </div>
+      <% CategoryManagementgroup.all.each do |role| %>
+        <div class="tablerow">
+          <div class="tablecell ref_id"><%= role.name %></div>
+          <div class="tablecell"><%= role.users.count %></div>
+          <div class="tablecell" style="max-height:300px;overflow:scroll;">
+            <% role.users.each do |user| %>
+            <ul style="margin:0;">
+              <li class="user_name"><%= link_to "#{user.firstname} #{user.lastname}", user_path(user), target:"_blank" %></li>
+            </ul>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+<div class="clear"></div>
