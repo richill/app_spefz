@@ -1,12 +1,12 @@
-<h1>reports [<%= @reports.count %>]
-  <div class="h1_subtitle"><i class="fa fa-info-circle"></i> displays all reports on the platform [ordered by date held]</div>
+<h1>reported users [<%= @reports.report_users.count %>]
+  <div class="h1_subtitle"><i class="fa fa-info-circle"></i> displays all reported users on the platform [ordered by date held]</div>
 </h1>
 
 <div id="">
   <div class="bottom_inner_content">
     <div class="table">
       <div class="tablerow">
-        <div class="tablecell header background">reports</div>
+        <div class="tablecell header background">reported users</div>
         <div class="tablecell background"></div>
         <div class="tablecell background"></div>
         <div class="tablecell background"></div>
@@ -14,7 +14,7 @@
         <div class="tablecell background"></div>
         <div class="tablecell background"></div>
       </div>
-      <% @reports.order("created_at asc").each do |report| %>
+      <% @reports.report_users.order("created_at asc").each do |report| %>
         <div class="tablerow">
           <div class="tablecell">
             <% if report.event_id? %>
