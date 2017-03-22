@@ -94,6 +94,12 @@
   background-color: #58CDA6 !important;
 }
 
+@media only screen and (max-width: 760px) {
+  .nav_user_section .responsive_header_link {
+    display: none;
+  }
+}
+
 .nav_user_section .notification_li .fa-users {
   color: #fff !important;
   margin-top: 10px;

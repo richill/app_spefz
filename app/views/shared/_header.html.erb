@@ -9,9 +9,9 @@
 
       <!-- nav right side -->
       <ul class="inline-list right">
-        <li class="link"><%= link_to 'speed-socials', events_path %></li>
-        <li class="link"><%= link_to 'socials', socials_path %></li>
-        <li class="link">
+        <li class="link responsive_header_link"><%= link_to 'speed-socials', events_path %></li>
+        <li class="link responsive_header_link"><%= link_to 'socials', socials_path %></li>
+        <li class="link responsive_header_link">
           <% if current_user.image? %>
             <%= link_to 'activity', activities_path %>
           <% else %>
@@ -20,9 +20,9 @@
         </li>
         <% if current_user.subscribed_access? %>
           <% if current_user.image? %>
-            <li class="create_button"><%= link_to 'create social', new_user_social_path(current_user) %></li>
+            <li class="create_button responsive_header_link"><%= link_to 'create social', new_user_social_path(current_user) %></li>
           <% else %>
-            <li class="create_button"><%= link_to 'create social', image_restriction_page_path %></li>
+            <li class="create_button responsive_header_link"><%= link_to 'create social', image_restriction_page_path %></li>
           <% end %>
         <% end %>
         <li class="notification_li">
