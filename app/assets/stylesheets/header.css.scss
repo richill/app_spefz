@@ -11,9 +11,11 @@
   -webkit-box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
-.nav_user_section .nav_user_inner_section {
-  margin: auto ;
-  width: 1170px;
+@media only screen and (min-width: 1190px) {
+  .nav_user_section .nav_user_inner_section {
+    margin: auto ;
+    width: 1170px;
+  }
 }
 
 .nav_user_section .nav_list ul {

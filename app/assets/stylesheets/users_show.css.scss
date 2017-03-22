@@ -193,8 +193,14 @@
 
 .user_profile_page_section .middle_section .middle_inner_section {
   background-color: red;
-  width: 1170px !important;
-  margin: auto;
+  padding: 0px 5px;
+}
+@media only screen and (min-width: 1190px) {
+  .nav_user_section .nav_user_inner_section {
+    width: 1170px !important;
+    margin: auto;
+    padding: 0px;
+  }
 }
 
 .user_profile_page_section .middle_section .left {
@@ -543,15 +549,21 @@
   padding: 15px 0px;
 }
 
-.user_profile_page_section .lower_section .lower_inner_section {
-  width: 1170px !important;
-  margin: auto;
-  height: 400px;
+@media only screen and (min-width: 1190px) {
+  .user_profile_page_section .lower_section .lower_inner_section {
+    width: 1170px !important;
+    margin: auto;
+  }
 }
 
 // -------- column_left --------
 .user_profile_page_section .column_left {
   padding: 0px !important;
+}
+@media only screen and (max-width: 1190px) {
+  .user_profile_page_section .column_left {
+    width: 100%;
+  }
 }
 
 .user_profile_page_section .column_left .left_container {
@@ -618,10 +630,12 @@
   letter-spacing: 1px !important;
 }
 
-.user_profile_page_section .column_left .left_container .interest_container .content {
-  padding: 0px !important;
-  height: 187px;
-  overflow: scroll;
+@media only screen and (min-width: 1190px) {
+  .user_profile_page_section .column_left .left_container .interest_container .content {
+    padding: 0px !important;
+    height: 187px;
+    overflow: scroll;
+  }
 }
 
 .user_profile_page_section .user_complete_infolink a {
@@ -780,6 +794,11 @@
 .user_profile_page_section .column_middle {
   padding: 0px !important;
 }
+@media only screen and (max-width: 1190px) {
+  .user_profile_page_section .column_middle {
+    width: 100%;
+  }
+}
 
 .user_profile_page_section .column_middle .middle_container {
   padding: 5px;
@@ -849,6 +868,11 @@
 // -------- column_right --------
 .user_profile_page_section .column_right {
   padding: 0px !important;
+}
+@media only screen and (max-width: 1190px) {
+  .user_profile_page_section .column_right {
+    width: 100%;
+  }
 }
 
 .user_profile_page_section .column_right .right_container {
