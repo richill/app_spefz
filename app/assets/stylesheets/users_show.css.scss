@@ -187,16 +187,14 @@
 // ======== middle_section ========
 .user_profile_page_section .middle_section {
   background-color: rgba(255, 255, 255, 0.7) !important;
-  // background-color: #fff !important;
   padding: 8px 0px;
 }
 
 .user_profile_page_section .middle_section .middle_inner_section {
-  background-color: red;
   padding: 0px 5px;
 }
 @media only screen and (min-width: 1190px) {
-  .nav_user_section .nav_user_inner_section {
+  .user_profile_page_section .middle_section .middle_inner_section {
     width: 1170px !important;
     margin: auto;
     padding: 0px;
@@ -209,7 +207,9 @@
 }
 @media only screen and (max-width: 760px) {
   .user_profile_page_section .middle_section .left {
-    margin: 0px !important;
+    float: none !important;
+    width: 155px;
+    margin: auto !important;
   }
 }
 
@@ -248,6 +248,14 @@
 
 .user_profile_page_section .middle_section .right {
   margin-bottom: 0px;
+}
+
+@media only screen and (max-width: 760px) {
+  .user_profile_page_section .middle_section .right {
+    float: none !important;
+    width: 285px;
+    margin: auto;
+  }
 }
 
 .user_profile_page_section .middle_section .right .btn a {
@@ -653,6 +661,11 @@
   letter-spacing: 1px !important;
 }
 
+.user_profile_page_section .column_left .left_container .interest_container .content {
+  padding: 0px !important;
+  height: 75px;
+  overflow: scroll;
+}
 @media only screen and (min-width: 1190px) {
   .user_profile_page_section .column_left .left_container .interest_container .content {
     padding: 0px !important;
@@ -862,9 +875,11 @@
   -o-transition: all 0.3s ease;
 }
 
-.user_profile_page_section .evts_upcoming {
-  border-left: 1px solid #fff;
-  border-right: 1px solid #fff;
+@media only screen and (min-width: 760px) {
+  .user_profile_page_section .evts_upcomingr {
+    border-left: 1px solid #fff;
+    border-right: 1px solid #fff;
+  }
 }
 
 .user_profile_page_section .evts_upcoming:hover {
@@ -881,6 +896,12 @@
   -webkit-transition: all 0.3s ease; 
   -moz-transition: all 0.3s ease; 
   -o-transition: all 0.3s ease;
+}
+
+@media only screen and (max-width: 760px) {
+  .user_profile_page_section .evts_past {
+    display: none;
+  }
 }
 
 .user_profile_page_section .column_middle .middle_container .content .content_info {
