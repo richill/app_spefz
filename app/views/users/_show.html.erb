@@ -67,8 +67,8 @@
   <div class="medium-12 columns middle_section">
     <div class="middle_inner_section">
       <ul class="inline-list left">
-        <li><span class="header">past socials:</span> <span class="content"><%= @user.socials.expired_or_closed_socials.count %></span></li>
-        <li><span class="header">upcoming socials:</span> <span class="content"><%= @user.socials.live_socials.count %></span></li>
+        <li class="responsive_past_social"><span class="header">past socials:</span> <span class="content"><%= @user.socials.expired_or_closed_socials.count %></span></li>
+        <li class="responsive_upcoming_social"><span class="header">upcoming socials:</span> <span class="content"><%= @user.socials.live_socials.count %></span></li>
       </ul>
       <ul class="inline-list right">
         <% unless current_user.id == @user.id %>
