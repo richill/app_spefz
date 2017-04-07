@@ -320,10 +320,16 @@
 .blogs_section .right_content .blog_category_date {
   font-family: 'Lato', sans-serif;
   color: #414249 !important;
-  margin: 3px 0px 10px;
+  // margin: 3px 0px 10px;
+  margin: 10px 0px;
   letter-spacing: 1px;
   font-size: 12px !important;
   font-weight: bold;
+}
+@media only screen and (max-width: 320px) {
+  .blogs_section .right_content .blog_category_date {
+    font-size: 9px !important;
+  }
 }
 
 .blogs_section .right_content .blog_category a {
@@ -459,6 +465,12 @@
   text-decoration: underline;
 }
  
+
+@media only screen and (max-width: 320px) {
+  .blogs_section .blog_index_responsive {
+    display: none
+  }
+}
 
 
 
