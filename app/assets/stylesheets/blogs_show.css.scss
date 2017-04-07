@@ -351,6 +351,11 @@
   margin: 15px 0px;
   line-height: 27px;
 }
+@media only screen and (max-width: 530px) {
+  .blogs_show_section p {
+    font-size: 14px;
+  }
+}
 
 .blogs_show_section ul {
   margin-left: 45px;
@@ -364,6 +369,11 @@
   font-weight: 300;
   line-height: 27px;
 }
+@media only screen and (max-width: 530px) {
+  .blogs_show_section ul li {
+    font-size: 14px;
+  }
+}
 
 @media only screen and (max-width: 320px) {
   .blogs_show_section .blog_show_responsive {
@@ -373,9 +383,9 @@
 
 .blogs_show_section .blog_guest_writter {
   padding: 15px;
-  background-color: rgba(225, 71, 62, 0.05) !important;
+  background-color: rgba(124, 147, 167, 0.07) !important;
   border-top: 1px solid rgba(124, 147, 167, 0.2) !important;
-  margin-top: 35px;
+  margin-top: 25px;
 }
 
 .blogs_show_section .blog_guest_writter .credits  {
