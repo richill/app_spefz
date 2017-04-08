@@ -9,6 +9,7 @@ class Blog < ActiveRecord::Base
   validates_presence_of :category_blog, presence: true, message: "please select a category"
   validates_presence_of :user_link, presence: true, message: "can't be blank"
   validates_presence_of :twitter_link, presence: true, message: "can't be blank"
+  validates_presence_of :publishdate, presence: true, message: "can't be blank"
   validate :image_or_blogimagelink_or_videolink
 
   mount_uploader :image, ImageUploader
@@ -20,7 +21,10 @@ class Blog < ActiveRecord::Base
   scope :networking, ->() { joins(:category_blog).where('category_blogs.name' => "Networking Tips") } 
   scope :dating, ->() { joins(:category_blog).where('category_blogs.name' => "Dating Tips") }
 
-  scope :live_blogs, -> { where('publish = ?', true) }
+  scope :published_blogs, -> { where('publish = ?', true) }
+  scope :unpublished_blogs, -> { where('publish = ?', false) }
+  scope :unpublished_blogs_blank_or_null, -> () {where(["publish IS NULL or CAST(publish as text) = ''"])}
+  scope :past_blogs, -> {where(['publishdate <= ?', Date.current])}
 
   scope :created_this_month, -> { where(created_at: Time.now.beginning_of_month..Time.now.end_of_month) }
   #blogs created in current month 

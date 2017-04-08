@@ -1,0 +1,218 @@
+<h1>blogs [<%= @blogs.all.count %>]
+  <span id="status_statsblogs_all" class="status_colour_blue">all [<%= @blogs.all.count %>]</span>
+  <span id="status_statsblogs_published" class="status_colour_blue">published [<%= @blogs.published_blogs.count %>]</span>
+  <span id="status_statsblogs_unpublished" class="status_colour_blue">unpublished [<%= @blogs.unpublished_blogs.count %>]</span>
+  <div class="h1_subtitle"><i class="fa fa-info-circle"></i> displays all created blogs on the platform [ordered by publisheddate]</div>
+</h1>
+
+<div id="status_statsblogs_all_content">
+  <div class="bottom_inner_content">
+    <div class="table">
+      <div class="tablerow">
+        <div class="tablecell header background">blogs</div>
+        <div class="tablecell background"></div>
+        <div class="tablecell background"></div>
+        <div class="tablecell background"></div>
+        <div class="tablecell background"></div>
+        <div class="tablecell background"></div>
+        <div class="tablecell background"></div>
+        <div class="tablecell background"></div>
+      </div>
+      <% @blogs.order("publishdate asc").each do |blog| %>
+        <div class="tablerow">
+          <div class="tablecell" style="width:10%">
+            <div class="image_container">
+              <div class="image"><%= link_to image_tag(blog.image_url), blog, target: "_blank" %></div>
+            </div>
+          </div>
+          <div class="tablecell">
+            <div class="user_name"><%= "#{blog.title}" %></div>
+            <% if blog.publish? %>
+              <div class="ref_id"><%= "published" %></div>
+            <% else %>
+              <div class="faint_text_format"><%= "unpublished" %></div> 
+            <% end %>
+          </div>
+          <div class="tablecell">
+            <div class="faint_text_format">Category</div> 
+            <div class="main_text_format"><%= blog.category_blog.name %></div>
+          </div>
+          <div class="tablecell">
+            <div class="faint_text_format">Created</div> 
+            <div class="main_text_format"><%= blog.created_at.strftime("%B %d, %Y") %></div>
+          </div>
+          <div class="tablecell">
+            <div class="faint_text_format">Published</div> 
+            <div class="main_text_format">
+              <% if blog.publishdate? %>
+                <%= blog.publishdate.strftime("%B %d, %Y") %>
+              <% else %>
+                <%= "-" %>
+              <% end %>
+            </div>
+          </div>
+          <div class="tablecell">
+            <div class="faint_text_format">Guest Blogger</div> 
+            <div class="main_text_format">
+              <% if blog.blogger_name? %>
+                <%= link_to "#{blog.blogger_name}", "#{blog.user_link}", target:"_blank" %>
+              <% else %>
+                <%= "-" %>
+              <% end %>
+            </div>
+          </div>
+          <div class="tablecell">
+            <div class="faint_text_format">Created by</div> 
+            <div class="main_text_format"><%= link_to "#{blog.user.firstname} #{blog.user.lastname}", user_path(blog.user), target:"_blank" %></div>
+          </div>
+          <div class="tablecell">
+            <div class="faint_text_format">Action</div> 
+            <div class="main_text_format"><%= link_to "edit", edit_user_blog_path(blog.user, blog), target:"_blank" %></div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div id="status_statsblogs_published_content" class="hide">
+  <div class="bottom_inner_content">
+    <div class="table">
+      <div class="tablerow">
+        <div class="tablecell header background">published</div>
+        <div class="tablecell background"></div>
+        <div class="tablecell background"></div>
+        <div class="tablecell background"></div>
+        <div class="tablecell background"></div>
+        <div class="tablecell background"></div>
+        <div class="tablecell background"></div>
+        <div class="tablecell background"></div>
+      </div>
+      <% @blogs.published_blogs.order("publishdate asc").each do |blog| %>
+        <div class="tablerow">
+          <div class="tablecell" style="width:10%">
+            <div class="image_container">
+              <div class="image"><%= link_to image_tag(blog.image_url), blog, target: "_blank" %></div>
+            </div>
+          </div>
+          <div class="tablecell">
+            <div class="user_name"><%= "#{blog.title}" %></div>
+            <% if blog.publish? %>
+              <div class="ref_id"><%= "published" %></div>
+            <% else %>
+              <div class="faint_text_format"><%= "unpublished" %></div> 
+            <% end %>
+          </div>
+          <div class="tablecell">
+            <div class="faint_text_format">Category</div> 
+            <div class="main_text_format"><%= blog.category_blog.name %></div>
+          </div>
+          <div class="tablecell">
+            <div class="faint_text_format">Created</div> 
+            <div class="main_text_format"><%= blog.created_at.strftime("%B %d, %Y") %></div>
+          </div>
+          <div class="tablecell">
+            <div class="faint_text_format">Published</div> 
+            <div class="main_text_format">
+              <% if blog.publishdate? %>
+                <%= blog.publishdate.strftime("%B %d, %Y") %>
+              <% else %>
+                <%= "-" %>
+              <% end %>
+            </div>
+          </div>
+          <div class="tablecell">
+            <div class="faint_text_format">Guest Blogger</div> 
+            <div class="main_text_format">
+              <% if blog.blogger_name? %>
+                <%= link_to "#{blog.blogger_name}", "#{blog.user_link}", target:"_blank" %>
+              <% else %>
+                <%= "-" %>
+              <% end %>
+            </div>
+          </div>
+          <div class="tablecell">
+            <div class="faint_text_format">Created by</div> 
+            <div class="main_text_format"><%= link_to "#{blog.user.firstname} #{blog.user.lastname}", user_path(blog.user), target:"_blank" %></div>
+          </div>
+          <div class="tablecell">
+            <div class="faint_text_format">Action</div> 
+            <div class="main_text_format"><%= link_to "edit", edit_user_blog_path(blog.user, blog), target:"_blank" %></div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div id="status_statsblogs_unpublished_content" class="hide">
+  <div class="bottom_inner_content">
+    <div class="table">
+      <div class="tablerow">
+        <div class="tablecell header background">unpublished</div>
+        <div class="tablecell background"></div>
+        <div class="tablecell background"></div>
+        <div class="tablecell background"></div>
+        <div class="tablecell background"></div>
+        <div class="tablecell background"></div>
+        <div class="tablecell background"></div>
+        <div class="tablecell background"></div>
+      </div>
+      <% @blogs.unpublished_blogs.order("publishdate asc").each do |blog| %>
+        <div class="tablerow">
+          <div class="tablecell" style="width:10%">
+            <div class="image_container">
+              <div class="image"><%= link_to image_tag(blog.image_url), blog, target: "_blank" %></div>
+            </div>
+          </div>
+          <div class="tablecell">
+            <div class="user_name"><%= "#{blog.title}" %></div>
+            <% if blog.publish? %>
+              <div class="ref_id"><%= "published" %></div>
+            <% else %>
+              <div class="faint_text_format"><%= "unpublished" %></div> 
+            <% end %>
+          </div>
+          <div class="tablecell">
+            <div class="faint_text_format">Category</div> 
+            <div class="main_text_format"><%= blog.category_blog.name %></div>
+          </div>
+          <div class="tablecell">
+            <div class="faint_text_format">Created</div> 
+            <div class="main_text_format"><%= blog.created_at.strftime("%B %d, %Y") %></div>
+          </div>
+          <div class="tablecell">
+            <div class="faint_text_format">Published</div> 
+            <div class="main_text_format">
+              <% if blog.publishdate? %>
+                <%= blog.publishdate.strftime("%B %d, %Y") %>
+              <% else %>
+                <%= "-" %>
+              <% end %>
+            </div>
+          </div>
+          <div class="tablecell">
+            <div class="faint_text_format">Guest Blogger</div> 
+            <div class="main_text_format">
+              <% if blog.blogger_name? %>
+                <%= link_to "#{blog.blogger_name}", "#{blog.user_link}", target:"_blank" %>
+              <% else %>
+                <%= "-" %>
+              <% end %>
+            </div>
+          </div>
+          <div class="tablecell">
+            <div class="faint_text_format">Created by</div> 
+            <div class="main_text_format"><%= link_to "#{blog.user.firstname} #{blog.user.lastname}", user_path(blog.user), target:"_blank" %></div>
+          </div>
+          <div class="tablecell">
+            <div class="faint_text_format">Action</div> 
+            <div class="main_text_format"><%= link_to "edit", edit_user_blog_path(blog.user, blog), target:"_blank" %></div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div class="clear"></div>

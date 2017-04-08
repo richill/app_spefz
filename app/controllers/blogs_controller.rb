@@ -4,12 +4,12 @@ class BlogsController < ApplicationController
   before_filter :setup_friends, :setup_subscription, :setup_cards, :setup_events, :setup_invite_form, :setup_user_network_activities
 
   def index
-    @search = Blog.live_blogs.order("created_at DESC").search(params[:q])
+    @search = Blog.published_blogs.past_blogs.order("publishdate DESC").search(params[:q])
     @blogs = @search.result(distinct: true)
   end
 
   def show
-    @search = Blog.order("created_at DESC").search(params[:q])
+    @search = Blog.order("publishdate DESC").search(params[:q])
     @blogs = @search.result(distinct: true)
   end
 
