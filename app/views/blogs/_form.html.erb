@@ -56,12 +56,9 @@
               <div class="text_info">Posting a blog on behalf of another? Place blogger's link image here</div> 
             </div>
 
-            <div class="guest_blogger_content">
-              <div class="text_info">*SECTION MUST ONLY BE COMPLETED IF BLOG IS BEING POSTED ON BEHALF OF GUEST BLOGGER</div>
+            <div class="publish_content">
               <%= f.input :publish, label: "Publish Blog" %>
               <div class="text_info">Tick if you would like blog to be published</div>
-
-              <%= f.input :user_image_link, label: "Select " %>
               <%= f.text_field :publishdate, label: false, class: "event_datepicker", placeholder: "dd/mm/yyyy", id: 'blog_date' %>
               <div class="text_info">Select a date you want to be displayed that blog was published on</div>
             </div>

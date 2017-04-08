@@ -52,7 +52,13 @@
                         <span>Category: </span>
                         <span class="blog_category"><%= link_to "#{blog.category_blog.name}", "#" %></span>
                         <span class="divider">|</span>
-                        <span><%= blog.created_at.strftime("%B %d, %Y") %></span>
+                        <span>
+                          <% if blog.publishdate? %>
+                            <%= blog.publishdate.strftime("%B %d, %Y") %>
+                          <% else %>
+                            <%= blog.created_at.strftime("%B %d, %Y") %>
+                          <% end %>
+                        </span>
                       </div>
                       <div class="blog_user_details">
                         <span class="blog_img_cover">

@@ -32,6 +32,7 @@
 .user_general_settings_section .blog_edit_update_form .boolean {
   background-color: rgba(75, 180, 191, 0.2) !important;
   padding: 8px !important;
+  padding-top: 1px !important;
 }
 
 .user_general_settings_section .blog_edit_update_form .social_form_main_content input[type="text"]:focus {
@@ -247,9 +248,20 @@
   margin-bottom: 0px;
 }
 
+.user_general_settings_section .blog_edit_update_form .publish_content {
+  padding: 15px;
+  background-color: rgba(75, 180, 191, 0.2) !important;
+  margin: 20px 0px 30px !important;
+}
 
+.user_general_settings_section #blog_date {
+  margin-top: 15px !important;
+}
 
-
+.user_general_settings_section #blog_publish {
+  margin-bottom: 0px;
+  margin-right: 5px;
+}
 
 
 

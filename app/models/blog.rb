@@ -20,6 +20,8 @@ class Blog < ActiveRecord::Base
   scope :networking, ->() { joins(:category_blog).where('category_blogs.name' => "Networking Tips") } 
   scope :dating, ->() { joins(:category_blog).where('category_blogs.name' => "Dating Tips") }
 
+  scope :live_blogs, -> { where('publish = ?', true) }
+
   scope :created_this_month, -> { where(created_at: Time.now.beginning_of_month..Time.now.end_of_month) }
   #blogs created in current month 
 

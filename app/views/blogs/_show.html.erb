@@ -90,7 +90,13 @@
                   <span class="blog_category"><%= link_to "#{@blog.category_blog.name}", "#" %></span>
                   <span class="divider">|</span>
                 </span>
-                <span><%= @blog.created_at.strftime("%B %d, %Y") %></span>
+                <span>
+                  <% if @blog.publishdate? %>
+                    <%= @blog.publishdate.strftime("%B %d, %Y") %>
+                  <% else %>
+                    <%= @blog.created_at.strftime("%B %d, %Y") %>
+                  <% end %>
+                </span>
                 <% if signed_in? %>
                   <% if current_user.admin_pa_management_group || current_user.pa_administration_group %>
                     <span class="divider">|</span>
