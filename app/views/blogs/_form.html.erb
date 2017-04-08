@@ -33,6 +33,12 @@
               <div class="text_info">*maximum word count: 55 | *minmum: 40 | <span id="textarea_title_blog"></span></div> 
             </div>
 
+            <% if current_user.admin_pa_management_group %>
+              <div class="blog_topic">
+                <%= f.input :subtitle, label: "Blog Subtitle", placeholder: "making it through the speed-dating event" %>
+              </div>
+            <% end %>
+
             <%= f.association :category_blog, collection: CategoryBlog.all, prompt: "select a category", label: "Blog Category" %>
             <%= javascript_include_tag Ckeditor.cdn_url %>
             <%= f.cktext_area :content, value: @blog.content, id: 'sometext' %>
