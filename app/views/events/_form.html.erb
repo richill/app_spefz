@@ -140,10 +140,29 @@
               <div class="text_info" style="margin-bottom:15px;">*Maximum "Event Score Access" is "5" & minimum is 1. The "Event Score Access" sets the minimum standard to which members can attend an event. A member with a "Total Average Rating" of 3.5/5 will be unable to attend an event with a "Score Access" of "4", but will be able to attend all events with an "Event Score Access" "equal to" or "less" than "3.5".</div>
 
               <%= f.input :display_match, label: "Display Event Match %" %> 
-             <div class="text_info">The Match % diplays how close the member matches the event. The member's "Total Average Rating" & the "Event Score Access" are both automatically calculated to indicate how close a member matches the event and is likely to meet members in the event of the same initerest and calibre as themselves
+              <div class="text_info">The Match % diplays how close the member matches the event. The member's "Total Average Rating" & the "Event Score Access" are both automatically calculated to indicate how close a member matches the event and is likely to meet members in the event of the same initerest and calibre as themselves
               <a href="#" data-reveal-id="myModal-match-info-example-img">view example</a>
               <div><%= render 'shared/modal_match_info_example_img' %></div>
-             </div>
+              </div>
+            </div>
+
+            <div class="medium-12 columns event_venue_images_links">
+              <div class="medium-6 columns venue_img_section">
+                <div class="title_venue">event venue images</div>
+                <%= f.input :imgvenue_one, label: false, placeholder: "https://res.cloudinary.com/spefzapp/image/upload/v1489072832/vhuqf3c3sibru9bl9v7d.png" %> 
+                <%= f.input :imgvenue_two, label: false, placeholder: "https://res.cloudinary.com/spefzapp/image/upload/v1489072832/vhuqf3c3sibru9bl9v7d.png" %> 
+                <%= f.input :imgvenue_three, label: false, placeholder: "https://res.cloudinary.com/spefzapp/image/upload/v1489072832/vhuqf3c3sibru9bl9v7d.png" %> 
+              </div>
+
+              <div class="medium-6 columns event_img_section">
+                <div class="title_event">event images</div>
+                <%= f.input :imgevent_one, label: false, placeholder: "https://res.cloudinary.com/spefzapp/image/upload/v1489072832/vhuqf3c3sibru9bl9v7d.png" %> 
+                <%= f.input :imgevent_two, label: false, placeholder: "https://res.cloudinary.com/spefzapp/image/upload/v1489072832/vhuqf3c3sibru9bl9v7d.png" %> 
+                <%= f.input :imgevent_three, label: false, placeholder: "https://res.cloudinary.com/spefzapp/image/upload/v1489072832/vhuqf3c3sibru9bl9v7d.png" %> 
+                <%= f.input :imgevent_four, label: false, placeholder: "https://res.cloudinary.com/spefzapp/image/upload/v1489072832/vhuqf3c3sibru9bl9v7d.png" %> 
+                <%= f.input :imgevent_five, label: false, placeholder: "https://res.cloudinary.com/spefzapp/image/upload/v1489072832/vhuqf3c3sibru9bl9v7d.png" %> 
+                <%= f.input :imgevent_six, label: false, placeholder: "https://res.cloudinary.com/spefzapp/image/upload/v1489072832/vhuqf3c3sibru9bl9v7d.png" %> 
+              </div>
             </div>
 
             <!-- hidden fields -->

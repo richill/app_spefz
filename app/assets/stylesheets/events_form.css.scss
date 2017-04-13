@@ -277,8 +277,27 @@
   margin-bottom: 0px;
 }
 
+// --------------------------
+//     workings
+// --------------------------
 
 
+.event_venue_images_links {
+  background-color: rgba(75, 180, 191, 0.2) !important;
+  padding: 15px 0px !important;
+  margin-bottom: 30px !important;
+}
+
+// .venue_img_section, .event_img_section {
+//   padding: 0px !important;
+// } 
+
+.title_venue, .title_event {
+  font-family: 'Lato', sans-serif;
+  font-size: 15px !important;
+  font-weight: 300 !important;
+  text-transform: capitalize;
+}
 
 
 
