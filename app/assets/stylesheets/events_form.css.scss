@@ -288,15 +288,16 @@
   margin-bottom: 30px !important;
 }
 
-// .venue_img_section, .event_img_section {
-//   padding: 0px !important;
-// } 
-
 .title_venue, .title_event {
   font-family: 'Lato', sans-serif;
   font-size: 15px !important;
   font-weight: 300 !important;
   text-transform: capitalize;
+  margin-bottom: 2px;
+}
+
+.event_venue_images_links input[type="text"] {
+  margin-bottom: 5px !important;
 }
 
 
