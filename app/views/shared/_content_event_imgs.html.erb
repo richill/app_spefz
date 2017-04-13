@@ -1,30 +1,16 @@
 <div class="content_event_imgs_container">
   <div>
     <ul>
-      <li>
-        <a href="#" data-reveal-id="myModal-event-image"><%= cl_image_tag(@event.imgevent_one, :transformation=>[{:gravity=>"center", :crop=>"fill"}]) %></a>
-        <span><%= render 'shared/modal_event_images' %></span>
-      </li>
-      <li class="middle_img">
-        <a href="#" data-reveal-id="myModal-event-venue-image"><%= cl_image_tag(@event.imgevent_two, :transformation=>[{:gravity=>"center", :crop=>"fill"}]) %></a>
-        <span><%= render 'shared/modal_event_images' %></span>
-      </li>
-      <li>
-        <a href="#" data-reveal-id="myModal-event-venue-image"><%= cl_image_tag(@event.imgevent_three, :transformation=>[{:gravity=>"center", :crop=>"fill"}]) %></a>
-        <span><%= render 'shared/modal_event_images' %></span>
-      </li>
-      <li>
-        <a href="#" data-reveal-id="myModal-event-venue-image"><%= cl_image_tag(@event.imgevent_four, :transformation=>[{:gravity=>"center", :crop=>"fill"}]) %></a>
-        <span><%= render 'shared/modal_event_images' %></span>
-      </li>
-      <li class="middle_img">
-        <a href="#" data-reveal-id="myModal-event-venue-image"><%= cl_image_tag(@event.imgevent_five, :transformation=>[{:gravity=>"center", :crop=>"fill"}]) %></a>
-        <span><%= render 'shared/modal_event_images' %></span>
-      </li>
-      <li>
-        <a href="#" data-reveal-id="myModal-event-venue-image"><%= cl_image_tag(@event.imgevent_six, :transformation=>[{:gravity=>"center", :crop=>"fill"}]) %></a>
-        <span><%= render 'shared/modal_event_images' %></span>
-      </li>
+      <a href="#" data-reveal-id="myModal-event-image">
+        <li><%= cl_image_tag(@event.imgevent_one, :transformation=>[{:gravity=>"center", :crop=>"fill"}]) %></li>
+        <li><%= cl_image_tag(@event.imgevent_two, :transformation=>[{:gravity=>"center", :crop=>"fill"}]) %></li>
+        <li class="middle_img"><%= cl_image_tag(@event.imgevent_three, :transformation=>[{:gravity=>"center", :crop=>"fill"}]) %></li>
+        <li><%= cl_image_tag(@event.imgevent_four, :transformation=>[{:gravity=>"center", :crop=>"fill"}]) %></li>
+        <li class="middle_img"><%= cl_image_tag(@event.imgevent_five, :transformation=>[{:gravity=>"center", :crop=>"fill"}]) %></li>
+        <li><%= cl_image_tag(@event.imgevent_six, :transformation=>[{:gravity=>"center", :crop=>"fill"}]) %></li>
+        <li></li>
+      </a>
+      <span><%= render 'shared/modal_event_images' %></span>
     </ul>
   </div>
 </div>
