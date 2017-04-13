@@ -325,6 +325,14 @@ class Event < ActiveRecord::Base
       errors.add(:base, "Specify or select age range, not both")
     end
   end
+
+  def venue_imgs?
+    self.imgvenue_one? || self.imgvenue_two? || self.imgvenue_three?
+  end
+
+  def event_imgs?
+    self.imgevent_one? || self.imgevent_two? || self.imgevent_three? || self.imgevent_four? || self.imgevent_five? || self.imgevent_six?
+  end
 end
 
 
