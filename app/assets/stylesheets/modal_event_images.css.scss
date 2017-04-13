@@ -1,23 +1,23 @@
 /*=========================================
     Section: event page
     File: views / events / _show.html.erb
-    File: views / events / _modal_venue_images.html.erb
+    File: views / events / _modal_event_images.html.erb
   =========================================*/
 
-#myModal-venue-image {
+#myModal-event-image {
   background: url("img_background_main.png") repeat;
   border-radius: 0px !important;
   border: 0px !important;
   padding: 0px !important;
 }
 
-.venueimg_inner_container {
+.eventimg_inner_container {
   background-color: #fff !important;
   font-family: 'Lato', sans-serif;
   font-weight: 300;
 }
 
-.venueimg_inner_container .header {
+.eventimg_inner_container .header {
   padding: 5px 15px !important;
   font-size: 35px;
   border-bottom: 2px solid #58CDA6;
@@ -26,30 +26,30 @@
   background-color: #283041;
 }
 
-.venueimg_inner_container .content_list {
+.eventimg_inner_container .content_list {
   padding: 15px !important;
   min-height: 100px;
 }
 
-.venueimg_inner_container .cancel_button {
+.eventimg_inner_container .cancel_button {
   color: #fff !important;
 }
 
-.venueimg_inner_container ul {
+.eventimg_inner_container ul {
   font-family: 'Lato', sans-serif;
   font-weight: 300;
   margin-bottom: 0px;
 }
 
-.venueimg_inner_container ul li {
+.eventimg_inner_container ul li {
   margin: 5px 0px !important
 }
 
-.venueimg_inner_container .image_section {
+.eventimg_inner_container .image_section {
   float: left;
 }
 
-.venueimg_inner_container .img_cover {
+.eventimg_inner_container .img_cover {
   margin: 3px;
   padding: 4px;
   border-radius: 5px;
@@ -57,7 +57,7 @@
   display: inline-block;
 }
 
-.venueimg_inner_container .img_cover img {
+.eventimg_inner_container .img_cover img {
   height: 48px;
   width: 48px;
   border-radius: 200px;
@@ -66,13 +66,13 @@
   -o-transition: all 0.3s ease;
 }
 
-.venueimg_inner_container .user_info_section {
+.eventimg_inner_container .user_info_section {
   padding: 12px;
   float: left;
   text-align: left;
 }
 
-.venueimg_inner_container .follower_following_name a {
+.eventimg_inner_container .follower_following_name a {
   font-family: 'Lato', sans-serif;
   font-weight: bold;
   text-transform: capitalize;
@@ -82,14 +82,14 @@
   -o-transition: all 0.3s ease;
 }
 
-.venueimg_inner_container .follower_following_name a:hover {
+.eventimg_inner_container .follower_following_name a:hover {
   color: #E34B51 !important;
   -webkit-transition: all 0.3s ease; 
   -moz-transition: all 0.3s ease; 
   -o-transition: all 0.3s ease;
 }
 
-.venueimg_inner_container .user_profession {
+.eventimg_inner_container .user_profession {
   font-family: 'Lato', sans-serif;
   font-size: 12px;
   font-weight: 300;
@@ -97,12 +97,12 @@
   text-align: left;
 }
 
-.venueimg_inner_container .action_btn_section {
+.eventimg_inner_container .action_btn_section {
   float: right;
   padding: 22px 0px;
 }
 
-.venueimg_inner_container .btn a {
+.eventimg_inner_container .btn a {
   font-family: 'Lato', sans-serif;
   font-size: 13px;
   font-weight: 300;
@@ -119,42 +119,42 @@
   -o-transition: all 0.3s ease;
 }
 
-.venueimg_inner_container .btn a:hover {
+.eventimg_inner_container .btn a:hover {
   background-color: #E34B51 !important;
   -webkit-transition: all 0.3s ease; 
   -moz-transition: all 0.3s ease; 
   -o-transition: all 0.3s ease;
 }
 
-.venueimg_inner_container label {
+.eventimg_inner_container label {
   font-family: 'Lato', sans-serif;
   font-size: 15px !important;
   font-weight: 300 !important;
   text-transform: capitalize;
 }
 
-.venueimg_inner_container .checkbox {
+.eventimg_inner_container .checkbox {
   float: left;
   margin-right: 10px;
 }
 
-.venueimg_inner_container input[type="checkbox"] {
+.eventimg_inner_container input[type="checkbox"] {
   margin-right: 5px;
   margin-bottom: 10px;
 }
 
-.venueimg_inner_container .listed_hosts {
+.eventimg_inner_container .listed_hosts {
   background-color: rgba(88, 205, 166, 0.2) !important;
   text-transform: capitalize;
   padding: 15px;
   margin-bottom: 15px;
 }
 
-.venueimg_inner_container .host_event {
+.eventimg_inner_container .host_event {
   margin-bottom: 8px;
 }
 
-.venueimg_inner_container input[type="submit"] {
+.eventimg_inner_container input[type="submit"] {
   font-family: 'Lato', sans-serif;
   font-size: 13px;
   font-weight: 300;
@@ -171,36 +171,36 @@
   -o-transition: all 0.3s ease;
 }
 
-.venueimg_inner_container input[type="submit"]:hover {
+.eventimg_inner_container input[type="submit"]:hover {
   background-color: rgba(47, 63, 91, 0.5) !important;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
 }
 
-.venueimg_inner_container .info_venueimg_content {
+.eventimg_inner_container .info_eventimg_content {
   background-color: rgba(88, 205, 166, 0.2) !important;
   padding: 15px;
   letter-spacing: 1px;
   word-spacing: 3px;
 }
 
-.venueimg_inner_container .info_venueimg_content ul {
+.eventimg_inner_container .info_eventimg_content ul {
   list-style-type: none;
   margin:0px;
   display: inline-block;
 }
 
-.venueimg_inner_container .info_venueimg_content ul li {
+.eventimg_inner_container .info_eventimg_content ul li {
   float: left;
 }
 
-.venueimg_inner_container .info_venueimg_content ul li img {
+.eventimg_inner_container .info_eventimg_content ul li img {
   width: 310px;
   height: 310px;
 }
 
-.venueimg_inner_container .info_venueimg_content .middle_img {
+.eventimg_inner_container .info_eventimg_content .middle_img {
   border-left: 5px solid #fff;
   border-right: 5px solid #fff;
 }
