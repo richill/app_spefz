@@ -1,0 +1,20 @@
+<div id="myModal-event-venue-image" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+  <div class="eventcard_inner_container">
+    <div class="header">Create Event Card</div>
+    <div class="content_list">
+      <div class="event_title">Event: <%# @event.title %></div>
+      <div>
+        <div class="info_card_content">
+          <div>Creating a Card for the event <b><%= @event.title %></b>:</div>
+          <ul>
+            <li>Automatically creates a page with the list of members that attended the event</li>
+            <li>Allows members who attended the event to view the created card</li>
+            <li>Allows members who attended the event to connect with other members via the created card</li>
+          </ul>
+        </div>
+        <div><%= render 'cards/form' %></div>
+      </div>
+    </div> 
+    <a class="close-reveal-modal cancel_button" aria-label="Close">&#215;</a>
+  </div>
+</div>

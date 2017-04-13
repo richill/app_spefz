@@ -277,18 +277,13 @@
   margin-bottom: 0px;
 }
 
-// --------------------------
-//     workings
-// --------------------------
-
-
-.event_venue_images_links {
+.user_general_settings_section .event_venue_images_links {
   background-color: rgba(75, 180, 191, 0.2) !important;
   padding: 15px 0px !important;
   margin-bottom: 30px !important;
 }
 
-.title_venue, .title_event {
+.user_general_settings_section .title_venue, .title_event {
   font-family: 'Lato', sans-serif;
   font-size: 15px !important;
   font-weight: 300 !important;
@@ -296,7 +291,7 @@
   margin-bottom: 2px;
 }
 
-.event_venue_images_links input[type="text"] {
+.user_general_settings_section .event_venue_images_links input[type="text"] {
   margin-bottom: 5px !important;
 }
 

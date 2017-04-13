@@ -1,0 +1,29 @@
+/*=========================================
+    Section: event page
+    File: views / events / _show.html.erb
+    File: views / events / _content_event_imgs.html.erb
+  =========================================*/
+
+.content_event_imgs_container ul {
+  list-style-type: none;
+  margin: 0px;
+  display: inline-block;
+}
+
+.content_event_imgs_container ul li {
+  float: left;
+  background-color: rgba(88, 205, 166, 0.2) !important;
+  padding: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.content_event_imgs_container .middle_img {
+  margin-left: 5px !important;
+  margin-right: 5px !important;
+}
+
+.content_event_imgs_container img {
+  height: 70px;
+  width: 70px;
+}
