@@ -85,7 +85,7 @@
                   <% if action_name == 'new'  %>
                     <span>created date will be:</span>
                     <b><%= Date.current.strftime("%B %d, %Y") %></b>
-                  <% else %>
+                  <% elsif action_name == 'edit' %>
                   <span>created on:</span>
                   <b><%= @blog.created_at.strftime("%B %d, %Y") %></b>
                   <% end %>

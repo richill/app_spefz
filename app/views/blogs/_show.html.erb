@@ -112,7 +112,7 @@
                   <% if @blog.blog_image_link.present? %>
                     <%= link_to(cl_image_tag(@blog.blog_image_link, :transformation=>[{:gravity=>"face", :width => 1300, :height => 900}]), blog_path(@blog)) %>
                   <% else %>
-                    <%= link_to(cl_image_tag(@blog.image, :transformation=>[{:gravity=>"face", :width=>1300, :height=>900, :crop=>"fill"}]), blog_path(@blog)) %>
+                    <%= link_to(cl_image_tag(@blog.image, :transformation=>[{:gravity=>"face", :width=>1150, :height=>600, :crop=>"fill"}]), blog_path(@blog)) %>
                   <% end %>
                 </span>
                 <span class="mini_imgs">
