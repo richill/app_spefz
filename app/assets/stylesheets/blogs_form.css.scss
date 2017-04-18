@@ -264,6 +264,27 @@
 }
 
 
+// ---------------------------
+//   workings
+// ---------------------------
+
+.user_general_settings_section .event_venue_images_links .blog_images_links {
+  background-color: rgba(75, 180, 191, 0.2) !important;
+  padding: 15px 0px !important;
+  margin-bottom: 30px !important;
+}
+
+.user_general_settings_section .title_venue, .title_event {
+  font-family: 'Lato', sans-serif;
+  font-size: 15px !important;
+  font-weight: 300 !important;
+  text-transform: capitalize;
+  margin-bottom: 2px;
+}
+
+.user_general_settings_section .event_venue_images_links input[type="text"] {
+  margin-bottom: 5px !important;
+}
 
 
 

@@ -62,6 +62,13 @@
               <div class="text_info">Posting a blog on behalf of another? Place blogger's link image here</div> 
             </div>
 
+            <div class="blog_images_links">
+              <div class="title_venue">event venue images</div>
+              <%= f.input :imgvenue_one, label: false, placeholder: "https://res.cloudinary.com/spefzapp/image/upload/v1489072832/vhuqf3c3sibru9bl9v7d.png" %> 
+              <%= f.input :imgvenue_two, label: false, placeholder: "https://res.cloudinary.com/spefzapp/image/upload/v1489072832/vhuqf3c3sibru9bl9v7d.png" %> 
+              <%= f.input :imgvenue_three, label: false, placeholder: "https://res.cloudinary.com/spefzapp/image/upload/v1489072832/vhuqf3c3sibru9bl9v7d.png" %> 
+            </div>
+
             <div class="publish_content">
               <%= f.input :publish, label: "Publish Blog" %>
               <div class="text_info">Tick if you would like blog to be published</div>
@@ -80,6 +87,7 @@
                 </span>
               </div>
             </div>
+
             
             <!-- hidden fields -->
             <%= f.hidden_field :user_id %>

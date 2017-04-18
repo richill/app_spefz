@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170413112602) do
+ActiveRecord::Schema.define(version: 20170418131453) do
 
   create_table "activities", force: :cascade do |t|
     t.integer  "trackable_id"
@@ -68,6 +68,9 @@ ActiveRecord::Schema.define(version: 20170413112602) do
     t.boolean  "publish"
     t.date     "publishdate"
     t.string   "subtitle"
+    t.string   "blogimg_one"
+    t.string   "blogimg_two"
+    t.string   "blogimg_three"
   end
 
   add_index "blogs", ["slug"], name: "index_blogs_on_slug", unique: true
