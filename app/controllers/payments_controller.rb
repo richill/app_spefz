@@ -26,6 +26,8 @@ class PaymentsController < ApplicationController
       @subscription = Subscription.find(params[:subscription_id])
     elsif @event_id.present?
       @event = Event.find(params[:event_id])
+    else
+      redirect_to errorpermission_path
     end
   end
 
