@@ -36,7 +36,8 @@
                     </div>
                   </div>
                 </div>
-                <div><%= cl_image_tag(@event.image, :transformation=>[{:gravity=>"center", :width=>200, :height=>200, :crop=>"fill"}]) %></div>
+                <!-- <div><%# cl_image_tag(@event.image, :transformation=>[{:gravity=>"center", :width=>200, :height=>200, :crop=>"fill"}]) %></div> -->
+                <div><%= cl_image_tag(@event.imgvenue_three, :transformation=>[{:gravity=>"center", :crop=>"fill"}]) %></div>
               </div>
             <% end %>
             <!-- image -->
@@ -44,7 +45,7 @@
             <!-- form -->
             <div class="medium-7 columns pymt_form_section">
               <div class="pymt_form"><%= render 'form' %></div>
-              <!-- <div>you credit card information is encryted</div> -->
+              <!-- <div>your credit card information is encryted</div> -->
             </div>
             <!-- form -->
     
