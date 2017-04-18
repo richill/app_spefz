@@ -193,6 +193,7 @@
 
 .blog_mini_img_inner_container .info_blogmini_img_content ul li {
   float: left;
+  position: relative;
 }
 
 .blog_mini_img_inner_container .info_blogmini_img_content ul li img {
@@ -205,17 +206,7 @@
   border-right: 5px solid #fff;
 }
 
-
-
-// --------------------------
-//   workings
-// --------------------------
-
-.info_blogmini_img_content ul li {
-  position: relative;
-}
-
-.sub_text {
+.blog_mini_img_inner_container .sub_text {
   position: absolute;
   padding: 5px;
   background-color: rgba(47, 63, 91, 0.5) !important;
@@ -223,6 +214,7 @@
   color: #fff;
   font-size: 11px;
   text-transform: capitalize;
+  text-shadow: 1px 2px 14px #eeaa02;
 }
 
 
