@@ -1,10 +1,10 @@
 <!-- blog mini images -->
 <div id="myModal-blog-image" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
-  <div class="eventimg_inner_container">
-    <div class="header">girl you are a sweetheart</div>
+  <div class="blog_mini_img_inner_container">
+    <div class="header"><%= @blog.title %></div>
     <div class="content_list">
       <div>
-        <div class="info_eventimg_content">
+        <div class="info_blogmini_img_content">
           <ul>
             <li><%= cl_image_tag(@blog.blogimg_one, :transformation=>[{:gravity=>"center", :crop=>"fill"}]) %></li>
             <li class="middle_img"><%= cl_image_tag(@blog.blogimg_two, :transformation=>[{:gravity=>"center", :crop=>"fill"}]) %></li>
