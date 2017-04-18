@@ -1,14 +1,10 @@
-<div>hello</div>
-
-<div class="content_event_imgs_container">
-  <div>
-    <ul>
-      <a href="#" data-reveal-id="myModal-blog-image">
-        <li><%= cl_image_tag(@blog.blogimg_one, :transformation=>[{:gravity=>"center", :crop=>"fill"}]) %></li>
-        <li class="middle_img"><%= cl_image_tag(@blog.blogimg_two, :transformation=>[{:gravity=>"center", :crop=>"fill"}]) %></li>
-        <li><%= cl_image_tag(@blog.blogimg_three, :transformation=>[{:gravity=>"center", :crop=>"fill"}]) %></li>
-      </a>
-      <span><%= render 'shared/modal_blog_mini_images' %></span>
-    </ul>
-  </div>
+<div class="content_blogs_imgs_container">
+  <ul>
+    <a href="#" data-reveal-id="myModal-blog-image">
+      <li style="margin-left:12px;"><%= cl_image_tag(@blog.blogimg_one, :transformation=>[{:gravity=>"center", :crop=>"fill"}]) %></li>
+      <li class="middle_img"><%= cl_image_tag(@blog.blogimg_two, :transformation=>[{:gravity=>"center", :crop=>"fill"}]) %></li>
+      <li><%= cl_image_tag(@blog.blogimg_three, :transformation=>[{:gravity=>"center", :crop=>"fill"}]) %></li>
+    </a>
+    <span><%= render 'shared/modal_blog_mini_images' %></span>
+  </ul>
 </div>

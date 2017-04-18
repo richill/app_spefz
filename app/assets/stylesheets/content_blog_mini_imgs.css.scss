@@ -1,0 +1,34 @@
+/*=========================================
+    Section: blog page
+    File: views / blogs / _show.html.erb
+    File: views / blogs / _content_blog_mini_imgs.html.erb
+  =========================================*/
+
+.content_blogs_imgs_container  {
+  bottom: 0 !important;
+  position: absolute;
+}
+
+.content_blogs_imgs_container ul {
+  list-style-type: none;
+  margin: 0px;
+  display: inline-block;
+}
+
+.content_blogs_imgs_container ul li {
+  float: left;
+  background-color: rgba(40, 48, 45, 0.2) !important;
+  padding: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.content_blogs_imgs_container .middle_img {
+  margin-left: 5px !important;
+  margin-right: 5px !important;
+}
+
+.content_blogs_imgs_container img {
+  height: 70px;
+  width: 70px;
+}
