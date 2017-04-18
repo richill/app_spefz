@@ -207,8 +207,23 @@
 
 
 
+// --------------------------
+//   workings
+// --------------------------
 
+.info_blogmini_img_content ul li {
+  position: relative;
+}
 
+.sub_text {
+  position: absolute;
+  padding: 5px;
+  background-color: rgba(47, 63, 91, 0.5) !important;
+  top: 0 !important;
+  color: #fff;
+  font-size: 11px;
+  text-transform: capitalize;
+}
 
 
 

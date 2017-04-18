@@ -6,7 +6,10 @@
       <div>
         <div class="info_blogmini_img_content">
           <ul>
-            <li><%= cl_image_tag(@blog.blogimg_one, :transformation=>[{:gravity=>"center", :crop=>"fill"}]) %></li>
+            <li>
+              <%= cl_image_tag(@blog.blogimg_one, :transformation=>[{:gravity=>"center", :crop=>"fill"}]) %>
+              <span class="sub_text">this is me and john taking lauging and having a great night drinks</span>
+            </li>
             <li class="middle_img"><%= cl_image_tag(@blog.blogimg_two, :transformation=>[{:gravity=>"center", :crop=>"fill"}]) %></li>
             <li><%= cl_image_tag(@blog.blogimg_three, :transformation=>[{:gravity=>"center", :crop=>"fill"}]) %></li>
           </ul>
