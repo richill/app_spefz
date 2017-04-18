@@ -8,10 +8,16 @@
           <ul>
             <li>
               <%= cl_image_tag(@blog.blogimg_one, :transformation=>[{:gravity=>"center", :crop=>"fill"}]) %>
-              <span class="sub_text">this is me and john taking lauging and having a great night drinks</span>
+              <span class="sub_text"><%= @blog.blogimgtxt_one %></span>
             </li>
-            <li class="middle_img"><%= cl_image_tag(@blog.blogimg_two, :transformation=>[{:gravity=>"center", :crop=>"fill"}]) %></li>
-            <li><%= cl_image_tag(@blog.blogimg_three, :transformation=>[{:gravity=>"center", :crop=>"fill"}]) %></li>
+            <li class="middle_img">
+              <%= cl_image_tag(@blog.blogimg_two, :transformation=>[{:gravity=>"center", :crop=>"fill"}]) %>
+              <span class="sub_text"><%= @blog.blogimgtxt_two %></span>
+            </li>
+            <li>
+              <%= cl_image_tag(@blog.blogimg_three, :transformation=>[{:gravity=>"center", :crop=>"fill"}]) %>
+              <span class="sub_text"><%= @blog.blogimgtxt_three %></span>
+            </li>
           </ul>
         </div>
       </div>
