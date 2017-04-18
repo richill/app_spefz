@@ -81,13 +81,13 @@
                         </span>
                         <span>
                           <% if signed_in?  %>
-                            <% if blog.blogger_name.present? %>
+                            <% if blog.user_image_link.present? %>
                               <%= link_to "#{blog.blogger_name}", "#{blog.user_link}" %>
                             <% else %>
                               <%= link_to "#{blog.user.firstname}", user_path(blog.user) %>
                             <% end %>
                           <% else %>
-                            <% if blog.blogger_name.present? %>
+                            <% if blog.user_image_link.present? %>
                               <%= link_to "#{blog.blogger_name}", "#{blog.user_link}" %>
                             <% else %>
                               <%= link_to "#{blog.user.firstname}", "#" %>

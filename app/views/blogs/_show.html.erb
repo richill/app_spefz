@@ -52,13 +52,13 @@
                 </span>
                 <span class="responsive_display">
                   <% if signed_in?  %>
-                    <% if @blog.blogger_name.present? %>
+                    <% if @blog.user_image_link.present? %>
                       <%= link_to "#{@blog.blogger_name}", "#{@blog.user_link}" %>
                     <% else %>
                       <%= link_to "#{@blog.user.firstname}", user_path(@blog.user) %>
                     <% end %>
                   <% else %>
-                  <% if @blog.blogger_name.present? %>
+                  <% if @blog.user_image_link.present? %>
                       <%= link_to "#{@blog.blogger_name}", "#{@blog.user_link}" %>
                     <% else %>
                       <%= link_to "#{@blog.user.firstname}", "#" %>
@@ -128,6 +128,8 @@
                 <div class="blog_guest_writter">
                   <span class="credits">Credits to:</span>
                   <span class="guest_writter_name"><%= link_to "#{@blog.blogger_name}", "#{@blog.user_link}", target:"_blank" %></span>
+                  <span class="divider">|</span>
+                  <span class="guest_writter_name"><%= link_to "#{@blog.user_link}", target:"_blank" %></span>
                 </div>
               <% end %>
             </div>
