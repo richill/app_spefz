@@ -1,0 +1,18 @@
+<!-- blog mini images -->
+<div id="myModal-blog-image" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+  <div class="eventimg_inner_container">
+    <div class="header">girl you are a sweetheart</div>
+    <div class="content_list">
+      <div>
+        <div class="info_eventimg_content">
+          <ul>
+            <li><%= cl_image_tag(@blog.blogimg_one, :transformation=>[{:gravity=>"center", :crop=>"fill"}]) %></li>
+            <li class="middle_img"><%= cl_image_tag(@blog.blogimg_two, :transformation=>[{:gravity=>"center", :crop=>"fill"}]) %></li>
+            <li><%= cl_image_tag(@blog.blogimg_three, :transformation=>[{:gravity=>"center", :crop=>"fill"}]) %></li>
+          </ul>
+        </div>
+      </div>
+    </div> 
+    <a class="close-reveal-modal cancel_button" aria-label="Close">&#215;</a>
+  </div>
+</div>

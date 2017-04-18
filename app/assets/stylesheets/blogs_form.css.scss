@@ -263,14 +263,9 @@
   margin-right: 5px;
 }
 
-
-// ---------------------------
-//   workings
-// ---------------------------
-
-.user_general_settings_section .event_venue_images_links .blog_images_links {
+.user_general_settings_section .blog_images_links {
   background-color: rgba(75, 180, 191, 0.2) !important;
-  padding: 15px 0px !important;
+  padding: 15px !important;
   margin-bottom: 30px !important;
 }
 
@@ -282,7 +277,7 @@
   margin-bottom: 2px;
 }
 
-.user_general_settings_section .event_venue_images_links input[type="text"] {
+.user_general_settings_section .blog_images_links input[type="text"] {
   margin-bottom: 5px !important;
 }
 
