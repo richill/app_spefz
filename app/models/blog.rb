@@ -35,6 +35,10 @@ class Blog < ActiveRecord::Base
     ]
   end
 
+  def should_generate_new_friendly_id?
+    slug.blank? || self.title_changed?
+  end
+
   def image_or_blogimagelink_or_videolink
     if image.blank? ^ blog_image_link.blank? ^ video_link.blank?
       errors.add(:image, "either upload an Image, paste an image link or video link")

@@ -154,6 +154,10 @@ class User < ActiveRecord::Base
     ]
   end
 
+  def should_generate_new_friendly_id?
+    slug.blank? || self.firstname_changed?
+  end
+
   def admin_pa_management_group
     self.category_role.name == "Admin" && self.category_managementgroup.name == "Account Group" || 
     self.category_role.name == "Admin" && self.category_managementgroup.name == "Administration Group" || 
@@ -369,8 +373,8 @@ class User < ActiveRecord::Base
 
   protected
   # deactivates confirmable
-  # def confirmation_required?
-  #   false
-  # end
+  def confirmation_required?
+    false
+  end
 end
 

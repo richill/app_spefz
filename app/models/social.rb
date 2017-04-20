@@ -80,6 +80,10 @@ class Social < ActiveRecord::Base
     ]
   end
 
+  def should_generate_new_friendly_id?
+    slug.blank? || self.title_changed?
+  end
+
   def original_url
     base_url + original_fullpath
   end

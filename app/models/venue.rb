@@ -18,4 +18,8 @@ class Venue < ActiveRecord::Base
       :venuename
     ]
   end
+
+  def should_generate_new_friendly_id?
+    slug.blank? || self.venuename_changed?
+  end
 end
