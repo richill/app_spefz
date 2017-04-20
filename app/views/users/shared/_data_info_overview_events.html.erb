@@ -19,7 +19,7 @@
       </div>
       <% @events.order("date asc").each do |event| %>
         <div class="tablerow">
-          <div class="tablecell" style="width:16%">
+          <div class="tablecell" style="width:10%">
             <div class="image_container">
               <div class="image"><%= link_to image_tag(event.image_url), event, target: "_blank" %></div>
             </div>
