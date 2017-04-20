@@ -29,6 +29,9 @@ class Blog < ActiveRecord::Base
   scope :created_this_month, -> { where(created_at: Time.now.beginning_of_month..Time.now.end_of_month) }
   #blogs created in current month 
 
+  scope :published_this_month, -> { where(publishdate: Time.now.beginning_of_month..Time.now.end_of_month) }
+  #blogs published in current month 
+
   def slug_blogs
     [
       :title
