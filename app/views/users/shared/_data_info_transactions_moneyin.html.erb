@@ -1,0 +1,39 @@
+<h1>money in [Subscriptions & Events]
+  <div class="h1_subtitle"><i class="fa fa-info-circle"></i> displays the total amount in <%= Date.current.strftime("%B") %> from subscritions & event ticket sales on the platform</div>
+</h1>
+
+<div id="status_users_all_content">
+  <div class="bottom_inner_content">
+    <div class="table">
+      <div class="tablerow">
+        <div class="tablecell header background">Money In</div>
+        <div class="tablecell background"></div>
+        <div class="tablecell background"></div>
+      </div>
+      <div class="tablerow">
+        <div class="tablecell ref_id">subscriptions</div>
+        <div class="tablecell">
+          <div class="faint_text_format">total subscribers in <%= Date.current.strftime("%B") %></div>
+          <div><%= @users.subcribed_users.count %></div>
+        </div>
+        <div class="tablecell">£<%= (@users.subcribed_users.count) * (@premium_plan.price) %></div>
+      </div>
+      <div class="tablerow">
+        <div class="tablecell ref_id">events</div>
+        <div class="tablecell">
+          <div class="faint_text_format">total events in <%= Date.current.strftime("%B") %></div>
+          <div><%= @events.live_events.open_events.held_this_month.booked_events_all.count %></div>
+        </div>
+        <div class="tablecell">£<%= @events.live_events.open_events.held_this_month.booked_events_all_total_price %></div>
+      </div>
+      <div class="tablerow">
+        <div class="tablecell ref_id">total</div>
+        <div class="tablecell">
+          <div class="faint_text_format">Total Subscribed Users Amt  + Booked Active Events [Mth] Amt</div>
+        </div>
+        <div class="tablecell ref_id">£<%= ((@users.subcribed_users.count) * (@premium_plan.price)) + (@events.held_this_month.live_events.open_events.total_price_for_events) %></div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="clear"></div>

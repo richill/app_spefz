@@ -89,9 +89,11 @@ class Event < ActiveRecord::Base
   scope :unbooked_events, -> { includes(:payments).where(payments: { event_id: nil }) }
   #displays all events that have not been booked/paid by users | events that do not have payments
 
-  #scope :booked_events_all, -> { includes(:payments).where(payments: { event_id: !nil }) }
-  #scope :booked_events_all, -> { includes(:payments).where(payments: { event_id: !nil }) }
+  scope :booked_events_all, -> { includes(:payments).where.not(payments: { event_id: nil }) }
   #displays all events that have been booked/paid by users | events that do have payments
+
+  scope :booked_events_all_total_price, -> { includes(:payments).where.not(payments: { event_id: nil }).sum("events.price") }
+  #displays total price all events that have been booked/paid by users | events that do have payments
 
   scope :booked_events_with_cards, -> (user) { joins(:card, payments: :user).where(users: { id: user.id }) }
   #displays all events with cards that have been booked/paid by a user
