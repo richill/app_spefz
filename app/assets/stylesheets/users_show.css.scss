@@ -875,8 +875,8 @@
   -o-transition: all 0.3s ease;
 }
 
-@media only screen and (min-width: 760px) {
-  .user_profile_page_section .evts_upcomingr {
+@media only screen and (min-width: 640px) {
+  .user_profile_page_section .evts_upcoming {
     border-left: 1px solid #fff;
     border-right: 1px solid #fff;
   }
@@ -898,7 +898,7 @@
   -o-transition: all 0.3s ease;
 }
 
-@media only screen and (max-width: 760px) {
+@media only screen and (max-width: 640px) {
   .user_profile_page_section .evts_past {
     display: none;
   }
