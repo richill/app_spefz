@@ -256,6 +256,9 @@ class UsersController < ApplicationController
   end
 
   def matches
+    unless current_user.subscribed_access?
+      redirect_to subscription_path(@premium_plan)
+    end 
   end
 
   private
