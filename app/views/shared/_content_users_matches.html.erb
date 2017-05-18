@@ -80,9 +80,14 @@
                       </div>
                     </div>
                   <% else %>
-                    <div class="user_info">
-                      <div class="user_name"><%= link_to truncate(current_user.name_shortner(user), length: 15), user %></div>
+                    <div class="user_info_adj">
+                      <div class="user_name"><%= link_to truncate("#{user.firstname} #{user.lastname}", length: 15), user %></div>
                       <div class="user_profession"><%= truncate(user.profession, length: 25) %></div>
+                      <div>
+                        <span class="profile_view"><%= link_to "profile", user %></span>
+                        <span class="divider">|</span>
+                        <span class="user_age">Age:  <%= user.age %></span>
+                      </div>
                     </div>
                   <% end %>
                   <div class="action_btns">
