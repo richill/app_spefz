@@ -1,0 +1,515 @@
+/*=========================================
+    Section: matches page
+    File: views / users / _content_users_matches.html.erb
+  =========================================*/
+
+.members_section .members_inner_section {
+  background-color: #fff !important;
+  background: url("img_background_main.png") repeat;
+  padding: 0px !important;
+  min-height: 822px;
+}
+
+.members_section .members_inner_section h1 {
+  font-family: 'Lato', sans-serif;
+  font-size: 48px;
+  font-weight: 200;
+  text-align: center;
+  margin: 0px;
+  color: #fff;
+  text-transform: capitalize;
+  word-spacing: 3px;
+}
+@media only screen and (max-width: 670px) {
+  .members_section .members_inner_section h1  {
+    font-size: 30px;
+  }
+}
+
+.members_section .search_container {
+  padding: 18px 0px;
+  background-color: rgba(47, 63, 91, 0.1);
+  border-bottom: 1px solid rgba(238, 170, 2, 0.3) !important;
+}
+
+.members_section .search_inner_container {
+  width: 1170px;
+  margin: auto;
+}
+
+.members_section .search_fields_left, .search_fields_right {
+  margin: 0px !important;
+  list-style-type: none;
+}
+
+.members_section .field select, input[type="text"] {
+  font-family: "Lato", sans-serif;
+  font-weight: 300 !important;
+  box-shadow: none !important;
+  padding: 0px 15px !important;
+  border: none !important;
+  height: 40px;
+  color: #454d53;
+  font-size: 15px;
+  margin-bottom: 0px !important;
+}
+
+.members_section .search_fields_left li {
+  width: 200px;
+  float: left;
+  margin: 0px !important;
+  margin-right: 15px !important;
+}
+
+.members_section .search_fields_left li a {
+  font-family: 'Lato', sans-serif;
+  font-size: 13px;
+  color: #fff !important;
+  font-weight: 300;
+  background: #283041;
+  text-transform: capitalize;
+  text-align: center;
+  letter-spacing: 1px;
+  padding: 12px 25px;
+  width: 100%;
+  border: none;
+  display: inline-block;
+  height: 40px;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+.members_section .search_fields_left li a i {
+  color: #fff !important;
+}
+
+.members_section .search_fields_left li a:hover {
+  background-color: rgba(238, 170, 2, 0.6) !important;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+.members_section .search_fields_left .active a {
+  background-color: rgba(225, 71, 62, 0.5) !important;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+.members_section .search_fields_right li {
+  width: 185px;
+  float: right;
+  margin: 0px !important;
+  margin-left: 8px !important;
+}
+
+.members_section .search_fields_right .select_user_name {
+  width: 265px !important;
+}
+
+.members_section .search_fields_right .btn_all {
+  width: 50px !important;
+}
+
+.members_section .search_fields_right li input[type="submit"] {
+  font-family: 'Lato', sans-serif;
+  font-size: 13px;
+  color: #fff !important;
+  font-weight: 300;
+  height: 40px;
+  background: #000;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+  padding: 12px 25px;
+  width: 100%;
+  border: none;
+  display: inline-block;
+  background-color: #4BB4BF !important;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+.members_section .search_fields_right li input[type="submit"]:hover {
+  background-color: #eeaa02 !important;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+.members_section .search_fields_right .btn_all .fa-users {
+  color: #fff !important;
+}
+
+.members_section .search_fields_right .btn_all a {
+  font-family: 'Lato', sans-serif;
+  font-size: 13px;
+  text-align: center;
+  color: #fff !important;
+  font-weight: 300;
+  background: #000;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+  padding: 11px 14px;
+  width: 100%;
+  border: none;
+  display: inline-block;
+  background-color: #4BB4BF !important;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+ }
+
+.members_section .search_fields_right .btn_all a:hover {
+  background-color: #eeaa02 !important;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+
+.members_section .member_content_section {
+  padding: 0px !important;
+}
+
+.members_section .content_container {
+  padding: 30px 0px !important;
+  min-height: 822px;
+}
+
+.members_section .header_section {
+  padding: 15px 0px;
+}
+
+.members_section .header {
+  font-family: "Lato", sans-serif;
+  font-size: 35px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+  text-align: center;
+  padding: 0px 15px !important;
+}
+
+.members_section .sub_header {
+  font-family: "Lato", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+  text-align: center;
+  padding: 15px !important;
+}
+
+.members_section .content_details {
+  padding: 15px 0px !important;
+  width: 1170px;
+  margin: auto;
+}
+
+.members_section .content_details ul {
+  margin: 0px !important;
+}
+
+.members_section .member_container {
+  padding: 5px;
+  margin-bottom: 25px;
+  margin-left: 0px !important;
+}
+
+.members_section .member_inner_container {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+  padding: 8px;
+  height: 72px;
+}
+
+.members_section .image_cover {
+  padding: 4px;
+  border-radius: 5px;
+  width: 57px;
+  float: left;
+  margin-right: 5px;
+  background-color: rgba(88, 205, 166, 0.2) !important;
+}
+
+.members_section .image_cover img {
+  height: 48px;
+  width: 48px;
+  border-radius: 200px;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s 
+}
+
+.members_section .image_cover img:hover {
+  opacity: 0.5;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+.members_section .user_info_adj {
+  padding: 0px;
+  float: left;
+}
+
+.members_section .user_info {
+  padding: 10px 0px;
+  float: left;
+}
+
+.members_section .user_name a {
+  font-family: 'Lato', sans-serif;
+  font-weight: bold;
+  text-transform: capitalize;
+  color: #283041 !important;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+.members_section .user_name a:hover {
+  color: #E34B51 !important;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+.members_section .user_profession {
+  font-family: 'Lato', sans-serif;
+  font-size: 12px;
+  font-weight: 300;
+  text-transform: capitalize;
+  text-align: left;
+}
+
+.members_section .user_ref {
+  font-family: 'Lato', sans-serif;
+  font-size: 10px;
+  font-weight: 300;
+  text-transform: capitalize;
+  text-align: left;
+  color: #E34B51 !important;
+}
+
+.members_section .user_age {
+  font-family: 'Lato', sans-serif;
+  font-size: 10px;
+  text-transform: capitalize;
+  text-align: left;
+}
+
+.members_section .divider {
+  color: rgba(40, 48, 45, 0.5) !important;
+  font-weight: 300 !important;
+}
+
+.members_section .action_btns {
+  padding: 9px 0px;
+}
+
+.members_section .btn_follow .icon_user_refresh button {
+  margin: 0px !important;
+  padding: 10px 0px !important;
+  width: 38px;
+  height: 38px;
+  float: right;
+  margin-left: 5px !important;
+  border-radius: 0px !important;
+  background-color: #2F3F5B !important;
+}
+
+.members_section .btn_follow .icon_user button {
+  margin: 0px !important;
+  padding: 10px 0px !important;
+  width: 38px;
+  height: 38px;
+  float: right;
+  margin-left: 5px !important;
+  border-radius: 0px !important;
+  background-color: #4BB4BF !important;
+}
+
+.members_section .btn_follow button:hover {
+  background-color: #2F3F5B !important;
+}
+
+.members_section .fa-user-plus {
+  font-size: 15px;
+  color: #fff !important;
+}
+
+.members_section .btn_request .icon_user_times button {
+  margin: 0px !important;
+  padding: 10px !important;
+  float: right;
+  margin-left: 5px !important;
+  border-radius: 0px !important;
+  background-color: #2F3F5B !important;
+}
+
+.members_section .btn_request .icon_user_plus button {
+  margin: 0px !important;
+  padding: 10px !important;
+  float: right;
+  margin-left: 5px !important;
+  border-radius: 0px !important;
+  background-color: #58CDA6 !important;
+}
+
+
+.members_section .btn_request .icon_user_times {
+  float: right;
+  margin-left: 5px !important;
+}
+
+.members_section .btn_request .icon_user_times .fa-user-times {
+  font-size: 12px !important;
+  margin: 0px !important;
+  padding: 13px 0px !important;
+  width: 38px;
+  text-align: center;
+  color: #fff !important;
+  border-radius: 0px !important;
+  background-color: rgba(238, 170, 2, 0.6) !important;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+.members_section .btn_request .icon_user_times .fa-user-times:hover {
+  background-color: rgba(238, 170, 2, 0.6) !important;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+.members_section .btn_request .icon_user_users {
+  float: right;
+  margin-left: 5px !important;
+}
+
+.members_section .btn_request .icon_user_users .fa-users {
+  font-size: 12px !important;
+  margin: 0px !important;
+  padding: 13px 0px !important;
+  width: 38px;
+  text-align: center;
+  color: #fff !important;
+  border-radius: 0px !important;
+  background-color: #2F3F5B !important;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+.members_section .btn_request .icon_user_users .fa-users:hover {
+  background-color: rgba(238, 170, 2, 0.6) !important;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+.members_section .btn_request .icon_user_plus_request_recieved {
+  float: right;
+  margin-left: 5px !important;
+}
+
+.members_section .btn_request .icon_user_plus_request_recieved .fa-user-plus {
+  font-size: 12px !important;
+  margin: 0px !important;
+  padding: 13px 0px !important;
+  width: 38px;
+  text-align: center;
+  color: #fff !important;
+  border-radius: 0px !important;
+  background-color: #58CDA6 !important;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+.members_section .btn_request .icon_user_plus_request_recieved .fa-user-plus:hover {
+  background-color: rgba(238, 170, 2, 0.6) !important;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+.members_section .btn_request .icon_user_plus {
+  float: right;
+  margin-left: 5px !important;
+}
+
+.members_section .btn_request .icon_user_plus .fa-user-plus {
+  font-size: 12px !important;
+  margin: 0px !important;
+  padding: 13px 0px !important;
+  width: 38px;
+  text-align: center;
+  color: #fff !important;
+  border-radius: 0px !important;
+  background-color: #2F3F5B !important;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+.members_section .btn_request .icon_user_plus .fa-user-plus:hover {
+  background-color: rgba(238, 170, 2, 0.6) !important;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+.members_section .btn_request button:hover {
+  background-color: #2F3F5B !important;
+}
+
+.members_section .fa-undo {
+  font-size: 15px;
+  color: #fff !important;
+}
+
+.members_section .user_roles .fa-user {
+  margin-right: 5px;
+}
+
+.members_section .user_roles {
+  font-family: 'Lato', sans-serif;
+  font-size: 12px;
+  font-weight: 300;
+  text-transform: capitalize;
+  text-align: left;
+  background-color: rgba(88, 205, 166, 0.15) !important;
+  padding: 5px 10px;
+  border-bottom: 1px solid rgba(88, 205, 166, 0.3) !important;
+}
+
+.members_section .user_roles .divider {
+  margin: 5px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
