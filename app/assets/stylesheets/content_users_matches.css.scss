@@ -320,7 +320,28 @@
 }
 
 .users_matches_section .action_btns {
-  padding: 9px 0px;
+  padding: 20px 0px;
+  float: right;
+}
+
+.action_btns a {
+  background-color: rgba(225, 71, 62, 0.7) !important;
+  color: #fff !important;
+  text-transform: capitalize;
+  padding: 10px 18px;
+  font-weight: 300 !important;
+  font-size: 10px;
+  letter-spacing: 1px;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+.action_btns a:hover {
+  background-color: #eeaa02 !important;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
 }
 
 .users_matches_section .btn_follow .icon_user_refresh button {
