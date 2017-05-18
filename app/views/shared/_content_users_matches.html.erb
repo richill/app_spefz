@@ -1,30 +1,25 @@
 <div class="users_matches_section">
   <div class="medium-12 columns users_matches_inner_section">
 
-    <!-- search -->
-    <% if current_user.admin_pa_management_group || current_user.pa_administration_group %>
+    <!-- preference -->
     <div class="medium-12 columns search_container">
-      <div class="search_inner_container">        
-        <%# search_form_for(@search) do |f| %>
-          <ul class="search_fields_left">
-            <li class="field select_role"><%# f.select :category_role_id_eq, options_from_collection_for_select(CategoryRole.all, "id", "name", @search.category_role_id_eq), prompt: "Role" %></li>
-            <li class="field select_mgtgroup"><%# f.select :category_managementgroup_id_eq, options_from_collection_for_select(CategoryManagementgroup.all, "id", "name", @search.category_managementgroup_id_eq), prompt: "Group" %></li>
-          </ul>   
+      <div class="search_inner_container"> 
+        <ul class="search_fields_left">
+          <li class="field preference_btn"><%= link_to "view preference", "#" %></li>
+          <li class="field preference_btn"><%= link_to "create preference", "#" %></li>
+        </ul>   
 
-          <ul class="search_fields_right">
-            <li><%# f.submit 'search' %></li> 
-            <li class="field btn_all">
-              <%= link_to users_path do %>
-                <i class="fa fa-users" aria-hidden="true"></i>
-              <% end %>
-            </li>
-            <li class="field select_user_name"><%# f.text_field :firstname_or_lastname_or_reference_cont, placeholder: 'search firstname, lastname or Ref eg: kofi'%></li>
-          </ul>        
-        <%# end %>
+        <ul class="search_fields_right">
+          <li class="field btn_all">
+            <%= link_to matches_user_path(current_user) do %>
+              <i class="fa fa-users" aria-hidden="true"></i>
+              <span>view all matches</span>
+            <% end %>
+          </li>
+        </ul>      
       </div>
     </div>
-    <% end %>
-    <!-- search -->
+    <!-- preference -->
 
     <!-- content -->
     <div class="medium-12 columns matches_content_section">
