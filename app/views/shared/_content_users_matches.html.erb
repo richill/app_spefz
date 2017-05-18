@@ -1,5 +1,5 @@
-<div class="members_section">
-  <div class="medium-12 columns members_inner_section">
+<div class="users_matches_section">
+  <div class="medium-12 columns users_matches_inner_section">
 
     <!-- search -->
     <% if current_user.admin_pa_management_group || current_user.pa_administration_group %>
@@ -27,7 +27,7 @@
     <!-- search -->
 
     <!-- content -->
-    <div class="medium-12 columns member_content_section">
+    <div class="medium-12 columns matches_content_section">
       <div class="medium-12 columns content_container">
         <div class="content_details">
             
@@ -91,10 +91,11 @@
                     </div>
                   <% end %>
                   <div class="action_btns">
-                    <% if user != current_user %>
-                    <%= render partial: "form_request", locals: { user: user } %>
-                    <%= render partial: "form_follow", locals: { user: user } %>
-                    <% end %>
+                    <a href="#<%= user.id %>" data-reveal-id="<%= dom_id(user) %>_user_match_event">events</a>
+                    <div><%= render partial: 'shared/modal_users_matches_events', locals: { user: user } %></div>
+
+                    <%# render partial: "form_request", locals: { user: user } %>
+                    <%# render partial: "form_follow", locals: { user: user } %>
                   </div>
                 </div>
                 <div class="clear"></div>

@@ -1,0 +1,196 @@
+/*=========================================
+    Section: matches page | match
+    File: views / shared / _modal_users_matches_events.html.erb
+    File: views / shared / _matches.html.erb
+  =========================================*/
+
+.match_info_modal {
+  border-radius: 0px !important;
+  border: 0px !important;
+  padding: 0px !important;
+}
+
+.match_info_modal .header {
+  padding: 5px 15px !important;
+  font-size: 35px;
+  border-bottom: 2px solid #58CDA6;
+  text-transform: capitalize;
+  color: #fff !important;
+  background-color: #283041;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  margin-bottom: 0px !important;
+}
+
+.match_info_modal .cancel_button {
+  color: #fff !important;
+}
+
+.match_info_modal .match_main_container {
+  padding: 15px;
+}
+
+.match_info_modal .match_content {
+  font-family: 'Lato', sans-serif;
+  font-size: 15px !important;
+  font-weight: 300 !important;
+  background-color: rgba(40, 48, 45, 0.04) !important;
+  padding: 15px;
+  margin-bottom: 15px;
+}
+
+.match_info_modal .match_content .upper_list li {
+  font-family: 'Lato', sans-serif;
+  font-size: 15px !important;
+  font-weight: 400 !important;
+  margin-bottom: 15px !important;
+}
+
+.match_info_modal .match_content .lower_list {
+  margin-top: 15px !important;
+}
+
+.match_info_modal .match_content .lower_list li {
+  font-size: 13px !important;
+  letter-spacing: 1px;
+  // word-spacing: 1px;
+  margin-bottom: 5px !important;
+}
+
+.match_info_modal .bold_content {
+  text-transform: capitalize;
+  font-weight: bold !important;
+}
+
+.match_info_modal .stats_cover {
+  font-weight: 300 !important;
+  background-color: #E34B51;
+  padding: 8px;
+  border-radius: 5px;
+  color: #fff;
+  letter-spacing: 1px;
+  margin-left: 5px;
+}
+
+.match_info_modal label {
+  font-family: 'Lato', sans-serif;
+  font-size: 15px !important;
+  font-weight: 300 !important;
+  text-transform: capitalize;
+}
+
+.match_info_modal .match_content_info {
+  font-family: 'Lato', sans-serif;
+  font-size: 14px !important;
+  font-weight: 300 !important;
+  background-color: rgba(88, 205, 166, 0.2) !important;
+  padding: 5px 15px;
+  margin-bottom: 15px;
+}
+
+.match_info_modal img {
+  height: 50px;
+  width: 50px;
+  margin: 10px 0px;
+}
+
+.match_info_modal .divider {
+  margin: 10px 5px 10px 0px;
+}
+
+.match_info_modal input[type="submit"] {
+  font-family: 'Lato', sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  background: #000;
+  text-transform: capitalize;
+  color: #fff !important;
+  padding: 15px 0px;
+  letter-spacing: 1px;
+  border: none;
+  width: 100%;
+  margin-bottom: 5px;
+  background-color: #E34B51 !important;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+.match_info_modal input[type="submit"]:hover {
+  background-color: rgba(238, 170, 2, 0.6) !important;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+.match_info_modal .action_btn_decline a {
+  font-family: 'Lato', sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  color: #fff !important;
+  background-color: rgba(47, 63, 91, 0.5) !important;
+  text-align: center;
+  width: 100% !important;
+  display: inline-block;
+  padding: 12px 0px;
+  margin-bottom: 15px;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+.match_info_modal .action_btn_decline a:hover {
+  color: #fff !important;
+  background-color: rgba(238, 170, 2, 0.6) !important;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+.match_info_modal .checkbox {
+  float: left;
+  margin-right: 10px;
+}
+
+.match_info_modal input[type="checkbox"] {
+  margin-right: 5px;
+  margin-bottom: 10px;
+}
+
+.match_info_modal .listed_network_members_header {
+  font-family: 'Lato', sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  text-transform: capitalize !important;
+}
+
+.match_info_modal .listed_network_members {
+  background-color: rgba(88, 205, 166, 0.2) !important;
+  text-transform: capitalize !important;
+  padding: 15px;
+  margin-bottom: 15px;
+}
+
+.match_info_modal .stat_percentage {
+  color: #E34B51 !important;
+  font-weight: bold !important;
+  font-size: 16px !important;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
