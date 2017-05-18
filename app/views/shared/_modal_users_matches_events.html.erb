@@ -1,17 +1,17 @@
-<span class="match_info_section">
-  <div id="<%= dom_id(user) %>_user_match_event" class="reveal-modal match_info_modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog"> 
+<span class="users_matches_events_section">
+  <div id="<%= dom_id(user) %>_user_match_event" class="reveal-modal user_matches_events_modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog"> 
     <h2 id="modalTitle-match-info" class="header"><%= @user.firstname %> events</h2>
     
       <!-- content -->
-      <div class="match_main_container">
-        <div class="match_content"> 
+      <div class="matches_events_main_container">
+        <div class="match_event_content"> 
           <span>Hi</span>
           <span class="bold_content"><%= "#{@user.firstname}!" %></span> 
           <span>your current match stats with the event <span class="bold_content">[<%# "#{event.title}" %>]</span> is </span>
           <span class="stats_cover">[<%# event.match(current_user) %>]</span>
         </div>
 
-        <div class="match_content" style="margin-bottom:0px;">
+        <div class="match_event_content" style="margin-bottom:0px;">
           <ul class="upper_list">
             <li>The higher the stats % is, the more likely you are to meet members of the same physical attraction, personality and calibre as you</li>
             <li>We highly recommend you attend events with a match stats of over <span class="stat_percentage">65%</span></li>
