@@ -71,7 +71,7 @@
                   </div>
                   <% if current_user.admin_pa_management_group %>
                     <div class="user_info_adj">
-                      <div class="user_name"><%= link_to truncate("#{user.firstname} #{user.lastname}", length: 15), user %></div>
+                      <div class="user_name"><%= link_to truncate(current_user.name_shortner(user), length: 15), user %></div>
                       <div class="user_profession"><%= truncate(user.profession, length: 25) %></div>
                       <div>
                         <span class="user_ref"><%= user.reference %></span>
@@ -81,7 +81,7 @@
                     </div>
                   <% else %>
                     <div class="user_info_adj">
-                      <div class="user_name"><%= link_to truncate("#{user.firstname} #{user.lastname}", length: 15), user %></div>
+                      <div class="user_name"><%= link_to truncate(current_user.name_shortner(user), length: 15), user %></div>
                       <div class="user_profession"><%= truncate(user.profession, length: 25) %></div>
                       <div>
                         <span class="profile_view"><%= link_to "profile", user %></span>
