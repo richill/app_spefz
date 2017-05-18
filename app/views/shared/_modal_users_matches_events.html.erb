@@ -1,12 +1,12 @@
 <span class="users_matches_events_section">
   <div id="<%= dom_id(user) %>_user_match_event" class="reveal-modal user_matches_events_modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog"> 
-    <h2 id="modalTitle-match-info" class="header"><%= @user.firstname %> events</h2>
+    <h2 id="modalTitle-match-info" class="header"><%= "#{user.firstname}'s" %> attending events</h2>
     
       <!-- content -->
       <div class="matches_events_main_container">
         <div class="match_event_content"> 
           <span>Hi</span>
-          <span class="bold_content"><%= "#{@user.firstname}!" %></span> 
+          <span class="bold_content"><%= "#{user.firstname}!" %></span> 
           <span>your current match stats with the event <span class="bold_content">[<%# "#{event.title}" %>]</span> is </span>
           <span class="stats_cover">[<%# event.match(current_user) %>]</span>
         </div>
