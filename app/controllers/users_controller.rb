@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   respond_to :html, :xml, :json
-  before_action :authenticate_user!, :set_user, only: [:show, :edit, :update, :destroy, :followings, :followers, :dashboard, :membership, :account, :settings]
+  before_action :authenticate_user!, :set_user, only: [:show, :edit, :update, :destroy, :followings, :followers, :dashboard, :membership, :account, :settings, :matches]
   before_filter :setup_friends, :setup_subscription, :setup_cards, :setup_events, :setup_invite_form, :setup_user_network_activities
 
   def index
@@ -253,6 +253,9 @@ class UsersController < ApplicationController
     unless current_user.admin_pa_management_group || current_user == @user
       redirect_to errorpermission_path
     end 
+  end
+
+  def matches
   end
 
   private
