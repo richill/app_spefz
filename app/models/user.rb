@@ -21,6 +21,8 @@ class User < ActiveRecord::Base
   validates_presence_of :category_gender, presence: true, message: "please select a category"
   validates_presence_of :category_country, presence: true, message: "please select a category"
 
+  has_one :preference, dependent: :destroy
+
   belongs_to :category_gender 
   belongs_to :category_role 
   belongs_to :category_managementgroup 

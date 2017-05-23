@@ -58,6 +58,7 @@ Rails.application.routes.draw do
     resources :socials
     resources :events
     resources :blogs
+    resources :preferences
     member do
       get 'dashboard'
       get 'membership'
