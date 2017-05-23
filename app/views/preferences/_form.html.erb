@@ -1,11 +1,34 @@
-<%= simple_form_for(@preference) do |f| %>
-  <%= f.error_notification %>
+<div class= "medium-12 columns user_general_settings_section preference_main_form_page">
 
-  <div class="form-inputs">
-    <%= f.input :town %>
+  <!-- left_column_section -->
+  <div class="medium-2 columns left_column_section">
+    <%= render 'shared/content_user_left_column' %>
   </div>
+  <!-- left_column_section -->
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+
+  <!-- right_column_section -->
+  <div class="medium-10 columns right_column_section">
+    <div class="right_inner_section">
+      <div class="tree_link">
+        <span><i class="fa fa-user" aria-hidden="true"></i> <%= link_to "#{@user.firstname}", user_path(@user)%></span> <span class="fwd_sign">></span> <span>edit preference</span>
+      </div>
+      <div class="user_general_settings_inner_section preference_edit_update_form">
+        <%= simple_form_for [@user, @preference] do |f| %>
+          <%= f.error_notification %>
+
+          <div class="form-inputs">
+            <%= f.input :town %>
+          </div>
+
+          <div class="form-actions">
+            <%= f.button :submit %>
+          </div>
+        <% end %>
+
+      
+      </div>
+    </div>
   </div>
-<% end %>
+  <!-- right_column_section -->
+</div>

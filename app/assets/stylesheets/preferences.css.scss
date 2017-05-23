@@ -1,0 +1,297 @@
+/*=========================================
+    Section: preferences edit/update page
+    File: views / preferences / _form.html.erb
+  =========================================*/
+
+.user_general_settings_section {
+  padding: 0px !important;
+  background: url("img_background_main.png") repeat;
+}
+
+// --------left_column_section--------
+.user_general_settings_section .left_column_section {
+  background-color: #283041;
+  min-height: 2500px;
+}
+
+// @media only screen and (max-width: 1365px) {
+//  .user_general_settings_section .left_inner_section {
+//     position: fixed;
+//     width: 196px;
+//   }
+// }
+
+.user_general_settings_section .left_inner_section ul {
+  margin: 0px !important;
+  list-style: none;
+  background-color: rgba(47, 63, 91, 0.4);
+}
+
+.user_general_settings_section .left_inner_section .list_options {
+  border-bottom: 1px solid #364760;
+}
+
+.user_general_settings_section .left_inner_section .active {
+  background-color: #364760 !important;
+  border-top: 2px solid rgba(47, 63, 91, 0.6);
+  border-bottom: 1px solid #727985;
+  text-shadow: 2px 3px 30px #fff;
+}
+
+.user_general_settings_section .left_inner_section ul li a {
+  color: #fff !important;
+  padding: 20px 15px;
+  display: inline-block;
+  width: 100%;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease; 
+}
+
+.user_general_settings_section .left_inner_section ul li i {
+  margin-right: 3px; 
+}
+
+.user_general_settings_section .left_inner_section ul li a:hover {
+  color: #E34B51 !important;
+  background-color: #364760 !important;
+  width: 100%;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease; 
+}
+
+.user_general_settings_section .left_inner_section .option_header {
+  font-family: 'Lato', sans-serif;
+  font-size: 14px !important;
+  font-weight: 300 !important;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+}
+
+// --------right_column_section--------
+.user_general_settings_section .right_column_section {
+  height: 2500px;
+}
+
+@media only screen and (min-width: 1750px) {
+  .user_general_settings_inner_section  {
+    width: 1420px;
+  }
+}
+
+.user_general_settings_section .right_inner_section .tree_link {
+  font-family: 'Lato', sans-serif;
+  font-size: 12px !important;
+  padding: 15px 0px;
+  color: #283041 !important;
+  border-bottom: 1px solid #ededf3 !important;
+  margin-bottom: 15px;
+}
+
+.user_general_settings_section .right_inner_section .tree_link a {
+  font-family: 'Lato', sans-serif;
+  font-size: 12px !important;
+  color: #283041 !important;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease; 
+}
+
+.user_general_settings_section .right_inner_section .tree_link a:hover {
+  color: #E34B51 !important;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease; 
+}
+
+.user_general_settings_section .right_inner_section .tree_link_btn a {
+  background-color: #E34B51;
+  padding: 6px 15px;
+  margin-left: 15px !important;
+  border: 1px solid #E34B51;
+  border-radius: 3px;
+  color: #fff !important;
+  font-weight: 300;
+  letter-spacing: 1px;
+  word-spacing: 2px;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease;
+} 
+
+.user_general_settings_section .right_inner_section .tree_link_btn a:hover {
+  background-color: #2F3F5B !important;
+  border: 1px solid #2F3F5B;
+  color: #fff !important;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease;
+} 
+
+.user_general_settings_section .right_inner_section .fwd_sign {
+  margin: 0px 5px;
+}
+
+.user_general_settings_section .right_inner_section .preference_edit_update_form #user_image {
+  height: 100%;
+  margin-bottom: 0px !important;
+  padding: 15px;
+  background-color: rgba(225, 71, 62, 0.6) !important;
+  border-radius: 2px;
+  text-align: center;
+  color: #fff;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+.user_general_settings_section .right_inner_section .preference_edit_update_form label {
+  font-family: 'Lato', sans-serif;
+  font-size: 15px !important;
+  font-weight: 300 !important;
+  text-transform: capitalize;
+}
+
+.user_general_settings_section .right_inner_section .preference_edit_update_form .user_firstname {
+  width: 540px;
+  float: left;
+  margin-bottom: 15px;
+  margin-top: 25px;
+  margin-right: 18px;
+}
+
+.user_general_settings_section .right_inner_section .preference_edit_update_form .user_lastname {
+  width: 540px;
+  float: left;
+  margin-bottom: 15px;
+  margin-top: 25px;
+}
+
+.user_general_settings_section .right_inner_section .preference_edit_update_form .user_profession {
+  width: 545px;
+  float: left;
+  margin-right: 15px;
+  margin-top: 25px;
+}
+
+.user_general_settings_section .right_inner_section .preference_edit_update_form .user_category_gender {
+  width: 545px;
+  float: left;
+  margin-top: 25px;
+}
+
+.user_general_settings_section .right_inner_section .preference_edit_update_form #user_category_gender_id {
+  height: 40px;
+}
+
+.user_general_settings_section .right_inner_section .preference_edit_update_form .user_category_country {
+  width: 545px;
+  float: left;
+  margin-right: 15px;
+  margin-top: 25px;
+}
+
+.user_general_settings_section .right_inner_section .preference_edit_update_form .user_city {
+  width: 545px;
+  float: left;
+  margin-top: 25px;
+}
+
+.user_general_settings_section .right_inner_section .preference_edit_update_form #user_category_country_id {
+  height: 40px;
+}
+
+.user_general_settings_section .right_inner_section .preference_edit_update_form .label_interest {
+  font-family: 'Lato', sans-serif;
+  font-size: 15px !important;
+  font-weight: 300 !important;
+  text-transform: capitalize;
+  margin-top: 12px;
+}
+
+.user_general_settings_section .right_inner_section .user_description {
+  margin-top: 25px;
+}
+
+.user_general_settings_section .right_inner_section .preference_edit_update_form #user_description {
+  height: 60px;
+}
+
+.user_general_settings_section .right_inner_section .preference_edit_update_form .user_link_fb {
+  width: 540px;
+  float: left;
+  margin-bottom: 15px;
+  margin-top: 25px;
+  margin-right: 18px;
+}
+
+.user_general_settings_section .right_inner_section .preference_edit_update_form .user_link_twitter {
+  width: 540px;
+  float: left;
+  margin-bottom: 15px;
+  margin-top: 25px;
+}
+
+.user_general_settings_section .right_inner_section .preference_edit_update_form input[type="text"]:focus {
+  border: 1px solid rgba(75, 180, 191, 0.5) !important;
+  background-color: #fff !important;
+}
+
+.user_general_settings_section .right_inner_section .preference_edit_update_form input[type="submit"] {
+  font-family: 'Lato', sans-serif;
+  font-size: 20px;
+  color: #fff !important;
+  font-weight: 300;
+  background: #000;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+  padding: 10px 25px;
+  width: 100%;
+  border: none;
+  display: inline-block;
+  margin-bottom: 0px !important;
+  background-color: #4BB4BF !important;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+.user_general_settings_section .right_inner_section .invite_option {
+  background-color: rgba(75, 180, 191, 0.2) !important;
+  padding: 15px !important;
+  margin: 30px 0px;
+}
+
+.user_general_settings_section .right_inner_section .admin_content {
+  background-color: rgba(75, 180, 191, 0.2) !important;
+  padding: 15px !important;
+  margin: 30px 0px;
+}
+
+.user_general_settings_section .right_inner_section .current_role_group {
+  font-family: 'Lato', sans-serif;
+  font-size: 20px;
+  color: #283041 !important;
+  font-weight: 300; 
+}
+
+.user_general_settings_section .right_inner_section .current_role_group_info {
+  padding: 5px 15px;
+  background-color: rgba(75, 180, 191, 0.4) !important;
+}
+
+.user_general_settings_section .right_inner_section .select_role_group {
+  padding: 20px 0px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
