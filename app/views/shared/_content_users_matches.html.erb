@@ -110,6 +110,9 @@
               <% end %>
             <ul/>
           <% else %>
+            <div><%= render 'shared/content_card_no_result' %></div>
+            <div><%= render 'shared/content_matches_no_preference' %></div>
+            <div><%= render 'shared/content_matches_no_result' %></div>
             <div>in order to see your matches you complete your preference</div>
           <% end %>
           <div class="clear"></div>
