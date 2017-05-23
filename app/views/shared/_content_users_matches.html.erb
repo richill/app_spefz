@@ -5,14 +5,12 @@
     <div class="medium-12 columns search_container">
       <div class="search_inner_container"> 
         <ul class="search_fields_left">
-          <li class="field preference_btn">
-            <% if current_user.preference? %>
-              <%= link_to "view preference", "#" %>
-            <% else %>
-              <%= link_to "create preference", "#" %>
-            <% end %>
-          </li>
-          <li class="field preference_btn"><%= link_to "edit preference", "#" %></li>
+          <% if current_user.preference.present? %>
+            <li class="field preference_btn"><%= link_to "view preference", "#" %></li>
+            <li class="field preference_btn"><%= link_to "edit preference", "#" %></li>
+          <% else %>
+            <li class="field preference_btn"><%= link_to "create preference", "#" %></li>
+          <% end %>
         </ul>   
 
         <ul class="search_fields_right">
