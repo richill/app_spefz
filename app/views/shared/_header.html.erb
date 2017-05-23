@@ -18,7 +18,8 @@
             <%= link_to 'activity', image_restriction_page_path %>
           <% end %>
         </li>
-        <li class="link responsive_header_link match_hide">
+        <!-- <li class="link responsive_header_link match_hide"> -->
+        <li class="link responsive_header_link">
           <% if current_user.image? %>
             <%= link_to 'my matches', matches_user_path(current_user) %>
           <% else %>
