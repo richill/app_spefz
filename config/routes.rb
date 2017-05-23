@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  resources :preferences
+
   resources :managements do
     collection do
       get 'details'

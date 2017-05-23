@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170418141031) do
+ActiveRecord::Schema.define(version: 20170523191227) do
 
   create_table "activities", force: :cascade do |t|
     t.integer  "trackable_id"
@@ -437,6 +437,12 @@ ActiveRecord::Schema.define(version: 20170418141031) do
     t.string   "status"
     t.string   "event_payment_date_status"
     t.string   "subscription_payment_date_status"
+  end
+
+  create_table "preferences", force: :cascade do |t|
+    t.string   "town"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "rates", force: :cascade do |t|
