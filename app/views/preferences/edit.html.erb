@@ -1,6 +1,10 @@
-<h1>Editing Preference</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @preference %> |
-<%= link_to 'Back', preferences_path %>
+<% if action_name == 'new'  %>
+  <% provide(:title, "Create Preference") %>
+<% else %>
+  <% provide(:title, "Update Preference") %>
+<% end %>
+<div>
+  <%= render 'shared/header' %>
+  <%= render 'form' %>
+  <%= render 'shared/footer' %>
+</div>

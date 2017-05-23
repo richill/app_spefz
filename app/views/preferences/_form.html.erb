@@ -11,7 +11,15 @@
   <div class="medium-10 columns right_column_section">
     <div class="right_inner_section">
       <div class="tree_link">
-        <span><i class="fa fa-user" aria-hidden="true"></i> <%= link_to "#{@user.firstname}", user_path(@user)%></span> <span class="fwd_sign">></span> <span>edit preference</span>
+        <span><i class="fa fa-user" aria-hidden="true"></i> <%= link_to "#{current_user.firstname}", user_path(current_user)%></span> 
+        <span class="fwd_sign">></span> 
+        <span>
+          <% if action_name == 'new' %>
+            <span>create preference</span>
+          <% else %>
+            <span>update preference</span>
+          <% end %>
+        </span>
       </div>
       <div class="user_general_settings_inner_section preference_edit_update_form">
         <%= simple_form_for [@user, @preference] do |f| %>
