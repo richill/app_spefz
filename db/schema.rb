@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170523192103) do
+ActiveRecord::Schema.define(version: 20170523192416) do
 
   create_table "activities", force: :cascade do |t|
     t.integer  "trackable_id"
@@ -445,7 +445,10 @@ ActiveRecord::Schema.define(version: 20170523192103) do
     t.datetime "updated_at", null: false
     t.integer  "user_id"
     t.string   "name"
+    t.string   "slug"
   end
+
+  add_index "preferences", ["slug"], name: "index_preferences_on_slug", unique: true
 
   create_table "rates", force: :cascade do |t|
     t.integer  "rater_id"
