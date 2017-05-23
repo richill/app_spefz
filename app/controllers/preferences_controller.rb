@@ -1,5 +1,6 @@
 class PreferencesController < ApplicationController
-  before_action :set_preference, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, :set_preference, only: [:show, :edit, :update, :destroy]
+  before_filter :setup_friends, :setup_subscription, :setup_cards, :setup_events, :setup_invite_form, :setup_user_network_activities
 
   # GET /preferences
   # GET /preferences.json
@@ -21,8 +22,12 @@ class PreferencesController < ApplicationController
   #   @preference = Preference.new
   # end
   def new
-    @user = current_user
-    @preference = @user.build_preference
+    if current_user.subscribed_access?
+      @user = current_user
+      @preference = @user.build_preference
+    else
+      redirect_to subscription_path(@premium_plan)
+    end
   end
 
   # GET /preferences/1/edit
@@ -48,18 +53,22 @@ class PreferencesController < ApplicationController
   #   end
   # end
   def create
-    @user = User.friendly.find(params[:user_id])
-    @user.preference = Preference.new(preference_params)
-    @preference = @user.preference
+    if current_user.subscribed_access?
+      @user = User.friendly.find(params[:user_id])
+      @user.preference = Preference.new(preference_params)
+      @preference = @user.preference
 
-    respond_to do |format|
-      if @preference.save
-        format.html { redirect_to @preference, notice: 'Preference was successfully created.' }
-        format.json { render :show, status: :created, location: @preference }
-      else
-        format.html { render :new }
-        format.json { render json: @preference.errors, status: :unprocessable_entity }
+      respond_to do |format|
+        if @preference.save
+          format.html { redirect_to @preference, notice: 'Preference was successfully created.' }
+          format.json { render :show, status: :created, location: @preference }
+        else
+          format.html { render :new }
+          format.json { render json: @preference.errors, status: :unprocessable_entity }
+        end
       end
+    else
+      redirect_to subscription_path(@premium_plan)
     end
   end
 
@@ -108,16 +117,46 @@ class PreferencesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    # def set_preference
-    #   @preference = Preference.find(params[:id])
-    # end
-    def set_preference
-      @preference = Preference.friendly.find(params[:id])
-    end
+  def set_social
+    @social = Social.friendly.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def preference_params
-      params.require(:preference).permit(:town, :user_id, :name, :slug)
-    end
+  def setup_friends
+    @user = User.find(current_user.id)
+    @friend = User.find_by_email(params[:id])
+  end
+
+  def setup_subscription
+    @premium_plan = Subscription.find_by(title:"premium") 
+  end
+
+  def setup_cards
+    @cards = Card.all
+  end
+
+  def setup_events
+    @events = Event.all
+  end
+
+  def setup_invite_form
+    @invite = Invite.new
+  end
+
+  def setup_user_network_activities
+    @user_network_activities = Activity.order("created_at desc").where(owner_id: current_user.friends)
+    @activity =  Activity.last
+  end
+
+  # Use callbacks to share common setup or constraints between actions.
+  # def set_preference
+  #   @preference = Preference.find(params[:id])
+  # end
+  def set_preference
+    @preference = Preference.friendly.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def preference_params
+    params.require(:preference).permit(:town, :user_id, :name, :slug)
+  end
 end
