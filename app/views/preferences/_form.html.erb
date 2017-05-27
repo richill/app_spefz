@@ -31,8 +31,16 @@
                 <ul>
                   <li>
                     <div class="pref_header">
-                      <div class="medium-6 columns left_pref_section">about_me</div>
-                      <div class="medium-6 columns right_pref_section">my_ideal</div>
+                      <div class="medium-6 columns left_pref_section">
+                        <div class="inner_pref_section">
+                          <span><%= current_user.firstname %></span>
+                        </div>
+                      </div>
+                      <div class="medium-6 columns right_pref_section">
+                        <div class="inner_pref_section">
+                          <span>my ideal partner</span>
+                        </div>
+                      </div>
                     </div>
                   </li>
                 </ul>
