@@ -300,18 +300,28 @@
   margin: 0px;
 }
 
+
+.pref_main_header_section {
+  margin-bottom: 15px;
+  background-color: red;
+}
+
 .user_general_settings_section .preference_main_section .pref_upper_img {
   margin-bottom: 15px;
 }
 
 .user_general_settings_section .preference_main_section .left_pref_section {
   padding-left: 0px !important;
-  background-color: red;
+  //background-color: red;
 }
 
 .user_general_settings_section .preference_main_section .right_pref_section {
   padding-right: 0px !important;
-  background-color: green;
+  //background-color: green;
+}
+
+.user_general_settings_section .preference_main_section input[type="text"] {
+  background-color: rgba(40, 48, 45, 0.05) !important;
 }
 
 
@@ -324,7 +334,7 @@
 Timline CSS
 -------------------------------- */
 
-.preference_main_section .title a {
+.user_general_settings_section .preference_main_section .title a {
   font-family: 'Lato', sans-serif;
   font-size: 25px;
   font-weight: bold;
@@ -335,14 +345,14 @@ Timline CSS
   -o-transition: all 0.3s ease;
 }
 
-.preference_main_section .title a:hover {
+.user_general_settings_section .preference_main_section .title a:hover {
   color: #E34B51 !important;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
 }
 
-.preference_main_section .title_attend a {
+.user_general_settings_section .preference_main_section .title_attend a {
   font-family: 'Lato', sans-serif;
   font-size: 25px;
   font-weight: bold;
@@ -353,53 +363,53 @@ Timline CSS
   -o-transition: all 0.3s ease;
 }
 
-.preference_main_section .title_attend a:hover {
+.user_general_settings_section .preference_main_section .title_attend a:hover {
   color: #E34B51 !important;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
 }
 
-.preference_main_section .cd-container::after {
+.user_general_settings_section .preference_main_section .cd-container::after {
   content: '';
   display: table;
   clear: both;
 }
 
-.preference_main_section #cd-timeline {
+.user_general_settings_section .preference_main_section #cd-timeline {
   position: relative;
   margin-top: 2em;
   margin-bottom: 2em;
-  padding-bottom: 100px !important;
+  padding-bottom: 50px !important;
   border-bottom: 1px solid rgba(47, 63, 91, 0.1);
 }
 
-.preference_main_section #cd-timeline::before {
+.user_general_settings_section .preference_main_section #cd-timeline::before {
   content: '';
   position: absolute;
   top: 0;
-  left: 23px;
+  left: 19px;
   height: 100%;
   width: 4px;
   background-color: rgba(47, 63, 91, 0.1);
 }
 
-.preference_main_section .cd-timeline-block {
+.user_general_settings_section .preference_main_section .cd-timeline-block {
   position: relative;
   margin: 4px 0px 25px 5px !important;
 }
 
-.preference_main_section .cd-timeline-block:after {
+.user_general_settings_section .preference_main_section .cd-timeline-block:after {
   content: "";
   display: table;
   clear: both;
 }
 
-.preference_main_section .cd-timeline-block:last-child {
+.user_general_settings_section .preference_main_section .cd-timeline-block:last-child {
   margin-bottom: 0;
 }
 
-.preference_main_section .cd-timeline-img {
+.user_general_settings_section .preference_main_section .left_pref_section .cd-timeline-img {
   position: absolute;
   top: 0;
   left: 0;
@@ -409,38 +419,44 @@ Timline CSS
   box-shadow: 0 0 0 4px white, inset 0 2px 0 rgba(0, 0, 0, 0.08), 0 3px 0 4px rgba(0, 0, 0, 0.05);
 }
 
-.preference_main_section .cd-timeline-img i {
+.user_general_settings_section .preference_main_section .right_pref_section .cd-timeline-img {
+  position: absolute;
+  top: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px white, inset 0 2px 0 rgba(0, 0, 0, 0.08), 0 3px 0 4px rgba(0, 0, 0, 0.05);
+}
+
+.user_general_settings_section .preference_main_section .cd-timeline-img i {
   font-size: 18px;
   color: #fff;
   display: block;
   width: 24px;
   height: 24px;
   position: relative;
-  // left: 59%;
   top: 57%;
   margin-left: -12px;
   margin-top: -12px;
 }
 
-.preference_main_section .cd-star {
+.user_general_settings_section .preference_main_section .cd-star {
   background: #283041;
 }
 
-.preference_main_section .fa {
+.user_general_settings_section .preference_main_section .fa {
   color: #fff !important;
 }
 
-.preference_main_section .fa-user {
-  left: 63%;
+.user_general_settings_section.preference_main_section .fa-user {
+  left: 63% !important;
 }
 
-
-.preference_main_section .fa-users {
-  left: 56%;
+.user_general_settings_section.preference_main_section .fa-users {
+  left: 56% !important;
 }
 
-
-.preference_main_section .cd-timeline-content {
+.user_general_settings_section .preference_main_section .cd-timeline-content {
   position: relative;
   margin-left: 60px;
   margin-bottom: 25px;
@@ -450,13 +466,13 @@ Timline CSS
   box-shadow: 0 3px 0 rgba(47, 63, 91, 0.1);
 }
 
-.preference_main_section .cd-timeline-content:after {
+.user_general_settings_section .preference_main_section .cd-timeline-content:after {
   content: "";
   display: table;
   clear: both;
 }
 
-.preference_main_section .cd-timeline-content h2 {
+.user_general_settings_section .preference_main_section .cd-timeline-content h2 {
   font-family: 'Lato', sans-serif;
   font-size: 25px;
   color: #2F3F5B;
@@ -464,18 +480,18 @@ Timline CSS
   text-transform: capitalize;
 }
 
-.preference_main_section .cd-timeline-content p {
+.user_general_settings_section .preference_main_section .cd-timeline-content p {
   margin-top: 5px !important;
 }
 
-.preference_main_section .cd-timeline-content p, .cd-timeline-content .cd-read-more, .cd-timeline-content .cd-date {
+.user_general_settings_section .preference_main_section .cd-timeline-content p, .cd-timeline-content .cd-read-more, .cd-timeline-content .cd-date {
   font-family: 'Lato', sans-serif;
   font-weight: 400;
   color: #2F3F5B;
   line-height: 25px;
 }
 
-.preference_main_section .cd-timeline-content::before {
+.user_general_settings_section .preference_main_section .cd-timeline-content::before {
   content: '';
   position: absolute;
   top: 16px;
