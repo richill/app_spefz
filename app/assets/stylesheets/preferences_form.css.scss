@@ -306,12 +306,12 @@
 
 .user_general_settings_section .preference_main_section .left_pref_section {
   padding-left: 0px !important;
-  //background-color: red;
+  background-color: red;
 }
 
 .user_general_settings_section .preference_main_section .right_pref_section {
   padding-right: 0px !important;
-  //background-color: green;
+  background-color: green;
 }
 
 
@@ -416,7 +416,7 @@ Timline CSS
   width: 24px;
   height: 24px;
   position: relative;
-  left: 59%;
+  // left: 59%;
   top: 57%;
   margin-left: -12px;
   margin-top: -12px;
@@ -429,6 +429,16 @@ Timline CSS
 .preference_main_section .fa {
   color: #fff !important;
 }
+
+.preference_main_section .fa-user {
+  left: 63%;
+}
+
+
+.preference_main_section .fa-users {
+  left: 56%;
+}
+
 
 .preference_main_section .cd-timeline-content {
   position: relative;
