@@ -285,11 +285,26 @@
   padding: 20px 0px;
 }
 
+.user_general_settings_section .preference_main_section {
+  padding: 0px !important;
+}
+
+.user_general_settings_section .preference_main_section .pref_upper_img {
+  margin-bottom: 15px;
+}
+
 
 
 // --------right_column_section: left_section_aboutme-----------
-// --------right_column_section: right_section_idealdate--------
+.user_general_settings_section .preference_main_section .left_pref_section {
+  background-color: red;
+}
 
+
+// --------right_column_section: right_section_idealdate--------
+.user_general_settings_section .preference_main_section .right_pref_section {
+  background-color: green;
+}
 
 
 
@@ -297,21 +312,10 @@
 //     workings
 // -------------------------------
 
-.preference_main_section {
-  padding: 0px !important;
-}
 
-.pref_upper_img {
-  margin-bottom: 15px;
-}
 
-.left_pref_section {
-  background-color: red;
-}
 
-.right_pref_section {
-  background-color: green;
-}
+
 
 
 
