@@ -25,12 +25,6 @@
         <%= simple_form_for [@user, @preference] do |f| %>
           <%= f.error_notification %>
           <div class="form-inputs medium-12 columns preference_form">
-
-
-
-
-
-            <!-- workings -->
             <div class="medium-12 columns preference_main_section">
               <div class="pref_upper_img"><%= image_tag("img_background_banner.jpg") %></div>
               <div class="pref_main_header_section">
@@ -45,6 +39,12 @@
               </div>
               <div class="clear"></div>
               <div class="background_main">
+
+
+
+
+
+                <!-- workings -->
                 <section id="cd-timeline" class="cd-container">
                   <ul>
                     <!-- section_town -->
@@ -54,7 +54,11 @@
                           <div class="cd-timeline-img cd-star">
                             <i class="fa fa-user"></i>
                           </div>
-                          <div class="cd-timeline-content"><%= f.input :town, placeholder: "my town" %></div>
+                          <div class="cd-timeline-content">
+                            <div class="title">town</div>
+                            <div class="title_subcontent">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus mollis dignissim. Praesent a dolor ac purus egestas ullamcorper. Praesent sed porttitor nulla.</div>
+                            <div><%= f.input :town, placeholder: "my town", label: false %></div>
+                          </div>
                         </div>
 
                         <div class="medium-6 columns right_pref_section">
@@ -64,10 +68,11 @@
                           <div class="cd-timeline-content">
                             <div class="title">town</div>
                             <div class="title_subcontent">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus mollis dignissim. Praesent a dolor ac purus egestas ullamcorper. Praesent sed porttitor nulla.</div>
-                            <%= f.input :town, placeholder: "my ideal date's town", label: false %>
+                            <div><%= f.input :town, placeholder: "my ideal date's town", label: false %></div>
                           </div>
                         </div>
                       </div>
+                      <div class="clear"></div>
                     </li>
                     <!-- section_town -->
 
@@ -88,32 +93,21 @@
                           <div class="cd-timeline-content"><%= f.input :town, placeholder: "my ideal date's town" %></div>
                         </div>
                       </div>
+                      <div class="clear"></div>
                     </li>
                     <!-- section_town -->
                   </ul>
                 </section>
+                <!-- workings -->
+
+
+
+
+
+
+
               </div>
             </div>
-            <!-- workings -->
-
-
-
-
-
-      
-
-
-
-
-
-
-
-
-
-
-
-
-
           </div>
           <div class="clear"></div>
           <div class="form-actions">
