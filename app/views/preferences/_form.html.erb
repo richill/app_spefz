@@ -24,11 +24,25 @@
       <div class="user_general_settings_inner_section preference_edit_update_form">
         <%= simple_form_for [@user, @preference] do |f| %>
           <%= f.error_notification %>
-
           <div class="form-inputs">
-            <%= f.input :town %>
-          </div>
 
+
+            <!-- workings -->
+            <div class="medium-12 columns preference_main_section">
+              <div class="pref_upper_img"><%= image_tag("img_background_banner.jpg") %></div>
+              <div class="medium-6 columns left_pref_section">left_pref_section: about_me</div>
+              <div class="medium-6 columns right_pref_section">right_pref_section: my_ideal</div>
+            </div>
+
+            <%= f.input :town %>
+            <!-- workings -->
+
+
+
+
+
+
+          </div>
           <div class="form-actions">
             <%= f.button :submit %>
           </div>
