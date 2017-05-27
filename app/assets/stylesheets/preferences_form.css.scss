@@ -426,9 +426,14 @@ Timline CSS
   background: #283041;
 }
 
+.preference_main_section .fa {
+  color: #fff !important;
+}
+
 .preference_main_section .cd-timeline-content {
   position: relative;
   margin-left: 60px;
+  margin-bottom: 25px;
   background: #fff;
   border-radius: 0.25em;
   padding: 1em;
