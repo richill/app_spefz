@@ -354,6 +354,8 @@
 }
 
 
+
+
 /* -------------------------------- 
 Timline_start CSS
 -------------------------------- */
@@ -538,7 +540,14 @@ Timline_end CSS
 //     workings
 // -------------------------------
 
-
+.pref_img_cover {
+  background-color: rgba(75, 180, 191, 0.2) !important;
+  height: 50px;
+  width: 50px;
+  padding: 3px;
+  border-radius: 200px;
+  display: inline-block;
+}
 
 
 
