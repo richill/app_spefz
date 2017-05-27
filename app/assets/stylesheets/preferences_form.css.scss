@@ -301,7 +301,7 @@
 }
 
 
-.pref_main_header_section {
+.user_general_settings_section .pref_main_header_section {
   margin-bottom: 15px;
   background-color: red;
 }
@@ -324,6 +324,23 @@
   background-color: rgba(40, 48, 45, 0.05) !important;
 }
 
+.title {
+  font-family: 'Lato', sans-serif;
+  font-size: 15px !important;
+  font-weight: 300 !important;
+  text-transform: capitalize;
+}
+
+.title_subcontent {
+  font-family: 'Lato', sans-serif;
+  font-size: 12px !important;
+  font-weight: 300 !important;
+  letter-spacing: 1px;
+  word-spacing: 1px;
+  color: #4BB4BF;
+  margin-bottom: 6px;
+}
+
 
 // -------------------------------
 //     workings
@@ -331,7 +348,7 @@
 
 
 /* -------------------------------- 
-Timline CSS
+Timline_start CSS
 -------------------------------- */
 
 .user_general_settings_section .preference_main_section .title a {
@@ -448,11 +465,11 @@ Timline CSS
   color: #fff !important;
 }
 
-.user_general_settings_section.preference_main_section .fa-user {
+.user_general_settings_section .preference_main_section .fa-user {
   left: 63% !important;
 }
 
-.user_general_settings_section.preference_main_section .fa-users {
+.user_general_settings_section .preference_main_section .fa-users {
   left: 56% !important;
 }
 
@@ -501,6 +518,10 @@ Timline CSS
   border: 7px solid transparent;
   border-right: 7px solid #fff;
 }
+
+/* -------------------------------- 
+Timline_end CSS
+-------------------------------- */
 
 
 
