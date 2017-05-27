@@ -285,6 +285,12 @@
   padding: 20px 0px;
 }
 
+.user_general_settings_section .preference_form {
+  margin-bottom: 30px;
+  padding: 0px !important;
+  //background-color: yellow;
+}
+
 .user_general_settings_section .preference_main_section {
   padding: 0px !important;
 }
@@ -293,19 +299,15 @@
   margin-bottom: 15px;
 }
 
-
-
-// --------right_column_section: left_section_aboutme-----------
 .user_general_settings_section .preference_main_section .left_pref_section {
-  background-color: red;
+  padding-left: 0px !important;
+  //background-color: red;
 }
 
-
-// --------right_column_section: right_section_idealdate--------
 .user_general_settings_section .preference_main_section .right_pref_section {
-  background-color: green;
+  padding-right: 0px !important;
+  //background-color: green;
 }
-
 
 
 // -------------------------------
@@ -313,9 +315,10 @@
 // -------------------------------
 
 
-
-
-
+.preference_main_section ul {
+  list-style: none;
+  margin: 0px;
+}
 
 
 
