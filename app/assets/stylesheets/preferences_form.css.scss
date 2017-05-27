@@ -6,7 +6,6 @@
 .user_general_settings_section {
   padding: 0px !important;
   background: url("img_background_main.png") repeat;
-  // background: url("img_background_banner.jpg")  no-repeat;
 }
 
 // --------left_column_section--------
@@ -288,7 +287,6 @@
 .user_general_settings_section .preference_form {
   margin-bottom: 30px;
   padding: 0px !important;
-  //background-color: yellow;
 }
 
 .user_general_settings_section .preference_main_section {
@@ -300,23 +298,16 @@
   margin: 0px;
 }
 
-.user_general_settings_section .pref_main_header_section {
-  margin-bottom: 15px;
-  background-color: red;
-}
-
 .user_general_settings_section .preference_main_section .pref_upper_img {
-  margin-bottom: 15px;
+  margin-bottom: 25px;
 }
 
 .user_general_settings_section .preference_main_section .left_pref_section {
   padding-left: 0px !important;
-  //background-color: red;
 }
 
 .user_general_settings_section .preference_main_section .right_pref_section {
   padding-right: 0px !important;
-  //background-color: green;
 }
 
 .user_general_settings_section .preference_main_section input[type="text"] {
@@ -334,14 +325,14 @@
   font-family: 'Lato', sans-serif;
   font-size: 12px !important;
   font-weight: 300 !important;
+  font-style: italic;
   letter-spacing: 1px;
   word-spacing: 1px;
   color: #4BB4BF;
   margin-bottom: 6px;
 }
 
-
-.pref_main_header_section .inner_pref_section {
+.user_general_settings_section .pref_main_header_section .inner_pref_section {
   font-family: 'Lato', sans-serif;
   font-size: 15px !important;
   font-weight: bold !important;
@@ -351,10 +342,19 @@
   padding: 15px;
   text-align: center;
   text-transform: capitalize;
+  border: 1px solid rgba(75, 180, 191, 0.2);
 }
 
 
-
+.user_general_settings_section .pref_main_header_section .pref_img_cover {
+  background-color: rgba(75, 180, 191, 0.2) !important;
+  height: 50px;
+  width: 50px;
+  padding: 3px;
+  border-radius: 200px;
+  display: inline-block;
+  margin-bottom: 3px;
+}
 
 /* -------------------------------- 
 Timline_start CSS
@@ -484,7 +484,7 @@ Timline_start CSS
 
 .user_general_settings_section .preference_main_section .cd-timeline-content {
   position: relative;
-  margin-left: 60px;
+  margin-left: 55px;
   margin-bottom: 25px;
   background: #fff;
   border-radius: 0.25em;
@@ -540,14 +540,7 @@ Timline_end CSS
 //     workings
 // -------------------------------
 
-.pref_img_cover {
-  background-color: rgba(75, 180, 191, 0.2) !important;
-  height: 50px;
-  width: 50px;
-  padding: 3px;
-  border-radius: 200px;
-  display: inline-block;
-}
+
 
 
 

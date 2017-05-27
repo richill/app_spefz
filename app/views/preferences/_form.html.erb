@@ -33,15 +33,20 @@
                     <div class="pref_header">
                       <div class="medium-6 columns left_pref_section">
                         <div class="inner_pref_section">
-                          <div class="pref_img_cover"><%= link_to(cl_image_tag(current_user.image, :transformation=>[{:gravity=>"face", :width=>50, :height=>50, :crop=>"fill", :radius=>"max"}]), "#", id: "") %></div>
-                          <span><%# link_to(image_tag("img-profile-image-default.png", :alt =>  "image", :class =>"#", id: "notificationLink_profile"), '#') %></span>
+                          <div class="pref_img_cover">
+                            <% if current_user.image? %>
+                              <%= link_to(cl_image_tag(current_user.image, :transformation=>[{:gravity=>"face", :width=>50, :height=>50, :crop=>"fill", :radius=>"max"}]), "#", id: "") %>
+                            <% else %>
+                              <%= link_to(image_tag("img-profile-image-default.png", :alt =>  "image", :class =>"#", id: "", style:"border-radius: 200px;"), '#') %>
+                            <% end %>
+                          </div>
                           <div><%= current_user.firstname %></div>
                         </div>
                       </div>
                       <div class="medium-6 columns right_pref_section">
 
                         <div class="inner_pref_section">
-                          <span class="pref_img_cover"><%= link_to(image_tag("img-profile-image-default.png", :alt =>  "image", :class =>"#", id: "", style:"border-radius: 200px;"), '#') %></span>
+                          <div class="pref_img_cover"><%= link_to(image_tag("img-profile-image-default.png", :alt =>  "image", :class =>"#", id: "", style:"border-radius: 200px;"), '#') %></div>
                           <div>my ideal partner</div>
                         </div>
                       </div>
