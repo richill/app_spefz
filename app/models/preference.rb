@@ -6,7 +6,15 @@ class Preference < ActiveRecord::Base
   before_create :preference_name
 
   belongs_to :category_idealrelationship, dependent: :destroy
-  
+  belongs_to :category_idealparent, dependent: :destroy
+  belongs_to :category_idealkid, dependent: :destroy
+  has_and_belongs_to_many :category_idealstatus, dependent: :destroy
+  has_and_belongs_to_many :category_idealeducation, dependent: :destroy
+  has_and_belongs_to_many :category_idealheight, dependent: :destroy
+  has_and_belongs_to_many :category_idealbodytype, dependent: :destroy
+  has_and_belongs_to_many :category_idealethnicity, dependent: :destroy
+  has_and_belongs_to_many :category_idealreligion, dependent: :destroy
+  has_and_belongs_to_many :category_idealsmoke, dependent: :destroy
 
   belongs_to :category_matchseeking, dependent: :destroy
   belongs_to :category_matchrelationship, dependent: :destroy
