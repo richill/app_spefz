@@ -64,8 +64,41 @@
                 <!-- workings -->
                 <section id="cd-timeline" class="cd-container">
                   <ul>
-                    <!-- section_town -->
+                    <!-- section_seeking -->
                     <li>
+                      <div class="pref_content">
+                        <div class="medium-6 columns left_pref_section">
+                          <div class="cd-timeline-img cd-star">
+                            <i class="fa fa-user"></i>
+                          </div>
+                          <div class="cd-timeline-content">
+                            <div class="title">i am seeking</div>
+                            <div class="title_subcontent">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus mollis dignissim. Praesent a dolor ac purus egestas ullamcorper. Praesent sed porttitor nulla.</div>
+                            <div class="user_info_content"><%= current_user.age %></div>
+                          </div>
+                        </div>
+                        <div class="medium-6 columns right_pref_section hide">
+                          <div class="cd-timeline-img cd-star">
+                            <i class="fa fa-users"></i>
+                          </div>
+                          <div class="cd-timeline-content">
+                            <div class="title">your ideal date: is seeking</div>
+                            <div class="title_subcontent">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus mollis dignissim. Praesent a dolor ac purus egestas ullamcorper. Praesent sed porttitor nulla.</div>
+                            <div class="age_selection">
+                              <ul>
+                                <li><%= f.input :idealage_start, label: false, placeholder: "From"  %></li>
+                                <li><%= f.input :idealage_end, label: false, placeholder: "To" %></li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="clear"></div>
+                    </li>
+                    <!-- section_seeking -->
+
+                    <!-- section_town -->
+                    <li class="hide">
                       <div class="pref_content">
                         <div class="medium-6 columns left_pref_section">
                           <div class="cd-timeline-img cd-star">
@@ -124,6 +157,8 @@
                       <div class="clear"></div>
                     </li>
                     <!-- section_age -->
+
+                    
                   </ul>
                 </section>
                 <!-- workings -->
