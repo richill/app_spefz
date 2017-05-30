@@ -7,6 +7,7 @@ class Preference < ActiveRecord::Base
 
   belongs_to :category_matchseeking, dependent: :destroy
   belongs_to :category_matchrelationship, dependent: :destroy
+  belongs_to :category_matchstatus, dependent: :destroy
 
 
 

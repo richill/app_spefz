@@ -133,6 +133,12 @@ ctmr01 = CategoryMatchrelationship.create!(name:'I Am Ready For A New Realtionsh
 ctmr02 = CategoryMatchrelationship.create!(name:'Let See What Happens')
 ctmr03 = CategoryMatchrelationship.create!(name:'I Am Not Looking For A Relationship')
 
+CategoryMatchstatus.delete_all
+ctmst01 = CategoryMatchstatus.create!(name:'Never Married')
+ctmst02 = CategoryMatchstatus.create!(name:'Seperated')
+ctmst03 = CategoryMatchstatus.create!(name:'Divorce')
+ctmst04 = CategoryMatchstatus.create!(name:'Widowed')
+
 
 
 
