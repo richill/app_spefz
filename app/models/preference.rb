@@ -9,6 +9,13 @@ class Preference < ActiveRecord::Base
   belongs_to :category_matchrelationship, dependent: :destroy
   belongs_to :category_matchstatus, dependent: :destroy
   belongs_to :category_matchparent, dependent: :destroy
+  belongs_to :category_matchkid, dependent: :destroy
+  belongs_to :category_matcheducation, dependent: :destroy
+  belongs_to :category_matchheight, dependent: :destroy
+  belongs_to :category_matchbodytype, dependent: :destroy
+  belongs_to :category_matchethnicity, dependent: :destroy
+  belongs_to :category_matchreligion, dependent: :destroy
+  belongs_to :category_matchsmoke, dependent: :destroy
 
 
 

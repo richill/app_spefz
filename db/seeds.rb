@@ -143,7 +143,10 @@ CategoryMatchparent.delete_all
 ctmp01 = CategoryMatchparent.create!(name:'Yes')
 ctmp02 = CategoryMatchparent.create!(name:'No')
 
-
+CategoryMatchkid.delete_all
+ctmk01 = CategoryMatchkid.create!(name:'Yes')
+ctmk02 = CategoryMatchkid.create!(name:'No')
+ctmk03 = CategoryMatchkid.create!(name:'Not Sure')
 
 
 

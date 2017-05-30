@@ -1,2 +1,3 @@
 class CategoryMatchethnicity < ActiveRecord::Base
+  has_many :preferences
 end
