@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170530220024) do
+ActiveRecord::Schema.define(version: 20170530224027) do
 
   create_table "activities", force: :cascade do |t|
     t.integer  "trackable_id"
@@ -127,10 +127,20 @@ ActiveRecord::Schema.define(version: 20170530220024) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "category_idealbodytypes_preferences", id: false, force: :cascade do |t|
+    t.integer "preference_id",             null: false
+    t.integer "category_idealbodytype_id", null: false
+  end
+
   create_table "category_idealeducations", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "category_idealeducations_preferences", id: false, force: :cascade do |t|
+    t.integer "preference_id",              null: false
+    t.integer "category_idealeducation_id", null: false
   end
 
   create_table "category_idealethnicities", force: :cascade do |t|
@@ -139,10 +149,20 @@ ActiveRecord::Schema.define(version: 20170530220024) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "category_idealethnicities_preferences", id: false, force: :cascade do |t|
+    t.integer "preference_id",              null: false
+    t.integer "category_idealethnicity_id", null: false
+  end
+
   create_table "category_idealheights", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "category_idealheights_preferences", id: false, force: :cascade do |t|
+    t.integer "preference_id",           null: false
+    t.integer "category_idealheight_id", null: false
   end
 
   create_table "category_idealkids", force: :cascade do |t|
@@ -179,6 +199,11 @@ ActiveRecord::Schema.define(version: 20170530220024) do
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "category_idealstatuses_preferences", id: false, force: :cascade do |t|
+    t.integer "preference_id",           null: false
+    t.integer "category_idealstatus_id", null: false
   end
 
   create_table "category_inviteoptions", force: :cascade do |t|
