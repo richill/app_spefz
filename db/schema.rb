@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170530203643) do
+ActiveRecord::Schema.define(version: 20170530204032) do
 
   create_table "activities", force: :cascade do |t|
     t.integer  "trackable_id"
@@ -524,6 +524,13 @@ ActiveRecord::Schema.define(version: 20170530203643) do
     t.integer  "category_matchrelationship_id"
     t.integer  "category_matchstatus_id"
     t.integer  "category_matchparent_id"
+    t.integer  "category_matchkid_id"
+    t.integer  "category_matcheducation_id"
+    t.integer  "category_matchheight_id"
+    t.integer  "category_matchbodytype_id"
+    t.integer  "category_matchethnicity_id"
+    t.integer  "category_matchreligion_id"
+    t.integer  "category_matchsmoke_id"
   end
 
   add_index "preferences", ["slug"], name: "index_preferences_on_slug", unique: true
