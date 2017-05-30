@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170530202823) do
+ActiveRecord::Schema.define(version: 20170530203643) do
 
   create_table "activities", force: :cascade do |t|
     t.integer  "trackable_id"
@@ -145,6 +145,36 @@ ActiveRecord::Schema.define(version: 20170530202823) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "category_matchbodytypes", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "category_matcheducations", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "category_matchethnicities", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "category_matchheights", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "category_matchkids", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "category_matchparents", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
@@ -157,7 +187,19 @@ ActiveRecord::Schema.define(version: 20170530202823) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "category_matchreligions", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "category_matchseekings", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "category_matchsmokes", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
