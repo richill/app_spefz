@@ -323,6 +323,171 @@
                     </li>
                     <!-- section_education -->
 
+                    <!-- section_height -->
+                    <li>
+                      <div class="pref_content">
+                        <div class="medium-6 columns left_pref_section">
+                          <div class="cd-timeline-img cd-star">
+                            <i class="fa fa-user"></i>
+                          </div>
+                          <div class="cd-timeline-content">
+                            <div class="title">How tall are you? | your height level</div>
+                            <div class="title_subcontent">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus mollis dignissim. Praesent a dolor ac purus egestas ullamcorper. Praesent sed porttitor nulla.</div>
+                            <%= f.association :category_matchheight, collection: CategoryMatchheight.all, prompt: "select", label: false %>
+                          </div>
+                        </div>
+                        <div class="medium-6 columns right_pref_section">
+                          <div class="cd-timeline-img cd-star">
+                            <i class="fa fa-users"></i>
+                          </div>
+                          <div class="cd-timeline-content">
+                            <div class="title">update</div>
+                            <div class="title_subcontent">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus mollis dignissim. Praesent a dolor ac purus egestas ullamcorper. Praesent sed porttitor nulla.</div>
+                            <div class="age_selection">
+                              <ul>
+                                <li><%= f.input :idealage_start, label: false, placeholder: "From"  %></li>
+                                <li><%= f.input :idealage_end, label: false, placeholder: "To" %></li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="clear"></div>
+                    </li>
+                    <!-- section_height -->
+
+                    <!-- section_bodytype -->
+                    <li>
+                      <div class="pref_content">
+                        <div class="medium-6 columns left_pref_section">
+                          <div class="cd-timeline-img cd-star">
+                            <i class="fa fa-user"></i>
+                          </div>
+                          <div class="cd-timeline-content">
+                            <div class="title">If you had to describe your body type, you would be...</div>
+                            <div class="title_subcontent">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus mollis dignissim. Praesent a dolor ac purus egestas ullamcorper. Praesent sed porttitor nulla.</div>
+                            <%= f.association :category_matchbodytype, collection: CategoryMatchbodytype.all, prompt: "select", label: false %>
+                          </div>
+                        </div>
+                        <div class="medium-6 columns right_pref_section">
+                          <div class="cd-timeline-img cd-star">
+                            <i class="fa fa-users"></i>
+                          </div>
+                          <div class="cd-timeline-content">
+                            <div class="title">update</div>
+                            <div class="title_subcontent">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus mollis dignissim. Praesent a dolor ac purus egestas ullamcorper. Praesent sed porttitor nulla.</div>
+                            <div class="age_selection">
+                              <ul>
+                                <li><%= f.input :idealage_start, label: false, placeholder: "From"  %></li>
+                                <li><%= f.input :idealage_end, label: false, placeholder: "To" %></li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="clear"></div>
+                    </li>
+                    <!-- section_bodytype -->
+
+                    <!-- section_ethnicity -->
+                    <li>
+                      <div class="pref_content">
+                        <div class="medium-6 columns left_pref_section">
+                          <div class="cd-timeline-img cd-star">
+                            <i class="fa fa-user"></i>
+                          </div>
+                          <div class="cd-timeline-content">
+                            <div class="title">What is your ethnicity?</div>
+                            <div class="title_subcontent">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus mollis dignissim. Praesent a dolor ac purus egestas ullamcorper. Praesent sed porttitor nulla.</div>
+                            <%= f.association :category_matchethnicity, collection: CategoryMatchethnicity.all, prompt: "select", label: false %>
+                          </div>
+                        </div>
+                        <div class="medium-6 columns right_pref_section">
+                          <div class="cd-timeline-img cd-star">
+                            <i class="fa fa-users"></i>
+                          </div>
+                          <div class="cd-timeline-content">
+                            <div class="title">update</div>
+                            <div class="title_subcontent">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus mollis dignissim. Praesent a dolor ac purus egestas ullamcorper. Praesent sed porttitor nulla.</div>
+                            <div class="age_selection">
+                              <ul>
+                                <li><%= f.input :idealage_start, label: false, placeholder: "From"  %></li>
+                                <li><%= f.input :idealage_end, label: false, placeholder: "To" %></li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="clear"></div>
+                    </li>
+                    <!-- section_ethnicity -->
+
+                    <!-- section_religion -->
+                    <li>
+                      <div class="pref_content">
+                        <div class="medium-6 columns left_pref_section">
+                          <div class="cd-timeline-img cd-star">
+                            <i class="fa fa-user"></i>
+                          </div>
+                          <div class="cd-timeline-content">
+                            <div class="title">What religion do you practise?</div>
+                            <div class="title_subcontent">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus mollis dignissim. Praesent a dolor ac purus egestas ullamcorper. Praesent sed porttitor nulla.</div>
+                            <%= f.association :category_matchreligion, collection: CategoryMatchreligion.all, prompt: "select", label: false %>
+                          </div>
+                        </div>
+                        <div class="medium-6 columns right_pref_section">
+                          <div class="cd-timeline-img cd-star">
+                            <i class="fa fa-users"></i>
+                          </div>
+                          <div class="cd-timeline-content">
+                            <div class="title">update</div>
+                            <div class="title_subcontent">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus mollis dignissim. Praesent a dolor ac purus egestas ullamcorper. Praesent sed porttitor nulla.</div>
+                            <div class="age_selection">
+                              <ul>
+                                <li><%= f.input :idealage_start, label: false, placeholder: "From"  %></li>
+                                <li><%= f.input :idealage_end, label: false, placeholder: "To" %></li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="clear"></div>
+                    </li>
+                    <!-- section_religion -->
+
+                    <!-- section_smoke -->
+                    <li>
+                      <div class="pref_content">
+                        <div class="medium-6 columns left_pref_section">
+                          <div class="cd-timeline-img cd-star">
+                            <i class="fa fa-user"></i>
+                          </div>
+                          <div class="cd-timeline-content">
+                            <div class="title">Do you smoke?</div>
+                            <div class="title_subcontent">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus mollis dignissim. Praesent a dolor ac purus egestas ullamcorper. Praesent sed porttitor nulla.</div>
+                            <%= f.association :category_matchsmoke, collection: CategoryMatchsmoke.all, prompt: "select", label: false %>
+                          </div>
+                        </div>
+                        <div class="medium-6 columns right_pref_section">
+                          <div class="cd-timeline-img cd-star">
+                            <i class="fa fa-users"></i>
+                          </div>
+                          <div class="cd-timeline-content">
+                            <div class="title">update</div>
+                            <div class="title_subcontent">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus mollis dignissim. Praesent a dolor ac purus egestas ullamcorper. Praesent sed porttitor nulla.</div>
+                            <div class="age_selection">
+                              <ul>
+                                <li><%= f.input :idealage_start, label: false, placeholder: "From"  %></li>
+                                <li><%= f.input :idealage_end, label: false, placeholder: "To" %></li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="clear"></div>
+                    </li>
+                    <!-- section_smoke -->
+
                     
                   </ul>
                 </section>
