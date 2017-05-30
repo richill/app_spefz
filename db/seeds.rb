@@ -128,8 +128,10 @@ CategoryMatchseeking.delete_all
 ctms01 = CategoryMatchseeking.create!(name:'Male')
 ctms02 = CategoryMatchseeking.create!(name:'Female')
 
-
-
+CategoryMatchrelationship.delete_all
+ctmr01 = CategoryMatchrelationship.create!(name:'I Am Ready For A New Realtionship')
+ctmr02 = CategoryMatchrelationship.create!(name:'Let See What Happens')
+ctmr03 = CategoryMatchrelationship.create!(name:'I Am Not Looking For A Relationship')
 
 
 
