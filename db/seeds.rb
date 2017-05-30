@@ -250,7 +250,6 @@ ctist04 = CategoryIdealstatus.create!(name:'Widowed')
 CategoryIdealparent.delete_all
 ctip01 = CategoryIdealparent.create!(name:'Yes')
 ctip02 = CategoryIdealparent.create!(name:'No')
-ctip03 = CategoryIdealparent.create!(name:'I Do Not Mind')
 
 CategoryIdealkid.delete_all
 ctik01 = CategoryIdealkid.create!(name:'Yes')
@@ -264,7 +263,6 @@ ctie03 = CategoryIdealeducation.create!(name:'Associates Degree')
 ctie04 = CategoryIdealeducation.create!(name:'Bachelors Degree')
 ctie05 = CategoryIdealeducation.create!(name:'Masters')
 ctie06 = CategoryIdealeducation.create!(name:'PHD / Post Doctoral')
-
 
 CategoryIdealheight.delete_all
 ctih01 = CategoryIdealheight.create!(name:"4'7 or smaller")
