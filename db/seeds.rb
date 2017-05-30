@@ -226,21 +226,6 @@ ctir01 = CategoryIdealrelationship.create!(name:'I Am Ready For A New Realtionsh
 ctir02 = CategoryIdealrelationship.create!(name:'Let See What Happens')
 ctir03 = CategoryIdealrelationship.create!(name:'I Am Not Looking For A Relationship')
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 CategoryIdealstatus.delete_all
 ctist01 = CategoryIdealstatus.create!(name:'Never Married')
 ctist02 = CategoryIdealstatus.create!(name:'Seperated')
