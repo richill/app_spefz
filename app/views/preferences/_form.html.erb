@@ -318,12 +318,7 @@
                           <div class="cd-timeline-content">
                             <div class="title">Your ideal date: Their Height level</div>
                             <div class="title_subcontent">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus mollis dignissim. Praesent a dolor ac purus egestas ullamcorper. Praesent sed porttitor nulla.</div>
-                            <div class="age_selection">
-                              <ul>
-                                <li><%= f.input :idealage_start, label: false, placeholder: "From"  %></li>
-                                <li><%= f.input :idealage_end, label: false, placeholder: "To" %></li>
-                              </ul>
-                            </div>
+                            <div><%= f.association :category_idealheight, collection: CategoryMatchheight.all, prompt: "select", label: false, as: :check_boxes %></div>
                           </div>
                         </div>
                       </div>
