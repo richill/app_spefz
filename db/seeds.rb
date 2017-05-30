@@ -235,3 +235,104 @@ ctir03 = CategoryIdealrelationship.create!(name:'I Am Not Looking For A Relation
 
 
 
+
+
+
+
+
+
+CategoryIdealstatus.delete_all
+ctist01 = CategoryIdealstatus.create!(name:'Never Married')
+ctist02 = CategoryIdealstatus.create!(name:'Seperated')
+ctist03 = CategoryIdealstatus.create!(name:'Divorce')
+ctist04 = CategoryIdealstatus.create!(name:'Widowed')
+
+CategoryIdealparent.delete_all
+ctip01 = CategoryIdealparent.create!(name:'Yes')
+ctip02 = CategoryIdealparent.create!(name:'No')
+ctip03 = CategoryIdealparent.create!(name:'I Do Not Mind')
+
+CategoryIdealkid.delete_all
+ctik01 = CategoryIdealkid.create!(name:'Yes')
+ctik02 = CategoryIdealkid.create!(name:'No')
+ctik03 = CategoryIdealkid.create!(name:'Not Sure')
+
+CategoryIdealeducation.delete_all
+ctie01 = CategoryIdealeducation.create!(name:'High School')
+ctie02 = CategoryIdealeducation.create!(name:'Some College')
+ctie03 = CategoryIdealeducation.create!(name:'Associates Degree')
+ctie04 = CategoryIdealeducation.create!(name:'Bachelors Degree')
+ctie05 = CategoryIdealeducation.create!(name:'Masters')
+ctie06 = CategoryIdealeducation.create!(name:'PHD / Post Doctoral')
+
+
+CategoryIdealheight.delete_all
+ctih01 = CategoryIdealheight.create!(name:"4'7 or smaller")
+ctih02 = CategoryIdealheight.create!(name:"4'8")
+ctih03 = CategoryIdealheight.create!(name:"4'9")
+ctih04 = CategoryIdealheight.create!(name:"4'10")
+ctih05 = CategoryIdealheight.create!(name:"4'11")
+ctih06 = CategoryIdealheight.create!(name:"5'")
+ctih07 = CategoryIdealheight.create!(name:"5'1")
+ctih08 = CategoryIdealheight.create!(name:"5'2")
+ctih09 = CategoryIdealheight.create!(name:"5'3")
+ctih10 = CategoryIdealheight.create!(name:"5'4")
+ctih11 = CategoryIdealheight.create!(name:"5'5")
+ctih12 = CategoryIdealheight.create!(name:"5'6")
+ctih13 = CategoryIdealheight.create!(name:"5'7")
+ctih14 = CategoryIdealheight.create!(name:"5'8")
+ctih15 = CategoryIdealheight.create!(name:"5'9")
+ctih16 = CategoryIdealheight.create!(name:"5'10")
+ctih17 = CategoryIdealheight.create!(name:"5'11")
+ctih18 = CategoryIdealheight.create!(name:"6'")
+ctih19 = CategoryIdealheight.create!(name:"6'1")
+ctih20 = CategoryIdealheight.create!(name:"6'2")
+ctih21 = CategoryIdealheight.create!(name:"6'3")
+ctih22 = CategoryIdealheight.create!(name:"6'4")
+ctih23 = CategoryIdealheight.create!(name:"6'5")
+ctih24 = CategoryIdealheight.create!(name:"6'6")
+ctih25 = CategoryIdealheight.create!(name:"6'7")
+ctih26 = CategoryIdealheight.create!(name:"6'8")
+ctih27 = CategoryIdealheight.create!(name:"6'9")
+ctih28 = CategoryIdealheight.create!(name:"6'10")
+ctih29 = CategoryIdealheight.create!(name:"6'11 or taller")
+
+CategoryIdealbodytype.delete_all
+ctib01 = CategoryIdealbodytype.create!(name:'About Average')
+ctib02 = CategoryIdealbodytype.create!(name:'Atheletic')
+ctib03 = CategoryIdealbodytype.create!(name:'Slim')
+ctib04 = CategoryIdealbodytype.create!(name:'A Few Extra Pounds')
+ctib05 = CategoryIdealbodytype.create!(name:'Curvy')
+ctib06 = CategoryIdealbodytype.create!(name:'Heavy Set')
+
+CategoryIdealethnicity.delete_all
+ctieth01 = CategoryIdealethnicity.create!(name:'White / Caucasian')
+ctieth02 = CategoryIdealethnicity.create!(name:'Asian')
+ctieth03 = CategoryIdealethnicity.create!(name:'Black / African Descent')
+ctieth04 = CategoryIdealethnicity.create!(name:'Mixed Race')
+ctieth05 = CategoryIdealethnicity.create!(name:'Mediterranean')
+ctieth06 = CategoryIdealethnicity.create!(name:'Middle Eastern')
+ctieth07 = CategoryIdealethnicity.create!(name:'East Indian')
+ctieth08 = CategoryIdealethnicity.create!(name:'Latin-American')
+
+CategoryIdealreligion.delete_all
+ctirl01 = CategoryIdealreligion.create!(name:'Agnostic')
+ctirl02 = CategoryIdealreligion.create!(name:'Atheist')
+ctirl03 = CategoryIdealreligion.create!(name:'Buddist / Taoist')
+ctirl04 = CategoryIdealreligion.create!(name:'Christian')
+ctirl05 = CategoryIdealreligion.create!(name:'Hindu')
+ctirl06 = CategoryIdealreligion.create!(name:'Jewish')
+ctirl07 = CategoryIdealreligion.create!(name:'Muslim / Islam')
+
+CategoryIdealsmoke.delete_all
+ctis01 = CategoryIdealsmoke.create!(name:'Ocassionally / Socially')
+ctis02 = CategoryIdealsmoke.create!(name:'Yes, Often')
+ctis03 = CategoryIdealsmoke.create!(name:'Trying To Quit')
+ctis04 = CategoryIdealsmoke.create!(name:'No, Smoke Is A Problem')
+ctis05 = CategoryIdealsmoke.create!(name:'No, Smoke Is Not A Problem')
+
+
+
+
+
+
