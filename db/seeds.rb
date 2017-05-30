@@ -124,6 +124,20 @@ cmr09 = CategoryManagementgroup.create!(name:'Sales/Marketing Group')
 Subscription.delete_all
 sb01 = Subscription.create!(title:'premium', price: 15.0, reference: 'SPz_x4Hrmg')
 
+CategoryMatchseeking.delete_all
+ctms01 = CategoryMatchseeking.create!(name:'Male')
+ctms02 = CategoryMatchseeking.create!(name:'Female')
+
+
+
+
+
+
+
+
+
+
+
 
 
 

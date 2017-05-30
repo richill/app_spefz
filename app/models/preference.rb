@@ -5,6 +5,8 @@ class Preference < ActiveRecord::Base
   belongs_to :user
   before_create :preference_name
 
+  belongs_to :category_matchseeking, dependent: :destroy
+
   def slug_preferences
     [
       :name
