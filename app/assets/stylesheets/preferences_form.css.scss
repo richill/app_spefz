@@ -11,7 +11,7 @@
 // --------left_column_section--------
 .user_general_settings_section .left_column_section {
   background-color: #283041;
-  min-height: 2500px;
+  min-height: 2900px;
 }
 
 // @media only screen and (max-width: 1365px) {
@@ -71,7 +71,7 @@
 
 // --------right_column_section--------
 .user_general_settings_section .right_column_section {
-  height: 2500px;
+  height: 2900px;
 }
 
 @media only screen and (min-width: 1750px) {
@@ -613,13 +613,7 @@ Timline_end CSS
   margin-bottom: 3px;
 }
 
-
-// -------------------------------
-//     workings
-// -------------------------------
-
-
-.preference_main_section .check_boxes {
+.user_general_settings_section .preference_main_section .check_boxes {
   margin-right: 5px;
 }
 
@@ -631,18 +625,53 @@ Timline_end CSS
   margin-bottom: 3px;
 }
 
+.user_general_settings_section .preference_main_section .relationshipstatus_check_content label {
+  float: left !important;
+  margin-right: 8px !important;
+  width: 140px !important;
+}
+
+.user_general_settings_section .preference_main_section .education_check_content label {
+  float: left !important;
+  margin-right: 8px !important;
+  width: 190px !important;
+}
+
+.user_general_settings_section .preference_main_section .height_check_content label {
+  float: left !important;
+  margin-right: 8px !important;
+  width: 112px !important;
+}
+
+.user_general_settings_section .preference_main_section .bodytype_check_content label {
+  float: left !important;
+  margin-right: 8px !important;
+  width: 185px !important;
+}
 
 
+.user_general_settings_section .preference_main_section .ethnicity_check_content label {
+  float: left !important;
+  margin-right: 8px !important;
+  width: 185px !important;
+}
+
+.user_general_settings_section .preference_main_section .religion_check_content label {
+  float: left !important;
+  margin-right: 8px !important;
+  width: 185px !important;
+}
+
+.user_general_settings_section .preference_main_section .smoke_check_content label {
+  float: left !important;
+  margin-right: 8px !important;
+  width: 280px !important;
+}
 
 
-
-
-
-
-
-
-
-
+// -------------------------------
+//     workings
+// -------------------------------
 
 
 
