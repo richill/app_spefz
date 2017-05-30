@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170530195700) do
+ActiveRecord::Schema.define(version: 20170530200828) do
 
   create_table "activities", force: :cascade do |t|
     t.integer  "trackable_id"
@@ -121,6 +121,12 @@ ActiveRecord::Schema.define(version: 20170530195700) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "category_idealrelationships", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "category_inviteoptions", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
@@ -134,6 +140,12 @@ ActiveRecord::Schema.define(version: 20170530195700) do
   end
 
   create_table "category_managementgroups", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "category_matchrelationships", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -447,14 +459,15 @@ ActiveRecord::Schema.define(version: 20170530195700) do
 
   create_table "preferences", force: :cascade do |t|
     t.string   "town"
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
     t.integer  "user_id"
     t.string   "name"
     t.string   "slug"
     t.string   "idealage_start"
     t.string   "idealage_end"
     t.integer  "category_matchseeking_id"
+    t.integer  "category_matchrelationship_id"
   end
 
   add_index "preferences", ["slug"], name: "index_preferences_on_slug", unique: true
