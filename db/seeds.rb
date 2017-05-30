@@ -139,6 +139,10 @@ ctmst02 = CategoryMatchstatus.create!(name:'Seperated')
 ctmst03 = CategoryMatchstatus.create!(name:'Divorce')
 ctmst04 = CategoryMatchstatus.create!(name:'Widowed')
 
+CategoryMatchparent.delete_all
+ctmp01 = CategoryMatchparent.create!(name:'Yes')
+ctmp02 = CategoryMatchparent.create!(name:'No')
+
 
 
 
