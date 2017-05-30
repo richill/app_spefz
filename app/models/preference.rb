@@ -5,6 +5,9 @@ class Preference < ActiveRecord::Base
   belongs_to :user
   before_create :preference_name
 
+  belongs_to :category_idealrelationship, dependent: :destroy
+  
+
   belongs_to :category_matchseeking, dependent: :destroy
   belongs_to :category_matchrelationship, dependent: :destroy
   belongs_to :category_matchstatus, dependent: :destroy

@@ -157,6 +157,6 @@ class PreferencesController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def preference_params
-    params.require(:preference).permit(:town, :user_id, :name, :slug, :idealage_start, :idealage_end, :category_matchseeking_id, :category_matchrelationship_id, :category_matchstatus_id, :category_matchparent_id, :category_matchkid_id, :category_matcheducation_id, :category_matchheight_id, :category_matchbodytype_id, :category_matchethnicity_id, :category_matchreligion_id, :category_matchsmoke_id)
+    params.require(:preference).permit(:town, :user_id, :name, :slug, :idealage_start, :idealage_end, :category_matchseeking_id, :category_matchrelationship_id, :category_matchstatus_id, :category_matchparent_id, :category_matchkid_id, :category_matcheducation_id, :category_matchheight_id, :category_matchbodytype_id, :category_matchethnicity_id, :category_matchreligion_id, :category_matchsmoke_id, :category_idealrelationship_id)
   end
 end

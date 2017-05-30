@@ -221,6 +221,11 @@ ctms03 = CategoryMatchsmoke.create!(name:'Trying To Quit')
 ctms04 = CategoryMatchsmoke.create!(name:'No, Smoke Is A Problem')
 ctms05 = CategoryMatchsmoke.create!(name:'No, Smoke Is Not A Problem')
 
+CategoryIdealrelationship.delete_all
+ctir01 = CategoryIdealrelationship.create!(name:'I Am Ready For A New Realtionship')
+ctir02 = CategoryIdealrelationship.create!(name:'Let See What Happens')
+ctir03 = CategoryIdealrelationship.create!(name:'I Am Not Looking For A Relationship')
+
 
 
 
