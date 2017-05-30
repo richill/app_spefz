@@ -148,6 +148,80 @@ ctmk01 = CategoryMatchkid.create!(name:'Yes')
 ctmk02 = CategoryMatchkid.create!(name:'No')
 ctmk03 = CategoryMatchkid.create!(name:'Not Sure')
 
+CategoryMatcheducation.delete_all
+ctme01 = CategoryMatcheducation.create!(name:'High School')
+ctme02 = CategoryMatcheducation.create!(name:'Some College')
+ctme03 = CategoryMatcheducation.create!(name:'Associates Degree')
+ctme04 = CategoryMatcheducation.create!(name:'Bachelors Degree')
+ctme05 = CategoryMatcheducation.create!(name:'Masters')
+ctme06 = CategoryMatcheducation.create!(name:'PHD / Post Doctoral')
+
+CategoryMatchheight.delete_all
+ctmh01 = CategoryMatchheight.create!(name:"4'7 or smaller")
+ctmh02 = CategoryMatchheight.create!(name:"4'8")
+ctmh03 = CategoryMatchheight.create!(name:"4'9")
+ctmh04 = CategoryMatchheight.create!(name:"4'10")
+ctmh05 = CategoryMatchheight.create!(name:"4'11")
+ctmh06 = CategoryMatchheight.create!(name:"5'")
+ctmh07 = CategoryMatchheight.create!(name:"5'1")
+ctmh08 = CategoryMatchheight.create!(name:"5'2")
+ctmh09 = CategoryMatchheight.create!(name:"5'3")
+ctmh10 = CategoryMatchheight.create!(name:"5'4")
+ctmh11 = CategoryMatchheight.create!(name:"5'5")
+ctmh12 = CategoryMatchheight.create!(name:"5'6")
+ctmh13 = CategoryMatchheight.create!(name:"5'7")
+ctmh14 = CategoryMatchheight.create!(name:"5'8")
+ctmh15 = CategoryMatchheight.create!(name:"5'9")
+ctmh16 = CategoryMatchheight.create!(name:"5'10")
+ctmh17 = CategoryMatchheight.create!(name:"5'11")
+ctmh18 = CategoryMatchheight.create!(name:"6'")
+ctmh19 = CategoryMatchheight.create!(name:"6'1")
+ctmh20 = CategoryMatchheight.create!(name:"6'2")
+ctmh21 = CategoryMatchheight.create!(name:"6'3")
+ctmh22 = CategoryMatchheight.create!(name:"6'4")
+ctmh23 = CategoryMatchheight.create!(name:"6'5")
+ctmh24 = CategoryMatchheight.create!(name:"6'6")
+ctmh25 = CategoryMatchheight.create!(name:"6'7")
+ctmh26 = CategoryMatchheight.create!(name:"6'8")
+ctmh27 = CategoryMatchheight.create!(name:"6'9")
+ctmh28 = CategoryMatchheight.create!(name:"6'10")
+ctmh29 = CategoryMatchheight.create!(name:"6'11 or taller")
+
+CategoryMatchbodytype.delete_all
+ctmb01 = CategoryMatchbodytype.create!(name:'About Average')
+ctmb02 = CategoryMatchbodytype.create!(name:'Atheletic')
+ctmb03 = CategoryMatchbodytype.create!(name:'Slim')
+ctmb04 = CategoryMatchbodytype.create!(name:'A Few Extra Pounds')
+ctmb05 = CategoryMatchbodytype.create!(name:'Curvy')
+ctmb06 = CategoryMatchbodytype.create!(name:'Heavy Set')
+
+CategoryMatchethnicity.delete_all
+ctmeth01 = CategoryMatchethnicity.create!(name:'White / Caucasian')
+ctmeth02 = CategoryMatchethnicity.create!(name:'Asian')
+ctmeth03 = CategoryMatchethnicity.create!(name:'Black / African Descent')
+ctmeth04 = CategoryMatchethnicity.create!(name:'Mixed Race')
+ctmeth05 = CategoryMatchethnicity.create!(name:'Mediterranean')
+ctmeth06 = CategoryMatchethnicity.create!(name:'Middle Eastern')
+ctmeth07 = CategoryMatchethnicity.create!(name:'East Indian')
+ctmeth08 = CategoryMatchethnicity.create!(name:'Latin-American')
+
+CategoryMatchreligion.delete_all
+ctmrl01 = CategoryMatchreligion.create!(name:'Agnostic')
+ctmrl02 = CategoryMatchreligion.create!(name:'Atheist')
+ctmrl03 = CategoryMatchreligion.create!(name:'Buddist / Taoist')
+ctmrl04 = CategoryMatchreligion.create!(name:'Christian')
+ctmrl05 = CategoryMatchreligion.create!(name:'Hindu')
+ctmrl06 = CategoryMatchreligion.create!(name:'Jewish')
+ctmrl07 = CategoryMatchreligion.create!(name:'Muslim / Islam')
+
+CategoryMatchsmoke.delete_all
+ctms01 = CategoryMatchsmoke.create!(name:'Ocassionally / Socially')
+ctms02 = CategoryMatchsmoke.create!(name:'Yes, Often')
+ctms03 = CategoryMatchsmoke.create!(name:'Trying To Quit')
+ctms04 = CategoryMatchsmoke.create!(name:'No, Smoke Is A Problem')
+ctms05 = CategoryMatchsmoke.create!(name:'No, Smoke Is Not A Problem')
+
+
 
 
 
