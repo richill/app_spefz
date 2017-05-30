@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170530224027) do
+ActiveRecord::Schema.define(version: 20170530224218) do
 
   create_table "activities", force: :cascade do |t|
     t.integer  "trackable_id"
@@ -189,10 +189,20 @@ ActiveRecord::Schema.define(version: 20170530224027) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "category_idealreligions_preferences", id: false, force: :cascade do |t|
+    t.integer "preference_id",             null: false
+    t.integer "category_idealreligion_id", null: false
+  end
+
   create_table "category_idealsmokes", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "category_idealsmokes_preferences", id: false, force: :cascade do |t|
+    t.integer "preference_id",          null: false
+    t.integer "category_idealsmoke_id", null: false
   end
 
   create_table "category_idealstatuses", force: :cascade do |t|

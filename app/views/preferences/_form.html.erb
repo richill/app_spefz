@@ -196,7 +196,7 @@
                           <div class="cd-timeline-content">
                             <div class="title">What is your relationship status?</div>
                             <div class="title_subcontent">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus mollis dignissim. Praesent a dolor ac purus egestas ullamcorper. Praesent sed porttitor nulla.</div>
-                            <%= f.association :category_matchstatus, collection: CategoryMatchstatus.all, prompt: "select", label: false %>
+                            <div><%= f.association :category_matchstatus, collection: CategoryMatchstatus.all, prompt: "select", label: false %></div>
                           </div>
                         </div>
                         <div class="medium-6 columns right_pref_section">
@@ -206,12 +206,7 @@
                           <div class="cd-timeline-content">
                             <div class="title">Your ideal date: What is their relationship status?</div>
                             <div class="title_subcontent">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus mollis dignissim. Praesent a dolor ac purus egestas ullamcorper. Praesent sed porttitor nulla.</div>
-                            <div class="age_selection">
-                              <ul>
-                                <li><%= f.input :idealage_start, label: false, placeholder: "From"  %></li>
-                                <li><%= f.input :idealage_end, label: false, placeholder: "To" %></li>
-                              </ul>
-                            </div>
+                            <div><%= f.association :category_idealstatus, collection: CategoryIdealstatus.all, prompt: "select", label: false, as: :check_boxes %></div>
                           </div>
                         </div>
                       </div>
@@ -237,14 +232,9 @@
                             <i class="fa fa-users"></i>
                           </div>
                           <div class="cd-timeline-content">
-                            <div class="title">update</div>
+                            <div class="title">Your ideal date: Do they have children?</div>
                             <div class="title_subcontent">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus mollis dignissim. Praesent a dolor ac purus egestas ullamcorper. Praesent sed porttitor nulla.</div>
-                            <div class="age_selection">
-                              <ul>
-                                <li><%= f.input :idealage_start, label: false, placeholder: "From"  %></li>
-                                <li><%= f.input :idealage_end, label: false, placeholder: "To" %></li>
-                              </ul>
-                            </div>
+                            <div><%= f.association :category_idealparent, collection: CategoryIdealparent.all, prompt: "select", label: false %></div>
                           </div>
                         </div>
                       </div>
@@ -270,14 +260,9 @@
                             <i class="fa fa-users"></i>
                           </div>
                           <div class="cd-timeline-content">
-                            <div class="title">update</div>
+                            <div class="title">Your ideal date: Do they want children? | Their Preference:</div>
                             <div class="title_subcontent">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus mollis dignissim. Praesent a dolor ac purus egestas ullamcorper. Praesent sed porttitor nulla.</div>
-                            <div class="age_selection">
-                              <ul>
-                                <li><%= f.input :idealage_start, label: false, placeholder: "From"  %></li>
-                                <li><%= f.input :idealage_end, label: false, placeholder: "To" %></li>
-                              </ul>
-                            </div>
+                            <div><%= f.association :category_idealkid, collection: CategoryIdealkid.all, prompt: "select", label: false %></div>
                           </div>
                         </div>
                       </div>
@@ -303,14 +288,9 @@
                             <i class="fa fa-users"></i>
                           </div>
                           <div class="cd-timeline-content">
-                            <div class="title">update</div>
+                            <div class="title">Your ideal date: What is their highest Education Level</div>
                             <div class="title_subcontent">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus mollis dignissim. Praesent a dolor ac purus egestas ullamcorper. Praesent sed porttitor nulla.</div>
-                            <div class="age_selection">
-                              <ul>
-                                <li><%= f.input :idealage_start, label: false, placeholder: "From"  %></li>
-                                <li><%= f.input :idealage_end, label: false, placeholder: "To" %></li>
-                              </ul>
-                            </div>
+                            <div><%= f.association :category_idealeducation, collection: CategoryIdealeducation.all, prompt: "select", label: false, as: :check_boxes  %></div>
                           </div>
                         </div>
                       </div>
@@ -336,7 +316,7 @@
                             <i class="fa fa-users"></i>
                           </div>
                           <div class="cd-timeline-content">
-                            <div class="title">update</div>
+                            <div class="title">Your ideal date: Their Height level</div>
                             <div class="title_subcontent">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus mollis dignissim. Praesent a dolor ac purus egestas ullamcorper. Praesent sed porttitor nulla.</div>
                             <div class="age_selection">
                               <ul>
@@ -369,14 +349,9 @@
                             <i class="fa fa-users"></i>
                           </div>
                           <div class="cd-timeline-content">
-                            <div class="title">update</div>
+                            <div class="title">Your ideal date: Their body type</div>
                             <div class="title_subcontent">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus mollis dignissim. Praesent a dolor ac purus egestas ullamcorper. Praesent sed porttitor nulla.</div>
-                            <div class="age_selection">
-                              <ul>
-                                <li><%= f.input :idealage_start, label: false, placeholder: "From"  %></li>
-                                <li><%= f.input :idealage_end, label: false, placeholder: "To" %></li>
-                              </ul>
-                            </div>
+                            <div><%= f.association :category_idealbodytype, collection: CategoryIdealbodytype.all, prompt: "select", label: false, as: :check_boxes %></div>
                           </div>
                         </div>
                       </div>
@@ -402,14 +377,9 @@
                             <i class="fa fa-users"></i>
                           </div>
                           <div class="cd-timeline-content">
-                            <div class="title">update</div>
+                            <div class="title">Your ideal date: Their Ethnicity</div>
                             <div class="title_subcontent">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus mollis dignissim. Praesent a dolor ac purus egestas ullamcorper. Praesent sed porttitor nulla.</div>
-                            <div class="age_selection">
-                              <ul>
-                                <li><%= f.input :idealage_start, label: false, placeholder: "From"  %></li>
-                                <li><%= f.input :idealage_end, label: false, placeholder: "To" %></li>
-                              </ul>
-                            </div>
+                            <div><%= f.association :category_idealethnicity, collection: CategoryIdealethnicity.all, prompt: "select", label: false, as: :check_boxes %></div>
                           </div>
                         </div>
                       </div>
@@ -435,14 +405,9 @@
                             <i class="fa fa-users"></i>
                           </div>
                           <div class="cd-timeline-content">
-                            <div class="title">update</div>
+                            <div class="title">Your ideal date: What religion do they practise?</div>
                             <div class="title_subcontent">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus mollis dignissim. Praesent a dolor ac purus egestas ullamcorper. Praesent sed porttitor nulla.</div>
-                            <div class="age_selection">
-                              <ul>
-                                <li><%= f.input :idealage_start, label: false, placeholder: "From"  %></li>
-                                <li><%= f.input :idealage_end, label: false, placeholder: "To" %></li>
-                              </ul>
-                            </div>
+                            <div><%= f.association :category_idealreligion, collection: CategoryIdealreligion.all, prompt: "select", label: false, as: :check_boxes %></div>
                           </div>
                         </div>
                       </div>
@@ -468,14 +433,9 @@
                             <i class="fa fa-users"></i>
                           </div>
                           <div class="cd-timeline-content">
-                            <div class="title">update</div>
+                            <div class="title">Your ideal date: Do they smoke? | Their Preference</div>
                             <div class="title_subcontent">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus mollis dignissim. Praesent a dolor ac purus egestas ullamcorper. Praesent sed porttitor nulla.</div>
-                            <div class="age_selection">
-                              <ul>
-                                <li><%= f.input :idealage_start, label: false, placeholder: "From"  %></li>
-                                <li><%= f.input :idealage_end, label: false, placeholder: "To" %></li>
-                              </ul>
-                            </div>
+                            <div><%= f.association :category_idealsmoke, collection: CategoryIdealsmoke.all, prompt: "select", label: false, as: :check_boxes %></div>
                           </div>
                         </div>
                       </div>
