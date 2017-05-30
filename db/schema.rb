@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170530202041) do
+ActiveRecord::Schema.define(version: 20170530202823) do
 
   create_table "activities", force: :cascade do |t|
     t.integer  "trackable_id"
@@ -140,6 +140,12 @@ ActiveRecord::Schema.define(version: 20170530202041) do
   end
 
   create_table "category_managementgroups", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "category_matchparents", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -475,6 +481,7 @@ ActiveRecord::Schema.define(version: 20170530202041) do
     t.integer  "category_matchseeking_id"
     t.integer  "category_matchrelationship_id"
     t.integer  "category_matchstatus_id"
+    t.integer  "category_matchparent_id"
   end
 
   add_index "preferences", ["slug"], name: "index_preferences_on_slug", unique: true
