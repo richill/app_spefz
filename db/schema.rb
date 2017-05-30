@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170523192416) do
+ActiveRecord::Schema.define(version: 20170530193607) do
 
   create_table "activities", force: :cascade do |t|
     t.integer  "trackable_id"
@@ -441,11 +441,13 @@ ActiveRecord::Schema.define(version: 20170523192416) do
 
   create_table "preferences", force: :cascade do |t|
     t.string   "town"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
     t.integer  "user_id"
     t.string   "name"
     t.string   "slug"
+    t.string   "idealage_start"
+    t.string   "idealage_end"
   end
 
   add_index "preferences", ["slug"], name: "index_preferences_on_slug", unique: true

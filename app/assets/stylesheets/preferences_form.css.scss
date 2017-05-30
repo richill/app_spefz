@@ -333,7 +333,7 @@
 }
 
 
-.user_info_content {
+.user_general_settings_section .user_info_content {
   font-family: "Lato", sans-serif;
   font-weight: 300 !important;
   box-shadow: none !important;
@@ -343,7 +343,7 @@
   color: #454d53;
   font-size: 15px;
   margin-bottom: 0px !important;
-  background-color: rgba(40, 48, 45, 0.05) !important;
+  background-color: rgba(75, 180, 191, 0.2) !important;
 }
 
 
@@ -548,15 +548,28 @@ Timline_start CSS
 Timline_end CSS
 -------------------------------- */
 
+.user_general_settings_section .preference_main_section .age_selection ul {
+  list-style: none;
+  margin: 0px !important;
+}
 
+.user_general_settings_section .preference_main_section .age_selection ul li {
+  float: left;
+}
+
+.user_general_settings_section .preference_main_section #preference_idealage_start, #preference_idealage_end {
+  width: 302px;
+}
+
+.user_general_settings_section .preference_main_section #preference_idealage_start {
+  margin-right: 10px;
+}
 
 
 
 // -------------------------------
 //     workings
 // -------------------------------
-
-
 
 
 
