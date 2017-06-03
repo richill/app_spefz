@@ -2,3 +2,420 @@
   <strong>Town:</strong>
   <%= @preference.town %>
 </p>
+
+<div class= "medium-12 columns user_general_settings_section preference_main_show_page">
+
+  <!-- left_column_section -->
+  <div class="medium-2 columns left_column_section" style="height:3600px;">
+    <%= render 'shared/content_user_left_column' %>
+  </div>
+  <!-- left_column_section -->
+
+
+  <!-- right_column_section -->
+  <div class="medium-10 columns right_column_section" style="height:3600px;">
+    <div class="right_inner_section">
+      <div class="tree_link">
+        <span><i class="fa fa-user" aria-hidden="true"></i> <%= link_to "#{current_user.firstname}", user_path(current_user)%></span> 
+        <span class="fwd_sign">></span> 
+        <span>preference</span>
+      </div>
+      <div class="user_general_settings_inner_section preference_edit_update_form">
+    
+        <div class="form-inputs medium-12 columns preference_form">
+          <div class="medium-12 columns preference_main_section">
+            <div class="pref_upper_img"><%= image_tag("img_background_banner.jpg") %></div>
+            <div class="pref_main_header_section">
+              <ul>
+                <li>
+                  <div class="pref_header">
+                    <div class="medium-6 columns left_pref_section">
+                      <div class="inner_pref_section">
+                        <div class="pref_img_cover">
+                          <% if current_user.image? %>
+                            <%= link_to(cl_image_tag(current_user.image, :transformation=>[{:gravity=>"face", :width=>50, :height=>50, :crop=>"fill", :radius=>"max"}]), "#", id: "") %>
+                          <% else %>
+                            <%= link_to(image_tag("img-profile-image-default.png", :alt =>  "image", :class =>"#", id: "", style:"border-radius: 200px;"), '#') %>
+                          <% end %>
+                        </div>
+                        <div><%= current_user.firstname %></div>
+                      </div>
+                    </div>
+                    <div class="medium-6 columns right_pref_section">
+
+                      <div class="inner_pref_section">
+                        <div class="pref_img_cover"><%= link_to(image_tag("img-profile-image-default.png", :alt =>  "image", :class =>"#", id: "", style:"border-radius: 200px;"), '#') %></div>
+                        <div>my ideal partner</div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="clear"></div>
+            <div class="background_main">
+
+              <!-- preference_questions -->
+              <section id="cd-timeline" class="cd-container">
+                <ul>
+                  <!-- section_seeking -->
+                  <li>
+                    <div class="pref_content">
+                      <div class="medium-6 columns left_pref_section">
+                        <div class="cd-timeline-img cd-star">
+                          <i class="fa fa-user"></i>
+                        </div>
+                        <div class="cd-timeline-content">
+                          <div class="title">i am seeking</div>
+                          <div class="title_subcontent">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus mollis dignissim. Praesent a dolor ac purus egestas ullamcorper. Praesent sed porttitor nulla.</div>
+                          <div><%= f.association :category_matchseeking, collection: CategoryMatchseeking.all, prompt: "select", label: false %></div>
+                        </div>
+                      </div>
+                      <div class="medium-6 columns right_pref_section hide">
+                        <div class="cd-timeline-img cd-star">
+                          <i class="fa fa-users"></i>
+                        </div>
+                        <div class="cd-timeline-content">
+                          <div class="title">your ideal date: is seeking</div>
+                          <div class="title_subcontent">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus mollis dignissim. Praesent a dolor ac purus egestas ullamcorper. Praesent sed porttitor nulla.</div>
+                          <div class="age_selection">
+                            <ul>
+                              <li><%= f.input :idealage_start, label: false, placeholder: "From"  %></li>
+                              <li><%= f.input :idealage_end, label: false, placeholder: "To" %></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="clear"></div>
+                  </li>
+                  <!-- section_seeking -->
+
+                  <!-- section_age -->
+                  <li>
+                    <div class="pref_content">
+                      <div class="medium-6 columns left_pref_section">
+                        <div class="cd-timeline-img cd-star">
+                          <i class="fa fa-user"></i>
+                        </div>
+                        <div class="cd-timeline-content">
+                          <div class="title">your age</div>
+                          <div class="title_subcontent">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus mollis dignissim. Praesent a dolor ac purus egestas ullamcorper. Praesent sed porttitor nulla.</div>
+                          <div class="user_info_content"><%= current_user.age %></div>
+                        </div>
+                      </div>
+                      <div class="medium-6 columns right_pref_section">
+                        <div class="cd-timeline-img cd-star">
+                          <i class="fa fa-users"></i>
+                        </div>
+                        <div class="cd-timeline-content">
+                          <div class="title">your ideal date: what is their age range?</div>
+                          <div class="title_subcontent">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus mollis dignissim. Praesent a dolor ac purus egestas ullamcorper. Praesent sed porttitor nulla.</div>
+                          <div class="age_selection">
+                            <ul>
+                              <li><%= f.input :idealage_start, label: false, placeholder: "From"  %></li>
+                              <li><%= f.input :idealage_end, label: false, placeholder: "To" %></li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="clear"></div>
+                  </li>
+                  <!-- section_age -->
+
+                  <!-- section_relationship -->
+                  <li>
+                    <div class="pref_content">
+                      <div class="medium-6 columns left_pref_section">
+                        <div class="cd-timeline-img cd-star">
+                          <i class="fa fa-user"></i>
+                        </div>
+                        <div class="cd-timeline-content">
+                          <div class="title">How do you feel about getting involved in a relationship?</div>
+                          <div class="title_subcontent">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus mollis dignissim. Praesent a dolor ac purus egestas ullamcorper. Praesent sed porttitor nulla.</div>
+                          <div><%= f.association :category_matchrelationship, collection: CategoryMatchrelationship.all, prompt: "select", label: false %></div>
+                        </div>
+                      </div>
+                      <div class="medium-6 columns right_pref_section">
+                        <div class="cd-timeline-img cd-star">
+                          <i class="fa fa-users"></i>
+                        </div>
+                        <div class="cd-timeline-content">
+                          <div class="title">Your ideal date: How do they feel about getting involved in a relationship?</div>
+                          <div class="title_subcontent">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus mollis dignissim. Praesent a dolor ac purus egestas ullamcorper. Praesent sed porttitor nulla.</div>
+                          <div><%= f.association :category_idealrelationship, collection: CategoryIdealrelationship.all, prompt: "select", label: false %></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="clear"></div>
+                  </li>
+                  <!-- section_relationship -->
+
+                  <!-- section_relationshipstatus -->
+                  <li>
+                    <div class="pref_content">
+                      <div class="medium-6 columns left_pref_section">
+                        <div class="cd-timeline-img cd-star">
+                          <i class="fa fa-user"></i>
+                        </div>
+                        <div class="cd-timeline-content">
+                          <div class="title">What is your relationship status?</div>
+                          <div class="title_subcontent">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus mollis dignissim. Praesent a dolor ac purus egestas ullamcorper. Praesent sed porttitor nulla.</div>
+                          <div><%= f.association :category_matchstatus, collection: CategoryMatchstatus.all, prompt: "select", label: false %></div>
+                        </div>
+                      </div>
+                      <div class="medium-6 columns right_pref_section">
+                        <div class="cd-timeline-img cd-star">
+                          <i class="fa fa-users"></i>
+                        </div>
+                        <div class="cd-timeline-content">
+                          <div class="title">Your ideal date: What is their relationship status?</div>
+                          <div class="title_subcontent">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus mollis dignissim. Praesent a dolor ac purus egestas ullamcorper. Praesent sed porttitor nulla.</div>
+                          <div class="relationshipstatus_check_content"><%= f.association :category_idealstatus, collection: CategoryIdealstatus.all, prompt: "select", label: false, as: :check_boxes %></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="clear"></div>
+                  </li>
+                  <!-- section_relationshipstatus -->
+
+                  <!-- section_parent -->
+                  <li>
+                    <div class="pref_content">
+                      <div class="medium-6 columns left_pref_section">
+                        <div class="cd-timeline-img cd-star">
+                          <i class="fa fa-user"></i>
+                        </div>
+                        <div class="cd-timeline-content">
+                          <div class="title">Are you a parent?</div>
+                          <div class="title_subcontent">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus mollis dignissim. Praesent a dolor ac purus egestas ullamcorper. Praesent sed porttitor nulla.</div>
+                          <%= f.association :category_matchparent, collection: CategoryMatchparent.all, prompt: "select", label: false %>
+                        </div>
+                      </div>
+                      <div class="medium-6 columns right_pref_section">
+                        <div class="cd-timeline-img cd-star">
+                          <i class="fa fa-users"></i>
+                        </div>
+                        <div class="cd-timeline-content">
+                          <div class="title">Your ideal date: Do they have children?</div>
+                          <div class="title_subcontent">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus mollis dignissim. Praesent a dolor ac purus egestas ullamcorper. Praesent sed porttitor nulla.</div>
+                          <div><%= f.association :category_idealparent, collection: CategoryIdealparent.all, prompt: "select", label: false %></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="clear"></div>
+                  </li>
+                  <!-- section_parent -->
+
+                  <!-- section_kids -->
+                  <li>
+                    <div class="pref_content">
+                      <div class="medium-6 columns left_pref_section">
+                        <div class="cd-timeline-img cd-star">
+                          <i class="fa fa-user"></i>
+                        </div>
+                        <div class="cd-timeline-content">
+                          <div class="title">Would you like to have children?</div>
+                          <div class="title_subcontent">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus mollis dignissim. Praesent a dolor ac purus egestas ullamcorper. Praesent sed porttitor nulla.</div>
+                          <%= f.association :category_matchkid, collection: CategoryMatchkid.all, prompt: "select", label: false %>
+                        </div>
+                      </div>
+                      <div class="medium-6 columns right_pref_section">
+                        <div class="cd-timeline-img cd-star">
+                          <i class="fa fa-users"></i>
+                        </div>
+                        <div class="cd-timeline-content">
+                          <div class="title">Your ideal date: Do they want children? | Their Preference:</div>
+                          <div class="title_subcontent">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus mollis dignissim. Praesent a dolor ac purus egestas ullamcorper. Praesent sed porttitor nulla.</div>
+                          <div><%= f.association :category_idealkid, collection: CategoryIdealkid.all, prompt: "select", label: false %></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="clear"></div>
+                  </li>
+                  <!-- section_kids -->
+
+                  <!-- section_education -->
+                  <li>
+                    <div class="pref_content">
+                      <div class="medium-6 columns left_pref_section">
+                        <div class="cd-timeline-img cd-star">
+                          <i class="fa fa-user"></i>
+                        </div>
+                        <div class="cd-timeline-content">
+                          <div class="title">Tell us you highest level of education</div>
+                          <div class="title_subcontent">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus mollis dignissim. Praesent a dolor ac purus egestas ullamcorper. Praesent sed porttitor nulla.</div>
+                          <%= f.association :category_matcheducation, collection: CategoryMatcheducation.all, prompt: "select", label: false %>
+                        </div>
+                      </div>
+                      <div class="medium-6 columns right_pref_section">
+                        <div class="cd-timeline-img cd-star">
+                          <i class="fa fa-users"></i>
+                        </div>
+                        <div class="cd-timeline-content">
+                          <div class="title">Your ideal date: What is their highest Education Level</div>
+                          <div class="title_subcontent">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus mollis dignissim. Praesent a dolor ac purus egestas ullamcorper. Praesent sed porttitor nulla.</div>
+                          <div class="education_check_content"><%= f.association :category_idealeducation, collection: CategoryIdealeducation.all, prompt: "select", label: false, as: :check_boxes  %></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="clear"></div>
+                  </li>
+                  <!-- section_education -->
+
+                  <!-- section_height -->
+                  <li>
+                    <div class="pref_content">
+                      <div class="medium-6 columns left_pref_section">
+                        <div class="cd-timeline-img cd-star">
+                          <i class="fa fa-user"></i>
+                        </div>
+                        <div class="cd-timeline-content">
+                          <div class="title">How tall are you? | your height level</div>
+                          <div class="title_subcontent">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus mollis dignissim. Praesent a dolor ac purus egestas ullamcorper. Praesent sed porttitor nulla.</div>
+                          <%= f.association :category_matchheight, collection: CategoryMatchheight.all, prompt: "select", label: false %>
+                        </div>
+                      </div>
+                      <div class="medium-6 columns right_pref_section">
+                        <div class="cd-timeline-img cd-star">
+                          <i class="fa fa-users"></i>
+                        </div>
+                        <div class="cd-timeline-content">
+                          <div class="title">Your ideal date: Their Height level</div>
+                          <div class="title_subcontent">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus mollis dignissim. Praesent a dolor ac purus egestas ullamcorper. Praesent sed porttitor nulla.</div>
+                          <div class="height_check_content"><%= f.association :category_idealheight, collection: CategoryMatchheight.all, prompt: "select", label: false, as: :check_boxes %></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="clear"></div>
+                  </li>
+                  <!-- section_height -->
+
+                  <!-- section_bodytype -->
+                  <li>
+                    <div class="pref_content">
+                      <div class="medium-6 columns left_pref_section">
+                        <div class="cd-timeline-img cd-star">
+                          <i class="fa fa-user"></i>
+                        </div>
+                        <div class="cd-timeline-content">
+                          <div class="title">If you had to describe your body type, you would be...</div>
+                          <div class="title_subcontent">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus mollis dignissim. Praesent a dolor ac purus egestas ullamcorper. Praesent sed porttitor nulla.</div>
+                          <%= f.association :category_matchbodytype, collection: CategoryMatchbodytype.all, prompt: "select", label: false %>
+                        </div>
+                      </div>
+                      <div class="medium-6 columns right_pref_section">
+                        <div class="cd-timeline-img cd-star">
+                          <i class="fa fa-users"></i>
+                        </div>
+                        <div class="cd-timeline-content">
+                          <div class="title">Your ideal date: Their body type</div>
+                          <div class="title_subcontent">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus mollis dignissim. Praesent a dolor ac purus egestas ullamcorper. Praesent sed porttitor nulla.</div>
+                          <div class="bodytype_check_content"><%= f.association :category_idealbodytype, collection: CategoryIdealbodytype.all, prompt: "select", label: false, as: :check_boxes %></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="clear"></div>
+                  </li>
+                  <!-- section_bodytype -->
+
+                  <!-- section_ethnicity -->
+                  <li>
+                    <div class="pref_content">
+                      <div class="medium-6 columns left_pref_section">
+                        <div class="cd-timeline-img cd-star">
+                          <i class="fa fa-user"></i>
+                        </div>
+                        <div class="cd-timeline-content">
+                          <div class="title">What is your ethnicity?</div>
+                          <div class="title_subcontent">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus mollis dignissim. Praesent a dolor ac purus egestas ullamcorper. Praesent sed porttitor nulla.</div>
+                          <%= f.association :category_matchethnicity, collection: CategoryMatchethnicity.all, prompt: "select", label: false %>
+                        </div>
+                      </div>
+                      <div class="medium-6 columns right_pref_section">
+                        <div class="cd-timeline-img cd-star">
+                          <i class="fa fa-users"></i>
+                        </div>
+                        <div class="cd-timeline-content">
+                          <div class="title">Your ideal date: Their Ethnicity</div>
+                          <div class="title_subcontent">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus mollis dignissim. Praesent a dolor ac purus egestas ullamcorper. Praesent sed porttitor nulla.</div>
+                          <div class="ethnicity_check_content"><%= f.association :category_idealethnicity, collection: CategoryIdealethnicity.all, prompt: "select", label: false, as: :check_boxes %></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="clear"></div>
+                  </li>
+                  <!-- section_ethnicity -->
+
+                  <!-- section_religion -->
+                  <li>
+                    <div class="pref_content">
+                      <div class="medium-6 columns left_pref_section">
+                        <div class="cd-timeline-img cd-star">
+                          <i class="fa fa-user"></i>
+                        </div>
+                        <div class="cd-timeline-content">
+                          <div class="title">What religion do you practise?</div>
+                          <div class="title_subcontent">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus mollis dignissim. Praesent a dolor ac purus egestas ullamcorper. Praesent sed porttitor nulla.</div>
+                          <%= f.association :category_matchreligion, collection: CategoryMatchreligion.all, prompt: "select", label: false %>
+                        </div>
+                      </div>
+                      <div class="medium-6 columns right_pref_section">
+                        <div class="cd-timeline-img cd-star">
+                          <i class="fa fa-users"></i>
+                        </div>
+                        <div class="cd-timeline-content">
+                          <div class="title">Your ideal date: What religion do they practise?</div>
+                          <div class="title_subcontent">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus mollis dignissim. Praesent a dolor ac purus egestas ullamcorper. Praesent sed porttitor nulla.</div>
+                          <div class="religion_check_content"><%= f.association :category_idealreligion, collection: CategoryIdealreligion.all, prompt: "select", label: false, as: :check_boxes %></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="clear"></div>
+                  </li>
+                  <!-- section_religion -->
+
+                  <!-- section_smoke -->
+                  <li>
+                    <div class="pref_content">
+                      <div class="medium-6 columns left_pref_section">
+                        <div class="cd-timeline-img cd-star">
+                          <i class="fa fa-user"></i>
+                        </div>
+                        <div class="cd-timeline-content">
+                          <div class="title">Do you smoke?</div>
+                          <div class="title_subcontent">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus mollis dignissim. Praesent a dolor ac purus egestas ullamcorper. Praesent sed porttitor nulla.</div>
+                          <%= f.association :category_matchsmoke, collection: CategoryMatchsmoke.all, prompt: "select", label: false %>
+                        </div>
+                      </div>
+                      <div class="medium-6 columns right_pref_section">
+                        <div class="cd-timeline-img cd-star">
+                          <i class="fa fa-users"></i>
+                        </div>
+                        <div class="cd-timeline-content">
+                          <div class="title">Your ideal date: Do they smoke? | Their Preference</div>
+                          <div class="title_subcontent">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus mollis dignissim. Praesent a dolor ac purus egestas ullamcorper. Praesent sed porttitor nulla.</div>
+                          <div class="smoke_check_content"><%= f.association :category_idealsmoke, collection: CategoryIdealsmoke.all, prompt: "select", label: false, as: :check_boxes %></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="clear"></div>
+                  </li>
+                  <!-- section_smoke -->
+
+                  
+                </ul>
+              </section>
+              <!-- preference_questions -->
+
+            </div>
+          </div>
+        </div>
+        <div class="clear"></div>
+         
+      </div>
+    </div>
+  </div>
+  <!-- right_column_section -->
+</div>

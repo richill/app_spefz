@@ -1,0 +1,677 @@
+/*=========================================
+    Section: preferences show
+    File: views / preferences / _show.html.erb
+  =========================================*/
+
+.user_general_settings_section {
+  padding: 0px !important;
+  background: url("img_background_main.png") repeat;
+}
+
+// --------left_column_section--------
+.user_general_settings_section .left_column_section {
+  background-color: #283041;
+  min-height: 2900px;
+}
+
+// @media only screen and (max-width: 1365px) {
+//  .user_general_settings_section .left_inner_section {
+//     position: fixed;
+//     width: 196px;
+//   }
+// }
+
+.user_general_settings_section .left_inner_section ul {
+  margin: 0px !important;
+  list-style: none;
+  background-color: rgba(47, 63, 91, 0.4);
+}
+
+.user_general_settings_section .left_inner_section .list_options {
+  border-bottom: 1px solid #364760;
+}
+
+.user_general_settings_section .left_inner_section .active {
+  background-color: #364760 !important;
+  border-top: 2px solid rgba(47, 63, 91, 0.6);
+  border-bottom: 1px solid #727985;
+  text-shadow: 2px 3px 30px #fff;
+}
+
+.user_general_settings_section .left_inner_section ul li a {
+  color: #fff !important;
+  padding: 20px 15px;
+  display: inline-block;
+  width: 100%;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease; 
+}
+
+.user_general_settings_section .left_inner_section ul li i {
+  margin-right: 3px; 
+}
+
+.user_general_settings_section .left_inner_section ul li a:hover {
+  color: #E34B51 !important;
+  background-color: #364760 !important;
+  width: 100%;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease; 
+}
+
+.user_general_settings_section .left_inner_section .option_header {
+  font-family: 'Lato', sans-serif;
+  font-size: 14px !important;
+  font-weight: 300 !important;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+}
+
+// --------right_column_section--------
+.user_general_settings_section .right_column_section {
+  height: 2900px;
+}
+
+@media only screen and (min-width: 1750px) {
+  .user_general_settings_inner_section  {
+    width: 1420px;
+  }
+}
+
+.user_general_settings_section .right_inner_section .tree_link {
+  font-family: 'Lato', sans-serif;
+  font-size: 12px !important;
+  padding: 15px 0px;
+  color: #283041 !important;
+  border-bottom: 1px solid #ededf3 !important;
+  margin-bottom: 15px;
+}
+
+.user_general_settings_section .right_inner_section .tree_link a {
+  font-family: 'Lato', sans-serif;
+  font-size: 12px !important;
+  color: #283041 !important;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease; 
+}
+
+.user_general_settings_section .right_inner_section .tree_link a:hover {
+  color: #E34B51 !important;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease; 
+}
+
+.user_general_settings_section .right_inner_section .tree_link_btn a {
+  background-color: #E34B51;
+  padding: 6px 15px;
+  margin-left: 15px !important;
+  border: 1px solid #E34B51;
+  border-radius: 3px;
+  color: #fff !important;
+  font-weight: 300;
+  letter-spacing: 1px;
+  word-spacing: 2px;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease;
+} 
+
+.user_general_settings_section .right_inner_section .tree_link_btn a:hover {
+  background-color: #2F3F5B !important;
+  border: 1px solid #2F3F5B;
+  color: #fff !important;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease;
+} 
+
+.user_general_settings_section .right_inner_section .fwd_sign {
+  margin: 0px 5px;
+}
+
+.user_general_settings_section .right_inner_section .preference_edit_update_form #user_image {
+  height: 100%;
+  margin-bottom: 0px !important;
+  padding: 15px;
+  background-color: rgba(225, 71, 62, 0.6) !important;
+  border-radius: 2px;
+  text-align: center;
+  color: #fff;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+.user_general_settings_section .right_inner_section .preference_edit_update_form label {
+  font-family: 'Lato', sans-serif;
+  font-size: 15px !important;
+  font-weight: 300 !important;
+  text-transform: capitalize;
+}
+
+.user_general_settings_section .right_inner_section .preference_edit_update_form .user_firstname {
+  width: 540px;
+  float: left;
+  margin-bottom: 15px;
+  margin-top: 25px;
+  margin-right: 18px;
+}
+
+.user_general_settings_section .right_inner_section .preference_edit_update_form .user_lastname {
+  width: 540px;
+  float: left;
+  margin-bottom: 15px;
+  margin-top: 25px;
+}
+
+.user_general_settings_section .right_inner_section .preference_edit_update_form .user_profession {
+  width: 545px;
+  float: left;
+  margin-right: 15px;
+  margin-top: 25px;
+}
+
+.user_general_settings_section .right_inner_section .preference_edit_update_form .user_category_gender {
+  width: 545px;
+  float: left;
+  margin-top: 25px;
+}
+
+.user_general_settings_section .right_inner_section .preference_edit_update_form #user_category_gender_id {
+  height: 40px;
+}
+
+.user_general_settings_section .right_inner_section .preference_edit_update_form .user_category_country {
+  width: 545px;
+  float: left;
+  margin-right: 15px;
+  margin-top: 25px;
+}
+
+.user_general_settings_section .right_inner_section .preference_edit_update_form .user_city {
+  width: 545px;
+  float: left;
+  margin-top: 25px;
+}
+
+.user_general_settings_section .right_inner_section .preference_edit_update_form #user_category_country_id {
+  height: 40px;
+}
+
+.user_general_settings_section .right_inner_section .preference_edit_update_form .label_interest {
+  font-family: 'Lato', sans-serif;
+  font-size: 15px !important;
+  font-weight: 300 !important;
+  text-transform: capitalize;
+  margin-top: 12px;
+}
+
+.user_general_settings_section .right_inner_section .user_description {
+  margin-top: 25px;
+}
+
+.user_general_settings_section .right_inner_section .preference_edit_update_form #user_description {
+  height: 60px;
+}
+
+.user_general_settings_section .right_inner_section .preference_edit_update_form .user_link_fb {
+  width: 540px;
+  float: left;
+  margin-bottom: 15px;
+  margin-top: 25px;
+  margin-right: 18px;
+}
+
+.user_general_settings_section .right_inner_section .preference_edit_update_form .user_link_twitter {
+  width: 540px;
+  float: left;
+  margin-bottom: 15px;
+  margin-top: 25px;
+}
+
+.user_general_settings_section .right_inner_section .preference_edit_update_form input[type="text"]:focus {
+  border: 1px solid rgba(75, 180, 191, 0.5) !important;
+  background-color: #fff !important;
+}
+
+.user_general_settings_section .right_inner_section .preference_edit_update_form input[type="submit"] {
+  font-family: 'Lato', sans-serif;
+  font-size: 20px;
+  color: #fff !important;
+  font-weight: 300;
+  background: #000;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+  padding: 10px 25px;
+  width: 100%;
+  border: none;
+  display: inline-block;
+  margin-bottom: 0px !important;
+  background-color: #4BB4BF !important;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+.user_general_settings_section .right_inner_section .invite_option {
+  background-color: rgba(75, 180, 191, 0.2) !important;
+  padding: 15px !important;
+  margin: 30px 0px;
+}
+
+.user_general_settings_section .right_inner_section .admin_content {
+  background-color: rgba(75, 180, 191, 0.2) !important;
+  padding: 15px !important;
+  margin: 30px 0px;
+}
+
+.user_general_settings_section .right_inner_section .current_role_group {
+  font-family: 'Lato', sans-serif;
+  font-size: 20px;
+  color: #283041 !important;
+  font-weight: 300; 
+}
+
+.user_general_settings_section .right_inner_section .current_role_group_info {
+  padding: 5px 15px;
+  background-color: rgba(75, 180, 191, 0.4) !important;
+}
+
+.user_general_settings_section .right_inner_section .select_role_group {
+  padding: 20px 0px;
+}
+
+.user_general_settings_section .preference_form {
+  margin-bottom: 30px;
+  padding: 0px !important;
+}
+
+.user_general_settings_section .preference_main_section {
+  padding: 0px !important;
+}
+
+.user_general_settings_section .preference_main_section ul {
+  list-style: none;
+  margin: 0px;
+}
+
+.user_general_settings_section .preference_main_section .pref_upper_img {
+  margin-bottom: 25px;
+}
+
+.user_general_settings_section .preference_main_section .left_pref_section {
+  padding-left: 0px !important;
+}
+
+.user_general_settings_section .preference_main_section .right_pref_section {
+  padding-right: 0px !important;
+}
+
+.user_general_settings_section .preference_main_section input[type="text"] {
+  background-color: rgba(40, 48, 45, 0.05) !important;
+}
+
+.user_general_settings_section .preference_main_section .title {
+  font-family: 'Lato', sans-serif;
+  font-size: 15px !important;
+  font-weight: 300 !important;
+  text-transform: capitalize;
+}
+
+.user_general_settings_section .preference_main_section .title_subcontent {
+  font-family: 'Lato', sans-serif;
+  font-size: 12px !important;
+  font-weight: 300 !important;
+  font-style: italic;
+  letter-spacing: 1px;
+  word-spacing: 1px;
+  color: #4BB4BF;
+  margin-bottom: 6px;
+}
+
+
+.user_general_settings_section .user_info_content {
+  font-family: "Lato", sans-serif;
+  font-weight: 300 !important;
+  box-shadow: none !important;
+  padding: 10px 15px !important;
+  border: none !important;
+  height: 40px;
+  color: #454d53;
+  font-size: 15px;
+  margin-bottom: 0px !important;
+  background-color: rgba(75, 180, 191, 0.2) !important;
+}
+
+
+
+.user_general_settings_section .pref_main_header_section .inner_pref_section {
+  font-family: 'Lato', sans-serif;
+  font-size: 15px !important;
+  font-weight: bold !important;
+  border-radius: 0.25em;
+  background: #fff !important;
+  box-shadow: 0 3px 0 rgba(47, 63, 91, 0.1);
+  padding: 15px;
+  text-align: center;
+  text-transform: capitalize;
+  border: 1px solid rgba(75, 180, 191, 0.2);
+}
+
+
+.user_general_settings_section .pref_main_header_section .pref_img_cover {
+  background-color: rgba(75, 180, 191, 0.2) !important;
+  height: 50px;
+  width: 50px;
+  padding: 3px;
+  border-radius: 200px;
+  display: inline-block;
+  margin-bottom: 3px;
+}
+
+/* -------------------------------- 
+Timline_start CSS
+-------------------------------- */
+
+.user_general_settings_section .preference_main_section .title a {
+  font-family: 'Lato', sans-serif;
+  font-size: 25px;
+  font-weight: bold;
+  text-transform: capitalize;
+  color: #283041 !important;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+.user_general_settings_section .preference_main_section .title a:hover {
+  color: #E34B51 !important;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+.user_general_settings_section .preference_main_section .title_attend a {
+  font-family: 'Lato', sans-serif;
+  font-size: 25px;
+  font-weight: bold;
+  text-transform: capitalize;
+  color: #4BB4BF !important;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+.user_general_settings_section .preference_main_section .title_attend a:hover {
+  color: #E34B51 !important;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+.user_general_settings_section .preference_main_section .cd-container::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.user_general_settings_section .preference_main_section #cd-timeline {
+  position: relative;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  padding-bottom: 50px !important;
+  border-bottom: 1px solid rgba(47, 63, 91, 0.1);
+}
+
+.user_general_settings_section .preference_main_section #cd-timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 19px;
+  height: 100%;
+  width: 4px;
+  background-color: rgba(47, 63, 91, 0.1);
+}
+
+.user_general_settings_section .preference_main_section .cd-timeline-block {
+  position: relative;
+  margin: 4px 0px 25px 5px !important;
+}
+
+.user_general_settings_section .preference_main_section .cd-timeline-block:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.user_general_settings_section .preference_main_section .cd-timeline-block:last-child {
+  margin-bottom: 0;
+}
+
+.user_general_settings_section .preference_main_section .left_pref_section .cd-timeline-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px white, inset 0 2px 0 rgba(0, 0, 0, 0.08), 0 3px 0 4px rgba(0, 0, 0, 0.05);
+}
+
+.user_general_settings_section .preference_main_section .right_pref_section .cd-timeline-img {
+  position: absolute;
+  top: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 4px white, inset 0 2px 0 rgba(0, 0, 0, 0.08), 0 3px 0 4px rgba(0, 0, 0, 0.05);
+}
+
+.user_general_settings_section .preference_main_section .cd-timeline-img i {
+  font-size: 18px;
+  color: #fff;
+  display: block;
+  width: 24px;
+  height: 24px;
+  position: relative;
+  top: 57%;
+  margin-left: -12px;
+  margin-top: -12px;
+}
+
+.user_general_settings_section .preference_main_section .cd-star {
+  background: #283041;
+}
+
+.user_general_settings_section .preference_main_section .fa {
+  color: #fff !important;
+}
+
+.user_general_settings_section .preference_main_section .fa-user {
+  left: 63% !important;
+}
+
+.user_general_settings_section .preference_main_section .fa-users {
+  left: 56% !important;
+}
+
+.user_general_settings_section .preference_main_section .cd-timeline-content {
+  position: relative;
+  margin-left: 55px;
+  margin-bottom: 25px;
+  background: #fff;
+  border-radius: 0.25em;
+  padding: 1em;
+  box-shadow: 0 3px 0 rgba(47, 63, 91, 0.1);
+}
+
+.user_general_settings_section .preference_main_section .cd-timeline-content:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.user_general_settings_section .preference_main_section .cd-timeline-content h2 {
+  font-family: 'Lato', sans-serif;
+  font-size: 25px;
+  color: #2F3F5B;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.user_general_settings_section .preference_main_section .cd-timeline-content p {
+  margin-top: 5px !important;
+}
+
+.user_general_settings_section .preference_main_section .cd-timeline-content p, .cd-timeline-content .cd-read-more, .cd-timeline-content .cd-date {
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  color: #2F3F5B;
+  line-height: 25px;
+}
+
+.user_general_settings_section .preference_main_section .cd-timeline-content::before {
+  content: '';
+  position: absolute;
+  top: 16px;
+  right: 100%;
+  height: 0;
+  width: 0;
+  border: 7px solid transparent;
+  border-right: 7px solid #fff;
+}
+
+/* -------------------------------- 
+Timline_end CSS
+-------------------------------- */
+
+.user_general_settings_section .preference_main_section .age_selection ul {
+  list-style: none;
+  margin: 0px !important;
+}
+
+.user_general_settings_section .preference_main_section .age_selection ul li {
+  float: left;
+}
+
+.user_general_settings_section .preference_main_section #preference_idealage_start, #preference_idealage_end {
+  width: 224px;
+}
+
+.user_general_settings_section .preference_main_section #preference_idealage_start {
+  margin-right: 10px;
+}
+
+.user_general_settings_section .preference_main_section #preference_category_matchseeking_id {
+  margin-bottom: 0px;
+}
+
+.user_general_settings_section .preference_main_section #preference_category_matchrelationship_id {
+  margin-bottom: 3px;
+}
+
+.user_general_settings_section .preference_main_section #preference_category_matchstatus_id {
+  margin-bottom: 3px;
+}
+
+.user_general_settings_section .preference_main_section #preference_category_matchparent_id {
+  margin-bottom: 3px;
+}
+
+.user_general_settings_section .preference_main_section #preference_category_matchkid_id {
+  margin-bottom: 3px;
+}
+
+.user_general_settings_section .preference_main_section #preference_category_matcheducation_id {
+  margin-bottom: 3px;
+}
+
+.user_general_settings_section .preference_main_section #preference_category_matchheight_id {
+  margin-bottom: 3px;
+}
+
+.user_general_settings_section .preference_main_section #preference_category_matchbodytype_id {
+  margin-bottom: 3px;
+}
+
+.user_general_settings_section .preference_main_section #preference_category_matchethnicity_id {
+  margin-bottom: 3px;
+}
+
+.user_general_settings_section .preference_main_section #preference_category_matchreligion_id {
+  margin-bottom: 3px;
+}
+
+.user_general_settings_section .preference_main_section #preference_category_matchsmoke_id {
+  margin-bottom: 3px;
+}
+
+.user_general_settings_section .preference_main_section #preference_category_idealrelationship_id {
+  margin-bottom: 3px;
+}
+
+.user_general_settings_section .preference_main_section .check_boxes {
+  margin-right: 5px;
+}
+
+.user_general_settings_section .preference_main_section #preference_category_idealparent_id {
+  margin-bottom: 3px;
+}
+
+.user_general_settings_section .preference_main_section #preference_category_idealkid_id {
+  margin-bottom: 3px;
+}
+
+.user_general_settings_section .preference_main_section .relationshipstatus_check_content label {
+  float: left !important;
+  margin-right: 8px !important;
+  width: 140px !important;
+}
+
+.user_general_settings_section .preference_main_section .education_check_content label {
+  float: left !important;
+  margin-right: 8px !important;
+  width: 190px !important;
+}
+
+.user_general_settings_section .preference_main_section .height_check_content label {
+  float: left !important;
+  margin-right: 8px !important;
+  width: 112px !important;
+}
+
+.user_general_settings_section .preference_main_section .bodytype_check_content label {
+  float: left !important;
+  margin-right: 8px !important;
+  width: 185px !important;
+}
+
+
+.user_general_settings_section .preference_main_section .ethnicity_check_content label {
+  float: left !important;
+  margin-right: 8px !important;
+  width: 185px !important;
+}
+
+.user_general_settings_section .preference_main_section .religion_check_content label {
+  float: left !important;
+  margin-right: 8px !important;
+  width: 185px !important;
+}
+
+.user_general_settings_section .preference_main_section .smoke_check_content label {
+  float: left !important;
+  margin-right: 8px !important;
+  width: 280px !important;
+}
+
+
+// -------------------------------
+//     workings
+// -------------------------------
+
+
+
