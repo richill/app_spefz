@@ -75,92 +75,95 @@
                           <div class="title">potential partners</div>
                           <div class="title_subcontent">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus mollis dignissim. Praesent a dolor ac purus egestas ullamcorper. Praesent sed porttitor nulla.</div>
                           <div class="potential_partners_selection">
-                            <!-- females -->
-                            <ul class="medium-12 columns males">
-                              <li>
-                                <div class="potential_img_cover">
-                                <%= link_to(image_tag("img_profile_02.png", :alt =>  "image", :class =>"#", id: "", style:"border-radius: 200px;"), '#') %>
-                                </div>
-                              </li>
-                              <li>
-                                <div class="potential_img_cover">
-                                <%= link_to(image_tag("img_profile_06.png", :alt =>  "image", :class =>"#", id: "", style:"border-radius: 200px;"), '#') %>
-                                </div>
-                              </li>
-                              <li>
-                                <div class="potential_img_cover">
-                                <%= link_to(image_tag("img_profile_08.png", :alt =>  "image", :class =>"#", id: "", style:"border-radius: 200px;"), '#') %>
-                                </div>
-                              </li>
-                              <li>
-                                <div class="potential_img_cover">
-                                <%= link_to(image_tag("img_profile_11.png", :alt =>  "image", :class =>"#", id: "", style:"border-radius: 200px;"), '#') %>
-                                </div>
-                              </li>
-                              <li>
-                                <div class="potential_img_cover">
-                                <%= link_to(image_tag("img_profile_15.png", :alt =>  "image", :class =>"#", id: "", style:"border-radius: 200px;"), '#') %>
-                                </div>
-                              </li>
-                              <li>
-                                <div class="potential_img_cover">
-                                <%= link_to(image_tag("img_profile_17.png", :alt =>  "image", :class =>"#", id: "", style:"border-radius: 200px;"), '#') %>
-                                </div>
-                              </li>
-                              <li>
-                                <div class="potential_img_cover">
-                                <%= link_to(image_tag("img_profile_20.png", :alt =>  "image", :class =>"#", id: "", style:"border-radius: 200px;"), '#') %>
-                                </div>
-                              </li>
-                              <li>
-                                <div class="potential_img_cover">
-                                <%= link_to(image_tag("img_profile_21.png", :alt =>  "image", :class =>"#", id: "", style:"border-radius: 200px;"), '#') %>
-                                </div>
-                              </li>
-                            </ul>
-                            <!-- males -->
-                            <ul class="medium-12 columns males">
-                              <li>
-                                <div class="potential_img_cover">
-                                <%= link_to(image_tag("img_profile_13.png", :alt =>  "image", :class =>"#", id: "", style:"border-radius: 200px;"), '#') %>
-                                </div>
-                              </li>
-                              <li>
-                                <div class="potential_img_cover">
-                                <%= link_to(image_tag("img_profile_09.png", :alt =>  "image", :class =>"#", id: "", style:"border-radius: 200px;"), '#') %>
-                                </div>
-                              </li>
-                              <li>
-                                <div class="potential_img_cover">
-                                <%= link_to(image_tag("img_profile_07.png", :alt =>  "image", :class =>"#", id: "", style:"border-radius: 200px;"), '#') %>
-                                </div>
-                              </li>
-                              <li>
-                                <div class="potential_img_cover">
-                                <%= link_to(image_tag("img_profile_04.png", :alt =>  "image", :class =>"#", id: "", style:"border-radius: 200px;"), '#') %>
-                                </div>
-                              </li>
-                              <li>
-                                <div class="potential_img_cover">
-                                <%= link_to(image_tag("img_profile_12.png", :alt =>  "image", :class =>"#", id: "", style:"border-radius: 200px;"), '#') %>
-                                </div>
-                              </li>
-                              <li>
-                                <div class="potential_img_cover">
-                                <%= link_to(image_tag("img_profile_16.png", :alt =>  "image", :class =>"#", id: "", style:"border-radius: 200px;"), '#') %>
-                                </div>
-                              </li>
-                              <li>
-                                <div class="potential_img_cover">
-                                <%= link_to(image_tag("img_profile_18.png", :alt =>  "image", :class =>"#", id: "", style:"border-radius: 200px;"), '#') %>
-                                </div>
-                              </li>
-                              <li>
-                                <div class="potential_img_cover">
-                                <%= link_to(image_tag("img_profile_19.png", :alt =>  "image", :class =>"#", id: "", style:"border-radius: 200px;"), '#') %>
-                                </div>
-                              </li>
-                            </ul>
+                            <% if @preference.category_matchseeking.name == "Female" %>
+                              <!-- females -->
+                              <ul class="medium-12 columns females">
+                                <li>
+                                  <div class="potential_img_cover">
+                                  <%= link_to(image_tag("img_profile_02.png", :alt =>  "image", :class =>"#", id: "", style:"border-radius: 200px;"), '#') %>
+                                  </div>
+                                </li>
+                                <li>
+                                  <div class="potential_img_cover">
+                                  <%= link_to(image_tag("img_profile_06.png", :alt =>  "image", :class =>"#", id: "", style:"border-radius: 200px;"), '#') %>
+                                  </div>
+                                </li>
+                                <li>
+                                  <div class="potential_img_cover">
+                                  <%= link_to(image_tag("img_profile_08.png", :alt =>  "image", :class =>"#", id: "", style:"border-radius: 200px;"), '#') %>
+                                  </div>
+                                </li>
+                                <li>
+                                  <div class="potential_img_cover">
+                                  <%= link_to(image_tag("img_profile_11.png", :alt =>  "image", :class =>"#", id: "", style:"border-radius: 200px;"), '#') %>
+                                  </div>
+                                </li>
+                                <li>
+                                  <div class="potential_img_cover">
+                                  <%= link_to(image_tag("img_profile_15.png", :alt =>  "image", :class =>"#", id: "", style:"border-radius: 200px;"), '#') %>
+                                  </div>
+                                </li>
+                                <li>
+                                  <div class="potential_img_cover">
+                                  <%= link_to(image_tag("img_profile_17.png", :alt =>  "image", :class =>"#", id: "", style:"border-radius: 200px;"), '#') %>
+                                  </div>
+                                </li>
+                                <li>
+                                  <div class="potential_img_cover">
+                                  <%= link_to(image_tag("img_profile_20.png", :alt =>  "image", :class =>"#", id: "", style:"border-radius: 200px;"), '#') %>
+                                  </div>
+                                </li>
+                                <li>
+                                  <div class="potential_img_cover">
+                                  <%= link_to(image_tag("img_profile_21.png", :alt =>  "image", :class =>"#", id: "", style:"border-radius: 200px;"), '#') %>
+                                  </div>
+                                </li>
+                              </ul>
+                            <% elsif @preference.category_matchseeking.name == "Male"  %>
+                              <!-- males -->
+                              <ul class="medium-12 columns males">
+                                <li>
+                                  <div class="potential_img_cover">
+                                  <%= link_to(image_tag("img_profile_13.png", :alt =>  "image", :class =>"#", id: "", style:"border-radius: 200px;"), '#') %>
+                                  </div>
+                                </li>
+                                <li>
+                                  <div class="potential_img_cover">
+                                  <%= link_to(image_tag("img_profile_09.png", :alt =>  "image", :class =>"#", id: "", style:"border-radius: 200px;"), '#') %>
+                                  </div>
+                                </li>
+                                <li>
+                                  <div class="potential_img_cover">
+                                  <%= link_to(image_tag("img_profile_07.png", :alt =>  "image", :class =>"#", id: "", style:"border-radius: 200px;"), '#') %>
+                                  </div>
+                                </li>
+                                <li>
+                                  <div class="potential_img_cover">
+                                  <%= link_to(image_tag("img_profile_04.png", :alt =>  "image", :class =>"#", id: "", style:"border-radius: 200px;"), '#') %>
+                                  </div>
+                                </li>
+                                <li>
+                                  <div class="potential_img_cover">
+                                  <%= link_to(image_tag("img_profile_12.png", :alt =>  "image", :class =>"#", id: "", style:"border-radius: 200px;"), '#') %>
+                                  </div>
+                                </li>
+                                <li>
+                                  <div class="potential_img_cover">
+                                  <%= link_to(image_tag("img_profile_16.png", :alt =>  "image", :class =>"#", id: "", style:"border-radius: 200px;"), '#') %>
+                                  </div>
+                                </li>
+                                <li>
+                                  <div class="potential_img_cover">
+                                  <%= link_to(image_tag("img_profile_18.png", :alt =>  "image", :class =>"#", id: "", style:"border-radius: 200px;"), '#') %>
+                                  </div>
+                                </li>
+                                <li>
+                                  <div class="potential_img_cover">
+                                  <%= link_to(image_tag("img_profile_19.png", :alt =>  "image", :class =>"#", id: "", style:"border-radius: 200px;"), '#') %>
+                                  </div>
+                                </li>
+                              </ul>
+                            <% end %>
                           </div>
                         </div>
                       </div>

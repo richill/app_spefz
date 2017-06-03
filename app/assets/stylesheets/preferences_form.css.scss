@@ -548,6 +548,28 @@ Timline_start CSS
 Timline_end CSS
 -------------------------------- */
 
+.user_general_settings_section .preference_main_section .potential_partners_selection ul {
+  list-style: none;
+  margin: 0px !important;
+  padding: 0px !important;
+}
+
+.user_general_settings_section .preference_main_section .potential_partners_selection ul li {
+  float: left !important;
+  margin-right: 7px !important;
+}
+
+.user_general_settings_section .preference_main_section .potential_partners_selection li .potential_img_cover {
+  background-color: rgba(75, 180, 191, 0.2) !important;
+  height: 50px;
+  width: 50px;
+  padding: 3px;
+  border-radius: 200px;
+  display: inline-block;
+  margin-bottom: 3px;
+  opacity: 0.7;
+}
+
 .user_general_settings_section .preference_main_section .age_selection ul {
   list-style: none;
   margin: 0px !important;
