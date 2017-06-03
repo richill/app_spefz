@@ -173,7 +173,7 @@
                                 <% end %>
                               <% else %>
                                nini
-                               <% if current_user.category_gender.name == "Female" %>
+                               <% if current_user.category_gender.name == "Male" %>
                                   <!-- females -->
                                   <ul class="medium-12 columns females">
                                     <li>
@@ -217,7 +217,7 @@
                                       </div>
                                     </li>
                                   </ul>
-                                <% elsif current_user.category_gender.name == "Male" %>
+                                <% elsif current_user.category_gender.name == "Female" %>
                                   <!-- males -->
                                   <ul class="medium-12 columns males">
                                     <li>
