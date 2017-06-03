@@ -14,6 +14,7 @@
         <span><i class="fa fa-user" aria-hidden="true"></i> <%= link_to "#{current_user.firstname}", user_path(current_user)%></span> 
         <span class="fwd_sign">></span> 
         <span>preference</span>
+        <span class="tree_link_btn"><%= link_to "edit preference", edit_user_preference_path(current_user, current_user.preference) %></span>
       </div>
       <div class="user_general_settings_inner_section preference_main_show">
     
