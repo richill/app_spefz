@@ -68,7 +68,8 @@
                         <div class="cd-timeline-content">
                           <div class="title">i am seeking</div>
                           <div class="title_subcontent">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus mollis dignissim. Praesent a dolor ac purus egestas ullamcorper. Praesent sed porttitor nulla.</div>
-                          <div><%= f.association :category_matchseeking, collection: CategoryMatchseeking.all, prompt: "select", label: false %></div>
+                          <div><%# f.association :category_matchseeking, collection: CategoryMatchseeking.all, prompt: "select", label: false %></div>
+                          <div><%= @preference.category_matchseeking.name %></div>
                         </div>
                       </div>
                       <div class="medium-6 columns right_pref_section hide">
@@ -78,10 +79,10 @@
                         <div class="cd-timeline-content">
                           <div class="title">your ideal date: is seeking</div>
                           <div class="title_subcontent">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus mollis dignissim. Praesent a dolor ac purus egestas ullamcorper. Praesent sed porttitor nulla.</div>
-                          <div class="age_selection">
+                          <div class="age_selection"><%= @preference.idealage_start %> - <%= @preference.idealage_end %>
                             <ul>
-                              <li><%= f.input :idealage_start, label: false, placeholder: "From"  %></li>
-                              <li><%= f.input :idealage_end, label: false, placeholder: "To" %></li>
+                              <li><%# f.input :idealage_start, label: false, placeholder: "From"  %></li>
+                              <li><%# f.input :idealage_end, label: false, placeholder: "To" %></li>
                             </ul>
                           </div>
                         </div>
