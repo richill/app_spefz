@@ -167,10 +167,9 @@
                           <div class="relationshipstatus_check_content">
                             <ul class="medium-12 columns multiple_question">
                             <% @preference.category_idealstatus.each do |status| %>
-                              <li><i class="fa fa-square" aria-hidden="true"></i><%= status.name %></li>
+                              <li><i class="fa fa-check-square-o" aria-hidden="true"></i><%= status.name %></li>
                             <% end %>
                             </ul> 
-                            <%# f.association :category_idealstatus, collection: CategoryIdealstatus.all, prompt: "select", label: false, as: :check_boxes %>
                           </div>
                         </div>
                       </div>
@@ -189,7 +188,7 @@
                         <div class="cd-timeline-content">
                           <div class="title">Are you a parent?</div>
                           <div class="title_subcontent">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus mollis dignissim. Praesent a dolor ac purus egestas ullamcorper. Praesent sed porttitor nulla.</div>
-                          <%# f.association :category_matchparent, collection: CategoryMatchparent.all, prompt: "select", label: false %>
+                          <div class="user_info_content"><%= @preference.category_matchparent.name %></div>
                         </div>
                       </div>
                       <div class="medium-6 columns right_pref_section">
@@ -199,7 +198,7 @@
                         <div class="cd-timeline-content">
                           <div class="title">Your ideal date: Do they have children?</div>
                           <div class="title_subcontent">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus mollis dignissim. Praesent a dolor ac purus egestas ullamcorper. Praesent sed porttitor nulla.</div>
-                          <div><%# f.association :category_idealparent, collection: CategoryIdealparent.all, prompt: "select", label: false %></div>
+                          <div class="user_info_content"><%= @preference.category_idealparent.name %></div>
                         </div>
                       </div>
                     </div>
@@ -217,7 +216,7 @@
                         <div class="cd-timeline-content">
                           <div class="title">Would you like to have children?</div>
                           <div class="title_subcontent">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus mollis dignissim. Praesent a dolor ac purus egestas ullamcorper. Praesent sed porttitor nulla.</div>
-                          <%# f.association :category_matchkid, collection: CategoryMatchkid.all, prompt: "select", label: false %>
+                          <div class="user_info_content"><%= @preference.category_matchkid.name %></div>
                         </div>
                       </div>
                       <div class="medium-6 columns right_pref_section">
@@ -227,7 +226,7 @@
                         <div class="cd-timeline-content">
                           <div class="title">Your ideal date: Do they want children? | Their Preference:</div>
                           <div class="title_subcontent">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus mollis dignissim. Praesent a dolor ac purus egestas ullamcorper. Praesent sed porttitor nulla.</div>
-                          <div><%# f.association :category_idealkid, collection: CategoryIdealkid.all, prompt: "select", label: false %></div>
+                          <div class="user_info_content"><%= @preference.category_idealkid.name %></div>
                         </div>
                       </div>
                     </div>
@@ -245,7 +244,7 @@
                         <div class="cd-timeline-content">
                           <div class="title">Tell us you highest level of education</div>
                           <div class="title_subcontent">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus mollis dignissim. Praesent a dolor ac purus egestas ullamcorper. Praesent sed porttitor nulla.</div>
-                          <%# f.association :category_matcheducation, collection: CategoryMatcheducation.all, prompt: "select", label: false %>
+                          <div class="user_info_content"><%= @preference.category_matcheducation.name %></div>
                         </div>
                       </div>
                       <div class="medium-6 columns right_pref_section">
@@ -255,7 +254,13 @@
                         <div class="cd-timeline-content">
                           <div class="title">Your ideal date: What is their highest Education Level</div>
                           <div class="title_subcontent">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus mollis dignissim. Praesent a dolor ac purus egestas ullamcorper. Praesent sed porttitor nulla.</div>
-                          <div class="education_check_content"><%# f.association :category_idealeducation, collection: CategoryIdealeducation.all, prompt: "select", label: false, as: :check_boxes  %></div>
+                          <div class="education_check_content">
+                            <ul class="medium-12 columns multiple_question">
+                            <% @preference.category_idealeducation.each do |education| %>
+                              <li><i class="fa fa-check-square-o" aria-hidden="true"></i><%= education.name %></li>
+                            <% end %>
+                            </ul> 
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -273,7 +278,7 @@
                         <div class="cd-timeline-content">
                           <div class="title">How tall are you? | your height level</div>
                           <div class="title_subcontent">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus mollis dignissim. Praesent a dolor ac purus egestas ullamcorper. Praesent sed porttitor nulla.</div>
-                          <%# f.association :category_matchheight, collection: CategoryMatchheight.all, prompt: "select", label: false %>
+                          <div class="user_info_content"><%= @preference.category_matchheight.name %></div>
                         </div>
                       </div>
                       <div class="medium-6 columns right_pref_section">
@@ -283,7 +288,13 @@
                         <div class="cd-timeline-content">
                           <div class="title">Your ideal date: Their Height level</div>
                           <div class="title_subcontent">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus mollis dignissim. Praesent a dolor ac purus egestas ullamcorper. Praesent sed porttitor nulla.</div>
-                          <div class="height_check_content"><%# f.association :category_idealheight, collection: CategoryMatchheight.all, prompt: "select", label: false, as: :check_boxes %></div>
+                          <div class="height_check_content">
+                            <ul class="medium-12 columns multiple_question">
+                            <% @preference.category_idealheight.each do |height| %>
+                              <li><i class="fa fa-check-square-o" aria-hidden="true"></i><%= height.name %></li>
+                            <% end %>
+                            </ul>
+                          </div>
                         </div>
                       </div>
                     </div>
