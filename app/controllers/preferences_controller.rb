@@ -98,15 +98,10 @@ class PreferencesController < ApplicationController
     @activity =  Activity.last
   end
 
-  # Use callbacks to share common setup or constraints between actions.
-  # def set_preference
-  #   @preference = Preference.find(params[:id])
-  # end
   def set_preference
     @preference = Preference.friendly.find(params[:id])
   end
 
-  # Never trust parameters from the scary internet, only allow the white list through.
   def preference_params
     params.require(:preference).permit(:town, :user_id, :name, :slug, :idealage_start, :idealage_end, :category_matchseeking_id, :category_matchrelationship_id, :category_matchstatus_id, :category_matchparent_id, :category_matchkid_id, :category_matcheducation_id, :category_matchheight_id, :category_matchbodytype_id, :category_matchethnicity_id, :category_matchreligion_id, :category_matchsmoke_id, :category_idealrelationship_id, :category_idealparent_id, :category_idealkid_id, category_idealstatus_ids: [], category_idealeducation_ids: [], category_idealheight_ids: [], category_idealbodytype_ids: [], category_idealethnicity_ids: [], category_idealreligion_ids: [], category_idealsmoke_ids: [] )
   end
