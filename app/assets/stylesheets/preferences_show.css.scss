@@ -333,31 +333,41 @@
 }
 
 
-.user_general_settings_section .user_info_content {
+.user_general_settings_section .preference_show_main_section .user_info_content {
   font-family: "Lato", sans-serif;
   font-weight: 300 !important;
   box-shadow: none !important;
   padding: 10px 15px !important;
   border: none !important;
-  height: 40px;
+  // height: 40px;
   color: #454d53;
   font-size: 15px;
   margin-bottom: 0px !important;
   background-color: rgba(75, 180, 191, 0.2) !important;
 }
 
-.user_general_settings_section .multiple_question li {
+.user_general_settings_section .preference_show_main_section .multiple_question {
+  padding: 0px !important;
+  background-color: rgba(75, 180, 191, 0.2) !important;
+}
+
+.user_general_settings_section .preference_show_main_section .multiple_question li {
   font-family: "Lato", sans-serif;
   font-weight: 300 !important;
   box-shadow: none !important;
   padding: 10px 15px !important;
   border: none !important;
-  height: 40px;
   color: #454d53;
   font-size: 15px;
   margin-bottom: 0px !important;
+  float: left;
 }
 
+.user_general_settings_section .multiple_question li .fa-square {
+  margin-right: 5px;
+  font-size: 11px;
+  color: rgba(40, 48, 45, 0.2) !important;
+}
 
 
 .user_general_settings_section .pref_main_header_section .inner_pref_section {

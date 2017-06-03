@@ -165,13 +165,11 @@
                           <div class="title">Your ideal date: What is their relationship status?</div>
                           <div class="title_subcontent">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus mollis dignissim. Praesent a dolor ac purus egestas ullamcorper. Praesent sed porttitor nulla.</div>
                           <div class="relationshipstatus_check_content">
-                            <div class="user_info_content">
-                              <ul class="multiple_question">
-                              <% @preference.category_idealstatus.each do |status| %>
-                                <li><%= status.name %></li>
-                              <% end %>
-                              </ul>
-                            </div>  
+                            <ul class="medium-12 columns multiple_question">
+                            <% @preference.category_idealstatus.each do |status| %>
+                              <li><i class="fa fa-square" aria-hidden="true"></i><%= status.name %></li>
+                            <% end %>
+                            </ul> 
                             <%# f.association :category_idealstatus, collection: CategoryIdealstatus.all, prompt: "select", label: false, as: :check_boxes %>
                           </div>
                         </div>
