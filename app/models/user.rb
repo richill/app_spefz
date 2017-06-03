@@ -378,14 +378,14 @@ class User < ActiveRecord::Base
     pref_age(other_user) &&
     pref_relationship(other_user) &&
     pref_smoke(other_user)
-    # pref_religion(other_user) &&
-    # pref_parentstatus(other_user) &&
-    # pref_children(other_user) &&
-    # pref_ethnicity(other_user) &&
-    # pref_status(other_user) &&
-    # pref_bodytype(other_user) &&
-    # pref_education(other_user) &&
-    # pref_height(other_user)
+    pref_religion(other_user) &&
+    pref_parentstatus(other_user) &&
+    pref_children(other_user) &&
+    pref_ethnicity(other_user) &&
+    pref_status(other_user) &&
+    pref_bodytype(other_user) &&
+    pref_education(other_user) &&
+    pref_height(other_user)
   end
 
   def pref_age(other_user)
