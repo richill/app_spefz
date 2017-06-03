@@ -373,6 +373,298 @@ class User < ActiveRecord::Base
     end
   end
 
+  def matching(other_user)
+    pref_seeking(other_user)
+    # pref_age(other_user) &&
+    # pref_relationship(other_user) &&
+    # pref_smoke(other_user) &&
+    # pref_religion(other_user) &&
+    # pref_parentstatus(other_user) &&
+    # pref_children(other_user) &&
+    # pref_ethnicity(other_user) &&
+    # pref_status(other_user) &&
+    # pref_bodytype(other_user) &&
+    # pref_education(other_user) &&
+    # pref_height(other_user)
+  end
+
+  def pref_age(other_user)
+    current_user_age = self.age #eg displays: "36" 
+    other_user_age   = other_user.age #eg displays "40"
+
+    if (other_user_age >= self.preference.idealage_start.to_i && other_user_age <= self.preference.idealage_end.to_i) && 
+       (current_user_age >= other_user.preference.idealage_start.to_i && current_user_age <= other_user.preference.idealage_end.to_i)
+      other_user
+    end
+  end
+
+
+  def pref_seeking(other_user)
+    #category_matchseeking
+    if self.preference.present? && other_user.preference.present?
+      if self.preference.category_matchseeking.name == "Male"
+        users = User.find(other_user)
+        other_user.preference.category_matchseeking.name == "Female"
+      elsif self.preference.category_matchseeking.name == "Female"
+        other_user.preference.category_matchseeking.name == "Male"
+      end
+    end
+  end
+
+
+  def pref_relationship(other_user)
+    #category_matchrelationship
+    current_user_relationship = self.preference.category_matchrelationship.name
+    current_user_ideal_relationship = self.preference.category_idealrelationship.name
+    other_user_relationship = other_user.preference.category_matchrelationship.name
+    other_user_ideal_relationship = other_user.preference.category_idealrelationship.name
+    if current_user_ideal_relationship == other_user_relationship && other_user_ideal_relationship == current_user_relationship
+      other_user
+    end
+  end
+
+
+  def pref_status(other_user)
+    #category_matchstatus [multiple]
+    current_user_relationshipstatus = self.preference.category_matchstatus.name #eg displays: "Never Married" 
+    other_user_relationshipstatus   = other_user.preference.category_matchstatus.name #eg displays "Seperated"
+
+    #current_user preferred relationship status
+    current_user_preferred_relationshipstatus = Array.new
+    current_user_selected_relationshipstatus = self.preference.category_idealstatus
+    current_user_selected_relationshipstatus.each do |status|
+      current_user_preferred_relationshipstatus << status.name
+    end
+    current_user_preferred_relationshipstatus #eg displays: ["Never Married", "Seperated", "Divorce"]
+
+    #current_user preferred relationship status
+    other_user_preferred_relationshipstatus = Array.new
+    other_user_selected_relationshipstatus = other_user.preference.category_idealstatus
+    other_user_selected_relationshipstatus.each do |status|
+      other_user_preferred_relationshipstatus << status.name
+    end
+    other_user_preferred_relationshipstatus #eg displays: ["Never Married", "Divorced"]
+
+    #if other_user_relationshipstatus is included in current_user_preferred_relationshipstatus and vice versa, display other_user 
+    if current_user_preferred_relationshipstatus.include?(other_user_relationshipstatus) && other_user_preferred_relationshipstatus.include?(current_user_relationshipstatus)
+      other_user
+    end
+  end
+
+
+  def pref_parentstatus(other_user)
+    #category_matchparent
+    current_user_parentstatus = self.preference.category_matchparent.name
+    current_user_ideal_parentstatus = self.preference.category_idealparent.name
+    other_user_parentstatus = other_user.preference.category_matchparent.name
+    other_user_ideal_parentstatus = other_user.preference.category_idealparent.name
+
+    current_user_parentstatus_ys = self.preference.category_matchparent.name == "Yes"
+    current_user_parentstatus_no = self.preference.category_matchparent.name == "No"
+
+    current_user_ideal_parentstatus_ys = self.preference.category_idealparent.name == "Yes"
+    current_user_ideal_parentstatus_no = self.preference.category_idealparent.name == "No"
+    current_user_ideal_parentstatus_dm = self.preference.category_idealparent.name == "I Do Not Mind"
+
+    other_user_parentstatus_ys = other_user.preference.category_matchparent.name == "Yes"
+    other_user_parentstatus_no = other_user.preference.category_matchparent.name == "No"
+
+    other_user_ideal_parentstatus_ys = other_user.preference.category_idealparent.name == "Yes"
+    other_user_ideal_parentstatus_no = other_user.preference.category_idealparent.name == "No"
+    other_user_ideal_parentstatus_dm = other_user.preference.category_idealparent.name == "I Do Not Mind"
+
+    if current_user_ideal_parentstatus == other_user_parentstatus && other_user_ideal_parentstatus == current_user_parentstatus
+      other_user
+    elsif current_user_ideal_parentstatus == other_user_parentstatus && other_user_ideal_parentstatus_dm
+      other_user
+    elsif other_user_ideal_parentstatus == current_user_parentstatus && current_user_ideal_parentstatus_dm
+      other_user
+
+    elsif current_user_ideal_parentstatus_dm && other_user_parentstatus_ys && other_user_ideal_parentstatus_dm 
+      other_user
+    elsif current_user_ideal_parentstatus_dm && other_user_parentstatus_no && other_user_ideal_parentstatus_dm 
+      other_user
+    end
+  end
+
+
+  def pref_children(other_user)
+    #category_matchkid
+    current_user_children = self.preference.category_matchkid.name
+    current_user_ideal_children = self.preference.category_idealkid.name
+    other_user_children = other_user.preference.category_matchkid.name
+    other_user_ideal_children = other_user.preference.category_idealkid.name
+    if current_user_ideal_children == other_user_children && other_user_ideal_children == current_user_children
+      other_user
+    end
+  end
+
+
+  def pref_education(other_user)
+    #category_matcheducation [multiple]
+    current_user_educationlevel = self.preference.category_matcheducation.name #eg displays: "Masters" 
+    other_user_educationlevel   = other_user.preference.category_matcheducation.name #eg displays "Associates Degree"
+
+    #current_user preferred educationlevel
+    current_user_preferred_educationlevels = Array.new
+    current_user_selected_educationlevels = self.preference.category_idealeducation
+    current_user_selected_educationlevels.each do |education|
+      current_user_preferred_educationlevels << education.name
+    end
+    current_user_preferred_educationlevels #eg displays: ["Associates Degree", "Bachelors Degree", "Masters", "PHD / Post Doctoral"]
+
+    #other_user preferred educationlevel
+    other_user_preferred_educationlevels = Array.new
+    other_user_selected_educationlevels = other_user.preference.category_idealeducation
+    other_user_selected_educationlevels.each do |education|
+      other_user_preferred_educationlevels << education.name
+    end
+    other_user_preferred_educationlevels #eg displays: ["Bachelors Degree", "Masters", "PHD / Post Doctoral"]
+
+    #if other_user_educationlevel is included in current_user_preferred_educationlevels and vice versa, display other_user 
+    if current_user_preferred_educationlevels.include?(other_user_educationlevel) && other_user_preferred_educationlevels.include?(current_user_educationlevel)
+      other_user
+    end
+  end
+
+
+  def pref_height(other_user)
+    #category_matchheight [multiple]
+    current_user_height = self.preference.category_matchheight.name #eg displays: "5'7" 
+    other_user_height   = other_user.preference.category_matchheight.name #eg displays "5'11"
+
+    #current_user preferred height
+    current_user_preferred_heights = Array.new
+    current_user_selected_heights = self.preference.category_idealheight
+    current_user_selected_heights.each do |height|
+      current_user_preferred_heights << height.name
+    end
+    current_user_preferred_heights #eg displays: ["5'11", "5'12", "6"]
+
+    #other_user preferred height
+    other_user_preferred_heights = Array.new
+    other_user_selected_heights = other_user.preference.category_idealheight
+    other_user_selected_heights.each do |height|
+      other_user_preferred_heights << height.name
+    end
+    other_user_preferred_heights #eg displays: ["5'7", "5'8", "5'9", "5'10"]
+
+    if current_user_preferred_heights.include?(other_user_height) && other_user_preferred_heights.include?(current_user_height)
+      other_user
+    end
+  end
+
+
+  def pref_bodytype(other_user)
+    #category_matchbodytype [multiple]
+    current_user_bodytype = self.preference.category_matchbodytype.name #eg displays: "Slim" 
+    other_user_bodytype   = other_user.preference.category_matchbodytype.name #eg displays "Athletic"
+
+    #current_user preferred bodytype
+    current_user_preferred_bodytypes = Array.new
+    current_user_selected_bodytypes = self.preference.category_idealbodytype
+    current_user_selected_bodytypes.each do |bodytype|
+      current_user_preferred_bodytypes << bodytype.name
+    end
+    current_user_preferred_bodytypes #eg displays: ["About Average", "Slim", "Athletic"]
+
+    #other_user preferred bodytype
+    other_user_preferred_bodytypes = Array.new
+    other_user_selected_bodytypes = other_user.preference.category_idealbodytype
+    other_user_selected_bodytypes.each do |bodytype|
+      other_user_preferred_bodytypes << bodytype.name
+    end
+    other_user_preferred_bodytypes #eg displays: ["About Average", "Slim"]
+
+    if current_user_preferred_bodytypes.include?(other_user_bodytype) && other_user_preferred_bodytypes.include?(current_user_bodytype)
+      other_user
+    end
+  end
+
+
+  def pref_ethnicity(other_user)
+    #category_matchethnicity [multiple]
+    current_user_ethnic = self.preference.category_matchethnicity.name #eg displays: "Black / African Descent" 
+    other_user_ethnic   = other_user.preference.category_matchethnicity.name #eg displays "White / Caucasian"
+
+    #current_user preferred ethnicity
+    current_user_preferred_ethicities = Array.new
+    current_user_selected_ethnicities = self.preference.category_idealethnicity
+    current_user_selected_ethnicities.each do |ethnic|
+      current_user_preferred_ethicities << ethnic.name
+    end
+    current_user_preferred_ethicities #eg displays: ["White / Caucasian", "Black / African Descent"]
+
+    #other_user preferred ethnicity
+    other_user_preferred_ethicities = Array.new
+    other_user_selected_ethnicities = other_user.preference.category_idealethnicity
+    other_user_selected_ethnicities.each do |ethnic|
+      other_user_preferred_ethicities << ethnic.name
+    end
+    other_user_preferred_ethicities #eg displays: ["White / Caucasian", "Mixed Race", "Mediterranean", "Black / African Descent"]
+
+    #if other_user_ethnic is included in current_user_preferred_ethicities and vice versa, display other_user 
+    if current_user_preferred_ethicities.include?(other_user_ethnic) && other_user_preferred_ethicities.include?(current_user_ethnic)
+      other_user
+    end
+  end
+
+
+  def pref_religion(other_user)
+    #category_matchreligion [multiple]
+    current_user_religion = self.preference.category_matchreligion.name #eg displays: "Christian" 
+    other_user_religion   = other_user.preference.category_matchreligion.name #eg displays "Jewish"
+
+    #current_user preferred ethnicity
+    current_user_preferred_religions = Array.new
+    current_user_selected_religions = self.preference.category_idealreligion
+    current_user_selected_religions.each do |religion|
+      current_user_preferred_religions << religion.name
+    end
+    current_user_preferred_religions #eg displays: ["Christian", "Jewish"]
+
+    #other_user preferred ethnicity
+    other_user_preferred_religions = Array.new
+    other_user_selected_religions = other_user.preference.category_idealreligion
+    other_user_selected_religions.each do |religion|
+      other_user_preferred_religions << religion.name
+    end
+    other_user_preferred_religions #eg displays: ["Christian", "Jewish", "Hindu"]
+
+    #if other_user_religion is included in current_user_preferred_religions and vice versa, display other_user 
+    if current_user_preferred_religions.include?(other_user_religion) && other_user_preferred_religions.include?(current_user_religion)
+      other_user
+    end
+  end
+
+
+  def pref_smoke(other_user)
+    #category_matchsmoke [multiple]
+    current_user_smokestatus = self.preference.category_matchsmoke.name #eg displays: "No, Smoke Is Not A Problem" 
+    other_user_smokestatus   = other_user.preference.category_matchsmoke.name #eg displays "Yes, Often"
+
+    #current_user preferred smoke_status
+    current_user_preferred_smokestatus = Array.new
+    current_user_selected_smokestatus = self.preference.category_idealsmoke
+    current_user_selected_smokestatus.each do |smokestatus|
+      current_user_preferred_smokestatus << smokestatus.name
+    end
+    current_user_preferred_smokestatus #eg displays: ["Trying To Quit", "No, Smoke Is Not A Problem"]
+
+    #other_user preferred smoke_status
+    other_user_preferred_smokestatus = Array.new
+    other_user_selected_smokestatus = other_user.preference.category_idealsmoke
+    other_user_selected_smokestatus.each do |smokestatus|
+      other_user_preferred_smokestatus << smokestatus.name
+    end
+    other_user_preferred_smokestatus #eg displays: ["Ocassionally / Socially", "Yes, Often", "No, Smoke Is Not A Problem"]
+
+    #if other_user_smokestatus is included in current_user_preferred_smokestatus and vice versa, display other_user  
+    if current_user_preferred_smokestatus.include?(other_user_smokestatus) && other_user_preferred_smokestatus.include?(current_user_smokestatus)
+      other_user
+    end
+  end
+
   protected
   # deactivates confirmable
   def confirmation_required?
