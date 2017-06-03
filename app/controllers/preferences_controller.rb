@@ -2,25 +2,16 @@ class PreferencesController < ApplicationController
   before_action :authenticate_user!, :set_preference, only: [:show, :edit, :update, :destroy]
   before_filter :setup_friends, :setup_subscription, :setup_cards, :setup_events, :setup_invite_form, :setup_user_network_activities
 
-  # GET /preferences
-  # GET /preferences.json
   def index
     @preferences = Preference.all
   end
 
-  # GET /preferences/1
-  # GET /preferences/1.json
-  # def show
-  # end
   def show
-    @user = User.friendly.find(params[:user_id])
+    # @user = User.friendly.find(params[:user_id])
+    @user = current_user
     @preference = @user.preference
   end
 
-  # GET /preferences/new
-  # def new
-  #   @preference = Preference.new
-  # end
   def new
     if current_user.subscribed_access?
       @user = current_user
@@ -30,28 +21,10 @@ class PreferencesController < ApplicationController
     end
   end
 
-  # GET /preferences/1/edit
-  # def edit
-  # end
   def edit
     @user = User.friendly.find(params[:user_id])
   end
 
-  # POST /preferences
-  # POST /preferences.json
-  # def create
-  #   @preference = Preference.new(preference_params)
-
-  #   respond_to do |format|
-  #     if @preference.save
-  #       format.html { redirect_to @preference, notice: 'Preference was successfully created.' }
-  #       format.json { render :show, status: :created, location: @preference }
-  #     else
-  #       format.html { render :new }
-  #       format.json { render json: @preference.errors, status: :unprocessable_entity }
-  #     end
-  #   end
-  # end
   def create
     if current_user.subscribed_access?
       @user = User.friendly.find(params[:user_id])
@@ -72,19 +45,6 @@ class PreferencesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /preferences/1
-  # PATCH/PUT /preferences/1.json
-  # def update
-  #   respond_to do |format|
-  #     if @preference.update(preference_params)
-  #       format.html { redirect_to @preference, notice: 'Preference was successfully updated.' }
-  #       format.json { render :show, status: :ok, location: @preference }
-  #     else
-  #       format.html { render :edit }
-  #       format.json { render json: @preference.errors, status: :unprocessable_entity }
-  #     end
-  #   end
-  # end
   def update
     respond_to do |format|
       if @preference.update(preference_params)
@@ -97,15 +57,6 @@ class PreferencesController < ApplicationController
     end
   end
 
-  # DELETE /preferences/1
-  # DELETE /preferences/1.json
-  # def destroy
-  #   @preference.destroy
-  #   respond_to do |format|
-  #     format.html { redirect_to preferences_url, notice: 'Preference was successfully destroyed.' }
-  #     format.json { head :no_content }
-  #   end
-  # end
   def destroy
     @user = current_user
     @preference = @user.preference
