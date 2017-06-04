@@ -21,45 +21,45 @@
                 <% @events.live_events.open_events.booked_events(user).each do |event| %>
                   <li class="medium-12 columns listed_event_socials">
                     <!-- workings -->
-                      <div class="medium-2 columns left_content">
-                        <!-- sold out -->
-                        <% if event.sold_out? %>
-                          <div class="banner">
-                            <div class="ribbon-wrapper-green">
-                              <div class="ribbon-green">sold out</div>
-                            </div>
+                    <div class="medium-2 columns left_content">
+                      <!-- sold out -->
+                      <% if event.sold_out? %>
+                        <div class="banner">
+                          <div class="ribbon-wrapper-green">
+                            <div class="ribbon-green">sold out</div>
                           </div>
+                        </div>
+                      <% end %>
+                      <!-- sold out -->
+                      <div class="img_cover">
+                        <% if event.image.present? %>
+                        <%= link_to(cl_image_tag(event.image, :transformation=>[{:gravity=>"center", :crop=>"fill"}]), event_path(event)) %>
+                        <% else %>
+                          <%= link_to(image_tag("img_feed_07.png", :alt =>  "image", :class =>"#"), event_path(event)) %>
                         <% end %>
-                        <!-- sold out -->
-                        <div class="img_cover">
-                          <% if event.image.present? %>
-                          <%= link_to(cl_image_tag(event.image, :transformation=>[{:gravity=>"center", :crop=>"fill"}]), event_path(event)) %>
-                          <% else %>
-                            <%= link_to(image_tag("img_feed_07.png", :alt =>  "image", :class =>"#"), event_path(event)) %>
-                          <% end %>
-                        </div>
                       </div>
-                      <div class="medium-6 columns middle_content">
-                        <ul>
-                          <li><%= link_to (truncate "#{event.title}", length: 45), event_path(event), style:"text-transform:capitalize;" %></li>
-                          <li><i class="fa fa-map-marker" aria-hidden="true"></i> <%= event.venuename %></li>
-                          <li>
-                            <span><i class="fa fa-calendar" aria-hidden="true"></i> <%= event.date.strftime("%A, %d %b") %></span>
-                            <span class="divider">|</span>
-                            <span><i class="fa fa-clock-o" aria-hidden="true"></i> <%= event.time.strftime("%H:%M") %>h - <%= event.time_end.strftime("%H:%M") %>h</span>
-                          </li>
-                          <li><i class="fa fa-map-pin" aria-hidden="true"></i> <%= event.city %>, <%= event.category_country.name %></li>
-                        </ul>
+                    </div>
+                    <div class="medium-6 columns middle_content">
+                      <ul>
+                        <li><%= link_to (truncate "#{event.title}", length: 45), event_path(event), style:"text-transform:capitalize;" %></li>
+                        <li><i class="fa fa-map-marker" aria-hidden="true"></i> <%= event.venuename %></li>
+                        <li>
+                          <span><i class="fa fa-calendar" aria-hidden="true"></i> <%= event.date.strftime("%A, %d %b") %></span>
+                          <span class="divider">|</span>
+                          <span><i class="fa fa-clock-o" aria-hidden="true"></i> <%= event.time.strftime("%H:%M") %>h - <%= event.time_end.strftime("%H:%M") %>h</span>
+                        </li>
+                        <li><i class="fa fa-map-pin" aria-hidden="true"></i> <%= event.city %>, <%= event.category_country.name %></li>
+                      </ul>
+                    </div>
+                    <div class="medium-4 columns right_content">
+                      <div class="price_info">
+                        <span>price:</span>
+                        <span>£<%= number_with_precision(event.price, precision: 2) %></span>
                       </div>
-                      <div class="medium-4 columns right_content">
-                        <div class="price_info">
-                          <span>price:</span>
-                          <span>£<%= number_with_precision(event.price, precision: 2) %></span>
-                        </div>
-                        <div class="view_link">
-                          <%= link_to "view", event_path(event) %>
-                        </div>
+                      <div class="view_link">
+                        <%= link_to "view", event_path(event) %>
                       </div>
+                    </div>
                     <!-- workings -->
                   </li>
                 <% end %>
@@ -71,45 +71,45 @@
                 <% user.attending_socials.live_socials.open_socials.each do |social| %>
                   <li class="medium-12 columns listed_event_socials">
                     <!-- workings -->
-                      <div class="medium-2 columns left_content">
-                        <!-- sold out -->
-                        <% if social.sold_out? %>
-                          <div class="banner">
-                            <div class="ribbon-wrapper-green">
-                              <div class="ribbon-green">sold out</div>
-                            </div>
+                    <div class="medium-2 columns left_content">
+                      <!-- sold out -->
+                      <% if social.sold_out? %>
+                        <div class="banner">
+                          <div class="ribbon-wrapper-green">
+                            <div class="ribbon-green">sold out</div>
                           </div>
+                        </div>
+                      <% end %>
+                      <!-- sold out -->
+                      <div class="img_cover">
+                        <% if social.image.present? %>
+                        <%= link_to(cl_image_tag(social.image, :transformation=>[{:gravity=>"center", :crop=>"fill"}]), social_path(social)) %>
+                        <% else %>
+                          <%= link_to(image_tag("img_feed_07.png", :alt =>  "image", :class =>"#"), social_path(social)) %>
                         <% end %>
-                        <!-- sold out -->
-                        <div class="img_cover">
-                          <% if social.image.present? %>
-                          <%= link_to(cl_image_tag(social.image, :transformation=>[{:gravity=>"center", :crop=>"fill"}]), social_path(social)) %>
-                          <% else %>
-                            <%= link_to(image_tag("img_feed_07.png", :alt =>  "image", :class =>"#"), social_path(social)) %>
-                          <% end %>
-                        </div>
                       </div>
-                      <div class="medium-6 columns middle_content">
-                        <ul>
-                          <li><%= link_to (truncate "#{social.title}", length: 45), social_path(social), style:"text-transform:capitalize;" %></li>
-                          <li><i class="fa fa-map-marker" aria-hidden="true"></i> <%= social.venuename %></li>
-                          <li>
-                            <span><i class="fa fa-calendar" aria-hidden="true"></i> <%= social.date.strftime("%A, %d %b") %></span>
-                            <span class="divider">|</span>
-                            <span><i class="fa fa-clock-o" aria-hidden="true"></i> <%= social.time.strftime("%H:%M") %>h</span>
-                          </li>
-                          <li><i class="fa fa-map-pin" aria-hidden="true"></i> <%= social.city %>, <%= social.category_country.name %></li>
-                        </ul>
+                    </div>
+                    <div class="medium-6 columns middle_content">
+                      <ul>
+                        <li><%= link_to (truncate "#{social.title}", length: 45), social_path(social), style:"text-transform:capitalize;" %></li>
+                        <li><i class="fa fa-map-marker" aria-hidden="true"></i> <%= social.venuename %></li>
+                        <li>
+                          <span><i class="fa fa-calendar" aria-hidden="true"></i> <%= social.date.strftime("%A, %d %b") %></span>
+                          <span class="divider">|</span>
+                          <span><i class="fa fa-clock-o" aria-hidden="true"></i> <%= social.time.strftime("%H:%M") %>h</span>
+                        </li>
+                        <li><i class="fa fa-map-pin" aria-hidden="true"></i> <%= social.city %>, <%= social.category_country.name %></li>
+                      </ul>
+                    </div>
+                    <div class="medium-4 columns right_content">
+                      <div class="price_info">
+                        <span>price:</span>
+                        <span>Free</span>
                       </div>
-                      <div class="medium-4 columns right_content">
-                        <div class="price_info">
-                          <span>price:</span>
-                          <span>Free</span>
-                        </div>
-                        <div class="view_link">
-                          <%= link_to "view", social_path(social) %>
-                        </div>
+                      <div class="view_link">
+                        <%= link_to "view", social_path(social) %>
                       </div>
+                    </div>
                     <!-- workings -->
                   </li>
                   <div class="clear"></div>
