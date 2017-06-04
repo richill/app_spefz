@@ -12,16 +12,7 @@
         </div>
 
         <div class="medium-12 columns match_event_content" style="margin-bottom:0px;">
-          <ul class="upper_list hide">
-            <li>The higher the stats % is, the more likely you are to meet members of the same physical attraction, personality and calibre as you</li>
-            <li>We highly recommend you attend events with a match stats of over <span class="stat_percentage">65%</span></li>
-            <li>The match stats is based on:
-              <ul class="lower_list">
-                <li>A Rating Algorithm System &</li>
-                <li>A Rating Score Access, the Event Organiser has set on the event</li>
-              </ul>
-            </li>
-          </ul>
+
 
           <div class="medium-12 columns match_evt_container">
             <div class="medium-6 columns user_events">
@@ -77,7 +68,7 @@
             <div class="medium-6 columns user_socials">
               <div class="title">socials</div>
               <ul class="upper_list">
-                <% user.attending_socials.each do |social| %>
+                <% user.attending_socials.live_socials.open_socials.each do |social| %>
                   <li class="medium-12 columns listed_event_socials">
                     <!-- workings -->
                       <div class="medium-2 columns left_content">
