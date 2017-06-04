@@ -46,7 +46,7 @@
 
 .user_matches_events_modal .match_event_content .upper_list li {
   font-family: 'Lato', sans-serif;
-  font-size: 15px !important;
+  font-size: 11px !important;
   font-weight: 400 !important;
 }
 
@@ -89,12 +89,6 @@
   background-color: rgba(88, 205, 166, 0.2) !important;
   padding: 5px 15px;
   margin-bottom: 15px;
-}
-
-.user_matches_events_modal img {
-  height: 50px;
-  width: 50px;
-  margin: 10px 0px;
 }
 
 .user_matches_events_modal .divider {
@@ -190,11 +184,116 @@
 // --------------------------
 
 .match_evt_container {
-  background-color: red;
+  // background-color: red;
+  padding: 0px !important;
 }
 
+.user_events {
+  padding: 0px !important;
+  // background-color: green;
+}
 
+.match_evt_container .left_content {
+  padding: 0px;
+}
 
+.match_evt_container .banner .ribbon-wrapper-green {
+  width: 72px;
+  height: 72px;
+  overflow: hidden;
+  position: absolute;
+  z-index: 1;
+}
+
+.match_evt_container .banner .ribbon-green {
+  font: bold 10px Sans-Serif;
+  opacity: 0.95;
+  text-align: center;
+  text-shadow: rgba(255, 255, 255, 0.5) 0px 1px 0px;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  position: relative;
+  padding: 5px 0;
+  left: -40px;
+  top: 8px;
+  width: 114px;
+  background-color: #58CDA6;
+  color: #283041;
+  -webkit-box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px0px3pxrgba 0, 0, 0, 0.3;
+}
+
+.match_evt_container .img_cover img {
+  height: 72px;
+  width: 72px;
+}
+
+.match_evt_container .middle_content {
+  padding: 0px;
+}
+
+.match_evt_container .middle_content ul {
+  list-style-type: none;
+  margin: 0px !important;
+}
+
+.fa-map-marker {
+  margin: 0px 5px 0px 3px;
+}
+
+.fa-calendar {
+  margin: 0px 3px 0px 1px;
+}
+
+.fa-map-pin {
+  margin: 0px 5px 0px 4px;
+}
+
+.match_evt_container .divider {
+  margin: 0px 5px;
+}
+
+.match_evt_container .right_content {
+  padding: 0px;
+}
+
+.right_content .price_info {
+  background-color: rgba(225, 71, 62, 0.3) !important;
+  padding: 5px 5px;
+  text-transform: capitalize;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.right_content .view_link a {
+  background-color: #E34B51;
+  color: #fff !important;
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  padding: 5px 0px;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+.right_content .view_link a:hover {
+  background-color: rgba(225, 71, 62, 0.7) !important;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+.user_events .title, .user_socials .title {
+  background-color: rgba(40, 48, 45, 0.1) !important;
+  text-transform: capitalize;
+  font-weight: bold;
+  padding: 5px 10px;
+  margin-bottom: 8px;
+}
 
 
 
