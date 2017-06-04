@@ -3,7 +3,7 @@
     <h2 id="modalTitle-match-info" class="header"><%= "#{user.firstname}'s" %> attending events</h2>
     
       <!-- content -->
-      <div class="matches_events_main_container">
+      <div class="medium-12 columns matches_events_main_container">
         <div class="match_event_content"> 
           <span>Hi</span>
           <span class="bold_content"><%= "#{user.firstname}!" %></span> 
@@ -11,8 +11,8 @@
           <span class="stats_cover">[<%# event.match(current_user) %>]</span>
         </div>
 
-        <div class="match_event_content" style="margin-bottom:0px;">
-          <ul class="upper_list">
+        <div class="medium-12 columns match_event_content" style="margin-bottom:0px;">
+          <ul class="upper_list hide">
             <li>The higher the stats % is, the more likely you are to meet members of the same physical attraction, personality and calibre as you</li>
             <li>We highly recommend you attend events with a match stats of over <span class="stat_percentage">65%</span></li>
             <li>The match stats is based on:
@@ -22,12 +22,17 @@
               </ul>
             </li>
           </ul>
+
+          <ul class="upper_list">
+            <% @events.live_events.open_events.booked_events(user).each do |event| %>
+              <li>
+                <div class="medium-12 columns match_evt_container">hello</div>
+              </li>
+            <% end %>
+          </ul>
         </div>
       </div>
       <!-- content -->
-
-      <!-- working -->
-      <!-- working -->
     
     <a class="close-reveal-modal cancel_button" aria-label="Close">&#215;</a>
   </div>
