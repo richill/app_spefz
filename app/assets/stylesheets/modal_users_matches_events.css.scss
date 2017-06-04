@@ -42,6 +42,8 @@
 .user_matches_events_modal .match_event_content .upper_list {
   list-style-type: none;
   margin: 0px !important;
+  height: 300px;
+  overflow: scroll;
 }
 
 .user_matches_events_modal .match_event_content .upper_list .listed_event_socials {
@@ -274,7 +276,6 @@
 }
 
 .match_evt_container .right_content .view_link a {
-  //background-color: #E34B51;
   background-color: rgba(75, 180, 191, 0.9) !important;
   color: #fff !important;
   display: inline-block;
