@@ -100,7 +100,7 @@
                       </div>
                       <div class="medium-6 columns middle_content">
                         <ul>
-                          <li><%= link_to "#{social.title}", social_path(social) %></li>
+                          <li><%= link_to (truncate "#{social.title}", length: 45), social_path(social) %></li>
                           <li><i class="fa fa-map-marker" aria-hidden="true"></i> <%= social.venuename %></li>
                           <li>
                             <span><i class="fa fa-calendar" aria-hidden="true"></i> <%= social.date.strftime("%A, %d %b") %></span>

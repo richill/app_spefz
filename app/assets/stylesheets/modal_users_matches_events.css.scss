@@ -188,7 +188,7 @@
   padding: 0px !important;
 }
 
-.user_events {
+.match_evt_container .user_events {
   padding: 0px !important;
   // background-color: green;
 }
@@ -240,15 +240,15 @@
   margin: 0px !important;
 }
 
-.fa-map-marker {
+.match_evt_container .fa-map-marker {
   margin: 0px 5px 0px 3px;
 }
 
-.fa-calendar {
+.match_evt_container .fa-calendar {
   margin: 0px 3px 0px 1px;
 }
 
-.fa-map-pin {
+.match_evt_container .fa-map-pin {
   margin: 0px 5px 0px 4px;
 }
 
@@ -260,7 +260,7 @@
   padding: 0px;
 }
 
-.right_content .price_info {
+.match_evt_container .right_content .price_info {
   background-color: rgba(225, 71, 62, 0.3) !important;
   padding: 5px 5px;
   text-transform: capitalize;
@@ -268,7 +268,7 @@
   margin-bottom: 5px;
 }
 
-.right_content .view_link a {
+.match_evt_container .right_content .view_link a {
   background-color: #E34B51;
   color: #fff !important;
   display: inline-block;
@@ -280,14 +280,14 @@
   -o-transition: all 0.3s ease;
 }
 
-.right_content .view_link a:hover {
+.match_evt_container .right_content .view_link a:hover {
   background-color: rgba(225, 71, 62, 0.7) !important;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
 }
 
-.user_events .title, .user_socials .title {
+.match_evt_container .user_events .title, .user_socials .title {
   background-color: rgba(40, 48, 45, 0.1) !important;
   text-transform: capitalize;
   font-weight: bold;
