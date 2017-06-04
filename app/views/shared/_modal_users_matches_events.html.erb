@@ -76,7 +76,7 @@
             </div>
             <div class="medium-6 columns user_socials">
               <ul class="upper_list">
-                <% user.attending_socials.live_socials.open_socials.each do |social| %>
+                <% user.attending_socials.each do |social| %>
                   <li>
                     <!-- workings -->
                       <div class="title">social</div>
@@ -105,7 +105,7 @@
                           <li>
                             <span><i class="fa fa-calendar" aria-hidden="true"></i> <%= social.date.strftime("%A, %d %b") %></span>
                             <span class="divider">|</span>
-                            <span><i class="fa fa-clock-o" aria-hidden="true"></i> <%= social.time.strftime("%H:%M") %>h - <%= social.time_end.strftime("%H:%M") %>h</span>
+                            <span><i class="fa fa-clock-o" aria-hidden="true"></i> <%= social.time.strftime("%H:%M") %>h</span>
                           </li>
                           <li><i class="fa fa-map-pin" aria-hidden="true"></i> <%= social.city %>, <%= social.category_country.name %></li>
                         </ul>
