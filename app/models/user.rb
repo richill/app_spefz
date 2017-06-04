@@ -373,10 +373,6 @@ class User < ActiveRecord::Base
     end
   end
 
-  def listed_matches
-    self.matching()
-  end
-
   def matching(other_user)
     pref_seeking(other_user) &&
     pref_age(other_user) &&
