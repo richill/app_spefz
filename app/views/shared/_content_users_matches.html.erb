@@ -27,6 +27,12 @@
     </div>
     <!-- preference -->
 
+    <!-- match_info -->
+    <div class="medium-12 columns matches_no_result_info">
+      <div class="inner_content"><i class="fa fa-info-circle" aria-hidden="true"></i> If there are no search results matching your preference consider expanding <%= link_to "your preference", edit_user_preference_path(current_user, current_user.preference) %></div>
+    </div>
+    <!-- match_info -->
+
     <!-- content -->
     <div class="medium-12 columns matches_content_section">
       <div class="medium-12 columns content_container">

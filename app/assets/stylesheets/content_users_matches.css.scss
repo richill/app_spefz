@@ -184,13 +184,34 @@
   -o-transition: all 0.3s ease;
 }
 
+.users_matches_section .matches_no_result_info {
+  padding: 15px;
+  background-color: rgba(255,255,255, 0.8) !important;
+}
+
+.users_matches_section .inner_content {
+  width: 1170px;
+  margin: auto;
+  font-family: 'Lato', sans-serif;
+  font-size: 12px;
+  letter-spacing: 1px;
+  word-spacing: 2px;
+}
+
+.users_matches_section .inner_content a {
+  color: #E34B51 !important;
+}
+
+.users_matches_section .inner_content a:hover {
+  text-decoration: underline;
+}
 
 .users_matches_section .matches_content_section {
   padding: 0px !important;
 }
 
 .users_matches_section .content_container {
-  padding: 30px 0px !important;
+  padding: 15px 0px 30px !important;
   min-height: 822px;
 }
 
@@ -543,10 +564,9 @@
 
 
 
-
-
-
-
+// --------------------------
+//   workings
+// --------------------------
 
 
 
