@@ -8,12 +8,14 @@ class PreferencesController < ApplicationController
 
   def show
     # @user = User.friendly.find(params[:user_id])
+    @users = User.random
     @user = current_user
     @preference = @user.preference
   end
 
   def new
     if current_user.subscribed_access?
+      @users = User.random
       @user = current_user
       @preference = @user.build_preference
     else
@@ -22,6 +24,7 @@ class PreferencesController < ApplicationController
   end
 
   def edit
+    @users = User.random
     @user = User.friendly.find(params[:user_id])
   end
 
