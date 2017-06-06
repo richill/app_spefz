@@ -28,9 +28,11 @@
     <!-- preference -->
 
     <!-- match_info -->
-    <div class="medium-12 columns matches_no_result_info">
-      <div class="inner_content"><i class="fa fa-info-circle" aria-hidden="true"></i> If there are no search results matching your preference consider expanding <%= link_to "your preference", edit_user_preference_path(current_user, current_user.preference) %></div>
-    </div>
+    <% if current_user.preference.present? %>
+      <div class="medium-12 columns matches_no_result_info">
+        <div class="inner_content"><i class="fa fa-info-circle" aria-hidden="true"></i> If there are no search results matching your preference consider expanding <%= link_to "your preference", edit_user_preference_path(current_user, current_user.preference) %></div>
+      </div>
+    <% end %>
     <!-- match_info -->
 
     <!-- content -->
@@ -99,11 +101,15 @@
                               <span class="user_age">Age:  <%= user.age %></span>
                             </div>
                           </div>
+                        <% end %> 
+                        <% if @events.live_events.open_events.booked_events(user).present? || user.attending_socials.live_socials.open_socials.present? %>
+                          <div class="action_btns">
+                            <a href="#<%= user.id %>" data-reveal-id="<%= dom_id(user) %>_user_match_event">events</a>
+                            <div><%= render partial: 'shared/modal_users_matches_events', locals: { user: user } %></div>
+                          </div>
+                        <% else %>
+                          <div class="action_btns"><%= link_to "profile", user %></div>
                         <% end %>
-                        <div class="action_btns">
-                          <a href="#<%= user.id %>" data-reveal-id="<%= dom_id(user) %>_user_match_event">events</a>
-                          <div><%= render partial: 'shared/modal_users_matches_events', locals: { user: user } %></div>
-                        </div>
                       </div>
                       <div class="clear"></div>
                       <% if current_user.admin_pa_management_group || current_user.pa_administration_group %>
