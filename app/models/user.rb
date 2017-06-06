@@ -376,6 +376,11 @@ class User < ActiveRecord::Base
     end
   end
 
+  def self.platform_sufficient_users
+    users = User.all
+    users.females.count > 2 && users.males.count > 2
+  end
+
   def matching(other_user)
     pref_seeking(other_user) &&
     pref_age(other_user) &&

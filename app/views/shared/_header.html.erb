@@ -19,13 +19,15 @@
           <% end %>
         </li>
         <!-- <li class="link responsive_header_link match_hide"> -->
-        <li class="link responsive_header_link">
-          <% if current_user.image? %>
-            <%= link_to 'my matches', matches_user_path(current_user) %>
-          <% else %>
-            <%= link_to 'my matches', image_restriction_page_path %>
-          <% end %>
-        </li>
+        <% if User.platform_sufficient_users %>
+          <li class="link responsive_header_link">
+            <% if current_user.image? %>
+              <%= link_to 'my matches', matches_user_path(current_user) %>
+            <% else %>
+              <%= link_to 'my matches', image_restriction_page_path %>
+            <% end %>
+          </li>
+        <% end %>
         <% if current_user.subscribed_access? %>
           <% if current_user.image? %>
             <li class="create_button responsive_header_link"><%= link_to 'create social', new_user_social_path(current_user) %></li>
