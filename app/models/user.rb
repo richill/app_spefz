@@ -150,6 +150,9 @@ class User < ActiveRecord::Base
   scope :users_with_ratings, -> { select {|user| user.overall_ratings > 0 }}
   # users_with_ratings = users.select {|user| user.overall_ratings > 0 }.count
 
+  scope :random, -> { order(Arel::Nodes::NamedFunction.new('RANDOM', [])) }
+  # users are displayed randomly each time the page is refereshed
+
   def slug_users
     [
       :firstname
