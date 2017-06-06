@@ -42,7 +42,7 @@
 .user_matches_events_modal .match_event_content .upper_list {
   list-style-type: none;
   margin: 0px !important;
-  height: 300px;
+  max-height: 300px;
   overflow: scroll;
 }
 
