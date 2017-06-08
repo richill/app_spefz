@@ -320,6 +320,11 @@
   font-weight: 300 !important;
   text-transform: capitalize;
 }
+@media only screen and (min-width: 1366px) {
+  .user_general_settings_section .preference_main_section .title  {
+    font-size: 14px !important;
+  }
+}
 
 .user_general_settings_section .preference_main_section .title_subcontent {
   font-family: 'Lato', sans-serif;

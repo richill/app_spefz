@@ -320,6 +320,11 @@
   font-weight: 300 !important;
   text-transform: capitalize;
 }
+@media only screen and (min-width: 1366px) {
+  .user_general_settings_section .preference_main_section .title  {
+    font-size: 14px !important;
+  }
+}
 
 .user_general_settings_section .preference_show_main_section .title_subcontent {
   font-family: 'Lato', sans-serif;
@@ -718,6 +723,6 @@ Timline_end CSS
 // -------------------------------
 
 .pref_section_seeking .cd-timeline-content {
-  min-height: 120px;
+  min-height: 140px;
 }
 
