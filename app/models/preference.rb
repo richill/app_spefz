@@ -24,7 +24,6 @@ class Preference < ActiveRecord::Base
   validates_presence_of :category_matchethnicity, presence: true, message: "can't be blank"
   validates_presence_of :category_matchreligion, presence: true, message: "can't be blank"
   validates_presence_of :category_matchsmoke, presence: true, message: "can't be blank"
-  # validates_presence_of :category_country, presence: true, message: "please select a category"
 
   belongs_to :user
   before_create :preference_name
