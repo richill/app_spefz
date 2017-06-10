@@ -474,14 +474,14 @@
 
                     <!-- section_education -->
                     <li>
-                      <div class="pref_content">
+                      <div class="pref_content pref_section_education">
                         <div class="medium-6 columns left_pref_section">
                           <div class="cd-timeline-img cd-star">
                             <i class="fa fa-user"></i>
                           </div>
                           <div class="cd-timeline-content">
                             <div class="title">Tell us you highest level of education</div>
-                            <div class="title_subcontent">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus mollis dignissim. Praesent a dolor ac purus egestas ullamcorper. Praesent sed porttitor nulla.</div>
+                            <div class="title_subcontent">School of Life or Oxford Scholar?</div>
                             <%= f.association :category_matcheducation, collection: CategoryMatcheducation.all, prompt: "select", label: false %>
                           </div>
                         </div>
@@ -491,7 +491,7 @@
                           </div>
                           <div class="cd-timeline-content">
                             <div class="title">Your ideal date: What is their highest Education Level</div>
-                            <div class="title_subcontent">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus mollis dignissim. Praesent a dolor ac purus egestas ullamcorper. Praesent sed porttitor nulla.</div>
+                            <div class="title_subcontent">School of Life or Oxford Scholar?</div>
                             <div class="education_check_content"><%= f.association :category_idealeducation, collection: CategoryIdealeducation.all, prompt: "select", label: false, as: :check_boxes  %></div>
                           </div>
                         </div>
@@ -509,7 +509,7 @@
                           </div>
                           <div class="cd-timeline-content">
                             <div class="title">How tall are you? | your height level</div>
-                            <div class="title_subcontent">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus mollis dignissim. Praesent a dolor ac purus egestas ullamcorper. Praesent sed porttitor nulla.</div>
+                            <div class="title_subcontent"> Remeber good things come in all sizes!</div>
                             <%= f.association :category_matchheight, collection: CategoryMatchheight.all, prompt: "select", label: false %>
                           </div>
                         </div>
@@ -519,7 +519,7 @@
                           </div>
                           <div class="cd-timeline-content">
                             <div class="title">Your ideal date: Their Height level</div>
-                            <div class="title_subcontent">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus mollis dignissim. Praesent a dolor ac purus egestas ullamcorper. Praesent sed porttitor nulla.</div>
+                            <div class="title_subcontent"> Remeber good things come in all sizes!</div>
                             <div class="height_check_content"><%= f.association :category_idealheight, collection: CategoryMatchheight.all, prompt: "select", label: false, as: :check_boxes %></div>
                           </div>
                         </div>
@@ -537,7 +537,7 @@
                           </div>
                           <div class="cd-timeline-content">
                             <div class="title">If you had to describe your body type, you would be...</div>
-                            <div class="title_subcontent">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus mollis dignissim. Praesent a dolor ac purus egestas ullamcorper. Praesent sed porttitor nulla.</div>
+                            <div class="title_subcontent">Considering that Marilyn Monroe, Kate Moss and Adele are all sex symbols, there is no right or wrong answer.</div>
                             <%= f.association :category_matchbodytype, collection: CategoryMatchbodytype.all, prompt: "select", label: false %>
                           </div>
                         </div>
@@ -547,7 +547,7 @@
                           </div>
                           <div class="cd-timeline-content">
                             <div class="title">Your ideal date: Their body type</div>
-                            <div class="title_subcontent">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus mollis dignissim. Praesent a dolor ac purus egestas ullamcorper. Praesent sed porttitor nulla.</div>
+                            <div class="title_subcontent">Considering that Marilyn Monroe, Kate Moss and Adele are all sex symbols, there is no right or wrong answer.</div>
                             <div class="bodytype_check_content"><%= f.association :category_idealbodytype, collection: CategoryIdealbodytype.all, prompt: "select", label: false, as: :check_boxes %></div>
                           </div>
                         </div>
