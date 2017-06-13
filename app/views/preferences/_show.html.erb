@@ -65,11 +65,11 @@
                           <div class="title">i am seeking</div>
                           <div class="title_subcontent">Tell us whom you seek. We are excited to get to know you in order to introduce you to some great people!</div>
                           <div>
-                            <%# if @preference.category_matchseeking.present? %>
+                            <% if @preference.category_matchseeking.present? %>
                               <div class="user_info_content"><%= @preference.category_matchseeking.name %></div>
-                            <%# else %>
+                            <% else %>
                               <div class="user_info_content_uncompleted"><%= link_to "not completed", edit_user_preference_path(current_user, current_user.preference) %></div>
-                            <%# end %>
+                            <% end %>
                           </div>
                         </div>
                       </div>
@@ -228,11 +228,11 @@
                           <div class="title_subcontent">What age range are you looking for in a potential date?</div>
                           <div class="age_selection">
                           <div>
-                            <%# if @preference.idealage_start.present? && @preference.idealage_end.present? %>
+                            <% if @preference.idealage_start.present? && @preference.idealage_end.present? %>
                               <div class="user_info_content"><%= @preference.idealage_start %> - <%= @preference.idealage_end %></div>
-                            <%# else %>
+                            <% else %>
                               <div class="user_info_content_uncompleted"><%= link_to "not completed", edit_user_preference_path(current_user, current_user.preference) %></div>
-                            <%# end %>
+                            <% end %>
                           </div>
                           </div>
                         </div>
@@ -253,11 +253,11 @@
                           <div class="title">How do you feel about getting involved in a relationship?</div>
                           <div class="title_subcontent">Ready for something serious or prefer to take things slowly? let us know.</div>
                           <div>
-                            <%# if @preference.category_matchrelationship.present? %>
+                            <% if @preference.category_matchrelationship.present? %>
                               <div class="user_info_content"><%= @preference.category_matchrelationship.name %></div>
-                            <%# else %>
+                            <% else %>
                               <div class="user_info_content_uncompleted"><%= link_to "not completed", edit_user_preference_path(current_user, current_user.preference) %></div>
-                            <%# end %>
+                            <% end %>
                           </div>
                         </div>
                       </div>
@@ -293,11 +293,11 @@
                           <div class="title">What is your relationship status?</div>
                           <div class="title_subcontent">Members might be interested in your history. Share it!</div>
                           <div>
-                            <%# if @preference.category_matchstatus.present? %>
+                            <% if @preference.category_matchstatus.present? %>
                               <div class="user_info_content"><%= @preference.category_matchstatus.name %></div>
-                            <%# else %>
+                            <% else %>
                               <div class="user_info_content_uncompleted"><%= link_to "not completed", edit_user_preference_path(current_user, current_user.preference) %></div>
-                            <%# end %>
+                            <% end %>
                           </div>
                         </div>
                       </div>
@@ -309,15 +309,15 @@
                           <div class="title">Your ideal date: What is their relationship status?</div>
                           <div class="title_subcontent">Members might be interested in your history. Share it!</div>
                           <div class="relationshipstatus_check_content">
-                            <%# if @preference.category_idealstatus.present?  %>
+                            <% if @preference.category_idealstatus.present?  %>
                               <ul class="medium-12 columns multiple_question">
                               <% @preference.category_idealstatus.each do |status| %>
                                 <li><i class="fa fa-check-square-o" aria-hidden="true"></i><%= status.name %></li>
                               <% end %>
                               </ul> 
-                            <%# else %>
+                            <% else %>
                               <div class="user_info_content_uncompleted"><%= link_to "not completed", edit_user_preference_path(current_user, current_user.preference) %></div>
-                            <%# end %>
+                            <% end %>
                           </div>
                         </div>
                       </div>
@@ -337,11 +337,11 @@
                           <div class="title">Are you a parent?</div>
                           <div class="title_subcontent">If you have little ones, tell us. It could be a deal-breaker!</div>
                           <div>
-                            <%# if @preference.category_matchparent.name.present? %>
+                            <% if @preference.category_matchparent.name.present? %>
                               <div class="user_info_content"><%= @preference.category_matchparent.name %></div>
-                            <%# else %>
+                            <% else %>
                               <div class="user_info_content_uncompleted"><%= link_to "not completed", edit_user_preference_path(current_user, current_user.preference) %></div>
-                            <%# end %>
+                            <% end %>
                           </div>
                         </div>
                       </div>
@@ -353,11 +353,11 @@
                           <div class="title">Your ideal date: Do they have children?</div>
                           <div class="title_subcontent">If you have little ones, tell us. It could be a deal-breaker!</div>
                           <div>
-                            <%# if @preference.category_idealparent.name.present? %>
+                            <% if @preference.category_idealparent.name.present? %>
                               <div class="user_info_content"><%= @preference.category_idealparent.name %></div>
-                            <%# else %>
+                            <% else %>
                               <div class="user_info_content_uncompleted"><%= link_to "not completed", edit_user_preference_path(current_user, current_user.preference) %></div>
-                            <%# end %>
+                            <% end %>
                           </div>
                         </div>
                       </div>
@@ -377,11 +377,11 @@
                           <div class="title">Would you like to have children?</div>
                           <div class="title_subcontent">It might be early doors, but it is useful to know.</div>
                           <div>
-                            <%# if @preference.category_matchkid.name.present? %>
+                            <% if @preference.category_matchkid.name.present? %>
                               <div class="user_info_content"><%= @preference.category_matchkid.name %></div>
-                            <%# else %>
+                            <% else %>
                               <div class="user_info_content_uncompleted"><%= link_to "not completed", edit_user_preference_path(current_user, current_user.preference) %></div>
-                            <%# end %>
+                            <% end %>
                           </div>
                         </div>
                       </div>
@@ -393,11 +393,11 @@
                           <div class="title">Your ideal date: Do they want children? | Their Preference:</div>
                           <div class="title_subcontent">It might be early doors, but it is useful to know.</div>
                           <div>
-                            <%# if @preference.category_idealkid.name.present? %>
+                            <% if @preference.category_idealkid.name.present? %>
                               <div class="user_info_content"><%= @preference.category_idealkid.name %></div>
-                            <%# else %>
+                            <% else %>
                               <div class="user_info_content_uncompleted"><%= link_to "not completed", edit_user_preference_path(current_user, current_user.preference) %></div>
-                            <%# end %>
+                            <% end %>
                           </div>
                         </div>
                       </div>
@@ -417,11 +417,11 @@
                           <div class="title">Tell us you highest level of education</div>
                           <div class="title_subcontent">School of Life or Oxford Scholar?</div>
                           <div>
-                            <%# if @preference.category_matcheducation.name.present? %>
+                            <% if @preference.category_matcheducation.name.present? %>
                               <div class="user_info_content"><%= @preference.category_matcheducation.name %></div>
-                            <%# else %>
+                            <% else %>
                               <div class="user_info_content_uncompleted"><%= link_to "not completed", edit_user_preference_path(current_user, current_user.preference) %></div>
-                            <%# end %>
+                            <% end %>
                           </div>
                         </div>
                       </div>
@@ -433,15 +433,15 @@
                           <div class="title">Your ideal date: What is their highest Education Level</div>
                           <div class="title_subcontent">School of Life or Oxford Scholar?</div>
                           <div class="education_check_content">
-                            <%# if @preference.category_idealeducation.present?  %>
+                            <% if @preference.category_idealeducation.present?  %>
                               <ul class="medium-12 columns multiple_question">
                               <% @preference.category_idealeducation.each do |education| %>
                                 <li><i class="fa fa-check-square-o" aria-hidden="true"></i><%= education.name %></li>
                               <% end %>
                               </ul>
-                            <%# else %>
+                            <% else %>
                               <div class="user_info_content_uncompleted"><%= link_to "not completed", edit_user_preference_path(current_user, current_user.preference) %></div>
-                            <%# end %>
+                            <% end %>
                           </div>
                         </div>
                       </div>
@@ -461,11 +461,11 @@
                           <div class="title">How tall are you? | your height level</div>
                           <div class="title_subcontent"> Remeber good things come in all sizes!</div>
                           <div>
-                            <%# if @preference.category_matchheight.name.present? %>
+                            <% if @preference.category_matchheight.name.present? %>
                               <div class="user_info_content"><%= @preference.category_matchheight.name %></div>
-                            <%# else %>
+                            <% else %>
                               <div class="user_info_content_uncompleted"><%= link_to "not completed", edit_user_preference_path(current_user, current_user.preference) %></div>
-                            <%# end %>
+                            <% end %>
                           </div>
                         </div>
                       </div>
@@ -477,15 +477,15 @@
                           <div class="title">Your ideal date: Their Height level</div>
                           <div class="title_subcontent"> Remeber good things come in all sizes!</div>
                           <div class="height_check_content">
-                            <%# if @preference.category_idealheight.present? %>
+                            <% if @preference.category_idealheight.present? %>
                               <ul class="medium-12 columns multiple_question">
                               <% @preference.category_idealheight.each do |height| %>
                                 <li><i class="fa fa-check-square-o" aria-hidden="true"></i><%= height.name %></li>
                               <% end %>
                               </ul>
-                            <%# else %>
+                            <% else %>
                               <div class="user_info_content_uncompleted"><%= link_to "not completed", edit_user_preference_path(current_user, current_user.preference) %></div>
-                            <%# end %>
+                            <% end %>
                           </div>
                         </div>
                       </div>
@@ -505,11 +505,11 @@
                           <div class="title">If you had to describe your body type, you would be...</div>
                           <div class="title_subcontent">Considering that admired celebrities have come in all shape sizes and looked on as sex symbols, there is no right or wrong answer.</div>
                           <div>
-                            <%# if @preference.category_matchbodytype.present? %>
+                            <% if @preference.category_matchbodytype.present? %>
                               <div class="user_info_content"><%= @preference.category_matchbodytype.name %></div>
-                            <%# else %>
+                            <% else %>
                               <div class="user_info_content_uncompleted"><%= link_to "not completed", edit_user_preference_path(current_user, current_user.preference) %></div>
-                            <%# end %>
+                            <% end %>
                           </div>
                         </div>
                       </div>
@@ -521,15 +521,15 @@
                           <div class="title">Your ideal date: Their body type</div>
                           <div class="title_subcontent">Considering that admired celebrities have come in all shape sizes and looked on as sex symbols, there is no right or wrong answer.</div>
                           <div class="bodytype_check_content">
-                            <%# if @preference.category_idealbodytype.present? %>
+                            <% if @preference.category_idealbodytype.present? %>
                               <ul class="medium-12 columns multiple_question">
                               <% @preference.category_idealbodytype.each do |bodytype| %>
                                 <li><i class="fa fa-check-square-o" aria-hidden="true"></i><%= bodytype.name %></li>
                               <% end %>
                               </ul>
-                            <%# else %>
+                            <% else %>
                               <div class="user_info_content_uncompleted"><%= link_to "not completed", edit_user_preference_path(current_user, current_user.preference) %></div>
-                            <%# end %>
+                            <% end %>
                           </div>
                         </div>
                       </div>
@@ -549,11 +549,11 @@
                           <div class="title">What is your ethnicity?</div>
                           <div class="title_subcontent">Let your culture tell a story!</div>
                           <div>
-                            <%# if @preference.category_matchethnicity.present? %>
+                            <% if @preference.category_matchethnicity.present? %>
                               <div class="user_info_content"><%= @preference.category_matchethnicity.name %></div>
-                            <%# else %>
+                            <% else %>
                               <div class="user_info_content_uncompleted"><%= link_to "not completed", edit_user_preference_path(current_user, current_user.preference) %></div>
-                            <%# end %>
+                            <% end %>
                           </div>
                         </div>
                       </div>
@@ -565,15 +565,15 @@
                           <div class="title">Your ideal date: Their Ethnicity</div>
                           <div class="title_subcontent">Let your culture tell a story!</div>
                           <div class="ethnicity_check_content">
-                            <%# if @preference.category_idealethnicity.present? %>
+                            <% if @preference.category_idealethnicity.present? %>
                               <ul class="medium-12 columns multiple_question">
                               <% @preference.category_idealethnicity.each do |ethnicity| %>
                                 <li><i class="fa fa-check-square-o" aria-hidden="true"></i><%= ethnicity.name %></li>
                               <% end %>
                               </ul>
-                            <%# else %>
+                            <% else %>
                               <div class="user_info_content_uncompleted"><%= link_to "not completed", edit_user_preference_path(current_user, current_user.preference) %></div>
-                            <%# end %>
+                            <% end %>
                           </div>
                         </div>
                       </div>
@@ -593,11 +593,11 @@
                           <div class="title">What religion do you practise?</div>
                           <div class="title_subcontent">Members might be interested in your history. Share it!</div>
                           <div>
-                            <%# if @preference.category_matchreligion.present? %>
+                            <% if @preference.category_matchreligion.present? %>
                               <div class="user_info_content"><%= @preference.category_matchreligion.name %></div>
-                            <%# else %>
+                            <% else %>
                               <div class="user_info_content_uncompleted"><%= link_to "not completed", edit_user_preference_path(current_user, current_user.preference) %></div>
-                            <%# end %>
+                            <% end %>
                           </div>
                         </div>
                       </div>
@@ -609,15 +609,15 @@
                           <div class="title">Your ideal date: What religion do they practise?</div>
                           <div class="title_subcontent">Members might be interested in your history. Share it!</div>
                           <div class="religion_check_content">
-                            <%# if @preference.category_idealreligion.present? %>
+                            <% if @preference.category_idealreligion.present? %>
                               <ul class="medium-12 columns multiple_question">
                               <% @preference.category_idealreligion.each do |religion| %>
                                 <li><i class="fa fa-check-square-o" aria-hidden="true"></i><%= religion.name %></li>
                               <% end %>
                               </ul>
-                            <%# else %>
+                            <% else %>
                               <div class="user_info_content_uncompleted"><%= link_to "not completed", edit_user_preference_path(current_user, current_user.preference) %></div>
-                            <%# end %>
+                            <% end %>
                           </div>
                         </div>
                       </div>
@@ -637,11 +637,11 @@
                           <div class="title">Do you smoke?</div>
                           <div class="title_subcontent">Whether you are trying to quite or not or never started, it's better to be honest!</div>
                           <div>
-                            <%# if @preference.category_matchsmoke.present? %>
+                            <% if @preference.category_matchsmoke.present? %>
                               <div class="user_info_content"><%= @preference.category_matchsmoke.name %></div>
-                            <%# else %>
+                            <% else %>
                               <div class="user_info_content_uncompleted"><%= link_to "not completed", edit_user_preference_path(current_user, current_user.preference) %></div>
-                            <%# end %>
+                            <% end %>
                           </div>
                         </div>
                       </div>
@@ -653,15 +653,15 @@
                           <div class="title">Your ideal date: Do they smoke? | Their Preference</div>
                           <div class="title_subcontent">Whether you are trying to quite or not or never started, it's better to be honest!</div>
                           <div class="smoke_check_content">
-                            <%# if @preference.category_idealsmoke.present?  %>
+                            <% if @preference.category_idealsmoke.present?  %>
                               <ul class="medium-12 columns multiple_question">
                               <% @preference.category_idealsmoke.each do |smoke| %>
                                 <li><i class="fa fa-check-square-o" aria-hidden="true"></i><%= smoke.name %></li>
                               <% end %>
                               </ul>
-                            <%# else %>
+                            <% else %>
                               <div class="user_info_content_uncompleted"><%= link_to "not completed", edit_user_preference_path(current_user, current_user.preference) %></div>
-                            <%# end %>
+                            <% end %>
                           </div>
                         </div>
                       </div>
