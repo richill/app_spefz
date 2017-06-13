@@ -429,11 +429,15 @@
                           <div class="title">Your ideal date: What is their highest Education Level</div>
                           <div class="title_subcontent">School of Life or Oxford Scholar?</div>
                           <div class="education_check_content">
-                            <ul class="medium-12 columns multiple_question">
-                            <% @preference.category_idealeducation.each do |education| %>
-                              <li><i class="fa fa-check-square-o" aria-hidden="true"></i><%= education.name %></li>
-                            <% end %>
-                            </ul> 
+                            <%# if @preference.category_idealeducation.present?  %>
+                              <ul class="medium-12 columns multiple_question">
+                              <% @preference.category_idealeducation.each do |education| %>
+                                <li><i class="fa fa-check-square-o" aria-hidden="true"></i><%= education.name %></li>
+                              <% end %>
+                              </ul>
+                            <%# else %>
+                              <div class="user_info_content_uncompleted"><%= link_to "not completed", edit_user_preference_path(current_user, current_user.preference) %></div>
+                            <%# end %>
                           </div>
                         </div>
                       </div>
@@ -469,11 +473,15 @@
                           <div class="title">Your ideal date: Their Height level</div>
                           <div class="title_subcontent"> Remeber good things come in all sizes!</div>
                           <div class="height_check_content">
-                            <ul class="medium-12 columns multiple_question">
-                            <% @preference.category_idealheight.each do |height| %>
-                              <li><i class="fa fa-check-square-o" aria-hidden="true"></i><%= height.name %></li>
-                            <% end %>
-                            </ul>
+                            <%# if @preference.category_idealheight.present? %>
+                              <ul class="medium-12 columns multiple_question">
+                              <% @preference.category_idealheight.each do |height| %>
+                                <li><i class="fa fa-check-square-o" aria-hidden="true"></i><%= height.name %></li>
+                              <% end %>
+                              </ul>
+                            <%# else %>
+                              <div class="user_info_content_uncompleted"><%= link_to "not completed", edit_user_preference_path(current_user, current_user.preference) %></div>
+                            <%# end %>
                           </div>
                         </div>
                       </div>
