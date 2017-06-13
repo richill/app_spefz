@@ -252,11 +252,13 @@
                         <div class="cd-timeline-content">
                           <div class="title">How do you feel about getting involved in a relationship?</div>
                           <div class="title_subcontent">Ready for something serious or prefer to take things slowly? let us know.</div>
-                          <%# if @preference.category_matchrelationship.name.present? %>
-                            <div class="user_info_content"><%= @preference.category_matchrelationship.name %></div>
-                          <%# else %>
-                            <div class="user_info_content_uncompleted"><%= link_to "not completed", edit_user_preference_path(current_user, current_user.preference) %></div>
-                          <%# end %>
+                          <div>
+                            <%# if @preference.category_matchrelationship.name.present? %>
+                              <div class="user_info_content"><%= @preference.category_matchrelationship.name %></div>
+                            <%# else %>
+                              <div class="user_info_content_uncompleted"><%= link_to "not completed", edit_user_preference_path(current_user, current_user.preference) %></div>
+                            <%# end %>
+                          </div>
                         </div>
                       </div>
                       <div class="medium-6 columns right_pref_section">
@@ -266,11 +268,13 @@
                         <div class="cd-timeline-content">
                           <div class="title">Your ideal date: How do they feel about getting involved in a relationship?</div>
                           <div class="title_subcontent">Ready for something serious or prefer to take things slowly? let us know.</div>
-                          <%# if @preference.category_idealrelationship.name.present? %>
-                            <div class="user_info_content"><%= @preference.category_idealrelationship.name %></div>
-                          <%# else %>
-                            <div class="user_info_content_uncompleted"><%= link_to "not completed", edit_user_preference_path(current_user, current_user.preference) %></div>
-                          <%# end %>
+                          <div>
+                            <%# if @preference.category_idealrelationship.name.present? %>
+                              <div class="user_info_content"><%= @preference.category_idealrelationship.name %></div>
+                            <%# else %>
+                              <div class="user_info_content_uncompleted"><%= link_to "not completed", edit_user_preference_path(current_user, current_user.preference) %></div>
+                            <%# end %>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -288,7 +292,13 @@
                         <div class="cd-timeline-content">
                           <div class="title">What is your relationship status?</div>
                           <div class="title_subcontent">Members might be interested in your history. Share it!</div>
-                          <div class="user_info_content"><%= @preference.category_matchstatus.name %></div>
+                          <div>
+                            <%# if @preference.category_matchstatus.name.present? %>
+                              <div class="user_info_content"><%= @preference.category_matchstatus.name %></div>
+                            <%# else %>
+                              <div class="user_info_content_uncompleted"><%= link_to "not completed", edit_user_preference_path(current_user, current_user.preference) %></div>
+                            <%# end %>
+                          </div>
                         </div>
                       </div>
                       <div class="medium-6 columns right_pref_section">
@@ -322,7 +332,13 @@
                         <div class="cd-timeline-content">
                           <div class="title">Are you a parent?</div>
                           <div class="title_subcontent">If you have little ones, tell us. It could be a deal-breaker!</div>
-                          <div class="user_info_content"><%= @preference.category_matchparent.name %></div>
+                          <div>
+                            <%# if @preference.category_matchparent.name.present? %>
+                              <div class="user_info_content"><%= @preference.category_matchparent.name %></div>
+                            <%# else %>
+                              <div class="user_info_content_uncompleted"><%= link_to "not completed", edit_user_preference_path(current_user, current_user.preference) %></div>
+                            <%# end %>
+                          </div>
                         </div>
                       </div>
                       <div class="medium-6 columns right_pref_section">
@@ -332,7 +348,13 @@
                         <div class="cd-timeline-content">
                           <div class="title">Your ideal date: Do they have children?</div>
                           <div class="title_subcontent">If you have little ones, tell us. It could be a deal-breaker!</div>
-                          <div class="user_info_content"><%= @preference.category_idealparent.name %></div>
+                          <div>
+                            <%# if @preference.category_idealparent.name.present? %>
+                              <div class="user_info_content"><%= @preference.category_idealparent.name %></div>
+                            <%# else %>
+                              <div class="user_info_content_uncompleted"><%= link_to "not completed", edit_user_preference_path(current_user, current_user.preference) %></div>
+                            <%# end %>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -350,7 +372,13 @@
                         <div class="cd-timeline-content">
                           <div class="title">Would you like to have children?</div>
                           <div class="title_subcontent">It might be early doors, but it is useful to know.</div>
-                          <div class="user_info_content"><%= @preference.category_matchkid.name %></div>
+                          <div>
+                            <%# if @preference.category_matchkid.name.present? %>
+                              <div class="user_info_content"><%= @preference.category_matchkid.name %></div>
+                            <%# else %>
+                              <div class="user_info_content_uncompleted"><%= link_to "not completed", edit_user_preference_path(current_user, current_user.preference) %></div>
+                            <%# end %>
+                          </div>
                         </div>
                       </div>
                       <div class="medium-6 columns right_pref_section">
@@ -360,7 +388,13 @@
                         <div class="cd-timeline-content">
                           <div class="title">Your ideal date: Do they want children? | Their Preference:</div>
                           <div class="title_subcontent">It might be early doors, but it is useful to know.</div>
-                          <div class="user_info_content"><%= @preference.category_idealkid.name %></div>
+                          <div>
+                            <%# if @preference.category_idealkid.name.present? %>
+                              <div class="user_info_content"><%= @preference.category_idealkid.name %></div>
+                            <%# else %>
+                              <div class="user_info_content_uncompleted"><%= link_to "not completed", edit_user_preference_path(current_user, current_user.preference) %></div>
+                            <%# end %>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -378,7 +412,13 @@
                         <div class="cd-timeline-content">
                           <div class="title">Tell us you highest level of education</div>
                           <div class="title_subcontent">School of Life or Oxford Scholar?</div>
-                          <div class="user_info_content"><%= @preference.category_matcheducation.name %></div>
+                          <div>
+                            <%# if @preference.category_matcheducation.name.present? %>
+                              <div class="user_info_content"><%= @preference.category_matcheducation.name %></div>
+                            <%# else %>
+                              <div class="user_info_content_uncompleted"><%= link_to "not completed", edit_user_preference_path(current_user, current_user.preference) %></div>
+                            <%# end %>
+                          </div>
                         </div>
                       </div>
                       <div class="medium-6 columns right_pref_section">
@@ -412,7 +452,13 @@
                         <div class="cd-timeline-content">
                           <div class="title">How tall are you? | your height level</div>
                           <div class="title_subcontent"> Remeber good things come in all sizes!</div>
-                          <div class="user_info_content"><%= @preference.category_matchheight.name %></div>
+                          <div>
+                            <%# if @preference.category_matchheight.name.present? %>
+                              <div class="user_info_content"><%= @preference.category_matchheight.name %></div>
+                            <%# else %>
+                              <div class="user_info_content_uncompleted"><%= link_to "not completed", edit_user_preference_path(current_user, current_user.preference) %></div>
+                            <%# end %>
+                          </div>
                         </div>
                       </div>
                       <div class="medium-6 columns right_pref_section">
