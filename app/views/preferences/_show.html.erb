@@ -592,7 +592,13 @@
                         <div class="cd-timeline-content">
                           <div class="title">What religion do you practise?</div>
                           <div class="title_subcontent">Members might be interested in your history. Share it!</div>
-                          <div class="user_info_content"><%= @preference.category_matchreligion.name %></div>
+                          <div>
+                            <%# if @preference.category_matchreligion.present? %>
+                              <div class="user_info_content"><%= @preference.category_matchreligion.name %></div>
+                            <%# else %>
+                              <div class="user_info_content_uncompleted"><%= link_to "not completed", edit_user_preference_path(current_user, current_user.preference) %></div>
+                            <%# end %>
+                          </div>
                         </div>
                       </div>
                       <div class="medium-6 columns right_pref_section">
@@ -603,11 +609,15 @@
                           <div class="title">Your ideal date: What religion do they practise?</div>
                           <div class="title_subcontent">Members might be interested in your history. Share it!</div>
                           <div class="religion_check_content">
-                            <ul class="medium-12 columns multiple_question">
-                            <% @preference.category_idealreligion.each do |religion| %>
-                              <li><i class="fa fa-check-square-o" aria-hidden="true"></i><%= religion.name %></li>
-                            <% end %>
-                            </ul>
+                            <%# if @preference.category_idealreligion.present? %>
+                              <ul class="medium-12 columns multiple_question">
+                              <% @preference.category_idealreligion.each do |religion| %>
+                                <li><i class="fa fa-check-square-o" aria-hidden="true"></i><%= religion.name %></li>
+                              <% end %>
+                              </ul>
+                            <%# else %>
+                              <div class="user_info_content_uncompleted"><%= link_to "not completed", edit_user_preference_path(current_user, current_user.preference) %></div>
+                            <%# end %>
                           </div>
                         </div>
                       </div>
@@ -626,7 +636,13 @@
                         <div class="cd-timeline-content">
                           <div class="title">Do you smoke?</div>
                           <div class="title_subcontent">Whether you are trying to quite or not or never started, it's better to be honest!</div>
-                          <div class="user_info_content"><%= @preference.category_matchsmoke.name %></div>
+                          <div>
+                            <%# if @preference.category_matchsmoke.present? %>
+                              <div class="user_info_content"><%= @preference.category_matchsmoke.name %></div>
+                            <%# else %>
+                              <div class="user_info_content_uncompleted"><%= link_to "not completed", edit_user_preference_path(current_user, current_user.preference) %></div>
+                            <%# end %>
+                          </div>
                         </div>
                       </div>
                       <div class="medium-6 columns right_pref_section">
@@ -637,11 +653,15 @@
                           <div class="title">Your ideal date: Do they smoke? | Their Preference</div>
                           <div class="title_subcontent">Whether you are trying to quite or not or never started, it's better to be honest!</div>
                           <div class="smoke_check_content">
-                            <ul class="medium-12 columns multiple_question">
-                            <% @preference.category_idealsmoke.each do |smoke| %>
-                              <li><i class="fa fa-check-square-o" aria-hidden="true"></i><%= smoke.name %></li>
-                            <% end %>
-                            </ul>
+                            <%# if @preference.category_idealsmoke.present?  %>
+                              <ul class="medium-12 columns multiple_question">
+                              <% @preference.category_idealsmoke.each do |smoke| %>
+                                <li><i class="fa fa-check-square-o" aria-hidden="true"></i><%= smoke.name %></li>
+                              <% end %>
+                              </ul>
+                            <%# else %>
+                              <div class="user_info_content_uncompleted"><%= link_to "not completed", edit_user_preference_path(current_user, current_user.preference) %></div>
+                            <%# end %>
                           </div>
                         </div>
                       </div>
