@@ -2,29 +2,29 @@ class Preference < ActiveRecord::Base
   extend FriendlyId
   friendly_id :slug_preferences, use: :slugged
 
-  # validates_presence_of :category_idealrelationship, presence: true, message: "can't be blank"
-  # validates_presence_of :category_idealparent, presence: true, message: "can't be blank"
-  # validates_presence_of :category_idealkid, presence: true, message: "can't be blank"
-  # validates_presence_of :category_idealstatus, presence: true, message: "can't be blank"
-  # validates_presence_of :category_idealeducation, presence: true, message: "can't be blank"
-  # validates_presence_of :category_idealheight, presence: true, message: "can't be blank"
-  # validates_presence_of :category_idealbodytype, presence: true, message: "can't be blank"
-  # validates_presence_of :category_idealethnicity, presence: true, message: "can't be blank"
-  # validates_presence_of :category_idealreligion, presence: true, message: "can't be blank"
-  # validates_presence_of :category_idealsmoke, presence: true, message: "can't be blank"
+  validates_presence_of :category_idealrelationship, presence: true, message: "can't be blank"
+  validates_presence_of :category_idealparent, presence: true, message: "can't be blank"
+  validates_presence_of :category_idealkid, presence: true, message: "can't be blank"
+  validates_presence_of :category_idealstatus, presence: true, message: "can't be blank"
+  validates_presence_of :category_idealeducation, presence: true, message: "can't be blank"
+  validates_presence_of :category_idealheight, presence: true, message: "can't be blank"
+  validates_presence_of :category_idealbodytype, presence: true, message: "can't be blank"
+  validates_presence_of :category_idealethnicity, presence: true, message: "can't be blank"
+  validates_presence_of :category_idealreligion, presence: true, message: "can't be blank"
+  validates_presence_of :category_idealsmoke, presence: true, message: "can't be blank"
 
-  # validates_presence_of :category_matchseeking, presence: true, message: "can't be blank"
-  # validates_presence_of :category_matchrelationship, presence: true, message: "can't be blank"
-  # validates_presence_of :category_matchstatus, presence: true, message: "can't be blank"
-  # validates_presence_of :category_matchparent, presence: true, message: "can't be blank"
-  # validates_presence_of :category_matchkid, presence: true, message: "can't be blank"
-  # validates_presence_of :category_matcheducation, presence: true, message: "can't be blank"
-  # validates_presence_of :category_matchheight, presence: true, message: "can't be blank"
-  # validates_presence_of :category_matchbodytype, presence: true, message: "can't be blank"
-  # validates_presence_of :category_matchethnicity, presence: true, message: "can't be blank"
-  # validates_presence_of :category_matchreligion, presence: true, message: "can't be blank"
-  # validates_presence_of :category_matchsmoke, presence: true, message: "can't be blank"
-  # validate :idealage_start_end
+  validates_presence_of :category_matchseeking, presence: true, message: "can't be blank"
+  validates_presence_of :category_matchrelationship, presence: true, message: "can't be blank"
+  validates_presence_of :category_matchstatus, presence: true, message: "can't be blank"
+  validates_presence_of :category_matchparent, presence: true, message: "can't be blank"
+  validates_presence_of :category_matchkid, presence: true, message: "can't be blank"
+  validates_presence_of :category_matcheducation, presence: true, message: "can't be blank"
+  validates_presence_of :category_matchheight, presence: true, message: "can't be blank"
+  validates_presence_of :category_matchbodytype, presence: true, message: "can't be blank"
+  validates_presence_of :category_matchethnicity, presence: true, message: "can't be blank"
+  validates_presence_of :category_matchreligion, presence: true, message: "can't be blank"
+  validates_presence_of :category_matchsmoke, presence: true, message: "can't be blank"
+  validate :idealage_start_end
 
   belongs_to :user
   before_create :preference_name
