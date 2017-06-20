@@ -28,25 +28,42 @@ class PreferencesController < ApplicationController
     @user = User.friendly.find(params[:user_id])
   end
 
-  def create
-    if current_user.subscribed_access?
-      @user = User.friendly.find(params[:user_id])
-      @user.preference = Preference.new(preference_params)
-      @preference = @user.preference
 
-      respond_to do |format|
-        if @preference.save
-          format.html { redirect_to @preference, notice: 'Preference was successfully created.' }
-          format.json { render :show, status: :created, location: @preference }
-        else
-          format.html { render :new }
-          format.json { render json: @preference.errors, status: :unprocessable_entity }
-        end
+  def create
+    @users = User.all
+    @preference = Preference.new(preference_params)
+    @preference.user = current_user
+
+    respond_to do |format|
+      if @preference.save
+        format.html { redirect_to @preference, notice: 'Preference was successfully created.' }
+        format.json { render :show, status: :created, location: @preference }
+      else
+        format.html { render :new }
+        format.json { render json: @preference.errors, status: :unprocessable_entity }
       end
-    else
-      redirect_to subscription_path(@premium_plan)
     end
   end
+
+  # def create
+  #   if current_user.subscribed_access?
+  #     @user = User.friendly.find(params[:user_id])
+  #     @user.preference = Preference.new(preference_params)
+  #     @preference = @user.preference
+
+  #     respond_to do |format|
+  #       if @preference.save
+  #         format.html { redirect_to @preference, notice: 'Preference was successfully created.' }
+  #         format.json { render :show, status: :created, location: @preference }
+  #       else
+  #         format.html { render :new }
+  #         format.json { render json: @preference.errors, status: :unprocessable_entity }
+  #       end
+  #     end
+  #   else
+  #     redirect_to subscription_path(@premium_plan)
+  #   end
+  # end
 
   def update
     respond_to do |format|
