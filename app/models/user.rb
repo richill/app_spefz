@@ -378,7 +378,7 @@ class User < ActiveRecord::Base
 
   def self.platform_sufficient_users
     users = User.all
-    users.females.count > 0 && users.males.count > 0
+    users.females.count > 15 && users.males.count > 15
   end
 
   def matching(other_user)
