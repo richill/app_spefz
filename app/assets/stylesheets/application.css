@@ -157,6 +157,10 @@ small {
   color: #E1473E;
 }
 
+.error label, .error label.error {
+  color: #fff !important;
+}
+
 
 /*----------------------------------------
     datepicker CSS
