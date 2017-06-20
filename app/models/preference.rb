@@ -14,16 +14,16 @@ class Preference < ActiveRecord::Base
   # validates_presence_of :category_idealsmoke, presence: true, message: "can't be blank"
 
   validates_presence_of :category_matchseeking, presence: true, message: "can't be blank"
-  # validates_presence_of :category_matchrelationship, presence: true, message: "can't be blank"
-  # validates_presence_of :category_matchstatus, presence: true, message: "can't be blank"
-  # validates_presence_of :category_matchparent, presence: true, message: "can't be blank"
-  # validates_presence_of :category_matchkid, presence: true, message: "can't be blank"
-  # validates_presence_of :category_matcheducation, presence: true, message: "can't be blank"
-  # validates_presence_of :category_matchheight, presence: true, message: "can't be blank"
-  # validates_presence_of :category_matchbodytype, presence: true, message: "can't be blank"
-  # validates_presence_of :category_matchethnicity, presence: true, message: "can't be blank"
-  # validates_presence_of :category_matchreligion, presence: true, message: "can't be blank"
-  # validates_presence_of :category_matchsmoke, presence: true, message: "can't be blank"
+  validates_presence_of :category_matchrelationship, presence: true, message: "can't be blank"
+  validates_presence_of :category_matchstatus, presence: true, message: "can't be blank"
+  validates_presence_of :category_matchparent, presence: true, message: "can't be blank"
+  validates_presence_of :category_matchkid, presence: true, message: "can't be blank"
+  validates_presence_of :category_matcheducation, presence: true, message: "can't be blank"
+  validates_presence_of :category_matchheight, presence: true, message: "can't be blank"
+  validates_presence_of :category_matchbodytype, presence: true, message: "can't be blank"
+  validates_presence_of :category_matchethnicity, presence: true, message: "can't be blank"
+  validates_presence_of :category_matchreligion, presence: true, message: "can't be blank"
+  validates_presence_of :category_matchsmoke, presence: true, message: "can't be blank"
 
   belongs_to :user
   before_create :preference_name
