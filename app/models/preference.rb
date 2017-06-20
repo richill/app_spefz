@@ -52,8 +52,6 @@ class Preference < ActiveRecord::Base
   belongs_to :category_matchreligion, dependent: :destroy
   belongs_to :category_matchsmoke, dependent: :destroy
 
-
-
   def slug_preferences
     [
       :name
