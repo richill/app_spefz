@@ -19,13 +19,7 @@
         <div class="tablerow">
           <div class="tablecell" style="width:10%">
             <div class="image_container">
-              <div class="image">
-                <% if blog.image.present? %>
-                  <%= link_to image_tag(blog.image_url), blog, target: "_blank" %>
-                <% else %>
-                  <%= link_to(cl_image_tag(@blog.image, :transformation=>[{:gravity=>"face", :width=>1150, :height=>600, :crop=>"fill"}]), blog_path(@blog)) %>
-                <% end %>
-              </div>
+              <div class="image"><%= link_to image_tag(blog.image_url), blog, target: "_blank" %></div>
             </div>
           </div>
           <div class="tablecell">
