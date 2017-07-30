@@ -33,6 +33,26 @@
   margin: 0px 0px 15px;
 }
 
+.user_general_settings_section .event_edit_update_form .external_event_section {
+  margin: 0px 0px 15px;
+}
+
+.user_general_settings_section .event_edit_update_form #event_external_event {
+  margin-bottom: 0px;
+  margin-right: 5px;
+}
+
+.user_general_settings_section .event_edit_update_form .eventlink_cover {
+  padding: 15px 15px 0px 15px;
+  background-color: rgba(75, 180, 191, 0.2) !important;
+}
+
+.user_general_settings_section .event_edit_update_form #event_external_eventlink {
+  margin-bottom: 0px;
+  height: 0px !important;
+  padding: 15px;
+}
+
 .user_general_settings_section .event_edit_update_form .boolean {
   background-color: rgba(75, 180, 191, 0.2) !important;
   padding: 8px !important;

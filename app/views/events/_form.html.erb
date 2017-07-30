@@ -39,6 +39,15 @@
               </div>
             <% end %>
 
+            <% if current_user.admin_pa_management_group || current_user.pa_event_mgt_group %>
+              <div class="external_event_section">
+                <%= f.input :external_event, label: 'External Event' %>
+                <div class="text_info">Tick this option, if event has been created on an external platform (eg: eventbrite) and is being ticketed from the external platform and not spefz platform.</div>
+                <div class="eventlink_cover"><%= f.input :external_eventlink, label: false, placeholder: "https://wwww.eventbritevent.com" %></div>
+                <div class="text_info">Place in the weblink for the event created on the external platform.</div>
+              </div>
+            <% end %>
+
             <div class="event_topic">
               <%= f.input :title, label: "Event Title", placeholder: "Speed Social - Graduate Professionals" %>
               <div class="text_info">*maximum word count: 55 | *minmum: 40 | <span id="textarea_title_event"></span></div> 
