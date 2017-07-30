@@ -67,57 +67,105 @@
           <div class="tablecell">
             <div class="access_score">
               <div>Access</div>
-              <div><%= number_with_precision(event.event_score_access, precision: 1) %></div>
+              <div>
+                <% if event.external_event? %>
+                  <%= "- -" %>
+                <% else %>
+                  <%= number_with_precision(event.event_score_access, precision: 1) %>
+                <% end %>
+              </div>
             </div>
           </div>
           <div class="tablecell">
             <div class="overall_rate">
               <div>Rate</div>
-              <div><%= number_with_precision(event.overall_ratings, precision: 1) %></div>
+              <div>
+                <% if event.external_event? %>
+                  <%= "- -" %>
+                <% else %>
+                  <%= number_with_precision(event.overall_ratings, precision: 1) %>
+                <% end %>
+              </div>
             </div>
           </div>
           <div class="tablecell" style="width:16%">
-            <div><span class="main_text_format"><%= event.payments.count %>:</span> <span class="faint_text_format">attendants</span></div>
+            <div>
+              <% unless event.external_event? %>
+                <span class="main_text_format"><%= event.payments.count %>:</span> <span class="faint_text_format">attendants</span>
+              <% end %>
+            </div>
             <div>
               <span class="main_text_format"><%= link_to "view details", attendants_event_path(event), target:"_blank" %></span>
             </div>
             <div>
-              <!-- event_gender_selection_display -->
-              <% if event.selection_BothX_men_and_women %>
-                <span class="content_gender"><i class="fa fa-male" aria-hidden="true"></i></span>
-                <% if event.sold_out_Xmen? %>
-                  <span class="content_soldout">sold out</span>
-                <% else %>
-                  <span class="content_available">available</span>
-                <% end %>
-                <span class="content_divider">|</span>
-                <span class="content_gender"><i class="fa fa-female" aria-hidden="true"></i></span> 
-                <% if event.sold_out_Xwomen? %>
-                  <span class="content_soldout">sold out</span>
-                <% else %>
-                  <span class="content_available">available</span>
-                <% end %>
-              <% elsif event.selection_BothAndOnly_men_and_women %>
-                <% if event.category_quantitygender.name == "only men" %>
+              <% if event.external_event? %>
+                <!-- external_event event_gender_selection_display -->
+                <% if event.selection_BothX_men_and_women %>
                   <span class="content_gender"><i class="fa fa-male" aria-hidden="true"></i> </span>
-                  <span class="content_text">[Only Men]</span>
-                <% elsif event.category_quantitygender.name == "only women" %>
+                  <% if event.soldout_men? %>
+                    <span class="content content_soldout">sold out</span>
+                  <% else %>
+                    <span class="content content_available">available</span>
+                  <% end %>
+                  <span class="content_divider">|</span>
                   <span class="content_gender"><i class="fa fa-female" aria-hidden="true"></i> </span>
-                  <span class="content_text">[Only Women]</span>
-                <% elsif event.category_quantitygender.name == "both men & women" %>
-                  <span class="content_gender"><i class="fa fa-users" aria-hidden="true"></i> </span>
+                  <% if event.soldout_women? %>
+                    <span class="content content_soldout">sold out</span>
+                  <% else %>
+                    <span class="content content_available">available</span>
+                  <% end %>
+                <% elsif event.selection_BothAndOnly_men_and_women%>
+                  <% if event.soldout? %>
+                    <span class="content_gender"><i class="fa fa-users" aria-hidden="true"></i> </span>
+                    <span class="content content_soldout">sold out</span>
+                  <% elsif !event.soldout? %>
+                    <span class="content_gender"><i class="fa fa-users" aria-hidden="true"></i> </span>
+                    <span class="content content_available">available</span>
+                  <% end %>
                 <% end %>
-                <% if event.sold_out? %>
-                  <span class="content content_soldout">sold out</span>
-                <% else %>
-                  <span class="content content_available">available</span>
+                <!-- external_event event_gender_selection_display -->
+              <% else %>
+                <!-- event_gender_selection_display -->
+                <% if event.selection_BothX_men_and_women %>
+                  <span class="content_gender"><i class="fa fa-male" aria-hidden="true"></i></span>
+                  <% if event.sold_out_Xmen? %>
+                    <span class="content_soldout">sold out</span>
+                  <% else %>
+                    <span class="content_available">available</span>
+                  <% end %>
+                  <span class="content_divider">|</span>
+                  <span class="content_gender"><i class="fa fa-female" aria-hidden="true"></i></span> 
+                  <% if event.sold_out_Xwomen? %>
+                    <span class="content_soldout">sold out</span>
+                  <% else %>
+                    <span class="content_available">available</span>
+                  <% end %>
+                <% elsif event.selection_BothAndOnly_men_and_women %>
+                  <% if event.category_quantitygender.name == "only men" %>
+                    <span class="content_gender"><i class="fa fa-male" aria-hidden="true"></i> </span>
+                    <span class="content_text">[Only Men]</span>
+                  <% elsif event.category_quantitygender.name == "only women" %>
+                    <span class="content_gender"><i class="fa fa-female" aria-hidden="true"></i> </span>
+                    <span class="content_text">[Only Women]</span>
+                  <% elsif event.category_quantitygender.name == "both men & women" %>
+                    <span class="content_gender"><i class="fa fa-users" aria-hidden="true"></i> </span>
+                  <% end %>
+                  <% if event.sold_out? %>
+                    <span class="content content_soldout">sold out</span>
+                  <% else %>
+                    <span class="content content_available">available</span>
+                  <% end %>
                 <% end %>
+                <!-- event_gender_selection_display -->
               <% end %>
-              <!-- event_gender_selection_display -->
             </div>
             <% if current_user.admin_pa_management_group %>
               <div>
-                <span>Amt: </span><span class="ref_id">£<%= (event.price) * (event.payments.count) %></span>
+                <% if event.external_event? %>
+                  <span class="external_eventlink_info">Amt: <%= link_to "External Event", event.external_eventlink, target:"blank" %></span>
+                <% else %>
+                  <span>Amt: </span><span class="ref_id">£<%= (event.price) * (event.payments.count) %></span>
+                <% end %>
               </div>
             <% end %>
           </div>
