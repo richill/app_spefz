@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170530224218) do
+ActiveRecord::Schema.define(version: 20170730092755) do
 
   create_table "activities", force: :cascade do |t|
     t.integer  "trackable_id"
@@ -403,6 +403,9 @@ ActiveRecord::Schema.define(version: 20170530224218) do
     t.string   "imgevent_four"
     t.string   "imgevent_five"
     t.string   "imgevent_six"
+    t.boolean  "external_event"
+    t.text     "external_eventlink"
+    t.boolean  "soldout"
   end
 
   add_index "events", ["slug"], name: "index_events_on_slug", unique: true
