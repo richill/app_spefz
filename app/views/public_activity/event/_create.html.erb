@@ -26,7 +26,7 @@
                   <div class="social_event_content">
                     <div class="image_cover">
                       <!-- sold out -->
-                      <% if activity.trackable.sold_out? %>
+                      <% if activity.trackable.sold_out? || activity.trackable.soldout? || activity.trackable.soldout_men? && activity.trackable.soldout_women?  %>
                         <div class="banner">
                           <div class="ribbon-wrapper-green">
                             <div class="ribbon-green">sold out</div>
@@ -50,13 +50,15 @@
                         <span class="mid_divider">|</span>
                         <span class="category">Category:</span> 
                         <span class="category_info"><%= link_to "#{activity.trackable.category_topic.name}", events_path(q: {category_topic_name_eq: activity.trackable.category_topic.name}) %></span>
-                        <% if activity.trackable.display_event_match? %>
-                          <span class="mid_divider">|</span> 
-                          <span class="category">Match:</span>
-                          <span class="match_info">
-                            <a href="#<%= activity.trackable.id %>" data-reveal-id="<%= dom_id(activity.trackable) %>_event_match"><%= activity.trackable.match(current_user) %>%</a>
-                            <%= render partial: 'shared/modal_match_info', locals: { event: activity.trackable } %>
-                          </span> 
+                        <% unless activity.trackable.external_event? %>
+                          <% if activity.trackable.display_event_match? %>
+                            <span class="mid_divider">|</span> 
+                            <span class="category">Match:</span>
+                            <span class="match_info">
+                              <a href="#<%= activity.trackable.id %>" data-reveal-id="<%= dom_id(activity.trackable) %>_event_match"><%= activity.trackable.match(current_user) %>%</a>
+                              <%= render partial: 'shared/modal_match_info', locals: { event: activity.trackable } %>
+                            </span> 
+                          <% end %>
                         <% end %>
                         <span class="mid_divider">|</span> 
                         <span class="price">Price:</span>
