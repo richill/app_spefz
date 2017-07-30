@@ -53,6 +53,27 @@
   padding: 15px;
 }
 
+
+.user_general_settings_section .event_edit_update_form #event_soldout {
+  margin-bottom: 0px;
+  margin-right: 5px;
+}
+
+.user_general_settings_section .event_edit_update_form #event_soldout_men {
+  margin-bottom: 0px;
+  margin-right: 5px;
+}
+
+.user_general_settings_section .event_edit_update_form #event_soldout_women {
+  margin-bottom: 0px;
+  margin-right: 5px;
+}
+
+.external_event_soldout_section label {
+  margin-top: 0px !important;
+}
+
+
 .user_general_settings_section .event_edit_update_form .boolean {
   background-color: rgba(75, 180, 191, 0.2) !important;
   padding: 8px !important;
