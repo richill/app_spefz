@@ -131,11 +131,12 @@
   width: 540px;
   float: left;
   margin-bottom: 15px;
+  margin-right: 15px;
 }
 
 .user_general_settings_section .event_edit_update_form .event_address {
   width: 540px;
-  float: right;
+  float: left;
   margin-bottom: 15px;
 }
 
@@ -156,7 +157,7 @@
 
 .user_general_settings_section .event_edit_update_form .event_postcode {
   width: 350px;
-  float: right;
+  float: left;
 }
 
 .user_general_settings_section .event_edit_update_form .map_link {
@@ -228,6 +229,7 @@
 .user_general_settings_section .event_edit_update_form .event_price {
   width: 540px;
   float: left;
+  margin-right: 15px;
 }
 
 .user_general_settings_section .event_edit_update_form #event_price {
@@ -236,7 +238,7 @@
 
 .user_general_settings_section .event_edit_update_form .event_category_age {
   width: 540px;
-  float: right;
+  float: left;
 }
 
 .user_general_settings_section .event_edit_update_form #event_category_age_id {
