@@ -107,6 +107,10 @@ button input {
   letter-spacing: 1px;
 }
 
+.external_eventlink_info a {
+  color: #E1473E !important;
+}
+
 /*----------------------------------------
     devise signin/signout error messages
 ----------------------------------------*/
