@@ -67,11 +67,13 @@
           <div class="tablecell">
             <div class="access_score">
               <div>Access</div>
-              <% if event.external_event? %>
-                <%= "- -" %>
-              <% else %>
-                <div><%= number_with_precision(event.event_score_access, precision: 1) %></div>
-              <% end %>
+              <div>
+                <% if event.external_event? %>
+                  <%= "- -" %>
+                <% else %>
+                  <%= number_with_precision(event.event_score_access, precision: 1) %>
+                <% end %>
+              </div>
             </div>
           </div>
           <div class="tablecell">
