@@ -45,11 +45,16 @@
                 <div class="text_info">Tick this option, if event has been created on an external platform (eg: eventbrite) and is being ticketed from the external platform and not spefz platform.</div>
                 <div class="eventlink_cover"><%= f.input :external_eventlink, label: false, placeholder: "https://wwww.eventbritevent.com" %></div>
                 <div class="text_info">Place in the weblink for the event created on the external platform.</div>
-                <div class="external_event_soldout_section">
-                  <%= f.input :soldout, label: 'Ticket Sold out' %>
-                  <%= f.input :soldout_men, label: 'Ticket Sold out Men' %>
-                  <%= f.input :soldout_women, label: 'Ticket Sold out Women' %>
-                </div>
+                <% if action_name == 'edit'  %>
+                  <div class="external_event_soldout_section">
+                    <% if @event.selection_BothAndOnly_men_and_women %>
+                      <%= f.input :soldout, label: 'Ticket Sold out' %>
+                    <% elsif @event.selection_BothX_men_and_women %>
+                      <%= f.input :soldout_men, label: 'Ticket Sold out Men' %>
+                      <%= f.input :soldout_women, label: 'Ticket Sold out Women' %>
+                    <% end %>
+                  </div>
+                <% end %>
               </div>
             <% end %>
 

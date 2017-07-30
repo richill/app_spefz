@@ -12,7 +12,7 @@
               <!-- left_evt_details -->
               <div class="medium-3 columns left_evt_details">
                 <!-- sold out -->
-                <% if @event.sold_out? %>
+                <% if @event.sold_out? || @event.soldout? || @event.soldout_men? && @event.soldout_women? %>
                   <div class="banner">
                     <div class="ribbon-wrapper-green">
                       <div class="ribbon-green">sold out</div>
@@ -121,37 +121,45 @@
             <% end %>
           </span>
         </li>
-        <% if @event.display_event_match? %>
-          <li><span>|</span></li>
-          <li>
-            <span class="header">Match: </span> 
-            <span class="content match_link_info">
-              <a href="#<%= @event.id %>" data-reveal-id="<%= dom_id(@event) %>_event_match_show"><%= @event.match(current_user) %>%</a>
-              <%= render partial: 'shared/modal_match_info_show', locals: { event: @event } %>
-            </span>
-          </li>
+        <% unless @event.external_event? %>
+          <% if @event.display_event_match? %>
+            <li><span>|</span></li>
+            <li>
+              <span class="header">Match: </span> 
+              <span class="content match_link_info">
+                <a href="#<%= @event.id %>" data-reveal-id="<%= dom_id(@event) %>_event_match_show"><%= @event.match(current_user) %>%</a>
+                <%= render partial: 'shared/modal_match_info_show', locals: { event: @event } %>
+              </span>
+            </li>
+          <% end %>
         <% end %>
       </ul>
       <ul class="inline-list right">
 
-        <% if @event.current_user_attending_paid?(current_user) %>
-          <li><span><div class="event_show_btn btn_event_booked"><%= link_to 'Booked!', user_event_path(@event.user, @event) %></div></span></li>
+        <% if @event.external_event? %>
+          <% unless @event.expired_or_closed_event %>
+            <li><span><div class="event_show_btn btn_event_booknow"><%= link_to 'Book Now!', @event.external_eventlink, target:"_blank" %></div></span></li>
+          <% end %>
         <% else %>
-          <% unless @event.sold_out? %>
-            <% unless @event.category_quantitygender.name == "only women" && current_user.category_gender.name == "Female" || 
-              @event.category_quantitygender.name == "only men" && current_user.category_gender.name == "Male" ||
-              @event.category_quantitygender.name == "both men & women" && current_user.category_gender.name == "Female" ||
-              @event.category_quantitygender.name == "both men & women" && current_user.category_gender.name == "Male" ||
-              @event.category_quantitygender.name == "both X men & X women" && current_user.category_gender.name == "Female" ||
-              @event.category_quantitygender.name == "both X men & X women" && current_user.category_gender.name == "Male" %>
-              <li><span><div class="event_show_btn btn_social_attendance_restrictions"><%= link_to 'Attendance Restriction!', user_event_path(@event.user, @event) %></div></span></li>
-            <% else %>
-              <% if current_user.image? %>
-                <% unless @event.expired_or_closed_event %>
-                  <li><span><div class="event_show_btn btn_event_booknow"><%= link_to 'Book Now!', new_payment_path(event_id: @event.id, user: current_user.id) %></div></span></li>
-                <% end %>
+          <% if @event.current_user_attending_paid?(current_user) %>
+            <li><span><div class="event_show_btn btn_event_booked"><%= link_to 'Booked!', user_event_path(@event.user, @event) %></div></span></li>
+          <% else %>
+            <% unless @event.sold_out? %>
+              <% unless @event.category_quantitygender.name == "only women" && current_user.category_gender.name == "Female" || 
+                @event.category_quantitygender.name == "only men" && current_user.category_gender.name == "Male" ||
+                @event.category_quantitygender.name == "both men & women" && current_user.category_gender.name == "Female" ||
+                @event.category_quantitygender.name == "both men & women" && current_user.category_gender.name == "Male" ||
+                @event.category_quantitygender.name == "both X men & X women" && current_user.category_gender.name == "Female" ||
+                @event.category_quantitygender.name == "both X men & X women" && current_user.category_gender.name == "Male" %>
+                <li><span><div class="event_show_btn btn_social_attendance_restrictions"><%= link_to 'Attendance Restriction!', user_event_path(@event.user, @event) %></div></span></li>
               <% else %>
-                <li><span><div class="event_show_btn btn_event_booknow"><%= link_to 'Book Now!', image_restriction_page_path %></div></span></li>
+                <% if current_user.image? %>
+                  <% unless @event.expired_or_closed_event %>
+                    <li><span><div class="event_show_btn btn_event_booknow"><%= link_to 'Book Now!', new_payment_path(event_id: @event.id, user: current_user.id) %></div></span></li>
+                  <% end %>
+                <% else %>
+                  <li><span><div class="event_show_btn btn_event_booknow"><%= link_to 'Book Now!', image_restriction_page_path %></div></span></li>
+                <% end %>
               <% end %>
             <% end %>
           <% end %>
