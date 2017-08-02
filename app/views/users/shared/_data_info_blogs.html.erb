@@ -22,11 +22,17 @@
         <div class="tablerow">
           <div class="tablecell" style="width:10%">
             <div class="image_container">
-              <div class="image"><%= link_to image_tag(blog.image_url), blog, target: "_blank" %></div>
+              <div class="image">
+                <% if blog.image? %>
+                  <%= link_to image_tag(blog.image_url), blog, target: "_blank" %>
+                <% else %>
+                  <%= link_to(cl_image_tag(blog.blog_image_link, :transformation=>[{:gravity=>"face", :width=>200, :height=>200, :crop=>"fill", :radius=>"max"}]), blog, target:"_blank") %>
+                <% end %>
+              </div>
             </div>
           </div>
           <div class="tablecell">
-            <div class="user_name"><%= "#{blog.title}" %></div>
+            <div class="user_name"><%= link_to "#{blog.title}", blog, target:"_blank" %></div>
             <% if blog.publish? %>
               <div class="ref_id"><%= "published" %></div>
             <% else %>
@@ -96,7 +102,7 @@
             </div>
           </div>
           <div class="tablecell">
-            <div class="user_name"><%= "#{blog.title}" %></div>
+            <div class="user_name"><%= link_to "#{blog.title}", blog, target:"_blank" %></div>
             <% if blog.publish? %>
               <div class="ref_id"><%= "published" %></div>
             <% else %>
@@ -166,7 +172,7 @@
             </div>
           </div>
           <div class="tablecell">
-            <div class="user_name"><%= "#{blog.title}" %></div>
+            <div class="user_name"><%= link_to "#{blog.title}", blog, target:"_blank" %></div>
             <% if blog.publish? %>
               <div class="ref_id"><%= "published" %></div>
             <% else %>
