@@ -27,6 +27,51 @@
 
     <!-- content -->
     <div class="medium-12 columns blogs_show_content_section">
+
+
+      <!-- workings -->
+      <div class="medium-12 columns">
+        <div class="content_details">
+          <div class="event_main_container">
+            <div class="medium-12 columns event_detailed_blog">
+              <ul>
+              <!-- events -->
+              <% Event.asc_order.live_events.non_upcoming_events.limit(20).each do |event| %>
+                <li>
+
+                  <div class="evt_container">
+                    <div class="evt_left_content">
+                      <%= link_to event_path(event) do %>
+                        <div class="img_cover">
+                          <% if event.image.present? %>
+                          <%= link_to(cl_image_tag(event.image, :transformation=>[{:gravity=>"center", :crop=>"fill"}]), preview_event_path(event)) %>
+                          <% else %>
+                            <%= link_to(image_tag("img_feed_07.png", :alt =>  "image", :class =>"#"), preview_event_path(event)) %>
+                          <% end %>
+                        </div>
+                      <% end %>
+                    </div>
+
+                    <div class="evt_right_content">
+                      <div><%= link_to "#{event.title}", preview_event_path(event) %></div>
+                      <div><%= event.date.strftime("%A, %d %b") %></div>
+                      <div><%= event.time.strftime("%H:%M") %>h - <%= event.time_end.strftime("%H:%M") %>h</div>
+                    </div>
+                  </div>
+
+
+
+                </li>
+              <% end %>
+              <!-- events -->
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- workings -->
+
+
       <div class="medium-12 columns content_container">
         <div class="content_details">
           <div class="blog_main_container">

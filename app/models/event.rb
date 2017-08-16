@@ -77,6 +77,10 @@ class Event < ActiveRecord::Base
 
   scope :closed_events, -> {where(['close = ?', true])}
 
+  scope :non_upcoming_events, -> {where(['upcoming_event = ?', false])}
+
+  scope :upcoming_events, -> {where(['upcoming_event = ?', true])}
+
   scope :open_events, -> {where(['close = ? OR close IS ?', false, nil])}
 
   scope :total_price_for_events, -> { joins(:payments).sum("events.price") }
