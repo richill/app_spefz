@@ -220,7 +220,7 @@
   overflow: visible;
   position: absolute;
   top: 60px;
-  margin-left: -321px;
+  margin-left: -195px;
   width: 400px;
   z-index: 1000;
   display: none; /*info: Enable this after jquery implementation*/ 
@@ -236,7 +236,7 @@
   border: 10px solid black;
   border-color: transparent transparent white;
   margin-top: -20px;
-  margin-left: 318px;
+  margin-left: 194px;
 }
 
 .nav_user_section #notificationTitle_friendRequest {
@@ -290,8 +290,10 @@
   overflow: visible;
   position: absolute;
   top: 60px;
-  margin-left: -321px;
-  width: 400px;
+  // margin-left: -321px;
+  // width: 400px;
+  margin-left: -233px;
+  width: 395px;
   z-index: 1000;
   display: none; /*info: Enable this after jquery implementation*/ 
 }
@@ -306,7 +308,8 @@
   border: 10px solid black;
   border-color: transparent transparent white;
   margin-top: -20px;
-  margin-left: 318px;
+  // margin-left: 318px;
+  margin-left: 230px;
 }
 
 .nav_user_section #notificationTitle_invites {
@@ -360,8 +363,8 @@
   overflow: visible;
   position: absolute;
   top: 60px;
-  margin-left: -321px;
-  width: 400px;
+  margin-left: -273px;
+  width: 395px;
   z-index: 1000;
   display: none; /*info: Enable this after jquery implementation*/ 
 }
@@ -376,7 +379,7 @@
   border: 10px solid black;
   border-color: transparent transparent white;
   margin-top: -20px;
-  margin-left: 318px;
+  margin-left: 271px;
 }
 
 .nav_user_section #notificationTitle_bell {
@@ -523,6 +526,11 @@
   text-align: left;
   display: none; /*info: Enable this after jquery implementation*/ 
 }
+@media only screen and (max-width: 1300px) {
+  .nav_user_section #notificationContainer_profile {
+    margin-left: -260px;
+  }
+}
 
 .nav_user_section #notificationContainer_profile:before { /*info: Popup Arrow*/
   content: '';
@@ -536,6 +544,11 @@
   border-color: transparent transparent white;
   margin-top: -20px;
   margin-left: 327px;
+}
+@media only screen and (max-width: 1300px) {
+  .nav_user_section #notificationContainer_profile:before {
+    right: 15px;
+  }
 }
 
 .nav_user_section #notificationTitle_profile {
