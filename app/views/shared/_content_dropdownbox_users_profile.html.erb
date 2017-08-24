@@ -24,6 +24,39 @@
         <span><%= link_to "edit profile", edit_user_path(current_user) %></span>
       </div>
     </li>
+
+    <li class="responsive_display_link">
+      <div class="list_cover">
+        <span><i class="fa fa-calendar" aria-hidden="true"></i></span>
+        <span><%= link_to "speed socials", events_path %></span>
+        <span>|</span>
+        <span><%= link_to "socials", socials_path %></span>
+      </div>
+    </li>
+
+    <li class="responsive_display_link">
+      <% if User.platform_sufficient_users %>
+      <div class="list_cover">
+        <span><i class="fa fa-heartbeat" aria-hidden="true"></i></span>
+        <% if current_user.image? %>
+          <span><%= link_to "my matches", matches_user_path(current_user) %></span>
+        <% else %>
+          <span><%= link_to "my matches", image_restriction_page_path %></span>
+        <% end %>
+      </div>
+      <% end %>
+    </li>
+
+    <li class="responsive_display_link">
+      <div class="list_cover">
+        <span><i class="fa fa-signal" aria-hidden="true"></i></span>
+        <% if current_user.image? %>
+          <span><%= link_to "activity", activities_path %></span>
+        <% else %>
+          <span><%= link_to "activity", image_restriction_page_path %></span>
+        <% end %>
+      </div>
+    </li>
     
     <% if current_user.subscribed_access? %>
     <li>
