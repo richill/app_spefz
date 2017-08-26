@@ -300,14 +300,14 @@
   -o-transition: all 0.3s ease;
 }
 
-@media only screen and (min-width: 1030px) {
-  .events_section .event_container .title .responsive_display_small {
+@media only screen and (min-width: 1150px) {
+  .events_section .event_container .title .responsive_display_title_small {
     display: none; 
   }
 }
 
-@media only screen and (max-width: 1030px) {
-  .events_section .event_container .title .responsive_display_large {
+@media only screen and (max-width: 1150px) {
+  .events_section .event_container .title .responsive_display_title_large {
     display: none; 
   }
 }
