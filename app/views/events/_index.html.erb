@@ -85,7 +85,7 @@
                       <div class="middle_evt">
                         <div class="title">
                           <span class="responsive_display_large"><%= link_to "#{event.title}", event_path(event) %></span>
-                          <span class="responsive_display_small"><%= link_to(truncate("#{event.title}", length: 50), event_path(event)) %></span>
+                          <span class="responsive_display_small"><%= link_to(truncate("#{event.title}", length: 45), event_path(event)) %></span>
                         </div>
                         <div class="info"><i class="fa fa-map-marker" aria-hidden="true"></i> 
                           <span class="responsive_display_large"><%= event.venuename %></span>
