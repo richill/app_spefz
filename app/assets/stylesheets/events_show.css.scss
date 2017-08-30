@@ -51,15 +51,23 @@
   background-color: rgba(255, 255, 255, 0.09) !important;
 }
 
-.events_show_inner_section .evt_details_container {
-  padding: 0px !important;
-  width: 1170px;
-  margin: auto;
+@media only screen and (min-width: 1185px) {
+  .events_show_inner_section .evt_details_container  {
+    padding: 0px !important;
+    width: 1170px;
+    margin: auto;
+  }
 }
 
 // ----- upper section: left_evt_details -----
 .events_show_inner_section .left_evt_details {
   padding: 0px !important;
+}
+@media only screen and (max-width: 1185px) {
+  .events_show_inner_section .left_evt_details {
+    width: 100% !important;
+    text-align: center;
+  }
 }
 
 .events_show_inner_section .left_evt_details .banner .ribbon-wrapper-green {
@@ -103,6 +111,12 @@
   padding: 15px !important;
   color: #fff !important;
 }
+@media only screen and (max-width: 1185px) {
+  .events_show_inner_section .right_evt_details {
+    text-align: center;
+    width: 100%;
+  }
+}
 
 .events_show_inner_section .right_evt_details .title {
   font-family: 'Lato', sans-serif;
@@ -114,12 +128,27 @@
   word-spacing: 3px;
   margin-bottom: 5px;
 }
+@media only screen and (max-width: 1185px) {
+  .events_show_inner_section .right_evt_details .title {
+   font-size: 18px !important;
+  }
+}
 
 .events_show_inner_section .right_evt_details .info {
   font-family: 'Lato', sans-serif;
   letter-spacing: 2px;
   margin-bottom: 8px;
   text-transform: capitalize;
+}
+@media screen and (min-width: 330px) and (max-width: 1185px) {
+  .events_show_inner_section .right_evt_details .info {
+   font-size: 12px !important;
+  }
+}
+@media only screen and (max-width: 330px) {
+ .events_show_inner_section .right_evt_details .info {
+    font-size: 10px !important;
+  } 
 }
 
 .events_show_inner_section .right_evt_details .info i {
@@ -191,6 +220,16 @@
   background-color: rgba(255, 255, 255, 0.2) !important;
   border-bottom: 2px solid rgba(225, 71, 62, 0.3) !important;
 }
+@media only screen and (max-width: 1185px) {
+  .events_show_inner_section .right_evt_details .price {
+    margin: auto ;
+  }
+}
+@media only screen and (min-width: 330px) {
+  .events_show_inner_section .right_evt_details .price {
+    width: 270px;
+  }
+}
 
 
 
@@ -200,11 +239,22 @@
   background-color: rgba(255, 255, 255, 0.7) !important;
   padding: 8px 0px;
 }
+@media only screen and (max-width: 1185px) {
+  .events_show_inner_section .middle_section {
+    padding: 8px 5px !important;
+  }
+}
 
 .events_show_inner_section .middle_section .middle_inner_section {
-  background-color: red;
-  width: 1170px !important;
+  width: 355px;
   margin: auto;
+}
+@media only screen and (min-width: 1185px) {
+  .events_show_inner_section .middle_section .middle_inner_section {
+    background-color: transparent;
+    width: 1170px !important;
+    margin: auto;
+  }
 }
 
 .events_show_inner_section .middle_section .left {
@@ -249,6 +299,11 @@
   text-transform: capitalize;
   margin-left: 3px;
 }
+@media only screen and (max-width: 1185px) {
+  .events_show_inner_section .middle_section .left .content {
+    font-size: 12px;
+  }
+}
 
 .events_show_inner_section .middle_section .content_available {
   color: #58CDA6 !important;
@@ -268,10 +323,21 @@
   margin-right: 4px;
   background-color: transparent !important;
 }
+@media only screen and (max-width: 1185px) {
+  .events_show_inner_section .middle_section .left .header {
+    font-size: 12px;
+  }
+}
 
 .events_show_inner_section .middle_section .right {
   margin-bottom: 0px;
   padding: 0px 5px !important;
+}
+@media only screen and (max-width: 1185px) {
+  .events_show_inner_section .middle_section .right {
+    padding: 0px !important;
+    margin-right: 26px;
+  }
 }
 
 .events_show_inner_section .middle_section .right li {
@@ -469,6 +535,11 @@
   -moz-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
 }
+@media only screen and (max-width: 1185px) {
+  .events_show_inner_section .attendants a {
+    display: none;
+  }
+}
 
 .events_show_inner_section .attendants i {
   color: #fff !important;
@@ -588,6 +659,11 @@
   -moz-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
 }
+@media only screen and (max-width: 1185px) {
+  .events_show_inner_section .btn_edit a {
+    display: none;
+  }
+}
 
 .events_show_inner_section .btn_edit a:hover {
   padding: 10px 25px;
@@ -618,6 +694,19 @@
   -o-transition: all 0.3s ease;
 }
 
+@media only screen and (max-width: 1185px) {
+  .match_divider {
+    display: none !important;
+  }
+}
+
+@media only screen and (max-width: 1185px) {
+  .match_content {
+    margin: 10px 0px 0px -60px !important;
+  }
+}
+
+
 
 
 // ======== lower_section ========
@@ -625,15 +714,28 @@
   padding: 15px 0px;
 }
 
-.events_show_inner_section .lower_section .lower_inner_section {
-  width: 1170px !important;
-  margin: auto;
-  height: 400px;
+@media only screen and (min-width: 1185px) {
+  .events_show_inner_section .lower_section .lower_inner_section {
+    width: 1170px !important;
+    margin: auto;
+    height: 400px;
+  }
 }
 
 // -------- column_left --------
 .events_show_inner_section .column_left {
   padding: 0px !important;
+}
+@media only screen and (max-width: 1185px) {
+  .events_show_inner_section .column_left {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 1185px) {
+  .events_show_inner_section .responsive_display {
+    padding: 0px !important;
+  }
 }
 
 .events_show_inner_section .column_left .left_container {
@@ -908,6 +1010,11 @@
 .events_show_inner_section .column_middle {
   padding: 0px !important;
 }
+@media only screen and (max-width: 1185px) {
+  .events_show_inner_section .column_middle {
+    width: 100%;
+  }
+}
 
 .events_show_inner_section .column_middle .middle_container {
   padding: 5px;
@@ -977,6 +1084,11 @@
 // -------- column_right --------
 .events_show_inner_section .column_right {
   padding: 0px !important;
+}
+@media only screen and (max-width: 1185px) {
+  .events_show_inner_section .column_right {
+    width: 100% !important;
+  }
 }
 
 .events_show_inner_section .column_right .right_container_location {
@@ -1143,6 +1255,9 @@
 .events_show_inner_section .column_right .right_container .event_img_container .content_info {
   word-spacing: 3px !important;
 }
+
+
+
 
 
 // .events_show_inner_section {

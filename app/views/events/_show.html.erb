@@ -147,8 +147,6 @@
           <!-- non_external_event event_gender_selection_display -->
         <% end %>
 
-
-
         <li><span>|</span></li>
         <li>
           <span class="header">Age Group:</span>
@@ -162,8 +160,8 @@
         </li>
         <% unless @event.external_event? %>
           <% if @event.display_event_match? %>
-            <li><span>|</span></li>
-            <li>
+            <li class="match_divider"><span>|</span></li>
+            <li class="match_content">
               <span class="header">Match: </span> 
               <span class="content match_link_info">
                 <a href="#<%= @event.id %>" data-reveal-id="<%= dom_id(@event) %>_event_match_show"><%= @event.match(current_user) %>%</a>
