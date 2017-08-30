@@ -17,8 +17,12 @@
 
 .payments_new_section .content_details {
   padding: 15px 0px !important;
-  width: 1170px;
-  margin: auto;
+}
+@media only screen and (min-width: 1200px) {
+  .payments_new_section .content_details {
+    width: 1170px;
+    margin: auto;
+  }
 }
 
 .payments_new_section .payment_main_container {
@@ -32,6 +36,11 @@
 .payments_new_section .pymt_image_section {
   background-color: rgba(47, 63, 91, 0.2) !important;
   padding: 0px;
+}
+@media only screen and (max-width: 1200px) {
+  .payments_new_section .pymt_image_section {
+    display: none;
+  }
 }
 
 .payments_new_section .pymt_image_cover {
@@ -86,6 +95,11 @@
 .payments_new_section .pymt_form_section {
   background-color: #fff;
   padding: 15px;
+}
+@media only screen and (max-width: 1200px) {
+  .payments_new_section .pymt_form_section {
+    width: 100% !important;
+  }
 }
 
 .payments_new_section .header {
@@ -172,6 +186,11 @@
 .payments_new_section .row_cvv {
   width: 200px;
   float: right;
+}
+@media only screen and (max-width: 600px) {
+  .payments_new_section .row_cvv {
+    width: 100% !important;
+  }
 }
 
 .payments_new_section .row_exp {
