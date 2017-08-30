@@ -15,6 +15,11 @@
   -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.14);
   box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.14);
 }
+@media only screen and (max-width: 1000px) {
+  .user_membership_section .membership_status_container {
+    height: 195px;
+  }
+}
 
 
 .user_membership_section .membership_status_container .text_info {
@@ -43,16 +48,27 @@
 
 .user_membership_section .membership_status_container ul li {
   float: left;
-  width: 450px;
   padding: 15px 25px;
 }
+@media only screen and (min-width: 530px) {
+  .user_membership_section .subscription_status_li {
+    width: 450px;
+  }
+}
 
-.user_membership_section .subscription_status_li {
-  border-right: 1px solid #727985;
+@media only screen and (min-width: 1000px) {
+  .user_membership_section .subscription_status_li {
+    border-right: 1px solid #727985;
+  }
 }
 
 .user_membership_section .subscription_date_li {
   margin-left: 35px;
+}
+@media only screen and (max-width: 1000px) {
+  .user_membership_section .subscription_date_li {
+    margin-left: 0px;
+  }
 }
 
 .user_membership_section .subscription_date {

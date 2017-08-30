@@ -15,6 +15,12 @@
   background-color: #283041;
   min-height: 2900px;
 }
+@media only screen and (max-width: 1185px) {
+  .user_general_settings_section .left_column_section {
+    width: 100% !important;
+    min-height: 315px;
+  }
+}
 
 // @media only screen and (max-width: 1365px) {
 //  .user_general_settings_section .left_inner_section {
@@ -74,6 +80,11 @@
 // --------right_column_section--------
 .user_general_settings_section .right_column_section {
   height: 2900px;
+}
+@media only screen and (max-width: 1185px) {
+  .user_general_settings_section .right_column_section {
+    width: 100% !important;
+  }
 }
 
 @media only screen and (min-width: 1750px) {
@@ -161,12 +172,22 @@
   margin-top: 25px;
   margin-right: 18px;
 }
+@media only screen and (max-width: 1185px) {
+  .user_general_settings_section .right_inner_section .user_edit_update_form .user_firstname {
+    width: 100% !important;
+  }
+}
 
 .user_general_settings_section .right_inner_section .user_edit_update_form .user_lastname {
   width: 540px;
   float: left;
   margin-bottom: 15px;
   margin-top: 25px;
+}
+@media only screen and (max-width: 1185px) {
+  .user_general_settings_section .right_inner_section .user_edit_update_form .user_lastname {
+    width: 100% !important;
+  }
 }
 
 .user_general_settings_section .right_inner_section .user_edit_update_form .user_profession {
@@ -175,15 +196,30 @@
   margin-right: 15px;
   margin-top: 25px;
 }
+@media only screen and (max-width: 1185px) {
+  .user_general_settings_section .right_inner_section .user_edit_update_form .user_profession {
+    width: 100% !important;
+  }
+}
 
 .user_general_settings_section .right_inner_section .user_edit_update_form .user_category_gender {
   width: 545px;
   float: left;
   margin-top: 25px;
 }
+@media only screen and (max-width: 1185px) {
+  .user_general_settings_section .right_inner_section .user_edit_update_form .user_category_gender {
+    width: 100% !important;
+  }
+}
 
 .user_general_settings_section .right_inner_section .user_edit_update_form #user_category_gender_id {
   height: 40px;
+}
+@media only screen and (max-width: 1185px) {
+  .user_general_settings_section .right_inner_section .user_edit_update_form #user_category_gender_id {
+    width: 100% !important;
+  }
 }
 
 .user_general_settings_section .right_inner_section .user_edit_update_form .user_category_country {
@@ -192,15 +228,30 @@
   margin-right: 15px;
   margin-top: 25px;
 }
+@media only screen and (max-width: 1185px) {
+  .user_general_settings_section .right_inner_section .user_edit_update_form .user_category_country {
+    width: 100% !important;
+  }
+}
 
 .user_general_settings_section .right_inner_section .user_edit_update_form .user_city {
   width: 545px;
   float: left;
   margin-top: 25px;
 }
+@media only screen and (max-width: 1185px) {
+  .user_general_settings_section .right_inner_section .user_edit_update_form .user_city {
+    width: 100% !important;
+  }
+}
 
 .user_general_settings_section .right_inner_section .user_edit_update_form #user_category_country_id {
   height: 40px;
+}
+@media only screen and (max-width: 1185px) {
+  .user_general_settings_section .right_inner_section .user_edit_update_form #user_category_country_id {
+    width: 100% !important;
+  }
 }
 
 .user_general_settings_section .right_inner_section .user_edit_update_form .label_interest {
@@ -210,13 +261,28 @@
   text-transform: capitalize;
   margin-top: 12px;
 }
+@media only screen and (max-width: 1185px) {
+  .user_general_settings_section .right_inner_section .user_edit_update_form .label_interest {
+    width: 100% !important;
+  }
+}
 
 .user_general_settings_section .right_inner_section .user_description {
   margin-top: 25px;
 }
+@media only screen and (max-width: 1185px) {
+  .user_general_settings_section .right_inner_section .user_description {
+    width: 100% !important;
+  }
+}
 
 .user_general_settings_section .right_inner_section .user_edit_update_form #user_description {
   height: 60px;
+}
+@media only screen and (max-width: 1185px) {
+  .user_general_settings_section .right_inner_section .user_edit_update_form #user_description {
+    width: 100% !important;
+  }
 }
 
 .user_general_settings_section .right_inner_section .user_edit_update_form .user_link_fb {
@@ -226,12 +292,22 @@
   margin-top: 25px;
   margin-right: 18px;
 }
+@media only screen and (max-width: 1185px) {
+  .user_general_settings_section .right_inner_section .user_edit_update_form .user_link_fb {
+    width: 100% !important;
+  }
+}
 
 .user_general_settings_section .right_inner_section .user_edit_update_form .user_link_twitter {
   width: 540px;
   float: left;
   margin-bottom: 15px;
   margin-top: 25px;
+}
+@media only screen and (max-width: 1185px) {
+  .user_general_settings_section .right_inner_section .user_edit_update_form .user_link_twitter {
+    width: 100% !important;
+  }
 }
 
 .user_general_settings_section .right_inner_section .user_edit_update_form input[type="text"]:focus {
