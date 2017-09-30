@@ -1415,6 +1415,23 @@
 
 
 
+// ----------------------------
+//   workings
+// ----------------------------
+
+.featured_section ul {
+  list-style-type: none;
+  margin: 0px !important;
+  display: inline-block;
+}
+
+.featured_section ul li {
+  float: left;
+  padding: 5px;
+}
+
+
+
 
 
 
