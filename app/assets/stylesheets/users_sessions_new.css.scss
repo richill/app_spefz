@@ -1425,9 +1425,30 @@
   display: inline-block;
 }
 
+.featured_title {
+  text-align: center;
+  margin-top: 8px;
+  font-family: 'Lato', sans-serif;
+  font-size: 15px;
+  color: #414249 !important;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
 .featured_section ul li {
   float: left;
-  padding: 5px;
+  padding: 10px 10px 10px;
+  margin: 0px 5px 5px;
+  // margin: 10px 5px 5px;
+}
+
+.featured_section ul li:hover {
+  background-color: rgba(225, 71, 62, 0.05);
+  border-radius: 3px;
+}
+.img_featured_01 {
+  opacity: 0.8;
+  width: 300px;
 }
 
 
