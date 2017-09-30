@@ -1442,9 +1442,14 @@
   padding: 10px 10px 10px;
   margin: 0px 5px 5px;
 }
-@media screen and (min-width: 400px) and (max-width: 1245px){
+@media screen and (min-width: 450px) and (max-width: 1245px){
   .users_sessions_new_section .featured_section ul li {
     width: 200px;
+  }
+}
+@media screen and (min-width: 400px) and (max-width: 450px){
+  .users_sessions_new_section .featured_section ul li {
+    width: 175px;
   }
 }
 @media only screen and (max-width: 400px) {
