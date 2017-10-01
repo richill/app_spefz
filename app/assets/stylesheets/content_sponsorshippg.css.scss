@@ -105,8 +105,8 @@
   padding: 15px !important;
 }
 
-.sonpsorship_content {
-  padding: 15px !important;
+.sponsorship_section .right_section .sonpsorship_content {
+  padding: 30px 70px !important;
   background-color: #fff;
   color: #283041 !important;
   margin-bottom: 40px;
@@ -115,21 +115,22 @@
   box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.14);
 }
 
-.introduction_content {
+.sponsorship_section .right_section .pagecover_content {
   background: url(img_background.jpg) no-repeat;
   background-position: 60% 40%;
-  box-shadow: inset 0px 0px 75px 5px #000;
+  box-shadow: inset 25px 25px 200px 15px #000;
+  // box-shadow: inset 0px 0px 75px 5px #000;
   height: 574px;
   padding: 0px !important;
 }
 
-.introduction_inner_content {
+.sponsorship_section .right_section .pagecover_inner_content {
   margin: 15px 15px 15px !important;
   background-color: rgba(255, 255, 255, 0.25) !important;
   padding: 25px;
 }
 
-.main_text {
+.sponsorship_section .right_section .main_text {
   font-family: "Lato", sans-serif !important;
   font-weight: 300;
   font-size: 75px;
@@ -140,7 +141,7 @@
   text-shadow: 2px 3px 10px #000;
 }
 
-.sub_text {
+.sponsorship_section .right_section .sub_text {
   font-family: "Lato", sans-serif !important;
   font-weight: 300;
   font-size: 40px;
@@ -151,7 +152,7 @@
   text-shadow: 2px 3px 10px #000;
 }
 
-.img_banner_content {
+.sponsorship_section .right_section .img_banner_content {
   position: absolute;
   bottom: 0;
   opacity: 0.6;
@@ -161,7 +162,7 @@
   border-bottom: 2px solid rgba(225, 71, 62, 0.7);
 }
 
-.main_img {
+.sponsorship_section .right_section .main_img {
   font-family: "Lato", sans-serif !important;
   font-weight: 300;
   font-size: 75px;
@@ -171,6 +172,54 @@
   text-align: center;
   position: relative;
 }
+
+
+// ------------------------------------
+//   workings
+// ------------------------------------
+
+
+.sp_main_header {
+  font-family: "Lato", sans-serif !important;
+  font-weight: bold;
+  font-size: 45px;
+  text-transform: capitalize;
+}
+
+.page_number_section {
+  position: relative;
+  margin-top: 40px;
+}
+
+.page_number_line {
+  background-color: red;
+  border-bottom: 1px solid #cccccc;
+  opacity: 0.5;
+}
+
+.page_number_content {
+  background-color: #fff;
+  width: 50px;
+  height: 25px;
+  margin: auto;
+}
+
+.page_number {
+  color: #283041;
+  text-align: center;
+  background-color: #fff;
+  width: 50px;
+  height: 23px;
+  position: absolute;
+  bottom: 13px;
+}
+
+
+
+
+
+
+
 
 
 
