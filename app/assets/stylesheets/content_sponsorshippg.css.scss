@@ -7,18 +7,18 @@
   padding: 0px !important;
 }
 
-.left_section {
+.sponsorship_section .left_section {
   padding: 15px !important;
   background-color: #283041;
 }
 
-.company_section {
+.sponsorship_section .left_section .company_section {
   font-family: "Lato", sans-serif !important;
   color: #fff;
   position: relative;
 }
 
-.business_name {
+.sponsorship_section .left_section .business_name {
   font-family: "Lato", sans-serif !important;
   font-size: 20px;
   font-weight: 300;
@@ -27,31 +27,41 @@
   top: 3px;
 }
 
-.business_logo {
+.sponsorship_section .left_section .business_logo {
   float: right;
 }
 
-.business_logo img {
+.sponsorship_section .left_section .business_logo img {
   width: 35px !important;
   border-radius: 5px;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
 }
 
-.divider {
+.sponsorship_section .left_section .business_logo img:hover {
+  opacity: 0.7;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+.sponsorship_section .left_section .divider {
   margin: 15px 0px 0px;
   border-bottom: 1px solid #727985;
   // border-bottom: 1px solid #364760;
 }
 
-.listed_sections ul {
+.sponsorship_section .left_section .listed_sections ul {
   list-style: none;
   margin: 0px !important;
 }
 
-.listed_sections ul li {
+.sponsorship_section .left_section .listed_sections ul li {
   border-bottom: 1px solid #727985;
 }
 
-li:last-child {
+.sponsorship_section .left_section li:last-child {
     border-bottom: none !important;
 }
 
@@ -59,7 +69,7 @@ li:last-child {
   margin-right: 5px;
 }
 
-.listed_sections ul li a {
+.sponsorship_section .left_section .listed_sections ul li a {
   font-family: "Lato", sans-serif !important;
   font-weight: 300;
   font-size: 12px;
@@ -69,9 +79,12 @@ li:last-child {
   padding: 16px 10px;
   display: inline-block;
   width: 100%;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
 }
 
-.listed_sections ul li a:hover {
+.sponsorship_section .listed_sections ul li a:hover {
   color: #E34B51 !important;
   background-color: #364760 !important;
   width: 100%;
@@ -80,7 +93,7 @@ li:last-child {
   -o-transition: all 0.3s ease;
 }
 
-.right_section {
+.sponsorship_section .right_section {
   padding: 15px !important;
   background-color: green;
 }
