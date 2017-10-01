@@ -165,6 +165,9 @@ class StaticPagesController < ApplicationController
     end 
   end
 
+  def sponsorshippg
+  end
+
   def termspg
     @premium_plan = Subscription.find_by(title:"premium")
     if signed_in?

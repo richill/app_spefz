@@ -140,6 +140,7 @@ Rails.application.routes.draw do
   get   'image-restriction-page',         to: 'static_pages#imagepg'
   get   'message-delivered',              to: 'static_pages#messagesentpg'
   get   'notes',                          to: 'static_pages#notepg'
+  get   'sponsorship',                    to: 'static_pages#sponsorshippg'
   get   'terms',                          to: 'static_pages#termspg'
   get   'terms/cookie-policy',            to: 'static_pages#cookiepg'
   get   'terms/privacy',                  to: 'static_pages#privacypg'
