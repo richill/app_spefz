@@ -109,7 +109,6 @@
   padding: 15px !important;
   background-color: #fff;
   color: #283041 !important;
-  padding: 15px;
   margin-bottom: 40px;
   -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.14);
   -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.14);
@@ -118,8 +117,49 @@
 
 .introduction_content {
   background: url(img_background.jpg) no-repeat;
+  box-shadow: inset 0px 0px 75px 5px #000;
   height: 574px;
+  padding: 0px !important;
 }
+
+.introduction_inner_content {
+  margin: 15px !important;
+  background-color: rgba(255, 255, 255, 0.2) !important;
+  // background-color: rgba(255, 255, 255, 0.5) !important;
+  padding: 25px;
+}
+
+.main_text {
+  font-family: "Lato", sans-serif !important;
+  font-weight: 300;
+  font-size: 75px;
+  letter-spacing: 1px;
+  color: #fff !important;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.img_banner_content {
+  position: absolute;
+  bottom: 0;
+  opacity: 0.6;
+  height: 100px;
+  width: 100% !important;
+  background: url(img_banner_party_01.png) repeat;
+  border-bottom: 2px solid rgba(225, 71, 62, 0.7);
+}
+
+.main_img {
+  font-family: "Lato", sans-serif !important;
+  font-weight: 300;
+  font-size: 75px;
+  letter-spacing: 1px;
+  color: #fff !important;
+  text-transform: uppercase;
+  text-align: center;
+  position: relative;
+}
+
 
 
 
