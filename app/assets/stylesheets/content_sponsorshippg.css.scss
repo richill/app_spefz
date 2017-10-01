@@ -3,24 +3,23 @@
     File: views / static pages / sponsorshippg.html.erb
   =========================================*/
 
-
-.aboutus_section_tree_link_container {
+.sponsorship_section_tree_link_container {
   width: 960px !important;
   margin: auto;
 }
 
-.aboutus_section {
+.sponsorship_section {
   min-height: 1080px;
   background: url("img_background_main.png") repeat;
   padding: 0px !important;
 }
 @media only screen and (max-width: 960px) {
-  .aboutus_section {
+  .sponsorship_section {
     min-height: 1200px;
   }
 }
 
-.aboutus_section .banner_img_cover {
+.sponsorship_section .banner_img_cover {
   background: url("img_background_banner.jpg")  no-repeat;
   height: 200px;
   background-size: cover;
@@ -28,7 +27,7 @@
   border-bottom: 2px solid #eeaa02;
 }
 
-.aboutus_section .aboutus_banner_text {
+.sponsorship_section .aboutus_banner_text {
   font-family: "Lato", sans-serif !important;
   color: #fff !important;
   font-size: 25px;
@@ -39,16 +38,16 @@
   padding: 30px 5px;
 }
 @media only screen and (min-width: 630px) {
-  .aboutus_section .aboutus_banner_text {
+  .sponsorship_section .aboutus_banner_text {
     padding: 60px 5px;
   }
 }
 
-.aboutus_section .main_content_section {
+.sponsorship_section .main_content_section {
   background-color: rgba(0, 0, 0, 0.1) !important;
 }
 
-.aboutus_section .content_info {
+.sponsorship_section .content_info {
   text-align: center;
   padding: 45px 15px;
 }
@@ -59,7 +58,7 @@
   }
 }
 
-.aboutus_section .title {
+.sponsorship_section .title {
   font-family: "Lato", sans-serif !important;
   font-size: 45px !important;
   font-weight: 300;
@@ -67,7 +66,7 @@
   text-transform: capitalize;
 }
 
-.aboutus_section .subtitle {
+.sponsorship_section .subtitle {
   font-family: "Lato", sans-serif !important;
   font-size: 15px !important;
   font-weight: 300;
@@ -76,24 +75,24 @@
   margin-bottom: 15px;
 }
 
-.aboutus_section .text_info {
+.sponsorship_section .text_info {
   font-family: "Lato", sans-serif !important;
   font-size: 15px !important;
   font-weight: 300;
   color: #414249;
 }
 @media only screen and (min-width: 1036px) {
-  .aboutus_section .text_info {
+  .sponsorship_section .text_info {
     margin: auto;
     width: 960px;
   }
 }
 
-.aboutus_section .team_member {
+.sponsorship_section .team_member {
   margin-bottom: 55px;
 }
 
-.aboutus_section .team_img {
+.sponsorship_section .team_img {
   background-color: rgba(225, 71, 62, 0.3) !important;
   padding: 5px;
   border-radius: 200px;
@@ -104,12 +103,12 @@
   margin-bottom: 15px;
 }
 
-.aboutus_section .team_img img {
+.sponsorship_section .team_img img {
   border-radius: 200px;
   margin-bottom: 10px;
 }
 
-.aboutus_section .team_name {
+.sponsorship_section .team_name {
   font-family: "Lato", sans-serif !important;
   font-size: 30px !important;
   font-weight: 300;
@@ -118,7 +117,7 @@
   line-height: 35px;
 }
 
-.aboutus_section .team_position {
+.sponsorship_section .team_position {
   font-family: "Lato", sans-serif !important;
   font-size: 15px !important;
   font-weight: 300;
@@ -127,7 +126,7 @@
   margin-bottom: 5px;
 }
 
-.aboutus_section .team_note {
+.sponsorship_section .team_note {
   font-family: "Lato", sans-serif !important;
   font-size: 18px !important;
   font-weight: 300;
@@ -135,33 +134,33 @@
   margin: auto;
 }
 @media only screen and (min-width: 830px) {
-  .aboutus_section .team_note {
+  .sponsorship_section .team_note {
     width: 600px;
   }
 }
 
-.aboutus_section .team_members ul {
+.sponsorship_section .team_members ul {
   margin: 0px !important;
   list-style-type: none;
   margin-bottom: 50px !important;
 }
 @media only screen and (min-width: 680px) {
-  .aboutus_section .team_members ul {
+  .sponsorship_section .team_members ul {
     width: 660px;
     margin: auto !important;
   }
 }
 
-.aboutus_section .team_members ul li {
+.sponsorship_section .team_members ul li {
   margin: 25px 25px 0px 25px !important;
 }
 @media only screen and (min-width: 555px) {
-  .aboutus_section .team_members ul li {
+  .sponsorship_section .team_members ul li {
     float: left;
   }
 }
 
-.aboutus_section .sub_team_img {
+.sponsorship_section .sub_team_img {
   background-color: rgba(225, 71, 62, 0.3) !important;
   padding: 5px;
   border-radius: 200px;
@@ -171,11 +170,11 @@
   margin-top: 15px;
 }
 
-.aboutus_section .sub_team_img img {
+.sponsorship_section .sub_team_img img {
   border-radius: 200px;
 }
 
-.aboutus_section .sub_team_members {
+.sponsorship_section .sub_team_members {
   font-family: "Lato", sans-serif !important;
   font-size: 12px !important;
   font-weight: 300;
@@ -184,7 +183,7 @@
   line-height: 35px;
 }
 
-.aboutus_section .btn_contact a {
+.sponsorship_section .btn_contact a {
   font-family: 'Lato', sans-serif;
   font-size: 20px !important;
   font-weight: 300;
@@ -200,12 +199,12 @@
   -o-transition: all 0.3s ease;
 }
 @media only screen and (min-width: 400px) {
-  .aboutus_section .btn_contact a {
+  .sponsorship_section .btn_contact a {
     font-size: 40px !important;
   }
 }
 
-.aboutus_section .btn_contact a:hover {
+.sponsorship_section .btn_contact a:hover {
   background-color: #58CDA6 !important;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
