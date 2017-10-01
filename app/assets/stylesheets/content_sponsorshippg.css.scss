@@ -5,6 +5,7 @@
 
 .sponsorship_section {
   padding: 0px !important;
+  background: url(img_background_main.png) repeat;
 }
 
 // ------------------------------------
@@ -102,12 +103,17 @@
 // ------------------------------------
 .sponsorship_section .right_section {
   padding: 15px !important;
-  background-color: green;
 }
 
 .sonpsorship_content {
-  padding: 0px !important;
-  margin-bottom: 15px;
+  padding: 15px !important;
+  background-color: #fff;
+  color: #283041 !important;
+  padding: 15px;
+  margin-bottom: 40px;
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.14);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.14);
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.14);
 }
 
 
