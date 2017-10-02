@@ -153,6 +153,30 @@
   text-shadow: 2px 3px 10px #000;
 }
 
+.sponsorship_section .right_section .sp_evt_link a {
+  text-transform: lowercase;
+  color: #fff !important;
+  font-weight: bold;
+  margin-top: 11px !important;
+  display: inline-block;
+}
+
+.sponsorship_section .right_section .sp_evt_link a:hover {
+  text-decoration: underline;
+}
+
+.sponsorship_section .right_section .sp_event_details {
+  font-family: "Lato", sans-serif !important;
+  font-weight: 300;
+  font-size: 15px;
+  letter-spacing: 1px;
+  color: #fff !important;
+  text-transform: capitalize;
+  text-align: center;
+  text-shadow: 2px 3px 10px #000;
+  margin-top: 15px;
+}
+
 .sponsorship_section .right_section .img_banner_content {
   position: absolute;
   bottom: 0;
@@ -225,290 +249,6 @@
 .event_leaderships img {
   border-radius: 200px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// ------------------------------------
-//   old_content
-// ------------------------------------
-.aboutus_section_tree_link_container {
-  width: 960px !important;
-  margin: auto;
-}
-
-.aboutus_section {
-  min-height: 1080px;
-  background: url("img_background_main.png") repeat;
-  padding: 0px !important;
-}
-@media only screen and (max-width: 960px) {
-  .aboutus_section {
-    min-height: 1200px;
-  }
-}
-
-.aboutus_section .banner_img_cover {
-  background: url("img_background_banner.jpg")  no-repeat;
-  height: 200px;
-  background-size: cover;
-  background-position: 50% 0%;
-  border-bottom: 2px solid #eeaa02;
-}
-
-.aboutus_section .aboutus_banner_text {
-  font-family: "Lato", sans-serif !important;
-  color: #fff !important;
-  font-size: 25px;
-  font-weight: 300;
-  letter-spacing: 1px;
-  text-align: center;
-  text-transform: capitalize;
-  padding: 30px 5px;
-}
-@media only screen and (min-width: 630px) {
-  .aboutus_section .aboutus_banner_text {
-    padding: 60px 5px;
-  }
-}
-
-.aboutus_section .main_content_section {
-  background-color: rgba(0, 0, 0, 0.1) !important;
-}
-
-.aboutus_section .content_info {
-  text-align: center;
-  padding: 45px 15px;
-}
-@media only screen and (min-width: 960px) {
-  .absolute_content {
-    width: 960px !important;
-    margin: auto;
-  }
-}
-
-.aboutus_section .title {
-  font-family: "Lato", sans-serif !important;
-  font-size: 45px !important;
-  font-weight: 300;
-  color: #414249;
-  text-transform: capitalize;
-}
-
-.aboutus_section .subtitle {
-  font-family: "Lato", sans-serif !important;
-  font-size: 15px !important;
-  font-weight: 300;
-  color: #414249;
-  text-transform: capitalize;
-  margin-bottom: 15px;
-}
-
-.aboutus_section .text_info {
-  font-family: "Lato", sans-serif !important;
-  font-size: 15px !important;
-  font-weight: 300;
-  color: #414249;
-}
-@media only screen and (min-width: 1036px) {
-  .aboutus_section .text_info {
-    margin: auto;
-    width: 960px;
-  }
-}
-
-.aboutus_section .team_member {
-  margin-bottom: 55px;
-}
-
-.aboutus_section .team_img {
-  background-color: rgba(225, 71, 62, 0.3) !important;
-  padding: 5px;
-  border-radius: 200px;
-  width: 115px;
-  height: 115px;
-  margin: auto;
-  margin-top: 15px;
-  margin-bottom: 15px;
-}
-
-.aboutus_section .team_img img {
-  border-radius: 200px;
-  margin-bottom: 10px;
-}
-
-.aboutus_section .team_name {
-  font-family: "Lato", sans-serif !important;
-  font-size: 30px !important;
-  font-weight: 300;
-  color: #414249;
-  text-transform: capitalize;
-  line-height: 35px;
-}
-
-.aboutus_section .team_position {
-  font-family: "Lato", sans-serif !important;
-  font-size: 15px !important;
-  font-weight: 300;
-  color: #E34B51;
-  text-transform: capitalize;
-  margin-bottom: 5px;
-}
-
-.aboutus_section .team_note {
-  font-family: "Lato", sans-serif !important;
-  font-size: 18px !important;
-  font-weight: 300;
-  color: #414249;
-  margin: auto;
-}
-@media only screen and (min-width: 830px) {
-  .aboutus_section .team_note {
-    width: 600px;
-  }
-}
-
-.aboutus_section .team_members ul {
-  margin: 0px !important;
-  list-style-type: none;
-  margin-bottom: 50px !important;
-}
-@media only screen and (min-width: 680px) {
-  .aboutus_section .team_members ul {
-    width: 660px;
-    margin: auto !important;
-  }
-}
-
-.aboutus_section .team_members ul li {
-  margin: 25px 25px 0px 25px !important;
-}
-@media only screen and (min-width: 555px) {
-  .aboutus_section .team_members ul li {
-    float: left;
-  }
-}
-
-.aboutus_section .sub_team_img {
-  background-color: rgba(225, 71, 62, 0.3) !important;
-  padding: 5px;
-  border-radius: 200px;
-  width: 115px;
-  height: 115px;
-  margin: auto;
-  margin-top: 15px;
-}
-
-.aboutus_section .sub_team_img img {
-  border-radius: 200px;
-}
-
-.aboutus_section .sub_team_members {
-  font-family: "Lato", sans-serif !important;
-  font-size: 12px !important;
-  font-weight: 300;
-  color: #414249;
-  text-transform: capitalize;
-  line-height: 35px;
-}
-
-.aboutus_section .btn_contact a {
-  font-family: 'Lato', sans-serif;
-  font-size: 20px !important;
-  font-weight: 300;
-  color: #fff !important;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  background-color: #E34B51;
-  padding: 15px 45px;
-  border-radius: 2px;
-  margin-top: 2px;
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-}
-@media only screen and (min-width: 400px) {
-  .aboutus_section .btn_contact a {
-    font-size: 40px !important;
-  }
-}
-
-.aboutus_section .btn_contact a:hover {
-  background-color: #58CDA6 !important;
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
