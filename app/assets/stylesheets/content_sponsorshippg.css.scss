@@ -249,20 +249,28 @@
 //   workings
 // ------------------------------------
 
-.option_inner_content table {
+.sponsorship_section .right_section .option_inner_content table {
   width: 100% !important;
 }
 
-.listed_benifits li {
+.sponsorship_section .right_section .listed_benifits li {
   text-transform: capitalize;
 }
 
-.option_inner_content table tr td a {
+.sponsorship_section .right_section .option_inner_content table tr td a {
   color: #E34B51 !important;
 }
 
-.option_inner_content table tr td a:hover {
+.sponsorship_section .right_section .option_inner_content table tr td a:hover {
   text-decoration: underline;
+}
+
+.big_header {
+  font-family: "Lato", sans-serif !important;
+  text-transform: capitalize;
+  color: #E34B51 !important;
+  font-size: 30px;
+
 }
 
 
