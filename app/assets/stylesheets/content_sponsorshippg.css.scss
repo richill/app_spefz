@@ -14,6 +14,7 @@
 .sponsorship_section .left_section {
   padding: 15px !important;
   background-color: #283041;
+  position: fixed;
 }
 
 .sponsorship_section .left_section .company_section {
@@ -184,6 +185,7 @@
   font-weight: bold;
   font-size: 45px;
   text-transform: capitalize;
+  margin-bottom: 10px;
 }
 
 .page_number_section {
@@ -206,7 +208,8 @@
 
 .page_number {
   font-family: "Lato", sans-serif !important;
-  color: #283041;
+  // color: #283041;
+  color: #cccccc;
   text-align: center;
   background-color: #fff;
   width: 50px;
