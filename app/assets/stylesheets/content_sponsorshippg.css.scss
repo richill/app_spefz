@@ -174,13 +174,7 @@
   position: relative;
 }
 
-
-// ------------------------------------
-//   workings
-// ------------------------------------
-
-
-.sp_main_header {
+.sponsorship_section .right_section .sp_main_header {
   font-family: "Lato", sans-serif !important;
   font-weight: bold;
   font-size: 45px;
@@ -188,27 +182,26 @@
   margin-bottom: 10px;
 }
 
-.page_number_section {
+.sponsorship_section .right_section .page_number_section {
   position: relative;
   margin-top: 40px;
 }
 
-.page_number_line {
+.sponsorship_section .right_section .page_number_line {
   background-color: red;
   border-bottom: 1px solid #cccccc;
   opacity: 0.5;
 }
 
-.page_number_content {
+.sponsorship_section .right_section .page_number_content {
   background-color: #fff;
   width: 50px;
   height: 25px;
   margin: auto;
 }
 
-.page_number {
+.sponsorship_section .right_section .page_number {
   font-family: "Lato", sans-serif !important;
-  // color: #283041;
   color: #cccccc;
   text-align: center;
   background-color: #fff;
@@ -218,6 +211,20 @@
   bottom: 13px;
 }
 
+// ------------------------------------
+//   workings
+// ------------------------------------
+
+
+.event_leaderships .evt_divider {
+  margin: 45px 0px;
+  border-bottom: 1px solid #eeaa02;
+  opacity: 0.5;
+}
+
+.event_leaderships img {
+  border-radius: 200px;
+}
 
 
 
