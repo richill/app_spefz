@@ -270,12 +270,19 @@
   text-transform: capitalize;
   color: #E34B51 !important;
   font-size: 30px;
-
 }
 
 .signature_inner_content p {
   margin-top: 30px !important;
   margin-bottom: 60px !important;
+}
+
+.signature_inner_content a {
+  color: #E34B51 !important;
+}
+
+.signature_inner_content a:hover {
+  text-decoration: underline;
 }
 
 

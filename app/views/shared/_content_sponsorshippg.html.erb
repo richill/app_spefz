@@ -12,6 +12,14 @@
         <ul>
           <li>
             <div class="sponsor_list_options">
+              <%= link_to ".pagecover_content", rel: "relativeanchor" do %>
+              <span><i class="fa fa-check-square-o" aria-hidden="true"></i></span>
+              <span class="option_header">cover</span>
+              <% end %>
+            </div>
+          </li>
+          <li>
+            <div class="sponsor_list_options">
               <%= link_to ".introduction_content", rel: "relativeanchor" do %>
               <span><i class="fa fa-check-square-o" aria-hidden="true"></i></span>
               <span class="option_header">introduction</span>
@@ -55,14 +63,6 @@
               <%= link_to ".option_content", rel: "relativeanchor" do %>
               <span><i class="fa fa-check-square-o" aria-hidden="true"></i></span>
               <span class="option_header">sponsorship options</span>
-              <% end %>
-            </div>
-          </li>
-          <li>
-            <div class="sponsor_list_options">
-              <%= link_to ".budget_content", rel: "relativeanchor" do %>
-              <span><i class="fa fa-check-square-o" aria-hidden="true"></i></span>
-              <span class="option_header">budget</span>
               <% end %>
             </div>
           </li>
@@ -324,10 +324,6 @@
         </div>
         <div class="clear"></div>
 
-        <!-- budget_content -->
-        <div class="medium-12 columns sonpsorship_content budget_content">budget_content</div>
-        <div class="clear"></div>
-
         <!-- look_content -->
         <div class="medium-12 columns sonpsorship_content look_content">
           <div class="sp_inner_content look_inner_content">
@@ -515,7 +511,7 @@
               <li>If you have any questions at all, please let us know. We're happy to clarify any points and there may be some items that we can sort out together. We're committed to finding the best way to work together.</li>
               <li>Once you feel confident about everything and are ready to move forward, please click the 'sign here' button below.</li>
               <li>Once we receive notification of your acceptance, we'll contact you shortly to sort out next steps and get the project rolling.</li>
-              <li>If you'd like to contact us, do not hesitate</li>
+              <li>If you'd like to contact us, do not hesitate to reach us <%= mail_to "admin@spefz.com", "admin@spefz.com", subject: "Sponsorship Related Enquiry" %></p></li>
             </ul>
             <p>Sponsor signature ______________________________________________  Date: ____________________</p>
             <p>Event lead signature ____________________________________________  Date: ____________________</p>
