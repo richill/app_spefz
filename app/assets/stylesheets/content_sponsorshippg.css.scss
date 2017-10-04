@@ -14,7 +14,16 @@
 .sponsorship_section .left_section {
   padding: 15px !important;
   background-color: #283041;
-  position: fixed;
+}
+@media only screen and (min-width: 1160px) {
+  .sponsorship_section .left_section {
+    position: fixed;
+  }
+}
+@media only screen and (max-width: 1160px) {
+  .sponsorship_section .left_section {
+    width: 100% !important; 
+  } 
 }
 
 .sponsorship_section .left_section .company_section {
@@ -105,6 +114,11 @@
 .sponsorship_section .right_section {
   padding: 15px !important;
 }
+@media only screen and (max-width: 1160px) {
+  .sponsorship_section .right_section {
+    width: 100% !important;
+  }
+}
 
 .sponsorship_section .right_section .sonpsorship_content {
   padding: 30px 70px !important;
@@ -114,6 +128,11 @@
   -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.14);
   -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.14);
   box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.14);
+}
+@media only screen and (max-width: 650px) {
+  .sponsorship_section .right_section .sonpsorship_content {
+    padding: 30px !important;
+  }
 }
 
 .sponsorship_section .right_section .pagecover_content {
@@ -141,6 +160,11 @@
   text-align: center;
   text-shadow: 2px 3px 10px #000;
 }
+@media only screen and (max-width: 650px) {
+  .sponsorship_section .right_section .main_text {
+    font-size: 35px;
+  }
+}
 
 .sponsorship_section .right_section .sub_text {
   font-family: "Lato", sans-serif !important;
@@ -151,6 +175,11 @@
   text-transform: capitalize;
   text-align: center;
   text-shadow: 2px 3px 10px #000;
+}
+@media only screen and (max-width: 650px) {
+  .sponsorship_section .right_section .sub_text {
+    font-size: 20px;
+  }
 }
 
 .sponsorship_section .right_section .sp_evt_link a {
@@ -205,6 +234,11 @@
   text-transform: capitalize;
   margin-bottom: 10px;
 }
+@media only screen and (max-width: 650px) {
+  .sponsorship_section .right_section .sp_main_header {
+    font-size: 30px;
+  }
+}
 
 .sponsorship_section .right_section .page_number_section {
   position: relative;
@@ -235,15 +269,49 @@
   bottom: 13px;
 }
 
+.sponsorship_section .right_section .event_leaderships .event_member {
+  margin-bottom: 20px;
+}
+@media only screen and (max-width: 650px) {
+  .sponsorship_section .right_section .event_leaderships .event_member {
+    width: 100% !important;
+  }
+}
+
 .sponsorship_section .right_section .event_leaderships .evt_divider {
   margin: 45px 0px;
   border-bottom: 1px solid #eeaa02;
   opacity: 0.5;
 }
 
+@media only screen and (max-width: 650px) {
+  .sponsorship_section .right_section .img_cover {
+    width: 150px !important;
+    margin: auto;
+  }
+}
+
 .sponsorship_section .right_section .event_leaderships img {
   border-radius: 200px;
 }
+@media only screen and (max-width: 650px) {
+  .sponsorship_section .right_section .event_leaderships img {
+    width: 150px !important;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .sponsorship_section .right_section .event_leaderships .event_member_info {
+    width: 100% !important;
+    text-align: center;
+  }
+}
+
+// @media only screen and (max-width: 650px) {
+//   .sponsorship_section .right_section .event_leaderships .event_member_info .name {
+//     text-align: center;
+//   }
+// }
 
 .sponsorship_section .right_section .option_inner_content table {
   width: 100% !important;
@@ -267,6 +335,12 @@
   color: #E34B51 !important;
   font-size: 30px;
 }
+@media only screen and (max-width: 650px) {
+  .sponsorship_section .right_section .big_header {
+    font-size: 20px;
+  }
+}
+
 
 .sponsorship_section .right_section .signature_inner_content p {
   margin-top: 30px !important;
@@ -281,15 +355,9 @@
   text-decoration: underline;
 }
 
-
-// --------------------------
-//   working
-// --------------------------
-
-
 @media only screen and (min-width: 1245px) {
   .sponsorship_section .right_section .featured_inner_section {
-    width: 1216px;
+    width: 915px;
     margin: auto !important;
   }
 }
@@ -343,25 +411,26 @@
 
 .sponsorship_section .right_section .img_featured_01 {
   opacity: 0.8;
-  width: 300px;
+  width: 200px;
 }
 
 .sponsorship_section .right_section .img_featured_02 {
   opacity: 0.8;
-  width: 235px;
+  width: 165px;
 }
 
 .sponsorship_section .right_section .img_featured_03 {
-  width: 165px;
+  width: 120px;
 }
 
 .sponsorship_section .right_section .img_featured_04 {
   opacity: 0.9;
-  width: 185px;
+  width: 130px;
 }
 
 .sponsorship_section .right_section .img_featured_05 {
   opacity: 0.8;
+  width: 150px;
 }
 
 
