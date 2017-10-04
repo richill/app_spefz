@@ -63,7 +63,6 @@
 .sponsorship_section .left_section .divider {
   margin: 15px 0px 0px;
   border-bottom: 1px solid #727985;
-  // border-bottom: 1px solid #364760;
 }
 
 .sponsorship_section .left_section .listed_sections ul {
@@ -139,7 +138,6 @@
   background: url(img_background.jpg) no-repeat;
   background-position: 60% 40%;
   box-shadow: inset 25px 25px 200px 15px #000;
-  // box-shadow: inset 0px 0px 75px 5px #000;
   height: 574px;
   padding: 0px !important;
 }
@@ -307,12 +305,6 @@
   }
 }
 
-// @media only screen and (max-width: 650px) {
-//   .sponsorship_section .right_section .event_leaderships .event_member_info .name {
-//     text-align: center;
-//   }
-// }
-
 .sponsorship_section .right_section .option_inner_content table {
   width: 100% !important;
 }
@@ -341,7 +333,6 @@
   }
 }
 
-
 .sponsorship_section .right_section .signature_inner_content p {
   margin-top: 30px !important;
   margin-bottom: 60px !important;
@@ -353,6 +344,10 @@
 
 .sponsorship_section .right_section .signature_inner_content a:hover {
   text-decoration: underline;
+}
+
+.sponsorship_section .right_section .member_sig {
+  margin-bottom: 15px;
 }
 
 @media only screen and (min-width: 1245px) {
