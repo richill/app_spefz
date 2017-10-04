@@ -245,10 +245,6 @@
   border-radius: 200px;
 }
 
-// ------------------------------------
-//   workings
-// ------------------------------------
-
 .sponsorship_section .right_section .option_inner_content table {
   width: 100% !important;
 }
@@ -265,23 +261,23 @@
   text-decoration: underline;
 }
 
-.big_header {
+.sponsorship_section .right_section .big_header {
   font-family: "Lato", sans-serif !important;
   text-transform: capitalize;
   color: #E34B51 !important;
   font-size: 30px;
 }
 
-.signature_inner_content p {
+.sponsorship_section .right_section .signature_inner_content p {
   margin-top: 30px !important;
   margin-bottom: 60px !important;
 }
 
-.signature_inner_content a {
+.sponsorship_section .right_section .signature_inner_content a {
   color: #E34B51 !important;
 }
 
-.signature_inner_content a:hover {
+.sponsorship_section .right_section .signature_inner_content a:hover {
   text-decoration: underline;
 }
 
