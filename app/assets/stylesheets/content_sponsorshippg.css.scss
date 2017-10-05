@@ -119,6 +119,43 @@
   }
 }
 
+.sponsorship_section .right_section {
+  position: relative;
+}
+
+.sponsorship_section .right_section .right_inner_section {
+  z-index: 10;
+}
+
+.sponsorship_section .right_section .lift_btn_cover {
+  position: absolute !important;
+  height: 583px;
+  background-color: transparent;
+  top: 7px;
+  z-index: 1;
+}
+
+.sponsorship_section .right_section .lift_btn a {
+  font-size: 16px;
+  height: 50px;
+  width: 50px;
+  background-color: #283041;
+  color: #fff !important;
+  bottom: 19px;
+  right: 30px;
+  border-radius: 200px;
+  text-align: center;
+  padding: 11px 17px;
+  opacity: 0.8 !important;
+  position: fixed !important;
+}
+
+.sponsorship_section .right_section .lift_btn a:hover {
+  background-color: #283041 !important;
+  color: #fff !important;
+  opacity: 0.5 !important;
+}
+
 .sponsorship_section .right_section .sonpsorship_content {
   padding: 30px 70px !important;
   background-color: #fff;
@@ -427,6 +464,12 @@
   opacity: 0.8;
   width: 150px;
 }
+
+
+
+
+
+
 
 
 
