@@ -178,6 +178,14 @@
   height: 574px;
   padding: 0px !important;
 }
+@media only screen and (min-width: 2012px) {
+  .sponsorship_section .right_section .sonpsorship_content {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  }
+}
 
 .sponsorship_section .right_section .pagecover_inner_content {
   margin: 15px 15px 15px !important;
