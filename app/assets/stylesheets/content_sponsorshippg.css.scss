@@ -487,8 +487,45 @@
 }
 
 
-// <p>This Agreement and the rights and obligations of both parties shall be governed by, and construed in accordance with, the laws of England and Wales, the parties irrevocably agree to submit to the exclusive jurisdiction of the courts of England and Wales.</p>
+// ---------------------------
+//   working
+// ---------------------------
 
+.booking_form_content {
+  margin-bottom: 30px;
+}
+
+.booking_form_content ul {
+  list-style: none !important;
+  margin: 5px 0px !important;
+  padding: 0px !important;
+
+}
+
+.label_content {
+  font-size: 12px;
+  margin-top: 12px;
+  padding: 0px !important;
+  text-transform: capitalize;
+  text-align: right;
+}
+
+.space_content {
+    height: 40px;
+    padding: 5px !important;
+}
+
+.space_content div {
+  height: 30px;
+  padding: 6px;
+  background-color: rgba(47, 63, 91, 0.05);
+}
+
+.space_content span {
+  height: 30px;
+  padding: 6px !important;
+  background-color: rgba(47, 63, 91, 0.05) !important;
+}
 
 
 
