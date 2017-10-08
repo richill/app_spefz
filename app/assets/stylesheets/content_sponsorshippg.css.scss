@@ -378,7 +378,7 @@
   }
 }
 
-.sponsorship_section .right_section .signature_inner_content p {
+.sponsorship_section .right_section .signature_inner_content .signature_content {
   margin-top: 30px !important;
   margin-bottom: 60px !important;
 }
@@ -477,6 +477,17 @@
   background-color: rgba(225, 71, 62, 0.5) !important; 
   padding: 0px 5px;
 }
+
+.sponsorship_section .right_section .terms_inner_content a {
+  color: #E34B51 !important;
+}
+
+.sponsorship_section .right_section .terms_inner_content a:hover {
+  text-decoration: underline;
+}
+
+
+// <p>This Agreement and the rights and obligations of both parties shall be governed by, and construed in accordance with, the laws of England and Wales, the parties irrevocably agree to submit to the exclusive jurisdiction of the courts of England and Wales.</p>
 
 
 
