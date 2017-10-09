@@ -35,9 +35,12 @@
             <div class="blog_main_container">
               <ul>
                 <!-- blogs -->
-                <% @blogs.dating.each do |blog| %>
+                <% @blogs.each do |blog| %>
                   <li class="medium-12 columns listed_blog">
                     <div class="medium-6 columns left_content">
+                      <% if blog.subtitle? %>
+                        <div class="blog_subtitle"><%= blog.subtitle %></div>
+                      <% end %>
                       <div class="blog_main_img_cover">
                         <% if blog.blog_image_link.present? %>
                           <%= link_to(cl_image_tag(blog.blog_image_link, :transformation=>[{:gravity=>"face", :width => 600, :height => 320, :crop=>"fill"}]), blog_path(blog)) %>
@@ -109,7 +112,8 @@
                       </div>
                       <span class="blog_content_section">
                         <div class="blog_content_read"> 
-                          <span class="blog_info_content"><%= raw blog.content.truncate(500) %></span>
+                          <!-- <span class="blog_info_content"><%# raw blog.content.truncate(500) %></span> -->
+                          <span class="blog_info_content"><%= raw blog.content %></span>
                           <div class="clear"></div>
                         </div>
                         <div class="clear"></div>
