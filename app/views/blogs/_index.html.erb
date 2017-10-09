@@ -50,7 +50,10 @@
                       </div>
                     </div>
                     <div class="medium-6 columns right_content">
-                      <div class="blog_title"><%= link_to (truncate "#{blog.title}", length: 55), blog_path(blog) %></div>
+                      <div class="blog_title">
+                        <span class="extended"><%= link_to "#{blog.title}", blog_path(blog) %></span><br/>
+                        <span class="shorted"><%= link_to (truncate "#{blog.title}", length: 55), blog_path(blog) %></span>
+                      </div>
                       <div class="blog_category_date">
                         <span>Category: </span>
                         <span class="blog_category"><%= link_to "#{blog.category_blog.name}", "#" %></span>
