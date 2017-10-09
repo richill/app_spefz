@@ -75,22 +75,22 @@ class BlogsController < ApplicationController
   end
 
   def venues
-    @search = Blog.order("created_at DESC").search(params[:q])
+    @search = Blog.published_blogs.past_blogs.order("publishdate DESC").search(params[:q])
     @blogs = @search.result(distinct: true)
   end
 
   def networking_tips
-    @search = Blog.order("created_at DESC").search(params[:q])
+    @search = Blog.published_blogs.past_blogs.order("publishdate DESC").search(params[:q])
     @blogs = @search.result(distinct: true)
   end
 
   def dating_tips
-    @search = Blog.order("created_at DESC").search(params[:q])
+    @search = Blog.published_blogs.past_blogs.order("publishdate DESC").search(params[:q])
     @blogs = @search.result(distinct: true)
   end
 
   def spefz_news
-    @search = Blog.order("created_at DESC").search(params[:q])
+    @search = Blog.published_blogs.past_blogs.order("publishdate DESC").search(params[:q])
     @blogs = @search.result(distinct: true)
   end
 
