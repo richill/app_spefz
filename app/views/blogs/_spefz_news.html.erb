@@ -35,7 +35,7 @@
             <div class="blog_main_container">
               <ul>
                 <!-- blogs -->
-                <% @blogs.each do |blog| %>
+                <% @blogs.news.each do |blog| %>
                   <li class="medium-12 columns listed_blog">
                     <div class="medium-6 columns left_content">
                       <% if blog.subtitle? %>
@@ -112,8 +112,7 @@
                       </div>
                       <span class="blog_content_section">
                         <div class="blog_content_read"> 
-                          <!-- <span class="blog_info_content"><%# raw blog.content.truncate(500) %></span> -->
-                          <span class="blog_info_content"><%= raw blog.content %></span>
+                          <span class="blog_info_content"><%= raw blog.content.truncate(500) %></span>
                           <div class="clear"></div>
                         </div>
                         <div class="clear"></div>
