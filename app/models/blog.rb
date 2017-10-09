@@ -49,8 +49,4 @@ class Blog < ActiveRecord::Base
       errors.add(:video_link, "either upload an Image, paste an image link or video link")
     end
   end
-
-  def mini_imgs?
-    self.blogimg_one? || self.blogimg_two? || self.blogimg_three?
-  end
 end

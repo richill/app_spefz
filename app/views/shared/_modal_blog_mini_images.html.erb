@@ -6,18 +6,26 @@
       <div>
         <div class="info_blogmini_img_content">
           <ul>
-            <li>
-              <%= cl_image_tag(@blog.blogimg_one, :transformation=>[{:gravity=>"center", :crop=>"fill"}]) %>
-              <span class="sub_text"><%= @blog.blogimgtxt_one %></span>
-            </li>
-            <li class="middle_img">
-              <%= cl_image_tag(@blog.blogimg_two, :transformation=>[{:gravity=>"center", :crop=>"fill"}]) %>
-              <span class="sub_text"><%= @blog.blogimgtxt_two %></span>
-            </li>
-            <li>
-              <%= cl_image_tag(@blog.blogimg_three, :transformation=>[{:gravity=>"center", :crop=>"fill"}]) %>
-              <span class="sub_text"><%= @blog.blogimgtxt_three %></span>
-            </li>
+            <% if @blog.blogimg_one? %>
+              <li>
+                <%= cl_image_tag(@blog.blogimg_one, :transformation=>[{:gravity=>"center", :crop=>"fill"}]) %>
+                <span class="sub_text"><%= @blog.blogimgtxt_one %></span>
+              </li>
+            <% end %>
+
+            <% if @blog.blogimg_two? %>
+              <li class="middle_img">
+                <%= cl_image_tag(@blog.blogimg_two, :transformation=>[{:gravity=>"center", :crop=>"fill"}]) %>
+                <span class="sub_text"><%= @blog.blogimgtxt_two %></span>
+              </li>
+            <% end %>
+
+            <% if @blog.blogimg_three? %>
+              <li>
+                <%= cl_image_tag(@blog.blogimg_three, :transformation=>[{:gravity=>"center", :crop=>"fill"}]) %>
+                <span class="sub_text"><%= @blog.blogimgtxt_three %></span>
+              </li>
+            <% end %>
           </ul>
         </div>
       </div>
