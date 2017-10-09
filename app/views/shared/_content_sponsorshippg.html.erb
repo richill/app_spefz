@@ -581,7 +581,7 @@
               <ul class="medium-12 columns">
                 <li class="medium-2 columns label_content">sponsorship value:</li>
                 <ul>
-                  <li class="medium-10 columns space_content">
+                  <li class="medium-10 columns space_content" style="margin-top:3px;">
                     <span>
                       <input type="checkbox" value="1" id="checkboxTwoInput" name=""/>
                       <span><%= link_to "Gold Sponsor £9'000", ".option_content", rel: "relativeanchor" %></span>
@@ -595,14 +595,24 @@
                     <span>
                       <input type="checkbox" value="1" id="checkboxTwoInput" name=""/>
                       <span><%= link_to "Bronze Sponsor £3'000", ".option_content", rel: "relativeanchor" %></span>
-                    </span><br/>
-                    <span><%= link_to "view sponsorship description", ".option_content", rel: "relativeanchor" %></span><br/>
-                    <div style="font-size:10px; background-color:transparent; padding:0px;">Sponsor must provide an .eps vector file of company logo or placement cannot be guaranteed on printed materials or website produced by Spefz Limited.</div>
+                    </span>
+                    <span><%= link_to "view sponsorship description", ".option_content", rel: "relativeanchor" %></span>
                   </li>
                 </ul>
               </ul>
-              <div>
-              </div>
+
+              <ul class="medium-12 columns">
+                <li class="medium-2 columns label_content">company logo:</li>
+                <li class="medium-10 columns space_content" style="margin-top:5px;">
+                  <span>
+                    <input type="checkbox" value="1" id="checkboxTwoInput" name=""/>
+                    <span><%= link_to ".eps vector company logo is included with this agreement", ".option_content", rel: "relativeanchor" %></span>
+                  </span>
+                  <div class="medium-12 columns" style="font-size:10px; background-color:transparent; padding:0px;">
+                    Sponsor must provide an .eps vector file of company logo or placement cannot be guaranteed on printed materials or website produced by Spefz Limited.
+                  </div>
+                </li>
+              </ul>
             </div>
             <div class="clear"></div>
 
