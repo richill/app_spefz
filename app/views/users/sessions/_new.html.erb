@@ -251,7 +251,7 @@
         <div class="feed_container">
           <ul>
             <!-- socials -->
-            <% Social.asc_order.live_socials.limit(4).each do |social| %>
+            <% Social.asc_order.live_socials.open_socials.limit(4).each do |social| %>
               <li class="medium-3 columns">
               <div class="feed_inner_section">
                 <% if social.upcoming_social? %>
@@ -332,7 +332,7 @@
   <!--content_socials_live -->
   
   <!--content_socials_dummy -->
-  <%# elsif Social.live_socials.open_socials.all.count == 0 %>
+  <% elsif Social.live_socials.open_socials.all.count == 0 %>
   <div class="medium-12 columns lower_section socials_dummy">
     <div class="medium-12 columns content_container">
       <div class="header_section">

@@ -1396,24 +1396,11 @@
   margin-top: 130px;
 }
 
-// @media only screen and (min-width: 1090px) {
-//   .users_sessions_new_section .socialupcoming_text {
-//     font-family: "Lato", sans-serif;
-//     font-weight: 300;
-//     color: #fff !important;
-//     background-color: rgba(225, 71, 62, 0.9) !important;
-//     z-index: 1;
-//     text-transform: capitalize;
-//     padding: 15px 20px;
-//     height: 48px;
-//     letter-spacing: 2px;
-//     border-radius: 3px;
-//     width: 160px;
-//     text-align: center;
-//     margin: auto;
-//     margin-top: 130px;
-//   }
-// }
+// ------------------------------------------------
+
+// Notes: undo these comments when you comment out
+// L:335 in File: users_sessions_new.css.scss
+// <% elsif Social.live_socials.open_socials.all.count == 0 %>
 
 // @media only screen and (max-width: 1090px) {
 //   .users_sessions_new_section .socialupcoming_text {
@@ -1421,17 +1408,19 @@
 //   }
 // }
 
-@media only screen and (min-width: 1030px) {
-  .users_sessions_new_section .socials_dummy {
-    display: none;
-  }
-}
+// @media only screen and (min-width: 1030px) {
+//   .users_sessions_new_section .socials_dummy {
+//     display: none;
+//   }
+// }
 
-@media only screen and (max-width: 1030px) {
-  .users_sessions_new_section .socials_live {
-    display: none;
-  }
-}
+// @media only screen and (max-width: 1030px) {
+//   .users_sessions_new_section .socials_live {
+//     display: none;
+//   }
+// }
+
+// ------------------------------------------------
 
 @media only screen and (min-width: 1245px) {
   .users_sessions_new_section .featured_inner_section {
