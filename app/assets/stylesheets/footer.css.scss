@@ -246,7 +246,7 @@
 .footer_main_section .social_media a {
   color: #fff !important;
   font-size: 60px;
-  padding: 0px 15px;
+  padding: 0px 5px;
   -webkit-transition: all 0.3s ease; 
   -moz-transition: all 0.3s ease; 
   -o-transition: all 0.3s ease; 
@@ -257,6 +257,25 @@
   -webkit-transition: all 0.3s ease; 
   -moz-transition: all 0.3s ease; 
   -o-transition: all 0.3s ease; 
+}
+
+.footer_main_section .eventbrite {
+  height: 52px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  border: 2px solid #fff;
+  background-color: rgba(255, 255, 255, 0.05) !important;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+.footer_main_section .eventbrite:hover {
+  background-color: #E34B51 !important;
+  border: 2px solid #E34B51;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
 }
 
 .footer_main_section .phone_img_container {
@@ -372,6 +391,7 @@
   font-weight: 300;
   letter-spacing: 1px;
   text-transform: capitalize;
+  font-size: 12px;
 }
 
 .footer_main_section .footer_links a:hover {
