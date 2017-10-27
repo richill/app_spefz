@@ -638,8 +638,8 @@
 
 .users_sessions_new_section .social_media a {
   color: #fff !important;
-  font-size: 60px;
-  padding: 0px 15px;
+  font-size: 50px;
+  padding: 0px 5px;
   -webkit-transition: all 0.3s ease; 
   -moz-transition: all 0.3s ease; 
   -o-transition: all 0.3s ease; 
@@ -650,6 +650,25 @@
   -webkit-transition: all 0.3s ease; 
   -moz-transition: all 0.3s ease; 
   -o-transition: all 0.3s ease; 
+}
+
+.users_sessions_new_section .eventbrite {
+  height: 44px;
+  border-radius: 8px;
+  margin-bottom: 7px;
+  border: 2px solid #fff;
+  background-color: rgba(255, 255, 255, 0.05) !important;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+.users_sessions_new_section .eventbrite:hover {
+  background-color: #E34B51 !important;
+  border: 2px solid #E34B51;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
 }
 
 .users_sessions_new_section .phone_img_container {
