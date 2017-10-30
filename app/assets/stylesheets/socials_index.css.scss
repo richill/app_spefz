@@ -497,7 +497,44 @@
 
 
 
+// ------------------------------
+//   workings
+// ------------------------------
+.socials_section .eventbrite_icon {
+  height: 27px;
+  width: 27px;
+  background-color: transparent;
+  position: absolute;
+  top: 14px;
+  right: 8px;
+  opacity: 0.8;
+  box-shadow: -2px 3px 9px #000;
+  border-radius: 200px;
+  -webkit-transform: rotate(340deg);
+  -moz-transform: rotate(340deg);
+  -o-transform: rotate(340deg);
+  -ms-transform: rotate(340deg);
+  transform: rotate(340deg);
+  z-index: 1;
+}
 
+.socials_section .eventbrite_icon .bckgrd_icon {
+  position: absolute;
+}
+
+.socials_section .eventbrite_icon .bckgrd_icon i {
+  font-size: 70px;
+}
+
+.socials_section .eventbrite_icon .img_logo img {
+  width: 27px !important;
+  height: 27px;
+  border-radius: 200px;
+}
+
+.socials_section .eventbrite_icon .img_logo img:hover {
+  opacity: 0.6;
+}
 
 
 
