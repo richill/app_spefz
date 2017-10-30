@@ -269,9 +269,11 @@
                     </div>
                   </div>
                   <div class="feed_img">
-                    <div class="eventbrite_icon">
-                      <div class="img_logo"><%= link_to(cl_image_tag("https://res.cloudinary.com/spefzapp/image/upload/v1509391872/eventbrite_logo_h8x8lm.jpg", class: ""), "https://www.eventbrite.co.uk/o/spefz-15567742682", target:"_blank") %></div>
-                    </div>
+                    <% if social.eventbrite? %>
+                      <div class="eventbrite_icon">
+                        <div class="img_logo"><%= link_to(cl_image_tag("https://res.cloudinary.com/spefzapp/image/upload/v1509391872/eventbrite_logo_h8x8lm.jpg", class: ""), "#{social.eventbrite_url}", target:"_blank") %></div>
+                      </div>
+                    <% end %>
                     <%= link_to(cl_image_tag(social.image, :transformation=>[{:gravity=>"face", :width=>200, :height=>200, :crop=>"fill"}]), social_path(social)) %>
                   </div>
                   <div class="feed_user">
