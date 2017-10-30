@@ -31,7 +31,11 @@
                   <div class="title"><%= link_to activity.trackable.title, user_social_path(activity.trackable.user, activity.trackable) %></div>
                   <div class="host">
                     <span>Hosted by</span>
-                    <span><%= link_to activity.owner.firstname, activity.owner if activity.owner %></span>
+                    <% if activity.trackable.upcoming_social? || activity.trackable.company_image.present? %>
+                      <span><%= link_to "Spefz Team", about_us_path  %></span>
+                    <% else %>
+                      <span><%= link_to activity.owner.firstname, activity.owner if activity.owner %></span>
+                    <% end %>
                   </div>
                   <div class="social_event_content">
                     <div class="image_cover">
