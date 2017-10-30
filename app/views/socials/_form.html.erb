@@ -45,6 +45,11 @@
                     <%= f.input :company_image, label: 'Use company image' %>
                     <div class="text_info">If ticked the company image will be displayed.</div>
                   </div>
+                  <div class="upcoming_social_section">
+                    <%= f.input :eventbrite, label: 'Eventbrite Event' %>
+                    <%= f.input :eventbrite_url, label: false, placeholder: "eventbrite url eg: https://www.eventbrite.co.uk/e/single-professionals-being-single-starting-a-business-tickets-39297467784" %>
+                    <div class="text_info">Tick if event has been created on eventbrite.</div>
+                  </div>
                 <% end %>
 
                 <div class="company_info_section hide">
