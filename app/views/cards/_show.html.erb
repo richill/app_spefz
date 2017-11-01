@@ -101,7 +101,14 @@
               <% if attendant.user.profession? %>
                 <div class="user_profession"><i class="fa fa-briefcase" aria-hidden="true"></i> <%= attendant.user.profession %></div>
               <% else %>
-                <div class="user_profession_uncompleted"><i class="fa fa-briefcase" aria-hidden="true"></i> <%= "#{attendant.user.firstname} has not yet stated his profession" %></div>
+                <div class="user_profession_uncompleted">
+                  <i class="fa fa-briefcase" aria-hidden="true"></i> 
+                  <% if attendant.user.category_gender.name == "Female" %>
+                    <%= "#{attendant.user.firstname} has not yet stated her profession" %>
+                  <% elsif attendant.user.category_gender.name == "Male" %>
+                    <%= "#{attendant.user.firstname} has not yet stated his profession" %>
+                  <% end %>
+                </div>
               <% end %>
               <% if attendant.user.description? %>
                 <div class="user_description"><%= truncate attendant.user.description, length: 190 %></div>
