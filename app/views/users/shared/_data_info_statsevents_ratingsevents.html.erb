@@ -34,7 +34,13 @@
           <div class="tablecell">
             <div class="faint_text_format">date</div> 
             <div class="main_text_format"><%= event.date.strftime("%a, %d %b %Y") %></div>
-            <div class="ref_id">£<%= event.price %></div>
+            <div class="ref_id">
+              <% if event.event_price_zero? %>
+                <span>Free</span>
+              <% else %>
+                <span>£<%= event.price %></span>
+              <% end %>
+            </div>
           </div>
           <div class="tablecell">
             <div class="faint_text_format">
