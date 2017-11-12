@@ -54,7 +54,11 @@
                   <% if @event.expired_or_closed_event %>
                     <span>Event Closed</span>
                   <% else %>
-                    <span>£<%= number_with_precision(@event.price, precision: 2) %></span>
+                    <% if @event.event_price_zero? %>
+                      <span>Free</span>
+                    <% else %>
+                      <span>£<%= number_with_precision(@event.price, precision: 2) %></span>
+                    <% end %>
                   <% end %>
                 </div>
               </div>

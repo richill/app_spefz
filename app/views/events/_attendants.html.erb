@@ -44,7 +44,13 @@
                 <span class="category_info"><%= link_to "#{@event.category_topic.name}", events_path(q: {category_topic_name_eq: @event.category_topic.name}) %></span>
                 <span class="mid_divider">|</span> 
                 <span class="price">Price:</span>
-                <span class="price_figure">£<%= number_with_precision(@event.price, precision: 2) %></span>
+                <span class="price_figure">
+                  <% if @event.event_price_zero? %>
+                    <span>Free</span>
+                  <% else %>
+                    <span>£<%= number_with_precision(@event.price, precision: 2) %></span>
+                  <% end %>
+                </span>
               </div>
               <div class="event_hosts">
                 <div>
