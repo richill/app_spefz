@@ -347,6 +347,10 @@ class Event < ActiveRecord::Base
   def event_imgs?
     self.imgevent_one? || self.imgevent_two? || self.imgevent_three? || self.imgevent_four? || self.imgevent_five? || self.imgevent_six?
   end
+
+  def event_price_zero?
+    self.price == 0 || self.price == 0.00
+  end
 end
 
 
