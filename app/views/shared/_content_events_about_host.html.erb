@@ -1,4 +1,4 @@
-<% if @event.host.present? %>
+<% if @event.host.present? && @event.host.users.present? %>
   <div class="event_host_section">
     <div class="listed_hosts">
       <ul>
