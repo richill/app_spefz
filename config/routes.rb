@@ -136,6 +136,7 @@ Rails.application.routes.draw do
   get   'help/membership',                to: 'static_pages#membershippg'
   get   'help/partners',                  to: 'static_pages#partnerspg'
   get   'help/payment-queries',           to: 'static_pages#paymentqueriespg'
+  get   'investment',                     to: 'static_pages#investmentpg'
   get   'landing-page',                   to: 'static_pages#landingpg'
   get   'image-restriction-page',         to: 'static_pages#imagepg'
   get   'message-delivered',              to: 'static_pages#messagesentpg'
