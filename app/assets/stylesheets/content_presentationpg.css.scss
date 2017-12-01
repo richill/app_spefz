@@ -552,3 +552,49 @@
 
 
 
+// ----------------------------
+//   working content
+// ----------------------------
+
+.main_match_info {
+  list-style: none !important;
+  height: 190px;
+  // background-color: red;
+  padding: 15px;
+  margin-left: 0px;
+}
+
+.main_match_sub_info {
+  float: left !important;
+  margin-right: 40px;
+}
+
+.main_match_sub_info:last-child {
+  margin-right: 0px !important;
+}
+
+.img_match_content {
+  text-align: center;
+  background-color: red;
+  height: 103px;
+  width: 103px;
+  padding: 37px;
+  border-radius: 144px;
+  margin-bottom: 5px;
+}
+
+.img_match_content_diff {
+  background-color: red;
+  text-align: center;
+  padding: 15px;
+  margin-bottom: 5px;
+  border-radius: 15px;
+}
+
+.pointed_right_arrow {
+  margin-top: 45px;
+}
+
+
+
+
