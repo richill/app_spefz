@@ -549,41 +549,35 @@
   color: #E34B51 !important;
 }
 
-
-
-
-// ----------------------------
-//   working content
-// ----------------------------
-
-.main_match_info {
+.presentation_section .main_match_info {
   list-style: none !important;
   height: 190px;
-  // background-color: red;
+  background-color: transparent;
   padding: 15px;
   margin-left: 0px;
 }
 
-.main_match_sub_info {
+.presentation_section .main_match_sub_info {
   float: left !important;
   margin-right: 40px;
+  margin-bottom: 20px;
 }
 
-.main_match_sub_info:last-child {
+.presentation_section .main_match_sub_info:last-child {
   margin-right: 0px !important;
+  margin-bottom: 15px;
 }
 
-.img_match_content {
+.presentation_section .img_match_content {
   text-align: center;
   background-color: rgba(47, 63, 91, 0.1) !important;
   height: 103px;
   width: 103px;
   padding: 37px;
   border-radius: 144px;
-  margin-bottom: 5px;
 }
 
-.img_match_content_diff {
+.presentation_section .img_match_content_diff {
   background-color: rgba(47, 63, 91, 0.1) !important;
   text-align: center;
   padding: 15px;
@@ -591,7 +585,7 @@
   border-radius: 15px;
 }
 
-.pointed_right_arrow {
+.presentation_section .pointed_right_arrow {
   margin-top: 45px;
 }
 
