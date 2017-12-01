@@ -3,7 +3,7 @@
     File: views / static pages / presentationpg.html.erb
   =========================================*/
 
-.investment_section {
+.presentation_section {
   padding: 0px !important;
   background: url(img_background_main.png) repeat;
 }
@@ -11,29 +11,29 @@
 // ------------------------------------
 //   left_section
 // ------------------------------------
-.investment_section .left_section {
+.presentation_section .left_section {
   padding: 15px !important;
   background-color: #283041;
 }
 @media only screen and (min-width: 1160px) {
-  .investment_section .left_section {
+  .presentation_section .left_section {
     position: fixed;
     min-height: 588px;
   }
 }
 @media only screen and (max-width: 1160px) {
-  .investment_section .left_section {
+  .presentation_section .left_section {
     width: 100% !important; 
   } 
 }
 
-.investment_section .left_section .company_section {
+.presentation_section .left_section .company_section {
   font-family: "Lato", sans-serif !important;
   color: #fff;
   position: relative;
 }
 
-.investment_section .left_section .business_name {
+.presentation_section .left_section .business_name {
   font-family: "Lato", sans-serif !important;
   font-size: 20px;
   font-weight: 300;
@@ -42,11 +42,11 @@
   top: 3px;
 }
 
-.investment_section .left_section .business_logo {
+.presentation_section .left_section .business_logo {
   float: right;
 }
 
-.investment_section .left_section .business_logo img {
+.presentation_section .left_section .business_logo img {
   width: 35px !important;
   border-radius: 5px;
   -webkit-transition: all 0.3s ease;
@@ -54,28 +54,28 @@
   -o-transition: all 0.3s ease;
 }
 
-.investment_section .left_section .business_logo img:hover {
+.presentation_section .left_section .business_logo img:hover {
   opacity: 0.7;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
 }
 
-.investment_section .left_section .divider {
+.presentation_section .left_section .divider {
   margin: 15px 0px 0px;
   border-bottom: 1px solid #727985;
 }
 
-.investment_section .left_section .listed_sections ul {
+.presentation_section .left_section .listed_sections ul {
   list-style: none;
   margin: 0px !important;
 }
 
-.investment_section .left_section .listed_sections ul li {
+.presentation_section .left_section .listed_sections ul li {
   border-bottom: 1px solid #727985;
 }
 
-.investment_section .left_section li:last-child {
+.presentation_section .left_section li:last-child {
     border-bottom: none !important;
 }
 
@@ -83,7 +83,7 @@
   margin-right: 5px;
 }
 
-.investment_section .left_section .listed_sections ul li a {
+.presentation_section .left_section .listed_sections ul li a {
   font-family: "Lato", sans-serif !important;
   font-weight: 300;
   font-size: 12px;
@@ -98,7 +98,7 @@
   -o-transition: all 0.3s ease;
 }
 
-.investment_section .listed_sections ul li a:hover {
+.presentation_section .listed_sections ul li a:hover {
   color: #E34B51 !important;
   background-color: #364760 !important;
   width: 100%;
@@ -111,24 +111,24 @@
 // ------------------------------------
 //   right_section
 // ------------------------------------
-.investment_section .right_section {
+.presentation_section .right_section {
   padding: 15px !important;
 }
 @media only screen and (max-width: 1160px) {
-  .investment_section .right_section {
+  .presentation_section .right_section {
     width: 100% !important;
   }
 }
 
-.investment_section .right_section {
+.presentation_section .right_section {
   position: relative;
 }
 
-.investment_section .right_section .right_inner_section {
+.presentation_section .right_section .right_inner_section {
   z-index: 10;
 }
 
-.investment_section .right_section .lift_btn_cover {
+.presentation_section .right_section .lift_btn_cover {
   position: absolute !important;
   height: 583px;
   background-color: transparent;
@@ -136,7 +136,7 @@
   z-index: 1;
 }
 
-.investment_section .right_section .lift_btn a {
+.presentation_section .right_section .lift_btn a {
   font-size: 16px;
   height: 50px;
   width: 50px;
@@ -151,13 +151,13 @@
   position: fixed !important;
 }
 
-.investment_section .right_section .lift_btn a:hover {
+.presentation_section .right_section .lift_btn a:hover {
   background-color: #283041 !important;
   color: #fff !important;
   opacity: 0.5 !important;
 }
 
-.investment_section .right_section .sonpsorship_content {
+.presentation_section .right_section .sonpsorship_content {
   padding: 30px 70px !important;
   background-color: #fff;
   color: #283041 !important;
@@ -167,12 +167,12 @@
   box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.14);
 }
 @media only screen and (max-width: 650px) {
-  .investment_section .right_section .sonpsorship_content {
+  .presentation_section .right_section .sonpsorship_content {
     padding: 30px !important;
   }
 }
 
-.investment_section .right_section .pagecover_content {
+.presentation_section .right_section .pagecover_content {
   background: url(img_background.jpg) no-repeat;
   background-position: 60% 40%;
   box-shadow: inset 25px 25px 200px 15px #000;
@@ -180,7 +180,7 @@
   padding: 0px !important;
 }
 @media only screen and (min-width: 2012px) {
-  .investment_section .right_section .sonpsorship_content {
+  .presentation_section .right_section .sonpsorship_content {
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -188,13 +188,13 @@
   }
 }
 
-.investment_section .right_section .pagecover_inner_content {
+.presentation_section .right_section .pagecover_inner_content {
   margin: 15px 15px 15px !important;
   background-color: rgba(255, 255, 255, 0.25) !important;
   padding: 25px;
 }
 
-.investment_section .right_section .main_text {
+.presentation_section .right_section .main_text {
   font-family: "Lato", sans-serif !important;
   font-weight: 300;
   font-size: 75px;
@@ -205,12 +205,12 @@
   text-shadow: 2px 3px 10px #000;
 }
 @media only screen and (max-width: 650px) {
-  .investment_section .right_section .main_text {
+  .presentation_section .right_section .main_text {
     font-size: 35px;
   }
 }
 
-.investment_section .right_section .sub_text {
+.presentation_section .right_section .sub_text {
   font-family: "Lato", sans-serif !important;
   font-weight: 300;
   font-size: 40px;
@@ -221,12 +221,12 @@
   text-shadow: 2px 3px 10px #000;
 }
 @media only screen and (max-width: 650px) {
-  .investment_section .right_section .sub_text {
+  .presentation_section .right_section .sub_text {
     font-size: 20px;
   }
 }
 
-.investment_section .right_section .sp_evt_link a {
+.presentation_section .right_section .sp_evt_link a {
   text-transform: lowercase;
   color: #fff !important;
   font-weight: bold;
@@ -234,11 +234,11 @@
   display: inline-block;
 }
 
-.investment_section .right_section .sp_evt_link a:hover {
+.presentation_section .right_section .sp_evt_link a:hover {
   text-decoration: underline;
 }
 
-.investment_section .right_section .sp_event_details {
+.presentation_section .right_section .sp_event_details {
   font-family: "Lato", sans-serif !important;
   font-weight: 300;
   font-size: 15px;
@@ -250,7 +250,7 @@
   margin-top: 15px;
 }
 
-.investment_section .right_section .img_banner_content {
+.presentation_section .right_section .img_banner_content {
   position: absolute;
   bottom: 0;
   opacity: 0.6;
@@ -260,7 +260,7 @@
   border-bottom: 2px solid rgba(225, 71, 62, 0.7);
 }
 
-.investment_section .right_section .main_img {
+.presentation_section .right_section .main_img {
   font-family: "Lato", sans-serif !important;
   font-weight: 300;
   font-size: 75px;
@@ -271,7 +271,7 @@
   position: relative;
 }
 
-.investment_section .right_section .sp_main_header {
+.presentation_section .right_section .sp_main_header {
   font-family: "Lato", sans-serif !important;
   font-weight: bold;
   font-size: 45px;
@@ -279,30 +279,30 @@
   margin-bottom: 10px;
 }
 @media only screen and (max-width: 650px) {
-  .investment_section .right_section .sp_main_header {
+  .presentation_section .right_section .sp_main_header {
     font-size: 30px;
   }
 }
 
-.investment_section .right_section .page_number_section {
+.presentation_section .right_section .page_number_section {
   position: relative;
   margin-top: 40px;
 }
 
-.investment_section .right_section .page_number_line {
+.presentation_section .right_section .page_number_line {
   background-color: red;
   border-bottom: 1px solid #cccccc;
   opacity: 0.5;
 }
 
-.investment_section .right_section .page_number_content {
+.presentation_section .right_section .page_number_content {
   background-color: #fff;
   width: 50px;
   height: 25px;
   margin: auto;
 }
 
-.investment_section .right_section .page_number {
+.presentation_section .right_section .page_number {
   font-family: "Lato", sans-serif !important;
   color: #cccccc;
   text-align: center;
@@ -313,103 +313,103 @@
   bottom: 13px;
 }
 
-.investment_section .right_section .event_leaderships .event_member {
+.presentation_section .right_section .event_leaderships .event_member {
   margin-bottom: 20px;
 }
 @media only screen and (max-width: 650px) {
-  .investment_section .right_section .event_leaderships .event_member {
+  .presentation_section .right_section .event_leaderships .event_member {
     width: 100% !important;
   }
 }
 
-.investment_section .right_section .event_leaderships .evt_divider {
+.presentation_section .right_section .event_leaderships .evt_divider {
   margin: 45px 0px;
   border-bottom: 1px solid #eeaa02;
   opacity: 0.5;
 }
 
 @media only screen and (max-width: 650px) {
-  .investment_section .right_section .img_cover {
+  .presentation_section .right_section .img_cover {
     width: 150px !important;
     margin: auto;
   }
 }
 
-.investment_section .right_section .event_leaderships img {
+.presentation_section .right_section .event_leaderships img {
   border-radius: 200px;
 }
 @media only screen and (max-width: 650px) {
-  .investment_section .right_section .event_leaderships img {
+  .presentation_section .right_section .event_leaderships img {
     width: 150px !important;
   }
 }
 
 @media only screen and (max-width: 650px) {
-  .investment_section .right_section .event_leaderships .event_member_info {
+  .presentation_section .right_section .event_leaderships .event_member_info {
     width: 100% !important;
     text-align: center;
   }
 }
 
-.investment_section .right_section .option_inner_content table {
+.presentation_section .right_section .option_inner_content table {
   width: 100% !important;
 }
 
-.investment_section .right_section .listed_benifits li {
+.presentation_section .right_section .listed_benifits li {
   text-transform: capitalize;
 }
 
-.investment_section .right_section .option_inner_content table tr td a {
+.presentation_section .right_section .option_inner_content table tr td a {
   color: #E34B51 !important;
 }
 
-.investment_section .right_section .option_inner_content table tr td a:hover {
+.presentation_section .right_section .option_inner_content table tr td a:hover {
   text-decoration: underline;
 }
 
-.investment_section .right_section .big_header {
+.presentation_section .right_section .big_header {
   font-family: "Lato", sans-serif !important;
   text-transform: capitalize;
   color: #E34B51 !important;
   font-size: 30px;
 }
 @media only screen and (max-width: 650px) {
-  .investment_section .right_section .big_header {
+  .presentation_section .right_section .big_header {
     font-size: 20px;
   }
 }
 
-.investment_section .right_section .signature_inner_content .signature_content {
+.presentation_section .right_section .signature_inner_content .signature_content {
   margin-top: 30px !important;
   margin-bottom: 60px !important;
 }
 
-.investment_section .right_section .signature_inner_content a {
+.presentation_section .right_section .signature_inner_content a {
   color: #E34B51 !important;
 }
 
-.investment_section .right_section .signature_inner_content a:hover {
+.presentation_section .right_section .signature_inner_content a:hover {
   text-decoration: underline;
 }
 
-.investment_section .right_section .member_sig {
+.presentation_section .right_section .member_sig {
   margin-bottom: 15px;
 }
 
 @media only screen and (min-width: 1245px) {
-  .investment_section .right_section .featured_inner_section {
+  .presentation_section .right_section .featured_inner_section {
     width: 915px;
     margin: auto !important;
   }
 }
 
-.investment_section .right_section .featured_section ul {
+.presentation_section .right_section .featured_section ul {
   list-style-type: none;
   margin: 0px !important;
   display: inline-block;
 }
 
-.investment_section .right_section .featured_title {
+.presentation_section .right_section .featured_title {
   text-align: center;
   margin-top: 8px;
   margin-bottom: 8px;
@@ -420,84 +420,84 @@
   text-transform: capitalize;
 }
 
-.investment_section .right_section .featured_section ul li {
+.presentation_section .right_section .featured_section ul li {
   float: left;
   padding: 10px 10px 10px;
   margin: 0px 5px 5px;
 }
 @media screen and (min-width: 450px) and (max-width: 1245px){
-  .investment_section .right_section .featured_section ul li {
+  .presentation_section .right_section .featured_section ul li {
     width: 200px;
   }
 }
 @media screen and (min-width: 400px) and (max-width: 450px){
-  .investment_section .right_section .featured_section ul li {
+  .presentation_section .right_section .featured_section ul li {
     width: 175px;
   }
 }
 @media only screen and (max-width: 400px) {
-  .investment_section .right_section .featured_section ul li {
+  .presentation_section .right_section .featured_section ul li {
     width: 150px;
   }
 }
 
-.investment_section .right_section .img_featured_bc {
+.presentation_section .right_section .img_featured_bc {
   padding: 4px 10px !important;
 }
 
-.investment_section .right_section .featured_section ul li:hover {
+.presentation_section .right_section .featured_section ul li:hover {
   background-color: rgba(47, 63, 91, 0.015) !important;
   border-radius: 3px;
 }
 
-.investment_section .right_section .img_featured_01 {
+.presentation_section .right_section .img_featured_01 {
   opacity: 0.8;
   width: 200px;
 }
 
-.investment_section .right_section .img_featured_02 {
+.presentation_section .right_section .img_featured_02 {
   opacity: 0.8;
   width: 165px;
 }
 
-.investment_section .right_section .img_featured_03 {
+.presentation_section .right_section .img_featured_03 {
   width: 120px;
 }
 
-.investment_section .right_section .img_featured_04 {
+.presentation_section .right_section .img_featured_04 {
   opacity: 0.9;
   width: 130px;
 }
 
-.investment_section .right_section .img_featured_05 {
+.presentation_section .right_section .img_featured_05 {
   opacity: 0.8;
   width: 150px;
 }
 
-.investment_section .right_section .update_text {
+.presentation_section .right_section .update_text {
   background-color: rgba(225, 71, 62, 0.5) !important; 
   padding: 0px 5px;
 }
 
-.investment_section .right_section .terms_inner_content a {
+.presentation_section .right_section .terms_inner_content a {
   color: #E34B51 !important;
 }
 
-.investment_section .right_section .terms_inner_content a:hover {
+.presentation_section .right_section .terms_inner_content a:hover {
   text-decoration: underline;
 }
 
-.investment_section .right_section .booking_form_content {
+.presentation_section .right_section .booking_form_content {
   margin-bottom: 30px;
 }
 
-.investment_section .right_section .booking_form_content ul {
+.presentation_section .right_section .booking_form_content ul {
   list-style: none !important;
   margin: 5px 0px !important;
   padding: 0px !important;
 }
 
-.investment_section .right_section .label_content {
+.presentation_section .right_section .label_content {
   font-size: 12px;
   margin-top: 12px;
   padding: 0px !important;
@@ -505,47 +505,47 @@
   text-align: right;
 }
 
-.investment_section .right_section .space_content {
+.presentation_section .right_section .space_content {
   height: 40px;
   padding: 5px !important;
 }
 
-.investment_section .right_section .space_content div {
+.presentation_section .right_section .space_content div {
   height: 30px;
   padding: 6px;
   background-color: rgba(47, 63, 91, 0.05);
 }
 
-.investment_section .right_section .space_content span {
+.presentation_section .right_section .space_content span {
   height: 30px;
   padding: 6px !important;
   background-color: rgba(47, 63, 91, 0.05) !important;
 }
 
-.investment_section .right_section .payment_content {
+.presentation_section .right_section .payment_content {
   margin-top: 30px;
   padding: 0px !important;
 }
 
-.investment_section .right_section .pymt_header {
+.presentation_section .right_section .pymt_header {
   font-weight: bold;
   text-transform: capitalize;
   font-size: 20px;
   margin-bottom: 15px;
 }
 
-.investment_section .right_section .listed_pymts ul {
+.presentation_section .right_section .listed_pymts ul {
   list-style: none !important;
   margin: 0px;
   display: inline-block;
 }
 
-.investment_section .right_section .listed_pymts ul li {
+.presentation_section .right_section .listed_pymts ul li {
   float: left;
   margin-right: 28px;
 }
 
-.investment_section .singoff_email a {
+.presentation_section .singoff_email a {
   color: #E34B51 !important;
 }
 
