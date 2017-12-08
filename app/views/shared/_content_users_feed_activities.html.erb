@@ -48,9 +48,19 @@
                   <% if activity.trackable.upcoming_social? %>
                     <div class="inner_img_cover"></div>
                     <div class="inner_img_text"> coming soon</div>
-                    <div class="inner_img"><%= link_to(image_tag(activity.trackable.image), user_social_path(activity.trackable.user, activity.trackable)) %></div>
+                    <div class="inner_img">
+                      <% if activity.trackable.social_image_link.present? %>
+                        <%= link_to(cl_image_tag(activity.trackable.social_image_link, :transformation=>[{:gravity=>"face", :width => 600, :height => 320, :crop=>"fill"}]), user_social_path(activity.trackable.user, activity.trackable)) %>
+                      <% else %>
+                        <%= link_to(image_tag(activity.trackable.image), user_social_path(activity.trackable.user, activity.trackable)) %>
+                      <% end %>
+                    </div>
                   <% else %>
-                    <%= link_to(image_tag(activity.trackable.image), user_social_path(activity.trackable.user, activity.trackable)) %>
+                    <% if activity.trackable.social_image_link.present? %>
+                      <%= link_to(cl_image_tag(activity.trackable.social_image_link, :transformation=>[{:gravity=>"face", :width => 600, :height => 320, :crop=>"fill"}]), user_social_path(activity.trackable.user, activity.trackable)) %>
+                    <% else %>
+                      <%= link_to(image_tag(activity.trackable.image), user_social_path(activity.trackable.user, activity.trackable)) %>
+                    <% end %>
                   <% end %>
                 </div>
                 <div class="social_event_details">
