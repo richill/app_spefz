@@ -7,14 +7,13 @@
           <li>
             <div class="image_section">
               <span class="img_cover">
-                <% if invite.social.image_url.present? %>
+                <% if invite.social.social_image_link.present? %>
+                  <%= link_to(image_tag(invite.social.social_image_link, :alt =>  "image", :class =>"#", id: ""), social_path(invite.social)) %>
+                <% else invite.social.image.present? %>
                   <%= link_to(image_tag(invite.social.image_url, :alt =>  "image", :class =>"#", id: ""), social_path(invite.social)) %>
-                <% else %>
-                  <%= link_to(image_tag("img-profile-image-default.png", :alt =>  "image", :class =>"#", id: ""), social_path(invite.social)) %>
                 <% end %>
               </span>
             </div>
-
             <div class="info_section">
               <div class="title"><%= link_to truncate("#{invite.social.title}", length: 30), social_path(invite.social) %></div>
               <div class="date_country_info" style="margin-top:2px;">
@@ -75,14 +74,13 @@
           <li>
             <div class="image_section">
               <span class="img_cover">
-                <% if invite_request.social.image_url.present? %>
+                <% if invite_request.social.social_image_link.present? %>
+                  <%= link_to(image_tag(invite_request.social.social_image_link, :alt =>  "image", :class =>"#", id: ""), social_path(invite_request.social)) %>
+                <% else invite_request.social.image_url.present? %>
                   <%= link_to(image_tag(invite_request.social.image_url, :alt =>  "image", :class =>"#", id: ""), social_path(invite_request.social)) %>
-                <% else %>
-                  <%= link_to(image_tag("img-profile-image-default.png", :alt =>  "image", :class =>"#", id: ""), social_path(invite_request.social)) %>
                 <% end %>
               </span>
             </div>
-
             <div class="info_section">
               <div class="title"><%= link_to truncate("#{invite_request.social.title}", length: 30), social_path(invite_request.social) %></div>
               <div class="date_country_info" style="margin-top:2px;">
@@ -126,11 +124,11 @@
           <li>
             <div class="image_section">
               <span class="img_cover">
-                <% if card.event.image.present? %>
+                <% if card.event.event_image_link.present? %>
+                  <%= link_to(cl_image_tag(card.event.event_image_link, :alt =>  "image", :class =>"#", id: ""), cards_path) %>
+                <% else card.event.image.present? %>
                   <%# link_to(image_tag(card.event.image_url, :alt =>  "image", :class =>"#", id: ""), cards_path) %>
                   <%= link_to(cl_image_tag(card.event.image, :alt =>  "image", :class =>"#", id: ""), cards_path) %>
-                <% else %>
-                  <%= link_to(image_tag("img-profile-image-default.png", :alt =>  "image", :class =>"#", id: ""), cards_path) %>
                 <% end %>
               </span>
             </div>
