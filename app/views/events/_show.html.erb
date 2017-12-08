@@ -22,7 +22,7 @@
                 <!-- sold out -->
                 <% if @event.event_image_link.present? %>
                   <div class="image_cover">
-                    <%= link_to(cl_image_tag(@event.event_image_link, :transformation=>[{:gravity=>"face", :width => 600, :height => 320, :crop=>"fill"}]), event_path(@event)) %>
+                    <%= cl_image_tag(@event.event_image_link, :transformation=>[{:gravity=>"face", :width => 600, :height => 320, :crop=>"fill"}]) %>
                   </div>
                 <% elsif @event.image.present? %>
                   <div class="image_cover">
