@@ -16,7 +16,6 @@ class Event < ActiveRecord::Base
   validates_presence_of :postcode, presence: true, message: "can't be blank"
   validates_presence_of :user_id, presence: true, message: "can't be blank"
   validates_presence_of :category_topic, presence: true, message: "please select a category"
-  validates_presence_of :image, presence: true, message: "must upload an image"
   validates_presence_of :date, presence: true, message: "please select a date"
   validates_presence_of :time, presence: true, message: "please select a time"
   validates_presence_of :city, presence: true, message: "can't be blank"
@@ -37,6 +36,7 @@ class Event < ActiveRecord::Base
   # validates_numericality_of :quantity, presence: true, message: "can't be blank"
   # validates_numericality_of :quantity_men, presence: true, message: "can't be blank"
   # validates_numericality_of :quantity_women, presence: true, message: "can't be blank"
+  validate :image_or_eventimagelink
 
   has_one :host, dependent: :destroy
   has_one :card, dependent: :destroy
@@ -350,6 +350,13 @@ class Event < ActiveRecord::Base
 
   def event_price_zero?
     self.price == 0 || self.price == 0.00
+  end
+
+  def image_or_eventimagelink
+    if image.blank? ^ event_image_link.blank?
+      errors.add(:image, "must upload an image")
+      errors.add(:event_image_link, "either upload an Image or paste an image link")
+    end
   end
 end
 
