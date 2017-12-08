@@ -18,7 +18,13 @@
               </div>
             <% end %>
             <div class="left_evt">
-              <div class="img_cover"><%= link_to(image_tag("#{social.image_url}", :alt =>  "image", :class =>"#"), user_social_path(social.user, social)) %></div>
+              <div class="img_cover">
+                <% if social.social_image_link.present? %>
+                  <%= link_to(cl_image_tag(social.social_image_link, :transformation=>[{:gravity=>"face", :width => 600, :height => 320, :crop=>"fill"}]), social_path(social)) %>
+                <% elsif %>
+                  <%= link_to(image_tag("#{social.image_url}", :alt =>  "image", :class =>"#"), user_social_path(social.user, social)) %>
+                <% end %>
+              </div>
             </div>
             <div class="right_evt">
               <div class="info"><i class="fa fa-calendar" aria-hidden="true"></i> <%= social.date.strftime("%A, %d %b") %></div>
