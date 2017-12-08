@@ -72,8 +72,10 @@
                             <div class="img_shade_cover"><span><%= link_to '', edit_user_event_path(event.user, event), class: "fa fa-pencil-square-o" %></span></div>
                           <% end %>
                           <div class="img_cover">
-                            <% if event.image.present? %>
-                            <%= link_to(cl_image_tag(event.image, :transformation=>[{:gravity=>"center", :crop=>"fill"}]), event_path(event)) %>
+                            <% if event.event_image_link.present? %>
+                              <%= link_to(cl_image_tag(event.event_image_link, :transformation=>[{:gravity=>"face", :width => 600, :height => 320, :crop=>"fill"}]), event_path(event)) %>
+                            <% elsif event.image.present? %>
+                              <%= link_to(cl_image_tag(event.image, :transformation=>[{:gravity=>"center", :crop=>"fill"}]), event_path(event)) %>
                             <% else %>
                               <%= link_to(image_tag("img_feed_07.png", :alt =>  "image", :class =>"#"), event_path(event)) %>
                             <% end %>
