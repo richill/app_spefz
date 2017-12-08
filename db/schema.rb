@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171030195853) do
+ActiveRecord::Schema.define(version: 20171208160537) do
 
   create_table "activities", force: :cascade do |t|
     t.integer  "trackable_id"
@@ -408,6 +408,7 @@ ActiveRecord::Schema.define(version: 20171030195853) do
     t.boolean  "soldout"
     t.boolean  "soldout_men"
     t.boolean  "soldout_women"
+    t.string   "event_image_link"
   end
 
   add_index "events", ["slug"], name: "index_events_on_slug", unique: true
@@ -736,6 +737,7 @@ ActiveRecord::Schema.define(version: 20171030195853) do
     t.boolean  "company_image"
     t.boolean  "eventbrite"
     t.text     "eventbrite_url"
+    t.string   "social_image_link"
   end
 
   add_index "socials", ["slug"], name: "index_socials_on_slug", unique: true
