@@ -21,9 +21,15 @@
                 <% end %>
                 <!-- sold out -->
                 <% if @card.event.image.present? %>
-                  <div class="image_cover"><%= image_tag("#{@card.event.image_url}") %></div>
+                  <div class="image_cover">
+                    <% if @card.event.event_image_link.present? %>
+                      <%= cl_image_tag(@card.event.event_image_link, :transformation=>[{:gravity=>"face", :width => 600, :height => 320, :crop=>"fill"}]) %>
+                    <% else %>
+                      <%= image_tag("#{@card.event.image_url}") %>
+                    <% end %>
+                  </div>
                 <% else %>
-                  <div class="image_cover"><%= image_tag("img_feed_07.png") %></div>
+                  <div class="image_cover"><%= image_tag("img_feed_06.png") %></div>
                 <% end %>
               </div>
 

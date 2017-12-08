@@ -48,7 +48,13 @@
                         </div>
                       <% end %>
                       <!-- sold out -->
-                      <span><%= link_to(cl_image_tag(activity.trackable.image, :transformation=>[{:gravity=>"center", :width=>150, :height=>105, :crop=>"fill"}]), user_social_path(activity.trackable.user, activity.trackable)) %></span>
+                      <span class="content_feedlist_img" style="height:105px;display:inline-block;overflow:hidden;">
+                        <% if activity.trackable.social_image_link.present? %>
+                          <%= link_to(cl_image_tag(activity.trackable.social_image_link, :transformation=>[{:gravity=>"center", :width=>150, :height=>105, :crop=>"fill"}]), user_social_path(activity.trackable.user, activity.trackable)) %>
+                        <% else %>
+                          <%= link_to(cl_image_tag(activity.trackable.image, :transformation=>[{:gravity=>"center", :width=>150, :height=>105, :crop=>"fill"}]), user_social_path(activity.trackable.user, activity.trackable)) %>
+                        <% end %>
+                      </span>
                     </div>
                     <div class="social_event_details">
                       <div class="info"><i class="fa fa-calendar" aria-hidden="true"></i> <%= activity.trackable.date.strftime("%A, %d %b") %> <span class="mid_divider">|</span> <%= activity.trackable.time.strftime("%I:%M %p") %></div>

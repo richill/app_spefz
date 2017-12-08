@@ -98,7 +98,7 @@
                         <% elsif event.image.present? %>
                           <%= link_to(cl_image_tag(event.image, :transformation=>[{:gravity=>"center", :crop=>"fill"}]), preview_event_path(event)) %>
                         <% else %>
-                          <%= link_to(image_tag("img_feed_07.png", :alt =>  "image", :class =>"#"), preview_event_path(event)) %>
+                          <%= link_to(image_tag("img_feed_06.png", :alt =>  "image", :class =>"#"), preview_event_path(event)) %>
                         <% end %>
                       </div>
                     <% end %>
