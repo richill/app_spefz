@@ -95,7 +95,27 @@
                                   </div>
                                 <% end %>
                                 <!-- sold out -->
-                                <span><%= link_to(cl_image_tag(social.image, :transformation=>[{:gravity=>"center", :width=>150, :height=>105, :crop=>"fill"}]), social_path(social)) %></span>
+                                <span>
+                                  <% if social.upcoming_social? %>
+                                    <div class="inner_img_cover"></div>
+                                    <div class="inner_img_text"> coming soon</div>
+                                    <span style="height:105px;display:inline-block;overflow:hidden;">
+                                      <% if social.social_image_link.present? %>
+                                        <%= link_to(cl_image_tag(social.social_image_link, :transformation=>[{:gravity=>"center", :width=>150, :height=>105, :crop=>"fill"}]), social_path(social)) %>
+                                      <% else %>
+                                        <%= link_to(cl_image_tag(social.image, :transformation=>[{:gravity=>"center", :width=>150, :height=>105, :crop=>"fill"}]), social_path(social)) %>
+                                      <% end %>
+                                    </span>
+                                  <% else %>
+                                    <span style="height:105px;display:inline-block;overflow:hidden;">
+                                      <% if social.social_image_link.present? %>
+                                        <%= link_to(cl_image_tag(social.social_image_link, :transformation=>[{:gravity=>"center", :width=>150, :height=>105, :crop=>"fill"}]), social_path(social)) %>
+                                      <% else %>
+                                        <%= link_to(cl_image_tag(social.image, :transformation=>[{:gravity=>"center", :width=>150, :height=>105, :crop=>"fill"}]), social_path(social)) %>
+                                      <% end %>
+                                    </span>
+                                  <% end %>
+                                </span>
                               </div>
                               <div class="social_event_details">
                                 <div class="info"><i class="fa fa-calendar" aria-hidden="true"></i> <%= social.date.strftime("%A, %d %b") %> <span class="mid_divider">|</span> <%= social.time.strftime("%I:%M %p") %></div>
