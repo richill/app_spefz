@@ -29,8 +29,10 @@
               <div class="form-inputs">
                 <%= f.file_field :image %>
 
-                <%= f.input :social_image_link, label: "Social Image [Image Link]", placeholder: "https://res.cloudinary.com/account/image/upload/v1474379672/happy-family.jpg" %>
-                <div class="social_img_link text_info">If unable to upload image for the social. Place image link here</div> 
+                <% if current_user.admin_pa_management_group || current_user.pa_event_mgt_group %>
+                  <%= f.input :social_image_link, label: "Social Image [Image Link]", placeholder: "https://res.cloudinary.com/account/image/upload/v1474379672/happy-family.jpg" %>
+                  <div class="social_img_link text_info">If unable to upload image for the social. Place image link here</div> 
+                <% end %>
 
                 <% unless action_name == 'new' %>
                 <div class="close_social_section">
