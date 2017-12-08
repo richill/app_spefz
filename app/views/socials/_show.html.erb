@@ -6,7 +6,9 @@
         <div class="header"><%= render 'shared/header' %></div>
         <div class="upper_profile_content">
           <div class="profile_img_main_cover">
-            <% if @social.image.present? %>
+            <% if @social.social_image_link.present? %>
+              <%= link_to(cl_image_tag(@social.social_image_link, :transformation=>[{:gravity=>"face", :width => 600, :height => 320, :crop=>"fill"}]), social_path(@social)) %>
+            <% elsif @social.image.present? %>
               <div><%= cl_image_tag(@social.image, :transformation=>[{:gravity=>"face", :width=>200, :height=>200, :crop=>"fill"}]) %></div>
             <% else %>
               <div class="img_default"><%= image_tag("img-profile-image-default.png") %></div>
