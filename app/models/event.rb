@@ -353,7 +353,7 @@ class Event < ActiveRecord::Base
   end
 
   def image_or_eventimagelink
-    if image.blank? ^ event_image_link.blank?
+    if image.blank? && event_image_link.blank?
       errors.add(:image, "must upload an image")
       errors.add(:event_image_link, "either upload an Image or paste an image link")
     end
