@@ -11,7 +11,7 @@
             <% elsif @social.image.present? %>
               <div><%= cl_image_tag(@social.image, :transformation=>[{:gravity=>"face", :width=>200, :height=>200, :crop=>"fill"}]) %></div>
             <% else %>
-              <div class="img_default"><%= image_tag("img-profile-image-default.png") %></div>
+              <div class="img_default"><%= image_tag("img-profile-company-default.png") %></div>
             <% end %>
           </div>
           <div class="user_name"><%= "#{@social.title}" %></div>

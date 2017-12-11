@@ -30,7 +30,7 @@
                 <%= f.file_field :image %>
 
                 <% if current_user.admin_pa_management_group || current_user.pa_event_mgt_group %>
-                  <%= f.input :social_image_link, label: "Social Image [Image Link]", placeholder: "https://res.cloudinary.com/account/image/upload/v1474379672/happy-family.jpg" %>
+                  <%= f.input :social_image_link, label: "Social Image [Image Link]", placeholder: "here https://res.cloudinary.com/account/image/upload/v1474379672/happy-family.jpg" %>
                   <div class="social_img_link text_info">If unable to upload image for the social. Place image link here</div> 
                 <% end %>
 

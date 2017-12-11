@@ -83,6 +83,13 @@ class Social < ActiveRecord::Base
     slug.blank? || self.title_changed?
   end
 
+  def image_or_socialimagelink
+    if image.blank? ^ social_image_link.blank?
+      errors.add(:image, "must upload an image")
+      errors.add(:social_image_link, "either upload an Image or paste an image link")
+    end
+  end
+
   def original_url
     base_url + original_fullpath
   end
@@ -193,12 +200,7 @@ class Social < ActiveRecord::Base
     order('date ASC')
   end
 
-  def image_or_socialimagelink
-    if image.blank? ^ social_image_link.blank?
-      errors.add(:image, "must upload an image")
-      errors.add(:social_image_link, "either upload an Image or paste an image link")
-    end
-  end
+  
 
   # def impression_users
   #   self.impressions.select("DISTINCT ON (impressions.ip_address) * ")
