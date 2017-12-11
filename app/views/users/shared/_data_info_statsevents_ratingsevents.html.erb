@@ -23,7 +23,13 @@
         <div class="tablerow">
           <div class="tablecell" style="width:10%">
             <div class="image_container">
-              <div class="image"><%= link_to image_tag(event.image_url), event, target: "_blank" %></div>
+              <div class="image">
+                <% if event.event_image_link.present? %>
+                  <%= link_to image_tag(event.event_image_link), event, target: "_blank" %>
+                <% else %>
+                  <%= link_to image_tag(event.image_url), event, target: "_blank" %>
+                <% end %>
+              </div>
             </div>
           </div>
           <div class="tablecell">
