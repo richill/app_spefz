@@ -62,7 +62,9 @@ a{color:#37aadc}
             </p>
             
             <p style="font-family:Arial, Helvetica, sans-serif;font-size:12px;line-height:22px;background-color:#F9F9F9;padding:15px;height:80px;">
-              <% if @invite.social.image.present? %>
+              <% if @invite.social.social_image_link.present? %>
+                <%= cl_image_tag(@invite.social.social_image_link, :transformation=>[{:gravity=>"face", :width=>80, :height=>130, :crop=>"fill", style: "border:0;display:block;border-radius:0px;float:left; margin-right:10px;"}]) %>
+              <% elsif @invite.social.image.present? %>
                 <%= cl_image_tag(@invite.social.image, :transformation=>[{:gravity=>"face", :width=>80, :height=>130, :crop=>"fill", style: "border:0;display:block;border-radius:0px;float:left; margin-right:10px;"}]) %>
               <% else %>
                 <%= image_tag("img-profile-image-default.png", style: "height:80px;width:130px;border:0;display:block;border-radius:0px;float:left;margin-right:10px;") %>
