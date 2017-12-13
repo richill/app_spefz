@@ -28,9 +28,9 @@
             <div class="right_side_content">
               <div class="title">
                 <% if activity.trackable.upcoming_social? %>
-                  <%= link_to activity.trackable.title, '#' %>
+                  <%= link_to (truncate "#{activity.trackable.title}", length: 55), '#'%>
                 <% else %>
-                  <%= link_to activity.trackable.title, user_social_path(activity.trackable.user, activity.trackable) %>
+                  <%= link_to (truncate "#{activity.trackable.title}", length: 55), user_social_path(activity.trackable.user, activity.trackable) %>
                 <% end %>
               </div>
               <div class="host">
