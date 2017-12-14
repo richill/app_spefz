@@ -78,7 +78,7 @@
                             <div class="user_name"><%= link_to truncate("#{user.firstname} #{user.lastname}", length: 15), user %></div>
                             <div class="user_profession"><%= truncate(user.profession, length: 25) %></div>
                             <div>
-                              <span class="user_ref"><%= user.reference %></span>
+                              <span class="user_ref"><%= mail_to "", "#{user.reference}", subject: "Spefz | #{user.firstname} #{user.lastname}", class: "user_ref" %></span>
                               <span class="divider">|</span>
                               <span class="user_age">Age:  <%= user.age %></span>
                             </div>
