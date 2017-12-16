@@ -79,6 +79,7 @@ Rails.application.routes.draw do
       get 'followings'
       get 'followers'
       get 'matches'
+      get 'cancellation'
 
       get 'attending-socials'
       get 'attending-events'
