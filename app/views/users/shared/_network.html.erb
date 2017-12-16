@@ -146,7 +146,7 @@
                           <div class="user_name"><%= link_to current_user.name_shortner(user), user %></div>
                           <div class="user_profession"><%= truncate(user.profession, length: 25) %></div>
                         </div>
-                        <div class="action_btns">
+                        <div class="">
                           <%= link_to subscription_path(@premium_plan) do  %>
                             <% if user != current_user %>
                             <%# render partial: "form_request", locals: { user: user } %>
