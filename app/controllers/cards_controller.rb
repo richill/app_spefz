@@ -123,7 +123,9 @@ class CardsController < ApplicationController
   end
 
   def set_card
-    @card = Card.find(params[:id])
+    @card = Card.friendly.find(params[:id])
+    # @event = Event.friendly.find(params[:id])
+    # @card = Card.find(params[:id])
   end
 
   def card_params
