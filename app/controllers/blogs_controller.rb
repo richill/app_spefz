@@ -4,7 +4,7 @@ class BlogsController < ApplicationController
   before_filter :setup_friends, :setup_subscription, :setup_cards, :setup_events, :setup_invite_form, :setup_user_network_activities
 
   def index
-    @search = Blog.published_blogs.past_blogs.order("publishdate DESC").search(params[:q])
+    @search = Blog.published_blogs.past_blogs.order("publishdate DESC").order("created_at DESC").search(params[:q])
     @blogs = @search.result(distinct: true)
   end
 
@@ -75,22 +75,22 @@ class BlogsController < ApplicationController
   end
 
   def venues
-    @search = Blog.published_blogs.past_blogs.order("publishdate DESC").search(params[:q])
+    @search = Blog.published_blogs.past_blogs.order("publishdate DESC").order("created_at DESC").search(params[:q])
     @blogs = @search.result(distinct: true)
   end
 
   def networking_tips
-    @search = Blog.published_blogs.past_blogs.order("publishdate DESC").search(params[:q])
+    @search = Blog.published_blogs.past_blogs.order("publishdate DESC").order("created_at DESC").search(params[:q])
     @blogs = @search.result(distinct: true)
   end
 
   def dating_tips
-    @search = Blog.published_blogs.past_blogs.order("publishdate DESC").search(params[:q])
+    @search = Blog.published_blogs.past_blogs.order("publishdate DESC").order("created_at DESC").search(params[:q])
     @blogs = @search.result(distinct: true)
   end
 
   def spefz_news
-    @search = Blog.published_blogs.past_blogs.order("publishdate DESC").search(params[:q])
+    @search = Blog.published_blogs.past_blogs.order("publishdate DESC").order("created_at DESC").search(params[:q])
     @blogs = @search.result(distinct: true)
   end
 
