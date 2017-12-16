@@ -1,1 +1,171 @@
 <h1>subscription cancellation page</h1>
+<div class= "medium-12 columns user_general_settings_section user_main_cancellation_page">
+
+  <!-- left_column_section -->
+  <div class="medium-2 columns left_column_section">
+    <%= render 'shared/content_user_left_column' %>
+  </div>
+  <!-- left_column_section -->
+
+
+  <!-- right_column_section -->
+  <div class="medium-10 columns right_column_section">
+    <div class="right_inner_section">
+      <!-- content -->
+      <div class="user_general_settings_inner_section user_cancellation_section_main_content">
+        <div class="tree_link">
+          <span><i class="fa fa-user" aria-hidden="true"></i> <%= link_to "#{current_user.firstname}", user_path(current_user)%></span> <span class="fwd_sign">></span> <span>membership</span>
+        </div>
+
+        <div class="tree_link">
+          <span><i class="fa fa-user" aria-hidden="true"></i> <%= link_to "#{current_user.firstname}", user_path(current_user)%></span> <span class="fwd_sign">></span> <%= link_to "membership", user_path(current_user)%></span> <span class="fwd_sign">></span> <span>subscription cancellation</span>
+        </div>
+
+        <div class="user_cancellation_section">
+          <div class="cancellation_status_container">
+            <ul>
+              <li class="subscription_status_li">
+                <span class="subscription_status">
+                  <div class="text_info">you are currently a</div>
+                  <div class="text_status_info">
+                    <% if current_user.subscribed? %>
+                      <span><i class="fa fa-trophy" aria-hidden="true"></i></span>
+                      <span>premium member</span>
+                    <% else %>
+                      <span><i class="fa fa-certificate" aria-hidden="true"></i></span>
+                      <span>basic member</span>
+                    <% end %>
+                  </div>
+                </span>
+              </li>
+              <li class="subscription_date_li">
+                <% if current_user.subscribed? %>
+                  <div class="text_info">subscription date <span class="minor_sub_info">[*Subscription payment made on the <%= @user.recent_subscription_pymt_date.strftime("%dth") %> of each month]</span> </div>
+                  <div class="subscription_date">
+                    <div><%= current_user.recent_subscription_pymt_date.strftime("%a, %d %b %Y") %> | <%= current_user.recent_subscription_pymt_date.strftime("%I:%M %p") %></div>
+                  </div>
+                <% else %>
+                  <div class="text_info">subscription date</div>
+                  <div class="subscription_date">
+                    <div>you currently have no subscription</div>
+                  </div>
+                <% end %>
+              </li>
+            </ul>
+          </div>
+
+          <div class="subscribe_unsubscribe_conatiner">
+            <% if current_user.subscribed? %>
+              <div class="btn_cancel sub_btn cancel_sub"><%= link_to "cancel subscription", payment_path(current_user.payments.last), method: :delete %></div>
+            <% else %>
+              <div class="sub_btn start_sub"><%= link_to "subscribe now!", subscription_path(@premium_plan) %></div>
+            <% end %>
+          </div>
+
+
+          <!-- workings on_updating_card_details -->
+          <div class="subscription_notes card_details hide">
+            <div class="subscribed_memeber">
+              <div class="header">workings | registered card</div>
+              <div class="sub_header_info">To end your premium member subscription plan, please do <%= link_to "contact us", contact_us_path %> or click the button <%= link_to "cancel subscription", contact_us_path %> above</div>
+              <!-- card_details -->
+                <div>
+                  <% if current_user.card_type == "Visa" %>
+                    <label><%= image_tag("img_card_visa.png") %> Current Card Details</label>
+                  <% elsif current_user.card_type == "MasterCard" %>
+                    <label><%= image_tag("img_card_mc_01.png") %> Current Card Details</label>
+                  <% else %>
+                    <label><%= image_tag("img_card_mc.png") %> Current Card Details</label>
+                  <% end %>
+                </div>
+                <div class="set_content" style="margin-bottom: 15px;">
+                  <span class="title"><%= current_user.card_type %> **** **** **** <%= current_user.card_last4 %></span> <br/>
+                  <span class="title">Expires: <%= current_user.card_exp_month %> / <%= current_user.card_exp_year %></span>
+                </div>
+                <div class="payment_form_stripe">
+                  <%= form_tag bankcard_path, method: :put, id: "payment-form", :onclick => "return validateform();" do %>
+                    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+                    <span class="payment-errors"></span>
+                    <div class="form-inputs">
+                      <div class="form-row row_card_number">
+                        <label>
+                          <span class="card_title"><i class="fa fa-lock" aria-hidden="true"></i> *Card Number</span>
+                          <input <% if Rails.env.development? %> class= "card_number" value="4242 4242 4242 4242"<% end %> type="text" size="20" data-stripe="number" placeholder="1234 1234 1234 1234">
+                        </label>
+                      </div>
+                      <div class="form-row row_cvv">
+                        <label>
+                          <span class="card_title"><i class="fa fa-lock" aria-hidden="true"></i> *CVV</span><span data-tooltip aria-haspopup="true" class="tip-right" title="The CVV number is a 3 or 4 digit security code printed on the front or back of your card."><i class="fa fa-info-circle cvv_icon" aria-hidden="true"></i></span>
+                          <input <% if Rails.env.development? %> class= "cvc_number" value="123"<% end %> type="text" size="4" data-stripe="cvc" placeholder="123">
+                        </label>
+                      </div>
+                      <div class="form-row row_exp">
+                        <label>
+                          <div class="card_title"><i class="fa fa-lock" aria-hidden="true"></i> *Expiration (MM/YYYY)</div>
+                          <div class="exp_date_container">
+                            <input <% if Rails.env.development? %>value="12"<% end %> type="text" size="2" data-stripe="exp_month" class="exp_mth" placeholder="MM"> 
+                            <span class="exp_divider"> / </span>
+                            <input <% if Rails.env.development? %>value="2020"<% end %> type="text" size="2" data-stripe="exp_year" class="exp_yr" placeholder="YYYY">
+                          </div>
+                        </label>
+                      </div>
+                    </div>
+
+                    <div class="clear"></div>
+
+                    <div class="form-actions">
+                      <div class="btn_update"><input class="button" name="commit" type="submit" value="Update Card" onclick="myFunction()"></div> 
+                      <div class="btn_cancel"><%# link_to 'Cancel Monthly Payment Plan', payment_path(current_user.payments.last), method: :delete %></div>
+                    </div>
+                  <!-- </form> -->
+                  <% end %>
+                </div>
+              <!-- card_details -->
+            </div>
+          </div>
+          <!-- workings on_updating_card_details -->
+
+          <% if current_user.subscribed? %>
+            <div class="subscription_notes">
+              <div class="subscribed_memeber">
+                <div class="header">subscription cancellation</div>
+                <div class="sub_header_info">To end your premium member subscription plan, please do <%= link_to "contact us", contact_us_path %> or click the button <%= link_to "cancel subscription", contact_us_path %> above</div>
+              </div>
+            </div>
+          <% end %>
+
+          <div class="subscription_notes">
+            <div class="unsubscribed_memeber">
+              <div class="premium_paln">
+                <div class="header"><i class="fa fa-trophy" aria-hidden="true"></i> premium membership benifits</div>
+                <div class="sub_header_info">With our Premium plans you will get the most out of our spefz community. Attend and host socials, send messages, meet new people and much more.</div>
+                <div>
+                  <ul>
+                    <li>PREMIUM offers access to a range of free socials and events</li>
+                    <li>Be part of a fun friendly community - meet like minded people</li>
+                    <li>Access to a range of Exclusive Benefits</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="basic_plan">
+                <div class="header"><i class="fa fa-certificate" aria-hidden="true"></i> basic membership benifits</div>
+                <div class="sub_header_info">With our Basic plans you will get limited usaged our spefz community. Limited access to attending and hosting socials, sending messages.</div>
+                <div>
+                  <ul>
+                    <li>BASIC offers access to view a range of speed social events</li>
+                    <li>Limited access to attending organised socials</li>
+                    <li>Limited access to connecting with the community - and meeting like minded people</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- content -->
+    </div>
+  </div>
+  <!-- right_column_section -->
+</div>
+
+

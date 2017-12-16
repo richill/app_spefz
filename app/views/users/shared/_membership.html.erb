@@ -50,7 +50,7 @@
 
           <div class="subscribe_unsubscribe_conatiner">
             <% if current_user.subscribed? %>
-              <div class="btn_cancel sub_btn cancel_sub"><%= link_to "cancel subscription", payment_path(current_user.payments.last), method: :delete %></div>
+              <div class="btn_cancel sub_btn cancel_sub hide"><%= link_to "cancel subscription", payment_path(current_user.payments.last), method: :delete %></div>
             <% else %>
               <div class="sub_btn start_sub"><%= link_to "subscribe now!", subscription_path(@premium_plan) %></div>
             <% end %>
@@ -123,7 +123,7 @@
             <div class="subscription_notes">
               <div class="subscribed_memeber">
                 <div class="header">subscription cancellation</div>
-                <div class="sub_header_info">To end your premium member subscription plan, please do <%= link_to "contact us", contact_us_path %> or click the button <%= link_to "cancel subscription", contact_us_path %> above</div>
+                <div class="sub_header_info">To end your premium member subscription plan, please do <%= link_to "contact us", contact_us_path %></div>
               </div>
             </div>
           <% end %>

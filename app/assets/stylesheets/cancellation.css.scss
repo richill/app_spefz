@@ -5,7 +5,7 @@
   =========================================*/
 
 // --------left_column_section--------
-.user_membership_section .membership_status_container {
+.user_cancellation_section .cancellation_status_container {
   background-color: #fff;
   color: #283041 !important;
   padding: 15px;
@@ -16,12 +16,12 @@
   box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.14);
 }
 @media only screen and (max-width: 1000px) {
-  .user_membership_section .membership_status_container {
+  .user_cancellation_section .cancellation_status_container {
     height: 195px;
   }
 }
 
-.user_membership_section .membership_status_container .text_info {
+.user_cancellation_section .cancellation_status_container .text_info {
   font-family: 'Lato', sans-serif;
   font-size: 14px !important;
   font-weight: 300 !important;
@@ -29,55 +29,55 @@
   margin-bottom: 15px;
 }
 
-.user_membership_section .membership_status_container .text_status_info {
+.user_cancellation_section .cancellation_status_container .text_status_info {
   font-family: 'Lato', sans-serif;
   font-size: 20px !important;
   font-weight: bold !important;
   text-transform: capitalize;
 }
 
-.user_membership_section .membership_status_container .text_status_info i {
+.user_cancellation_section .cancellation_status_container .text_status_info i {
   margin-right: 5px;
 }
 
-.user_membership_section .membership_status_container ul {
+.user_cancellation_section .cancellation_status_container ul {
   list-style-type: none;
   margin: 0px !important;
 }
 
-.user_membership_section .membership_status_container ul li {
+.user_cancellation_section .cancellation_status_container ul li {
   float: left;
   padding: 15px 25px;
 }
 @media only screen and (min-width: 530px) {
-  .user_membership_section .subscription_status_li {
+  .user_cancellation_section .subscription_status_li {
     width: 450px;
   }
 }
 
 @media only screen and (min-width: 1000px) {
-  .user_membership_section .subscription_status_li {
+  .user_cancellation_section .subscription_status_li {
     border-right: 1px solid #727985;
   }
 }
 
-.user_membership_section .subscription_date_li {
+.user_cancellation_section .subscription_date_li {
   margin-left: 35px;
 }
 @media only screen and (max-width: 1000px) {
-  .user_membership_section .subscription_date_li {
+  .user_cancellation_section .subscription_date_li {
     margin-left: 0px;
   }
 }
 
-.user_membership_section .subscription_date {
+.user_cancellation_section .subscription_date {
   font-family: 'Lato', sans-serif;
   font-size: 20px !important;
   font-weight: bold !important;
   text-transform: capitalize;
 }
 
-.user_membership_section .sub_btn a {
+.user_cancellation_section .sub_btn a {
   font-family: 'Lato', sans-serif;
   font-size: 18px !important;
   font-weight: 300 !important;
@@ -96,14 +96,14 @@
   -o-transition: all 0.3s ease; 
 }
 
-.user_membership_section .sub_btn a:hover {
+.user_cancellation_section .sub_btn a:hover {
   background-color: #eeaa02 !important;
   -webkit-transition: all 0.3s ease; 
   -moz-transition: all 0.3s ease; 
   -o-transition: all 0.3s ease; 
 }
 
-.user_membership_section .subscription_notes {
+.user_cancellation_section .subscription_notes {
   background-color: #fff;
   color: #283041 !important;
   padding: 15px;
@@ -113,59 +113,59 @@
   box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.14);  
 }
 
-.user_membership_section .subscribed_memeber {
+.user_cancellation_section .subscribed_memeber {
   font-family: 'Lato', sans-serif;
 }
 
-.user_membership_section .subscribed_memeber .header {
+.user_cancellation_section .subscribed_memeber .header {
   font-size: 20px !important;
   font-weight: bold !important;
   text-transform: capitalize;
 }
 
-.user_membership_section .subscribed_memeber .sub_header_info {
+.user_cancellation_section .subscribed_memeber .sub_header_info {
   font-size: 15px !important;
   font-weight: 400 !important;
 }
 
-.user_membership_section .subscribed_memeber .sub_header_info a {
+.user_cancellation_section .subscribed_memeber .sub_header_info a {
  color: #E34B51 !important;
 }
 
-.user_membership_section .subscribed_memeber .sub_header_info a:hover {
+.user_cancellation_section .subscribed_memeber .sub_header_info a:hover {
  text-decoration: underline;
 }
 
-.user_membership_section .unsubscribed_memeber {
+.user_cancellation_section .unsubscribed_memeber {
   font-family: 'Lato', sans-serif;
 }
 
-.user_membership_section .unsubscribed_memeber .header {
+.user_cancellation_section .unsubscribed_memeber .header {
   font-size: 20px !important;
   font-weight: bold !important;
   text-transform: capitalize;
 }
 
-.user_membership_section .unsubscribed_memeber .header i {
+.user_cancellation_section .unsubscribed_memeber .header i {
   margin-right: 3px;
 }
 
-.user_membership_section .unsubscribed_memeber .sub_header_info {
+.user_cancellation_section .unsubscribed_memeber .sub_header_info {
   font-size: 15px !important;
   font-weight: 400 !important;
 }
 
-.user_membership_section .unsubscribed_memeber ul {
+.user_cancellation_section .unsubscribed_memeber ul {
   font-family: 'Lato', sans-serif;
   padding: 10px 0px;
   font-weight: 400 !important;
 }
 
-.user_membership_section .unsubscribed_memeber li {
+.user_cancellation_section .unsubscribed_memeber li {
   margin-bottom: 5px;
 }
 
-.user_membership_section .minor_sub_info {
+.user_cancellation_section .minor_sub_info {
   font-size: 11px !important;
   font-weight: bold !important;
   margin-left: 2px !important;
