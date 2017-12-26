@@ -40,6 +40,7 @@ class Event < ActiveRecord::Base
 
   has_one :host, dependent: :destroy
   has_one :card, dependent: :destroy
+  has_one :externalattendinglist, dependent: :destroy
   
   has_many :payments, dependent: :destroy
   has_many :reports, dependent: :destroy
