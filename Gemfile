@@ -9,7 +9,7 @@ gem 'simple_form'
 # gem 'foundation-rails'
 # gem 'sass-rails'
 gem "foundation-rails", '~> 5.5.2.1'
-gem "sass-rails", '~>  5.0.3'
+gem "sass-rails", '~> 5.0.3'
 gem "font-awesome-rails"
 gem 'devise'
 gem 'jbuilder', '~> 2.0'
