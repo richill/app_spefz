@@ -1,39 +1,71 @@
-<%= simple_form_for [@event, @externalattendinglist] do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input_field :title, value: @event.title %>
-    <%= f.input_field :event_id, value: @event.id %>
-    <%= f.input_field :user_id, value: current_user.id %>
-  </div>
-
-  <div><%# f.association :users, collection: User.all.order(:firstname), label_method: :firstname, label: 'select attendees', as: :check_boxes %></div>
-  
-  <div>
-    <%= f.association :users, collection: User.all.order(:firstname), label_method: :user_info, label: 'select attendees', as: :check_boxes %>
-  </div>
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
-<% end %>
-
-
-
-
-
-
 <div class="hide">
-  <%= simple_form_for(@externalattendinglist) do |f| %>
-  <%= f.error_notification %>
+  <%= simple_form_for [@event, @externalattendinglist] do |f| %>
+    <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :event_id %>
-    <%= f.input :user_id %>
-  </div>
+    <div class="form-inputs">
+      <%= f.input_field :title, value: @event.title %>
+      <%= f.input_field :event_id, value: @event.id %>
+      <%= f.input_field :user_id, value: current_user.id %>
+    </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
-<% end %>
+    <div><%# f.association :users, collection: User.all.order(:firstname), label_method: :firstname, label: 'select attendees', as: :check_boxes %></div>
+    
+    <div>
+      <%= f.association :users, collection: User.all.order(:firstname), label_method: :user_info, label: 'select attendees', as: :check_boxes %>
+    </div>
+    <div class="form-actions">
+      <%= f.button :submit %>
+    </div>
+  <% end %>
 </div>
+
+<div class="externalattendinglist_main_form">
+  <%= simple_form_for [@event, @externalattendinglist] do |f| %>
+    <%= f.error_notification %>
+
+    <div class="form-inputs">
+      <div>Select Attendance:</div>
+      <div class="medium-12 columns listed_hosts">
+        <%= f.association :users, collection: User.all.order(:firstname), label_method: :user_info, label: 'select attendees', as: :check_boxes %>
+      </div>
+      <div class="clear"></div>
+
+      <div>Attendants For the Event:</div>
+      <div class="medium-12 columns listed_hosts">
+        <b><%= @event.title %></b>
+        <div class="medium-12 columns event_image_content">
+          <ul class="medium-12 columns">
+            <li class="host_left_content">
+              <% if @event.image.present? %>
+                <div class="image_cover"><%= link_to(cl_image_tag(@event.image, :transformation=>[{:gravity=>"center", :width=>200, :height=>110, :crop=>"fill"}]), event_path(@event)) %></div>
+              <% else %>
+                <div class="image_cover"><%= image_tag("img_feed_07.png") %></div>
+              <% end %>
+            </li>
+            <li class="host_right_content">
+              <div class="info"><i class="fa fa-map-marker" aria-hidden="true"></i> <%= @event.venuename %></div>
+              <div class="info"><i class="fa fa-calendar" aria-hidden="true"></i> <%= @event.date.strftime("%A, %d %b") %></div>
+              <div class="info"><i class="fa fa-clock-o" aria-hidden="true"></i> <%= @event.time.strftime("%H:%M") %>h - <%= @event.time_end.strftime("%H:%M") %>h</div>
+              <div class="info city_country">
+                <span><i class="fa fa-map-pin" aria-hidden="true"></i> <%= @event.city %>, <%= @event.category_country.name %></span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- hidden_field -->
+      <%= f.hidden_field :event, value: @event.id %>
+      <!-- hidden_field -->
+
+    </div>
+
+    <div class="form-actions">
+      <%= f.button :submit %>
+    </div>
+  <% end %>
+</div>
+
+
+
 

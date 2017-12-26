@@ -696,7 +696,6 @@ class User < ActiveRecord::Base
 
   def user_info
     data = "
-    <span>#{image_url}</span>
     <span>#{firstname}</span> 
     <span>#{lastname}</span>
     "
