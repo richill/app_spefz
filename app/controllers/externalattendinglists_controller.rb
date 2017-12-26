@@ -53,8 +53,8 @@ class ExternalattendinglistsController < ApplicationController
     def set_externalattendinglist
       @externalattendinglist = Externalattendinglist.find(params[:id])
     end
-    
+
     def externalattendinglist_params
-      params.require(:externalattendinglist).permit(:event_id, :user_id, user_ids: [])
+      params.require(:externalattendinglist).permit(:event_id, :user_id, :reference, user_ids: [])
     end
 end
