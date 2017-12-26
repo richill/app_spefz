@@ -1,33 +1,64 @@
 /*=========================================
     Section: external attending list
-    File: views / Externalattendinglist / _form.html.erb
+    File: views / externalattendinglist / _form.html.erb
+    File: views / externalattendinglist / _new.html.erb
+    File: views / externalattendinglist / _edit.html.erb
   =========================================*/
 
-.eventattendance_edit_background {
+
+// -------- externalattendinglist new.html.erb & edit.html.erb -----------
+.eventattendance_create_edit_background {
   background-color: #fff !important;
   background: url("img_background_main.png") repeat;
   padding: 15px !important;
   min-height: 822px;
 }
 
-.externalattendinglist_main_form {
-  background-color: #fff !important;
-  font-family: 'Lato', sans-serif;
-  font-weight: 300;
-}
-
-.externalattendinglist_main_form .header {
+.eventattendance_create_edit_background .header {
   padding: 5px 15px !important;
   font-size: 35px;
+  font-family: Lato, sans-serif;
+  font-weight: 300;
   border-bottom: 2px solid #58CDA6;
   text-transform: capitalize;
   color: #fff !important;
   background-color: #283041;
 }
 
-.externalattendinglist_main_form .content_list {
+.eventattendance_create_edit_background .event_title {
+  font-weight: bold;
+  font-size: 15px;
+  font-family: Lato, sans-serif;
+  margin-bottom: 10px;
+}
+
+.eventattendance_create_edit_background .event_title a {
+  color: #283041 !important;
+  font-family: Lato, sans-serif;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease;
+}
+
+.eventattendance_create_edit_background .event_title a:hover {
+  color: #E34B51 !important;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease;
+}
+
+.eventattendance_create_edit_background .content_list {
   padding: 8px 20px !important;
   min-height: 100px;
+  background-color: #fff;
+}
+
+
+// -------- externalattendinglist form.html.erb -----------
+.externalattendinglist_main_form {
+  background-color: #fff !important;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
 }
 
 .externalattendinglist_main_form .cancel_button {
@@ -120,28 +151,6 @@
 
 .externalattendinglist_main_form .btn a:hover {
   background-color: #E34B51 !important;
-  -webkit-transition: all 0.3s ease; 
-  -moz-transition: all 0.3s ease; 
-  -o-transition: all 0.3s ease;
-}
-
-.externalattendinglist_main_form .event_title {
-  font-weight: bold;
-  font-size: 15px;
-  margin-bottom: 10px;
-}
-
-
-.externalattendinglist_main_form .event_title a {
-  color: #283041 !important;
-  -webkit-transition: all 0.3s ease; 
-  -moz-transition: all 0.3s ease; 
-  -o-transition: all 0.3s ease;
-}
-
-
-.externalattendinglist_main_form .event_title a:hover {
-  color: #E34B51 !important;
   -webkit-transition: all 0.3s ease; 
   -moz-transition: all 0.3s ease; 
   -o-transition: all 0.3s ease;

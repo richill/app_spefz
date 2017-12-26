@@ -24,12 +24,6 @@
     <%= f.error_notification %>
 
     <div class="form-inputs">
-      <div>Select Attendance:</div>
-      <div class="medium-12 columns listed_hosts">
-        <%= f.association :users, collection: User.all.order(:firstname), label_method: :user_info, label: 'select attendees', as: :check_boxes %>
-      </div>
-      <div class="clear"></div>
-
       <div>Attendants For the Event:</div>
       <div class="medium-12 columns listed_hosts">
         <b><%= @event.title %></b>
@@ -52,6 +46,12 @@
             </li>
           </ul>
         </div>
+      </div>
+      <div class="clear"></div>
+
+      <div>Select Attendance:</div>
+      <div class="medium-12 columns listed_hosts">
+        <%= f.association :users, collection: User.all.order(:firstname), label_method: :user_info, label: false, as: :check_boxes %>
       </div>
 
       <!-- hidden_field -->
