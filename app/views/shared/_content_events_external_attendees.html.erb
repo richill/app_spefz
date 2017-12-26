@@ -1,0 +1,10 @@
+<div class="event_external_attendee_list">
+  <span>
+    <span>external attendants: </span>
+    <% if @event.externalattendinglist.present? && @event.externalattendinglist.users.present? %>
+      <span class="create_edit_btn"><%= link_to 'edit external attendance list', edit_event_externalattendinglist_path(@event, @event.externalattendinglist) %></span>
+    <% else %>
+      <span class="create_edit_btn"><%= link_to 'create external attendance list', new_event_externalattendinglist_path(@event), target:"_blank" %></span>
+    <% end %>
+  </span>
+</div>
