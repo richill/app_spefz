@@ -25,11 +25,11 @@ class ExternalattendinglistsController < ApplicationController
     @event.externalattendinglist = Externalattendinglist.new(externalattendinglist_params)
     @externalattendinglist = @event.externalattendinglist
     respond_to do |format|
-      if @externalattendinglist.save
-        format.html { redirect_to(event_path(@event), notice: 'Externalattendinglist was successfully created.') }
+      if @externalattendinglist.save   
+        format.html { redirect_to(attendants_event_path(@event), notice: 'External Attendinglist was successfully created.') }
         format.json { render :show, status: :created, location: @externalattendinglist }
       else
-        format.html { redirect_to :back, alert: 'Externalattendinglist for the event was not created.' }
+        format.html { redirect_to :back, alert: 'External Attendinglist for the event was not created.' }
         format.json { render json: @externalattendinglist.errors, status: :unprocessable_entity }
       end
     end
