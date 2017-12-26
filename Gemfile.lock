@@ -312,7 +312,6 @@ DEPENDENCIES
   ransack
   ratyrate
   rmagick
-  sass-rails
   sdoc (~> 0.4.0)
   simple_form
   social-share-button
