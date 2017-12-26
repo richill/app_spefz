@@ -40,7 +40,7 @@ class ExternalattendinglistsController < ApplicationController
     @externalattendinglist = @event.externalattendinglist
     respond_to do |format|
       if @externalattendinglist.update(externalattendinglist_params)
-        format.html { redirect_to(event_path(@event), notice: 'Externalattendinglist was successfully updated.') }
+        format.html { redirect_to(attendants_event_path(@event), notice: 'Externalattendinglist was successfully updated.') }
         format.html { redirect_to([@externalattendinglist.event, @externalattendinglist], notice: 'Externalattendinglist was successfully updated.') }
         format.json { render :show, status: :ok, location: @externalattendinglist }
       else

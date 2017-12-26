@@ -3,7 +3,7 @@
   <div class="eventattendance_inner_container">
     <div class="header">Create Event Attendance List</div>
     <div class="content_list">
-      <div class="event_title">Event: <%= link_to @event.title, event_path(@event) %></div>
+      <div class="event_title">Event: <%= link_to @event.title, event_path(@event) %> <span class="evt_link"><%= link_to "Attendants", attendants_event_path(@event) %></span> <span class="evt_link"><%= link_to "Dashboard", attendants_event_path(@event) %></span></div>
       <%= render 'form' %>
     </div> 
   </div>

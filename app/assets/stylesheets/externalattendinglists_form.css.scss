@@ -33,15 +33,16 @@
 }
 
 .eventattendance_create_edit_background .event_title a {
-  color: #283041 !important;
+  color: #283041;
   font-family: Lato, sans-serif;
+  margin-right: 5px;
   -webkit-transition: all 0.3s ease; 
   -moz-transition: all 0.3s ease; 
   -o-transition: all 0.3s ease;
 }
 
 .eventattendance_create_edit_background .event_title a:hover {
-  color: #E34B51 !important;
+  color: #E34B51;
   -webkit-transition: all 0.3s ease; 
   -moz-transition: all 0.3s ease; 
   -o-transition: all 0.3s ease;
@@ -53,6 +54,32 @@
   background-color: #fff;
 }
 
+.eventattendance_create_edit_background .evt_divider {
+  margin: 0px 10px;
+}
+
+.eventattendance_create_edit_background .evt_link a {
+  font-size: 12px !important;
+  background-color: #E34B51;
+  font-weight: 300;
+  color: #fff !important;
+  display: inline-block;
+  padding: 5px 15px;
+  letter-spacing: 1px;
+  border-radius: 3px;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease;
+}
+
+.eventattendance_create_edit_background .evt_link a:hover {
+  font-size: 12px !important;
+  background-color: #58CDA6 !important;
+  color: #fff !important;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease;
+}
 
 // -------- externalattendinglist form.html.erb -----------
 .externalattendinglist_main_form {
