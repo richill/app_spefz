@@ -33,6 +33,7 @@ gem 'ratyrate'
 gem 'unread'
 gem 'thin'
 gem 'ckeditor'
+gem 'sass-rails', '~> 5.0.0'
 
 group :development, :test do
   gem 'sqlite3'
