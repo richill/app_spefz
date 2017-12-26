@@ -7,7 +7,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'simple_form'
 gem 'foundation-rails'
-# gem 'sass-rails', '~> 5.0.0'
+gem 'sass-rails'
 gem "font-awesome-rails"
 gem 'devise'
 gem 'jbuilder', '~> 2.0'
