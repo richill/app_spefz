@@ -694,6 +694,15 @@ class User < ActiveRecord::Base
     end
   end
 
+  def user_info
+    data = "
+    <span>#{image_url}</span>
+    <span>#{firstname}</span> 
+    <span>#{lastname}</span>
+    "
+    data.html_safe
+  end
+
   protected
   # deactivates confirmable
   def confirmation_required?

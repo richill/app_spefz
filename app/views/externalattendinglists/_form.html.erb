@@ -1,4 +1,29 @@
-<%= simple_form_for(@externalattendinglist) do |f| %>
+<%= simple_form_for [@event, @externalattendinglist] do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input_field :title, value: @event.title %>
+    <%= f.input_field :event_id, value: @event.id %>
+    <%= f.input_field :user_id, value: current_user.id %>
+  </div>
+
+  <div><%# f.association :users, collection: User.all.order(:firstname), label_method: :firstname, label: 'select attendees', as: :check_boxes %></div>
+  
+  <div>
+    <%= f.association :users, collection: User.all.order(:firstname), label_method: :user_info, label: 'select attendees', as: :check_boxes %>
+  </div>
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
+
+
+
+
+
+
+<div class="hide">
+  <%= simple_form_for(@externalattendinglist) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
@@ -10,3 +35,5 @@
     <%= f.button :submit %>
   </div>
 <% end %>
+</div>
+
