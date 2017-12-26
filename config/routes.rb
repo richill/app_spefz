@@ -103,6 +103,7 @@ Rails.application.routes.draw do
   resources :events do
     resources :cards
     resources :hosts
+    resources :externalattendinglists
     member do
       get 'attendants'
       get 'preview'

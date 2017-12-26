@@ -1,28 +1,20 @@
 class ExternalattendinglistsController < ApplicationController
   before_action :set_externalattendinglist, only: [:show, :edit, :update, :destroy]
 
-  # GET /externalattendinglists
-  # GET /externalattendinglists.json
   def index
     @externalattendinglists = Externalattendinglist.all
   end
 
-  # GET /externalattendinglists/1
-  # GET /externalattendinglists/1.json
   def show
   end
 
-  # GET /externalattendinglists/new
   def new
     @externalattendinglist = Externalattendinglist.new
   end
 
-  # GET /externalattendinglists/1/edit
   def edit
   end
 
-  # POST /externalattendinglists
-  # POST /externalattendinglists.json
   def create
     @externalattendinglist = Externalattendinglist.new(externalattendinglist_params)
 
@@ -37,8 +29,6 @@ class ExternalattendinglistsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /externalattendinglists/1
-  # PATCH/PUT /externalattendinglists/1.json
   def update
     respond_to do |format|
       if @externalattendinglist.update(externalattendinglist_params)
@@ -51,8 +41,6 @@ class ExternalattendinglistsController < ApplicationController
     end
   end
 
-  # DELETE /externalattendinglists/1
-  # DELETE /externalattendinglists/1.json
   def destroy
     @externalattendinglist.destroy
     respond_to do |format|
@@ -62,13 +50,11 @@ class ExternalattendinglistsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_externalattendinglist
       @externalattendinglist = Externalattendinglist.find(params[:id])
     end
-
-    # Never trust parameters from the scary internet, only allow the white list through.
+    
     def externalattendinglist_params
-      params.require(:externalattendinglist).permit(:event_id, :user_id)
+      params.require(:externalattendinglist).permit(:event_id, :user_id, user_ids: [])
     end
 end
