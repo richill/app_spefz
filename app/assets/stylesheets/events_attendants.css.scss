@@ -330,12 +330,18 @@
 
 .attendants_section .content_details ul {
   margin: 0px !important;
+  float: left;
 }
 
 .attendants_section .member_container {
   padding: 5px;
   margin-bottom: 25px;
   margin-left: 0px !important;
+  width: 292px;
+}
+
+.attendants_section .member_container:last-child {
+  float: left !important;
 }
 
 .attendants_section .member_inner_container {
