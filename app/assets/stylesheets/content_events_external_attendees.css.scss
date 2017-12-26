@@ -12,7 +12,7 @@
   text-transform: capitalize;
 }
 
-.create_edit_btn a {
+.event_external_attendee_list .create_edit_btn a {
   background-color: #E34B51;
   color: #fff !important;
   display: inline-block;
@@ -23,7 +23,7 @@
   -o-transition: all 0.3s ease;
 }
 
-.create_edit_btn a:hover {
+.event_external_attendee_list .create_edit_btn a:hover {
   background-color: #58CDA6 !important;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
