@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  resources :externalattendinglists
+
   resources :preferences
 
   resources :managements do

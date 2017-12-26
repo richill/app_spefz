@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Externalattendinglists</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Event</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @externalattendinglists.each do |externalattendinglist| %>
+      <tr>
+        <td><%= externalattendinglist.event_id %></td>
+        <td><%= externalattendinglist.user_id %></td>
+        <td><%= link_to 'Show', externalattendinglist %></td>
+        <td><%= link_to 'Edit', edit_externalattendinglist_path(externalattendinglist) %></td>
+        <td><%= link_to 'Destroy', externalattendinglist, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Externalattendinglist', new_externalattendinglist_path %>

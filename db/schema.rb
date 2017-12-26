@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171216162622) do
+ActiveRecord::Schema.define(version: 20171226133521) do
 
   create_table "activities", force: :cascade do |t|
     t.integer  "trackable_id"
@@ -415,6 +415,13 @@ ActiveRecord::Schema.define(version: 20171216162622) do
   end
 
   add_index "events", ["slug"], name: "index_events_on_slug", unique: true
+
+  create_table "externalattendinglists", force: :cascade do |t|
+    t.integer  "event_id"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "favourites", force: :cascade do |t|
     t.integer  "favourited_id"
