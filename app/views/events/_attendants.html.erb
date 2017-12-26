@@ -385,8 +385,13 @@
             <!-- external members -->
             --------------------- hello ---------------------
             <ul>
-              <% @event.externalattendinglist.users do |attendant| %>
-                <li><%= attendant.firstname %></li>
+              <%= @event.externalattendinglist.users %>
+              <%= @event.id %>
+
+           
+
+              <% @event.externalattendinglist.users.each do |attendant| %>
+                <li><%= link_to "#{attendant.firstname}", attendant, target: "_blank" %></li>
               <% end %>
             </ul>
             <!-- external members -->
