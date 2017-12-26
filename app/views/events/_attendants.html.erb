@@ -381,6 +381,15 @@
             <%# end %>
             <div class="clear"></div>
             <!-- members -->
+
+            <!-- external members -->
+            --------------------- hello ---------------------
+            <ul>
+              <% @event.externalattendinglist.users do |attendant| %>
+                <li><%= attendant.firstname %></li>
+              <% end %>
+            </ul>
+            <!-- external members -->
         </div>
       </div>
     </div>
