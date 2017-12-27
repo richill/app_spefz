@@ -696,8 +696,9 @@ class User < ActiveRecord::Base
 
   def user_info
     data = "
-    <span>#{firstname}</span> 
-    <span>#{lastname}</span>
+      <span>#{firstname}</span> 
+      <span>#{lastname}</span>
+      [<span>Age: #{age}</span>]
     "
     data.html_safe
   end

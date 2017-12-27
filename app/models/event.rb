@@ -429,14 +429,54 @@ class Event < ActiveRecord::Base
 
   #attendance [female + women] for selection: both_men_and_women [selection_BothAndOnly_men_and_women]
   def total_attendance_BothAndOnly_men_and_women
+    if self.category_quantitygender.name == "only men"
+      if self.externalattendinglist.present?
+        attendance_list_males = self.externalattendinglist.users.males.count
+        attendance_males = self.payments.by_males.count
+        attendance = attendance_males + attendance_list_males
+      else
+        attendance = self.payments.by_males.count
+      end
+    elsif self.category_quantitygender.name == "only women"
+      if self.externalattendinglist.present?
+        attendance_list_females = self.externalattendinglist.users.females.count
+        attendance_females = self.payments.by_females.count 
+        attendance = attendance_females + attendance_list_females
+      else
+        attendance = self.payments.by_females.count
+      end
+    elsif self.category_quantitygender.name == "both men & women" || self.selection_BothX_men_and_women 
+      if self.externalattendinglist.present?
+        attendance_list_males = self.externalattendinglist.users.males.count
+        attendance_list_females = self.externalattendinglist.users.females.count
+        attendance_males = self.payments.by_males.count + attendance_list_males
+        attendance_females = self.payments.by_females.count + attendance_list_females
+        attendance = attendance_males + attendance_females
+      else
+        attendance = self.payments.by_males.count + self.payments.by_females.count
+      end
+    end
+  end
+
+  def total_attendance_display
+    if self.category_quantitygender.name == "only men"
+     self.payments.by_males
+    elsif self.category_quantitygender.name == "only women"
+      self.payments.by_females
+    elsif self.category_quantitygender.name == "both men & women" || self.selection_BothX_men_and_women 
+      self.payments
+    end
+  end
+
+  def total_listed_attendance_display
     if self.externalattendinglist.present?
-      attendance_list_males = self.externalattendinglist.users.males.count
-      attendance_list_females = self.externalattendinglist.users.females.count
-      attendance_males = self.payments.by_males.count + attendance_list_males
-      attendance_females = self.payments.by_females.count + attendance_list_females
-      attendance = attendance_males + attendance_females
-    else
-      attendance = self.payments.by_males.count + self.payments.by_females.count
+      if self.category_quantitygender.name == "only men"
+        self.externalattendinglist.users.males
+      elsif self.category_quantitygender.name == "only women"
+        self.externalattendinglist.users.females
+      elsif self.category_quantitygender.name == "both men & women" || self.selection_BothX_men_and_women 
+        self.externalattendinglist.users
+      end
     end
   end
 
