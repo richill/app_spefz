@@ -26,10 +26,10 @@ class ExternalattendinglistsController < ApplicationController
     @externalattendinglist = @event.externalattendinglist
     respond_to do |format|
       if @externalattendinglist.save   
-        format.html { redirect_to(attendants_event_path(@event), notice: 'External Attendinglist was successfully created.') }
+        format.html { redirect_to(attendants_event_path(@event), notice: 'External Attending List Successfully Created.') }
         format.json { render :show, status: :created, location: @externalattendinglist }
       else
-        format.html { redirect_to :back, alert: 'External Attendinglist for the event was not created.' }
+        format.html { redirect_to :back, alert: 'External Attending List Was Not created.' }
         format.json { render json: @externalattendinglist.errors, status: :unprocessable_entity }
       end
     end
@@ -40,8 +40,7 @@ class ExternalattendinglistsController < ApplicationController
     @externalattendinglist = @event.externalattendinglist
     respond_to do |format|
       if @externalattendinglist.update(externalattendinglist_params)
-        format.html { redirect_to(attendants_event_path(@event), notice: 'Externalattendinglist was successfully updated.') }
-        format.html { redirect_to([@externalattendinglist.event, @externalattendinglist], notice: 'Externalattendinglist was successfully updated.') }
+        format.html { redirect_to(attendants_event_path(@event), notice: 'External Attending List Successfully Updated.') }
         format.json { render :show, status: :ok, location: @externalattendinglist }
       else
         format.html { render :edit }
@@ -55,7 +54,7 @@ class ExternalattendinglistsController < ApplicationController
     @externalattendinglist = @event.externalattendinglists.find(params[:id])
     @externalattendinglist.destroy
     respond_to do |format|
-      format.html { redirect_to externalattendinglists_url, notice: 'Externalattendinglist was successfully destroyed.' }
+      format.html { redirect_to externalattendinglists_url, notice: 'External Attending List Successfully Destroyed.' }
       format.json { head :no_content }
     end
   end
