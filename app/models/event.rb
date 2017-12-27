@@ -315,7 +315,6 @@ class Event < ActiveRecord::Base
     end
   end
 
-
   #remaining_space [female] for selection: both_Xmen_and_Xwomen [selection_BothX_men_and_women]
   def available_places_Xwomen
     if self.externalattendinglist.present?
@@ -366,6 +365,36 @@ class Event < ActiveRecord::Base
     end
   end
 
+  def total_available_places_Only_men
+    if self.externalattendinglist.present?
+      # memebers that registered on external platforms like eventbrite who have been placed on the spefz attendingList
+      attendance_list_males = self.externalattendinglist.users.males.count
+      attendance_males = self.payments.by_males.count
+      attendance = attendance_males + attendance_list_males
+      capacity   = self.quantity 
+      capacity - attendance 
+    else
+      attendance = self.payments.by_males.count 
+      capacity   = self.quantity 
+      capacity - attendance 
+    end
+  end
+
+  def total_available_places_Only_women
+    if self.externalattendinglist.present?
+      # memebers that registered on external platforms like eventbrite who have been placed on the spefz attendingList
+      attendance_list_females = self.externalattendinglist.users.females.count
+      attendance_females = self.payments.by_females.count
+      attendance = attendance_females + attendance_list_females
+      capacity   = self.quantity 
+      capacity - attendance 
+    else
+      attendance = self.payments.by_females.count
+      capacity   = self.quantity 
+      capacity - attendance 
+    end
+  end
+ 
   #remaining_space [female] for selection: only_women [selection_BothAndOnly_men_and_women]
   def available_places_women
     if self.externalattendinglist.present?
@@ -412,8 +441,10 @@ class Event < ActiveRecord::Base
   end
 
   def sold_out?
-    self.selection_BothX_men_and_women && self.total_available_places_BothX_men_and_women <= 0 ||
-    self.selection_BothAndOnly_men_and_women && self.total_available_places_BothAndOnly_men_and_women <= 0
+    self.category_quantitygender.name == "only men" && (self.total_available_places_Only_men <= 0) ||
+    self.category_quantitygender.name == "only women" && (self.total_available_places_Only_women <= 0) ||
+    self.category_quantitygender.name == "both men & women" && (self.total_available_places_BothAndOnly_men_and_women <= 0) ||
+    self.selection_BothX_men_and_women && self.total_available_places_BothX_men_and_women <= 0 
   end
 
   def sold_out_Xmen?
