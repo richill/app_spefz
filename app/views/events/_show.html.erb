@@ -226,7 +226,7 @@
         <% if current_user.admin_pa_management_group || current_user.pa_event_mgt_group  %>
           <li class="field attendants">
             <%= link_to attendants_event_path(@event) do %>
-              <i class="fa fa-users" aria-hidden="true"> <span class="attendance_count">[<%= @event.payments.count %>]</span></i>
+              <i class="fa fa-users" aria-hidden="true"> <span class="attendance_count">[<%= @event.total_attendance_BothAndOnly_men_and_women %>]</span></i>
             <% end %>
           </li>
         <% end %>
