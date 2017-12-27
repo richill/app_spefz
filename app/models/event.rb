@@ -228,6 +228,12 @@ class Event < ActiveRecord::Base
     self.payments.exists?(user: user)
   end
 
+  def user_on_event_attendingList?(user)
+    if self.externalattendinglist.present?
+      self.externalattendinglist.users.include?(user)
+    end
+  end
+
   def expired_event
     self.date < Date.current
   end
