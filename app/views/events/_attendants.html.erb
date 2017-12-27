@@ -429,7 +429,7 @@
                         <div class="user_name"><%= link_to "#{attendant.user.firstname} #{attendant.user.lastname}", user_path(attendant.user) %></div>
                         <div class="user_profession"><%= truncate(attendant.user.profession, length: 25) %></div>
                         <div>
-                          <span class="user_ref"><%= attendant.user.reference %></span>
+                          <span class="user_ref"><%= mail_to "#{attendant.user.email}", "#{attendant.user.reference}", subject: "Spefz | #{attendant.user.firstname} #{attendant.user.lastname}", class: "user_ref" %></span>
                           <span class="divider">|</span>
                           <% if attendant.user.category_gender.name == "Male" %>
                             <span class="user_gender"><i class="fa fa-male" aria-hidden="true"></i> <%= "M" %></span>
@@ -503,7 +503,7 @@
                       <div class="user_name"><%= link_to "#{attendant.firstname} #{attendant.lastname}", user_path(attendant) %></div>
                       <div class="user_profession"><%= truncate(attendant.profession, length: 25) %></div>
                       <div>
-                        <span class="user_ref"><%= attendant.reference %></span>
+                        <span class="user_ref"><%= mail_to "#{attendant.email}", "#{attendant.reference}", subject: "Spefz | #{attendant.firstname} #{attendant.lastname}", class: "user_ref" %></span>
                         <span class="divider">|</span>
                         <% if attendant.category_gender.name == "Male" %>
                           <span class="user_gender"><i class="fa fa-male" aria-hidden="true"></i> <%= "M" %></span>
