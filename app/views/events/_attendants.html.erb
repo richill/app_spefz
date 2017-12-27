@@ -60,7 +60,11 @@
                   <span><%= link_to "Emma Watson", "#" %></span>
                 </div>
                 <div class="event_gender_type">Event Type: <%= link_to @event.category_quantitygender.name, "#" %></div>
-                <div><%= render 'shared/content_events_external_attendees' %></div>
+                <div>
+                  <% if @event.event_with_zero_access %>
+                    <%= render 'shared/content_events_external_attendees' %>
+                  <% end %>
+                </div>
               </div>
             </div>
           </li>

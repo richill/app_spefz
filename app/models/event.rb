@@ -353,6 +353,10 @@ class Event < ActiveRecord::Base
     self.price == 0 || self.price == 0.00
   end
 
+  def event_with_zero_access
+    event_score_access == 0 || event_score_access == nil
+  end
+
   def image_or_eventimagelink
     if image.blank? && event_image_link.blank?
       errors.add(:image, "must upload an image")
