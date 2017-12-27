@@ -388,77 +388,79 @@
 
 
             <!-- external members -->
-            <ul class="inline-list">
-              <% @event.externalattendinglist.users.each do |attendant| %>
-                <li class="medium-3 columns member_container user_subscribed">
-                  <!-- dummy banner -->
-                  <div class="banner_wrapper_container_index">
-                    <div class="banner_wrapper_index">
-                      <% if current_user.admin_pa_management_group %>
-                        <% if attendant.category_managementgroup.name == "Dummy Group" %>
-                          <div class="banner_ribbon_wrapper_green_index">
-                            <div class="banner_ribbon_name_index">DUMMY</div>
-                          </div>
+            <% if @event.externalattendinglist.present? %>
+              <ul class="inline-list">
+                <% @event.externalattendinglist.users.each do |attendant| %>
+                  <li class="medium-3 columns member_container user_subscribed">
+                    <!-- dummy banner -->
+                    <div class="banner_wrapper_container_index">
+                      <div class="banner_wrapper_index">
+                        <% if current_user.admin_pa_management_group %>
+                          <% if attendant.category_managementgroup.name == "Dummy Group" %>
+                            <div class="banner_ribbon_wrapper_green_index">
+                              <div class="banner_ribbon_name_index">DUMMY</div>
+                            </div>
+                          <% end %>
                         <% end %>
-                      <% end %>
-                    </div>​
-                  </div>
-                  <!-- dummy banner -->
-                  <div class="medium-12 columns member_inner_container">
-                    <div class="image_section">
-                      <% if attendant.image_url.present? %>
-                      <div class="image_cover"><%= link_to(cl_image_tag(attendant.image, :transformation=>[{:gravity=>"face", :width=>200, :height=>200, :crop=>"fill", :radius=>"max"}]), user_path(attendant)) %></div>
-                      <% else %>
-                        <div class="image_cover"><%= link_to(image_tag("img-profile-image-default.png", :alt =>  "image", :class =>"#"), user_path(attendant)) %></div>
-                      <% end %>
+                      </div>​
                     </div>
-                    <div class="user_info_adj">
-                      <div class="user_name"><%= link_to "#{attendant.firstname} #{attendant.lastname}", user_path(attendant) %></div>
-                      <div class="user_profession"><%= truncate(attendant.profession, length: 25) %></div>
-                      <div>
-                        <span class="user_ref"><%= attendant.reference %></span>
-                        <span class="divider">|</span>
-                        <% if attendant.category_gender.name == "Male" %>
-                          <span class="user_gender"><i class="fa fa-male" aria-hidden="true"></i> <%= "M" %></span>
-                        <% elsif attendant.category_gender.name == "Female" %>
-                          <span class="user_gender"><i class="fa fa-female" aria-hidden="true"></i> <%= "W" %></span>
+                    <!-- dummy banner -->
+                    <div class="medium-12 columns member_inner_container">
+                      <div class="image_section">
+                        <% if attendant.image_url.present? %>
+                        <div class="image_cover"><%= link_to(cl_image_tag(attendant.image, :transformation=>[{:gravity=>"face", :width=>200, :height=>200, :crop=>"fill", :radius=>"max"}]), user_path(attendant)) %></div>
+                        <% else %>
+                          <div class="image_cover"><%= link_to(image_tag("img-profile-image-default.png", :alt =>  "image", :class =>"#"), user_path(attendant)) %></div>
                         <% end %>
-                        <span class="divider">|</span>
-                        <span class="user_age">Age:  <%= attendant.age %></span>
+                      </div>
+                      <div class="user_info_adj">
+                        <div class="user_name"><%= link_to "#{attendant.firstname} #{attendant.lastname}", user_path(attendant) %></div>
+                        <div class="user_profession"><%= truncate(attendant.profession, length: 25) %></div>
+                        <div>
+                          <span class="user_ref"><%= attendant.reference %></span>
+                          <span class="divider">|</span>
+                          <% if attendant.category_gender.name == "Male" %>
+                            <span class="user_gender"><i class="fa fa-male" aria-hidden="true"></i> <%= "M" %></span>
+                          <% elsif attendant.category_gender.name == "Female" %>
+                            <span class="user_gender"><i class="fa fa-female" aria-hidden="true"></i> <%= "W" %></span>
+                          <% end %>
+                          <span class="divider">|</span>
+                          <span class="user_age">Age:  <%= attendant.age %></span>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  <div class="clear"></div>
-                  <% if current_user.admin_pa_management_group %>
-                  <div class="user_roles">
-                    <span><i class="fa fa-user" aria-hidden="true"></i></span>
-                    <span><%= truncate(attendant.category_role.name, length: 25) %></span>
-                    <span class="divider"> | </span>
-                    <span><%= truncate(attendant.category_managementgroup.name, length: 25) %></span>
-                  </div>
-                  <% end %>
-
-                  <% if current_user.admin_pa_management_group || current_user.hosts %>
-                  <div class="user_roles">
-                    <span><i class="fa fa-star" aria-hidden="true"></i></span>
-                    <span class="rate_title">rate looks:</span>
-                    <span class="rate_stars"><%= rating_for attendant, 'looks', cancel_place: "right", disable_after_rate: true %></span>
                     <div class="clear"></div>
-                  </div>
-                  <% end %>
+                    <% if current_user.admin_pa_management_group %>
+                    <div class="user_roles">
+                      <span><i class="fa fa-user" aria-hidden="true"></i></span>
+                      <span><%= truncate(attendant.category_role.name, length: 25) %></span>
+                      <span class="divider"> | </span>
+                      <span><%= truncate(attendant.category_managementgroup.name, length: 25) %></span>
+                    </div>
+                    <% end %>
 
-                  <% if current_user.admin_pa_management_group || current_user.hosts %>
-                  <div class="user_roles">
-                    <span><i class="fa fa-star" aria-hidden="true"></i></span>
-                    <span class="rate_title">rate personality:</span>
-                    <span class="rate_stars"><%= rating_for attendant, 'personality', cancel_place: "right", disable_after_rate: true %></span>
-                    <div class="clear"></div>
-                  </div>
-                  <% end %>
-                </li>
-                <!-- <li><%# link_to "#{attendant.firstname}", attendant, target: "_blank" %></li> -->
-              <% end %>
-            </ul>
+                    <% if current_user.admin_pa_management_group || current_user.hosts %>
+                    <div class="user_roles">
+                      <span><i class="fa fa-star" aria-hidden="true"></i></span>
+                      <span class="rate_title">rate looks:</span>
+                      <span class="rate_stars"><%= rating_for attendant, 'looks', cancel_place: "right", disable_after_rate: true %></span>
+                      <div class="clear"></div>
+                    </div>
+                    <% end %>
+
+                    <% if current_user.admin_pa_management_group || current_user.hosts %>
+                    <div class="user_roles">
+                      <span><i class="fa fa-star" aria-hidden="true"></i></span>
+                      <span class="rate_title">rate personality:</span>
+                      <span class="rate_stars"><%= rating_for attendant, 'personality', cancel_place: "right", disable_after_rate: true %></span>
+                      <div class="clear"></div>
+                    </div>
+                    <% end %>
+                  </li>
+                  <!-- <li><%# link_to "#{attendant.firstname}", attendant, target: "_blank" %></li> -->
+                <% end %>
+              </ul>
+            <% end %>
             <!-- external members -->
         </div>
       </div>

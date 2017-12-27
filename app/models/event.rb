@@ -265,15 +265,35 @@ class Event < ActiveRecord::Base
 
   #attendance [female + male] for selection: both_Xmen_and_Xwomen [selection_BothX_men_and_women]
   def total_attendance_BothX_men_and_women
-    attendance = self.payments.by_females.count + self.payments.by_males.count
+    if self.externalattendinglist.present?
+      attendance_list_males = self.externalattendinglist.users.males.count
+      attendance_list_females = self.externalattendinglist.users.females.count
+      attendance_males = self.payments.by_males.count + attendance_list_males
+      attendance_females = self.payments.by_females.count + attendance_list_females
+      attendance = attendance_males + attendance_females
+    else
+      attendance = self.payments.by_females.count + self.payments.by_males.count
+    end
   end
 
   def attendance_Xmen
-    attendance = self.payments.by_males.count
+    if self.externalattendinglist.present?
+      attendance_list_males = self.externalattendinglist.users.males.count
+      attendance_males = self.payments.by_males.count
+      attendance = attendance_males + attendance_list_males
+    else
+      attendance = self.payments.by_males.count
+    end
   end
 
   def attendance_Xwomen
-    attendance = self.payments.by_females.count
+    if self.externalattendinglist.present?
+      attendance_list_females = self.externalattendinglist.users.females.count
+      attendance_females = self.payments.by_females.count
+      attendance = attendance_females + attendance_list_females
+    else
+      attendance = self.payments.by_females.count
+    end
   end
 
 
@@ -283,12 +303,16 @@ class Event < ActiveRecord::Base
       # memebers that registered on external platforms like eventbrite who have been placed on the spefz attendingList
       attendance_list_males = self.externalattendinglist.users.males.count
       attendance_list_females = self.externalattendinglist.users.females.count
+      attendance_males = self.payments.by_males.count + attendance_list_males
+      attendance_females = self.payments.by_females.count + attendance_list_females
+      attendance = attendance_males + attendance_females
+      capacity   = self.quantity_women + self.quantity_men
+      capacity - attendance
+    else
+      attendance = self.payments.by_females.count + self.payments.by_males.count
+      capacity   = self.quantity_women +  self.quantity_men
+      capacity - attendance
     end
-    attendance_males = self.payments.by_males.count + attendance_list_males
-    attendance_females = self.payments.by_females.count + attendance_list_females
-    overall_attendance = attendance_males + attendance_females
-    capacity   = self.quantity_women +  self.quantity_men
-    capacity - overall_attendance
   end
 
 
@@ -296,32 +320,33 @@ class Event < ActiveRecord::Base
   def available_places_Xwomen
     if self.externalattendinglist.present?
       # memebers that registered on external platforms like eventbrite who have been placed on the spefz attendingList
-      attendance_attendinglist = self.externalattendinglist.users.females.count
-    end
-    attendance = self.payments.by_females.count
-    overall_attendance = attendance + attendance_attendinglist
-    capacity   = self.quantity_women
-    capacity - overall_attendance
+      attendance_list_females = self.externalattendinglist.users.females.count
+      attendance_females = self.payments.by_females.count
+      attendance = attendance_females + attendance_list_females
+      capacity   = self.quantity_women
+      capacity - attendance
+    else
+      attendance = self.payments.by_females.count
+      capacity   = self.quantity_women
+      capacity - attendance
+    end 
   end
 
   #remaining_space [male] for selection: both_Xmen_and_Xwomen [selection_BothX_men_and_women]
   def available_places_Xmen
     if self.externalattendinglist.present?
       # memebers that registered on external platforms like eventbrite who have been placed on the spefz attendingList
-      attendance_attendinglist = self.externalattendinglist.users.males.count
+      attendance_list_males = self.externalattendinglist.users.males.count
+      attendance_males = self.payments.by_males.count
+      attendance = attendance_males + attendance_list_males
+      capacity   = self.quantity_men
+      capacity - attendance
+    else
+      attendance = self.payments.by_males.count
+      capacity   = self.quantity_men
+      capacity - attendance 
     end
-    attendance = self.payments.by_males.count
-    overall_attendance = attendance + attendance_attendinglist
-    capacity   = self.quantity_men
-    capacity - overall_attendance 
   end
-
-  #remaining_space [female + women] for selection: both_men_and_women [selection_BothAndOnly_men_and_women]
-  # def total_available_places_BothAndOnly_men_and_women
-  #   attendance = self.payments.by_females.count + self.payments.by_males.count 
-  #   capacity   = self.quantity 
-  #   capacity - attendance 
-  # end
 
   #remaining_space [female + women] for selection: both_men_and_women [selection_BothAndOnly_men_and_women]
   def total_available_places_BothAndOnly_men_and_women
@@ -343,21 +368,47 @@ class Event < ActiveRecord::Base
 
   #remaining_space [female] for selection: only_women [selection_BothAndOnly_men_and_women]
   def available_places_women
-    attendance = self.payments.by_females.count
-    capacity   = self.quantity
-    capacity - attendance
+    if self.externalattendinglist.present?
+      # memebers that registered on external platforms like eventbrite who have been placed on the spefz attendingList
+      attendance_list_females = self.externalattendinglist.users.females.count
+      attendance_females = self.payments.by_females.count
+      attendance = attendance_females + attendance_list_females
+      capacity   = self.quantity 
+      capacity - attendance
+    else
+      attendance = self.payments.by_females.count
+      capacity   = self.quantity
+      capacity - attendance
+    end
   end
 
   #remaining_space [male] for selection: only_men [selection_BothAndOnly_men_and_women]
   def available_places_men
-    attendance = self.payments.by_males.count                                    
-    capacity   = self.quantity                                                  
-    capacity - attendance                                                     
+    if self.externalattendinglist.present?
+      # memebers that registered on external platforms like eventbrite who have been placed on the spefz attendingList
+      attendance_list_males = self.externalattendinglist.users.males.count
+      attendance_males = self.payments.by_males.count
+      attendance = attendance_males + attendance_list_males
+      capacity   = self.quantity 
+      capacity - attendance
+    else
+      attendance = self.payments.by_males.count                                    
+      capacity   = self.quantity                                                  
+      capacity - attendance 
+    end                                                    
   end
 
   #attendance [female + women] for selection: both_men_and_women [selection_BothAndOnly_men_and_women]
   def total_attendance_BothAndOnly_men_and_women
-    attendance = self.payments.by_females.count + self.payments.by_males.count
+    if self.externalattendinglist.present?
+      attendance_list_males = self.externalattendinglist.users.males.count
+      attendance_list_females = self.externalattendinglist.users.females.count
+      attendance_males = self.payments.by_males.count + attendance_list_males
+      attendance_females = self.payments.by_females.count + attendance_list_females
+      attendance = attendance_males + attendance_females
+    else
+      attendance = self.payments.by_males.count + self.payments.by_females.count
+    end
   end
 
   def sold_out?

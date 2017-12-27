@@ -57,7 +57,8 @@
                     <% end %>
                     <div class="medium-12 columns image_content_info">
                       <!-- sold out -->
-                      <% if event.sold_out? || event.soldout? || event.soldout_men? && event.soldout_women? %>
+                      <%# if event.sold_out? || event.soldout? || event.soldout_men? && event.soldout_women? %>
+                      <% if event.sold_out? %>
                         <div class="banner">
                           <div class="ribbon-wrapper-green">
                             <div class="ribbon-green">sold out</div>

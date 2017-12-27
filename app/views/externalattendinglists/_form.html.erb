@@ -30,7 +30,13 @@
 
       <div>Select Attendance:</div>
       <div class="medium-12 columns listed_hosts">
-        <%= f.association :users, collection: User.all.order(:firstname), label_method: :user_info, label: false, as: :check_boxes %>
+        <% if @event.category_quantitygender.name == "only men" %>
+          <%= f.association :users, collection: User.all.males.order(:firstname), label_method: :user_info, label: false, as: :check_boxes %>
+        <% elsif @event.category_quantitygender.name == "only women" %>
+          <%= f.association :users, collection: User.all.females.order(:firstname), label_method: :user_info, label: false, as: :check_boxes %>
+        <% else %>
+          <%= f.association :users, collection: User.all.order(:firstname), label_method: :user_info, label: false, as: :check_boxes %>
+        <% end %>
       </div>
 
       <!-- hidden_field -->
