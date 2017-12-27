@@ -480,6 +480,8 @@ class Event < ActiveRecord::Base
     end
   end
 
+
+
   def sold_out?
     self.category_quantitygender.name == "only men" && (self.total_available_places_Only_men <= 0) ||
     self.category_quantitygender.name == "only women" && (self.total_available_places_Only_women <= 0) ||

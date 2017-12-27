@@ -192,17 +192,49 @@
                   <i class="fa fa-users" aria-hidden="true"></i>: 
                   <span><%= @event.total_attendance_BothAndOnly_men_and_women %></span>
                   <span>-</span>
-                  <span>£<%= (@event.total_attendance_BothAndOnly_men_and_women)  * (@event.price).to_i %></span>
+                  <span>£<%= (@event.total_attendance_BothAndOnly_men_and_women) * (@event.price).to_i %></span>
                   <span class="divider">|</span>
                   <i class="fa fa-male" aria-hidden="true"></i>: 
-                  <span><%= @event.payments.by_males.count %></span>
+                  <span>
+                    <% if @event.category_quantitygender.name == "only men" %>
+                      <%= (@event.payments.by_males.count) + (@event.externalattendinglist.users.males.count) %>
+                    <% elsif @event.category_quantitygender.name == "both men & women" || @event.selection_BothX_men_and_women %>
+                      <%= (@event.payments.by_males.count) + (@event.externalattendinglist.users.males.count) %>
+                    <% else %> 
+                      <span>0</span> 
+                    <% end %>
+                  </span>
                   <span>-</span>
-                  <span>£<%= (@event.payments.by_males.count) * (@event.price).to_i %></span>
+                  <span>
+                    <% if @event.category_quantitygender.name == "only men" %>
+                      £<%= ((@event.payments.by_males.count) + (@event.externalattendinglist.users.males.count)) * (@event.price).to_i %>
+                    <% elsif @event.category_quantitygender.name == "both men & women" || @event.selection_BothX_men_and_women %>
+                      £<%= ((@event.payments.by_males.count) + (@event.externalattendinglist.users.males.count)) * (@event.price).to_i %>
+                    <% else %> 
+                      £<span>0</span> 
+                    <% end %>
+                  </span>
                   <span class="divider">|</span>
                   <i class="fa fa-female" aria-hidden="true"></i>: 
-                  <span><%= @event.payments.by_females.count %></span>
+                  <span>
+                    <% if @event.category_quantitygender.name == "only women" %>
+                      <%= (@event.payments.by_females.count) + (@event.externalattendinglist.users.females.count) %>
+                    <% elsif @event.category_quantitygender.name == "both men & women" || @event.selection_BothX_men_and_women %>
+                      <%= (@event.payments.by_females.count) + (@event.externalattendinglist.users.females.count) %>
+                    <% else %> 
+                      <span>0</span> 
+                    <% end %>
+                  </span>
                   <span>-</span>
-                  <span>£<%= (@event.payments.by_females.count) * (@event.price).to_i %></span>
+                  <span>
+                    <% if @event.category_quantitygender.name == "only women" %>
+                      £<%= ((@event.payments.by_females.count) + (@event.externalattendinglist.users.females.count)) * (@event.price).to_i %>
+                    <% elsif @event.category_quantitygender.name == "both men & women" || @event.selection_BothX_men_and_women %>
+                      £<%= ((@event.payments.by_females.count) + (@event.externalattendinglist.users.females.count)) * (@event.price).to_i %>
+                    <% else %> 
+                      £<span>0</span> 
+                    <% end %>
+                  </span>
                 </div>
                 <div class="availability">
                   <span class="event_header">Availability</span>
@@ -252,10 +284,26 @@
                     <span><%= @event.quantity %> [capacity]</span>
                     <span class="divider">|</span>
                     <i class="fa fa-male" aria-hidden="true"></i>: 
-                    <span><%= @event.payments.by_males.count %></span>
+                    <span>
+                      <% if @event.category_quantitygender.name == "only men" %>
+                        <%= (@event.payments.by_males.count) + (@event.externalattendinglist.users.males.count) %>
+                      <% elsif @event.category_quantitygender.name == "both men & women" || @event.selection_BothX_men_and_women %>
+                        <%= (@event.payments.by_males.count) + (@event.externalattendinglist.users.males.count) %>
+                      <% else %> 
+                        <span>0</span> 
+                      <% end %>
+                    </span>
                     <span class="divider">|</span>
                     <i class="fa fa-female" aria-hidden="true"></i>: 
-                    <span><%= @event.payments.by_females.count %></span>
+                    <span>
+                      <% if @event.category_quantitygender.name == "only women" %>
+                        <%= (@event.payments.by_females.count) + (@event.externalattendinglist.users.females.count) %>
+                      <% elsif @event.category_quantitygender.name == "both men & women" || @event.selection_BothX_men_and_women %>
+                        <%= (@event.payments.by_females.count) + (@event.externalattendinglist.users.females.count) %>
+                      <% else %> 
+                        <span>0</span> 
+                      <% end %>
+                    </span>
                     <span class="divider">|</span>
                     <i class="fa fa-users" aria-hidden="true"></i>: 
                     <span><%= @event.total_attendance_BothAndOnly_men_and_women %> [total attendance]</span>
@@ -268,10 +316,26 @@
                     <span><%= @event.quantity %> [capacity]</span>
                     <span class="divider">|</span>
                     <i class="fa fa-male" aria-hidden="true"></i>: 
-                    <span><%= @event.payments.by_males.count %></span>
+                    <span>
+                      <% if @event.category_quantitygender.name == "only men" %>
+                        <%= (@event.payments.by_males.count) + (@event.externalattendinglist.users.males.count) %>
+                      <% elsif @event.category_quantitygender.name == "both men & women" || @event.selection_BothX_men_and_women %>
+                        <%= (@event.payments.by_males.count) + (@event.externalattendinglist.users.males.count) %>
+                      <% else %> 
+                        <span>0</span> 
+                      <% end %>
+                    </span>
                     <span class="divider">|</span>
                     <i class="fa fa-female" aria-hidden="true"></i>: 
-                    <span><%= @event.payments.by_females.count %></span>
+                    <span>
+                      <% if @event.category_quantitygender.name == "only women" %>
+                        <%= (@event.payments.by_females.count) + (@event.externalattendinglist.users.females.count) %>
+                      <% elsif @event.category_quantitygender.name == "both men & women" || @event.selection_BothX_men_and_women %>
+                        <%= (@event.payments.by_females.count) + (@event.externalattendinglist.users.females.count) %>
+                      <% else %> 
+                        <span>0</span> 
+                      <% end %>
+                    </span>
                     <span class="divider">|</span>
                     <i class="fa fa-users" aria-hidden="true"></i>: 
                     <span><%= @event.total_attendance_BothAndOnly_men_and_women %> [total attendance]</span>
@@ -284,10 +348,26 @@
                     <span><%= @event.quantity %> [capacity]</span>
                     <span class="divider">|</span>
                     <i class="fa fa-male" aria-hidden="true"></i>: 
-                    <span><%= @event.payments.by_males.count %></span>
+                    <span>
+                      <% if @event.category_quantitygender.name == "only men" %>
+                        <%= (@event.payments.by_males.count) + (@event.externalattendinglist.users.males.count) %>
+                      <% elsif @event.category_quantitygender.name == "both men & women" || @event.selection_BothX_men_and_women %>
+                        <%= (@event.payments.by_males.count) + (@event.externalattendinglist.users.males.count) %>
+                      <% else %> 
+                        <span>0</span> 
+                      <% end %>
+                    </span>
                     <span class="divider">|</span>
                     <i class="fa fa-female" aria-hidden="true"></i>: 
-                    <span><%= @event.payments.by_females.count %></span>
+                    <span>
+                      <% if @event.category_quantitygender.name == "only women" %>
+                        <%= (@event.payments.by_females.count) + (@event.externalattendinglist.users.females.count) %>
+                      <% elsif @event.category_quantitygender.name == "both men & women" || @event.selection_BothX_men_and_women %>
+                        <%= (@event.payments.by_females.count) + (@event.externalattendinglist.users.females.count) %>
+                      <% else %> 
+                        <span>0</span> 
+                      <% end %>
+                    </span>
                     <span class="divider">|</span>
                     <i class="fa fa-users" aria-hidden="true"></i>: 
                     <span><%= @event.total_attendance_BothAndOnly_men_and_women %> [total attendance]</span>
