@@ -276,12 +276,6 @@ class Event < ActiveRecord::Base
     attendance = self.payments.by_females.count
   end
 
-  #remaining_space [female + male] for selection: both_Xmen_and_Xwomen [selection_BothX_men_and_women]
-  # def total_available_places_BothX_men_and_women
-  #   attendance = self.payments.by_females.count + self.payments.by_males.count
-  #   capacity   = self.quantity_women +  self.quantity_men
-  #   capacity - attendance
-  # end
 
   #remaining_space [female + male] for selection: both_Xmen_and_Xwomen [selection_BothX_men_and_women]
   def total_available_places_BothX_men_and_women
@@ -323,10 +317,28 @@ class Event < ActiveRecord::Base
   end
 
   #remaining_space [female + women] for selection: both_men_and_women [selection_BothAndOnly_men_and_women]
+  # def total_available_places_BothAndOnly_men_and_women
+  #   attendance = self.payments.by_females.count + self.payments.by_males.count 
+  #   capacity   = self.quantity 
+  #   capacity - attendance 
+  # end
+
+  #remaining_space [female + women] for selection: both_men_and_women [selection_BothAndOnly_men_and_women]
   def total_available_places_BothAndOnly_men_and_women
-    attendance = self.payments.by_females.count + self.payments.by_males.count 
-    capacity   = self.quantity 
-    capacity - attendance 
+    if self.externalattendinglist.present?
+      # memebers that registered on external platforms like eventbrite who have been placed on the spefz attendingList
+      attendance_list_males = self.externalattendinglist.users.males.count
+      attendance_list_females = self.externalattendinglist.users.females.count
+      attendance_males = self.payments.by_males.count + attendance_list_males
+      attendance_females = self.payments.by_females.count + attendance_list_females
+      attendance = attendance_males + attendance_females
+      capacity   = self.quantity 
+      capacity - attendance 
+    else
+      attendance = self.payments.by_females.count + self.payments.by_males.count 
+      capacity   = self.quantity 
+      capacity - attendance 
+    end
   end
 
   #remaining_space [female] for selection: only_women [selection_BothAndOnly_men_and_women]
