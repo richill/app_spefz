@@ -425,7 +425,7 @@
                               <div class="btn_booknow"><%= link_to "book now!", event_path(event) %></div>
                             <% end %>
                           <% else %>
-                            <% if event.current_user_attending_paid?(current_user) %>
+                            <% if event.current_user_attending_paid?(current_user) || || event.user_on_event_attendingList?(current_user) %>
                               <div class="btn_booked"><%= link_to "booked!", event_path(event) %></div>
                             <% else %>
                               <% if event.sold_out? %>

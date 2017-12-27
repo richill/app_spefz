@@ -186,7 +186,7 @@
             <li><span><div class="event_show_btn btn_event_booknow"><%= link_to 'Book Now!', @event.external_eventlink, target:"_blank" %></div></span></li>
           <% end %>
         <% else %>
-          <% if @event.current_user_attending_paid?(current_user) %>
+          <% if @event.current_user_attending_paid?(current_user) || @event.user_on_event_attendingList?(current_user)%>
             <li><span><div class="event_show_btn btn_event_booked"><%= link_to 'Booked!', user_event_path(@event.user, @event) %></div></span></li>
           <% else %>
             <% unless @event.sold_out? %>
@@ -316,7 +316,7 @@
           </div>
         </div>
         <!-- event_card -->
-        <% if @event.current_user_attending_paid?(current_user) || current_user.admin_pa_management_group || current_user.pa_event_mgt_group %>
+        <% if @event.current_user_attending_paid?(current_user) || @event.user_on_event_attendingList?(current_user) || current_user.admin_pa_management_group || current_user.pa_event_mgt_group %>
         <div class="medium-12 columns right_container">
           <div class="medium-12 columns right_inner_container card_container">
             <div class="header"><div class="header_content"><i class="fa fa-newspaper-o" aria-hidden="true"></i> <%= link_to "card", "#" %></div></div>
