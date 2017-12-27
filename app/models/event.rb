@@ -277,24 +277,49 @@ class Event < ActiveRecord::Base
   end
 
   #remaining_space [female + male] for selection: both_Xmen_and_Xwomen [selection_BothX_men_and_women]
+  # def total_available_places_BothX_men_and_women
+  #   attendance = self.payments.by_females.count + self.payments.by_males.count
+  #   capacity   = self.quantity_women +  self.quantity_men
+  #   capacity - attendance
+  # end
+
+  #remaining_space [female + male] for selection: both_Xmen_and_Xwomen [selection_BothX_men_and_women]
   def total_available_places_BothX_men_and_women
-    attendance = self.payments.by_females.count + self.payments.by_males.count
+    if self.externalattendinglist.present?
+      # memebers that registered on external platforms like eventbrite who have been placed on the spefz attendingList
+      attendance_list_males = self.externalattendinglist.users.males.count
+      attendance_list_females = self.externalattendinglist.users.females.count
+    end
+    attendance_males = self.payments.by_males.count + attendance_list_males
+    attendance_females = self.payments.by_females.count + attendance_list_females
+    overall_attendance = attendance_males + attendance_females
     capacity   = self.quantity_women +  self.quantity_men
-    capacity - attendance
+    capacity - overall_attendance
   end
+
 
   #remaining_space [female] for selection: both_Xmen_and_Xwomen [selection_BothX_men_and_women]
   def available_places_Xwomen
+    if self.externalattendinglist.present?
+      # memebers that registered on external platforms like eventbrite who have been placed on the spefz attendingList
+      attendance_attendinglist = self.externalattendinglist.users.females.count
+    end
     attendance = self.payments.by_females.count
+    overall_attendance = attendance + attendance_attendinglist
     capacity   = self.quantity_women
-    capacity - attendance
+    capacity - overall_attendance
   end
 
   #remaining_space [male] for selection: both_Xmen_and_Xwomen [selection_BothX_men_and_women]
   def available_places_Xmen
+    if self.externalattendinglist.present?
+      # memebers that registered on external platforms like eventbrite who have been placed on the spefz attendingList
+      attendance_attendinglist = self.externalattendinglist.users.males.count
+    end
     attendance = self.payments.by_males.count
+    overall_attendance = attendance + attendance_attendinglist
     capacity   = self.quantity_men
-    capacity - attendance 
+    capacity - overall_attendance 
   end
 
   #remaining_space [female + women] for selection: both_men_and_women [selection_BothAndOnly_men_and_women]
