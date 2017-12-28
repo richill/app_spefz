@@ -173,7 +173,7 @@
 
             <!-- events user has registered to attend on external platform eg:eventbrite -->
             <% Externalattendinglist.all.map(&:event).each do |event| %>
-              <% if event.externalattendinglist.users.include?(current_user) %>
+              <% if event.live_event && event.open_event && event.externalattendinglist.users.include?(current_user) %>
                 <ul class="inline-list">
                   <div class="social_event_list">
                     <div class="cd-timeline-block">

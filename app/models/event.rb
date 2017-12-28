@@ -242,6 +242,10 @@ class Event < ActiveRecord::Base
     self.date >= Date.current
   end
 
+  def open_event
+    self.close == false || self.close == nil
+  end
+
   def expired_or_closed_event
     self.date < Date.current || self.close == true
   end
