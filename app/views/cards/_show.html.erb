@@ -68,7 +68,16 @@
   <div class="medium-12 columns middle_section">
     <div class="middle_inner_section">
       <ul class="inline-list left">
-        <li><span class="header">View list of members that attended the event [<%= @card.event.payments.count %> attendants]</span></li>
+        <li>
+          <span class="header">
+            <span>Members that attended the event </span>
+            <% if @card.event.externalattendinglist.present? %>
+              <span> [<%= (@card.event.payments.count) + (@card.event.externalattendinglist.users.count) %> attendants]</span>
+            <% else %>
+              <span> [<%= (@card.event.payments.count) %> attendants]</span>
+            <% end %>
+          </span>
+        </li>
       </ul>
       <ul class="inline-list right">
         <li><span><div class="card_show_btn btn_view_event_cards"><%= link_to 'View My Social Cards', cards_path %></div></span></li>
@@ -175,6 +184,102 @@
         <% end %>
       </ul>
       <!-- listed attendants -->
+
+      <!-- listed attendants on externalAttendingList -->
+      <ul>
+        <% @card.event.payments.each do |attendant| %>
+          <li class="medium-12 columns attendant_details_section">
+            <!-- info_left -->
+            <div class="medium-2 columns info_left">
+              <div class="image_cover">
+                <% if attendant.user.image.present? %>
+                  <%= link_to(cl_image_tag(attendant.user.image, :transformation=>[{:gravity=>"face", :width=>200, :height=>200, :crop=>"fill", :radius=>"max"}]), attendant.user) %>
+                <% else %>
+                  <%= link_to(image_tag("img-profile-image-default.png", :alt =>  "image", :class =>"#"), attendant.user) %>
+                <% end %>
+              </div>
+            </div>
+
+            <!-- info_middle -->
+            <div class="medium-7 columns info_middle">
+              <div class="user_name">
+                <% if attendant.user == current_user || current_user.admin_pa_management_group %>
+                  <%= link_to "#{attendant.user.firstname} #{attendant.user.lastname}", user_path(attendant.user) %>
+                <% else %>
+                  <%= link_to current_user.name_shortner(attendant.user), user_path(attendant.user) %>
+                <% end %>
+              </div>
+              <% if attendant.user.profession? %>
+                <div class="user_profession"><i class="fa fa-briefcase" aria-hidden="true"></i> <%= attendant.user.profession %></div>
+              <% else %>
+                <div class="user_profession_uncompleted">
+                  <i class="fa fa-briefcase" aria-hidden="true"></i> 
+                  <% if attendant.user.category_gender.name == "Female" %>
+                    <%= "#{attendant.user.firstname} has not yet stated her profession" %>
+                  <% elsif attendant.user.category_gender.name == "Male" %>
+                    <%= "#{attendant.user.firstname} has not yet stated his profession" %>
+                  <% end %>
+                </div>
+              <% end %>
+              <% if attendant.user.description? %>
+                <div class="user_description"><%= truncate attendant.user.description, length: 190 %></div>
+              <% else %>
+                <div class="user_description_uncompleted">
+                  <% if attendant.user.category_gender.name == "Female" %>
+                    <%= "#{attendant.user.firstname} currently has not yet completed her profile description" %>
+                  <% elsif attendant.user.category_gender.name == "Male" %>
+                    <%= "#{attendant.user.firstname} currently has not yet completed his profile description" %>
+                  <% end %>
+                </div>
+              <% end %>
+              <% unless current_user == attendant.user %>
+                <div class="medium-12 columns rating_section">
+                  <ul>
+                    <li class="ratings_looks">
+                      <span class="rate_title">rate looks:</span>
+                      <span class="rate_stars"><%= rating_for attendant.user, 'looks', cancel_place: "right", disable_after_rate: true %></span>
+                    </li>
+                    <li class="divider">|</li>
+                    <li class="ratings_personality">
+                      <span class="rate_title">rate personality:</span> 
+                      <span class="rate_stars"><%= rating_for attendant.user, 'personality', cancel_place: "right", disable_after_rate: true %></span>
+                    </li>
+                  </ul>
+                </div>
+              <% end %>
+            </div>
+
+            <!-- info_right -->
+            <div class="medium-3 columns info_right">
+              <% if current_user == attendant.user %>
+                <div class="btn_view_profile"><%= link_to "view profile", user_path(attendant.user) %></div>
+              <% else %>
+                <div>
+                  <div class="current_connection">
+                    <%= friendship_status(current_user, attendant.user) %>
+                  </div>
+                  <% if current_user.friends?(attendant.user) %>
+                    <div class="btn_view_profile"><%= link_to "view profile", user_path(attendant.user) %></div>
+                  <% elsif current_user.friended?(attendant.user) %>
+                    <%= "" %>
+                  <% else current_user.friends?(attendant.user) %>
+                    <div class="btn_connect">
+                      <%= link_to "connect with #{attendant.user.firstname}", 
+                                  { controller: "friendships", 
+                                    action: "create", 
+                                    id: attendant.user.email }, 
+                                    confirm: "Send friend request to #{attendant.user.firstname}?", method: :post %>
+                    </div>  
+                  <% end %>
+
+                </div>
+              <% end %>
+            </div>
+          </li>
+          <div class="clear"></div>
+        <% end %>
+      </ul>
+      <!-- listed attendants on externalAttendingList -->
     </div>
   </div>
 </div>

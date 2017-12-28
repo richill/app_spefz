@@ -10,7 +10,7 @@
               <div class="card_main_title">my social cards</div>
               <div class="card_sub_title">View listed members whom attended the events you were at and connect</div>
             </div>
-            <% if @user_event_cards.present? || Externalattendinglist.present? %>
+            <% if @user_event_cards.present? || @attendinglists.present? %>
               <ul>
                 <!-- event_card: attendance -->
                 <% @user_event_cards.each do |card| %>
