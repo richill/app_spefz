@@ -6,10 +6,6 @@ class Externalattendinglist < ActiveRecord::Base
 
   scope :events_with_cards, -> { select {|attendinglist| attendinglist.event.card.present? }} #[3]
 
-  # scope :events_with_cards, -> { select {|attendinglist| attendinglist.event.card.present? }} #[3]
-
-  # scope :booked_events_with_cards, -> (user) { joins(:card, payments: :user).where(users: { id: user.id }) }
-
   scope :events_without_cards, -> { select {|attendinglist| attendinglist.event.card.nil? }} #[1: event_id:4]
 
   def generate_reference_number

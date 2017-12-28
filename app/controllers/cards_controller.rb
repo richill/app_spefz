@@ -5,7 +5,9 @@ class CardsController < ApplicationController
   def index
     @cards = Card.all
     @user_event_cards = Event.order("date desc").booked_events_with_cards(current_user).map(&:card)
-    #Externalattendinglist.all.events_with_cards.map(&:event).map(&:card)
+    #displays all cards belonging to only events booked by current_user
+    @attendinglist_event_cards = Externalattendinglist.all.events_with_cards.map(&:event).map(&:card)
+    # displays all cards belonging to only events that have a created attendinglist
   end
 
   def show

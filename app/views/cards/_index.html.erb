@@ -76,7 +76,7 @@
                 <!-- event_card: attendance -->
 
                 <!-- event_card: attendingList -->
-                <% Externalattendinglist.all.events_with_cards.map(&:event).map(&:card).each do |card| %>
+                <% @attendinglist_event_cards.each do |card| %>
                   <% if card.event.externalattendinglist.users.include?(current_user) %>
                     <li class="medium-12 columns listed_event_cards">
                       <div class="medium-12 columns image_content_info">
