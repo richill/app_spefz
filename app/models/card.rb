@@ -14,6 +14,9 @@ class Card < ActiveRecord::Base
   # terminal: cards.cards_with_booked_events(current_user)
   # displays all cards with events that have been booked/paid by user | needed association "has_many :payments, through: :event" to work
 
+
+  scope :cards_with_attendinglist_events, -> (user) { joins(:event, externalattendinglists: :user).where(users: { id: user.id }) }
+
   def slug_cards
     [
       :title

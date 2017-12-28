@@ -539,7 +539,7 @@
             <div class="clear"></div>
             <!-- members -->
 
-            <!-- external members -->
+            <!-- members on externalAttendingList -->
             <ul class="inline-list">
               <% if @event.externalattendinglist.present? %>
                 <% @event.total_listed_attendance_display.each do |attendant| %>
@@ -612,7 +612,7 @@
                 <% end %>
               <% end %>
             </ul>
-            <!-- external members -->
+            <!-- members on externalAttendingList -->
         </div>
       </div>
     </div>

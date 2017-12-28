@@ -75,7 +75,7 @@
                 <% end %>
                 <!-- event_card: attendance -->
 
-                <!-- event_card: attendingList -->
+                <!-- event_card: attendance cards for members on externalAttendingList -->
                 <% @attendinglist_event_cards.each do |card| %>
                   <% if card.event.externalattendinglist.users.include?(current_user) %>
                     <li class="medium-12 columns listed_event_cards">
@@ -138,7 +138,7 @@
                     </li>
                   <% end %>
                 <% end %>
-                <!-- event_card: attendingList -->
+                <!-- event_card: attendance cards for members on externalAttendingList -->
               </ul>
             <% else %>
               <div><%= render 'shared/content_card_no_result' %></div>
