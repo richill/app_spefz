@@ -55,6 +55,7 @@
 
           <!-- attending_events -->
           <% if Event.live_events.open_events.booked_events(current_user).present? || Externalattendinglist.present? %>
+            
             <!-- events user has registered to attend on spefz platform -->
             <% Event.live_events.open_events.asc_order.booked_events(current_user).each do |event| %>
               <ul class="inline-list">
