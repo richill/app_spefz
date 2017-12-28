@@ -45,6 +45,7 @@
                 <%= link_to attending_events_user_path(current_user), class: "btn btn_attending active" do %>
                   <i class="fa fa-server" aria-hidden="true"></i>
                   <span>booked events [<%= Event.live_events.open_events.booked_events(current_user).count %>]</span>
+                  <span>working [<%= Event.live_events.open_events.booked_events(current_user).count %>]</span>
                 <% end %>
               </li>
             </ul>
@@ -53,7 +54,8 @@
           <!-- sub_tab_headings -->
 
           <!-- attending_events -->
-          <% if Event.live_events.open_events.booked_events(current_user).present? %>
+          <% if Event.live_events.open_events.booked_events(current_user).present? || Externalattendinglist.present? %>
+            <!-- events user has registered to attend on spefz platform -->
             <% Event.live_events.open_events.asc_order.booked_events(current_user).each do |event| %>
               <ul class="inline-list">
                 <div class="social_event_list">
@@ -145,7 +147,11 @@
                                     <% if event.expired_or_closed_event %>
                                       <span>Event Closed</span>
                                     <% else %>
-                                      <span>£<%= number_with_precision(event.price, precision: 2) %></span>
+                                      <% if event.event_price_zero? %>
+                                        <span>Free</span>
+                                      <% else %>
+                                        <span>£<%= number_with_precision(event.price, precision: 2) %></span>
+                                      <% end %>
                                     <% end %>
                                   </span>
                                 </div>
@@ -163,6 +169,125 @@
                 </div>
               <ul/>
             <% end %>
+            <!-- events user has registered to attend on spefz platform -->
+
+            <!-- events user has registered to attend on external platform eg:eventbrite -->
+            <% Externalattendinglist.all.map(&:event).each do |event| %>
+              <% if event.externalattendinglist.users.include?(current_user) %>
+                <ul class="inline-list">
+                  <div class="social_event_list">
+                    <div class="cd-timeline-block">
+                      <div class="cd-timeline-img cd-star">
+                        <i class="fa fa-calendar"></i>
+                      </div> 
+                      <div class="cd-timeline-content">
+                        <ul>
+                          <li class="left_side">
+                            <!-- social_event_left_side -->
+                            <div class="image_content right_side_content">
+                              <div class="social_event_feed_img_cover">
+                                <%= link_to(image_tag("img-logo-five.png"), about_us_path) %>
+                              </div>
+                            </div>
+                            <!-- social_event_left_side -->
+                          </li>
+                          <li class="right_side">
+                            <!-- social_event_right_side -->
+                            <div class="right_side_content">
+                              <div class="title"><%= link_to event.title, event_path(event) %></div>
+                              <div class="host">
+                                <span>Hosted by</span>
+                                <span><%= link_to "Spefz Team", about_us_path %></span>
+                              </div>
+                              <div class="social_event_content">
+                                <div class="image_cover">
+                                  <!-- sold out -->
+                                  <% if event.sold_out? || event.soldout? || event.soldout_men? && event.soldout_women? %>
+                                    <div class="banner">
+                                      <div class="ribbon-wrapper-green">
+                                        <div class="ribbon-green">sold out</div>
+                                      </div>
+                                    </div>
+                                  <% end %>
+                                  <!-- sold out -->
+                                  <span>
+                                    <% if event.upcoming_event? %>
+                                      <div class="inner_img_cover"></div>
+                                      <div class="inner_img_text"> coming soon</div>
+                                      <span style="height:105px;display:inline-block;overflow:hidden;">
+                                        <% if event.event_image_link.present? %>
+                                          <%= link_to(cl_image_tag(event.event_image_link, :transformation=>[{:gravity=>"center", :width=>150, :height=>105, :crop=>"fill"}]), event_path(event)) %>
+                                        <% else %>
+                                          <%= link_to(cl_image_tag(event.image, :transformation=>[{:gravity=>"center", :width=>150, :height=>105, :crop=>"fill"}]), event_path(event)) %>
+                                        <% end %>
+                                      </span>
+                                    <% else %>
+                                      <span style="height:105px;display:inline-block;overflow:hidden;">
+                                        <% if event.event_image_link.present? %>
+                                          <%= link_to(cl_image_tag(event.event_image_link, :transformation=>[{:gravity=>"center", :width=>150, :height=>105, :crop=>"fill"}]), event_path(event)) %>
+                                        <% else %>
+                                          <%= link_to(cl_image_tag(event.image, :transformation=>[{:gravity=>"center", :width=>150, :height=>105, :crop=>"fill"}]), event_path(event)) %>
+                                        <% end %>
+                                      </span>
+                                    <% end %>
+                                  </span>
+                                </div>
+                                <div class="social_event_details">
+                                  <div class="info"><i class="fa fa-calendar" aria-hidden="true"></i> <%= event.date.strftime("%A, %d %b") %> <span class="mid_divider">|</span> <%= event.time.strftime("%I:%M %p") %></div>
+                                  <div class="info"><i class="fa fa-map-pin" aria-hidden="true"></i> <%= event.city %>, <%= event.category_country.name %></div>
+                                  <div class="info">
+                                    <span>
+                                      <i class="fa fa-male" aria-hidden="true"></i> 
+                                      <% if event.agerange? %>
+                                        <%= event.agerange_info %>
+                                      <% else %>
+                                        <%= event.category_age.name %>
+                                      <% end %>
+                                    </span>
+                                    <span class="mid_divider">|</span>
+                                    <span class="category">Category:</span> 
+                                    <span class="category_info"><%= link_to "#{event.category_topic.name}", socials_path(q: {category_topic_name_eq: event.category_topic.name}) %></span>
+                                    <% unless event.external_event? %>
+                                      <% if event.display_event_match? %>
+                                        <span class="mid_divider">|</span> 
+                                        <span class="category">Match:</span>
+                                        <span class="category_info">
+                                          <a href="#<%= event.id %>" data-reveal-id="<%= dom_id(event) %>_event_match"><%= event.match(current_user) %>%</a>
+                                          <%= render partial: 'shared/modal_match_info', locals: { event: event } %>
+                                        </span> 
+                                      <% end %>
+                                    <% end %>
+
+                                    <span class="mid_divider">|</span> 
+                                    <span class="price">Price:</span>
+                                    <span class="price_figure">
+                                      <% if event.expired_or_closed_event %>
+                                        <span>Event Closed</span>
+                                      <% else %>
+                                        <% if event.event_price_zero? %>
+                                          <span>Free</span>
+                                        <% else %>
+                                          <span>£<%= number_with_precision(event.price, precision: 2) %></span>
+                                        <% end %>
+                                      <% end %>
+                                    </span>
+                                  </div>
+                                  <div class="divider"></div>
+                                  <div class="description"><%= truncate(event.description, length: 200) %></div>
+                                </div>
+                              </div>
+                            </div>
+                            <!-- social_event_right_side -->
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="clear"></div>
+                  </div>
+                <ul/>
+              <% end %>
+            <% end %>
+            <!-- events user has registered to attend on external platform eg:eventbrite -->
           <% else %>
             <%= render "shared/content_no_result_attending_events" %>
           <% end %>

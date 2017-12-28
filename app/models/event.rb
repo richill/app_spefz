@@ -528,6 +528,13 @@ class Event < ActiveRecord::Base
       errors.add(:event_image_link, "either upload an Image or paste an image link")
     end
   end
+
+  # displays the number of events users is attending (which they have registered on external platform)
+  def user_test(user)
+    #find only events with external attending list
+    events = Event.all
+    self.externalattendinglist.users(user).count
+  end
 end
 
 
