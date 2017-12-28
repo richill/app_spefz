@@ -115,6 +115,10 @@ class Event < ActiveRecord::Base
   scope :events_with_ratings, -> { select {|event| event.overall_ratings > 0 }}
   # events_with_ratings = events.select {|event| event.overall_ratings > 0 }.count
 
+  scope :events_with_cards, -> { select {|event| event.card.present? }}
+
+  scope :events_without_cards, -> { select {|event| !event.card.present? }}
+
   def location
     [address, city, category_country_id].compact.join(', ')
   end
