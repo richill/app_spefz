@@ -17,7 +17,7 @@
         </div>
         <div class="user_general_settings_inner_section user_account_section">
 
-          <% unless @user.subscribed? || @user_payments.present? || @user.recent_subscription_cancel_date.present? %>
+          <% unless @user.subscribed? || @user_payments.present? || @user_payments_attendingList.present? || @user.recent_subscription_cancel_date.present? %>
             <div class="paymt_cover no_subscription_event_paymts">
               <div class="pymt_header">no transactions</div>
               <div class="pymt_sub_header" style="padding: 15px 10px; margin-bottom: 15px;">
@@ -99,40 +99,68 @@
             </div>
           <% end %>
           
-          <% if @user_payments.present? %>
-          <div class="paymt_cover event_paymts">
-            <div class="pymt_header">event payments</div>
-            <div class="pymt_sub_header">
-              <span><i class="fa fa-info-circle" aria-hidden="true"></i></span>
-              <span>The below transactions currently displays all payments made by you to attend an event</span>
-            </div>
-            <div class="listed_event_paymts">
-              <table>
-                <thead>
-                  <tr>
-                    <th>user id</th>
-                    <th>registed email</th>
-                    <th>event</th>
-                    <th>price</th>
-                    <th>payment ref</th>
-                    <th>payment date</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <% @user_payments.each do |payment| %>
+          <% if @user_payments.present? || @user_payments_attendingList.present? %>
+            <div class="paymt_cover event_paymts">
+              <div class="pymt_header">event payments</div>
+              <div class="pymt_sub_header">
+                <span><i class="fa fa-info-circle" aria-hidden="true"></i></span>
+                <span>The below transactions currently displays all payments made by you to attend an event</span>
+              </div>
+              <div class="listed_event_paymts">
+                <table>
+                  <thead>
                     <tr>
-                      <td><%= payment.user.reference %></td>
-                      <td><%= payment.email %></td>
-                      <td><%= link_to payment.event.title, event_path(payment.event) %></td>
-                      <td>£<%= number_with_precision(payment.event.price, precision: 2) %></td>
-                      <td><%= payment.reference %></td>
-                      <td><%= payment.event_payment_date.strftime("%a, %d %b %Y") %> | <%= payment.event_payment_date.strftime("%I:%M %p") %></td>
+                      <th>user id</th>
+                      <th>registed email</th>
+                      <th>event</th>
+                      <th>price</th>
+                      <th>payment ref</th>
+                      <th>payment date</th>
                     </tr>
-                  <% end %>
-                </tbody>
-              </table>
-            </div>    
-          </div>
+                  </thead>
+                  <tbody>
+                    <% @user_payments.each do |payment| %>
+                      <tr>
+                        <td><%= payment.user.reference %></td>
+                        <td><%= payment.email %></td>
+                        <td><%= link_to payment.event.title, event_path(payment.event) %></td>
+                        <td>
+                          <% if payment.event.event_price_zero? %>
+                            <span>Free</span>
+                          <% else %>
+                            <span>£<%= number_with_precision(payment.event.price, precision: 2) %></span>
+                          <% end %>
+                        </td>
+                        <td><%= payment.reference %></td>
+                        <td><%= payment.event_payment_date.strftime("%a, %d %b %Y") %> | <%= payment.event_payment_date.strftime("%I:%M %p") %></td>
+                      </tr>
+                    <% end %>
+                  </tbody>
+
+                  <tbody>
+                    <% @user_payments_attendingList.map(&:event).each do |payment| %>
+                      <% if payment.externalattendinglist.users.include?(current_user) %>
+                      <tr>
+                        <td><%= current_user.reference %></td>
+                        <td><%= current_user.email %></td>
+                        <td><%= link_to payment.title, event_path(payment) %></td>
+                        <td>
+                          <% if payment.event_price_zero? %>
+                            <span>Free</span>
+                          <% else %>
+                            <span>£<%= number_with_precision(payment.price, precision: 2) %></span>
+                          <% end %>
+                        </td>
+                        <td>-</td>
+                        <td>payment made on eventbrite</td>
+                      </tr>
+                      <% end %>
+                    <% end %>
+                  </tbody>
+
+                </table>
+              </div>    
+            </div>
           <% end %>
 
         </div>
