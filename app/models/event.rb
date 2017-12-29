@@ -91,6 +91,9 @@ class Event < ActiveRecord::Base
   #terminal: events.booked_events(current_user)
   #displays all events that have been booked/paid by a user
 
+  scope :booked_events_attendinglist, -> (user) { joins(externalattendinglist: :users).where(users: { id: user.id }) }
+  # displays all events that have an attendingList of all users that includes current_user
+  
   scope :unbooked_events, -> { includes(:payments).where(payments: { event_id: nil }) }
   #displays all events that have not been booked/paid by users | events that do not have payments
 

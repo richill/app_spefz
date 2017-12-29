@@ -14,7 +14,11 @@
           <li> 
             <%= link_to attending_socials_user_path(current_user) do %>
               <i class="fa fa-server" aria-hidden="true"></i>
-              <span>attending [<%= (current_user.attending_socials.live_socials.open_socials.count) + (Event.live_events.open_events.booked_events(current_user).count) %>]</span>
+              <% if @events.booked_events_attendinglist(current_user).present?  %>
+                <span>attending [<%= (current_user.attending_socials.live_socials.open_socials.count) + (Event.live_events.open_events.booked_events(current_user).count) + (Event.live_events.open_events.booked_events_attendinglist(current_user).count) %>]</span>
+              <% else %>
+                <span>attending [<%= (current_user.attending_socials.live_socials.open_socials.count) + (Event.live_events.open_events.booked_events(current_user).count) %>]</span>
+              <% end %>
             <% end %>
           </li>
           <li class="active">
