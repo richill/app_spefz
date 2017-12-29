@@ -124,6 +124,14 @@ class Event < ActiveRecord::Base
   scope :free_events, -> { select {|event| event.price == 0 }}
   # free_events: events without a price
 
+  scope :free_events_with_externalattendinglist, -> { select {|event| event.externalattendinglist.present? && event.free_event }}
+
+  scope :free_events_with_externalattendinglist_live_open, -> { select {|event| event.externalattendinglist.present? && event.free_event && event.live_event && event.open_event }}
+
+  scope :paid_events_with_externalattendinglist, -> { select {|event| event.externalattendinglist.present? && event.paid_event }}
+
+  scope :paid_events_with_externalattendinglist_live_open, -> { select {|event| event.externalattendinglist.present? && event.paid_event && event.live_event && event.open_event }}
+
   scope :events_with_cards, -> { select {|event| event.card.present? }}
 
   scope :events_without_cards, -> { select {|event| !event.card.present? }}
@@ -134,6 +142,10 @@ class Event < ActiveRecord::Base
     
   def free_event
     self.price == 0
+  end
+
+  def paid_event
+    self.price > 0
   end
 
   def location
