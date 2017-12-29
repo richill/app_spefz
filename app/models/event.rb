@@ -118,6 +118,12 @@ class Event < ActiveRecord::Base
   scope :events_with_ratings, -> { select {|event| event.overall_ratings > 0 }}
   # events_with_ratings = events.select {|event| event.overall_ratings > 0 }.count
 
+  scope :paid_events, -> { select {|event| event.price == 0 }}
+  # paid_events: events with a price
+
+  scope :free_events, -> { select {|event| event.price > 0 }}
+  # free_events: events without a price
+
   scope :events_with_cards, -> { select {|event| event.card.present? }}
 
   scope :events_without_cards, -> { select {|event| !event.card.present? }}
