@@ -118,10 +118,10 @@ class Event < ActiveRecord::Base
   scope :events_with_ratings, -> { select {|event| event.overall_ratings > 0 }}
   # events_with_ratings = events.select {|event| event.overall_ratings > 0 }.count
 
-  scope :paid_events, -> { select {|event| event.price > 0 }}
+  scope :paid_events, -> {where(['price > ?', 0])} 
   # paid_events: events with a price
 
-  scope :free_events, -> { select {|event| event.price == 0 }}
+  scope :free_events, -> {where(['price = ?', 0])} 
   # free_events: events without a price
 
   scope :free_events_with_externalattendinglist, -> { select {|event| event.externalattendinglist.present? && event.free_event }}
@@ -139,7 +139,11 @@ class Event < ActiveRecord::Base
   scope :events_with_externalattendinglist, -> { select {|event| event.externalattendinglist.present? }}
 
   scope :events_with_cards_and_externalattendinglist, -> { select {|event| event.externalattendinglist.present? && event.card.present? }}
-    
+  
+  def self.total_price_for_events_attendinglist
+    (paid_events_with_externalattendinglist_live_open.map(&:externalattendinglist).flat_map(&:users).count) * 45
+  end
+
   def free_event
     self.price == 0
   end
