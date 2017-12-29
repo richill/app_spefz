@@ -85,9 +85,12 @@ class Event < ActiveRecord::Base
   scope :open_events, -> {where(['close = ? OR close IS ?', false, nil])}
 
   scope :total_price_for_events, -> { joins(:payments).sum("events.price") }
-  #sums the total payments for all open/live/expired events
+  #sums the total payment amount for all open/live/expired events (by members that paid on spefz)
+  #note: events.live_events.open_events.total_price_for_events.to_f.round(2) - focuses total sum for live&open
 
   scope :total_price_for_events_attendinglist, -> { joins(externalattendinglist: :users).sum("events.price") }
+  #sums the total payment amount for all open/live/expired events (by members that paid on external platform)
+  #note: events.live_events.open_events.total_price_for_events_attendinglist.to_f.round(2) - focuses total sum for live&open
 
   scope :booked_events, -> (user) { joins(payments: :user).where(users: { id: user.id }) }
   #terminal: events.booked_events(current_user)
