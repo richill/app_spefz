@@ -132,6 +132,9 @@ class Event < ActiveRecord::Base
 
   scope :events_with_cards_and_externalattendinglist, -> { select {|event| event.externalattendinglist.present? && event.card.present? }}
     
+  def free_event
+    self.price == 0
+  end
 
   def location
     [address, city, category_country_id].compact.join(', ')
