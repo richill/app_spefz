@@ -87,7 +87,7 @@ class Event < ActiveRecord::Base
   scope :total_price_for_events, -> { joins(:payments).sum("events.price") }
   #sums the total payments for all open/live/expired events
 
-  scope :total_price_for_events_test, -> { joins(:event, externalattendinglists: :users).sum("events.price") }
+  scope :total_price_for_events_attendinglist, -> { joins(externalattendinglist: :users).sum("events.price") }
 
   scope :booked_events, -> (user) { joins(payments: :user).where(users: { id: user.id }) }
   #terminal: events.booked_events(current_user)
@@ -141,11 +141,6 @@ class Event < ActiveRecord::Base
   scope :events_with_externalattendinglist, -> { select {|event| event.externalattendinglist.present? }}
 
   scope :events_with_cards_and_externalattendinglist, -> { select {|event| event.externalattendinglist.present? && event.card.present? }}
-  
-  def self.total_price_for_events_attendinglist
-    (paid_events_with_externalattendinglist_live_open.map(&:externalattendinglist).flat_map(&:users).count) * total_price_for_events_test
-    #£150
-  end
 
   def free_event
     self.price == 0
