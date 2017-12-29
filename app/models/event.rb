@@ -237,6 +237,11 @@ class Event < ActiveRecord::Base
     self.payments.exists?(user: user)
   end
 
+  #checks if current user has paid via and external platform and been added to the externalAttendingList to attend event
+  def current_user_attending_listed?(user)
+    self.externalattendinglist.users.include?(user)
+  end
+
   def user_on_event_attendingList?(user)
     if self.externalattendinglist.present?
       self.externalattendinglist.users.include?(user)

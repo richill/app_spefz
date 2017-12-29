@@ -115,10 +115,11 @@
 </div>
 
 <!-- cards -->
-<% if @cards.cards_with_booked_events(current_user).unread_by(current_user).present? %>
+<% if @cards.cards_with_booked_events(current_user).unread_by(current_user).present? || @cards.cards_with_attendinglist_events(current_user).unread_by(current_user).present? %>
   <div class="userinviterequests_inner_container">
     <div class="content_list">
       <ul>
+        <!-- cards_events with memebers -->
         <% @cards.cards_with_booked_events(current_user).unread_by(current_user).each do |card| %>
           <% if card.event.current_user_attending_paid?(current_user) %>
           <li>
@@ -163,6 +164,54 @@
           </li>
           <% end %>
         <% end %>
+        <!-- cards_events with memebers -->
+
+        <!-- cards_events with memebers on externalAttendingList -->
+        <% @cards.cards_with_attendinglist_events(current_user).unread_by(current_user).each do |card| %>
+          <% if card.event.current_user_attending_listed?(current_user) %>
+          <li>
+            <div class="image_section">
+              <span class="img_cover">
+                <% if card.event.event_image_link.present? %>
+                  <%= link_to(cl_image_tag(card.event.event_image_link, :alt =>  "image", :class =>"#", id: ""), cards_path) %>
+                <% else card.event.image.present? %>
+                  <%# link_to(image_tag(card.event.image_url, :alt =>  "image", :class =>"#", id: ""), cards_path) %>
+                  <%= link_to(cl_image_tag(card.event.image, :alt =>  "image", :class =>"#", id: ""), cards_path) %>
+                <% end %>
+              </span>
+            </div>
+
+            <div class="info_section">
+              <div class="title"><%= link_to truncate("#{card.event.title}", length: 30), "#" %></div>
+              <div class="date_country_info" style="margin-top:2px;">
+                <span><%= card.event.date.strftime("%a, %d %b %Y") %></span> 
+                <span class="divider">|</span> 
+                <span><%= card.event.time.strftime("%I:%M %p") %></span>
+              </div>
+              <div class="date_country_info">
+                <span><%= card.event.category_country.name %></span> 
+                <span>-</span> 
+                <span><%= card.event.city %></span>
+              </div>
+              <div class="date_country_info"> 
+                <span>card:</span>
+                <span><%= link_to "social card", cards_path %></span>
+              </div>
+            </div>
+
+            <% if card.card_status_open? && card.unread?(current_user) %>
+              <div class="action_btn_section_attending action_btn_card_section"> 
+                <span class="btn btn_view_card"><%= link_to 'view', card_mark_as_viewed_path(card_id: card.id), method: :post %></span>
+              </div>
+            <% elsif %>
+              <div class="action_btn_section action_btn_card_section"> 
+                <span class="btn btn_view_card_not_open"><%= link_to "not open", cards_path %></span>
+              </div>
+            <% end %>
+          </li>
+          <% end %>
+        <% end %>
+        <!-- cards_events with memebers on externalAttendingList -->
         <div class="clear"></div>
       </ul>
     </div> 
