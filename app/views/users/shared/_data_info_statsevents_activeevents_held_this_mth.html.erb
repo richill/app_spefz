@@ -1,4 +1,4 @@
-<h1>total active events held this mth [<%= (@events.count_total_closed_paid_events) + (@events.count_total_closed_free_events) %>]
+<h1>total active events held this mth [<%= (@events.count_total_active_paid_events_heldThisMonth) + (@events.count_total_active_free_events_heldThisMonth) %>]
   <span id="status_statsevents_active_paid_heldThisMonth" class="status_colour_blue">paid events [<%= @events.count_total_active_paid_events_heldThisMonth %>]</span>
   <span id="status_statsevents_active_free_heldThisMonth" class="status_colour_blue">free events [<%= @events.count_total_active_free_events_heldThisMonth %>]</span>
   <div class="h1_subtitle"><i class="fa fa-info-circle"></i> displays all active events this mth on the platform [ordered by date held]</div>

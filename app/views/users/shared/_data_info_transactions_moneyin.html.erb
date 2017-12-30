@@ -22,16 +22,16 @@
         <div class="tablecell ref_id">events</div>
         <div class="tablecell">
           <div class="faint_text_format">total events in <%= Date.current.strftime("%B") %></div>
-          <div><%= @events.live_events.open_events.held_this_month.booked_events_all.count %></div>
+          <div><%= (@events.count_total_active_paid_events_heldThisMonth) + (@events.count_total_active_free_events_heldThisMonth) %></div>
         </div>
-        <div class="tablecell">£<%= @events.live_events.open_events.held_this_month.booked_events_all_total_price %></div>
+        <div class="tablecell">£<%= (@events.total_active_paid_events_heldThisMonth_amt) + (@events.total_active_free_events_heldThisMonth_amt) %></div>
       </div>
       <div class="tablerow">
         <div class="tablecell ref_id">total</div>
         <div class="tablecell">
           <div class="faint_text_format">Total Subscribed Users Amt  + Booked Active Events [Mth] Amt</div>
         </div>
-        <div class="tablecell ref_id">£<%= ((@users.subcribed_users.count) * (@premium_plan.price)) + (@events.held_this_month.live_events.open_events.total_price_for_events) %></div>
+        <div class="tablecell ref_id">£<%= ((@users.subcribed_users.count) * (@premium_plan.price)) + ((@events.total_active_paid_events_heldThisMonth_amt) + (@events.total_active_free_events_heldThisMonth_amt)) %></div>
       </div>
     </div>
   </div>
