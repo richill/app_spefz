@@ -91,7 +91,7 @@
               <span class="faint_text_format"> :Attending Socials</span> 
             </div>
             <div>
-              <span class="main_text_format"><%= @events.booked_events(user).live_events.open_events.count %></span>
+              <span class="main_text_format"><%= (@events.live_events.open_events.booked_events(user).count) + (@events.live_events.open_events.booked_events_attendinglist(user).count) %></span>
               <span class="faint_text_format"> :Booked Events</span> 
             </div>
           </div>
