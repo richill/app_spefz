@@ -29,9 +29,9 @@
         <div class="header"> total active events [mth]</div>
         <div class="header_data">
           <span class="header_icon"><i class="fa fa-calendar-check-o" aria-hidden="true"></i></span>
-          <span>**<%= @events.held_this_month.live_events.open_events.count %></span>
+          <span><%= (@events.count_total_active_paid_events_heldThisMonth) + (@events.count_total_active_free_events_heldThisMonth) %></span>
           <% if current_user.admin_pa_management_group %>
-            <div class="minor_info">£<%= @events.held_this_month.live_events.open_events.total_price_for_events %> [mth]</div>
+            <div class="minor_info">£<%= (@events.total_active_paid_events_heldThisMonth_amt) + (@events.total_active_free_events_heldThisMonth_amt)%> [mth]</div>
           <% end %>
         </div>
       </div>
@@ -41,9 +41,9 @@
         <div class="header"> total closed events</div>
         <div class="header_data">
           <span class="header_icon"><i class="fa fa-calendar-times-o" aria-hidden="true"></i></span>
-          <span><%= @events.expired_or_closed_events.count %></span>
+          <span><%= (@events.count_total_closed_paid_events) + (@events.count_total_closed_free_events) %></span>
           <% if current_user.admin_pa_management_group %>
-            <div class="minor_info">£<%= @events.expired_or_closed_events.total_price_for_events %> [all]</div>
+            <div class="minor_info">£<%= (@events.total_closed_paid_events_amt) + (@events.total_closed_free_events_amt) %> [all]</div>
           <% end %>
         </div>
       </div>
@@ -52,7 +52,7 @@
       <div class="data_content">
         <div class="header"> total unbooked live events</div>
         <div class="header_data"><span class="header_icon"><i class="fa fa-calendar-times-o" aria-hidden="true"></i></span>
-          <span><%= @events.unbooked_events.live_events.open_events.count %></span>
+          <span><%= (@events.count_unbooked_active_paid_events) + (@events.count_unbooked_active_free_events) %></span>
         </div>
       </div>
     </div>

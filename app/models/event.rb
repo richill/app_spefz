@@ -576,14 +576,14 @@ class Event < ActiveRecord::Base
     end
   end
 
-  # displays the number of events users is attending (which they have registered on external platform)
+  #displays the number of events users is attending (which they have registered on external platform)
   def user_test(user)
     #find only events with external attending list
     events = Event.all
     self.externalattendinglist.users(user).count
   end
 
-  # displays total count & amount made from created paid_events
+  #displays total count & amount made from created paid_events
   def self.count_total_paid_events 
     paid_events.count
   end
@@ -594,7 +594,7 @@ class Event < ActiveRecord::Base
     total_paid_events = paid_events_spefz + paid_events_externalattendinglist
   end
 
-  # displays total count & amount made from created free_events
+  #displays total count & amount made from created free_events
   def self.count_total_free_events  
     free_events.count
   end
@@ -606,7 +606,7 @@ class Event < ActiveRecord::Base
   end
 
 
-  # displays total count & amount made from created active paid_events
+  #displays total count & amount made from created active paid_events
   def self.count_total_active_paid_events 
     paid_events.live_events.open_events.count
   end
@@ -618,7 +618,7 @@ class Event < ActiveRecord::Base
   end
 
 
-  # displays total count & amount made from created active free_events
+  #displays total count & amount made from created active free_events
   def self.count_total_active_free_events 
     free_events.live_events.open_events.count
   end
@@ -629,10 +629,60 @@ class Event < ActiveRecord::Base
     total_free_active_events = free_events_live_open_spefz + free_events_live_open_externalattendinglist
   end
 
+  #displays total count & amount made from created active paid_events being held in current month
+  def self.count_total_active_paid_events_heldThisMonth 
+    paid_events.held_this_month.live_events.open_events.count
+  end
 
-  
+  def self.total_active_paid_events_heldThisMonth_amt
+    paid_events_live_open_heldThisMonth_spefz = paid_events.held_this_month.live_events.open_events.total_price_for_events.to_f.round(2)
+    paid_events_live_open_heldThisMonth_externalattendinglist = paid_events.held_this_month.live_events.open_events.total_price_for_events_attendinglist.to_f.round(2)
+    total_paid_active_events_heldThisMonth = paid_events_live_open_heldThisMonth_spefz + paid_events_live_open_heldThisMonth_externalattendinglist
+  end
+
+  #displays total count & amount made from created active free_events being held in current month
+  def self.count_total_active_free_events_heldThisMonth 
+    free_events.held_this_month.live_events.open_events.count
+  end
+
+  def self.total_active_free_events_heldThisMonth_amt
+    free_events_live_open_heldThisMonth_spefz = free_events.held_this_month.live_events.open_events.total_price_for_events.to_f.round(2)
+    free_events_live_open_heldThisMonth_externalattendinglist = free_events.held_this_month.live_events.open_events.total_price_for_events_attendinglist.to_f.round(2)
+    total_free_active_events_heldThisMonth = free_events_live_open_heldThisMonth_spefz + free_events_live_open_heldThisMonth_externalattendinglist
+  end
+
+  #displays total count & amount made from created closed_expired paid_events
+  def self.count_total_closed_paid_events 
+    paid_events.expired_or_closed_events.count
+  end
+
+  def self.total_closed_paid_events_amt
+    paid_events_closed_or_expired_spefz = paid_events.expired_or_closed_events.total_price_for_events.to_f.round(2)
+    paid_events_closed_or_expired_externalattendinglist = paid_events.expired_or_closed_events.total_price_for_events_attendinglist.to_f.round(2)
+    total_closed_paid_events = paid_events_closed_or_expired_spefz + paid_events_closed_or_expired_externalattendinglist
+  end
+
+  #displays total count & amount made from created closed_expired free_events
+  def self.count_total_closed_free_events 
+    free_events.expired_or_closed_events.count
+  end
+
+  def self.total_closed_free_events_amt
+    free_events_closed_or_expired_spefz = free_events.expired_or_closed_events.total_price_for_events.to_f.round(2)
+    free_events_closed_or_expired_externalattendinglist = free_events.expired_or_closed_events.total_price_for_events_attendinglist.to_f.round(2)
+    total_closed_free_events = free_events_closed_or_expired_spefz + free_events_closed_or_expired_externalattendinglist
+  end
 
 
+  #displays total count of created active paid_events
+  def self.count_unbooked_active_paid_events 
+    paid_events.unbooked_events.live_events.open_events.count
+  end
+
+  #displays total count of created active free_events
+  def self.count_unbooked_active_free_events  
+    free_events.unbooked_events.live_events.open_events.count
+  end
 end
 
 
