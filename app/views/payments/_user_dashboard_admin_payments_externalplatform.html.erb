@@ -65,9 +65,6 @@
               <div class="tablecell background"></div>
               <div class="tablecell background"></div>
               <div class="tablecell background"></div>
-              <div class="tablecell background"></div>
-              <div class="tablecell background"></div>
-              <div class="tablecell background"></div>
             </div>
             <% Event.events_with_externalattendinglist.map(&:externalattendinglist).flat_map(&:users).each do |user| %>
               <div class="tablerow">
@@ -81,7 +78,7 @@
                   <% end %>
                 </div>
 
-                <div class="tablecell">
+                <div class="tablecell" style="width:10%;" >
                   <div class="main_text_format" style="text-transform:lowercase;">
                     <% if current_user.admin_pa_management_group %>
                       <span>e: <%= mail_to "#{user.email}", "#{user.email}" %></span>
@@ -104,36 +101,31 @@
                 </div>
 
                 <div class="tablecell" style="width:5%; text-align:left;">
-                  <div class="faint_text_format">payment</div> 
-                  <div>--</div>
+                  <div style="color:#4BB4BF;"><%= "Payment" %></div>
+                  <div class="ref_id">SPz_hwbRzZ</div>
+                  <div class="faint_text_format">Mon, 18 Dec 2017</div>
                 </div>
 
                 <div class="tablecell" style="width:5%; text-align:left;">
-                  <div class="faint_text_format">event ref</div> 
-                  <div>--</div>
+                  <div class="faint_text_format">Event Ref</div> 
+                  <div>SPz_sUEkAz</div>
+                  <div>[Test2] Speed Social -...</div>
                 </div>
 
                 <div class="tablecell" style="width:5%; text-align:left;">
                   <div class="faint_text_format">[Stripe] Customer_id</div> 
-                  <div>--</div>
+                  <div>Cus_ACDcWSDyhjP93o</div>
                 </div>
 
                 <div class="tablecell" style="width:5%; text-align:left;">
                   <div class="faint_text_format">[Stripe] Payment_id</div> 
-                  <div>--</div>
+                  <div>Ch_1BaS5XAAe71J3vK0AjB3BFZM</div>
                 </div>
 
                 <div class="tablecell" style="width:5%; text-align:left;">
                   <div class="faint_text_format">card</div> 
-                  <div>--</div>
+                  <div>Visa | 424212 / 2020</div>
                 </div>
-
-
-
-
-        
-
-
               </div>
             <% end %>
           </div>
