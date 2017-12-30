@@ -100,7 +100,7 @@ class Event < ActiveRecord::Base
   # displays all events that have an attendingList of all users that includes current_user
   
   scope :unbooked_events, -> { includes(:payments).where(payments: { event_id: nil }) }
-  #displays all events that have not been booked/paid by users | events that do not have payments
+  #displays all events that have not been booked/paid by users | events that do not have payments [this can be used for Free & Paid Events]
 
   scope :booked_events_all, -> { includes(:payments).where.not(payments: { event_id: nil }) }
   #displays all events that have been booked/paid by users | events that do have payments
@@ -582,6 +582,26 @@ class Event < ActiveRecord::Base
     events = Event.all
     self.externalattendinglist.users(user).count
   end
+
+  # displays total amount made from created paid_events
+  def total_paid_events_amt
+    paid_events_spefz = events.paid_events.total_price_for_events.to_f.round(2)
+    paid_events_externalattendinglist = events.paid_events.total_price_for_events_attendinglist.to_f.round(2)
+    total_paid_events = paid_events_spefz + paid_events_externalattendinglist
+  end
+
+  # displays total amount made from created free_events
+  def total_free_events_amt
+    free_events_spefz = events.free_events.total_price_for_events.to_f.round(2)
+    free_events_externalattendinglist = events.free_events.total_price_for_events_attendinglist.to_f.round(2)
+    total_free_events = free_events_spefz + free_events_externalattendinglist
+  end
+
+
+
+
+
+
 end
 
 
