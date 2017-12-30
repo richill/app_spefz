@@ -69,8 +69,73 @@
               <div class="tablecell background"></div>
               <div class="tablecell background"></div>
             </div>
-            <%# @payments.each do |payment| %>
-            <%# end %>
+            <% Event.events_with_externalattendinglist.map(&:externalattendinglist).flat_map(&:users).each do |user| %>
+              <div class="tablerow">
+                <div class="tablecell" style="width:10%">
+                  <div class="user_name"><%= link_to "#{user.firstname} #{user.lastname}", user_path(user), target:"_blank" %></div>
+                  <div class="ref_id"><%= user.reference %></div>
+                  <% if user.subscribed? %>
+                    <div class="ref_id"><%= "subscribed" %></div>
+                  <% else %>
+                    <div class="faint_text_format"><%= "unsubscribed" %></div> 
+                  <% end %>
+                </div>
+
+                <div class="tablecell">
+                  <div class="main_text_format" style="text-transform:lowercase;">
+                    <% if current_user.admin_pa_management_group %>
+                      <span>e: <%= mail_to "#{user.email}", "#{user.email}" %></span>
+                    <% else %>
+                      <span>e: <%= link_to "#{user.email}", "#{user.email}" %></span>
+                    <% end %>
+                  </div>
+                  <div class="faint_text_format"><%= user.profession %></div>
+                  <div class="faint_text_format">
+                    <% if user.city? %>
+                      <span><%= user.city %>,</span>
+                    <% end %>
+                    <span><%= user.category_country.name %></span>
+                  </div> 
+                </div>
+
+                <div class="tablecell" style="width:5%; text-align:left;">
+                  <div class="faint_text_format">Age</div> 
+                  <div><%= user.age %></div>
+                </div>
+
+                <div class="tablecell" style="width:5%; text-align:left;">
+                  <div class="faint_text_format">payment</div> 
+                  <div>--</div>
+                </div>
+
+                <div class="tablecell" style="width:5%; text-align:left;">
+                  <div class="faint_text_format">event ref</div> 
+                  <div>--</div>
+                </div>
+
+                <div class="tablecell" style="width:5%; text-align:left;">
+                  <div class="faint_text_format">[Stripe] Customer_id</div> 
+                  <div>--</div>
+                </div>
+
+                <div class="tablecell" style="width:5%; text-align:left;">
+                  <div class="faint_text_format">[Stripe] Payment_id</div> 
+                  <div>--</div>
+                </div>
+
+                <div class="tablecell" style="width:5%; text-align:left;">
+                  <div class="faint_text_format">card</div> 
+                  <div>--</div>
+                </div>
+
+
+
+
+        
+
+
+              </div>
+            <% end %>
           </div>
         </div>
       </div>
