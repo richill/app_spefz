@@ -583,7 +583,7 @@ class Event < ActiveRecord::Base
     self.externalattendinglist.users(user).count
   end
 
-  # displays total amount made from created paid_events
+  # displays total count & amount made from created paid_events
   def self.count_total_paid_events 
     paid_events.count
   end
@@ -594,7 +594,7 @@ class Event < ActiveRecord::Base
     total_paid_events = paid_events_spefz + paid_events_externalattendinglist
   end
 
-  # displays total amount made from created free_events
+  # displays total count & amount made from created free_events
   def self.count_total_free_events  
     free_events.count
   end
@@ -606,8 +606,31 @@ class Event < ActiveRecord::Base
   end
 
 
+  # displays total count & amount made from created active paid_events
+  def self.count_total_active_paid_events 
+    paid_events.live_events.open_events.count
+  end
+
+  def self.total_active_paid_events_amt
+    paid_events_live_open_spefz = paid_events.live_events.open_events.total_price_for_events.to_f.round(2)
+    paid_events_live_open_externalattendinglist = paid_events.live_events.open_events.total_price_for_events_attendinglist.to_f.round(2)
+    total_paid_active_events = paid_events_live_open_spefz + paid_events_live_open_externalattendinglist
+  end
 
 
+  # displays total count & amount made from created active free_events
+  def self.count_total_active_free_events 
+    free_events.live_events.open_events.count
+  end
+
+  def self.total_active_free_events_amt
+    free_events_live_open_spefz = free_events.live_events.open_events.total_price_for_events.to_f.round(2)
+    free_events_live_open_externalattendinglist = free_events.live_events.open_events.total_price_for_events_attendinglist.to_f.round(2)
+    total_free_active_events = free_events_live_open_spefz + free_events_live_open_externalattendinglist
+  end
+
+
+  
 
 
 end

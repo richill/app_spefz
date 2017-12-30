@@ -6,9 +6,9 @@
         <div class="header"> total events</div>
         <div class="header_data">
           <span class="header_icon"><i class="fa fa-calendar" aria-hidden="true"></i></span>
-          <span><%= @events.all.count %></span>
+          <span><%= (@events.count_total_paid_events) + (@events.count_total_free_events) %></span>
           <% if current_user.admin_pa_management_group %>
-            <div class="minor_info">£<%= @events.total_price_for_events %> [all]</div>
+            <div class="minor_info">£<%= (@events.total_paid_events_amt) + (@events.total_free_events_amt) %> [all]</div>
           <% end %>
         </div>
       </div>
@@ -17,9 +17,9 @@
       <div class="data_content">
         <div class="header"> total active events</div>
         <div class="header_data"><span class="header_icon"><i class="fa fa-calendar-check-o" aria-hidden="true"></i></span>
-          <span><%= @events.live_events.open_events.count %></span>
+          <span><%= (@events.count_total_active_paid_events) + (@events.count_total_active_free_events) %></span>
           <% if current_user.admin_pa_management_group %>
-            <div class="minor_info">£<%= @events.live_events.open_events.total_price_for_events %> [all]</div>
+            <div class="minor_info">£<%= (@events.total_active_paid_events_amt) + (@events.total_active_free_events_amt) %> [all]</div>
           <% end %>
         </div>
       </div>
@@ -29,7 +29,7 @@
         <div class="header"> total active events [mth]</div>
         <div class="header_data">
           <span class="header_icon"><i class="fa fa-calendar-check-o" aria-hidden="true"></i></span>
-          <span><%= @events.held_this_month.live_events.open_events.count %></span>
+          <span>**<%= @events.held_this_month.live_events.open_events.count %></span>
           <% if current_user.admin_pa_management_group %>
             <div class="minor_info">£<%= @events.held_this_month.live_events.open_events.total_price_for_events %> [mth]</div>
           <% end %>
