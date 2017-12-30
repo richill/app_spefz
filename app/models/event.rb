@@ -151,6 +151,8 @@ class Event < ActiveRecord::Base
 
   scope :events_with_externalattendinglist, -> { select {|event| event.externalattendinglist.present? }}
 
+  scope :events_with_externalattendinglist_live_open, -> { select {|event| event.externalattendinglist.present? && event.live_event && event.open_event }}
+
   scope :events_with_cards_and_externalattendinglist, -> { select {|event| event.externalattendinglist.present? && event.card.present? }}
 
   def free_event

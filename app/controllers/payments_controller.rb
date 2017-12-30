@@ -237,6 +237,12 @@ class PaymentsController < ApplicationController
     # end
   end
 
+  def externalplatform
+    unless current_user.admin_pa_management_group
+      redirect_to errorpermission_path
+    end
+  end
+
   private
   def setup_friends
     @user = User.find(current_user.id)

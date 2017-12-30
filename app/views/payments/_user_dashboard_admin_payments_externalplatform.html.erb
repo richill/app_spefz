@@ -1,0 +1,84 @@
+<div class="user_dashboard_admin_payments">
+  <!-- upper_data_content -->
+  <div class="medium-12 columns upper_data_content hide">
+    <div class="medium-2 columns left_data responsive_data stats_tab_01">
+      <div class="data_content">
+        <div class="header"> n/a</div>
+        <div class="header_data"><span class="header_icon"><i class="fa fa-users" aria-hidden="true"></i></span><span>0</span></div>
+      </div>
+    </div>
+    <div class="medium-2 columns middle_data responsive_data stats_tab_02">
+      <div class="data_content">
+        <div class="header"> n/a</div>
+        <div class="header_data"><span class="header_icon"><i class="fa fa-user-plus" aria-hidden="true"></i></span>
+          <span>0</span>
+          <div class="minor_info">£0.00/mth</div>
+        </div>
+      </div>
+    </div>
+    <div class="medium-2 columns middle_data responsive_data stats_tab_03">
+      <div class="data_content">
+        <div class="header"> n/a</div>
+        <div class="header_data"><span class="header_icon"><i class="fa fa-calendar" aria-hidden="true"></i></span><span>0</span></div>
+      </div>
+    </div>
+    <div class="medium-2 columns middle_data responsive_data stats_tab_04">
+      <div class="data_content">
+        <div class="header"> n/a</div>
+        <div class="header_data"><span class="header_icon"><i class="fa fa-calendar" aria-hidden="true"></i></span><span>0</span></div>
+      </div>
+    </div>
+    <div class="medium-2 columns middle_data responsive_data stats_tab_05">
+      <div class="data_content">
+        <div class="header"> n/a</div>
+        <div class="header_data"><span class="header_icon"><i class="fa fa-calendar-check-o" aria-hidden="true"></i></span><span>0</span></div>
+      </div>
+    </div>
+    <div class="medium-2 columns right_data responsive_data stats_tab_06">
+      <div class="data_content">
+        <div class="header"> n/a</div>
+        <div class="header_data"><span class="header_icon"><i class="fa fa-calendar-check-o" aria-hidden="true"></i></span><span>0</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="clear"></div>
+
+  <!-- table_data_content -->
+  <div class="medium-12 columns lower_data_content stats_tab_01_content">
+    <div class="medium-12 columns lower_data_inner_content">
+      <!-- search -->
+        <!-- serach content goes here -->
+      <!-- search -->
+      <!-- listed payments -->
+      <h1>listed payments on external platform [<%= Event.events_with_externalattendinglist.map(&:externalattendinglist).flat_map(&:users).count %>]
+        <div class="h1_subtitle"><i class="fa fa-info-circle"></i> displays all payments on the platform</div>
+      </h1>
+      <div id="status_users_all_content">
+        <div class="bottom_inner_content">
+          <div class="table">
+            <div class="tablerow">
+              <div class="tablecell header background">payments</div>
+              <div class="tablecell background"></div>
+              <div class="tablecell background"></div>
+              <div class="tablecell background"></div>
+              <div class="tablecell background"></div>
+              <div class="tablecell background"></div>
+              <div class="tablecell background"></div>
+              <div class="tablecell background"></div>
+              <div class="tablecell background"></div>
+              <div class="tablecell background"></div>
+              <div class="tablecell background"></div>
+            </div>
+            <%# @payments.each do |payment| %>
+            <%# end %>
+          </div>
+        </div>
+      </div>
+      <!-- listed payments -->
+    </div>
+  </div>
+  <div class="clear"></div>
+</div>
+
+
+

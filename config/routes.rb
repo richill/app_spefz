@@ -36,7 +36,11 @@ Rails.application.routes.draw do
 
   resources :hosts
   resources :subscriptions
-  resources :payments
+  resources :payments do
+    collection do
+      get 'externalplatform'
+    end
+  end
   resources :signups
   resources :relationships, only: [:create, :destroy]
 
