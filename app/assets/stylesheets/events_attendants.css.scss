@@ -347,6 +347,7 @@
 .attendants_section .member_inner_container {
   background-color: rgba(255, 255, 255, 0.9) !important;
   padding: 8px;
+  position: relative;
 }
 
 .attendants_section .image_cover {
@@ -580,7 +581,21 @@
 }
 
 
-
+.user_overall_ratings {
+  font-size: 10px;
+  font-weight: 400 !important;
+  background-color: rgba(225, 71, 62, 0.85) !important;
+  text-transform: capitalize;
+  padding: 11px;
+  color: #fff;
+  margin-right: 5px;
+  text-align: center;
+  border-radius: 200px;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  right: 0;
+}
 
 
 
