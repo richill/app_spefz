@@ -1,6 +1,6 @@
-<h1>event ratings [<%= @events.expired_or_closed_events.events_with_ratings.count %>]
-  <span id="status_statsevents_rated" class="status_colour_pink">rated [<%= @events.expired_or_closed_events.events_with_ratings.count %>]</span>
-  <span id="status_statsevents_nonrated" class="status_colour_pink">non-rated [<%= @events.expired_or_closed_events.events_with_no_ratings.count %>]</span>
+<h1>event ratings [<%= @events.events_with_ratings.count %>]
+  <span id="status_statsevents_rated" class="status_colour_pink">rated [<%= @events.events_with_ratings.count %>]</span>
+  <span id="status_statsevents_nonrated" class="status_colour_pink">non-rated [<%= @events.events_with_no_ratings.count %>]</span>
   <div class="h1_subtitle"><i class="fa fa-info-circle"></i> displays all rated closed events on the platform [ordered by date held]</div>
 </h1>
 
@@ -19,7 +19,7 @@
         <div class="tablecell background"></div>
         <div class="tablecell background"></div>
       </div>
-      <% @events.expired_or_closed_events.events_with_ratings.each do |event| %>
+      <% @events.events_with_ratings.each do |event| %>
         <div class="tablerow">
           <div class="tablecell" style="width:10%">
             <div class="image_container">
@@ -218,7 +218,7 @@
         <div class="tablecell background"></div>
         <div class="tablecell background"></div>
       </div>
-      <% @events.expired_or_closed_events.events_with_no_ratings.each do |event| %>
+      <% @events.events_with_no_ratings.each do |event| %>
         <div class="tablerow">
           <div class="tablecell" style="width:10%">
             <div class="image_container">
