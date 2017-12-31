@@ -714,6 +714,9 @@ class Event < ActiveRecord::Base
     booked_events_all.live_events.open_events.events_with_externalattendinglist_users
   end
 
+
+
+
   #displays events [held in current month] with only payments and no created attendingList
   def self.event_with_only_payments_heldThisMonth
     held_this_month.booked_events_all.live_events.open_events.events_without_externalattendinglist

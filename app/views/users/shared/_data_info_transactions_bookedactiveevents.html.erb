@@ -1,4 +1,8 @@
 <h1>booked active events [<%= @events.booked_events_all.live_events.open_events.count %>]
+  <span id="status_statsevents_active_paid" class="status_colour_blue">events with only payments [<%= @events.count_total_active_paid_events %>]</span>
+  <span id="status_statsevents_active_free" class="status_colour_blue">events with only attendingList [<%= @events.count_total_active_free_events %>]</span>
+  <span id="status_statsevents_active_paid" class="status_colour_blue">events with pymts & attendingList (no users) [<%= @events.count_total_active_paid_events %>]</span>
+  <span id="status_statsevents_active_free" class="status_colour_blue">events with pymts & attendingList (users) [<%= @events.count_total_active_free_events %>]</span>
   <div class="h1_subtitle"><i class="fa fa-info-circle"></i> displays all live & open events that have payments on the platform [ordered by date held]</div>
 </h1>
 
