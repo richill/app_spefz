@@ -66,6 +66,11 @@
                       </div>
                       <!-- dummy banner -->
                       <div class="medium-12 columns member_inner_container">
+                        <% if user.overall_ratings.present? %>
+                          <div class="user_overall_ratings">
+                            <%= number_with_precision(user.overall_ratings, precision: 1) %>
+                          </div>
+                        <% end %>
                         <div class="image_section">
                           <% if user.image_url.present? %>
                           <div class="image_cover"><%= link_to(cl_image_tag(user.image, :transformation=>[{:gravity=>"face", :width=>200, :height=>200, :crop=>"fill", :radius=>"max"}]), user_path(user)) %></div>
@@ -79,6 +84,12 @@
                             <div class="user_profession"><%= truncate(user.profession, length: 25) %></div>
                             <div>
                               <span class="user_ref"><%= mail_to "#{user.email}", "#{user.reference}", subject: "Spefz | #{user.firstname} #{user.lastname}", class: "user_ref" %></span>
+                              <span class="divider">|</span>
+                              <% if user.category_gender.name == "Male" %>
+                                <span class="user_gender"><i class="fa fa-male" aria-hidden="true"></i> <%= "M" %></span>
+                              <% elsif user.category_gender.name == "Female" %>
+                                <span class="user_gender"><i class="fa fa-female" aria-hidden="true"></i> <%= "W" %></span>
+                              <% end %>
                               <span class="divider">|</span>
                               <span class="user_age">Age:  <%= user.age %></span>
                             </div>
@@ -122,6 +133,11 @@
                       </div>
                       <!-- dummy banner -->
                       <div class="medium-12 columns member_inner_container">
+                        <% if user.overall_ratings.present? %>
+                          <div class="user_overall_ratings">
+                            <%= number_with_precision(user.overall_ratings, precision: 1) %>
+                          </div>
+                        <% end %>
                         <div class="image_section">
                           <% if user.image_url.present? %>
                             <div class="image_cover"><%= link_to(cl_image_tag(user.image, :transformation=>[{:gravity=>"face", :width=>200, :height=>200, :crop=>"fill", :radius=>"max"}]), user_path(user)) %></div>

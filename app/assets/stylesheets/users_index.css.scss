@@ -223,6 +223,7 @@
   background-color: rgba(255, 255, 255, 0.9) !important;
   padding: 8px;
   height: 72px;
+  position: relative;
 }
 
 .members_section .image_cover {
@@ -299,6 +300,13 @@
 }
 
 .members_section .user_age {
+  font-family: 'Lato', sans-serif;
+  font-size: 10px;
+  text-transform: capitalize;
+  text-align: left;
+}
+
+.members_section .user_gender {
   font-family: 'Lato', sans-serif;
   font-size: 10px;
   text-transform: capitalize;
@@ -495,6 +503,22 @@
 
 .members_section .user_roles .divider {
   margin: 5px;
+}
+
+.members_section .user_overall_ratings {
+  font-size: 10px;
+  font-weight: 400 !important;
+  background-color: rgba(225, 71, 62, 0.85) !important;
+  text-transform: capitalize;
+  padding: 11px;
+  color: #fff;
+  margin-right: 5px;
+  text-align: center;
+  border-radius: 200px;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  right: 0;
 }
 
 
