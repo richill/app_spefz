@@ -19,7 +19,7 @@
         <div class="tablecell background"></div>
         <div class="tablecell background"></div>
       </div>
-      <% @events.events_with_ratings.each do |event| %>
+      <% @events.order("date desc").events_with_ratings.each do |event| %>
         <div class="tablerow">
           <div class="tablecell" style="width:10%">
             <div class="image_container">
@@ -218,7 +218,7 @@
         <div class="tablecell background"></div>
         <div class="tablecell background"></div>
       </div>
-      <% @events.events_with_no_ratings.each do |event| %>
+      <% @events.order("date desc").events_with_no_ratings.each do |event| %>
         <div class="tablerow">
           <div class="tablecell" style="width:10%">
             <div class="image_container">

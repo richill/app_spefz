@@ -19,7 +19,7 @@
         <div class="tablecell background"></div>
         <div class="tablecell background"></div>
       </div>
-      <% @events.paid_events.expired_or_closed_events.order("date asc").each do |event| %>
+      <% @events.paid_events.expired_or_closed_events.order("date desc").each do |event| %>
         <div class="tablerow">
           <div class="tablecell" style="width:10%">
             <div class="image_container">
@@ -232,7 +232,7 @@
         <div class="tablecell background"></div>
         <div class="tablecell background"></div>
       </div>
-      <% @events.free_events.expired_or_closed_events.order("date asc").each do |event| %>
+      <% @events.free_events.expired_or_closed_events.order("date desc").each do |event| %>
         <div class="tablerow">
           <div class="tablecell" style="width:10%">
             <div class="image_container">
