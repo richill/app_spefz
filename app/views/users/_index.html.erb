@@ -66,7 +66,7 @@
                       </div>
                       <!-- dummy banner -->
                       <div class="medium-12 columns member_inner_container">
-                        <% if user.overall_ratings.present? %>
+                        <% if user.overall_ratings.present? && user.overall_ratings > 0.1 %>
                           <div class="user_overall_ratings">
                             <%= number_with_precision(user.overall_ratings, precision: 1) %>
                           </div>
@@ -133,7 +133,7 @@
                       </div>
                       <!-- dummy banner -->
                       <div class="medium-12 columns member_inner_container">
-                        <% if user.overall_ratings.present? %>
+                        <% if user.overall_ratings.present? && user.overall_ratings > 0.1 %>
                           <div class="user_overall_ratings">
                             <%= number_with_precision(user.overall_ratings, precision: 1) %>
                           </div>
