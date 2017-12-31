@@ -483,9 +483,11 @@
                     </div>
                     <!-- dummy banner -->
                     <div class="medium-12 columns member_inner_container">
-                      <div class="user_overall_ratings">
-                        <%= number_with_precision(attendant.user.overall_ratings, precision: 1) %>
-                      </div>
+                      <% if attendant.user.overall_ratings.present? %>
+                        <div class="user_overall_ratings">
+                          <%= number_with_precision(attendant.user.overall_ratings, precision: 1) %>
+                        </div>
+                      <% end %>
                       <div class="image_section">
                         <% if attendant.user.image_url.present? %>
                         <div class="image_cover"><%= link_to(cl_image_tag(attendant.user.image, :transformation=>[{:gravity=>"face", :width=>200, :height=>200, :crop=>"fill", :radius=>"max"}]), user_path(attendant.user)) %></div>
@@ -561,9 +563,11 @@
                     </div>
                     <!-- dummy banner -->
                     <div class="medium-12 columns member_inner_container">
-                      <div class="user_overall_ratings">
-                        <%= number_with_precision(attendant.overall_ratings, precision: 1) %>
-                      </div>
+                      <% if attendant.overall_ratings.present? %>
+                        <div class="user_overall_ratings">
+                          <%= number_with_precision(attendant.overall_ratings, precision: 1) %>
+                        </div>
+                      <% end %>
                       <div class="image_section">
                         <% if attendant.image_url.present? %>
                         <div class="image_cover"><%= link_to(cl_image_tag(attendant.image, :transformation=>[{:gravity=>"face", :width=>200, :height=>200, :crop=>"fill", :radius=>"max"}]), user_path(attendant)) %></div>
