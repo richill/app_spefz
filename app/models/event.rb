@@ -681,7 +681,6 @@ class Event < ActiveRecord::Base
     total_closed_free_events = free_events_closed_or_expired_spefz + free_events_closed_or_expired_externalattendinglist
   end
 
-
   #displays total count of created active paid_events
   def self.count_unbooked_active_paid_events 
     paid_events.unbooked_events.live_events.open_events.count
@@ -691,8 +690,6 @@ class Event < ActiveRecord::Base
   def self.count_unbooked_active_free_events  
     free_events.unbooked_events.live_events.open_events.count
   end
-
-
 
   #displays events with only payments and no created attendingList
   def self.event_with_only_payments
@@ -713,9 +710,6 @@ class Event < ActiveRecord::Base
   def self.event_with_payments_and_attendinglist_users
     booked_events_all.live_events.open_events.events_with_externalattendinglist_users
   end
-
-
-
 
   #displays events [held in current month] with only payments and no created attendingList
   def self.event_with_only_payments_heldThisMonth
