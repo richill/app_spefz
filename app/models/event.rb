@@ -102,16 +102,8 @@ class Event < ActiveRecord::Base
   scope :unbooked_events, -> { includes(:payments).where(payments: { event_id: nil }) }
   #displays all events that have not been booked/paid by users | events that do not have payments [this can be used for Free & Paid Events]
 
-
-
   scope :booked_events_all, -> { includes(:payments).where.not(payments: { event_id: nil }) }
   #displays all events that have been booked/paid by users | events that do have payments
-
-  scope :booked_events_all_attendinglist, -> { includes(:payments).where.not(payments: { event_id: nil }) }
-  #displays all events that have been booked/paid by users | events that do have payments
-
-
-
 
   scope :booked_events_all_total_price, -> { includes(:payments).where.not(payments: { event_id: nil }).sum("events.price") }
   #displays total price of all events that have been booked/paid by users | events that do have payments
@@ -150,6 +142,12 @@ class Event < ActiveRecord::Base
   scope :events_without_cards, -> { select {|event| !event.card.present? }}
 
   scope :events_with_externalattendinglist, -> { select {|event| event.externalattendinglist.present? }}
+
+  scope :events_with_externalattendinglist_nousers, -> { select {|event| event.externalattendinglist.users.empty? }}
+
+  scope :events_with_externalattendinglist_users, -> { select {|event| event.externalattendinglist.users.present? }}
+
+  scope :events_without_externalattendinglist, -> { select {|event| event.externalattendinglist.nil? }}
 
   scope :events_with_externalattendinglist_live_open, -> { select {|event| event.externalattendinglist.present? && event.live_event && event.open_event }}
 
@@ -692,6 +690,48 @@ class Event < ActiveRecord::Base
   #displays total count of created active free_events
   def self.count_unbooked_active_free_events  
     free_events.unbooked_events.live_events.open_events.count
+  end
+
+
+
+  #displays events with only payments and no created attendingList
+  def self.event_with_only_payments
+    booked_events_all.live_events.open_events.events_without_externalattendinglist
+  end
+
+  #displays events with only a created attedingList with users & no payments
+  def self.event_with_only_attendinglist_users
+    unbooked_events.live_events.open_events.events_with_externalattendinglist
+  end
+
+  #displays events with payments and a created attendingList with no users
+  def self.event_with_payments_and_attendinglist_nousers
+    booked_events_all.live_events.open_events.events_with_externalattendinglist_nousers
+  end
+
+  #displays events with payments and a created attendingList with users
+  def self.event_with_payments_and_attendinglist_users
+    booked_events_all.live_events.open_events.events_with_externalattendinglist_users
+  end
+
+  #displays events [held in current month] with only payments and no created attendingList
+  def self.event_with_only_payments_heldThisMonth
+    held_this_month.booked_events_all.live_events.open_events.events_without_externalattendinglist
+  end
+
+  #displays events [held in current month] with only a created attedingList with users & no payments
+  def self.event_with_only_attendinglist_users_heldThisMonth
+    held_this_month.unbooked_events.live_events.open_events.events_with_externalattendinglist
+  end
+
+  #displays events [held in current month] with payments and a created attendingList with no users
+  def self.event_with_payments_and_attendinglist_nousers_heldThisMonth
+    held_this_month.booked_events_all.live_events.open_events.events_with_externalattendinglist_nousers
+  end
+
+  #displays events [held in current month] with payments and a created attendingList with users
+  def self.event_with_payments_and_attendinglist_users_heldThisMonth
+    held_this_month.booked_events_all.live_events.open_events.events_with_externalattendinglist_users
   end
 end
 

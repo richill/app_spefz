@@ -35,7 +35,7 @@
         <div class="header"> booked active events</div>
         <div class="header_data">
           <span class="header_icon"><i class="fa fa-calendar-check-o" aria-hidden="true"></i></span>
-          <span><%= (@events.live_events.open_events).count - (@events.live_events.open_events.unbooked_events).count %></span>
+          <span><%= (@events.event_with_only_payments.count) + (@events.event_with_only_attendinglist_users.count) + (@events.event_with_payments_and_attendinglist_nousers.count) + (@events.event_with_payments_and_attendinglist_users.count) %></span>
           <div class="minor_info">£<%= @events.live_events.open_events.booked_events_all_total_price %> [all]</div>
         </div>
       </div>
@@ -44,7 +44,7 @@
       <div class="data_content">
         <div class="header"> booked active events [mth]</div>
         <div class="header_data"><span class="header_icon"><i class="fa fa-calendar-check-o" aria-hidden="true"></i></span>
-          <span><%= (@events.held_this_month.live_events.open_events).count - (@events.held_this_month.live_events.open_events.unbooked_events).count %></span>
+          <span><%= (@events.event_with_only_payments_heldThisMonth.count) + (@events.event_with_only_attendinglist_users_heldThisMonth.count) + (@events.event_with_payments_and_attendinglist_nousers_heldThisMonth.count) + (@events.event_with_payments_and_attendinglist_users_heldThisMonth.count) %></span>
           <div class="minor_info">£<%= @events.live_events.open_events.held_this_month.booked_events_all_total_price %> [mth]</div>
         </div>
       </div>
