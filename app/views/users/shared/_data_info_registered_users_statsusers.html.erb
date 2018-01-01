@@ -2,6 +2,7 @@
   <span id="status_statsusers_all" class="status_colour_blue">all [<%= @users.all.count %>]</span>
   <span id="status_statsusers_male" class="status_colour_blue">male [<%= @users.males.count %>]</span>
   <span id="status_statsusers_female" class="status_colour_blue">female [<%= @users.females.count %>]</span>
+  <span id="status_statsusers_dummies" class="status_colour_blue">dummies [<%= @dummies.count %>]</span>
   <span id="status_statsusers_rated" class="status_colour_pink">rated [<%= @users.users_with_ratings.count %>]</span>
   <span id="status_statsusers_nonrated" class="status_colour_pink">non-rated [<%= @users.users_with_no_ratings.count %>]</span>
   <div class="h1_subtitle"><i class="fa fa-info-circle"></i> displays all registered users on the platform [ordered by user last name]</div>
@@ -220,6 +221,105 @@
         <div class="tablecell background"></div>
       </div>
       <% @users.females.order("lastname asc").each do |user| %>
+        <div class="tablerow">
+          <div class="tablecell" style="width:10%">
+            <% if user_signed_in? %>
+              <% if current_user.admin_pa_management_group %>
+                <% if user.dummy_group %>
+                  <div class="banner_ribbon_wrapper_green_index">
+                    <div class="banner_ribbon_name_index">DUMMY</div>
+                  </div>
+                <% end %>
+              <% end %>
+            <% end %>
+            <div class="image_container">
+              <div class="image">
+                <% if user.image.present? %>
+                  <%= link_to image_tag(user.image_url), user, target: "_blank" %>
+                <% else %>
+                  <%= link_to image_tag("img-profile-image-default.png"), user, target: "_blank" %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+          <div class="tablecell">
+            <div class="user_name"><%= "#{user.firstname} #{user.lastname}" %></div>
+            <div class="ref_id"><%= user.reference %></div>
+            <% if user.subscribed? %>
+              <div class="ref_id"><%= "subscribed" %></div>
+            <% else %>
+              <div class="faint_text_format"><%= "unsubscribed" %></div> 
+            <% end %>
+          </div>
+          <div class="tablecell">
+            <div class="main_text_format">e: <%= mail_to "#{user.email}", "#{user.email}" %></div>
+            <div class="faint_text_format"><%= user.profession %></div>
+            <div class="faint_text_format">
+              <% if user.city? %>
+                <span><%= user.city %>,</span>
+              <% end %>
+              <span><%= user.category_country.name %></span>
+            </div> 
+          </div>
+          <div class="tablecell" style="width:5%; text-align:left;">
+            <div class="faint_text_format">Age</div> 
+            <div><%= user.age %></div>
+          </div>
+          <div class="tablecell">
+            <div class="faint_text_format">Role</div> 
+            <div class="main_text_format"><%= user.category_role.name %></div>
+          </div>
+          <div class="tablecell">
+            <div class="faint_text_format">Group</div> 
+            <div class="main_text_format"><%= user.category_managementgroup.name %></div>
+          </div>
+          <div class="tablecell">
+            <div class="overall_rate">
+              <div>Rate</div>
+              <div><%= number_with_precision(user.overall_ratings, precision: 1) %></div>
+            </div>
+          </div>
+          <div class="tablecell">
+            <div>
+              <span class="main_text_format"><%= user.socials.live_socials.open_socials.count %></span>
+              <span class="faint_text_format"> :Created Socials</span> 
+            </div>
+            <div>
+              <span class="main_text_format"><%= user.events.live_events.open_events.count %></span>
+              <span class="faint_text_format"> :Created Events</span> 
+            </div>
+          </div>
+          <div class="tablecell">
+            <div>
+              <span class="main_text_format"><%= user.attending_socials.live_socials.open_socials.count %></span>
+              <span class="faint_text_format"> :Attending Socials</span> 
+            </div>
+            <div>
+              <span class="main_text_format"><%= (@events.live_events.open_events.booked_events(user).count) + (@events.live_events.open_events.booked_events_attendinglist(user).count) %></span>
+              <span class="faint_text_format"> :Booked Events</span> 
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div id="status_statsusers_dummies_content" class="hide">
+  <div class="bottom_inner_content">
+    <div class="table">
+      <div class="tablerow">
+        <div class="tablecell header background">dummies</div>
+        <div class="tablecell background"></div>
+        <div class="tablecell background"></div>
+        <div class="tablecell background"></div>
+        <div class="tablecell background"></div>
+        <div class="tablecell background"></div>
+        <div class="tablecell background"></div>
+        <div class="tablecell background"></div>
+        <div class="tablecell background"></div>
+      </div>
+      <% @dummies.order("lastname asc").each do |user| %>
         <div class="tablerow">
           <div class="tablecell" style="width:10%">
             <% if user_signed_in? %>
