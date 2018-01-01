@@ -76,7 +76,8 @@ class UsersController < ApplicationController
 
   def dashboard
     if current_user.admin_pa_management_group
-      @users = User.all
+      @dummies = User.dummy_group
+      @users = User.users_not_in_dummy_group
       @socials = Social.all
       @events = Event.all
     else
@@ -92,7 +93,8 @@ class UsersController < ApplicationController
 
   def company
     if current_user.admin_pa_management_group
-      @users = User.all
+      @dummies = User.dummy_group
+      @users = User.users_not_in_dummy_group
       @socials = Social.all
       @events = Event.all
       @payments = Payment.all
@@ -115,7 +117,7 @@ class UsersController < ApplicationController
 
   def stats_socials
     if current_user.admin_pa_management_group || current_user.pa_event_mgt_group
-      @users = User.all
+      @users = User.users_not_in_dummy_group.all
       @socials = Social.all
       @events = Event.all
       @payments = Payment.all
@@ -126,7 +128,8 @@ class UsersController < ApplicationController
 
   def groups
     if current_user.admin_pa_management_group
-      @users = User.all
+      @dummies = User.dummy_group
+      @users = User.users_not_in_dummy_group
       @socials = Social.all
       @events = Event.all
       @payments = Payment.all
@@ -148,7 +151,7 @@ class UsersController < ApplicationController
 
   def transactions
     if current_user.admin_pa_management_group
-      @users = User.all
+      @users = User.users_not_in_dummy_group.all
       @socials = Social.all
       @events = Event.all
       @payments = Payment.all

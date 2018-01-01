@@ -6,7 +6,7 @@
   <div class="bottom_inner_content">
     <div class="table">
       <div class="tablerow">
-        <div class="tablecell header background">dummy group</div>
+        <div class="tablecell header background">dummies</div>
         <div class="tablecell background"></div>
         <div class="tablecell background"></div>
         <div class="tablecell background"></div>
@@ -17,7 +17,7 @@
         <div class="tablecell background"></div>
         <div class="tablecell background"></div>
       </div>
-      <% @users.dummy_group.order("lastname asc").each do |user| %>
+      <% @dummies.order("lastname asc").each do |user| %>
         <div class="tablerow">
           <div class="tablecell" style="width:10%">
             <% if user_signed_in? %>
