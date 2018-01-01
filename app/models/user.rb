@@ -115,6 +115,9 @@ class User < ActiveRecord::Base
   scope :dummy_group, ->() { joins(:category_managementgroup).where('category_managementgroups.name' => "Dummy Group") }                                                                                       
   # all users in development_group
 
+  scope :users_not_in_dummy_group, -> { joins(:category_managementgroup).where("category_managementgroups.name IN (?)", ["Account Group", "Administration Group", "Client Group", "Client Guest Group", "Development Group", "Event Management Group", "Management Group", "Sales/Marketing Group"]) }
+  # all users not in dummy_group
+
   scope :event_mgt_group, ->() { joins(:category_managementgroup).where('category_managementgroups.name' => "Event Management Group") }                                                                                       
   # all users in event_mgt_group
 
