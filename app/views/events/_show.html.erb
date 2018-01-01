@@ -181,7 +181,7 @@
       </ul>
       <ul class="inline-list right">
 
-        <% if @event.external_event? %>
+        <% if @event.external_event? && @event.event_price_zero? %>
           <% unless @event.expired_or_closed_event || @event.soldout? || @event.soldout_men? && @event.soldout_women? %>
             <li><span><div class="event_show_btn btn_event_booknow"><%= link_to 'Book Now!', @event.external_eventlink, target:"_blank" %></div></span></li>
           <% end %>

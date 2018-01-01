@@ -243,7 +243,7 @@
   text-align: center;
 }
 
-.eventbrite_section {
+.payments_new_section .eventbrite_section {
   position: relative;
   display: inline-block;
   border-radius: 5px;
@@ -257,14 +257,14 @@
   -o-transition: all 0.3s ease;
 }
 
-.eventbrite_section:hover {
+.payments_new_section .eventbrite_section:hover {
   opacity: 0.7;
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
 }
 
-.eventbrite_link_text {
+.payments_new_section .eventbrite_link_text {
   position: absolute;
   color: #fff !important;
   font-size: 10px;
@@ -275,7 +275,7 @@
   width: 100%;
 }
 
-.img_eventbrite_pymt {
+.payments_new_section .img_eventbrite_pymt {
   height: 60px;
   width: 100px;
   border-radius: 5px;

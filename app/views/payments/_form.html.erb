@@ -145,10 +145,12 @@
             <div class="pymt_header">
               <span>payment details</span> 
               <span class="card_images_all"><%= image_tag("img_cards_all.png") %></span>
-              <span class="eventbrite_section">
-                <span class="eventbrite_link_text">pay via eventbrite</span>
-                <span><%= link_to(cl_image_tag("https://res.cloudinary.com/spefzapp/image/upload/v1514808425/eventbrite_paymentinfo_dptfkx.png", class: "img_eventbrite_pymt"), "http://www.londonlovesbusiness.com/business-news/tech/speed-dating-start-up-aims-to-increase-odds-of-romantic-connection/17618.article", target:"_blank") %></span>
-              </span>
+              <% if @event.external_event? %>
+                <span class="eventbrite_section">
+                  <span class="eventbrite_link_text">pay via eventbrite</span>
+                  <span><%= link_to(cl_image_tag("https://res.cloudinary.com/spefzapp/image/upload/v1514808425/eventbrite_paymentinfo_dptfkx.png", class: "img_eventbrite_pymt"), @event.external_eventlink, target:"_blank") %></span>
+                </span>
+              <% end %>
             </div>
             <div class="pymt_content">
               <div class="payment_card_type">
