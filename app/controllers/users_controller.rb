@@ -114,6 +114,7 @@ class UsersController < ApplicationController
 
   def stats_socials
     if current_user.admin_pa_management_group || current_user.pa_event_mgt_group
+      @dummies = User.dummy_group
       @users = User.all
       @socials = Social.all
       @events = Event.all
