@@ -481,6 +481,19 @@
                         <% end %>
                       </div>​
                     </div>
+                    <!-- subscribed banner -->
+                    <div class="subie_banner_wrapper_container_index">
+                      <div class="subie_banner_wrapper_index">
+                        <% if current_user.admin_pa_management_group %>
+                          <% if attendant.user.subscribed? %>
+                            <div class="subie_banner_ribbon_wrapper_red_index">
+                              <div class="subie_banner_ribbon_name_index"></div>
+                            </div>
+                          <% end %>
+                        <% end %>
+                      </div>​
+                    </div>
+                    <!-- subscribed banner -->
                     <!-- dummy banner -->
                     <div class="medium-12 columns member_inner_container">
                       <% if attendant.user.overall_ratings.present? && attendant.user.overall_ratings > 0.1 %>
@@ -561,6 +574,19 @@
                         <% end %>
                       </div>​
                     </div>
+                    <!-- subscribed banner -->
+                    <div class="subie_banner_wrapper_container_index">
+                      <div class="subie_banner_wrapper_index">
+                        <% if current_user.admin_pa_management_group %>
+                          <% if attendant.subscribed? %>
+                            <div class="subie_banner_ribbon_wrapper_red_index">
+                              <div class="subie_banner_ribbon_name_index"></div>
+                            </div>
+                          <% end %>
+                        <% end %>
+                      </div>​
+                    </div>
+                    <!-- subscribed banner -->
                     <!-- dummy banner -->
                     <div class="medium-12 columns member_inner_container">
                       <% if attendant.overall_ratings.present? && attendant.overall_ratings > 0.1 %>
