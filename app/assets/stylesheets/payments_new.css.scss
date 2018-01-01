@@ -243,6 +243,43 @@
   text-align: center;
 }
 
+.eventbrite_section {
+  position: relative;
+  display: inline-block;
+  border-radius: 5px;
+  margin-bottom: 25px;
+  float: right;
+  box-shadow: 4px 6px 12px 0px rgba(0, 0, 0, 0.6);
+  -webkit-box-shadow: 4px 6px 12px 0px rgba(0,0,0,0.6);
+  -moz-box-shadow: 4px 6px 12px 0px rgba(0,0,0,0.6);
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+.eventbrite_section:hover {
+  opacity: 0.7;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+.eventbrite_link_text {
+  position: absolute;
+  color: #fff !important;
+  font-size: 10px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  word-spacing: 2px;
+  text-align: center;
+  width: 100%;
+}
+
+.img_eventbrite_pymt {
+  height: 60px;
+  width: 100px;
+  border-radius: 5px;
+}
 
 
 
