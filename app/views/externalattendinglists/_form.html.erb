@@ -29,6 +29,31 @@
       <div class="clear"></div>
 
       <div>Select Attendance:</div>
+      <!-- search -->
+      <div class="search_section hide">
+        <% if current_user.admin_pa_management_group || current_user.pa_administration_group %>
+          <div class="medium-12 columns search_container">
+            <div class="search_inner_container"> 
+              <%= search_form_for @search, url: edit_externalattendinglist_path(@event) do |f| %>       
+              <ul class="search_fields_left">
+                <li class="field select_gender"><%= f.select :category_gender_id_eq, options_from_collection_for_select(CategoryGender.all, "id", "name", @search.category_gender_id_eq), prompt: "Gender" %></li>
+              </ul>   
+
+              <ul class="search_fields_right">
+                <li><%= f.submit 'search' %></li> 
+                <li class="field btn_all">
+                  <%= link_to edit_externalattendinglist_path(@event) do %>
+                    <i class="fa fa-users" aria-hidden="true"></i>
+                  <% end %>
+                </li>
+                <li class="field select_user_name"><%= f.text_field :firstname_or_lastname_or_reference_cont, placeholder: 'search firstname, lastname or Ref eg: kofi'%></li>
+              </ul>        
+              <% end %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+      <!-- search -->
       <div class="medium-12 columns listed_hosts">
         <% if @event.category_quantitygender.name == "only men" %>
           <%= f.association :users, collection: User.all.males.order(:firstname), label_method: :user_info, label: false, as: :check_boxes %>

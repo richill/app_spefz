@@ -9,6 +9,7 @@
         <ul class="search_fields_left">
           <li class="field select_role"><%= f.select :category_role_id_eq, options_from_collection_for_select(CategoryRole.all, "id", "name", @search.category_role_id_eq), prompt: "Role" %></li>
           <li class="field select_mgtgroup"><%= f.select :category_managementgroup_id_eq, options_from_collection_for_select(CategoryManagementgroup.all, "id", "name", @search.category_managementgroup_id_eq), prompt: "Group" %></li>
+          <li class="field select_gender"><%= f.select :category_gender_id_eq, options_from_collection_for_select(CategoryGender.all, "id", "name", @search.category_gender_id_eq), prompt: "Gender" %></li>
         </ul>   
 
         <ul class="search_fields_right">

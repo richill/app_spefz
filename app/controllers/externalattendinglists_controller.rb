@@ -21,6 +21,8 @@ class ExternalattendinglistsController < ApplicationController
       @event = Event.friendly.find(params[:event_id])
       @externalattendinglist = Externalattendinglist.new
       @externalattendinglist.event = @event
+      @search = User.search(params[:q])
+      @users = @search.result(distinct: true)
       respond_with(@externalattendinglist)
     else
       redirect_to errorpermission_path
@@ -30,6 +32,8 @@ class ExternalattendinglistsController < ApplicationController
   def edit
     if current_user.admin_pa_management_group || current_user.pa_event_mgt_group
       @event = Event.friendly.find(params[:event_id])
+      @search = User.search(params[:q])
+      @users = @search.result(distinct: true)
     else
       redirect_to errorpermission_path
     end
@@ -40,6 +44,8 @@ class ExternalattendinglistsController < ApplicationController
       @event = Event.friendly.find(params[:event_id])
       @event.externalattendinglist = Externalattendinglist.new(externalattendinglist_params)
       @externalattendinglist = @event.externalattendinglist
+      @search = User.search(params[:q])
+      @users = @search.result(distinct: true)
       respond_to do |format|
         if @externalattendinglist.save   
           format.html { redirect_to(attendants_event_path(@event), notice: 'External Attending List Successfully Created.') }
