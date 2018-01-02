@@ -205,7 +205,6 @@ class User < ActiveRecord::Base
     self.category_role.name == "Client" && self.category_managementgroup.name == "Event Management Group" ||
     self.category_role.name == "Client" && self.category_managementgroup.name == "Management Group" ||
     self.category_role.name == "Client" && self.category_managementgroup.name == "Sales/Marketing Group"
-    
     # Group_F | client in account, adminstration, client, development, event mgt, management, sales group
   end
 
