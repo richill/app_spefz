@@ -9,12 +9,16 @@
           <li>
             <div class="event_details">
               <div>
-                <% if @event.image.present? %>
+                <% if @event.event_image_link.present? %>
                   <div class="image_cover event_image_cover">
-                    <%= link_to(cl_image_tag(@event.image, :transformation=>[{:gravity=>"face", :width=>200, :height=>200, :crop=>"fill"}]), user_event_path(@event.user, @event)) %>
+                    <%= link_to(cl_image_tag(@event.event_image_link, :transformation=>[{:gravity=>"face", :width => 600, :height => 320, :crop=>"fill"}]), event_path(@event)) %>
+                  </div>
+                <% elsif @event.image.present? %>
+                  <div class="image_cover event_image_cover">
+                    <%= link_to(cl_image_tag(@event.image, :transformation=>[{:gravity=>"center", :crop=>"fill"}]), event_path(@event)) %>
                   </div>
                 <% else %>
-                  <div class="image_cover event_image_cover"><%= link_to(image_tag("img_feed_07.png", :alt =>  "image", :class =>"#"), "#") %></div>
+                  <div class="image_cover event_image_cover"><%= link_to(image_tag("img_feed_06.png"), event_path(@event)) %></div>
                 <% end %>
               </div>        
               <div>
