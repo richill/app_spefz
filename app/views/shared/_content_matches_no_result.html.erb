@@ -10,7 +10,7 @@
           <div class="noresult_listed_options">
             <div class="list"><i class="fa fa-angle-double-right" aria-hidden="true"></i> Couldn't find matches of similar interest as you? try expanding your preference</div>
             <div class="list"><i class="fa fa-angle-double-right" aria-hidden="true"></i> Expand your search preference by braodening your selection in the preference form</div>
-            <div class="list"><i class="fa fa-angle-double-right" aria-hidden="true"></i> By broadening your prefernces you will be able to see events & socials of members of similar ineterst to you are attending</div>
+            <div class="list"><i class="fa fa-angle-double-right" aria-hidden="true"></i> By broadening your prefernces you will be able to see events & socials of members of similar ineterst to you</div>
             <% if current_user.preference.present? %>
               <div class="list"><i class="fa fa-angle-double-right" aria-hidden="true"></i> Expand your preference <%= link_to "edit preference form", edit_user_preference_path(current_user, current_user.preference) %></div>
             <% end %>
