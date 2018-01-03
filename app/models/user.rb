@@ -223,7 +223,7 @@ class User < ActiveRecord::Base
   end
 
   def subscribed_access?
-    self.subscribed? || self.admin_pa_management_group || self.pa_event_mgt_group || self.client_guest_group
+    self.subscribed? || self.admin_pa_management_group || self.pa_event_mgt_group || self.client_guest_group || self.dummy_group
   end
 
   def subscribed_social_access?(social_id)
@@ -381,7 +381,7 @@ class User < ActiveRecord::Base
 
   def self.platform_sufficient_users
     users = User.all
-    users.females.count > 15 && users.males.count > 15
+    users.females.count > 16 && users.males.count > 16
   end
 
   def matching(other_user)

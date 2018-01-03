@@ -38,7 +38,7 @@
       </li>
       <% else %>
       <li>
-        <div class="list_options hide">
+        <div class="list_options">
           <%= link_to new_user_preference_path(current_user), :class => is_active?("preferences/new") do %>
           <span><i class="fa fa-heartbeat" aria-hidden="true"></i></span>
           <span class="option_header">create preference</span>
@@ -47,7 +47,6 @@
       </li>
       <% end %>
     <% end %>
-
 
     <li>
       <div class="list_options">
