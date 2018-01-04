@@ -220,7 +220,6 @@
                           <div class="date"><%= event.date.strftime("%d") %></div>
                           <div class="month"><span><%= event.date.strftime("%b") %></span> <span class="divider">|</span> <span><%= event.date.strftime("%a") %></span></div>
                           
-
                           <% if event.current_user_attending_paid?(current_user) || event.user_on_event_attendingList?(current_user) %>
                             <div class="btn_booked"><%= link_to "booked!", event_path(event) %></div>
                           <% else %>
@@ -230,7 +229,6 @@
                               <div class="btn_booknow"><%= link_to "book now!", event_path(event) %></div>
                             <% end %>
                           <% end %>
-
 
                           <!-- <%# if event.external_event? %>
                             <%# if event.sold_out? || event.soldout? || event.soldout_men? && event.soldout_women? %>
