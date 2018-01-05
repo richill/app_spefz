@@ -17,6 +17,7 @@ class EventsController < ApplicationController
   def show
     @event = Event.friendly.find(params[:id])
     impressionist(@event)
+    @users_dummy = User.random.dummy_group
     @host = Host.new
     @card = Card.new
     if @event.upcoming_event? && !current_user.admin_pa_management_group && !current_user.pa_event_mgt_group
