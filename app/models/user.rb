@@ -381,7 +381,7 @@ class User < ActiveRecord::Base
 
   def self.platform_sufficient_users
     users = User.all
-    users.females.count > 16 && users.males.count > 16
+    users.females.count > 2 && users.males.count > 2
   end
 
   def matching(other_user)
@@ -707,8 +707,8 @@ class User < ActiveRecord::Base
 
   protected
   # deactivates confirmable
-  # def confirmation_required?
-  #   false
-  # end
+  def confirmation_required?
+    false
+  end
 end
 
