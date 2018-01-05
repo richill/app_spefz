@@ -1,16 +1,39 @@
 <div class="users_eventattendance_section">
   <div>
     <ul class="inline-list">
-    <%# @users_dummy.random.limit(16).each do |attendant| %>
-    <% User.random.limit(16).each do |attendant| %>
-      <li>
-        <% if attendant.image_url.present? %>
-          <%= link_to(cl_image_tag(attendant.image, :transformation=>[{:gravity=>"face", :width=>200, :height=>200, :crop=>"fill", :radius=>"max"}]), "#") %>
-        <% else %>
-          <%= link_to (image_tag("img-profile-image-default.png")), "#" %>
+      <% if signed_in? %>
+        <% if current_user.category_gender.name == "Male" %>
+          <% @users_dummy.females.random.limit(16).each do |attendant| %>
+            <li>
+              <% if attendant.image_url.present? %>
+                <%= link_to(cl_image_tag(attendant.image, :transformation=>[{:gravity=>"face", :width=>200, :height=>200, :crop=>"fill", :radius=>"max"}]), "#") %>
+              <% else %>
+                <%= link_to (image_tag("img-profile-image-default.png")), "#" %>
+              <% end %>
+            </li>
+          <% end %>
+        <% elsif current_user.category_gender.name == "Female" %>
+          <% @users_dummy.males.random.limit(16).each do |attendant| %>
+            <li>
+              <% if attendant.image_url.present? %>
+                <%= link_to(cl_image_tag(attendant.image, :transformation=>[{:gravity=>"face", :width=>200, :height=>200, :crop=>"fill", :radius=>"max"}]), "#") %>
+              <% else %>
+                <%= link_to (image_tag("img-profile-image-default.png")), "#" %>
+              <% end %>
+            </li>
+          <% end %>
         <% end %>
-      </li>
-    <% end %>
+      <% else %>
+        <% @users_dummy.random.limit(16).each do |attendant| %>
+          <li>
+            <% if attendant.image_url.present? %>
+              <%= link_to(cl_image_tag(attendant.image, :transformation=>[{:gravity=>"face", :width=>200, :height=>200, :crop=>"fill", :radius=>"max"}]), "#") %>
+            <% else %>
+              <%= link_to (image_tag("img-profile-image-default.png")), "#" %>
+            <% end %>
+          </li>
+        <% end %>
+      <% end %>
     </ul>
   </div>
 </div>
