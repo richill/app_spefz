@@ -1,0 +1,15 @@
+<div class="users_eventattendance_section">
+  <div>
+    <ul class="inline-list">
+    <% User.dummy_group.each do |attendant| %>
+      <li>
+        <% if attendant.image_url.present? %>
+          <%= link_to(cl_image_tag(attendant.image, :transformation=>[{:gravity=>"face", :width=>200, :height=>200, :crop=>"fill", :radius=>"max"}]), user_path(attendant)) %>
+        <% else %>
+          <%= link_to (image_tag("img-profile-image-default.png")), user_path(attendant) %>
+        <% end %>
+      </li>
+    <% end %>
+    </ul>
+  </div>
+</div>
