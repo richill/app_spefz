@@ -107,6 +107,7 @@ class EventsController < ApplicationController
 
   def preview
     @event = Event.friendly.find(params[:id])
+    @users_dummy = User.random.dummy_group
   end
 
   private
