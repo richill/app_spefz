@@ -461,10 +461,20 @@
   -o-transition: all 0.3s ease;
 }
 
+.blogs_section .right_content .blog_user_details {
+  position: relative;
+}
+
 @media only screen and (max-width: 285px) {
   .blogs_section .right_content .blog_user_details {
     font-size: 0px; 
   }
+}
+
+.blogs_section .right_content .blogger_user_content {
+  position: absolute !important;
+  margin-top: 18px !important;
+  left: 65px !important;
 }
 
 .blogs_section .right_content .blog_user_details a {
