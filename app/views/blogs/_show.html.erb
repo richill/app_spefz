@@ -50,30 +50,36 @@
                   <li class="listed_evts">
                     <div class="evt_container">
                       <div class="evt_left_content">
-
                         <% if signed_in? %>
                           <%= link_to event_path(event) do %>
-                            <div class="img_cover">
-                              <% if event.image.present? %>
-                              <%= link_to(cl_image_tag(event.image, :transformation=>[{:gravity=>"center", :crop=>"fill"}]), event) %>
-                              <% else %>
-                                <%= link_to(image_tag("img_feed_07.png", :alt =>  "image", :class =>"#"), event) %>
-                              <% end %>
-                            </div>
+                            <% if event.event_image_link.present? %>
+                              <div class="image_cover">
+                                <%= link_to(cl_image_tag(event.event_image_link, :transformation=>[{:gravity=>"center", :crop=>"fill"}]), event) %>
+                              </div>
+                            <% elsif event.image.present? %>
+                              <div class="image_cover">
+                                <%= link_to(cl_image_tag(event.image, :transformation=>[{:gravity=>"center", :crop=>"fill"}]), event) %>
+                              </div>
+                            <% else %>
+                              <div class="image_cover"><%= link_to(image_tag("img_feed_06.png"), event) %></div>
+                            <% end %>
                           <% end %>
                         <% else %>
-                          <%= link_to event_path(event) do %>
-                            <div class="img_cover">
-                              <% if event.image.present? %>
-                              <%= link_to(cl_image_tag(event.image, :transformation=>[{:gravity=>"center", :crop=>"fill"}]), preview_event_path(event)) %>
-                              <% else %>
-                                <%= link_to(image_tag("img_feed_07.png", :alt =>  "image", :class =>"#"), preview_event_path(event)) %>
-                              <% end %>
-                            </div>
+                          <%= link_to preview_event_path(event) do %>
+                            <% if event.event_image_link.present? %>
+                              <div class="image_cover">
+                                <%= link_to(cl_image_tag(event.event_image_link, :transformation=>[{:gravity=>"center", :crop=>"fill"}]), preview_event_path(event)) %>
+                              </div>
+                            <% elsif event.image.present? %>
+                              <div class="image_cover">
+                                <%= link_to(cl_image_tag(event.image, :transformation=>[{:gravity=>"center", :crop=>"fill"}]), preview_event_path(event)) %>
+                              </div>
+                            <% else %>
+                              <div class="image_cover"><%= link_to(image_tag("img_feed_06.png"), preview_event_path(event)) %></div>
+                            <% end %>
                           <% end %>
                         <% end %>
                       </div>
-
                       <div class="evt_right_content">
                         <% if signed_in? %>
                           <div class="evt_min_reponsive_trun"><%= link_to (truncate "#{event.title}", length: 25), event %></div>
