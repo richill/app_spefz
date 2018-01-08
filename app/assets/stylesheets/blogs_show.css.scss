@@ -261,6 +261,7 @@
   letter-spacing: 1px;
   font-size: 13px !important;
   font-weight: bold;
+  position: relative;
 }
 
 .blogs_show_section .blog_show_sub_content a {
@@ -275,6 +276,18 @@
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
+}
+
+.blogs_show_section .blogger_user_content {
+  position: absolute !important;
+  margin-top: 10px !important;
+  left: 45px !important;
+}
+
+@media only screen and (max-width: 692px) {
+  .blogs_show_section .blogger_user_content {
+    margin-top: 0px !important; 
+  }
 }
 
 .blogs_show_section .blog_img_cover {
