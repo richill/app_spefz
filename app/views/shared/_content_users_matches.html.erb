@@ -102,7 +102,6 @@
                             </div>
                           </div>
                         <% end %>
-
                         <% if current_user.subscribed? || current_user.subscribed_access?  %>
                           <% if @events.live_events.open_events.booked_events(user).present? || @events.live_events.open_events.booked_events_attendinglist(user).present? || user.attending_socials.live_socials.open_socials.present? %>
                             <div class="action_btns">
@@ -113,9 +112,8 @@
                             <div class="action_btns"><%= link_to "profile", user %></div>
                           <% end %>
                         <% else %>
-                          <div class="action_btns"><%= link_to "profile", user %></div>
+                          <div class="action_btns"><%= link_to "profile", subscription_path(@premium_plan) %></div>
                         <% end %>
-
                       </div>
                       <div class="clear"></div>
                       <% if current_user.admin_pa_management_group || current_user.pa_administration_group %>
