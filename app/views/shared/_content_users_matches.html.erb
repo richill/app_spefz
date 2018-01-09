@@ -101,15 +101,21 @@
                               <span class="user_age">Age:  <%= user.age %></span>
                             </div>
                           </div>
-                        <% end %> 
-                        <% if @events.live_events.open_events.booked_events(user).present? || @events.live_events.open_events.booked_events_attendinglist(user).present? || user.attending_socials.live_socials.open_socials.present? %>
-                          <div class="action_btns">
-                            <a href="#<%= user.id %>" data-reveal-id="<%= dom_id(user) %>_user_match_event">events</a>
-                            <div><%= render partial: 'shared/modal_users_matches_events', locals: { user: user } %></div>
-                          </div>
+                        <% end %>
+
+                        <% if current_user.subscribed? || current_user.subscribed_access?  %>
+                          <% if @events.live_events.open_events.booked_events(user).present? || @events.live_events.open_events.booked_events_attendinglist(user).present? || user.attending_socials.live_socials.open_socials.present? %>
+                            <div class="action_btns">
+                              <a href="#<%= user.id %>" data-reveal-id="<%= dom_id(user) %>_user_match_event">events</a>
+                              <div><%= render partial: 'shared/modal_users_matches_events', locals: { user: user } %></div>
+                            </div>
+                          <% else %>
+                            <div class="action_btns"><%= link_to "profile", user %></div>
+                          <% end %>
                         <% else %>
                           <div class="action_btns"><%= link_to "profile", user %></div>
                         <% end %>
+
                       </div>
                       <div class="clear"></div>
                       <% if current_user.admin_pa_management_group || current_user.pa_administration_group %>
