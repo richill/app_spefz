@@ -386,18 +386,18 @@ class User < ActiveRecord::Base
   end
 
   def matching(other_user)
-    pref_seeking(other_user)
-    # pref_age(other_user) &&
-    # pref_relationship(other_user) &&
-    # pref_smoke(other_user)
-    # pref_religion(other_user) &&
-    # pref_parentstatus(other_user) &&
-    # pref_children(other_user) &&
-    # pref_ethnicity(other_user) &&
-    # pref_status(other_user) &&
-    # pref_bodytype(other_user) &&
-    # pref_education(other_user) &&
-    # pref_height(other_user)
+    pref_seeking(other_user) &&
+    pref_age(other_user) &&
+    pref_relationship(other_user) &&
+    pref_smoke(other_user) &&
+    pref_religion(other_user) &&
+    pref_parentstatus(other_user) &&
+    pref_children(other_user) &&
+    pref_ethnicity(other_user) &&
+    pref_status(other_user) &&
+    pref_bodytype(other_user) &&
+    pref_education(other_user) &&
+    pref_height(other_user)
   end
 
   def pref_age(other_user)
@@ -411,19 +411,6 @@ class User < ActiveRecord::Base
       end
     end
   end
-
-
-  # def pref_seeking(other_user)
-  #   #category_matchseeking
-  #   if self.preference.present? && other_user.preference.present?
-  #     if self.preference.category_matchseeking.name == "Male"
-  #       users = User.find(other_user)
-  #       other_user.preference.category_matchseeking.name == "Female"
-  #     elsif self.preference.category_matchseeking.name == "Female"
-  #       other_user.preference.category_matchseeking.name == "Male"
-  #     end
-  #   end
-  # end
 
 
   def pref_seeking(other_user)
