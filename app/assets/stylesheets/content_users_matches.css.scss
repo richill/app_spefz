@@ -287,7 +287,7 @@
 }
 
 .users_matches_section .unsunbscribed_img_cover img {
-  opacity: 0.5 !important;
+  opacity: 0.3 !important;
 }
 
 .users_matches_section .user_info_adj {
@@ -332,6 +332,10 @@
   text-transform: capitalize;
   text-align: left;
   color: #E34B51 !important;
+}
+
+.users_matches_section .user_ref a:hover {
+  text-decoration: underline;
 }
 
 .users_matches_section .profile_view a {
