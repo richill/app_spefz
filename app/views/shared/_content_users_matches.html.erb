@@ -44,15 +44,7 @@
           <% if current_user.preference.present? %>
             <%# if user matches based on preference form are present %>
               <ul class="inline-list">
-                <% User.desc_order.each do |user| %>
-                  <% if current_user.matching(user) %>
-                    <%= user.firstname %>
-                  <% end %>
-                <% end %>
-
-                <div>-------------------</div>
-
-                <% User.all.desc_order.each do |user| %>
+                <% @users.all.desc_order.each do |user| %>
                   <% if current_user.matching(user) %>
                     <li class="medium-3 columns member_container user_subscribed">
                       <!-- subscribed banner -->

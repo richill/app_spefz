@@ -434,6 +434,12 @@ class User < ActiveRecord::Base
       if self.category_gender.name == "Female" && self.preference.category_matchseeking.name == "Male"
         users = User.find(other_user)
         other_user.category_gender.name == "Male" && other_user.preference.category_matchseeking.name == "Female"
+
+      # i am a male && i am seeking a female
+      # display to me users who are females && who are seeking males
+      elsif self.category_gender.name == "Male" && self.preference.category_matchseeking.name == "Female"
+        users = User.find(other_user)
+        other_user.category_gender.name == "Female" && other_user.preference.category_matchseeking.name == "Male"
       
       # i am a female && i am seeking a female
       # display to me users who are females && who are seeking females
@@ -441,21 +447,12 @@ class User < ActiveRecord::Base
         users = User.find(other_user)
         other_user.category_gender.name == "Female" && other_user.preference.category_matchseeking.name == "Female"
       
-
       # i am a male && i am seeking a male
       # display to me users who are males && who are seeking males
       elsif self.category_gender.name == "Male" && self.preference.category_matchseeking.name == "Male"
         users = User.find(other_user)
         other_user.category_gender.name == "Male" && other_user.preference.category_matchseeking.name == "Male"
-      
-
-      # i am a male && i am seeking a female
-      # display to me users who are females && who are seeking males
-      elsif self.category_gender.name == "Male" && self.preference.category_matchseeking.name == "Female"
-        users = User.find(other_user)
-        other_user.category_gender.name == "Female" && other_user.preference.category_matchseeking.name == "Male"
       end
-      
     end
   end
 

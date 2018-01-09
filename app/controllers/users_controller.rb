@@ -261,6 +261,7 @@ class UsersController < ApplicationController
   end
 
   def matches
+    @users = User.all
   end
 
   def cancellation
