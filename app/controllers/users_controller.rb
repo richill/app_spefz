@@ -261,7 +261,11 @@ class UsersController < ApplicationController
   end
 
   def matches
-    @users = User.all
+    if current_user.image?
+      @users = User.all
+    else
+      redirect_to image_restriction_page_path
+    end
   end
 
   def cancellation
