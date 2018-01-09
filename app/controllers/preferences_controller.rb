@@ -13,16 +13,6 @@ class PreferencesController < ApplicationController
     @preference = @user.preference
   end
 
-  # def new
-  #   if current_user.subscribed_access?
-  #     @users = User.random
-  #     @user = current_user
-  #     @preference = @user.build_preference
-  #   else
-  #     redirect_to subscription_path(@premium_plan)
-  #   end
-  # end
-
   def new
     @users = User.random
     @user = current_user
