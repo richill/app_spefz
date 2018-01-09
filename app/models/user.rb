@@ -386,40 +386,76 @@ class User < ActiveRecord::Base
   end
 
   def matching(other_user)
-    pref_seeking(other_user) &&
-    pref_age(other_user) &&
-    pref_relationship(other_user) &&
-    pref_smoke(other_user)
-    pref_religion(other_user) &&
-    pref_parentstatus(other_user) &&
-    pref_children(other_user) &&
-    pref_ethnicity(other_user) &&
-    pref_status(other_user) &&
-    pref_bodytype(other_user) &&
-    pref_education(other_user) &&
-    pref_height(other_user)
+    pref_seeking(other_user)
+    # pref_age(other_user) &&
+    # pref_relationship(other_user) &&
+    # pref_smoke(other_user)
+    # pref_religion(other_user) &&
+    # pref_parentstatus(other_user) &&
+    # pref_children(other_user) &&
+    # pref_ethnicity(other_user) &&
+    # pref_status(other_user) &&
+    # pref_bodytype(other_user) &&
+    # pref_education(other_user) &&
+    # pref_height(other_user)
   end
 
   def pref_age(other_user)
-    current_user_age = self.age #eg displays: "36" 
-    other_user_age   = other_user.age #eg displays "40"
+    if self.preference.present? && other_user.preference.present?
+      current_user_age = self.age #eg displays: "36" 
+      other_user_age   = other_user.age #eg displays "40"
 
-    if (other_user_age >= self.preference.idealage_start.to_i && other_user_age <= self.preference.idealage_end.to_i) && 
-       (current_user_age >= other_user.preference.idealage_start.to_i && current_user_age <= other_user.preference.idealage_end.to_i)
-      other_user
+      if (other_user_age >= self.preference.idealage_start.to_i && other_user_age <= self.preference.idealage_end.to_i) && 
+         (current_user_age >= other_user.preference.idealage_start.to_i && current_user_age <= other_user.preference.idealage_end.to_i)
+        other_user
+      end
     end
   end
+
+
+  # def pref_seeking(other_user)
+  #   #category_matchseeking
+  #   if self.preference.present? && other_user.preference.present?
+  #     if self.preference.category_matchseeking.name == "Male"
+  #       users = User.find(other_user)
+  #       other_user.preference.category_matchseeking.name == "Female"
+  #     elsif self.preference.category_matchseeking.name == "Female"
+  #       other_user.preference.category_matchseeking.name == "Male"
+  #     end
+  #   end
+  # end
 
 
   def pref_seeking(other_user)
     #category_matchseeking
     if self.preference.present? && other_user.preference.present?
-      if self.preference.category_matchseeking.name == "Male"
+      # i am a female && i am seeking a male
+      # display to me users who are males && who are seeking females
+      if self.category_gender.name == "Female" && self.preference.category_matchseeking.name == "Male"
         users = User.find(other_user)
-        other_user.preference.category_matchseeking.name == "Female"
-      elsif self.preference.category_matchseeking.name == "Female"
-        other_user.preference.category_matchseeking.name == "Male"
+        other_user.category_gender.name == "Male" && other_user.preference.category_matchseeking.name == "Female"
+      
+      # i am a female && i am seeking a female
+      # display to me users who are females && who are seeking females
+      elsif self.category_gender.name == "Female" && self.preference.category_matchseeking.name == "Female"
+        users = User.find(other_user)
+        other_user.category_gender.name == "Female" && other_user.preference.category_matchseeking.name == "Female"
+      
+
+      # i am a male && i am seeking a male
+      # display to me users who are males && who are seeking males
+      elsif self.category_gender.name == "Male" && self.preference.category_matchseeking.name == "Male"
+        users = User.find(other_user)
+        other_user.category_gender.name == "Male" && other_user.preference.category_matchseeking.name == "Male"
+      
+
+      # i am a male && i am seeking a female
+      # display to me users who are females && who are seeking males
+      elsif self.category_gender.name == "Male" && self.preference.category_matchseeking.name == "Female"
+        users = User.find(other_user)
+        other_user.category_gender.name == "Female" && other_user.preference.category_matchseeking.name == "Male"
       end
+      
     end
   end
 
