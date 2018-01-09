@@ -286,6 +286,10 @@
   -o-transition: all 0.3s ease;
 }
 
+.users_matches_section .unsunbscribed_img_cover img {
+  opacity: 0.5 !important;
+}
+
 .users_matches_section .user_info_adj {
   padding: 0px;
   float: left;
