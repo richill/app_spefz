@@ -20,6 +20,10 @@ class Venue < ActiveRecord::Base
     ]
   end
 
+  
+  #scope :active -> { where(favourite: true) }
+  #scope :favourite, -> {where(['favourite = ?', true])}
+
   def should_generate_new_friendly_id?
     slug.blank? || self.venuename_changed?
   end

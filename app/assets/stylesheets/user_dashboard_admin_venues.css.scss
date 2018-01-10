@@ -127,11 +127,16 @@
   font-family: 'Lato', sans-serif;
   font-weight: 300;
   text-transform: capitalize;
-  margin-top: 11px !important;
+  margin-top: 2px !important;
   margin-right: 0px !important;
 }
 
 .user_dashboard_admin_venues .search_fields_left #q_favourite_true {
+  margin-bottom: 0px;
+  margin-right: 2px;
+}
+
+.user_dashboard_admin_venues .search_fields_left #q_favourite_false {
   margin-bottom: 0px;
   margin-right: 2px;
 }
