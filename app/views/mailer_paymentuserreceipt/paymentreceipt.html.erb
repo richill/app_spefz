@@ -76,7 +76,7 @@ a{color:#37aadc}
               </p>
               <div style="font-family:Arial, Helvetica, sans-serif;font-size:12px;background-color:#F9F9F9;padding:15px 15px 5px 15px;"><span style="font-weight:bold;">Purchase Transaction Ref:</span> <%= @payment.reference %></div>
               <div style="font-family:Arial, Helvetica, sans-serif;font-size:12px;background-color:#F9F9F9;padding:0px 15px 5px 15px"><span style="font-weight:bold;">Generated at:</span> <%= @payment.created_at.strftime("%a, %d %b %Y") %></div>
-              <div style="font-family:Arial, Helvetica, sans-serif;font-size:12px;background-color:#F9F9F9;padding:0px 15px 15px 15px;"><span style="font-weight:bold;">Sale value:</span> £<%= number_with_precision(@payment.event.price, precision: 2) %></div>
+              <div style="font-family:Arial, Helvetica, sans-serif;font-size:12px;background-color:#F9F9F9;padding:0px 15px 15px 15px;"><span style="font-weight:bold;">Price value:</span> £<%= number_with_precision(@payment.event.price, precision: 2) %></div>
 
               <p style="font-family:Arial, Helvetica, sans-serif;font-size:12px;line-height:22px;background-color:#F9F9F9;padding:15px;height:80px;">
                 <% if @payment.event.event_image_link.present? %>
