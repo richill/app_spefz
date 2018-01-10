@@ -27,6 +27,12 @@
 
           <div class="form-inputs">
             <%= f.file_field :image %>
+            <div class="clear"></div>
+            <div class="">
+              <%= f.input :favourite, label: 'favourite' %>
+              <div class="text_info">If ticked the venue will be considered as a favourite</div>
+            </div>
+            <div class="clear"></div>
             <%= f.input :venuename, label: "Venue Name", placeholder: "Pullman Hotel (Golden Arrow Bar)" %>
             <%= f.input :website, placeholder: "http://www.pullmanhotels.com" %>
             <%= f.input :address, placeholder: "100 - 110 Euston Road" %>
@@ -46,6 +52,9 @@
             <div class="event_manager_details">
               <%= f.input :eventmanager, label: "Event Manager", placeholder: "Dr. Nelson Larbi" %>
               <%= f.input :contact, label: "Contact", placeholder: "0208-958-7999" %>
+
+              <div class="clear"></div>
+              <%= f.input :email, label: false, placeholder: "nelson@networks.com" %>
     
               <div class="clear"></div>
               <%= f.input :note, label: "Notes" %>

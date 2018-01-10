@@ -32,6 +32,8 @@
 .user_general_settings_section .venue_edit_update_form .boolean {
   background-color: rgba(75, 180, 191, 0.2) !important;
   padding: 8px !important;
+  margin-bottom: 0px;
+  margin-right: 5px;
 }
 
 .user_general_settings_section .venue_edit_update_form .social_form_main_content input[type="text"]:focus {
@@ -161,6 +163,22 @@
 .user_general_settings_section .venue_edit_update_form #venue_contact {
   height: 50px !important;
   padding: 15px;
+}
+
+.venue_email {
+  padding: 15px 15px 0px 15px;
+}
+
+.user_general_settings_section .venue_edit_update_form #venue_email {
+  font-family: "Lato", sans-serif;
+  font-weight: 300 !important;
+  box-shadow: none !important;
+  padding: 0px 15px !important;
+  border: none !important;
+  height: 50px;
+  color: #454d53;
+  font-size: 15px;
+  margin-bottom: 0px !important;
 }
 
 .user_general_settings_section .venue_edit_update_form .venue_note {
