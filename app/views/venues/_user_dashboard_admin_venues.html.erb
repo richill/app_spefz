@@ -102,6 +102,7 @@
                 <div class="tablecell">
                   <div class="faint_text_format">Venue Name</div> 
                   <div class="main_text_format"><%= link_to "#{venue.venuename}", "#{venue.website}", target: "_blank" %></div>
+                  <div class="venue_email_link"><%= mail_to "#{venue.email}", "#{venue.email}", subject: "Spefz | #{venue.venuename}", class: "venue_email_link" %></div>
                 </div>
 
                 <div class="tablecell">
