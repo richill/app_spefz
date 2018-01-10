@@ -3,7 +3,6 @@ class Venue < ActiveRecord::Base
   friendly_id :slug_venues, use: :slugged
 
   validates_presence_of :venuename, presence: true, message: "can't be blank"
-  validates_presence_of :email, presence: true, message: "can't be blank"
   validates_presence_of :address, presence: true, message: "can't be blank"
   validates_presence_of :postcode, presence: true, message: "can't be blank"
   validates_presence_of :maplink, presence: true, message: "can't be blank"
