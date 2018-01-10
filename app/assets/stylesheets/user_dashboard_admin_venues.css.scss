@@ -116,10 +116,25 @@
 }
 
 .user_dashboard_admin_venues .search_fields_left li {
-  width: 200px;
+  width: 190px;
   float: left;
   margin: 0px !important;
   margin-right: 15px !important;
+}
+
+
+.user_dashboard_admin_venues .search_fields_left .favourite_boolean {
+  width: 83px !important;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  text-transform: capitalize;
+  margin-top: 11px !important;
+  margin-right: 0px !important;
+}
+
+.user_dashboard_admin_venues .search_fields_left #q_favourite_true {
+  margin-bottom: 0px;
+  margin-right: 2px;
 }
 
 .user_dashboard_admin_venues .search_fields_left li a {
@@ -167,7 +182,7 @@
 }
 
 .user_dashboard_admin_venues .search_fields_right .select_user_name {
-  width: 265px !important;
+  width: 230px !important;
 }
 
 .user_dashboard_admin_venues .search_fields_right .btn_all {

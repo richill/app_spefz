@@ -51,9 +51,12 @@
         <div class="search_inner_container">        
           <%= search_form_for(@search) do |f| %>
           <ul class="search_fields_left">
-            <li><%= f.check_box :favourite_true %></li>
             <li class="field select_role"><%= f.text_field :venuename_cont, placeholder: 'venue name eg: bar soho'%></li>
             <li class="field select_mgtgroup"><%= f.text_field :postcode_cont, placeholder: 'poscode eg: W1D 6DG'%></li>
+            <li class="favourite_boolean">
+              <span><%= f.check_box :favourite_true %></span>
+              <span>favourites</span>
+            </li>
           </ul>   
 
           <ul class="search_fields_right">
