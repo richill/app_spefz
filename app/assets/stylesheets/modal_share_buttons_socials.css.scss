@@ -1,0 +1,53 @@
+/*=========================================
+    Section: social / event / blog show-sections
+    File: views / shared / _modal_share_buttons.html.erb
+  =========================================*/
+
+#myModal-share-buttons_socials {
+  background: url("img_background_main.png") repeat;
+  border-radius: 0px !important;
+  border: 0px !important;
+  padding: 0px !important;
+  width: 400px !important;
+}
+
+.share_button_inner_container {
+  background-color: #fff !important;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+}
+
+.share_button_inner_container .header {
+  padding: 5px 15px !important;
+  font-size: 35px;
+  border-bottom: 2px solid #58CDA6;
+  text-transform: capitalize;
+  color: #fff !important;
+  background-color: #283041;
+}
+
+.share_button_inner_container .content_list {
+  padding: 8px !important;
+  min-height: 100px;
+}
+
+.share_button_inner_container .cancel_button {
+  color: #fff !important;
+}
+
+.social-share-button .ssb-icon {
+  margin: 16px !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
