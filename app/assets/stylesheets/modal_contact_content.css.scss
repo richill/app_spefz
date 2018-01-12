@@ -27,9 +27,13 @@
 
 .contact_content_modal .contact_content_container {
   padding: 15px;
+  line-height: 25px;
 }
 
-
+.contact_content_modal .contact_inner_content {
+  max-height: 305px;
+  overflow: scroll;
+}
 
 
 

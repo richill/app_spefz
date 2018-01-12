@@ -67,9 +67,9 @@
           </div>
           <div class="tablecell" style="width:25%;">
             <div class="faint_text_format">content</div> 
-            <div class="main_text_format">
+            <div class="main_text_format contact_content_view">
               <%= (truncate "#{contact.message}", length: 100) %>
-              <a href="#<%= contact.id %>" data-reveal-id="<%= dom_id(contact) %>_contact_content_show">view</a>
+              <a href="#<%= contact.id %>" data-reveal-id="<%= dom_id(contact) %>_contact_content_show" style="">view</a>
               <%= render partial: 'shared/modal_contact_content', locals: { contact: contact } %>
             </div>
           </div>
