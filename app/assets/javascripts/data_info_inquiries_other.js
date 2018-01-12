@@ -1,6 +1,6 @@
 /*=========================================
-    Userrs admin overview
-    File: views / shared / _data_info_registered_users.html.erb
+    Userrs admin inquiries page | Other Inquiries tab
+    File: views / shared / _data_info_inquiries_other.html.erb
   =========================================*/
 
 $(document).ready(function() {
