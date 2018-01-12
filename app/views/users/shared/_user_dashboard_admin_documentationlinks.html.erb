@@ -1,17 +1,16 @@
 <h1>documentation links</h1>
-<div class="user_settings_section">
+<div class="admin_documentationlinks_section">
 
   <!-- business links -->
-  <div class="settings_notes">
-    <div class="settings_detailed_info">
-      <div class="settings_password">
+  <div class="documentlinks_notes">
+    <div class="documentlinks_detailed_info">
+      <div class="">
         <div class="header"><i class="fa fa-chain-broken" aria-hidden="true"></i> <%= link_to "business links", "#", class: "settings_link" %></div>
         <div class="sub_header_info">Change your password at anytime. Periodically updating your password will help keep your account secure.</div>
         <div>
           <ul>
-            <li>We recommend updating it at least every six months</li>
-            <li>Updating your password does not affect how your account connects with your social networks</li>
-            <li>Passwords must include: 8 characters (no more than 64; 1 upper-case letter; and 1 lower-case letter)</li>
+            <li>Investment: <span class="highlighted_info"><%= link_to "Investment Link Page", investment_path, target:"_blank" %></span></li>
+            <li>Sponsorship: <span class="highlighted_info"><%= link_to "Sponsorship Link Page", sponsorship_path, target:"_blank" %></span></li>
           </ul>
         </div>
       </div>
@@ -19,16 +18,14 @@
   </div>
 
   <!-- user links -->
-  <div class="settings_notes">
-    <div class="settings_detailed_info">
-      <div class="settings_cancel_subscription">
+  <div class="documentlinks_notes">
+    <div class="documentlinks_detailed_info">
+      <div class="">
         <div class="header"><i class="fa fa-chain-broken" aria-hidden="true"></i> <%= link_to "other links", "#", class: "settings_link" %></div>
         <div class="sub_header_info">You can cancel your subscription at anytime. If unable to cancel your subscription via the website <span class="highlighted_info"><%= link_to "contact us", contact_us_path %></span></div>
         <div>
           <ul>
-            <li>At the "Contact Us" page select under the filter "Type Enquiry" then select the option <span class="highlighted_info">End Subscription Plan</span></li>
-            <li>Your subscription account <span class="highlighted_info"><%= "User ID: #{current_user.reference}" %></span> will be cancelled within a week</li>
-            <li>An email will be sent to you confirming the calletaion for your monthly subscription account</li>
+            <li>Presentation: <span class="highlighted_info"><%= link_to "Presentation Link Page", presentation_path, target:"_blank" %></span></li>
           </ul>
         </div>
       </div>
