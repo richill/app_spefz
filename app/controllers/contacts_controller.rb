@@ -61,8 +61,8 @@ class ContactsController < ApplicationController
   def destroy
     if current_user.admin_pa_management_group
       @contact.destroy
-      respond_to do |format|
-        format.html { redirect_to contacts_url, notice: 'Contact was successfully destroyed.' }
+      respond_to do |format| 
+        format.html { redirect_to inquiries_user_path(current_user), notice: 'Successfully deleted.' }
         format.json { head :no_content }
       end
     else

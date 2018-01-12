@@ -13,6 +13,7 @@
         <div class="tablecell background"></div>
         <div class="tablecell background"></div>
         <div class="tablecell background"></div>
+        <div class="tablecell background"></div>
       </div>
       <% @contacts.order("created_at asc").each do |contact| %>
         <div class="tablerow">
@@ -69,6 +70,9 @@
             <div class="main_text_format">
               <%= contact.message %>
             </div>
+          </div>
+          <div class="tablecell">
+            <div><%= link_to 'Destroy', contact, method: :delete, data: { confirm: 'Are you sure?' } %></div>
           </div>
         </div>
       <% end %>
