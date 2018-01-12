@@ -60,7 +60,8 @@ class ReportsController < ApplicationController
     if current_user.admin_pa_management_group ||
       @report.destroy
       respond_to do |format|
-        format.html { redirect_to reports_url, notice: 'Report was successfully destroyed.' }
+        format.html { redirect_to reports_user_path(current_user), notice: 'Successfully deleted.' }
+        # format.html { redirect_to reports_url, notice: 'Report was successfully destroyed.' }
         format.json { head :no_content }
       end
     else
