@@ -1,15 +1,15 @@
 /*=========================================
     Section: 
-    File: views / shared / _modal_contact_content.html.erb
+    File: views / shared / _modal_report_content.html.erb
   =========================================*/
 
-.contact_content_modal {
+.report_content_modal {
   border-radius: 0px !important;
   border: 0px !important;
   padding: 0px !important;
 }
 
-.contact_content_modal .header {
+.report_content_modal .header {
   padding: 5px 15px !important;
   font-size: 35px;
   border-bottom: 2px solid #58CDA6;
@@ -21,16 +21,16 @@
   margin-bottom: 0px !important;
 }
 
-.contact_content_modal .cancel_button {
+.report_content_modal .cancel_button {
   color: #fff !important;
 }
 
-.contact_content_modal .contact_content_container {
+.report_content_modal .report_content_container {
   padding: 15px;
   line-height: 25px;
 }
 
-.contact_content_modal .contact_inner_content {
+.report_content_modal .report_inner_content {
   max-height: 305px;
   overflow: scroll;
 }

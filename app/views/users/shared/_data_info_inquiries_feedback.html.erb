@@ -13,12 +13,21 @@
         <div class="tablecell background"></div>
         <div class="tablecell background"></div>
         <div class="tablecell background"></div>
+        <% if current_user.admin_pa_management_group || current_user.pa_administration_group %>
+          <div class="tablecell background"></div>
+        <% end %>
       </div>
       <% @contacts.feedback.order("created_at asc").each do |contact| %>
         <div class="tablerow">
           <div class="tablecell">
             <div class="user_name"><%= truncate "#{contact.category_enquiry.name}", length: 30 %></div>
-            <div class="ref_id"><%= contact.reference %></div>
+            <div class="ref_id">
+              <% if contact.email.present? %>
+                <%= mail_to "#{contact.email}", "#{contact.reference}", subject: "Spefz | [#{contact.category_enquiry.name}] #{contact.firstname} #{contact.lastname}", class: "ref_id" %>
+              <% else %>
+                <% contact.reference %>
+              <% end %>
+            </div>
           </div>
           <div class="tablecell">
             <div class="faint_text_format">client category</div> 
@@ -58,12 +67,19 @@
               <% end %>
             </div>
           </div>
-          <div class="tablecell">
+          <div class="tablecell" style="width:25%;">
             <div class="faint_text_format">content</div> 
-            <div class="main_text_format">
-              <%= contact.message %>
+            <div class="main_text_format contact_content_view">
+              <%= (truncate "#{contact.message}", length: 100) %>
+              <a href="#<%= contact.id %>" data-reveal-id="<%= dom_id(contact) %>_contact_content_show" style="">view</a>
+              <%= render partial: 'shared/modal_contact_content', locals: { contact: contact } %>
             </div>
           </div>
+          <% if current_user.admin_pa_management_group || current_user.pa_administration_group %>
+            <div class="tablecell">
+              <div class="delete_btn"><%= link_to 'Destroy', contact, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+            </div>
+          <% end %>
         </div>
       <% end %>
     </div>
