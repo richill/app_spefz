@@ -1,8 +1,111 @@
 /*=========================================
     Section: admin documentation-links page
-    File: views / users / _user_dashboard_admin_documentationlinks.html.erb
+    File: views / users / _documentation_links.html.erb
+    File: views / users / shared / _documentationlinks.html.erb
   =========================================*/
 
-// -----------------------------------
-//  upper_data_content
-// -----------------------------------
+// --------left_column_section--------
+.user_settings_section .settings_notes {
+  background-color: #fff;
+  color: #283041 !important;
+  padding: 15px;
+  margin-bottom: 40px;
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.14);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.14);
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.14);  
+}
+
+.user_settings_section .subscribed_memeber {
+  font-family: 'Lato', sans-serif;
+}
+
+.user_settings_section .subscribed_memeber .header {
+  font-size: 20px !important;
+  font-weight: bold !important;
+  text-transform: capitalize;
+}
+
+.user_settings_section .settings_link {
+  color: #283041 !important;
+  font-size: 20px !important;
+  font-weight: bold !important;
+  text-transform: capitalize;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease; 
+}
+
+.user_settings_section .settings_link:hover {
+  color: #E34B51 !important;
+  text-transform: capitalize;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease; 
+}
+
+
+.user_settings_section .subscribed_memeber .sub_header_info {
+  font-size: 15px !important;
+  font-weight: 400 !important;
+}
+
+.user_settings_section .subscribed_memeber .sub_header_info a {
+ color: #E34B51 !important;
+}
+
+.user_settings_section .subscribed_memeber .sub_header_info a:hover {
+ text-decoration: underline;
+}
+
+.user_settings_section .settings_detailed_info {
+  font-family: 'Lato', sans-serif;
+}
+
+.user_settings_section .settings_detailed_info .header {
+  font-size: 20px !important;
+  font-weight: bold !important;
+  text-transform: capitalize;
+}
+
+.user_settings_section .settings_detailed_info .header i {
+  margin-right: 3px;
+}
+
+.user_settings_section .settings_detailed_info .sub_header_info {
+  font-size: 15px !important;
+  font-weight: 400 !important;
+}
+
+.user_settings_section .settings_detailed_info ul {
+  font-family: 'Lato', sans-serif;
+  padding: 10px 0px;
+  font-weight: 400 !important;
+}
+
+.user_settings_section .settings_detailed_info li {
+  margin-bottom: 5px;
+}
+
+.user_settings_section .minor_sub_info {
+  font-size: 11px !important;
+  font-weight: bold !important;
+  margin-left: 2px !important;
+}
+
+.user_settings_section .highlighted_info a {
+  color: #E34B51 !important;
+}
+
+.user_settings_section .highlighted_info {
+  color: #E34B51 !important;
+}
+
+
+
+
+
+
+
+
+
+
