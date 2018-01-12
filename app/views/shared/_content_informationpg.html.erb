@@ -1,1 +1,208 @@
-<h1>information page</h1>
+<div class="medium-12 columns presentation_section">
+  <div class="presentation_inner_container">
+    <!-- left_column_section -->
+    <div class="medium-2 columns left_section">
+      <div class="company_section">
+        <span class="business_name">spefz ltd</span>
+        <span class="business_logo"><%= link_to(image_tag("apple-touch-icon.png"), "https://www.spefz.com", target:"_blank") %></span>
+      </div>
+      <div class="clear"></div>
+      <div class="divider"></div>
+      <div class="listed_sections">
+        <ul>
+          <li>
+            <div class="sponsor_list_options">
+              <%= link_to ".pagecover_content", rel: "relativeanchor" do %>
+              <span><i class="fa fa-check-square-o" aria-hidden="true"></i></span>
+              <span class="option_header">cover</span>
+              <% end %>
+            </div>
+          </li>
+          <li>
+            <div class="sponsor_list_options">
+              <%= link_to ".introduction_content", rel: "relativeanchor" do %>
+              <span><i class="fa fa-check-square-o" aria-hidden="true"></i></span>
+              <span class="option_header">introduction</span>
+              <% end %>
+            </div>
+          </li>
+          <li>
+            <div class="sponsor_list_options">
+              <%= link_to ".spefzmatch_content", rel: "relativeanchor" do %>
+              <span><i class="fa fa-check-square-o" aria-hidden="true"></i></span>
+              <span class="option_header">spefz social card</span>
+              <% end %>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- right_column_section -->
+    <div class="medium-10 columns right_section">
+
+      <!-- scroll_up_btn -->
+      <div class="medium-12 columns lift_btn_cover">
+        <div class="lift_btn" >
+          <%= link_to ".pagecover_content", rel: "relativeanchor" do %>
+            <span><i class="fa fa-chevron-up" aria-hidden="true"></i></span>
+          <% end %>
+        </div>
+      </div>
+      
+      <div class="right_inner_section">
+        <!-- pagecover_content -->
+        <div class="medium-12 columns sonpsorship_content pagecover_content">
+          <div class="sp_inner_content pagecover_inner_content">
+            <div class="main_text">spefz presentation</div>
+            <div class="sub_text">events dating app</div>
+              <div class="sp_event_details">
+              <div class="minor_text">a dating experience with a difference</div>
+              <div class="sp_evt_link"><span><%= link_to "www.spefz.com", "https://www.spefz.com", target:"_blank" %></span></div>
+            </div>
+          </div>
+          <div class="img_banner_content"><div class="main_img"></div></div>
+        </div>
+        <div class="clear"></div>
+
+        <!-- introduction_content -->
+        <div class="medium-12 columns sonpsorship_content introduction_content">
+          <div class="sp_inner_content introduction_inner_content">
+            <div class="sp_main_header">introduction</div>
+            <p>Spefz is a selective social dating app that holds exclusive live events for our registered members on the platform. We create profiled live events that gather and group individuals of similar interests and preferences, so the probability of members connecting will be much higher; we do this by auto-matching individuals to specific events (via our internal rating algorithm system on personality, physical appearance and interests) in order to ensure our members are able to network effectively and meet like-minded people of their calibre.</p>
+            <p>We have a thriving community of followers between the ages of 28-48 and we would like to discuss with you the opportunity to align your product with our event in order promote your brand and to promote our app.</p>
+            <p>Our events offer busy professionals a great way to meet new people in a fun, safe and chilled environment. The main key to creating our events is based on our internal algorithm that ensures that the compatibility and mutual interests of our members are met.</p>
+            <p>From the decorations to the food choices and activities, and by holding events in the best UK's most stylish venues, we ensure that we provide our members with a 360 degree experience. Our team of experts are ready to create a phenomenal experience for our members.</p>
+            <div class="medium-12 columns featured_section">
+              <div class="featured_title">we've been featured in:</div>
+              <div class="featured_inner_section">
+                <ul>
+                  <li><%= link_to(cl_image_tag("https://res.cloudinary.com/spefzapp/image/upload/v1506784519/img_featured_01_d27prr.png", class: "img_featured_01"), "http://www.londonlovesbusiness.com/business-news/tech/speed-dating-start-up-aims-to-increase-odds-of-romantic-connection/17618.article", target:"_blank") %></li>
+                  <li><%= link_to(cl_image_tag("https://res.cloudinary.com/spefzapp/image/upload/v1506784519/img_featured_dailymail_cnunyj.png", class: "img_featured_02"), "#", target:"_blank") %></li>
+                  <li><%= link_to(cl_image_tag("https://res.cloudinary.com/spefzapp/image/upload/v1506784519/img_featured_cosmopolitan_mobc80.png", class: "img_featured_03"), "#", target:"_blank") %></li>
+                  <li><%= link_to(cl_image_tag("https://res.cloudinary.com/spefzapp/image/upload/v1506784519/img_featured_theguardian_iuunz2.png", class: "img_featured_04"), "#", target:"_blank") %></li>
+                  <li class="img_featured_bc"><%= link_to(cl_image_tag("https://res.cloudinary.com/spefzapp/image/upload/v1506784519/img_featured_businesscloud_xhzcm3.png", class: "img_featured_05"), "http://www.businesscloud.co.uk/news/speed-dating-start-up-increases-odds-of-romantic-success", target:"_blank", target:"_blank") %></li>
+                </ul>
+              </div>
+            </div>
+            <div class="clear"></div>
+            <div class="page_number_section">
+              <div class="page_number_line"></div>
+              <div class="page_number_content"><div class="page_number"><span class="number">1</span></div></div>
+            </div>
+          </div>
+        </div>
+        <div class="clear"></div>
+
+        <!-- spefz_social_card_content -->
+        <div class="medium-12 columns sonpsorship_content spefzmatch_content">
+          <div class="sp_inner_content introduction_inner_content">
+            <div class="sp_main_header">spefz social card</div>
+            <p>We have created a unique algorithmic rating system based on personality and physical appearance within the online events dating space. Using a calculated member’s average rating (in percentage), our platform is able to auto-match a specific member to a specific event. This auto matching enables members to meet other members of similar calculated ratings, based on physical appearance & personality, at a live dating event.</p>
+
+            <p>We are the only live event-dating platform to have a unique algorithmic rating and matching system as a core to enable compatibility.</p>
+
+            <p>Our Online events Dating Platform has been in development for the past 12months. It offers our members a high increased probability being matched successfully to their potential partners due to a statistical match-calculation process based on personality & physical appearance. Spefz is a selective social events match-dating platform.</p>
+
+            <p>
+              <b>What problem are we solving?</b><br/>
+              <span>Our research suggests that, while there is a number of specialist dating events based on ethnicity, culture, religion, sex-orientation, age, professionals etc, most of these specialist-dating events do not analyze their matches for their live dating events. They host their live dating events based on grouping people but not based on a match analyses on interest, preferences, personality and appearance. This results in the increased probability of unsuccessful matches between members at live dating events. </span><br/><br/>
+              <span>We aim to solve this problem. What sets us apart is that our platform has an inbuilt algorithm rating and matching system for our live dating events. This algorithm automatically calculates the average rating of each member, uses this average rating to auto-match each member to a specific live dating event (where members with similar average rating score will be present). Our Spefz Team then also takes advantage of the available stats on each member and takes the initiative to introduce members with very close rating scores with one another. The introduction and automated process ensures members are able to meet and connect with like-minded singles and therefore increasing the likelihood of successful matches at each event.</span>
+            </p>
+
+            <p>
+              <ul>
+                <li>We create match-dating events by selling tickets online for the events.</li>
+                <li>We also have a subscription based social community that allows our members to stay in touch and grow their network.</li>
+              </ul>
+            </p><br/>
+
+            <p class="match_process">
+              <b>Match process</b>
+              <ul class="main_match_info">
+                <li class="main_match_sub_info">
+                  <div class="img_match_content"><i class="fa fa-calendar" aria-hidden="true"></i> <i class="fa fa-glass" aria-hidden="true"></i></div>
+                  <div>Attend an event</div>
+                </li>
+                <li class="main_match_sub_info pointed_right_arrow"><i class="fa fa-angle-right" aria-hidden="true"></i></li>
+                <li class="main_match_sub_info">
+                  <div class="img_match_content"><i class="fa fa-user-plus" aria-hidden="true"></i> <i class="fa fa-users" aria-hidden="true"></i></div>
+                  <div>Meet new people</div>
+                </li>
+                <li class="main_match_sub_info pointed_right_arrow"><i class="fa fa-angle-right" aria-hidden="true"></i></li>
+                <li class="main_match_sub_info">
+                  <div class="img_match_content"><i class="fa fa-users" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i></div>
+                  <div>Rate & connect with memebrs</div>
+                </li>
+                <li class="main_match_sub_info pointed_right_arrow"><i class="fa fa-angle-right" aria-hidden="true"></i></li>
+                <li class="main_match_sub_info">
+                  <div>
+                    <div class="img_match_content_diff">
+                      <i class="fa fa-user" aria-hidden="true"></i>
+                      <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <i class="fa fa-star-half-o" aria-hidden="true"></i>
+                      <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                      <i class="fa fa-calendar" aria-hidden="true"></i>
+                    </div>
+                    <div class="img_match_content_diff">
+                      <i class="fa fa-user" aria-hidden="true"></i>
+                      <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <i class="fa fa-star" aria-hidden="true"></i>
+                      <i class="fa fa-star-half-o" aria-hidden="true"></i>
+                      <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                      <i class="fa fa-users" aria-hidden="true"></i>
+                    </div>
+                  </div>
+                  <div>
+                    <div>Ratings are used to:</div>
+                    <div>
+                      <ul>
+                        <li>match members to events</li>
+                        <li>match members to other memebrs</li>
+                      </ul>
+                    </div>
+                </li>
+              </ul>
+            </p><br/>
+            
+            <div class="clear"></div>
+
+            <p>
+              <b>Summary</b><br/>
+              <span>We believe that our online events dating platform service could do amazingly well. We believe our inbuilt rating algorithm will attract users to attend our events – which most of our competitors do not have – Most of our competitors focus more on gathering random singles who are willing to pay to attend an event. We want to gather and group singles of similar interest, so the potential of members connecting will be much higher. We believe our users are likely to attend our events as we auto-match individuals to specific events (via our internal rating algorithm system based on personality, physical appearance and interests) in order to ensure they are able to network effectively and meet like-minded people of their calibre.</span><br/><br/>
+            </p>
+
+            <div class="clear"></div>
+            <div class="page_number_section">
+              <div class="page_number_line"></div>
+              <div class="page_number_content"><div class="page_number"><span class="number">2</span></div></div>
+            </div>
+          </div>
+        </div>
+        <div class="clear"></div>
+
+      </div>
+    </div>
+  </div>
+  <!-- right_column_section -->
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
