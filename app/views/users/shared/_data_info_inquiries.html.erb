@@ -13,7 +13,9 @@
         <div class="tablecell background"></div>
         <div class="tablecell background"></div>
         <div class="tablecell background"></div>
-        <div class="tablecell background"></div>
+        <% if current_user.admin_pa_management_group || current_user.pa_administration_group %>
+          <div class="tablecell background"></div>
+        <% end %>
       </div>
       <% @contacts.order("created_at asc").each do |contact| %>
         <div class="tablerow">
@@ -73,9 +75,11 @@
               <%= render partial: 'shared/modal_contact_content', locals: { contact: contact } %>
             </div>
           </div>
-          <div class="tablecell">
-            <div><%= link_to 'Destroy', contact, method: :delete, data: { confirm: 'Are you sure?' } %></div>
-          </div>
+          <% if current_user.admin_pa_management_group || current_user.pa_administration_group %>
+            <div class="tablecell">
+              <div class="delete_btn"><%= link_to 'Destroy', contact, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+            </div>
+          <% end %>
         </div>
       <% end %>
     </div>

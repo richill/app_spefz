@@ -541,7 +541,21 @@
 }
 
 
+.user_dashboard_admin_inquiries .delete_btn a {
+  background-color: #E34B51;
+  color: #fff !important;
+  display: inline-block;
+  padding: 5px 15px;
+  border-radius: 2px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  height: 28px;
+}
 
+.user_dashboard_admin_inquiries .delete_btn a:hover {
+  background-color: #E34B51 !important;
+  text-decoration: underline;
+}
 
 // -----------------------------------
 //  responsive
