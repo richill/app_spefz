@@ -21,7 +21,7 @@
             <div class="user_name"><%= truncate "#{contact.category_enquiry.name}", length: 30 %></div>
             <div class="ref_id">
               <% if contact.email.present? %>
-                <%= mail_to "#{contact.email}", "#{contact.reference}", subject: "Spefz | #{contact.firstname} #{contact.lastname}", class: "ref_id" %>
+                <%= mail_to "#{contact.email}", "#{contact.reference}", subject: "Spefz | [#{contact.category_enquiry.name}] #{contact.firstname} #{contact.lastname}", class: "ref_id" %>
               <% else %>
                 <% contact.reference %>
               <% end %>
@@ -65,10 +65,12 @@
               <% end %>
             </div>
           </div>
-          <div class="tablecell">
+          <div class="tablecell" style="width:25%;">
             <div class="faint_text_format">content</div> 
             <div class="main_text_format">
-              <%= contact.message %>
+              <%= (truncate "#{contact.message}", length: 100) %>
+              <a href="#<%= contact.id %>" data-reveal-id="<%= dom_id(contact) %>_contact_content_show">view</a>
+              <%= render partial: 'shared/modal_contact_content', locals: { contact: contact } %>
             </div>
           </div>
           <div class="tablecell">
