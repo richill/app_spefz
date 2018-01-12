@@ -18,7 +18,13 @@
         <div class="tablerow">
           <div class="tablecell">
             <div class="user_name"><%= truncate "#{contact.category_enquiry.name}", length: 30 %></div>
-            <div class="ref_id"><%= contact.reference %></div>
+            <div class="ref_id">
+              <% if contact.email.present? %>
+                <%= mail_to "#{contact.email}", "#{contact.reference}", subject: "Spefz | #{contact.firstname} #{contact.lastname}", class: "ref_id" %>
+              <% else %>
+                <% contact.reference %>
+              <% end %>
+            </div>
           </div>
           <div class="tablecell">
             <div class="faint_text_format">client category</div> 
