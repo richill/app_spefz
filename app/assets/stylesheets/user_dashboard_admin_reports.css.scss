@@ -396,8 +396,12 @@
 }
 
 .user_dashboard_admin_reports .lower_data_inner_content .main_text_format a {
-  color: #2F3F5B !important;
+  color: #2F3F5B;
   font-weight: 400;
+}
+
+.user_dashboard_admin_reports .report_content_view a {
+  color: #E34B51 !important;
 }
 
 .user_dashboard_admin_reports .lower_data_inner_content .application a {
@@ -551,9 +555,6 @@
   background-color: #E34B51 !important;
   text-decoration: underline;
 }
-
-
-
 
 // -----------------------------------
 //  responsive

@@ -59,7 +59,7 @@
             <div class="main_text_format"><%= mail_to "#{report.reporter.email}" %></div>
           </div>
           <div class="tablecell" style="width:25%;">
-            <div class="main_text_format contact_content_view">
+            <div class="main_text_format report_content_view">
               <%= (truncate "#{report.content}", length: 100) %>
               <a href="#<%= report.id %>" data-reveal-id="<%= dom_id(report) %>_report_content_show" style="">view</a>
               <%= render partial: 'shared/modal_report_content', locals: { report: report } %>
