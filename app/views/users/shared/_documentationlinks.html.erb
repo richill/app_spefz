@@ -1,0 +1,31 @@
+<div class= "medium-12 columns user_general_settings_section user_main_statsusers_page">
+  
+  <!-- left_column_section -->
+  <div class="medium-2 columns left_column_section">
+    <%= render 'shared/content_user_adminpanel_left_column' %>
+  </div>
+  <!-- left_column_section -->
+
+
+  <!-- right_column_section -->
+  <div class="medium-10 columns right_column_section">
+    <div class="right_inner_section">
+      <!-- content -->
+      <div class="tree_link">
+        <span>
+          <i class="fa fa-user" aria-hidden="true"></i> 
+          <%= link_to "#{current_user.firstname}", user_path(current_user)%>
+        </span> 
+        <span class="fwd_sign">></span> 
+        <span><%= link_to "analytics", analytics_user_path(current_user) %></span> 
+        <span class="fwd_sign">></span> 
+        <span>documentation links</span> 
+      </div>
+      <div class="user_general_settings_inner_section user_dashboard_section_main_content">
+        <div><%= render "users/shared/user_dashboard_admin_documentationlinks" %></div>
+      </div>
+      <!-- content -->
+    </div>
+  </div>
+  <!-- right_column_section -->
+</div>
