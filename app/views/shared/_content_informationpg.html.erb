@@ -98,14 +98,12 @@
         <div class="medium-12 columns spefz_information_content spefzsocialcard_content">
           <div class="sp_inner_content spefzsocialcard_inner_content">
             <div class="sp_main_header">spefz social card</div>
-
-            <!-- working here -->
             <div class="new_content">
               <p style="margin-bottom:5px;">
                 <b>What is a Social Card?</b>
                 <ul>
                   <li>A Social Card is an online card specifically for the event you attended.</li>
-                  <li>The Social Card displays all listed members that attended the event you went you and allows you to connect with the members that were present at the event</li>
+                  <li>The Social Card displays all listed members that attended the event you went to and allows you to connect with the members that were present at the event</li>
                   <li>The Social Card is only displayed after the date of the event</li>
                 </ul>
               </p><br/>
@@ -118,91 +116,43 @@
                     <span>|</span>
                     <span class="terms_inner_content"><%= link_to "www.spefz.com", "https://www.spefz.com/" , target:"_blank" %></span>
                   </li>
-                  <li>On the right upper corner click on your profile image. This will displa a drop down menu</li>
+                  <li>On the right upper corner click on your profile image. This will display a drop down menu</li>
                   <li>
                     <span>Select the option</span>
                     <span class="terms_inner_content"><%= link_to "My Social Cards", cards_path , target:"_blank" %> as displayed in the below image</span>
-                  </li>
-                </ul>
-              </p><br/>
-
-
-          
-            </div>
-
-            <div class="old_content hide">
-              <p>We have created a unique algorithmic rating system based on personality and physical appearance within the online events dating space. Using a calculated member’s average rating (in percentage), our platform is able to auto-match a specific member to a specific event. This auto matching enables members to meet other members of similar calculated ratings, based on physical appearance & personality, at a live dating event.</p>
-              <p>We are the only live event-dating platform to have a unique algorithmic rating and matching system as a core to enable compatibility.</p>
-              <p>Our Online events Dating Platform has been in development for the past 12months. It offers our members a high increased probability being matched successfully to their potential partners due to a statistical match-calculation process based on personality & physical appearance. Spefz is a selective social events match-dating platform.</p>
-              <p>
-                <b>What problem are we solving?</b><br/>
-                <span>Our research suggests that, while there is a number of specialist dating events based on ethnicity, culture, religion, sex-orientation, age, professionals etc, most of these specialist-dating events do not analyze their matches for their live dating events. They host their live dating events based on grouping people but not based on a match analyses on interest, preferences, personality and appearance. This results in the increased probability of unsuccessful matches between members at live dating events. </span><br/><br/>
-                <span>We aim to solve this problem. What sets us apart is that our platform has an inbuilt algorithm rating and matching system for our live dating events. This algorithm automatically calculates the average rating of each member, uses this average rating to auto-match each member to a specific live dating event (where members with similar average rating score will be present). Our Spefz Team then also takes advantage of the available stats on each member and takes the initiative to introduce members with very close rating scores with one another. The introduction and automated process ensures members are able to meet and connect with like-minded singles and therefore increasing the likelihood of successful matches at each event.</span>
-              </p>
-              <p>
-                <ul>
-                  <li>We create match-dating events by selling tickets online for the events.</li>
-                  <li>We also have a subscription based social community that allows our members to stay in touch and grow their network.</li>
-                </ul>
-              </p><br/>
-              <p class="match_process">
-                <b>Match process</b>
-                <ul class="main_match_info">
-                  <li class="main_match_sub_info">
-                    <div class="img_match_content"><i class="fa fa-calendar" aria-hidden="true"></i> <i class="fa fa-glass" aria-hidden="true"></i></div>
-                    <div>Attend an event</div>
-                  </li>
-                  <li class="main_match_sub_info pointed_right_arrow"><i class="fa fa-angle-right" aria-hidden="true"></i></li>
-                  <li class="main_match_sub_info">
-                    <div class="img_match_content"><i class="fa fa-user-plus" aria-hidden="true"></i> <i class="fa fa-users" aria-hidden="true"></i></div>
-                    <div>Meet new people</div>
-                  </li>
-                  <li class="main_match_sub_info pointed_right_arrow"><i class="fa fa-angle-right" aria-hidden="true"></i></li>
-                  <li class="main_match_sub_info">
-                    <div class="img_match_content"><i class="fa fa-users" aria-hidden="true"></i> <i class="fa fa-star" aria-hidden="true"></i></div>
-                    <div>Rate & connect with memebrs</div>
-                  </li>
-                  <li class="main_match_sub_info pointed_right_arrow"><i class="fa fa-angle-right" aria-hidden="true"></i></li>
-                  <li class="main_match_sub_info">
-                    <div>
-                      <div class="img_match_content_diff">
-                        <i class="fa fa-user" aria-hidden="true"></i>
-                        <i class="fa fa-arrow-right" aria-hidden="true"></i>
-                        <i class="fa fa-star" aria-hidden="true"></i>
-                        <i class="fa fa-star" aria-hidden="true"></i>
-                        <i class="fa fa-star-half-o" aria-hidden="true"></i>
-                        <i class="fa fa-arrow-right" aria-hidden="true"></i>
-                        <i class="fa fa-calendar" aria-hidden="true"></i>
-                      </div>
-                      <div class="img_match_content_diff">
-                        <i class="fa fa-user" aria-hidden="true"></i>
-                        <i class="fa fa-arrow-right" aria-hidden="true"></i>
-                        <i class="fa fa-star" aria-hidden="true"></i>
-                        <i class="fa fa-star" aria-hidden="true"></i>
-                        <i class="fa fa-star-half-o" aria-hidden="true"></i>
-                        <i class="fa fa-arrow-right" aria-hidden="true"></i>
-                        <i class="fa fa-users" aria-hidden="true"></i>
+                    <div class="info_img_main_container">
+                      <div class="inner_img_container">
+                        <%= cl_image_tag("https://res.cloudinary.com/spefzapp/image/upload/v1515778139/spefzinformation/spefz_card_01.png", class: "") %>
                       </div>
                     </div>
-                    <div>
-                      <div>Ratings are used to:</div>
-                      <div>
-                        <ul>
-                          <li>match members to events</li>
-                          <li>match members to other memebrs</li>
-                        </ul>
-                      </div>
                   </li>
+                  <li>Once the option "My Social Cards" is selected, you will be directed the "Social Cards Page"</li>
+                  <li>You Social Cards page displays a list of cards specifically for the event you attended.</li>
+                  <li>
+                    <span>Each Social Card displays the list of all memebers that attended the event</span>
+                    <div class="info_img_main_container">
+                      <div class="inner_img_container">
+                        <%= cl_image_tag("https://res.cloudinary.com/spefzapp/image/upload/v1515778131/spefzinformation/spefz_card_02.png", class: "") %>
+                      </div>
+                    </div>
+                  </li>
+                  <li>Click on the link "View Attendees & Connect" to view list of members that attended the event</li>
+                  <li>
+                    <span>Once "View Attendees & Connect" is clicked the list of attendees will be displayed</span>
+                    <div class="info_img_main_container">
+                      <div class="inner_img_container">
+                        <%= cl_image_tag("https://res.cloudinary.com/spefzapp/image/upload/v1515778145/spefzinformation/spefz_card_03.png", class: "") %>
+                      </div>
+                    </div>
+                  </li>
+                  <li>You as a member should now be able to connect with other members that attended the event</li>
                 </ul>
               </p><br/>
-              <div class="clear"></div>
-              <p>
-                <b>Summary</b><br/>
-                <span>We believe that our online events dating platform service could do amazingly well. We believe our inbuilt rating algorithm will attract users to attend our events – which most of our competitors do not have – Most of our competitors focus more on gathering random singles who are willing to pay to attend an event. We want to gather and group singles of similar interest, so the potential of members connecting will be much higher. We believe our users are likely to attend our events as we auto-match individuals to specific events (via our internal rating algorithm system based on personality, physical appearance and interests) in order to ensure they are able to network effectively and meet like-minded people of their calibre.</span><br/><br/>
+              <p class="info_contact">
+                <span>If you have any questions, please do not hesitate to</span>
+                <span class="terms_inner_content"><%= link_to "contact us", contact_us_path, target:"_blank" %></span>
               </p>
             </div>
-            <!-- working here -->
-
             <div class="clear"></div>
             <div class="page_number_section">
               <div class="page_number_line"></div>
