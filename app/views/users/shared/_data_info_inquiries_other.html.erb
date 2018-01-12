@@ -107,7 +107,7 @@
           <div class="tablecell background"></div>
         <% end %>
       </div>
-      <% @contacts.other_inquiries.order("created_at asc").each do |contact| %>
+      <% @contacts.suggestions.order("created_at asc").each do |contact| %>
         <div class="tablerow">
           <div class="tablecell">
             <div class="user_name"><%= truncate "#{contact.category_enquiry.name}", length: 30 %></div>
@@ -191,7 +191,7 @@
           <div class="tablecell background"></div>
         <% end %>
       </div>
-      <% @contacts.other_inquiries.order("created_at asc").each do |contact| %>
+      <% @contacts.marketing.order("created_at asc").each do |contact| %>
         <div class="tablerow">
           <div class="tablecell">
             <div class="user_name"><%= truncate "#{contact.category_enquiry.name}", length: 30 %></div>
@@ -275,7 +275,7 @@
           <div class="tablecell background"></div>
         <% end %>
       </div>
-      <% @contacts.other_inquiries.order("created_at asc").each do |contact| %>
+      <% @contacts.affiliates.order("created_at asc").each do |contact| %>
         <div class="tablerow">
           <div class="tablecell">
             <div class="user_name"><%= truncate "#{contact.category_enquiry.name}", length: 30 %></div>
@@ -359,7 +359,7 @@
           <div class="tablecell background"></div>
         <% end %>
       </div>
-      <% @contacts.other_inquiries.order("created_at asc").each do |contact| %>
+      <% @contacts.suggest_partnership.order("created_at asc").each do |contact| %>
         <div class="tablerow">
           <div class="tablecell">
             <div class="user_name"><%= truncate "#{contact.category_enquiry.name}", length: 30 %></div>
@@ -443,7 +443,7 @@
           <div class="tablecell background"></div>
         <% end %>
       </div>
-      <% @contacts.other_inquiries.order("created_at asc").each do |contact| %>
+      <% @contacts.work_with_spefz.order("created_at asc").each do |contact| %>
         <div class="tablerow">
           <div class="tablecell">
             <div class="user_name"><%= truncate "#{contact.category_enquiry.name}", length: 30 %></div>
