@@ -147,6 +147,7 @@ Rails.application.routes.draw do
   get   'help/payment-queries',           to: 'static_pages#paymentqueriespg'
   get   'image-restriction-page',         to: 'static_pages#imagepg'
   get   'investment',                     to: 'static_pages#investmentpg'
+  get   'information-page',              to: 'static_pages#spefzinformationpg'
   get   'landing-page',                   to: 'static_pages#landingpg'
   get   'message-delivered',              to: 'static_pages#messagesentpg'
   get   'notes',                          to: 'static_pages#notepg'
