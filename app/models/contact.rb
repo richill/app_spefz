@@ -31,6 +31,7 @@ class Contact < ActiveRecord::Base
   scope :end_subscription, ->() { joins(:category_enquiry).where('category_enquiries.name' => "End Subscription Plan") }
   scope :delete_account, ->() { joins(:category_enquiry).where('category_enquiries.name' => "Delete Account") }
   scope :work_with_spefz, ->() { joins(:category_enquiry).where('category_enquiries.name' => "I would love to work at Spefz") }
+  scope :other_inquiries, -> { joins(:category_enquiry).where("category_enquiries.name IN (?)", ["Suggestions", "Marketing", "Affiliates", "Suggest a Partnership", "Customer Service", "I would love to work at Spefz"]) }
 
   def generate_reference_number
     begin
