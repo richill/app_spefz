@@ -5,97 +5,101 @@
       <ul>
         <% @user_network_activities.each do |activity| %>
           <% if activity.trackable_type == "Social" %>
-            <li>
-              <div class="image_section">
-                <span class="img_cover">
-                  <% if activity.trackable.social_image_link.present? %>
-                    <%= link_to(cl_image_tag(activity.trackable.social_image_link, :transformation=>[{:gravity=>"center", :width=>65, :height=>65, :crop=>"fill"}]), social_path(activity.trackable)) %>
-                  <% else %>
-                    <%= link_to(cl_image_tag(activity.trackable.image, :transformation=>[{:gravity=>"center", :width=>65, :height=>65, :crop=>"fill"}]), social_path(activity.trackable)) %>
-                  <% end %>
-                </span>
-              </div>
-              <div class="info_section">
-                <div class="title">
-                  <% if activity.trackable.upcoming_social? %>
-                    <%= link_to truncate("#{activity.trackable.title}", length: 30), '#' %>
-                  <% else %>
-                    <%= link_to truncate("#{activity.trackable.title}", length: 30), social_path(activity.trackable) %>
-                  <% end %>
-                </div>
-                <div class="date_country_info" style="margin-top:2px;">
-                  <span><%= activity.trackable.date.strftime("%a, %d %b %Y") %></span> 
-                  <span class="divider">|</span> 
-                  <span><%= activity.trackable.time.strftime("%I:%M %p") %></span>
-                </div>
-                <div class="date_country_info">
-                  <span><%= activity.trackable.category_country.name %></span> 
-                  <span>-</span> 
-                  <span><%= activity.trackable.city %></span>
-                </div>
-                <div class="date_country_info"> 
-                  <span>hosted by:</span>
-                  <span>
-                    <% if activity.trackable.upcoming_social? || activity.trackable.company_image.present? %>
-                      <%= link_to "Spefz Team", about_us_path %>
-                    <% else %>
-                      <%= link_to current_user.name_shortner(activity.trackable.user), user_path(activity.trackable.user) %>
-                    <% end %>
-                  </span>
-                </div>
-              </div>
-              <div class="action_btn_section_attending action_btn_card_section"> 
-                <div class="img_container">
-                  <% if activity.trackable.company_image.present? %>
-                    <%= link_to(image_tag("img-logo-five.png", style: "width:32px; border-radius:200px;"), about_us_path) %>
-                  <% else %>
-                    <%= link_to(cl_image_tag(activity.trackable.user.image, :transformation=>[{:gravity=>"face", :width=>35, :height=>35, :crop=>"fill", :radius=>"max"}]), user_path(activity.trackable.user)) %>
-                  <% end %>
-                </div>
-                <span class="btn btn_view_card">
-                  
-                  <% if activity.trackable.upcoming_social? %>
-                    <%= link_to 'upcoming', "#", style:"padding:8px 0px !important; height: 35px" %>
-                  <% else %>
-                    <%= link_to 'view', social_path(activity.trackable) %>
-                  <% end %>
-                </span>
-              </div>
-            </li>
-          <% elsif activity.trackable_type == "Attendance" %>
-            <% if activity.trackable.present? %>
+            <% if activity.trackable.live_social && activity.trackable.open_social %>
               <li>
                 <div class="image_section">
                   <span class="img_cover">
-                    <% if activity.trackable.attendable.social_image_link.present? %>
-                      <%= link_to(cl_image_tag(activity.trackable.attendable.social_image_link, :transformation=>[{:gravity=>"center", :width=>65, :height=>65, :crop=>"fill"}]), social_path(activity.trackable.attendable)) %>
+                    <% if activity.trackable.social_image_link.present? %>
+                      <%= link_to(cl_image_tag(activity.trackable.social_image_link, :transformation=>[{:gravity=>"center", :width=>65, :height=>65, :crop=>"fill"}]), social_path(activity.trackable)) %>
                     <% else %>
-                      <%= link_to(cl_image_tag(activity.trackable.attendable.image, :transformation=>[{:gravity=>"center", :width=>65, :height=>65, :crop=>"fill"}]), social_path(activity.trackable.attendable)) %>
+                      <%= link_to(cl_image_tag(activity.trackable.image, :transformation=>[{:gravity=>"center", :width=>65, :height=>65, :crop=>"fill"}]), social_path(activity.trackable)) %>
                     <% end %>
                   </span>
                 </div>
                 <div class="info_section">
-                  <div class="title"><%= link_to truncate("#{activity.trackable.attendable.title}", length: 30), social_path(activity.trackable.attendable) %></div>
+                  <div class="title">
+                    <% if activity.trackable.upcoming_social? %>
+                      <%= link_to truncate("#{activity.trackable.title}", length: 27), '#' %>
+                    <% else %>
+                      <%= link_to truncate("#{activity.trackable.title}", length: 27), social_path(activity.trackable) %>
+                    <% end %>
+                  </div>
                   <div class="date_country_info" style="margin-top:2px;">
-                    <span><%= activity.trackable.attendable.date.strftime("%a, %d %b %Y") %></span> 
+                    <span><%= activity.trackable.date.strftime("%a, %d %b %Y") %></span> 
                     <span class="divider">|</span> 
-                    <span><%= activity.trackable.attendable.time.strftime("%I:%M %p") %></span>
+                    <span><%= activity.trackable.time.strftime("%I:%M %p") %></span>
                   </div>
                   <div class="date_country_info">
-                    <span><%= activity.trackable.attendable.category_country.name %></span> 
+                    <span><%= activity.trackable.category_country.name %></span> 
                     <span>-</span> 
-                    <span><%= activity.trackable.attendable.city %></span>
+                    <span><%= activity.trackable.city %></span>
                   </div>
                   <div class="date_country_info"> 
-                    <span>attending:</span>
-                    <span><%= link_to current_user.name_shortner(activity.trackable.user), user_path(activity.trackable.user) %></span>
+                    <span>hosted by:</span>
+                    <span>
+                      <% if activity.trackable.upcoming_social? || activity.trackable.company_image.present? %>
+                        <%= link_to "Spefz Team", about_us_path %>
+                      <% else %>
+                        <%= link_to current_user.name_shortner(activity.trackable.user), user_path(activity.trackable.user) %>
+                      <% end %>
+                    </span>
                   </div>
                 </div>
                 <div class="action_btn_section_attending action_btn_card_section"> 
-                  <div class="img_container"><%= link_to(cl_image_tag(activity.trackable.user.image, :transformation=>[{:gravity=>"face", :width=>35, :height=>35, :crop=>"fill", :radius=>"max"}]), user_path(activity.trackable.user)) %></div>
-                  <span class="btn btn_view_card"><%= link_to 'view', social_path(activity.trackable.attendable) %></span>
+                  <div class="img_container">
+                    <% if activity.trackable.company_image.present? %>
+                      <%= link_to(image_tag("img-logo-five.png", style: "width:32px; border-radius:200px;"), about_us_path) %>
+                    <% else %>
+                      <%= link_to(cl_image_tag(activity.trackable.user.image, :transformation=>[{:gravity=>"face", :width=>35, :height=>35, :crop=>"fill", :radius=>"max"}]), user_path(activity.trackable.user)) %>
+                    <% end %>
+                  </div>
+                  <span class="btn btn_view_card">
+                    
+                    <% if activity.trackable.upcoming_social? %>
+                      <%= link_to 'upcoming', "#", style:"padding:8px 0px !important; height: 35px" %>
+                    <% else %>
+                      <%= link_to 'view', social_path(activity.trackable) %>
+                    <% end %>
+                  </span>
                 </div>
               </li>
+            <% end %>
+          <% elsif activity.trackable_type == "Attendance" %>
+            <% if activity.trackable.present? %>
+              <% if activity.trackable.attendable.live_social && activity.trackable.attendable.open_social %>
+                <li>
+                  <div class="image_section">
+                    <span class="img_cover">
+                      <% if activity.trackable.attendable.social_image_link.present? %>
+                        <%= link_to(cl_image_tag(activity.trackable.attendable.social_image_link, :transformation=>[{:gravity=>"center", :width=>65, :height=>65, :crop=>"fill"}]), social_path(activity.trackable.attendable)) %>
+                      <% else %>
+                        <%= link_to(cl_image_tag(activity.trackable.attendable.image, :transformation=>[{:gravity=>"center", :width=>65, :height=>65, :crop=>"fill"}]), social_path(activity.trackable.attendable)) %>
+                      <% end %>
+                    </span>
+                  </div>
+                  <div class="info_section">
+                    <div class="title"><%= link_to truncate("#{activity.trackable.attendable.title}", length: 27), social_path(activity.trackable.attendable) %></div>
+                    <div class="date_country_info" style="margin-top:2px;">
+                      <span><%= activity.trackable.attendable.date.strftime("%a, %d %b %Y") %></span> 
+                      <span class="divider">|</span> 
+                      <span><%= activity.trackable.attendable.time.strftime("%I:%M %p") %></span>
+                    </div>
+                    <div class="date_country_info">
+                      <span><%= activity.trackable.attendable.category_country.name %></span> 
+                      <span>-</span> 
+                      <span><%= activity.trackable.attendable.city %></span>
+                    </div>
+                    <div class="date_country_info"> 
+                      <span>attending:</span>
+                      <span><%= link_to current_user.name_shortner(activity.trackable.user), user_path(activity.trackable.user) %></span>
+                    </div>
+                  </div>
+                  <div class="action_btn_section_attending action_btn_card_section"> 
+                    <div class="img_container"><%= link_to(cl_image_tag(activity.trackable.user.image, :transformation=>[{:gravity=>"face", :width=>35, :height=>35, :crop=>"fill", :radius=>"max"}]), user_path(activity.trackable.user)) %></div>
+                    <span class="btn btn_view_card"><%= link_to 'view', social_path(activity.trackable.attendable) %></span>
+                  </div>
+                </li>
+              <% end %>
             <% end %>
           <% end %>
           <div class="clear"></div>
