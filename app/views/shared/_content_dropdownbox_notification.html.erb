@@ -58,7 +58,8 @@
                     <% if activity.trackable.upcoming_social? %>
                       <%= link_to 'upcoming', "#", style:"padding:8px 0px !important; height: 35px" %>
                     <% else %>
-                      <%= link_to 'view', social_path(activity.trackable) %>
+                      <%= link_to 'view', activity_mark_as_viewed_path(activity_id: activity.id), method: :post %>
+                      <%# link_to 'view', social_path(activity.trackable) %>
                     <% end %>
                   </span>
                 </div>
@@ -96,7 +97,8 @@
                   </div>
                   <div class="action_btn_section_attending action_btn_card_section"> 
                     <div class="img_container"><%= link_to(cl_image_tag(activity.trackable.user.image, :transformation=>[{:gravity=>"face", :width=>35, :height=>35, :crop=>"fill", :radius=>"max"}]), user_path(activity.trackable.user)) %></div>
-                    <span class="btn btn_view_card"><%= link_to 'view', social_path(activity.trackable.attendable) %></span>
+                    <span class="btn btn_view_card"><%= link_to 'view', activity_mark_as_viewed_path(activity_id: activity.id), method: :post %></span>
+                    <span class="btn btn_view_card"><%# link_to 'view', social_path(activity.trackable.attendable) %></span>
                   </div>
                 </li>
               <% end %>
