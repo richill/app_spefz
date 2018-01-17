@@ -70,7 +70,8 @@
 
         <li class="notification_li">
           <% if @user_network_activities.unread_by(current_user).present? %>
-            <span id="notification_count_bell"><%= @user_network_activities.unread_by(current_user).count %></span>
+            <!-- <span id="notification_count_bell"><%# @user_network_activities.unread_by(current_user).count %></span> -->
+            <span id="notification_count_bell"><%= @user_network_activitie.unread_by(current_user).where(trackable_type: "Social").count %></span>
           <% end %>
           <div>
             <% if @user_network_activities.present? %>
