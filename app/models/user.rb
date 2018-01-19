@@ -267,6 +267,7 @@ class User < ActiveRecord::Base
     begin
       reference_length = 6
       self.reference = "SPz_" + Devise.friendly_token.first(reference_length)
+      #self.reference = "SPz_" + Devise.friendly_token.first(reference_length).tr('+/=-', '0aZ')
     end while self.class.exists?(reference: reference)
   end
 
