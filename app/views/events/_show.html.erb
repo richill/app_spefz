@@ -12,12 +12,22 @@
               <!-- left_evt_details -->
               <div class="medium-3 columns left_evt_details">
                 <!-- sold out -->
-                <% if @event.sold_out? || @event.soldout? || @event.soldout_men? && @event.soldout_women? %>
-                  <div class="banner">
-                    <div class="ribbon-wrapper-green">
-                      <div class="ribbon-green">sold out</div>
+                <% if @event.selection_BothX_men_and_women %>
+                  <% if @event.sold_out_Xmen? && @event.sold_out_Xwomen? || @event.soldout_men? && @event.soldout_women? %>
+                    <div class="banner">
+                      <div class="ribbon-wrapper-green">
+                        <div class="ribbon-green">sold out</div>
+                      </div>
                     </div>
-                  </div>
+                  <% end %>
+                <% elsif @event.selection_BothAndOnly_men_and_women %>
+                  <% if @event.sold_out? || @event.soldout? %>
+                    <div class="banner">
+                      <div class="ribbon-wrapper-green">
+                        <div class="ribbon-green">sold out</div>
+                      </div>
+                    </div>
+                  <% end %>
                 <% end %>
                 <!-- sold out -->
                 <% if @event.event_image_link.present? %>
