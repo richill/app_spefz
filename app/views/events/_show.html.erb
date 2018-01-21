@@ -79,42 +79,42 @@
   <div class="medium-12 columns middle_section">
     <div class="middle_inner_section">
       <ul class="inline-list left">
-        <% if @event.external_event? %>
+        <%# if @event.external_event? %>
           <!-- external_event event_gender_selection_display -->
-          <% if @event.selection_BothX_men_and_women %>
-            <li>
+          <%# if @event.selection_BothX_men_and_women %>
+           <!--  <li>
               <span class="content_gender"><i class="fa fa-male" aria-hidden="true"></i> </span>
-              <% if @event.soldout_men? %>
+              <%# if @event.soldout_men? %>
                 <span class="content content_soldout">sold out</span>
-              <% else %>
+              <%# else %>
                 <span class="content content_available">available</span>
-              <% end %>
+              <%# end %>
             </li>
-            <li><span>|</span></li>
-            <li>
+            <li><span>|</span></li> -->
+            <!-- <li>
               <span class="content_gender"><i class="fa fa-female" aria-hidden="true"></i> </span>
-              <% if @event.soldout_women? %>
+              <%# if @event.soldout_women? %>
                 <span class="content content_soldout">sold out</span>
-              <% else %>
+              <%# else %>
                 <span class="content content_available">available</span>
-              <% end %>
-            </li>
-          <% elsif @event.selection_BothAndOnly_men_and_women %>
-            <% if @event.soldout? %>
-              <li>
+              <%# end %>
+            </li> -->
+          <%# elsif @event.selection_BothAndOnly_men_and_women %>
+            <%# if @event.soldout? %>
+              <!-- <li>
                 <span class="content_gender"><i class="fa fa-users" aria-hidden="true"></i> </span>
                 <span class="content content_soldout">sold out</span>
-              </li>
-            <% elsif !@event.soldout? %>
-              <li>
+              </li> -->
+            <%# elsif !@event.soldout? %>
+              <!-- <li>
                 <span class="content_gender"><i class="fa fa-users" aria-hidden="true"></i> </span>
                 <span class="content content_available">available</span>
-              </li>
-            <% end %>
-          <% end %>
+              </li> -->
+            <%# end %>
+          <%# end %>
           <!-- external_event event_gender_selection_display -->
-        <% else %>
-          <!-- non_external_event event_gender_selection_display -->
+        <%# else %>
+          <!-- event_gender_selection_display -->
           <% if @event.selection_BothX_men_and_women %>
             <li>
               <span class="content_gender"><i class="fa fa-male" aria-hidden="true"></i> </span>
@@ -152,8 +152,8 @@
               <% end %>
             </li>
           <% end %>
-          <!-- non_external_event event_gender_selection_display -->
-        <% end %>
+          <!-- event_gender_selection_display -->
+        <%# end %>
 
         <li><span>|</span></li>
         <li>
@@ -181,34 +181,52 @@
       </ul>
       <ul class="inline-list right">
 
-        <% if @event.external_event? && @event.event_price_zero? %>
-          <% unless @event.expired_or_closed_event || @event.soldout? || @event.soldout_men? && @event.soldout_women? %>
-            <li><span><div class="event_show_btn btn_event_booknow"><%= link_to 'Book Now!', @event.external_eventlink, target:"_blank" %></div></span></li>
-          <% end %>
+
+
+
+
+        <%# if @event.external_event? && @event.event_price_zero? %>
+          <%# unless @event.expired_or_closed_event || @event.soldout? || @event.soldout_men? && @event.soldout_women? %>
+            <li><span><div class="event_show_btn btn_event_booknow"><%# link_to 'Book Now!', @event.external_eventlink, target:"_blank" %></div></span></li>
+          <%# end %>
+        <%# else %>
+        <% if @event.current_user_attending_paid?(current_user) || @event.user_on_event_attendingList?(current_user)%>
+          <li><span><div class="event_show_btn btn_event_booked"><%= link_to 'Booked!', user_event_path(@event.user, @event) %></div></span></li>
         <% else %>
-          <% if @event.current_user_attending_paid?(current_user) || @event.user_on_event_attendingList?(current_user)%>
-            <li><span><div class="event_show_btn btn_event_booked"><%= link_to 'Booked!', user_event_path(@event.user, @event) %></div></span></li>
-          <% else %>
-            <% unless @event.sold_out? %>
-              <% unless @event.category_quantitygender.name == "only women" && current_user.category_gender.name == "Female" || 
-                @event.category_quantitygender.name == "only men" && current_user.category_gender.name == "Male" ||
-                @event.category_quantitygender.name == "both men & women" && current_user.category_gender.name == "Female" ||
-                @event.category_quantitygender.name == "both men & women" && current_user.category_gender.name == "Male" ||
-                @event.category_quantitygender.name == "both X men & X women" && current_user.category_gender.name == "Female" ||
-                @event.category_quantitygender.name == "both X men & X women" && current_user.category_gender.name == "Male" %>
-                <li><span><div class="event_show_btn btn_social_attendance_restrictions"><%= link_to 'Attendance Restriction!', user_event_path(@event.user, @event) %></div></span></li>
-              <% else %>
-                <% if current_user.image? %>
-                  <% unless @event.expired_or_closed_event %>
-                    <li><span><div class="event_show_btn btn_event_booknow"><%= link_to 'Book Now!', new_payment_path(event_id: @event.id, user: current_user.id) %></div></span></li>
+          <% unless @event.sold_out? %>
+            <% unless @event.category_quantitygender.name == "only women" && current_user.category_gender.name == "Female" || 
+              @event.category_quantitygender.name == "only men" && current_user.category_gender.name == "Male" ||
+              @event.category_quantitygender.name == "both men & women" && current_user.category_gender.name == "Female" ||
+              @event.category_quantitygender.name == "both men & women" && current_user.category_gender.name == "Male" ||
+              @event.category_quantitygender.name == "both X men & X women" && current_user.category_gender.name == "Female" ||
+              @event.category_quantitygender.name == "both X men & X women" && current_user.category_gender.name == "Male" %>
+              <li><span><div class="event_show_btn btn_social_attendance_restrictions"><%= link_to 'Attendance Restriction!', user_event_path(@event.user, @event) %></div></span></li>
+            <% else %>
+              <% if current_user.image? %>
+                <!-- event is not an external event and price is not 0.00 -->
+                <% if !@event.expired_or_closed_event && !@event.external_event? && !@event.event_price_zero? %>
+                  <li><span><div class="event_show_btn btn_event_booknow"><%= link_to 'Book Now!', new_payment_path(event_id: @event.id, user: current_user.id) %></div></span></li>
+                <!-- event is an external event and price is not 0.00 -->
+                <% elsif !@event.expired_or_closed_event && @event.external_event? && !@event.event_price_zero? %>
+                  <li><span><div class="event_show_btn btn_event_booknow"><%= link_to 'Book Now!', new_payment_path(event_id: @event.id, user: current_user.id) %></div></span></li>
+                <!-- event isnot an external event and price is 0.00 -->
+                <% elsif !@event.expired_or_closed_event && !@event.external_event? && @event.event_price_zero? %>
+                  <li><span><div class="event_show_btn btn_event_booknow"><%= link_to 'Book Now!', new_payment_path(event_id: @event.id, user: current_user.id) %></div></span></li>
+                <!-- event is an external event and price is 0.00 -->
+                <% elsif !@event.expired_or_closed_event && @event.external_event? && @event.event_price_zero? %>
+                  <li><span><div class="event_show_btn btn_event_booknow"><%= link_to 'Book Now!', @event.external_eventlink, target:"_blank" %></div></span></li>
+                <% elsif @event.external_event? && @event.event_price_zero? %>
+                  <% unless @event.expired_or_closed_event || @event.soldout? || @event.soldout_men? && @event.soldout_women? %>
+                    <li><span><div class="event_show_btn btn_event_booknow"><%= link_to 'Book Now!', @event.external_eventlink, target:"_blank" %></div></span></li>
                   <% end %>
-                <% else %>
-                  <li><span><div class="event_show_btn btn_event_booknow"><%= link_to 'Book Now!', image_restriction_page_path %></div></span></li>
                 <% end %>
+              <% else %>
+                <li><span><div class="event_show_btn btn_event_booknow"><%= link_to 'Book Now!', image_restriction_page_path %></div></span></li>
               <% end %>
             <% end %>
           <% end %>
         <% end %>
+        <%# end %>
         
         <li>
           <div class="event_show_btn">
