@@ -57,8 +57,7 @@
                     <% end %>
                     <div class="medium-12 columns image_content_info">
                       <!-- sold out -->
-                      <%# if event.sold_out? || event.soldout? || event.soldout_men? && event.soldout_women? %>
-                      <% if event.sold_out? %>
+                      <% if event.sold_out? || event.soldout? || event.soldout_men? && event.soldout_women? %>
                         <div class="banner">
                           <div class="ribbon-wrapper-green">
                             <div class="ribbon-green">sold out</div>
@@ -136,14 +135,14 @@
                                 <!-- event_gender_selection_display -->
                                 <% if event.selection_BothX_men_and_women %>
                                   <span class="content_gender"><i class="fa fa-male" aria-hidden="true"></i></span>
-                                  <% if event.sold_out_Xmen? %>
+                                  <% if event.sold_out_Xmen? || event.soldout_men? %>
                                     <span class="content_soldout">sold out</span>
                                   <% else %>
                                     <span class="content_available">available</span>
                                   <% end %>
                                   <span class="content_divider">|</span>
                                   <span class="content_gender"><i class="fa fa-female" aria-hidden="true"></i></span> 
-                                  <% if event.sold_out_Xwomen? %>
+                                  <% if event.sold_out_Xwomen? || event.soldout_women? %>
                                     <span class="content_soldout">sold out</span>
                                   <% else %>
                                     <span class="content_available">available</span>
@@ -159,7 +158,7 @@
                                     <span class="content_gender"><i class="fa fa-users" aria-hidden="true"></i> </span>
                                     <span class="content_text">[Both Men & Women]</span>
                                   <% end %>
-                                  <% if event.sold_out? %>
+                                  <% if event.sold_out? || event.soldout? %>
                                     <span class="content content_soldout">sold out</span>
                                   <% else %>
                                     <span class="content content_available">available</span>
@@ -297,14 +296,14 @@
                                 <!-- event_gender_selection_display -->
                                 <% if event.selection_BothX_men_and_women %>
                                   <span class="content_gender"><i class="fa fa-male" aria-hidden="true"></i></span>
-                                  <% if event.sold_out_Xmen? %>
+                                  <% if event.sold_out_Xmen? || event.soldout_men? %>
                                     <span class="content_soldout">sold out</span>
                                   <% else %>
                                     <span class="content_available">available</span>
                                   <% end %>
                                   <span class="content_divider">|</span>
                                   <span class="content_gender"><i class="fa fa-female" aria-hidden="true"></i></span> 
-                                  <% if event.sold_out_Xwomen? %>
+                                  <% if event.sold_out_Xwomen? || event.soldout_women? %>
                                     <span class="content_soldout">sold out</span>
                                   <% else %>
                                     <span class="content_available">available</span>
@@ -320,7 +319,7 @@
                                     <span class="content_gender"><i class="fa fa-users" aria-hidden="true"></i> </span>
                                     <span class="content_text">[Both Men & Women]</span>
                                   <% end %>
-                                  <% if event.sold_out? %>
+                                  <% if event.sold_out? || event.soldout? %>
                                     <span class="content content_soldout">sold out</span>
                                   <% else %>
                                     <span class="content content_available">available</span>
