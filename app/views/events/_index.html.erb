@@ -324,33 +324,33 @@
                               <div class="header">space</div> 
                               <div class="content">
 
-                                <% if event.external_event? %>
+                                <%# if event.external_event? %>
                                   <!-- external_event event_gender_selection_display -->
-                                  <% if event.selection_BothX_men_and_women %>
-                                    <span class="content_gender"><i class="fa fa-male" aria-hidden="true"></i></span>
-                                    <% if event.soldout_men? %>
+                                  <%# if event.selection_BothX_men_and_women %>
+                                    <!-- <span class="content_gender"><i class="fa fa-male" aria-hidden="true"></i></span>
+                                    <%# if event.soldout_men? %>
                                       <span class="content_soldout">sold out</span>
-                                    <% else %>
+                                    <%# else %>
                                       <span class="content_available">available</span>
-                                    <% end %>
+                                    <%# end %>
                                     <span class="content_divider">|</span>
                                     <span class="content_gender"><i class="fa fa-female" aria-hidden="true"></i></span>
-                                    <% if event.soldout_women? %>
+                                    <%# if event.soldout_women? %>
                                       <span class="content_soldout">sold out</span>
-                                    <% else %>
+                                    <%# else %>
                                       <span class="content_available">available</span>
-                                    <% end %>
-                                  <% elsif event.selection_BothAndOnly_men_and_women %>
-                                    <% if event.soldout? %>
+                                    <%# end %>
+                                  <%# elsif event.selection_BothAndOnly_men_and_women %>
+                                    <%# if event.soldout? %>
                                       <span class="content_gender"><i class="fa fa-users" aria-hidden="true"></i> </span>
                                       <span class="content_soldout">sold out</span>
-                                    <% elsif !event.soldout? %>
+                                    <%# elsif !event.soldout? %>
                                       <span class="content_gender"><i class="fa fa-users" aria-hidden="true"></i> </span>
-                                      <span class="content_available">available</span>
-                                    <% end %>
-                                  <% end %>
+                                      <span class="content_available">available</span> -->
+                                    <%# end %>
+                                  <%# end %>
                                   <!-- external_event event_gender_selection_display -->
-                                <% else %>
+                                <%# else %>
                                   <!-- non_external_event event_gender_selection_display -->
                                   <% if event.selection_BothX_men_and_women %>
                                     <span class="content_gender"><i class="fa fa-male" aria-hidden="true"></i></span>
@@ -384,7 +384,7 @@
                                     <% end %>
                                   <% end %>
                                   <!-- non_external_event event_gender_selection_display -->
-                                <% end %>
+                                <%# end %>
                               </div>
                             </li>
                             <li class="report_content">
