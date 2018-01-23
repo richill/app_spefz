@@ -108,7 +108,7 @@
                 <div class="tablecell">
                   <div class="faint_text_format">Venue Name</div> 
                   <div class="main_text_format"><%= link_to "#{venue.venuename}", "#{venue.website}", target: "_blank" %></div>
-                  <div class="venue_email_link"><%= mail_to "#{venue.email}", "#{venue.email}", subject: "Spefz | #{venue.venuename}", class: "venue_email_link" %></div>
+                  <div class="venue_email_link"><%= mail_to "#{venue.email}", (truncate "#{venue.email}", length: 30), subject: "Spefz Ltd | #{venue.venuename}", class: "venue_email_link" %></div>
                 </div>
 
                 <div class="tablecell">
@@ -123,7 +123,7 @@
                 </div>
 
                 <div class="tablecell">
-                  <div class="faint_text_format">Price (£) / hr</div> 
+                  <div class="faint_text_format">Price</div> 
                   <div class="main_text_format">
                     <% if venue.price? %>
                       <%= venue.price %>
@@ -134,7 +134,7 @@
                 </div>
 
                 <div class="tablecell">
-                  <div class="faint_text_format">Min. Cap.</div> 
+                  <div class="faint_text_format">Capacity</div> 
                   <div class="main_text_format">
                     <% if venue.min_capacity? %>
                       <%= venue.min_capacity %>
