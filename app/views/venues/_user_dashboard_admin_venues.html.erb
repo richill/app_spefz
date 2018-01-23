@@ -126,7 +126,7 @@
                   <div class="faint_text_format">Price (£)</div> 
                   <div class="main_text_format">
                     <% if venue.price? %>
-                      <%= venue.price %>
+                      <%= number_with_precision(venue.price, precision: 0) %>
                     <% else %>
                       <%= "-" %>
                     <% end %>
