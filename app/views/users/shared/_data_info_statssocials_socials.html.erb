@@ -1,6 +1,6 @@
 <h1>socials [<%= @socials.count %>]
   <span id="status_statssocials_all" class="status_colour_blue">all socials [<%= @socials.count %>]</span>
-  <span id="status_statssocials_active" class="status_colour_blue">active socials [<%= @socials.live_socials.open_socials.non_upcoming_socials.count %>]</span>
+  <span id="status_statssocials_active" class="status_colour_blue">live socials [<%= @socials.live_socials.open_socials.non_upcoming_socials.count %>]</span>
   <span id="status_statssocials_upcoming" class="status_colour_blue">upcoming socials [<%= @socials.live_socials.open_socials.upcoming_socials.count %>]</span>
   <span id="status_statssocials_expiredclosed" class="status_colour_blue">expired & closed socials [<%= @socials.expired_or_closed_socials.count %>]</span>
   <div class="h1_subtitle"><i class="fa fa-info-circle"></i> displays all socials on the platform [ordered by date held]</div>
