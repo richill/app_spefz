@@ -9,7 +9,7 @@
   <div class="bottom_inner_content">
     <div class="table">
       <div class="tablerow">
-        <div class="tablecell header background">active mth</div>
+        <div class="tablecell header background">all active mth</div>
         <div class="tablecell background"></div>
         <div class="tablecell background"></div>
         <div class="tablecell background"></div>
@@ -84,7 +84,7 @@
   <div class="bottom_inner_content">
     <div class="table">
       <div class="tablerow">
-        <div class="tablecell header background">active mth</div>
+        <div class="tablecell header background">all live mth</div>
         <div class="tablecell background"></div>
         <div class="tablecell background"></div>
         <div class="tablecell background"></div>
@@ -93,7 +93,7 @@
         <div class="tablecell background"></div>
         <div class="tablecell background"></div>
       </div>
-      <% @socials.held_this_month.live_socials.open_socials.order("date desc").each do |social| %>
+      <% @socials.held_this_month.live_socials.open_socials.non_upcoming_socials.order("date desc").each do |social| %>
         <div class="tablerow">
           <div class="tablecell" style="width:10%">
             <div class="image_container">
@@ -159,7 +159,7 @@
   <div class="bottom_inner_content">
     <div class="table">
       <div class="tablerow">
-        <div class="tablecell header background">active mth</div>
+        <div class="tablecell header background">upcoming mth</div>
         <div class="tablecell background"></div>
         <div class="tablecell background"></div>
         <div class="tablecell background"></div>
@@ -168,7 +168,7 @@
         <div class="tablecell background"></div>
         <div class="tablecell background"></div>
       </div>
-      <% @socials.held_this_month.live_socials.open_socials.order("date desc").each do |social| %>
+      <% @socials.held_this_month.live_socials.open_socials.upcoming_socials.order("date desc").each do |social| %>
         <div class="tablerow">
           <div class="tablecell" style="width:10%">
             <div class="image_container">
