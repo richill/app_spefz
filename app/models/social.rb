@@ -59,6 +59,10 @@ class Social < ActiveRecord::Base
 
   scope :closed_socials, -> {where(close: true)}
 
+  scope :non_upcoming_socials, -> {where(['upcoming_social = ?', false])}
+
+  scope :upcoming_socials, -> {where(['upcoming_social = ?', true])}
+
   scope :open_socials, -> {where(['close = ? OR close IS ?', false, nil])}
 
   scope :created_this_month, -> { where(created_at: Time.now.beginning_of_month..Time.now.end_of_month) }
