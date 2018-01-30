@@ -143,9 +143,11 @@ class Event < ActiveRecord::Base
 
   scope :events_with_externalattendinglist, -> { select {|event| event.externalattendinglist.present? }}
 
-  scope :events_with_externalattendinglist_nousers, -> { select {|event| event.externalattendinglist.users.empty? }}
+  # scope :events_with_externalattendinglist_nousers, -> { select {|event| event.externalattendinglist.users.empty? }}
+  scope :events_with_externalattendinglist_nousers, -> { select {|event| event.externalattendinglist.users.empty? && event.externalattendinglist.present? }}
 
-  scope :events_with_externalattendinglist_users, -> { select {|event| event.externalattendinglist.users.present? }}
+  # scope :events_with_externalattendinglist_users, -> { select {|event| event.externalattendinglist.users.present? }}
+  scope :events_with_externalattendinglist_users, -> { select {|event| event.externalattendinglist.users.present? && event.externalattendinglist.present? }}
 
   scope :events_without_externalattendinglist, -> { select {|event| event.externalattendinglist.nil? }}
 
@@ -698,12 +700,14 @@ class Event < ActiveRecord::Base
 
   #displays events with only a created attedingList with users & no payments
   def self.event_with_only_attendinglist_users
-    unbooked_events.live_events.open_events.events_with_externalattendinglist
+    #if self.externalattendinglist.users.present?
+      unbooked_events.live_events.open_events.events_with_externalattendinglist
+    #end
   end
 
   #displays events with payments and a created attendingList with no users
   def self.event_with_payments_and_attendinglist_nousers
-    booked_events_all.live_events.open_events.events_with_externalattendinglist_nousers
+      booked_events_all.live_events.open_events.events_with_externalattendinglist_nousers
   end
 
   #displays events with payments and a created attendingList with users
