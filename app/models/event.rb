@@ -144,10 +144,10 @@ class Event < ActiveRecord::Base
   scope :events_with_externalattendinglist, -> { select {|event| event.externalattendinglist.present? }}
 
   # scope :events_with_externalattendinglist_nousers, -> { select {|event| event.externalattendinglist.users.empty? }}
-  scope :events_with_externalattendinglist_nousers, -> { select {|event| event.externalattendinglist.users.empty? && event.externalattendinglist.present? }}
+  scope :events_with_externalattendinglist_nousers, -> { select {|event| event.externalattendinglist.users.empty? && !event.externalattendinglist.nil? }}
 
   # scope :events_with_externalattendinglist_users, -> { select {|event| event.externalattendinglist.users.present? }}
-  scope :events_with_externalattendinglist_users, -> { select {|event| event.externalattendinglist.users.present? && event.externalattendinglist.present? }}
+  scope :events_with_externalattendinglist_users, -> { select {|event| event.externalattendinglist.users.present? && !event.externalattendinglist.nil? }}
 
   scope :events_without_externalattendinglist, -> { select {|event| event.externalattendinglist.nil? }}
 
