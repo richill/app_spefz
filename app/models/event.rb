@@ -146,17 +146,23 @@ class Event < ActiveRecord::Base
   # scope :events_with_externalattendinglist_nousers, -> { select {|event| event.externalattendinglist.users.empty? }}
   #i need to say if event.externalattendinglist.present? do the below
   # scope :events_with_externalattendinglist_nousers, -> { select {|event| event.externalattendinglist.users.empty? }}
-  scope :events_with_externalattendinglist_nousers, -> { 
-    left_outer_joins(:users).where(users: {id: nil}). # select event associate with no users
-    joins(:externalattendinglist) # select event has at least one externalattendinglist
-  }
+  # scope :events_with_externalattendinglist_nousers, -> { 
+  #   left_outer_joins(:users).where(users: {id: nil}). # select event associate with no users
+  #   joins(:externalattendinglist) # select event has at least one externalattendinglist
+  # }
+
+  #scope :events_with_externalattendinglist_nousers, -> { joins(:externalattendinglists).where(users: {id: nil})}
+  scope :events_with_externalattendinglist_nousers, -> { joins(:user).where(users: {id: nil}).joins(:externalattendinglist)}
 
   # scope :events_with_externalattendinglist_users, -> { select {|event| event.externalattendinglist.users.present? }}
-  # scope :events_with_externalattendinglist_users, -> { select {|event| event.externalattendinglist.users.present? }}
-  scope :events_with_externalattendinglist_users, -> { 
-    left_outer_joins(:users).where(users: {id: !nil}). # select event associate with no users
-    joins(:externalattendinglist) # select event has at least one externalattendinglist
-  }
+  # scope :events_with_externalattendinglist_users, -> { 
+  #   left_outer_joins(:users).where(users: {id: !nil}). # select event associate with no users
+  #   joins(:externalattendinglist) # select event has at least one externalattendinglist
+  # }
+  #scope :events_with_externalattendinglist_users, -> { joins(:users).where(users: {id: !nil}).joins(:externalattendinglist)}
+  scope :events_with_externalattendinglist_users, -> { joins(:user).where(users: {id: !nil}).joins(:externalattendinglist)}
+
+
 
   scope :events_without_externalattendinglist, -> { select {|event| event.externalattendinglist.nil? }}
 
