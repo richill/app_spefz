@@ -35,6 +35,7 @@
         <div class="header"> booked active events</div>
         <div class="header_data">
           <span class="header_icon"><i class="fa fa-calendar-check-o" aria-hidden="true"></i></span>
+          <span><%# (@events.event_with_only_payments.count) + (@events.event_with_only_attendinglist_users.count) + (@events.event_with_payments_and_attendinglist_nousers.count) + (@events.event_with_payments_and_attendinglist_users.count) %></span>
           <span><%= (@events.event_with_only_payments.count) + (@events.event_with_only_attendinglist_users.count) + (@events.event_with_payments_and_attendinglist_nousers.count) + (@events.event_with_payments_and_attendinglist_users.count) %></span>
           <div class="minor_info">£<%= (@events.total_active_paid_events_amt) + (@events.total_active_free_events_amt) %> [all]</div>
         </div>
