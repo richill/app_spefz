@@ -3,63 +3,79 @@ class PreferencesController < ApplicationController
   before_filter :setup_friends, :setup_subscription, :setup_cards, :setup_events, :setup_invite_form, :setup_user_network_activities
 
   def index
-    @preferences = Preference.all
+    if current_user.admin_pa_management_group || current_user == @user
+      @preferences = Preference.all
+    else
+      redirect_to errorpermission_path
+    end
   end
 
   def show
-    # @user = User.friendly.find(params[:user_id])
-    @users = User.random
-    @user = current_user
-    @preference = @user.preference
+    unless current_user == @user
+      # @user = User.friendly.find(params[:user_id])
+      @users = User.random
+      @user = current_user
+      @preference = @user.preference
+    end
   end
 
   def new
-    @users = User.random
-    @user = current_user
-    @preference = @user.build_preference
+    unless current_user == @user
+      @users = User.random
+      @user = current_user
+      @preference = @user.build_preference
+    end
   end
 
   def edit
-    @users = User.random
-    @user = User.friendly.find(params[:user_id])
+    unless current_user == @user
+      @users = User.random
+      @user = User.friendly.find(params[:user_id])
+    end
   end
 
 
   def create
-    @users = User.all
-    @preference = Preference.new(preference_params)
-    @preference.user = current_user
+    unless current_user == @user
+      @users = User.all
+      @preference = Preference.new(preference_params)
+      @preference.user = current_user
 
-    respond_to do |format|
-      if @preference.save
-        format.html { redirect_to @preference, notice: 'Preference was successfully created.' }
-        format.json { render :show, status: :created, location: @preference }
-      else
-        format.html { render :new }
-        format.json { render json: @preference.errors, status: :unprocessable_entity }
+      respond_to do |format|
+        if @preference.save
+          format.html { redirect_to @preference, notice: 'Preference was successfully created.' }
+          format.json { render :show, status: :created, location: @preference }
+        else
+          format.html { render :new }
+          format.json { render json: @preference.errors, status: :unprocessable_entity }
+        end
       end
     end
   end
 
   def update
-    respond_to do |format|
-      if @preference.update(preference_params)
-        format.html { redirect_to([@preference.user, @preference], notice: 'Preference was successfully updated.') }
-        format.json { render :show, status: :ok, location: @preference }
-      else
-        format.html { render :edit }
-        format.json { render json: @preference.errors, status: :unprocessable_entity }
+    unless current_user == @user
+      respond_to do |format|
+        if @preference.update(preference_params)
+          format.html { redirect_to([@preference.user, @preference], notice: 'Preference was successfully updated.') }
+          format.json { render :show, status: :ok, location: @preference }
+        else
+          format.html { render :edit }
+          format.json { render json: @preference.errors, status: :unprocessable_entity }
+        end
       end
     end
   end
 
   def destroy
-    @user = current_user
-    @preference = @user.preference
-    @preference.destroy
-    respond_to do |format|
-      format.html { redirect_to user_url(@user), notice: 'Preference was successfully destroyed.' }
-      format.json { head :no_content }
+    unless current_user == @user
+      @user = current_user
+      @preference = @user.preference
+      @preference.destroy
+      respond_to do |format|
+        format.html { redirect_to user_url(@user), notice: 'Preference was successfully destroyed.' }
+        format.json { head :no_content }
+      end
     end
   end
 
