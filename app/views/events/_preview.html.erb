@@ -12,36 +12,36 @@
 
               <!-- left_evt_details -->
               <div class="medium-3 columns left_evt_details">
-                <!-- sold out -->
-                <% if @event.selection_BothX_men_and_women %>
-                  <% if @event.sold_out_Xmen? && @event.sold_out_Xwomen? || @event.soldout_men? && @event.soldout_women? %>
-                    <div class="banner">
-                      <div class="ribbon-wrapper-green">
-                        <div class="ribbon-green">sold out</div>
+                <div class="image_cover">
+                  <!-- sold out -->
+                  <% if @event.selection_BothX_men_and_women %>
+                    <% if @event.sold_out_Xmen? && @event.sold_out_Xwomen? || @event.soldout_men? && @event.soldout_women? %>
+                      <div class="banner">
+                        <div class="ribbon-wrapper-green">
+                          <div class="ribbon-green">sold out</div>
+                        </div>
                       </div>
-                    </div>
-                  <% end %>
-                <% elsif @event.selection_BothAndOnly_men_and_women %>
-                  <% if @event.sold_out? || @event.soldout? %>
-                    <div class="banner">
-                      <div class="ribbon-wrapper-green">
-                        <div class="ribbon-green">sold out</div>
+                    <% end %>
+                  <% elsif @event.selection_BothAndOnly_men_and_women %>
+                    <% if @event.sold_out? || @event.soldout? %>
+                      <div class="banner">
+                        <div class="ribbon-wrapper-green">
+                          <div class="ribbon-green">sold out</div>
+                        </div>
                       </div>
-                    </div>
+                    <% end %>
                   <% end %>
-                <% end %>
-                <!-- sold out -->
-                <% if @event.event_image_link.present? %>
-                  <div class="image_cover">
+                  <!-- sold out -->
+                  <!-- event image -->
+                  <% if @event.event_image_link.present? %>
                     <%= cl_image_tag(@event.event_image_link, :transformation=>[{:gravity=>"face", :width => 600, :height => 320, :crop=>"fill"}]) %>
-                  </div>
-                <% elsif @event.image.present? %>
-                  <div class="image_cover">
+                  <% elsif @event.image.present? %>
                     <%= cl_image_tag(@event.image, :transformation=>[{:gravity=>"center", :crop=>"fill"}]) %>
-                  </div>
-                <% else %>
-                  <div class="image_cover"><%= image_tag("img_feed_06.png") %></div>
-                <% end %>
+                  <% else %>
+                    <div class="image_cover"><%= image_tag("img_feed_06.png") %></div>
+                  <% end %>
+                  <!-- event image -->
+                </div>
               </div>
 
               <!-- right_evt_details -->
