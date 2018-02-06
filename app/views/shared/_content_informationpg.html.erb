@@ -70,9 +70,9 @@
           <div class="sp_inner_content introduction_inner_content">
             <div class="sp_main_header">introduction</div>
             <p>Spefz is a selective social dating app that holds exclusive live events for our registered members on the platform. We create profiled live events that gather and group individuals of similar interests and preferences, so the probability of members connecting will be much higher; we do this by auto-matching individuals to specific events (via our internal rating algorithm system on personality, physical appearance and interests) in order to ensure our members are able to network effectively and meet like-minded people of their calibre.</p>
-            <p>We have a thriving community of followers between the ages of 28-48 and we would like to discuss with you the opportunity to align your product with our event in order promote your brand and to promote our app.</p>
-            <p>Our events offer busy professionals a great way to meet new people in a fun, safe and chilled environment. The main key to creating our events is based on our internal algorithm that ensures that the compatibility and mutual interests of our members are met.</p>
+            <p>Our events offer busy professionals a great way to meet new people in a fun, safe and chilled environment. We have a thriving community of followers between the ages of 28-48.</p>
             <p>From the decorations to the food choices and activities, and by holding events in the best UK's most stylish venues, we ensure that we provide our members with a 360 degree experience. Our team of experts are ready to create a phenomenal experience for our members.</p>
+            <p>For any information regarding the use of the platform, please view the below sections. Any queries you may have, do not hesitate to <span class="terms_inner_content"><%= link_to "contact us", contact_us_path, target:"_blank" %></span></p>
             <div class="medium-12 columns featured_section">
               <div class="featured_title">we've been featured in:</div>
               <div class="featured_inner_section">
@@ -119,7 +119,14 @@
                   <li>On the right upper corner click on your profile image. This will display a drop down menu</li>
                   <li>
                     <span>Select the option</span>
-                    <span class="terms_inner_content"><%= link_to "My Social Cards", cards_path , target:"_blank" %> as displayed in the below image</span>
+                    <span class="terms_inner_content">
+                      <% if signed_in? %>
+                        <%= link_to "My Social Cards", cards_path , target:"_blank" %>
+                      <% else %> 
+                        <%= link_to "My Social Cards", "#" , target:"_blank" %>
+                      <% end %>
+                      <span>as displayed in the below image</span>
+                    </span>
                     <div class="info_img_main_container">
                       <div class="inner_img_container">
                         <%= cl_image_tag("https://res.cloudinary.com/spefzapp/image/upload/v1515778139/spefzinformation/spefz_card_01.png", class: "") %>
