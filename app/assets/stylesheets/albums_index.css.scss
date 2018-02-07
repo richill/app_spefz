@@ -35,13 +35,6 @@
   float: left;
 }
 
-
-
-// ---------------------------------
-//  working contents
-// ---------------------------------
-
-
 .albums_section .polaroid_images a {
   background: white;
   display: inline;
@@ -60,7 +53,7 @@
   position:relative;
 }
 
-.polaroid_images a:after {
+.albums_section .polaroid_images a:after {
   color: #333;
   font-size: 20px;
   content: attr(title);
@@ -68,9 +61,19 @@
   top:15px;
 }
 
-.polaroid_images img { 
+.albums_section .polaroid_images img { 
   display: block; 
-  width: 242px; 
+  width: 340px; 
 }
+
+// ---------------------------------
+//  working contents
+// ---------------------------------
+
+
+
+
+
+
 
 
