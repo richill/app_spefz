@@ -69,20 +69,25 @@
 // ---------------------------------
 
 
-.albums_section .polaroid_images .top_card {
-  background-color: white;
+// .albums_section .polaroid_images .top_card {
+//   background-color: white;
+//   z-index:1;
+// }
+
+.albums_section .polaroid_images .polaroid_listed_images li:nth-child(1) {
+  background-color: transparent;
   z-index:1;
 }
 
-.albums_section .polaroid_images .middle_card {
-  background-color: white;
+.albums_section .polaroid_images .polaroid_listed_images li:nth-child(3) {
+  background-color: transparent;
   -webkit-transform: rotate(2deg);  
   -moz-transform: rotate(2deg); 
   transform: rotate(2deg); 
 }
 
-.albums_section .polaroid_images .bottom_card {
-  background-color: white;
+.albums_section .polaroid_images .polaroid_listed_images li:nth-child(2) {
+  background-color: transparent;
   -webkit-transform: rotate(4deg);  
   -moz-transform: rotate(4deg); 
   transform: rotate(4deg); 
