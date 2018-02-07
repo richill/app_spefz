@@ -35,10 +35,9 @@
 }
 
 .albums_section .polaroid_images {
-  // position: relative;
   //background-color: orange;
   width: 390px;
-  height: 407px;
+  height: 450px;
   display: inline-block;
 }
 
@@ -47,7 +46,7 @@
   display: inline;
   float: left;
   margin: 0 15px 30px;
-  padding: 10px 10px 25px;
+  padding: 10px 10px 50px;
   text-align: center;
   text-decoration: none;
   -webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, .3);
@@ -92,6 +91,26 @@
 .albums_section .album_img {
   position: absolute;
   width: 390px;
+}
+
+.albums_section .album_name {
+  position: absolute;
+  bottom: 46px;
+  z-index: 1;
+  left: 27px;
+  font-family: 'Lato', sans-serif;
+  text-transform: capitalize;
+  font-weight: bold;
+  color: #414249 !important;
+  font-size: 12px;
+}
+
+.albums_section .album_name i {
+  margin-right: 3px;
+}
+
+.albums_section .album_divider {
+  margin: 0px 5px;
 }
 
 
