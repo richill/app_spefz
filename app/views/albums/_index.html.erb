@@ -1,33 +1,70 @@
-<p id="notice"><%= notice %></p>
+<p id="notice" class="hide"><%= notice %></p>
 
-<h1>Listing Albums</h1>
+<div class="albums_section">
+  <div class="medium-12 columns albums_inner_section">
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Date</th>
-      <th>Description</th>
-      <th>Image</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+    <!-- content -->
+      <div class="medium-12 columns album_index_content_section">
+        <div class="medium-12 columns content_container">
+          <div class="content_details">
+            <div class="album_main_container">
+              <ul>
+                <!-- albums -->
+                  album content
+                <!-- albums -->
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    <!-- content -->
 
-  <tbody>
-    <% @albums.each do |album| %>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="old_content hide">
+  <h1>Listing Albums</h1>
+  <table>
+    <thead>
       <tr>
-        <td><%= album.name %></td>
-        <td><%= album.date %></td>
-        <td><%= album.description %></td>
-        <td><%= album.image %></td>
-        <td><%= link_to 'Show', album %></td>
-        <td><%= link_to 'Edit', edit_album_path(album) %></td>
-        <td><%= link_to 'Destroy', album, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Name</th>
+        <th>Date</th>
+        <th>Description</th>
+        <th>Image</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @albums.each do |album| %>
+        <tr>
+          <td><%= album.name %></td>
+          <td><%= album.date %></td>
+          <td><%= album.description %></td>
+          <td><%= album.image %></td>
+          <td><%= link_to 'Show', album %></td>
+          <td><%= link_to 'Edit', edit_album_path(album) %></td>
+          <td><%= link_to 'Destroy', album, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-<%= link_to 'New Album', new_album_path %>
+  <br>
+
+  <%= link_to 'New Album', new_album_path %>
+</div>
