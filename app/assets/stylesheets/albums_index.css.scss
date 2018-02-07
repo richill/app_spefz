@@ -28,6 +28,11 @@
 .albums_section .album_main_container ul {
   list-style-type: none;
   margin: 0px;
+  display: inline-block;
+}
+
+.albums_section .album_main_container ul li {
+  float: left;
 }
 
 
