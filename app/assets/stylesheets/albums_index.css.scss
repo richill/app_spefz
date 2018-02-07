@@ -35,8 +35,17 @@
   float: left;
 }
 
+
+.albums_section .polaroid_images {
+  position: relative;
+  background-color: orange;
+  width: 390px;
+  height: 407px;
+  display: inline-block;
+}
+
 .albums_section .polaroid_images a {
-  background: white;
+  // background: white;
   display: inline;
   float: left;
   margin: 0 15px 30px;
@@ -71,8 +80,31 @@
 // ---------------------------------
 
 
+.albums_section .polaroid_images .red {
+  background-color: red;
+  z-index:1;
+}
 
+.albums_section .polaroid_images .green {
+  background-color: green;
+}
 
+.album_img {
+  position: absolute;
+  width: 390px;
+}
+
+// .polaroid_images .img_album_01 {
+//   -webkit-transform: rotate(4deg);  
+//   -moz-transform: rotate(4deg); 
+//   transform: rotate(4deg); 
+// }
+
+// .polaroid_images a:nth-child(2n) {
+//   -webkit-transform: rotate(4deg);  
+//   -moz-transform: rotate(4deg); 
+//   transform: rotate(4deg); 
+// }
 
 
 
