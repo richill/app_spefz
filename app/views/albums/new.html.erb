@@ -1,5 +1,10 @@
-<h1>New Album</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Back', albums_path %>
+<% if action_name == 'new'  %>
+  <% provide(:title, "Create Album") %>
+<% else %>
+  <% provide(:title, "Update Album") %>
+<% end %>
+<div>
+  <%= render 'shared/header' %>
+  <%= render 'form' %>
+  <%= render 'shared/footer' %>
+</div>
