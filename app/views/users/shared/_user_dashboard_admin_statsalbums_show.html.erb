@@ -1,23 +1,35 @@
-<div class="">
-  <p id="notice"><%= notice %></p>
+<div class="user_dashboard_admin_statsalbums user_dashboard_admin_statsalbum_show">
+  <!-- upper_data_content -->
+  <div class="medium-12 columns upper_data_content">
+    <div class="">
+      <p id="notice"><%= notice %></p>
+      <p>
+        <strong>Album Name:</strong>
+        <%= @album.name %>
+      </p>
+      <p>
+        <strong>Published Date:</strong>
+        <%= @album.date.strftime("%a, %d %b %Y") %>
+      </p>
+      <p>
+        <strong>Created Date:</strong>
+        <%= @album.created_at.strftime("%a, %d %b %Y") %>
+      </p>
+      <p>
+        <strong>Description:</strong>
+        <%= @album.description %>
+      </p>
+    </div>
+  </div>
 
-  <p>
-    <strong>Name:</strong>
-    <%= @album.name %>
-  </p>
 
-  <p>
-    <strong>Published Date:</strong>
-    <%= @album.date.strftime("%a, %d %b %Y") %>
-  </p>
+  <div class="clear"></div>
 
-  <p>
-    <strong>Created Date:</strong>
-    <%= @album.created_at.strftime("%a, %d %b %Y") %>
-  </p>
-
-  <p>
-    <strong>Description:</strong>
-    <%= @album.description %>
-  </p>
+  <!-- table_data_content -->
+  <div class="medium-12 columns lower_data_content stats_tab_01_content">
+    <div class="medium-12 columns lower_data_inner_content">
+      <%= render 'users/shared/data_info_statsalbums_albumphotos' %>
+    </div>
+  </div>
 </div>
+
