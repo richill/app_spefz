@@ -34,7 +34,7 @@ class AlbumsController < ApplicationController
 
       respond_to do |format|
         if @album.save
-          format.html { redirect_to stats_albums_user_path(current_user), notice: 'Album was successfully created.' }
+          format.html { redirect_to @album, notice: 'Album was successfully created.' }
           format.json { render :show, status: :created, location: @album }
         else
           format.html { render :new }
@@ -48,7 +48,7 @@ class AlbumsController < ApplicationController
     if current_user.admin_pa_management_group || current_user.pa_event_mgt_group
       respond_to do |format|
         if @album.update(album_params)
-          format.html { redirect_to stats_albums_user_path(current_user), notice: 'Album was successfully updated.' }
+          format.html { redirect_to @album, notice: 'Album was successfully updated.' }
           format.json { render :show, status: :ok, location: @album }
         else
           format.html { render :edit }

@@ -2,7 +2,7 @@ class Album < ActiveRecord::Base
   validates_presence_of :name, presence: true, message: "can't be blank"
   validates_presence_of :date, presence: true, message: "can't be blank"
   validates_presence_of :description, presence: true, message: "can't be blank"
-  validate :image_or_albumlink
+  # validate :image_or_albumlink
 
   belongs_to :user
   has_many :photos, dependent: :destroy

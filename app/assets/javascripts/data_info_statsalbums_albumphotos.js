@@ -6,7 +6,7 @@
 $(document).ready(function() {
   $('#status_statsablbum_allphotos').click(function() {
     $("#status_statsablbum_allphotos_content").show();
-    $("#status_statsablbum_publishedphotos_content").show();
+    $("#status_statsablbum_publishedphotos_content").hide();
     $("#status_statsablbum_unpublishedphotos_content").hide();
   });
 
