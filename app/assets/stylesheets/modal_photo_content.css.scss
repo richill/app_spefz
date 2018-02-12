@@ -1,0 +1,55 @@
+/*=========================================
+    Section: admin photo page
+    File: views / users / shared / _data_info_statsphotos_photos.html.erb
+    File: views / shared / _modal_photo_content.html.erb
+  =========================================*/
+
+.photo_content_modal {
+  border-radius: 0px !important;
+  border: 0px !important;
+  padding: 0px !important;
+}
+
+.photo_content_modal .header {
+  padding: 5px 15px !important;
+  font-size: 35px;
+  border-bottom: 2px solid #58CDA6;
+  text-transform: capitalize;
+  color: #fff !important;
+  background-color: #283041;
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  margin-bottom: 0px !important;
+}
+
+.photo_content_modal .cancel_button {
+  color: #fff !important;
+}
+
+.photo_content_modal .photo_content_container {
+  padding: 15px;
+  line-height: 25px;
+}
+
+.photo_content_modal .photo_inner_content {
+  max-height: 305px;
+  overflow: scroll;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

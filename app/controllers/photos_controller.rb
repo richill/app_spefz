@@ -29,7 +29,7 @@ class PhotosController < ApplicationController
 
       respond_to do |format|
         if @photo.save
-          format.html { redirect_to @photo, notice: 'Photo was successfully created.' }
+          format.html { redirect_to stats_photos_user_path(current_user), notice: 'Photo was successfully created.' }
           format.json { render :show, status: :created, location: @photo }
         else
           format.html { render :new }
@@ -45,7 +45,7 @@ class PhotosController < ApplicationController
     if current_user.admin_pa_management_group || current_user.pa_event_mgt_group
       respond_to do |format|
         if @photo.update(photo_params)
-          format.html { redirect_to @photo, notice: 'Photo was successfully updated.' }
+          format.html { redirect_to stats_photos_user_path(current_user), notice: 'Photo was successfully updated.' }
           format.json { render :show, status: :ok, location: @photo }
         else
           format.html { render :edit }
@@ -61,7 +61,7 @@ class PhotosController < ApplicationController
     if current_user.admin_pa_management_group 
       @photo.destroy
       respond_to do |format|
-        format.html { redirect_to photos_url, notice: 'Photo was successfully destroyed.' }
+        format.html { redirect_to stats_photos_user_url(current_user), notice: 'Photo was successfully destroyed.' }
         format.json { head :no_content }
       end
     else
