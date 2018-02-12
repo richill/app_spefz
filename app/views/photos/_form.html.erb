@@ -33,8 +33,15 @@
               <div class="text_info">*maximum word count: 55 | *minmum: 40 | <span id="textarea_title_event"></span></div> 
             </div>
             <div><%= f.input :description, label: "Photo description", placeholder: "tell us about this photo" %></div>
-            <div><%= f.input :album_id %></div>
+
+            <div class="photos_album">
+              <div><%= f.association :album, label_method: false, value_method: :id, include_blank: false %></div>
+              <div class="text_info">Select album photo belongs to</div> 
+            </div>
+
+
             <div class="clear"></div>
+
             <div class="publish_content">
               <%= f.input :publish, label: "Publish Photo" %>
               <div class="text_info">Tick if you would like the photo to be published</div>

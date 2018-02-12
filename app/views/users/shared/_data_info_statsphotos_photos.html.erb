@@ -33,6 +33,12 @@
             <div class="user_name"><%= link_to (truncate "#{photo.name}", length: 30), photo, target: "_blank" %></div>
             <span class="faint_text_format">created: <%= photo.created_at.strftime("%a, %d %b %Y") %></span>
           </div>
+
+          <div class="tablecell">
+            <div class="faint_text_format">album</div> 
+            <div class="main_text_format"><%= link_to "#{}"%></div>
+          </div>
+
           <div class="tablecell">
             <div class="faint_text_format">published date</div> 
             <div class="main_text_format"><%= photo.created_at.strftime("%a, %d %b %Y") %></div>
@@ -46,7 +52,6 @@
             <div class="main_text_format report_content_view">
               <%= (truncate "#{photo.description}", length: 100) %>
               <a href="#<%= photo.id %>" data-reveal-id="<%= dom_id(photo) %>_photo_content_show" style="">view</a>
-              <%# render partial: 'shared/modal_album_content', locals: { photo: photo } %>
               <%= render partial: 'shared/modal_photo_content', locals: { photo: photo } %>
             </div>
           </div>
