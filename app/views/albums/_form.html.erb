@@ -19,7 +19,7 @@
         <% end %>
       </div>
       <div class="user_general_settings_inner_section album_edit_update_form">
-        <%= simple_form_for(@album) do |f| %>
+        <%= simple_form_for (@album) do |f| %>
           <%= f.error_notification %>
 
           <div class="form-inputs">
@@ -42,7 +42,7 @@
               <%= f.input :publish, label: "Publish Blog" %>
               <div class="text_info">Tick if you would like blog to be published</div>
             </div>
-            
+
             <!-- hidden fields -->
             <%= f.hidden_field :user_id %>
             <!-- hidden fields -->

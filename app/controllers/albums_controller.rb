@@ -12,6 +12,7 @@ class AlbumsController < ApplicationController
   def new
     if current_user.admin_pa_management_group || current_user.pa_event_mgt_group
       @album = Album.new
+      @user = current_user
     else
       redirect_to errorpermission_path
     end
@@ -26,6 +27,7 @@ class AlbumsController < ApplicationController
   def create
     if current_user.admin_pa_management_group || current_user.pa_event_mgt_group
       @album = Album.new(album_params)
+      @user = current_user
 
       respond_to do |format|
         if @album.save

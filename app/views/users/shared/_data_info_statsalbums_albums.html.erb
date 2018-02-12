@@ -12,7 +12,9 @@
         <div class="tablecell background"></div>
         <div class="tablecell background"></div>
         <div class="tablecell background"></div>
-        <div class="tablecell background"></div>
+        <% if current_user.admin_pa_management_group || current_user.pa_administration_group %>
+          <div class="tablecell background"></div>
+        <% end %>
       </div>
       <% @albums.order("date desc").each do |album| %>
         <div class="tablerow">
@@ -28,7 +30,7 @@
             </div>
           </div>
           <div class="tablecell">
-            <div class="user_name"><%= truncate "#{album.name}", length: 30 %></div>
+            <div class="user_name"><%= link_to (truncate "#{album.name}", length: 30), album, target: "_blank" %></div>
             <span class="faint_text_format">created: <%= album.created_at.strftime("%a, %d %b %Y") %></span>
           </div>
           <div class="tablecell">
@@ -38,14 +40,16 @@
 
           <div class="tablecell">
             <div class="faint_text_format">photos</div> 
-            <div class="main_text_format"><%= link_to "#{album.photos.count}", "#" %></div>
+            <% if album.photos.present? %>
+              <div class="main_text_format"><%= link_to "#{album.photos.count}", "#" %></div>
+            <% else %>
+              <div><%= "--" %></div>
+            <% end %>
           </div>
-
           <div class="tablecell">
             <div class="faint_text_format">created by</div> 
-            <div class="main_text_format"><%= link_to "richill", "#" %></div>
+            <div class="main_text_format"><%= link_to "spefz team", "#" %></div>
           </div>
-
           <div class="tablecell" style="width:25%;">
             <div class="main_text_format report_content_view">
               <%= (truncate "#{album.description}", length: 100) %>
@@ -53,19 +57,12 @@
               <%= render partial: 'shared/modal_album_content', locals: { album: album } %>
             </div>
           </div>
-
-
           <% if current_user.admin_pa_management_group || current_user.pa_administration_group %>
             <div class="tablecell">
-              <div class="delete_btn"><%= link_to 'Edit', album, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+              <div class="delete_btn"><%= link_to 'Edit', edit_album_path(album) %></div>
               <div class="delete_btn"><%= link_to 'Destroy', album, method: :delete, data: { confirm: 'Are you sure?' } %></div>
             </div>
           <% end %>
-   
-   
-      
-    
-     
         </div>
       <% end %>
     </div>
