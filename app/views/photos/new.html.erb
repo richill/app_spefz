@@ -1,5 +1,10 @@
-<h1>New Photo</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Back', photos_path %>
+<% if action_name == 'new'  %>
+  <% provide(:title, "Create Photo") %>
+<% else %>
+  <% provide(:title, "Update Photo") %>
+<% end %>
+<div>
+  <%= render 'shared/header' %>
+  <%= render 'form' %>
+  <%= render 'shared/footer' %>
+</div>

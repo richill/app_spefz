@@ -1,13 +1,57 @@
-<%= simple_form_for(@photo) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :name %>
-    <%= f.input :description %>
-    <%= f.input :image %>
+<div class= "medium-12 columns user_general_settings_section user_main_createalbum_page">
+  
+  <!-- left_column_section -->
+  <div class="medium-2 columns left_column_section">
+    <%= render 'shared/content_user_adminpanel_left_column' %>
   </div>
+  <!-- left_column_section -->
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+  <!-- right_column_section -->
+  <div class="medium-10 columns right_column_section">
+    <div class="right_inner_section">
+      <!-- content -->
+      <div class="tree_link">
+        <span><i class="fa fa-user" aria-hidden="true"></i> <%= link_to "#{current_user.firstname}", user_path(current_user)%></span> <span class="fwd_sign">></span> <span><%= link_to "photos", stats_photos_user_path(current_user) %></span> <span class="fwd_sign">></span>
+        <% if action_name == 'new'  %>
+          <span>create photo</span>
+        <% else %>
+          <span>update photo</span>
+        <% end %>
+      </div>
+      <div class="user_general_settings_inner_section album_edit_update_form">
+        <%= simple_form_for (@photo) do |f| %>
+          <%= f.error_notification %>
+
+          <div class="form-inputs">
+            <div><%= f.file_field :image %></div>
+
+            <%= f.input :photo_image_link, label: "Photo Image [Image Link]", placeholder: "https://res.cloudinary.com/account/image/upload/v1474379672/happy-family.jpg" %>
+            <div class="text_info">If unable to upload photo image. Place image link here</div> 
+
+            <div class="album_topic">
+              <%= f.input :name, label: "Photo Name", placeholder: "Speed Social - Graduate Professionals" %>
+              <div class="text_info">*maximum word count: 55 | *minmum: 40 | <span id="textarea_title_event"></span></div> 
+            </div>
+            <div><%= f.input :description, label: "Photo description", placeholder: "tell us about this photo" %></div>
+            <div class="clear"></div>
+            <div class="publish_content">
+              <%= f.input :publish, label: "Publish Photo" %>
+              <div class="text_info">Tick if you would like the photo to be published</div>
+            </div>
+
+     
+
+          </div>
+
+          <div class="form-actions">
+            <%= f.button :submit %>
+          </div>
+        <% end %>
+      </div>
+      <!-- content -->
+    </div>
   </div>
-<% end %>
+  <!-- right_column_section -->
+</div>
+
+
