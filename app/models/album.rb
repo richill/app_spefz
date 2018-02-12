@@ -10,7 +10,6 @@ class Album < ActiveRecord::Base
   scope :published_albums, -> { where('publish = ?', true) }
   scope :unpublished_albums, -> { where('publish = ?', false) }
 
-
   def image_or_albumlink
     if image.blank? ^ album_image_link.blank?
       errors.add(:image, "either upload an Image, paste an image link or video link")

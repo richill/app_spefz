@@ -4,6 +4,15 @@
     <!-- content -->
       <div class="medium-12 columns album_photos_index_content_section">
         <div class="medium-12 columns content_container">
+          <div class="outter_tree_link_container">
+            <div class="tree_link">
+              <span><i class="fa fa-camera" aria-hidden="true"></i> <%= link_to "albums", albums_path %></span>
+              <span class="fwd_sign">></span> 
+              <span><%= @album.name %></span> 
+              <span class="fwd_sign">></span>
+              <span><%= "photos #{[@album.photos.count]}" %></span> 
+            </div>
+          </div>
           <div class="content_details">
             <div class="album_photos_main_container">
               <ul>
@@ -11,13 +20,11 @@
                 <% @album.photos.published_photos.order("created_at desc").each do |photo| %>
                   <li class="listed_photos">
                     <div class="polaroid_images">
-
                       <% if photo.photo_image_link.present? %>
                         <%= link_to(cl_image_tag(photo.photo_image_link, :transformation=>[{:gravity=>"face", :width => 600, :height => 320, :crop=>"fill"}]), "#") %>
                       <% else %>
                         <%= link_to(cl_image_tag(photo.image, :transformation=>[{:gravity=>"face", :width=>600, :height=>320, :crop=>"fill"}]), "#") %>
                       <% end %>
-
                     </div>
                   </li>
                 <% end %>

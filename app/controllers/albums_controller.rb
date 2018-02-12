@@ -7,9 +7,6 @@ class AlbumsController < ApplicationController
   end
 
   def show
-    # if current_user.admin_pa_management_group || current_user.pa_event_mgt_group
-    # else
-    # end
   end
 
   def new
