@@ -5,7 +5,7 @@
   =========================================*/
 
 // --------right_column_section--------
-.user_general_settings_section .right_inner_section .album_edit_update_form #album_image {
+.user_general_settings_section .right_inner_section .photo_edit_update_form #photo_image {
   height: 100%;
   margin-bottom: 15px !important;
   padding: 15px;
@@ -17,7 +17,7 @@
   letter-spacing: 1px;
 }
 
-.user_general_settings_section .right_inner_section .album_edit_update_form label {
+.user_general_settings_section .right_inner_section .photo_edit_update_form label {
   font-family: 'Lato', sans-serif;
   font-size: 15px !important;
   font-weight: 300 !important;
@@ -25,12 +25,12 @@
   margin-top: 15px;
 }
 
-.user_general_settings_section .album_edit_update_form .boolean {
+.user_general_settings_section .photo_edit_update_form .boolean {
   background-color: rgba(75, 180, 191, 0.2) !important;
   padding: 8px !important;
 }
 
-.user_general_settings_section .album_edit_update_form .text_info {
+.user_general_settings_section .photo_edit_update_form .text_info {
   font-family: 'Lato', sans-serif;
   font-size: 12px !important;
   font-weight: 300 !important;
@@ -40,67 +40,63 @@
   padding: 5px 15px !important;
 }
 
-.user_general_settings_section .album_edit_update_form .text_info a {
+.user_general_settings_section .photo_edit_update_form .text_info a {
   color: #E34B51 !important;
   font-weight: bold;
 }
 
-.user_general_settings_section .album_edit_update_form .text_info a:hover {
+.user_general_settings_section .photo_edit_update_form .text_info a:hover {
   text-decoration: underline;
 }
 
-.user_general_settings_section .album_edit_update_form .company_info_section {
+.user_general_settings_section .photo_edit_update_form .company_info_section {
   margin-bottom: 15px;
 }
 
-.user_general_settings_section .album_edit_update_form .album_topic {
+.user_general_settings_section .photo_edit_update_form .photo_topic {
   margin-bottom: 15px;
 }
 
-.user_general_settings_section .album_edit_update_form textarea {
+.user_general_settings_section .photo_edit_update_form textarea {
   font-weight: 300 !important;
   font-family: 'Lato', sans-serif;
   font-size: 15px;
 }
 
-.user_general_settings_section .album_edit_update_form .date_time {
+.user_general_settings_section .photo_edit_update_form .date_time {
   background-color: rgba(75, 180, 191, 0.2) !important;
   padding: 15px !important;
   margin-bottom: 15px;
   display: inline-block;
 }
 
-.user_general_settings_section .album_edit_update_form .album_label {
+.user_general_settings_section .photo_edit_update_form .album_label {
   font-family: 'Lato', sans-serif;
   font-size: 15px !important;
   font-weight: 300 !important;
   text-transform: capitalize;
 }
 
-.user_general_settings_section .album_edit_update_form .event_time {
+.user_general_settings_section .photo_edit_update_form .event_time {
   float: left !important;
   margin-right: 40px !important;
 }
 
-.user_general_settings_section .album_edit_update_form .event_time_end {
-  float: left;
-}
-
-.user_general_settings_section .album_edit_update_form .time {
+.user_general_settings_section .photo_edit_update_form .time {
   width: 170px;
   margin: 0px;
 }
 
-.user_general_settings_section .album_edit_update_form .save_btn {
+.user_general_settings_section .photo_edit_update_form .save_btn {
   margin: 30px 0px;
 }
 
-.user_general_settings_section .album_edit_update_form input[type="text"]:focus {
+.user_general_settings_section .photo_edit_update_form input[type="text"]:focus {
   border: 1px solid rgba(75, 180, 191, 0.5) !important;
   background-color: #fff !important;
 }
 
-.user_general_settings_section .album_edit_update_form input[type="submit"] {
+.user_general_settings_section .photo_edit_update_form input[type="submit"] {
   font-family: 'Lato', sans-serif;
   font-size: 20px;
   color: #fff !important;
@@ -120,11 +116,11 @@
   -o-transition: all 0.3s ease;
 }
 
-.user_general_settings_section .album_edit_update_form #album_publish {
+.user_general_settings_section .photo_edit_update_form #photo_publish {
   margin: 0px 5px 0px 0px;
 }
 
-.user_general_settings_section .album_edit_update_form .error small.error {
+.user_general_settings_section .photo_edit_update_form .error small.error {
   margin-bottom: 0px;
 }
 

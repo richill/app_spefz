@@ -1,4 +1,4 @@
-<div class= "medium-12 columns user_general_settings_section user_main_createalbum_page">
+<div class= "medium-12 columns user_general_settings_section user_main_createphoto_page">
   
   <!-- left_column_section -->
   <div class="medium-2 columns left_column_section">
@@ -18,7 +18,7 @@
           <span>update photo</span>
         <% end %>
       </div>
-      <div class="user_general_settings_inner_section album_edit_update_form">
+      <div class="user_general_settings_inner_section photo_edit_update_form">
         <%= simple_form_for (@photo) do |f| %>
           <%= f.error_notification %>
 
@@ -28,7 +28,7 @@
             <%= f.input :photo_image_link, label: "Photo Image [Image Link]", placeholder: "https://res.cloudinary.com/account/image/upload/v1474379672/happy-family.jpg" %>
             <div class="text_info">If unable to upload photo image. Place image link here</div> 
 
-            <div class="album_topic">
+            <div class="photo_topic">
               <%= f.input :name, label: "Photo Name", placeholder: "Speed Social - Graduate Professionals" %>
               <div class="text_info">*maximum word count: 55 | *minmum: 40 | <span id="textarea_title_event"></span></div> 
             </div>
