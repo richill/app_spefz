@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180207160032) do
+ActiveRecord::Schema.define(version: 20180212134023) do
 
   create_table "activities", force: :cascade do |t|
     t.integer  "trackable_id"
@@ -35,9 +35,10 @@ ActiveRecord::Schema.define(version: 20180207160032) do
     t.date     "date"
     t.text     "description"
     t.string   "image"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
     t.boolean  "publish"
+    t.string   "album_image_link"
   end
 
   create_table "attendances", force: :cascade do |t|
@@ -636,9 +637,11 @@ ActiveRecord::Schema.define(version: 20180207160032) do
     t.string   "name"
     t.text     "description"
     t.string   "image"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
     t.boolean  "publish"
+    t.string   "photo_image_link"
+    t.integer  "album_id"
   end
 
   create_table "preferences", force: :cascade do |t|
