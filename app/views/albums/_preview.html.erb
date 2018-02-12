@@ -20,11 +20,8 @@
                 <% @album.photos.published_photos.order("created_at desc").each do |photo| %>
                   <li class="listed_photos">
                     <div class="polaroid_images">
-                      <% if photo.photo_image_link.present? %>
-                        <%= link_to(cl_image_tag(photo.photo_image_link, :transformation=>[{:gravity=>"face", :width => 600, :height => 320, :crop=>"fill"}]), "#") %>
-                      <% else %>
-                        <%= link_to(cl_image_tag(photo.image, :transformation=>[{:gravity=>"face", :width=>600, :height=>320, :crop=>"fill"}]), "#") %>
-                      <% end %>
+                      <a href="#<%= photo.id %>" data-reveal-id="<%= dom_id(photo) %>_photo_content_show_image" style=""><%= image_tag(photo.photo_image_link) %></a>
+                      <%= render partial: 'shared/modal_photo_show_content', locals: { photo: photo } %>
                     </div>
                   </li>
                 <% end %>

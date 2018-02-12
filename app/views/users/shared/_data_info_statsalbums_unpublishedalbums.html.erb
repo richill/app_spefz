@@ -24,15 +24,15 @@
             <div class="image_container">
               <div class="image">
                 <% if album.album_image_link.present? %>
-                  <%= link_to image_tag(album.album_image_link), album, target: "_blank" %>
+                  <%= link_to image_tag(album.album_image_link), album %>
                 <% else %>
-                  <%= link_to image_tag(album.image_url), album, target: "_blank" %>
+                  <%= link_to image_tag(album.image_url), album %>
                 <% end %>
               </div>
             </div>
           </div>
           <div class="tablecell">
-            <div class="user_name"><%= link_to (truncate "#{album.name}", length: 30), album, target: "_blank" %></div>
+            <div class="user_name"><%= link_to (truncate "#{album.name}", length: 30), album %></div>
             <span class="faint_text_format">created: <%= album.created_at.strftime("%a, %d %b %Y") %></span>
           </div>
           <div class="tablecell">

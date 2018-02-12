@@ -24,19 +24,18 @@
           <div class="tablecell" style="width:10%">
             <div class="image_container">
               <div class="image">
-                <% if photo.photo_image_link.present? %>
-                  <%= link_to image_tag(photo.photo_image_link), photo, target: "_blank" %>
-                <% else %>
-                  <%= link_to image_tag(photo.image_url), photo, target: "_blank" %>
-                <% end %>
+                <a href="#<%= photo.id %>" data-reveal-id="<%= dom_id(photo) %>_photo_content_show_image" style=""><%= image_tag(photo.photo_image_link) %></a>
+                <%= render partial: 'shared/modal_photo_show_content', locals: { photo: photo } %>
               </div>
             </div>
           </div>
           <div class="tablecell">
-            <div class="user_name"><%= link_to (truncate "#{photo.name}", length: 30), photo, target: "_blank" %></div>
+            <div class="user_name">
+              <a href="#<%= photo.id %>" data-reveal-id="<%= dom_id(photo) %>_photo_content_show_image" style=""><%= truncate "#{photo.name}", length: 30 %></a>
+              <%= render partial: 'shared/modal_photo_show_content', locals: { photo: photo } %>
+            </div>
             <span class="faint_text_format">created: <%= photo.created_at.strftime("%a, %d %b %Y") %></span>
           </div>
-
           <div class="tablecell">
             <div class="faint_text_format">album</div> 
             <div class="main_text_format"><%= link_to (truncate "#{photo.album.name}", length: 35), album_path(photo.album) %></div>
@@ -89,16 +88,17 @@
           <div class="tablecell" style="width:10%">
             <div class="image_container">
               <div class="image">
-                <% if photo.photo_image_link.present? %>
-                  <%= link_to image_tag(photo.photo_image_link), photo, target: "_blank" %>
-                <% else %>
-                  <%= link_to image_tag(photo.image_url), photo, target: "_blank" %>
-                <% end %>
+                <a href="#<%= photo.id %>" data-reveal-id="<%= dom_id(photo) %>_photo_content_show_image" style=""><%= image_tag(photo.photo_image_link) %></a>
+                <%= render partial: 'shared/modal_photo_show_content', locals: { photo: photo } %>
               </div>
             </div>
           </div>
+
           <div class="tablecell">
-            <div class="user_name"><%= link_to (truncate "#{photo.name}", length: 30), photo, target: "_blank" %></div>
+            <div class="user_name">
+              <a href="#<%= photo.id %>" data-reveal-id="<%= dom_id(photo) %>_photo_content_show_image" style=""><%= truncate "#{photo.name}", length: 30 %></a>
+              <%= render partial: 'shared/modal_photo_show_content', locals: { photo: photo } %>
+            </div>
             <span class="faint_text_format">created: <%= photo.created_at.strftime("%a, %d %b %Y") %></span>
           </div>
 
@@ -154,16 +154,17 @@
           <div class="tablecell" style="width:10%">
             <div class="image_container">
               <div class="image">
-                <% if photo.photo_image_link.present? %>
-                  <%= link_to image_tag(photo.photo_image_link), photo, target: "_blank" %>
-                <% else %>
-                  <%= link_to image_tag(photo.image_url), photo, target: "_blank" %>
-                <% end %>
+                <a href="#<%= photo.id %>" data-reveal-id="<%= dom_id(photo) %>_photo_content_show_image" style=""><%= image_tag(photo.photo_image_link) %></a>
+                <%= render partial: 'shared/modal_photo_show_content', locals: { photo: photo } %>
               </div>
             </div>
           </div>
+          
           <div class="tablecell">
-            <div class="user_name"><%= link_to (truncate "#{photo.name}", length: 30), photo, target: "_blank" %></div>
+            <div class="user_name">
+              <a href="#<%= photo.id %>" data-reveal-id="<%= dom_id(photo) %>_photo_content_show_image" style=""><%= truncate "#{photo.name}", length: 30 %></a>
+              <%= render partial: 'shared/modal_photo_show_content', locals: { photo: photo } %>
+            </div>
             <span class="faint_text_format">created: <%= photo.created_at.strftime("%a, %d %b %Y") %></span>
           </div>
 

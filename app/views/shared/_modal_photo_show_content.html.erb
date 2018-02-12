@@ -1,0 +1,41 @@
+<span class="photo_show_section">
+  <div id="<%= dom_id(photo) %>_photo_content_show_image" class="reveal-modal photo_show_content_modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog"> 
+    <h2 id="modalTitle-contact-content-info" class="header">[Photo] <%= truncate "#{photo.name}", length: 50 %></h2>
+    
+      <!-- content -->
+      <div class="medium-12 columns photo_show_content_container">
+        <div class="medium-12 columns photo_inner_content">
+          <div class="medium-5 columns photo_main_img_section">
+            <% if photo.photo_image_link.present? %>
+              <%= link_to image_tag(photo.photo_image_link), photo, target: "_blank" %>
+            <% else %>
+              <%= link_to image_tag(photo.image_url), photo, target: "_blank" %>
+            <% end %>
+          </div>
+          <div class="medium-7 columns photo_main_img_content_container">
+            <div class="photo_main_img_content_section">
+              <p>
+                <span><b>Album Name:</b></span>
+                <span><%= photo.album.name %></span>
+              </p>
+              <p>
+                <span><b>Photo Name:</b></span>
+                <span><%= photo.name %></span>
+              </p>
+              <p>
+                <span><b>Photo Date:</b></span>
+                <span><%= photo.created_at.strftime("%a, %d %b %Y") %></span>
+              </p>
+              <p>
+                <span><b>Photo Description:</b></span>
+                <span><%= photo.description %></span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- content -->
+    
+    <a class="close-reveal-modal cancel_button" aria-label="Close">&#215;</a>
+  </div>
+</span>
