@@ -2,7 +2,11 @@ Rails.application.routes.draw do
   
   resources :photos
 
-  resources :albums
+  resources :albums do
+    member do
+      get 'preview'
+    end
+  end
 
   resources :externalattendinglists
 

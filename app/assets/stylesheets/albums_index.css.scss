@@ -24,6 +24,10 @@
   margin: auto;
 }
 
+.albums_section .album_main_container {
+  padding: 0px !important;
+}
+
 .albums_section .album_main_container ul {
   list-style-type: none;
   margin: 0px;
@@ -31,6 +35,11 @@
 }
 
 .albums_section .album_main_container ul li {
+  float: left;
+  padding: 0px !important
+}
+
+.albums_section .album_main_container ul li:last-child {
   float: left;
 }
 

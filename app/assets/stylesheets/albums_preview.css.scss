@@ -1,0 +1,67 @@
+/*=========================================
+    Section: album preview page
+    File: views / albums / _preview.html.erb
+  =========================================*/
+
+.photos_section .photos_inner_section {
+  background-color: #fff !important;
+  background: url("img_background_main.png") repeat;
+  padding: 0px !important;
+  min-height: 822px;
+}
+
+.photos_section .photos_index_content_section {
+  padding: 0px !important;
+}
+
+.photos_section .content_container {
+  padding: 30px 0px !important;
+  min-height: 822px;
+}
+
+.photos_section .content_details {
+  width: 1170px;
+  margin: auto;
+  //background-color: red;
+}
+
+.photos_section .photos_main_container ul {
+  list-style-type: none;
+  margin: 0px;
+}
+
+.photos_section .album_main_container ul li {
+  float: left;
+}
+
+.photos_section .polaroid_images a {
+  background: white;
+  display: inline;
+  float: left;
+  margin: 0 15px 30px;
+  padding: 10px 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  -webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, .3);
+  -moz-box-shadow: 0 4px 6px rgba(0,0,0,.3);
+  box-shadow: 0 4px 6px rgba(0,0,0,.3);
+  -webkit-transition: all .15s linear;
+  -moz-transition: all .15s linear;
+  transition: all .15s linear;
+  z-index:0;
+  position:relative; 
+}
+
+.photos_section .polaroid_images a:after {
+  color: #333;
+  font-size: 20px;
+  content: attr(title);
+  position: relative;
+  top:15px;
+}
+
+.photos_section .polaroid_images img { 
+  display: block; 
+  width: 242px;
+}
+  

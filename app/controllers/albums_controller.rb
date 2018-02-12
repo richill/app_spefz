@@ -7,6 +7,9 @@ class AlbumsController < ApplicationController
   end
 
   def show
+    # if current_user.admin_pa_management_group || current_user.pa_event_mgt_group
+    # else
+    # end
   end
 
   def new
@@ -67,6 +70,11 @@ class AlbumsController < ApplicationController
     else
       redirect_to errorpermission_path
     end
+  end
+
+  def preview
+    @album = Album.find(params[:id])
+    # @album = Album.friendly.find(params[:id])
   end
 
   private

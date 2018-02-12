@@ -10,6 +10,42 @@
             <div class="medium-12 columns album_main_container">
               <ul>
                 <!-- albums -->
+                <% @albums.published_albums.order("date desc").each do |album| %>
+                  <li class="listed_albums medium-4 columns">
+                    <div class="polaroid_images">
+                      <ul class="polaroid_listed_images">
+                        <li class="album_img">
+                          <% if album.album_image_link.present? %>
+                            <%= link_to(cl_image_tag(album.album_image_link, :transformation=>[{:gravity=>"face", :width => 600, :height => 320, :crop=>"fill"}]), album_path(album)) %>
+                          <% else %>
+                            <%= link_to(cl_image_tag(album.image, :transformation=>[{:gravity=>"face", :width=>600, :height=>320, :crop=>"fill"}]), album_path(album)) %>
+                          <% end %>
+                          <div class="album_name">
+                            <span><i class="fa fa-camera" aria-hidden="true"></i></span>
+                            <span><%= (truncate "#{album.name}", length: 35) %></span>
+                            <span class="album_divider">|</span>
+                            <span><%= album.date.strftime("%A, %d %b %Y") %></span>
+                          </div>
+                        </li>
+                        <li class="album_img">
+                          <% if album.album_image_link.present? %>
+                            <%= link_to(cl_image_tag(album.album_image_link, :transformation=>[{:gravity=>"face", :width => 600, :height => 320, :crop=>"fill"}]), album_path(album)) %>
+                          <% else %>
+                            <%= link_to(cl_image_tag(album.image, :transformation=>[{:gravity=>"face", :width=>600, :height=>320, :crop=>"fill"}]), album_path(album)) %>
+                          <% end %>
+                        </li>
+                        <li class="album_img">
+                          <% if album.album_image_link.present? %>
+                            <%= link_to(cl_image_tag(album.album_image_link, :transformation=>[{:gravity=>"face", :width => 600, :height => 320, :crop=>"fill"}]), album_path(album)) %>
+                          <% else %>
+                            <%= link_to(cl_image_tag(album.image, :transformation=>[{:gravity=>"face", :width=>600, :height=>320, :crop=>"fill"}]), album_path(album)) %>
+                          <% end %>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                <% end %>
+
                 <li class="listed_albums medium-4 columns">
                   <div class="polaroid_images">
                     <ul class="polaroid_listed_images">
