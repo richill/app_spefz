@@ -4,8 +4,6 @@ class Photo < ActiveRecord::Base
   validates_presence_of :album_id, presence: true, message: "please select a category"
   validate :image_or_photolink
   
-
-
   belongs_to :album
 
   scope :published_photos, -> { where('publish = ?', true) }
