@@ -12,6 +12,8 @@
         <div class="tablecell background"></div>
         <div class="tablecell background"></div>
         <div class="tablecell background"></div>
+        <div class="tablecell background"></div>
+        <div class="tablecell background"></div>
         <% if current_user.admin_pa_management_group || current_user.pa_administration_group %>
           <div class="tablecell background"></div>
         <% end %>
@@ -38,7 +40,7 @@
             <div class="main_text_format"><%= album.date.strftime("%a, %d %b %Y") %></div>
           </div>
 
-          <div class="tablecell">
+          <div class="tablecell" style="text-align:center;">
             <div class="faint_text_format">photos</div> 
             <% if album.photos.present? %>
               <div class="main_text_format"><%= link_to "#{album.photos.count}", album_path(album) %></div>
@@ -46,6 +48,25 @@
               <div><%= "--" %></div>
             <% end %>
           </div>
+
+          <div class="tablecell" style="text-align:center;">
+            <div class="faint_text_format">published photos</div> 
+            <% if album.photos.published_photos.present? %>
+              <div class="main_text_format"><%= link_to "#{album.photos.published_photos.count}", album_path(album) %></div>
+            <% else %>
+              <div><%= "--" %></div>
+            <% end %>
+          </div>
+
+          <div class="tablecell" style="text-align:center;">
+            <div class="faint_text_format">unpublished photos</div> 
+            <% if album.photos.unpublished_photos.present? %>
+              <div class="main_text_format"><%= link_to "#{album.photos.unpublished_photos.count}", album_path(album) %></div>
+            <% else %>
+              <div><%= "--" %></div>
+            <% end %>
+          </div>
+          
           <div class="tablecell">
             <div class="faint_text_format">created by</div> 
             <div class="main_text_format"><%= link_to "spefz team", "#" %></div>

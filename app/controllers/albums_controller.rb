@@ -7,6 +7,9 @@ class AlbumsController < ApplicationController
   end
 
   def show
+    unless current_user.admin_pa_management_group || current_user.pa_event_mgt_group
+      redirect_to errorpermission_path
+    end
   end
 
   def new
