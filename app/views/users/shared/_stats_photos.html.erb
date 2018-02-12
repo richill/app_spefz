@@ -15,7 +15,6 @@
         <span><i class="fa fa-user" aria-hidden="true"></i> <%= link_to "#{current_user.firstname}", user_path(current_user)%></span> <span class="fwd_sign">></span> <span>photos</span> <span class="tree_link_btn"><%= link_to "create photo", new_photo_path %></span><span class="tree_link_btn"><%= link_to "view public photos", photos_path, target: "_blank" %></span><span class="tree_link_btn"><%= link_to "view stat-albums", stats_albums_user_path(current_user) %></span>
       </div>
       <div class="user_general_settings_inner_section user_dashboard_section_main_content">
-        <div><%# render "users/shared/user_dashboard_admin_statsalbums" %></div>
         <div><%= render "users/shared/user_dashboard_admin_statsphotos" %></div>
       </div>
       <!-- content -->
