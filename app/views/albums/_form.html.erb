@@ -16,7 +16,7 @@
 </div>
 
 
-<div class= "medium-12 columns user_general_settings_section user_main_createevent_page">
+<div class= "medium-12 columns user_general_settings_section user_main_createalbum_page">
   
   <!-- left_column_section -->
   <div class="medium-2 columns left_column_section">
@@ -29,27 +29,27 @@
     <div class="right_inner_section">
       <!-- content -->
       <div class="tree_link">
-        <span><i class="fa fa-user" aria-hidden="true"></i> <%= link_to "#{current_user.firstname}", user_path(current_user)%></span> <span class="fwd_sign">></span> <span><%= link_to "events", stats_events_user_path(current_user) %></span> <span class="fwd_sign">></span>
+        <span><i class="fa fa-user" aria-hidden="true"></i> <%= link_to "#{current_user.firstname}", user_path(current_user)%></span> <span class="fwd_sign">></span> <span><%= link_to "albums", stats_albums_user_path(current_user) %></span> <span class="fwd_sign">></span>
         <% if action_name == 'new'  %>
           <span>create album</span>
         <% else %>
           <span>update album</span>
         <% end %>
       </div>
-      <div class="user_general_settings_inner_section event_edit_update_form">
+      <div class="user_general_settings_inner_section album_edit_update_form">
         <%= simple_form_for(@album) do |f| %>
           <%= f.error_notification %>
 
           <div class="form-inputs">
             <div><%= f.file_field :image %></div>
 
-            <div class="event_topic">
+            <div class="album_topic">
               <%= f.input :name, label: "Album Name", placeholder: "Speed Social - Graduate Professionals" %>
               <div class="text_info">*maximum word count: 55 | *minmum: 40 | <span id="textarea_title_event"></span></div> 
             </div>
-            <div><%= f.input :description, label: "About Event", placeholder: "tell us about the event" %></div>
+            <div><%= f.input :description, label: "Album description", placeholder: "tell us about the album" %></div>
             <div class="medium-12 columns date_time">
-              <div class="event_label">date</div>
+              <div class="album_label">date</div>
               <%= f.text_field :date, label: false, class: "event_datepicker", placeholder: "dd/mm/yyyy", id: 'social_date' %>
             </div>
             <div class="clear"></div>
