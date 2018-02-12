@@ -7,6 +7,9 @@ class PhotosController < ApplicationController
   end
 
   def show
+    unless current_user.admin_pa_management_group
+      redirect_to errorpermission_path
+    end
   end
 
   def new
