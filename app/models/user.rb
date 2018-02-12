@@ -37,6 +37,7 @@ class User < ActiveRecord::Base
   has_many :blogs
   has_many :reports
   has_many :events
+  has_many :albums
   has_many :socials, dependent: :destroy
   has_many :invites, dependent: :destroy
   has_many :favourites, dependent: :destroy
