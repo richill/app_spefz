@@ -1,55 +1,26 @@
-<p id="notice" class="hide"><%= notice %></p>
-
-<div class="photos_section">
-  <div class="medium-12 columns photos_inner_section">
+<div class="album_photos_section">
+  <div class="medium-12 columns album_photos_inner_section">
 
     <!-- content -->
-      <div class="medium-12 columns photos_index_content_section">
+      <div class="medium-12 columns album_photos_index_content_section">
         <div class="medium-12 columns content_container">
           <div class="content_details">
-            <div class="photos_main_container">
+            <div class="album_photos_main_container">
               <ul>
                 <!-- photos -->
-                <li class="listed_photos">
-                  <div class="polaroid_images">
-                    <%= link_to(cl_image_tag("https://res.cloudinary.com/spefzapp/image/upload/v1515683241/Venue Images/forge_img_04.png", alt:"", title:"", class: "img_album_02"), "#", target:"_blank", alt:"", title:"") %>
-                  </div>
-                </li>
-                <li class="listed_photos">
-                  <div class="polaroid_images">
-                    <%= link_to(cl_image_tag("https://res.cloudinary.com/spefzapp/image/upload/v1515683241/Venue Images/forge_img_04.png", alt:"", title:"", class: "img_album_02"), "#", target:"_blank", alt:"", title:"") %>
-                  </div>
-                </li>
-                <li class="listed_photos">
-                  <div class="polaroid_images">
-                    <%= link_to(cl_image_tag("https://res.cloudinary.com/spefzapp/image/upload/v1515683241/Venue Images/forge_img_04.png", alt:"", title:"", class: "img_album_02"), "#", target:"_blank", alt:"", title:"") %>
-                  </div>
-                </li>
-                <li class="listed_photos">
-                  <div class="polaroid_images">
-                    <%= link_to(cl_image_tag("https://res.cloudinary.com/spefzapp/image/upload/v1515683241/Venue Images/forge_img_04.png", alt:"", title:"", class: "img_album_02"), "#", target:"_blank", alt:"", title:"") %>
-                  </div>
-                </li>
-                <li class="listed_photos">
-                  <div class="polaroid_images">
-                    <%= link_to(cl_image_tag("https://res.cloudinary.com/spefzapp/image/upload/v1515683241/Venue Images/forge_img_04.png", alt:"", title:"", class: "img_album_02"), "#", target:"_blank", alt:"", title:"") %>
-                  </div>
-                </li>
-                <li class="listed_photos">
-                  <div class="polaroid_images">
-                    <%= link_to(cl_image_tag("https://res.cloudinary.com/spefzapp/image/upload/v1515683241/Venue Images/forge_img_04.png", alt:"", title:"", class: "img_album_02"), "#", target:"_blank", alt:"", title:"") %>
-                  </div>
-                </li>
-                <li class="listed_photos">
-                  <div class="polaroid_images">
-                    <%= link_to(cl_image_tag("https://res.cloudinary.com/spefzapp/image/upload/v1515683241/Venue Images/forge_img_04.png", alt:"", title:"", class: "img_album_02"), "#", target:"_blank", alt:"", title:"") %>
-                  </div>
-                </li>
-                <li class="listed_photos">
-                  <div class="polaroid_images">
-                    <%= link_to(cl_image_tag("https://res.cloudinary.com/spefzapp/image/upload/v1515683241/Venue Images/forge_img_04.png", alt:"", title:"", class: "img_album_02"), "#", target:"_blank", alt:"", title:"") %>
-                  </div>
-                </li>
+                <% @album.photos.published_photos.order("created_at desc").each do |photo| %>
+                  <li class="listed_photos">
+                    <div class="polaroid_images">
+
+                      <% if photo.photo_image_link.present? %>
+                        <%= link_to(cl_image_tag(photo.photo_image_link, :transformation=>[{:gravity=>"face", :width => 600, :height => 320, :crop=>"fill"}]), "#") %>
+                      <% else %>
+                        <%= link_to(cl_image_tag(photo.image, :transformation=>[{:gravity=>"face", :width=>600, :height=>320, :crop=>"fill"}]), "#") %>
+                      <% end %>
+
+                    </div>
+                  </li>
+                <% end %>
                 <!-- photos -->
               </ul>
             </div>

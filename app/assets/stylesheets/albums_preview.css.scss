@@ -3,38 +3,38 @@
     File: views / albums / _preview.html.erb
   =========================================*/
 
-.photos_section .photos_inner_section {
+.album_photos_section .album_photos_inner_section {
   background-color: #fff !important;
   background: url("img_background_main.png") repeat;
   padding: 0px !important;
   min-height: 822px;
 }
 
-.photos_section .photos_index_content_section {
+.album_photos_section .album_photos_index_content_section {
   padding: 0px !important;
 }
 
-.photos_section .content_container {
+.album_photos_section .content_container {
   padding: 30px 0px !important;
   min-height: 822px;
 }
 
-.photos_section .content_details {
+.album_photos_section .content_details {
   width: 1170px;
   margin: auto;
   //background-color: red;
 }
 
-.photos_section .photos_main_container ul {
+.album_photos_section .album_photos_main_container ul {
   list-style-type: none;
   margin: 0px;
 }
 
-.photos_section .album_main_container ul li {
+.album_photos_section .album_main_container ul li {
   float: left;
 }
 
-.photos_section .polaroid_images a {
+.album_photos_section .polaroid_images a {
   background: white;
   display: inline;
   float: left;
@@ -52,7 +52,7 @@
   position:relative; 
 }
 
-.photos_section .polaroid_images a:after {
+.album_photos_section .polaroid_images a:after {
   color: #333;
   font-size: 20px;
   content: attr(title);
@@ -60,7 +60,7 @@
   top:15px;
 }
 
-.photos_section .polaroid_images img { 
+.album_photos_section .polaroid_images img { 
   display: block; 
   width: 242px;
 }

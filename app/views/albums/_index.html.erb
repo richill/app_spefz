@@ -16,9 +16,9 @@
                       <ul class="polaroid_listed_images">
                         <li class="album_img">
                           <% if album.album_image_link.present? %>
-                            <%= link_to(cl_image_tag(album.album_image_link, :transformation=>[{:gravity=>"face", :width => 600, :height => 320, :crop=>"fill"}]), album_path(album)) %>
+                            <%= link_to(cl_image_tag(album.album_image_link, :transformation=>[{:gravity=>"face", :width => 600, :height => 320, :crop=>"fill"}]), preview_album_path(album)) %>
                           <% else %>
-                            <%= link_to(cl_image_tag(album.image, :transformation=>[{:gravity=>"face", :width=>600, :height=>320, :crop=>"fill"}]), album_path(album)) %>
+                            <%= link_to(cl_image_tag(album.image, :transformation=>[{:gravity=>"face", :width=>600, :height=>320, :crop=>"fill"}]), preview_album_path(album)) %>
                           <% end %>
                           <div class="album_name">
                             <span><i class="fa fa-camera" aria-hidden="true"></i></span>
