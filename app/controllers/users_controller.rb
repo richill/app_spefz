@@ -149,6 +149,31 @@ class UsersController < ApplicationController
     end
   end
 
+  def stats_albums
+    if current_user.admin_pa_management_group || current_user.pa_event_mgt_group
+      @albums = Album.all
+      @users = User.all
+      @socials = Social.all
+      @events = Event.all
+      @payments = Payment.all
+    else
+      redirect_to errorpermission_path
+    end
+  end
+
+  def stats_photos
+    if current_user.admin_pa_management_group || current_user.pa_event_mgt_group
+      @photos = Photo.all
+      @albums = Album.all
+      @users = User.all
+      @socials = Social.all
+      @events = Event.all
+      @payments = Payment.all
+    else
+      redirect_to errorpermission_path
+    end
+  end
+
   def transactions
     if current_user.admin_pa_management_group
       @users = User.users_not_in_dummy_group.all
@@ -192,31 +217,6 @@ class UsersController < ApplicationController
       @events = Event.all
       @payments = Payment.all
       @reports = Report.all
-    else
-      redirect_to errorpermission_path
-    end
-  end
-
-  def stats_albums
-    if current_user.admin_pa_management_group || current_user.pa_event_mgt_group
-      @albums = Album.all
-      @users = User.all
-      @socials = Social.all
-      @events = Event.all
-      @payments = Payment.all
-    else
-      redirect_to errorpermission_path
-    end
-  end
-
-  def stats_photos
-    if current_user.admin_pa_management_group || current_user.pa_event_mgt_group
-      @photos = Photo.all
-      @albums = Album.all
-      @users = User.all
-      @socials = Social.all
-      @events = Event.all
-      @payments = Payment.all
     else
       redirect_to errorpermission_path
     end
