@@ -91,6 +91,8 @@ Rails.application.routes.draw do
       get 'matches'
       get 'cancellation'
       get 'documentation-links'
+      get 'stats-albums'
+      get 'stats-photos'
 
       get 'attending-socials'
       get 'attending-events'

@@ -61,6 +61,16 @@
         </div>
       </li>
     <% end %>
+    <% if current_user.admin_pa_management_group || current_user.pa_event_mgt_group %>
+      <li>
+        <div class="list_options">
+          <%= link_to stats_albums_user_path(current_user), :class => is_active?("stats_albums") do %>
+            <span><i class="fa fa-camera" aria-hidden="true"></i></span>
+            <span class="option_header">albums</span>
+          <% end %>
+        </div>
+      </li>
+    <% end %>
     <% if current_user.admin_pa_management_group %>
       <li>
         <div class="list_options">
