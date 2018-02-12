@@ -1,0 +1,23 @@
+<div class="">
+  <p id="notice"><%= notice %></p>
+
+  <p>
+    <strong>Name:</strong>
+    <%= @album.name %>
+  </p>
+
+  <p>
+    <strong>Published Date:</strong>
+    <%= @album.date.strftime("%a, %d %b %Y") %>
+  </p>
+
+  <p>
+    <strong>Created Date:</strong>
+    <%= @album.created_at.strftime("%a, %d %b %Y") %>
+  </p>
+
+  <p>
+    <strong>Description:</strong>
+    <%= @album.description %>
+  </p>
+</div>
