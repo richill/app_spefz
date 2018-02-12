@@ -1,0 +1,57 @@
+<div class="hide">
+  <p id="notice"><%= notice %></p>
+
+  <p>
+    <strong>Name:</strong>
+    <%= @album.name %>
+  </p>
+
+  <p>
+    <strong>Published Date:</strong>
+    <%= @album.date.strftime("%a, %d %b %Y") %>
+  </p>
+
+  <p>
+    <strong>Created Date:</strong>
+    <%= @album.created_at.strftime("%a, %d %b %Y") %>
+  </p>
+
+  <p>
+    <strong>Description:</strong>
+    <%= @album.description %>
+  </p>
+
+  <p>
+    <strong>Image:</strong>
+    <%= @album.image %>
+  </p>
+
+  <%= link_to 'Edit', edit_album_path(@album) %> |
+  <%= link_to 'Back', albums_path %>
+</div>
+
+
+<div class= "medium-12 columns user_general_settings_section user_main_statsalbums_page">
+
+  <!-- left_column_section -->
+  <div class="medium-2 columns left_column_section">
+    <%= render 'shared/content_user_adminpanel_left_column' %>
+  </div>
+  <!-- left_column_section -->
+
+
+  <!-- right_column_section -->
+  <div class="medium-10 columns right_column_section">
+    <div class="right_inner_section">
+      <!-- content -->
+      <div class="tree_link">
+        <span><i class="fa fa-user" aria-hidden="true"></i> <%= link_to "#{current_user.firstname}", user_path(current_user)%></span> <span class="fwd_sign">></span> <span><%= link_to "albums", stats_albums_user_path(current_user) %></span> <span class="fwd_sign">></span> <span><%= @album.name %></span> <span class="fwd_sign">></span> <span><%= "photos #{[@album.photos.count]}" %></span><span class="tree_link_btn"><%= link_to "edit album", edit_album_path(@album) %></span><span class="tree_link_btn"><%= link_to "view public albums photos", preview_album_path(@album), target: "_blank" %></span>
+      </div>
+      <div class="user_general_settings_inner_section user_dashboard_section_main_content">
+        <div><%# render "albums/show" %></div>
+      </div>
+      <!-- content -->
+    </div>
+  </div>
+  <!-- right_column_section -->
+</div>
