@@ -10,43 +10,60 @@ class AlbumsController < ApplicationController
   end
 
   def new
-    @album = Album.new
+    if current_user.admin_pa_management_group || current_user.pa_event_mgt_group
+      @album = Album.new
+    else
+      redirect_to errorpermission_path
+    end
   end
 
   def edit
+    unless current_user.admin_pa_management_group || current_user.pa_event_mgt_group
+      redirect_to errorpermission_path
+    end
   end
 
   def create
-    @album = Album.new(album_params)
+    if current_user.admin_pa_management_group || current_user.pa_event_mgt_group
+      @album = Album.new(album_params)
 
-    respond_to do |format|
-      if @album.save
-        format.html { redirect_to @album, notice: 'Album was successfully created.' }
-        format.json { render :show, status: :created, location: @album }
-      else
-        format.html { render :new }
-        format.json { render json: @album.errors, status: :unprocessable_entity }
+      respond_to do |format|
+        if @album.save
+          format.html { redirect_to stats_albums_user_path(current_user), notice: 'Album was successfully created.' }
+          format.json { render :show, status: :created, location: @album }
+        else
+          format.html { render :new }
+          format.json { render json: @album.errors, status: :unprocessable_entity }
+        end
       end
     end
   end
 
   def update
-    respond_to do |format|
-      if @album.update(album_params)
-        format.html { redirect_to @album, notice: 'Album was successfully updated.' }
-        format.json { render :show, status: :ok, location: @album }
-      else
-        format.html { render :edit }
-        format.json { render json: @album.errors, status: :unprocessable_entity }
+    if current_user.admin_pa_management_group || current_user.pa_event_mgt_group
+      respond_to do |format|
+        if @album.update(album_params)
+          format.html { redirect_to stats_albums_user_path(current_user), notice: 'Album was successfully updated.' }
+          format.json { render :show, status: :ok, location: @album }
+        else
+          format.html { render :edit }
+          format.json { render json: @album.errors, status: :unprocessable_entity }
+        end
       end
+    else
+      redirect_to errorpermission_path
     end
   end
 
   def destroy
-    @album.destroy
-    respond_to do |format|
-      format.html { redirect_to albums_url, notice: 'Album was successfully destroyed.' }
-      format.json { head :no_content }
+    if current_user.admin_pa_management_group 
+      @album.destroy
+      respond_to do |format|
+        format.html { redirect_to stats_albums_user_url(current_user), notice: 'Album was successfully destroyed.' }
+        format.json { head :no_content }
+      end
+    else
+      redirect_to errorpermission_path
     end
   end
 
