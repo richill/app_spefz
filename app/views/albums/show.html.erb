@@ -6,8 +6,13 @@
 </p>
 
 <p>
-  <strong>Date:</strong>
-  <%= @album.date %>
+  <strong>Published Date:</strong>
+  <%= @album.date.strftime("%a, %d %b %Y") %>
+</p>
+
+<p>
+  <strong>Created Date:</strong>
+  <%= @album.created_at.strftime("%a, %d %b %Y") %>
 </p>
 
 <p>

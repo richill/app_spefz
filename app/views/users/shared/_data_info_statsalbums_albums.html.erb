@@ -41,7 +41,7 @@
           <div class="tablecell">
             <div class="faint_text_format">photos</div> 
             <% if album.photos.present? %>
-              <div class="main_text_format"><%= link_to "#{album.photos.count}", "#" %></div>
+              <div class="main_text_format"><%= link_to "#{album.photos.count}", album_path(album) %></div>
             <% else %>
               <div><%= "--" %></div>
             <% end %>
