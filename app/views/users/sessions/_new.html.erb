@@ -9,6 +9,15 @@
             <ul>
               <li><%= link_to "Sign up", new_user_registration_path %></li>
               <li><%= link_to "How it works", ".howitworksheader", rel: "relativeanchor" %></li>
+              <li>
+                <% if Album.count > 3 %>
+                  <%= link_to "Albums", albums_path %>
+                <% else %>
+                  <% if Photo.count > 4 %>
+                    <%= link_to "Photos", photos_path %>
+                  <% end %>
+                <% end %>
+              </li>
               <li><%= link_to "Blogs", blogs_path %></li>
               <li><%= link_to "About us", about_us_path %></li>
               <!-- <li><%# link_to "About us", ".aboutusheader", rel: "relativeanchor" %></li> -->

@@ -6,50 +6,23 @@
     <!-- content -->
       <div class="medium-12 columns photos_index_content_section">
         <div class="medium-12 columns content_container">
+          <div class="outter_tree_link_container">
+            <div class="tree_link">
+              <span><i class="fa fa-image" aria-hidden="true"></i> <%= "photos #{[@photos.count]}" %></span>
+            </div>
+          </div>
           <div class="content_details">
             <div class="photos_main_container">
               <ul>
                 <!-- photos -->
-                <li class="listed_photos">
-                  <div class="polaroid_images">
-                    <%= link_to(cl_image_tag("https://res.cloudinary.com/spefzapp/image/upload/v1515683241/Venue Images/forge_img_04.png", alt:"", title:"", class: "img_album_02"), "#", target:"_blank", alt:"", title:"") %>
-                  </div>
-                </li>
-                <li class="listed_photos">
-                  <div class="polaroid_images">
-                    <%= link_to(cl_image_tag("https://res.cloudinary.com/spefzapp/image/upload/v1515683241/Venue Images/forge_img_04.png", alt:"", title:"", class: "img_album_02"), "#", target:"_blank", alt:"", title:"") %>
-                  </div>
-                </li>
-                <li class="listed_photos">
-                  <div class="polaroid_images">
-                    <%= link_to(cl_image_tag("https://res.cloudinary.com/spefzapp/image/upload/v1515683241/Venue Images/forge_img_04.png", alt:"", title:"", class: "img_album_02"), "#", target:"_blank", alt:"", title:"") %>
-                  </div>
-                </li>
-                <li class="listed_photos">
-                  <div class="polaroid_images">
-                    <%= link_to(cl_image_tag("https://res.cloudinary.com/spefzapp/image/upload/v1515683241/Venue Images/forge_img_04.png", alt:"", title:"", class: "img_album_02"), "#", target:"_blank", alt:"", title:"") %>
-                  </div>
-                </li>
-                <li class="listed_photos">
-                  <div class="polaroid_images">
-                    <%= link_to(cl_image_tag("https://res.cloudinary.com/spefzapp/image/upload/v1515683241/Venue Images/forge_img_04.png", alt:"", title:"", class: "img_album_02"), "#", target:"_blank", alt:"", title:"") %>
-                  </div>
-                </li>
-                <li class="listed_photos">
-                  <div class="polaroid_images">
-                    <%= link_to(cl_image_tag("https://res.cloudinary.com/spefzapp/image/upload/v1515683241/Venue Images/forge_img_04.png", alt:"", title:"", class: "img_album_02"), "#", target:"_blank", alt:"", title:"") %>
-                  </div>
-                </li>
-                <li class="listed_photos">
-                  <div class="polaroid_images">
-                    <%= link_to(cl_image_tag("https://res.cloudinary.com/spefzapp/image/upload/v1515683241/Venue Images/forge_img_04.png", alt:"", title:"", class: "img_album_02"), "#", target:"_blank", alt:"", title:"") %>
-                  </div>
-                </li>
-                <li class="listed_photos">
-                  <div class="polaroid_images">
-                    <%= link_to(cl_image_tag("https://res.cloudinary.com/spefzapp/image/upload/v1515683241/Venue Images/forge_img_04.png", alt:"", title:"", class: "img_album_02"), "#", target:"_blank", alt:"", title:"") %>
-                  </div>
-                </li>
+                <% @photos.published_photos.order("created_at desc").each do |photo| %>
+                  <li class="listed_photos">
+                    <div class="polaroid_images">
+                      <a href="#<%= photo.id %>" data-reveal-id="<%= dom_id(photo) %>_photo_content_show_image" style=""><%= image_tag(photo.photo_image_link) %></a>
+                      <%= render partial: 'shared/modal_photo_show_content', locals: { photo: photo } %>
+                    </div>
+                  </li>
+                <% end %>
                 <!-- photos -->
               </ul>
             </div>
