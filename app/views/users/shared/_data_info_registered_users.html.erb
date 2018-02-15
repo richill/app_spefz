@@ -36,7 +36,7 @@
             <div class="image_container">
               <div class="image">
                 <% if user.image.present? %>
-                  <%= link_to image_tag(user.image_url), user, target: "_blank" %>
+                  <%= link_to(cl_image_tag(user.image, :transformation=>[{:gravity=>"face", :width=>200, :height=>200, :crop=>"fill", :radius=>"max"}]), user_path(user), target:"_blank") %>
                 <% else %>
                   <%= link_to image_tag("img-profile-image-default.png"), user, target: "_blank" %>
                 <% end %>
@@ -135,7 +135,7 @@
             <div class="image_container">
               <div class="image">
                 <% if user.image.present? %>
-                  <%= link_to image_tag(user.image_url), user, target: "_blank" %>
+                  <%= link_to(cl_image_tag(user.image, :transformation=>[{:gravity=>"face", :width=>200, :height=>200, :crop=>"fill", :radius=>"max"}]), user_path(user), target:"_blank") %>
                 <% else %>
                   <%= link_to image_tag("img-profile-image-default.png"), user, target: "_blank" %>
                 <% end %>
@@ -234,7 +234,7 @@
             <div class="image_container">
               <div class="image">
                 <% if user.image.present? %>
-                  <%= link_to image_tag(user.image_url), user, target: "_blank" %>
+                  <%= link_to(cl_image_tag(user.image, :transformation=>[{:gravity=>"face", :width=>200, :height=>200, :crop=>"fill", :radius=>"max"}]), user_path(user), target:"_blank") %>
                 <% else %>
                   <%= link_to image_tag("img-profile-image-default.png"), user, target: "_blank" %>
                 <% end %>
@@ -333,7 +333,7 @@
             <div class="image_container">
               <div class="image">
                 <% if user.image.present? %>
-                  <%= link_to image_tag(user.image_url), user, target: "_blank" %>
+                  <%= link_to(cl_image_tag(user.image, :transformation=>[{:gravity=>"face", :width=>200, :height=>200, :crop=>"fill", :radius=>"max"}]), user_path(user), target:"_blank") %>
                 <% else %>
                   <%= link_to image_tag("img-profile-image-default.png"), user, target: "_blank" %>
                 <% end %>

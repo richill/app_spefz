@@ -29,7 +29,7 @@
               <% end %>
             <% end %>
             <div class="image_container">
-              <div class="image"><%= link_to image_tag(user.image_url), user, target: "_blank" %></div>
+              <div class="image"><%= link_to(cl_image_tag(user.image, :transformation=>[{:gravity=>"face", :width=>200, :height=>200, :crop=>"fill", :radius=>"max"}]), user_path(user), target:"_blank") %></div>
             </div>
           </div>
           <div class="tablecell">

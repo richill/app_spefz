@@ -2,7 +2,7 @@
   <div class="h1_subtitle"><i class="fa fa-info-circle"></i> displays all spefz members in the role admin group on the platform [ordered by user last name]</div>
 </h1>
 
-<div id="status_users_all_content">
+<div id="">
   <div class="bottom_inner_content">
     <div class="table">
       <div class="tablerow">
@@ -31,7 +31,7 @@
             <div class="image_container">
               <div class="image">
                 <% if user.image.present? %>
-                  <%= link_to image_tag(user.image_url), user, target: "_blank" %>
+                  <%= link_to(cl_image_tag(user.image, :transformation=>[{:gravity=>"face", :width=>200, :height=>200, :crop=>"fill", :radius=>"max"}]), user_path(user), target:"_blank") %>
                 <% else %>
                   <%= link_to image_tag("img-profile-image-default.png"), user, target: "_blank" %>
                 <% end %>
