@@ -2,6 +2,7 @@ class Photo < ActiveRecord::Base
   validates_presence_of :name, presence: true, message: "can't be blank"
   validates_presence_of :description, presence: true, message: "can't be blank"
   validates_presence_of :album_id, presence: true, message: "please select a category"
+  validates_presence_of :photo_image_link, presence: true, message: "please select a category"
   # validate :image_or_photolink
   
   belongs_to :album
