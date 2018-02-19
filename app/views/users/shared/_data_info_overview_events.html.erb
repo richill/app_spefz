@@ -1,4 +1,4 @@
-<h1>**total events [<%= @events.count %>]
+<h1>total events [<%= @events.count %>]
   <span id="status_overviewevents_paid" class="status_colour_blue">paid events [<%= @events.count_total_paid_events %>]</span>
   <span id="status_overviewevents_free" class="status_colour_blue">free events [<%= @events.count_total_free_events %>]</span>
   <div class="h1_subtitle"><i class="fa fa-info-circle"></i> displays all events on the platform [ordered by date held]</div>
@@ -93,8 +93,8 @@
           <div class="tablecell">
             <div class="overall_rate">
               <div>Rate</div>
-              <div>
-                <% if event.external_event? %>
+              <div class="rating_results">
+                <% if event.overall_ratings == 0 %>
                   <%= "- -" %>
                 <% else %>
                   <%= number_with_precision(event.overall_ratings, precision: 1) %>
@@ -103,17 +103,15 @@
             </div>
           </div>
           <div class="tablecell" style="width:16%">
-            <div>
-              <% unless event.external_event? %>
-                <span class="main_text_format">
-                  <% if event.selection_BothX_men_and_women %>
-                    <%= event.total_attendance_BothX_men_and_women %>:
-                  <% elsif event.selection_BothAndOnly_men_and_women %>
-                    <%= event.total_attendance_BothAndOnly_men_and_women %>:
-                  <% end %>
-                </span> 
-                <span class="faint_text_format">attendants</span>
-              <% end %>
+            <div class="total_attendance">
+              <span class="main_text_format">
+                <% if event.selection_BothX_men_and_women %>
+                  <%= event.total_attendance_BothX_men_and_women %>:
+                <% elsif event.selection_BothAndOnly_men_and_women %>
+                  <%= event.total_attendance_BothAndOnly_men_and_women %>:
+                <% end %>
+              </span> 
+              <span class="faint_text_format">attendants</span>
             </div>
             <div>
               <span class="main_text_format"><%= link_to "view details", attendants_event_path(event), target:"_blank" %></span>
@@ -182,17 +180,17 @@
             </div>
             <% if current_user.admin_pa_management_group %>
               <div>
+                <span>Amt: </span>
+                <span class="ref_id">
+                  <% if event.selection_BothX_men_and_women %>
+                    £<%= (event.total_attendance_BothX_men_and_women) * (event.price).to_i %>
+                  <% elsif event.selection_BothAndOnly_men_and_women %>
+                    £<%= (event.total_attendance_BothAndOnly_men_and_women) * (event.price).to_i %>
+                  <% end %>
+                </span>
                 <% if event.external_event? %>
-                  <span class="external_eventlink_info">Amt: <%= link_to "External Event", event.external_eventlink, target:"blank" %></span>
-                <% else %>
-                  <span>Amt: </span>
-                  <span class="ref_id">
-                    <% if event.selection_BothX_men_and_women %>
-                      £<%= (event.total_attendance_BothX_men_and_women) * (event.price).to_i %>
-                    <% elsif event.selection_BothAndOnly_men_and_women %>
-                      £<%= (event.total_attendance_BothAndOnly_men_and_women) * (event.price).to_i %>
-                    <% end %>
-                  </span>
+                  <span>|</span>
+                  <span class="external_eventlink_info"><%= link_to "External Event", event.external_eventlink, target:"blank" %></span>
                 <% end %>
               </div>
             <% end %>
@@ -306,8 +304,8 @@
           <div class="tablecell">
             <div class="overall_rate">
               <div>Rate</div>
-              <div>
-                <% if event.external_event? %>
+              <div class="rating_results">
+                <% if event.overall_ratings == 0 %>
                   <%= "- -" %>
                 <% else %>
                   <%= number_with_precision(event.overall_ratings, precision: 1) %>
@@ -316,17 +314,15 @@
             </div>
           </div>
           <div class="tablecell" style="width:16%">
-            <div>
-              <% unless event.external_event? %>
-                <span class="main_text_format">
-                  <% if event.selection_BothX_men_and_women %>
-                    <%= event.total_attendance_BothX_men_and_women %>:
-                  <% elsif event.selection_BothAndOnly_men_and_women %>
-                    <%= event.total_attendance_BothAndOnly_men_and_women %>:
-                  <% end %>
-                </span> 
-                <span class="faint_text_format">attendants</span>
-              <% end %>
+            <div class="total_attendance">
+              <span class="main_text_format">
+                <% if event.selection_BothX_men_and_women %>
+                  <%= event.total_attendance_BothX_men_and_women %>:
+                <% elsif event.selection_BothAndOnly_men_and_women %>
+                  <%= event.total_attendance_BothAndOnly_men_and_women %>:
+                <% end %>
+              </span> 
+              <span class="faint_text_format">attendants</span>
             </div>
             <div>
               <span class="main_text_format"><%= link_to "view details", attendants_event_path(event), target:"_blank" %></span>
@@ -395,17 +391,17 @@
             </div>
             <% if current_user.admin_pa_management_group %>
               <div>
+                <span>Amt: </span>
+                <span class="ref_id">
+                  <% if event.selection_BothX_men_and_women %>
+                    £<%= (event.total_attendance_BothX_men_and_women) * (event.price).to_i %>
+                  <% elsif event.selection_BothAndOnly_men_and_women %>
+                    £<%= (event.total_attendance_BothAndOnly_men_and_women) * (event.price).to_i %>
+                  <% end %>
+                </span>
                 <% if event.external_event? %>
-                  <span class="external_eventlink_info">Amt: <%= link_to "External Event", event.external_eventlink, target:"blank" %></span>
-                <% else %>
-                  <span>Amt: </span>
-                  <span class="ref_id">
-                    <% if event.selection_BothX_men_and_women %>
-                      £<%= (event.total_attendance_BothX_men_and_women) * (event.price).to_i %>
-                    <% elsif event.selection_BothAndOnly_men_and_women %>
-                      £<%= (event.total_attendance_BothAndOnly_men_and_women) * (event.price).to_i %>
-                    <% end %>
-                  </span>
+                  <span>|</span>
+                  <span class="external_eventlink_info"><%= link_to "External Event", event.external_eventlink, target:"blank" %></span>
                 <% end %>
               </div>
             <% end %>
