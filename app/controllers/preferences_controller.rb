@@ -69,7 +69,7 @@ class PreferencesController < ApplicationController
   end
 
   def destroy
-    if current_user == @user
+    if current_user.admin_pa_management_group || current_user == @user
       @user = current_user
       @preference = @user.preference
       @preference.destroy
