@@ -11,33 +11,33 @@ class PreferencesController < ApplicationController
   end
 
   def show
-    unless current_user == @user
-      # @user = User.friendly.find(params[:user_id])
+    if current_user == @user
       @users = User.random
+      # @user = User.friendly.find(params[:user_id])
       @user = current_user
       @preference = @user.preference
     end
   end
 
   def new
-    @users = User.random
-    unless current_user == @user
+    if current_user == @user  
+      @users = User.random
       @user = current_user
       @preference = @user.build_preference
     end
   end
 
   def edit
-    @users = User.random
-    unless current_user == @user
+    if current_user == @user
+      @users = User.random
       @user = User.friendly.find(params[:user_id])
     end
   end
 
 
   def create
-    unless current_user == @user
-      @users = User.all
+    if current_user == @user
+      @users = User.random
       @preference = Preference.new(preference_params)
       @preference.user = current_user
 
@@ -54,7 +54,8 @@ class PreferencesController < ApplicationController
   end
 
   def update
-    unless current_user == @user
+    if current_user == @user
+      @users = User.random
       respond_to do |format|
         if @preference.update(preference_params)
           format.html { redirect_to([@preference.user, @preference], notice: 'Preference was successfully updated.') }
@@ -68,7 +69,7 @@ class PreferencesController < ApplicationController
   end
 
   def destroy
-    unless current_user == @user
+    if current_user == @user
       @user = current_user
       @preference = @user.preference
       @preference.destroy
