@@ -20,16 +20,16 @@ class PreferencesController < ApplicationController
   end
 
   def new
+    @users = User.random
     unless current_user == @user
-      @users = User.random
       @user = current_user
       @preference = @user.build_preference
     end
   end
 
   def edit
+    @users = User.random
     unless current_user == @user
-      @users = User.random
       @user = User.friendly.find(params[:user_id])
     end
   end
