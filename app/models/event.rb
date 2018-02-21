@@ -259,7 +259,7 @@ class Event < ActiveRecord::Base
 
   #validations: events can not be created in the past
   def date_cannot_be_in_the_past
-    if date.present? && date < Date.today
+    if date.present? && date <= Date.today
       errors.add(:date, "event date can not be in the past")
     end
   end
