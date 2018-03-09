@@ -1206,6 +1206,36 @@
   color: #fff !important;
 }
 
+.events_show_preview_inner_section .inner_photo_section a {
+  font-family: 'Lato', sans-serif;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+  text-transform: capitalize;
+  color: #fff !important;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease; 
+}
+
+.events_show_preview_inner_section .inner_photo_section a:hover {
+  color: #E34B51 !important;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease; 
+}
+
+.events_show_preview_inner_section .fa-share-alt {
+  margin-right: 0px !important;
+}
+
+.events_show_preview_inner_section .fa-envelope {
+  margin-right: 0px !important;
+}
+
+.events_show_preview_inner_section .fa-camera {
+  margin-right: 0px !important;
+}
+
 .events_show_preview_inner_section .column_right .right_container .venue_img_container {
   background-color: rgba(47, 63, 91, 0.1);
   padding: 0px !important;
