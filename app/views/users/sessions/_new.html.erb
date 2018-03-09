@@ -127,6 +127,7 @@
                   <div class="middle_evt">
                     <div class="title">
                       <span class="responsive_display_large"><%= link_to "#{event.title}", preview_event_path(event) %></span>
+                      <span class="event_ref responsive_display_large_ref"><%= link_to "#{event.reference}", preview_event_path(event), {style: "font-size:11px;font-weight:500;color:#E34B51 !important;"} %></span>
                       <span class="responsive_display_small"><%= link_to(truncate("#{event.title}", length: 45), preview_event_path(event)) %></span>
                     </div>
                     <div class="info"><i class="fa fa-map-marker" aria-hidden="true"></i> 

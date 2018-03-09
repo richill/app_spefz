@@ -998,6 +998,28 @@
   }
 }
 
+.users_sessions_new_section .event_container .title .event_ref a {
+  border-radius: 2px;
+  background-color: rgba(47, 63, 91, 0.03) !important;
+  padding: 5px;
+  margin-left: 3px;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease;
+}
+@media only screen and (max-width: 1030px) {
+  .users_sessions_new_section .event_container .title .responsive_display_large_ref {
+    display: none; 
+  }
+}
+
+.users_sessions_new_section .event_container .title .event_ref a:hover {
+  text-decoration: underline;
+  -webkit-transition: all 0.3s ease; 
+  -moz-transition: all 0.3s ease; 
+  -o-transition: all 0.3s ease;
+}
+
 .users_sessions_new_section .middle_evt .info {
   margin-bottom: 8px;
   letter-spacing: 1px;
@@ -1553,8 +1575,6 @@
 .users_sessions_new_section .eventbrite_icon .img_logo img:hover {
   opacity: 0.6;
 }
-
-
 
 
 
