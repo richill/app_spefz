@@ -11,7 +11,7 @@
       <ul class="inline-list right">
         <li class="link responsive_view"><%= link_to 'about us', about_us_path %></li>
         <% if Album.count > 3 %>
-          <li class=""><%= link_to "Albums", albums_path %></li> 
+          <li class="link"><%= link_to "Albums", albums_path %></li> 
         <% else %>
           <% if Photo.count > 4 %>
             <li class="link"><%= link_to "Photos", photos_path %></li>
