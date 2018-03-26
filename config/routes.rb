@@ -157,7 +157,7 @@ Rails.application.routes.draw do
   get   'help/payment-queries',           to: 'static_pages#paymentqueriespg'
   get   'image-restriction-page',         to: 'static_pages#imagepg'
   get   'investment',                     to: 'static_pages#investmentpg'
-  get   'information-page',              to: 'static_pages#informationpg'
+  get   'information-page',               to: 'static_pages#informationpg'
   get   'landing-page',                   to: 'static_pages#landingpg'
   get   'message-delivered',              to: 'static_pages#messagesentpg'
   get   'notes',                          to: 'static_pages#notepg'
@@ -166,6 +166,7 @@ Rails.application.routes.draw do
   get   'terms',                          to: 'static_pages#termspg'
   get   'terms/cookie-policy',            to: 'static_pages#cookiepg'
   get   'terms/privacy',                  to: 'static_pages#privacypg'
+  get   'terms/gdpr',                     to: 'static_pages#gdpr'
   get   'tags/:tag',                      to: 'users#index', as: :tag
   get   'socialtags/:tag',                to: 'socials#index', as: :social_tag
   get   'eventtags/:tag',                 to: 'events#index', as: :event_tag
