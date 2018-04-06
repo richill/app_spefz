@@ -305,6 +305,12 @@ class UsersController < ApplicationController
     end
   end
 
+  def userlistedmatches
+    unless current_user.admin_pa_management_group
+      redirect_to errorpermission_path
+    end
+  end
+
   private
   def setup_friends
     if action_name == 'edit'

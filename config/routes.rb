@@ -104,6 +104,7 @@ Rails.application.routes.draw do
       get 'saved-events'
       get 'live-socials'
       get 'expired-socials'
+      get 'userlistedmatches'
     end
   end
 
