@@ -305,7 +305,8 @@ class UsersController < ApplicationController
     end
   end
 
-  def userlistedmatches
+  def connect_matches
+    @user = User.friendly.find(params[:id])
     unless current_user.admin_pa_management_group
       redirect_to errorpermission_path
     end
