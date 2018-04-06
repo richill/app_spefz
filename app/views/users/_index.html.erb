@@ -69,9 +69,13 @@
                       <div class="medium-12 columns member_inner_container">
                         <% if current_user.admin_pa_management_group || current_user.pa_event_mgt_group %>
                           <% if user.overall_ratings.present? && user.overall_ratings > 0.1 %>
-                            <div class="user_overall_ratings">
-                              <%= number_with_precision(user.overall_ratings, precision: 1) %>
-                            </div>
+
+                            <%= link_to connect_matches_user_path(user), target:"_blank" do %>
+                              <div class="user_overall_ratings">
+                                <%= number_with_precision(user.overall_ratings, precision: 1) %>
+                              </div>
+                            <% end %>
+                            
                           <% end %>
                         <% end %>
                         <div class="image_section">
