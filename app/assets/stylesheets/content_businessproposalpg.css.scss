@@ -1,0 +1,550 @@
+/*=========================================
+    Section: business proposal page
+    File: views / static pages / businessproposalpg.html.erb
+    File: views / static pages / shared / _content_businessproposalpg.html.erb
+  =========================================*/
+
+.sponsorship_section {
+  padding: 0px !important;
+  background: url(img_background_main.png) repeat;
+}
+
+// ------------------------------------
+//   left_section
+// ------------------------------------
+.sponsorship_section .left_section {
+  padding: 15px !important;
+  background-color: #283041;
+}
+@media only screen and (min-width: 1160px) {
+  .sponsorship_section .left_section {
+    position: fixed;
+  }
+}
+@media only screen and (max-width: 1160px) {
+  .sponsorship_section .left_section {
+    width: 100% !important; 
+  } 
+}
+
+.sponsorship_section .left_section .company_section {
+  font-family: "Lato", sans-serif !important;
+  color: #fff;
+  position: relative;
+}
+
+.sponsorship_section .left_section .business_name {
+  font-family: "Lato", sans-serif !important;
+  font-size: 20px;
+  font-weight: 300;
+  text-transform: capitalize;
+  position: absolute;
+  top: 3px;
+}
+
+.sponsorship_section .left_section .business_logo {
+  float: right;
+}
+
+.sponsorship_section .left_section .business_logo img {
+  width: 35px !important;
+  border-radius: 5px;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+.sponsorship_section .left_section .business_logo img:hover {
+  opacity: 0.7;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+.sponsorship_section .left_section .divider {
+  margin: 15px 0px 0px;
+  border-bottom: 1px solid #727985;
+}
+
+.sponsorship_section .left_section .listed_sections ul {
+  list-style: none;
+  margin: 0px !important;
+}
+
+.sponsorship_section .left_section .listed_sections ul li {
+  border-bottom: 1px solid #727985;
+}
+
+.sponsorship_section .left_section li:last-child {
+    border-bottom: none !important;
+}
+
+.listed_sections ul li i {
+  margin-right: 5px;
+}
+
+.sponsorship_section .left_section .listed_sections ul li a {
+  font-family: "Lato", sans-serif !important;
+  font-weight: 300;
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: #fff !important;
+  text-transform: capitalize;
+  padding: 16px 10px;
+  display: inline-block;
+  width: 100%;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+.sponsorship_section .listed_sections ul li a:hover {
+  color: #E34B51 !important;
+  background-color: #364760 !important;
+  width: 100%;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+}
+
+
+// ------------------------------------
+//   right_section
+// ------------------------------------
+.sponsorship_section .right_section {
+  padding: 15px !important;
+}
+@media only screen and (max-width: 1160px) {
+  .sponsorship_section .right_section {
+    width: 100% !important;
+  }
+}
+
+.sponsorship_section .right_section {
+  position: relative;
+}
+
+.sponsorship_section .right_section .right_inner_section {
+  z-index: 10;
+}
+
+.sponsorship_section .right_section .lift_btn_cover {
+  position: absolute !important;
+  height: 583px;
+  background-color: transparent;
+  top: 7px;
+  z-index: 1;
+}
+
+.sponsorship_section .right_section .lift_btn a {
+  font-size: 16px;
+  height: 50px;
+  width: 50px;
+  background-color: #283041;
+  color: #fff !important;
+  bottom: 19px;
+  right: 30px;
+  border-radius: 200px;
+  text-align: center;
+  padding: 11px 17px;
+  opacity: 0.8 !important;
+  position: fixed !important;
+}
+
+.sponsorship_section .right_section .lift_btn a:hover {
+  background-color: #283041 !important;
+  color: #fff !important;
+  opacity: 0.5 !important;
+}
+
+.sponsorship_section .right_section .sonpsorship_content {
+  padding: 30px 70px !important;
+  background-color: #fff;
+  color: #283041 !important;
+  margin-bottom: 40px;
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.14);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.14);
+  box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.14);
+}
+@media only screen and (max-width: 650px) {
+  .sponsorship_section .right_section .sonpsorship_content {
+    padding: 30px !important;
+  }
+}
+
+.sponsorship_section .right_section .pagecover_content {
+  background: url(img_background.jpg) no-repeat;
+  background-position: 60% 40%;
+  box-shadow: inset 25px 25px 200px 15px #000;
+  height: 574px;
+  padding: 0px !important;
+}
+@media only screen and (min-width: 2012px) {
+  .sponsorship_section .right_section .sonpsorship_content {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  }
+}
+
+.sponsorship_section .right_section .pagecover_inner_content {
+  margin: 15px 15px 15px !important;
+  background-color: rgba(255, 255, 255, 0.25) !important;
+  padding: 25px;
+}
+
+.sponsorship_section .right_section .main_text {
+  font-family: "Lato", sans-serif !important;
+  font-weight: 300;
+  font-size: 75px;
+  letter-spacing: 1px;
+  color: #fff !important;
+  text-transform: uppercase;
+  text-align: center;
+  text-shadow: 2px 3px 10px #000;
+}
+@media only screen and (max-width: 650px) {
+  .sponsorship_section .right_section .main_text {
+    font-size: 35px;
+  }
+}
+
+.sponsorship_section .right_section .sub_text {
+  font-family: "Lato", sans-serif !important;
+  font-weight: 300;
+  font-size: 40px;
+  letter-spacing: 1px;
+  color: #fff !important;
+  text-transform: capitalize;
+  text-align: center;
+  text-shadow: 2px 3px 10px #000;
+}
+@media only screen and (max-width: 650px) {
+  .sponsorship_section .right_section .sub_text {
+    font-size: 20px;
+  }
+}
+
+.sponsorship_section .right_section .sp_evt_link a {
+  text-transform: lowercase;
+  color: #fff !important;
+  font-weight: bold;
+  margin-top: 11px !important;
+  display: inline-block;
+}
+
+.sponsorship_section .right_section .sp_evt_link a:hover {
+  text-decoration: underline;
+}
+
+.sponsorship_section .right_section .sp_event_details {
+  font-family: "Lato", sans-serif !important;
+  font-weight: 300;
+  font-size: 15px;
+  letter-spacing: 1px;
+  color: #fff !important;
+  text-transform: capitalize;
+  text-align: center;
+  text-shadow: 2px 3px 10px #000;
+  margin-top: 15px;
+}
+
+.sponsorship_section .right_section .img_banner_content {
+  position: absolute;
+  bottom: 0;
+  opacity: 0.6;
+  height: 100px;
+  width: 100% !important;
+  background: url(img_banner_party_01.png) repeat;
+  border-bottom: 2px solid rgba(225, 71, 62, 0.7);
+}
+
+.sponsorship_section .right_section .main_img {
+  font-family: "Lato", sans-serif !important;
+  font-weight: 300;
+  font-size: 75px;
+  letter-spacing: 1px;
+  color: #fff !important;
+  text-transform: uppercase;
+  text-align: center;
+  position: relative;
+}
+
+.sponsorship_section .right_section .sp_main_header {
+  font-family: "Lato", sans-serif !important;
+  font-weight: bold;
+  font-size: 45px;
+  text-transform: capitalize;
+  margin-bottom: 10px;
+}
+@media only screen and (max-width: 650px) {
+  .sponsorship_section .right_section .sp_main_header {
+    font-size: 30px;
+  }
+}
+
+.sponsorship_section .right_section .page_number_section {
+  position: relative;
+  margin-top: 40px;
+}
+
+.sponsorship_section .right_section .page_number_line {
+  background-color: red;
+  border-bottom: 1px solid #cccccc;
+  opacity: 0.5;
+}
+
+.sponsorship_section .right_section .page_number_content {
+  background-color: #fff;
+  width: 50px;
+  height: 25px;
+  margin: auto;
+}
+
+.sponsorship_section .right_section .page_number {
+  font-family: "Lato", sans-serif !important;
+  color: #cccccc;
+  text-align: center;
+  background-color: #fff;
+  width: 50px;
+  height: 23px;
+  position: absolute;
+  bottom: 13px;
+}
+
+.sponsorship_section .right_section .event_leaderships .event_member {
+  margin-bottom: 20px;
+}
+@media only screen and (max-width: 650px) {
+  .sponsorship_section .right_section .event_leaderships .event_member {
+    width: 100% !important;
+  }
+}
+
+.sponsorship_section .right_section .event_leaderships .evt_divider {
+  margin: 45px 0px;
+  border-bottom: 1px solid #eeaa02;
+  opacity: 0.5;
+}
+
+@media only screen and (max-width: 650px) {
+  .sponsorship_section .right_section .img_cover {
+    width: 150px !important;
+    margin: auto;
+  }
+}
+
+.sponsorship_section .right_section .event_leaderships img {
+  border-radius: 200px;
+}
+@media only screen and (max-width: 650px) {
+  .sponsorship_section .right_section .event_leaderships img {
+    width: 150px !important;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .sponsorship_section .right_section .event_leaderships .event_member_info {
+    width: 100% !important;
+    text-align: center;
+  }
+}
+
+.sponsorship_section .right_section .option_inner_content table {
+  width: 100% !important;
+}
+
+.sponsorship_section .right_section .listed_benifits li {
+  text-transform: capitalize;
+}
+
+.sponsorship_section .right_section .option_inner_content table tr td a {
+  color: #E34B51 !important;
+}
+
+.sponsorship_section .right_section .option_inner_content table tr td a:hover {
+  text-decoration: underline;
+}
+
+.sponsorship_section .right_section .big_header {
+  font-family: "Lato", sans-serif !important;
+  text-transform: capitalize;
+  color: #E34B51 !important;
+  font-size: 30px;
+}
+@media only screen and (max-width: 650px) {
+  .sponsorship_section .right_section .big_header {
+    font-size: 20px;
+  }
+}
+
+.sponsorship_section .right_section .signature_inner_content .signature_content {
+  margin-top: 30px !important;
+  margin-bottom: 60px !important;
+}
+
+.sponsorship_section .right_section .signature_inner_content a {
+  color: #E34B51 !important;
+}
+
+.sponsorship_section .right_section .signature_inner_content a:hover {
+  text-decoration: underline;
+}
+
+.sponsorship_section .right_section .member_sig {
+  margin-bottom: 15px;
+}
+
+@media only screen and (min-width: 1245px) {
+  .sponsorship_section .right_section .featured_inner_section {
+    width: 915px;
+    margin: auto !important;
+  }
+}
+
+.sponsorship_section .right_section .featured_section ul {
+  list-style-type: none;
+  margin: 0px !important;
+  display: inline-block;
+}
+
+.sponsorship_section .right_section .featured_title {
+  text-align: center;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  font-family: 'Lato', sans-serif;
+  font-size: 15px;
+  color: #414249 !important;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.sponsorship_section .right_section .featured_section ul li {
+  float: left;
+  padding: 10px 10px 10px;
+  margin: 0px 5px 5px;
+}
+@media screen and (min-width: 450px) and (max-width: 1245px){
+  .sponsorship_section .right_section .featured_section ul li {
+    width: 200px;
+  }
+}
+@media screen and (min-width: 400px) and (max-width: 450px){
+  .sponsorship_section .right_section .featured_section ul li {
+    width: 175px;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .sponsorship_section .right_section .featured_section ul li {
+    width: 150px;
+  }
+}
+
+.sponsorship_section .right_section .img_featured_bc {
+  padding: 4px 10px !important;
+}
+
+.sponsorship_section .right_section .featured_section ul li:hover {
+  background-color: rgba(47, 63, 91, 0.015) !important;
+  border-radius: 3px;
+}
+
+.sponsorship_section .right_section .img_featured_01 {
+  opacity: 0.8;
+  width: 200px;
+}
+
+.sponsorship_section .right_section .img_featured_02 {
+  opacity: 0.8;
+  width: 165px;
+}
+
+.sponsorship_section .right_section .img_featured_03 {
+  width: 120px;
+}
+
+.sponsorship_section .right_section .img_featured_04 {
+  opacity: 0.9;
+  width: 130px;
+}
+
+.sponsorship_section .right_section .img_featured_05 {
+  opacity: 0.8;
+  width: 150px;
+}
+
+.sponsorship_section .right_section .update_text {
+  background-color: rgba(225, 71, 62, 0.5) !important; 
+  padding: 0px 5px;
+}
+
+.sponsorship_section .right_section .terms_inner_content a {
+  color: #E34B51 !important;
+}
+
+.sponsorship_section .right_section .terms_inner_content a:hover {
+  text-decoration: underline;
+}
+
+.sponsorship_section .right_section .booking_form_content {
+  margin-bottom: 30px;
+}
+
+.sponsorship_section .right_section .booking_form_content ul {
+  list-style: none !important;
+  margin: 5px 0px !important;
+  padding: 0px !important;
+}
+
+.sponsorship_section .right_section .label_content {
+  font-size: 12px;
+  margin-top: 12px;
+  padding: 0px !important;
+  text-transform: capitalize;
+  text-align: right;
+}
+
+.sponsorship_section .right_section .space_content {
+  height: 40px;
+  padding: 5px !important;
+}
+
+.sponsorship_section .right_section .space_content div {
+  height: 30px;
+  padding: 6px;
+  background-color: rgba(47, 63, 91, 0.05);
+}
+
+.sponsorship_section .right_section .space_content span {
+  height: 30px;
+  padding: 6px !important;
+  background-color: rgba(47, 63, 91, 0.05) !important;
+}
+
+.sponsorship_section .right_section .payment_content {
+  margin-top: 30px;
+  padding: 0px !important;
+}
+
+.sponsorship_section .right_section .pymt_header {
+  font-weight: bold;
+  text-transform: capitalize;
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.sponsorship_section .right_section .listed_pymts ul {
+  list-style: none !important;
+  margin: 0px;
+  display: inline-block;
+}
+
+.sponsorship_section .right_section .listed_pymts ul li {
+  float: left;
+  margin-right: 28px;
+}
+
+
+
+

@@ -147,6 +147,7 @@ Rails.application.routes.draw do
   #static pages
   # root  'static_pages#homepg'
   get   'about-us',                       to: 'static_pages#aboutpg'
+  get   'business-proposal',              to: 'static_pages#businessproposalpg'
   get   'error',                          to: 'static_pages#errorpg'
   get   'errorpermission',                to: 'static_pages#errorpermissionpg'
   get   'help',                           to: 'static_pages#helppg'

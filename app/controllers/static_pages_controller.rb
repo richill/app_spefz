@@ -22,6 +22,16 @@ class StaticPagesController < ApplicationController
     end
   end
 
+  def businessproposalpg
+    @premium_plan = Subscription.find_by(title:"premium")
+    if signed_in?
+      @user_network_activities = Activity.order("created_at desc").where(owner_id: current_user.friends)
+      @activity =  Activity.last
+      @user = User.find(current_user.id)
+      @friend = User.find_by_email(params[:id])
+    end
+  end
+
   def cancellationsrefundpg
     @premium_plan = Subscription.find_by(title:"premium")
     if signed_in?
