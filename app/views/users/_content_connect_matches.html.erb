@@ -10,7 +10,7 @@
           <div>individual user listed matches</div>
           <div>
             <ul>
-              <li>user name: <%= "#{@user.firstname} #{@user.lastname}" %></li>
+              <li>user name: <%= link_to "#{@user.firstname} #{@user.lastname}", user_path(@user), target:"_blank" %></li>
               <li>user stats: <%= @user.overall_ratings %></li>
             </ul>
           </div>
