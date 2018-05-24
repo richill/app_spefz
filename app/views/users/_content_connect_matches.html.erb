@@ -7,11 +7,17 @@
         <div class="content_details">
             
           <!-- members matches -->
-          <div>individual user listed matches</div>
+          <h1>individual user listed matches</h1>
           <div>
+            <u><%= "#{@user.firstname}'s" %> info</u>
             <ul>
               <li>user name: <%= link_to "#{@user.firstname} #{@user.lastname}", user_path(@user), target:"_blank" %></li>
               <li>user stats: <%= @user.overall_ratings %></li>
+            </ul>
+          </div><br/>
+          <div>
+            <u><%= "#{@user.firstname}'s" %> matches</u>
+            <ul>
             </ul>
           </div>
           <!-- members matches -->
