@@ -7,9 +7,12 @@
         <div class="content_details">
             
           <!-- members matches -->
+          <div>individual user listed matches</div>
           <div>
-            <div>individual user listed matches</div>
-            <div><%= @user.firstname %></div>
+            <ul>
+              <li>user name: <%= "#{@user.firstname} #{@user.lastname}" %></li>
+              <li>user stats: <%= @user.overall_ratings %></li>
+            </ul>
           </div>
           <!-- members matches -->
 
