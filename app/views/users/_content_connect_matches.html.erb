@@ -18,6 +18,11 @@
           <div>
             <u><%= "#{@user.firstname}'s" %> matches</u>
             <ul>
+              <% @users.each do |user| %>
+                <% if @user.connectmatching(user) %>
+                <li><span>stat: <%= user.overall_ratings %></span> | <span>username: <%= user.firstname %></span></li>
+                <% end %>
+              <% end %>
             </ul>
           </div>
           <!-- members matches -->

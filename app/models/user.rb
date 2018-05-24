@@ -728,6 +728,11 @@ class User < ActiveRecord::Base
     data.html_safe
   end
 
+
+  def connectmatching(other_user)
+    self.overall_ratings == other_user.overall_ratings
+  end
+
   protected
   # deactivates confirmable
   def confirmation_required?
