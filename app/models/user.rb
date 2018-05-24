@@ -735,9 +735,13 @@ class User < ActiveRecord::Base
 
   def connectMatches(other_user)
     if self.overall_ratings == 3
-      other_user.overall_ratings >= 3 && other_user.overall_ratings < 4
+      other_user.overall_ratings > 2
     end
   end
+
+
+
+
 
   protected
   # deactivates confirmable
