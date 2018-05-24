@@ -16,14 +16,25 @@
               <li>user stats: <%= @user.overall_ratings %></li>
             </ul>
           </div><br/>
-          <!-- user info details -->  
+          <!-- user info details --> 
+
+          <!-- all users -->
+          <div>
+            <u>all users</u>
+            <ul>
+              <% @users.each do |user| %>
+                <li><span>stat: <%= user.overall_ratings %></span> | <span>username: <%= link_to "#{user.firstname}", user_path(user), target:"_blank" %></span></li>
+              <% end %>
+            </ul>
+          </div><br/>
+          <!-- all users --> 
 
           <!-- user exact matches -->
           <div>
             <u><%= "#{@user.firstname}'s" %> exact matches [users with exactly <%= @user.overall_ratings %>]</u>
             <ul>
               <% @users.each do |user| %>
-                <% if @user.connectMatchingExact(user) %>
+                <% if @user.connectMatchesExact(user) %>
                 <li><span>stat: <%= user.overall_ratings %></span> | <span>username: <%= link_to "#{user.firstname}", user_path(user), target:"_blank" %></span></li>
                 <% end %>
               <% end %>
@@ -36,7 +47,7 @@
             <u><%= "#{@user.firstname}'s" %> general matches</u>
             <ul>
               <% @users.each do |user| %>
-                <% if @user.connectMatchingExact(user) %>
+                <% if @user.connectMatches(user) %>
                 <li><span>stat: <%= user.overall_ratings %></span> | <span>username: <%= link_to "#{user.firstname}", user_path(user), target:"_blank" %></span></li>
                 <% end %>
               <% end %>

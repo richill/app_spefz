@@ -729,8 +729,14 @@ class User < ActiveRecord::Base
   end
 
 
-  def connectMatchingExact(other_user)
+  def connectMatchesExact(other_user)
     self.overall_ratings == other_user.overall_ratings
+  end
+
+  def connectMatches(other_user)
+    if self.overall_ratings == 3
+      other_user.overall_ratings >= 3 && other_user.overall_ratings < 4
+    end
   end
 
   protected
