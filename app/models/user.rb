@@ -729,7 +729,7 @@ class User < ActiveRecord::Base
   end
 
 
-  def connectmatching(other_user)
+  def connectMatchingExact(other_user)
     self.overall_ratings == other_user.overall_ratings
   end
 

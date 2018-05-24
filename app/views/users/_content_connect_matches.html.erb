@@ -5,8 +5,9 @@
     <div class="medium-12 columns member_content_section connectmatches_section">
       <div class="medium-12 columns content_container">
         <div class="content_details">
-            
           <!-- members matches -->
+
+          <!-- user info details -->
           <h1>individual user listed matches</h1>
           <div>
             <u><%= "#{@user.firstname}'s" %> info</u>
@@ -15,18 +16,35 @@
               <li>user stats: <%= @user.overall_ratings %></li>
             </ul>
           </div><br/>
+          <!-- user info details -->
+
+          <!-- user exact matches -->
           <div>
-            <u><%= "#{@user.firstname}'s" %> matches</u>
+            <u><%= "#{@user.firstname}'s" %> exact matches [users with exactly <%= @user.overall_ratings %>]</u>
             <ul>
               <% @users.each do |user| %>
-                <% if @user.connectmatching(user) %>
+                <% if @user.connectMatchingExact(user) %>
                 <li><span>stat: <%= user.overall_ratings %></span> | <span>username: <%= user.firstname %></span></li>
                 <% end %>
               <% end %>
             </ul>
-          </div>
-          <!-- members matches -->
+          </div><br/>
+          <!-- user exact matches -->
 
+          <!-- user general matches -->
+          <div>
+            <u><%= "#{@user.firstname}'s" %> general matches</u>
+            <ul>
+              <% @users.each do |user| %>
+                <% if @user.connectMatchingExact(user) %>
+                <li><span>stat: <%= user.overall_ratings %></span> | <span>username: <%= user.firstname %></span></li>
+                <% end %>
+              <% end %>
+            </ul>
+          </div><br/>
+          <!-- user general matches -->
+
+          <!-- members matches -->
         </div>
       </div>
     </div>
