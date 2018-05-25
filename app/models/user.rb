@@ -737,16 +737,21 @@ class User < ActiveRecord::Base
     user_rating = self.overall_ratings
     other_user_rating =  other_user.overall_ratings
 
-    # user stats 0.5
+    # user stats 0.5 [display other user with stats between 0 - 1]
+    if user_rating >= 0 && user_rating < 1
+      other_user_rating >= 0 && other_user_rating < 1
+
     # user stats 1.5
-    
+    if user_rating >= 1 && user_rating < 2
+      other_user_rating >= 1 && other_user_rating < 3
+
     # user stats 2.5
     if user_rating >= 2 && user_rating < 3
-      other_user_rating > 2 && other_user_rating < 3
+      other_user_rating >= 2 && other_user_rating < 3
     
     # user stats 3.5
     else user_rating >= 3 && user_rating < 4
-      other_user_rating > 3 && other_user_rating < 4
+      other_user_rating >= 3 && other_user_rating < 4
     end
   end
 
