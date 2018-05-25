@@ -752,6 +752,10 @@ class User < ActiveRecord::Base
     # user stats 3.5
     elsif user_rating >= 3 && user_rating < 4
       other_user_rating >= 3 && other_user_rating < 4
+
+    # user stats 4.5
+    elsif user_rating >= 4 && user_rating <= 5
+      other_user_rating >= 4 && other_user_rating <= 5
     end
   end
 
