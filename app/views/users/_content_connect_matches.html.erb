@@ -8,7 +8,7 @@
           <!-- members matches -->
 
           <!-- user info details -->
-          <h1>individual user listed matches</h1>
+          <span><b>individual user listed matches</b></span> <span>|</span> <span><%= link_to "view all users", users_path %></span><br/><br/><br/>
           <div>
             <u><%= "#{@user.firstname}'s" %> info</u>
             <ul>
@@ -19,7 +19,7 @@
           <!-- user info details --> 
 
           <!-- all users -->
-          <div>
+          <div class="hide">
             <span><u>all users</u> <%= link_to "view", users_path %></span>
             <ul>
               <% @users.each do |user| %>
@@ -31,7 +31,7 @@
 
           <!-- user exact matches -->
           <div>
-            <u><%= "#{@user.firstname}'s" %> exact matches [users with exactly <%= @user.overall_ratings %>]</u>
+            <u><%= "#{@user.firstname}'s" %> exact [stat] matches [users with exactly <%= @user.overall_ratings %>]</u>
             <ul>
               <% @users.each do |user| %>
                 <% if @user.connectMatchesExact(user) %>
@@ -39,12 +39,12 @@
                 <% end %>
               <% end %>
             </ul>
-          </div><br/>
+          </div>
           <!-- user exact matches -->
 
           <!-- user general matches -->
           <div>
-            <u><%= "#{@user.firstname}'s" %> general matches</u>
+            <u><%= "#{@user.firstname}'s" %> general [stat] matches</u>
             <ul>
               <% @users.each do |user| %>
                 <% if @user.connectMatches(user) %>
@@ -52,8 +52,21 @@
                 <% end %>
               <% end %>
             </ul>
-          </div><br/>
+          </div>
           <!-- user general matches -->
+
+          <!-- user preference matches -->
+          <div>
+            <u><%= "#{@user.firstname}'s" %> preference matches</u>
+            <ul>
+              <% @users.each do |user| %>
+                <% if @user.matching(user) %>
+                <li><span>stat: <%= user.overall_ratings %></span> | <span>username: <%= link_to "#{user.firstname}", user_path(user), target:"_blank" %></span></li>
+                <% end %>
+              <% end %>
+            </ul>
+          </div><br/>
+          <!-- user preference matches -->
 
           <!-- members matches -->
         </div>
