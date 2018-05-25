@@ -734,8 +734,10 @@ class User < ActiveRecord::Base
   end
 
   def connectMatches(other_user)
-    if self.overall_ratings == 3
-      other_user.overall_ratings > 2
+    user_rating = self.overall_ratings #3.5 [Jesse]
+    other_user_rating =  other_user.overall_ratings
+    if user_rating > 3 && user_rating < 4
+      other_user_rating > 3 && other_user_rating < 4
     end
   end
 

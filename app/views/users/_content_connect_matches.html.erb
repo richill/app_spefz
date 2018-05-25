@@ -20,7 +20,7 @@
 
           <!-- all users -->
           <div>
-            <u>all users</u>
+            <span><u>all users</u> <%= link_to "view", users_path %></span>
             <ul>
               <% @users.each do |user| %>
                 <li><span>stat: <%= user.overall_ratings %></span> | <span>username: <%= link_to "#{user.firstname}", user_path(user), target:"_blank" %></span></li>
