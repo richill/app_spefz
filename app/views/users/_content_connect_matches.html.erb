@@ -20,7 +20,7 @@
                   <% if @user.preference.present? %>
                     <%= @user.preference.category_matchseeking.name %>
                   <% else %>
-                    <%= "has not completed preference match form" %>
+                    <span style="color: #E34B51;"><%= "has not completed preference match form" %></span>
                   <% end %>
                 </span>
                </li>
@@ -77,7 +77,7 @@
                 <% end %>
               </ul>
             <% elsif !@user.preference.present? %>
-              <div><%= "user has not completed preference match form" %></div>
+              <div style="color: #E34B51;"><%= "user has not completed preference match form" %></div>
             <% end %>
           </div><br/>
           <!-- user preference matches -->
@@ -94,7 +94,7 @@
                 <% end %>
               </ul>
             <% elsif !@user.preference.present? %>
-              <div><%= "user has not completed preference match form" %></div>
+              <div style="color: #E34B51;"><%= "user has not completed preference match form" %></div>
             <% end %>
           </div><br/>
           <!-- user preference & stat matches -->
