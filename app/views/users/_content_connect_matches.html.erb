@@ -69,7 +69,16 @@
           <!-- user preference matches -->
 
           <!-- user preference & stat matches -->
-          <u><%= "#{@user.firstname}'s" %> preference & stat matches</u><br/><br/><br/>
+          <u><%= "#{@user.firstname}'s" %> preference & stat matches</u>
+          <div>
+            <ul>
+              <% @users.each do |user| %>
+                <% if @user.matching(user) && @user.connectMatches(user) %>
+                <li><span>stat: <%= user.overall_ratings %></span> | <span>username: <%= link_to "#{user.firstname}", user_path(user), target:"_blank" %></span></li>
+                <% end %>
+              <% end %>
+            </ul>
+          </div><br/>
           <!-- user preference & stat matches -->
 
           <!-- dated section -->
