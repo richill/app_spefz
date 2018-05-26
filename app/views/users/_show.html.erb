@@ -39,15 +39,13 @@
           </div>
           <div class="clear"></div>
           <div class="user_social_icons">
-
-
-            <span class="socialicon_cover_heart">
-              <% if @user.preference.present? %>
-                <%= link_to '', connect_matches_user_path(@user), class: "fa fa-heartbeat", target: "_blank" %>
-              <% end %>
-            </span>
-
-
+            <% if current_user.admin_pa_management_group %>
+              <span class="socialicon_cover_heart">
+                <% if @user.preference.present? %>
+                  <%= link_to '', connect_matches_user_path(@user), class: "fa fa-heartbeat", target: "_blank" %>
+                <% end %>
+              </span>
+            <% end %>
             <% if @user != current_user %>
               <span class="socialicon_cover_fb"><%= link_to '', '#', class: "fa fa-envelope" %></span> 
             <% end %>
