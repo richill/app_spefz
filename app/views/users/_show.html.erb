@@ -39,7 +39,7 @@
           </div>
           <div class="clear"></div>
           <div class="user_social_icons">
-            <% if current_user.admin_pa_management_group %>
+            <% if current_user.admin_pa_management_group || current_user.pa_event_mgt_group %>
               <span class="socialicon_cover_heart">
                 <% if @user.preference.present? %>
                   <%= link_to '', connect_matches_user_path(@user), class: "fa fa-heartbeat", target: "_blank" %>
