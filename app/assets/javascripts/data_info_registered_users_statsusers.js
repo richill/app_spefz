@@ -9,6 +9,7 @@ $(document).ready(function() {
     $("#status_statsusers_male_content").hide();
     $("#status_statsusers_female_content").hide();
     $("#status_statsusers_dummies_content").hide();
+    $("#status_statsusers_forms_content").hide();
     $("#status_statsusers_rated_content").hide();
     $("#status_statsusers_nonrated_content").hide();
   });
@@ -18,6 +19,7 @@ $(document).ready(function() {
     $("#status_statsusers_all_content").hide();
     $("#status_statsusers_female_content").hide();
     $("#status_statsusers_dummies_content").hide();
+    $("#status_statsusers_forms_content").hide();
     $("#status_statsusers_rated_content").hide();
     $("#status_statsusers_nonrated_content").hide();
   });
@@ -27,6 +29,7 @@ $(document).ready(function() {
     $("#status_statsusers_all_content").hide();
     $("#status_statsusers_male_content").hide();
     $("#status_statsusers_dummies_content").hide();
+    $("#status_statsusers_forms_content").hide();
     $("#status_statsusers_rated_content").hide();
     $("#status_statsusers_nonrated_content").hide();
   });
@@ -36,6 +39,17 @@ $(document).ready(function() {
     $("#status_statsusers_all_content").hide();
     $("#status_statsusers_male_content").hide();
     $("#status_statsusers_female_content").hide();
+    $("#status_statsusers_forms_content").hide();
+    $("#status_statsusers_rated_content").hide();
+    $("#status_statsusers_nonrated_content").hide();
+  });
+  
+  $('#status_statsusers_forms').click(function() {
+    $("#status_statsusers_forms_content").show();
+    $("#status_statsusers_all_content").hide();
+    $("#status_statsusers_male_content").hide();
+    $("#status_statsusers_female_content").hide();
+    $("#status_statsusers_dummies_content").hide();
     $("#status_statsusers_rated_content").hide();
     $("#status_statsusers_nonrated_content").hide();
   });
@@ -46,6 +60,7 @@ $(document).ready(function() {
     $("#status_statsusers_male_content").hide();
     $("#status_statsusers_female_content").hide();
     $("#status_statsusers_dummies_content").hide();
+    $("#status_statsusers_forms_content").hide();
     $("#status_statsusers_nonrated_content").hide();
   });
 
@@ -55,6 +70,7 @@ $(document).ready(function() {
     $("#status_statsusers_male_content").hide();
     $("#status_statsusers_female_content").hide();
     $("#status_statsusers_dummies_content").hide();
+    $("#status_statsusers_forms_content").hide();
     $("#status_statsusers_rated_content").hide();
   });
 });
