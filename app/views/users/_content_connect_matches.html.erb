@@ -29,11 +29,13 @@
           <!-- user info details --> 
 
           <!-- all users -->
-          <div class="hide">
+          <div class="">
             <span><u>all users</u> <%= link_to "view", users_path %></span>
             <ul>
               <% @users.each do |user| %>
+                <% unless @user == user %>
                 <li><span>stat: <%= user.overall_ratings %></span> | <span>username: <%= link_to "#{user.firstname}", user_path(user), target:"_blank" %></span></li>
+                <% end %>
               <% end %>
             </ul>
           </div><br/>
@@ -45,7 +47,9 @@
             <ul>
               <% @users.each do |user| %>
                 <% if @user.connectMatchesExact(user) %>
-                <li><span>stat: <%= user.overall_ratings %></span> | <span>username: <%= link_to "#{user.firstname}", user_path(user), target:"_blank" %></span></li>
+                  <% unless @user == user %>
+                  <li><span>stat: <%= user.overall_ratings %></span> | <span>username: <%= link_to "#{user.firstname}", user_path(user), target:"_blank" %></span></li>
+                  <% end %>
                 <% end %>
               <% end %>
             </ul>
@@ -58,7 +62,9 @@
             <ul>
               <% @users.each do |user| %>
                 <% if @user.connectMatches(user) %>
-                <li><span>stat: <%= user.overall_ratings %></span> | <span>username: <%= link_to "#{user.firstname}", user_path(user), target:"_blank" %></span></li>
+                  <% unless @user == user %>
+                  <li><span>stat: <%= user.overall_ratings %></span> | <span>username: <%= link_to "#{user.firstname}", user_path(user), target:"_blank" %></span></li>
+                  <% end %>
                 <% end %>
               <% end %>
             </ul>
@@ -89,7 +95,9 @@
               <ul>
                 <% @users.each do |user| %>
                   <% if @user.matching(user) && @user.connectMatches(user) %>
-                  <li><span>stat: <%= user.overall_ratings %></span> | <span>username: <%= link_to "#{user.firstname}", user_path(user), target:"_blank" %></span></li>
+                    <% unless @user == user %>
+                    <li><span>stat: <%= user.overall_ratings %></span> | <span>username: <%= link_to "#{user.firstname}", user_path(user), target:"_blank" %></span></li>
+                    <% end %>
                   <% end %>
                 <% end %>
               </ul>
