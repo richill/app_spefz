@@ -153,6 +153,33 @@
   background-color: rgba(75, 180, 191, 0.2) !important;
 }
 
+.user_profile_page_section .upper_section .user_social_icons .socialicon_cover_heart .inactive {
+  height: 47px;
+  font-size: 15px;
+  color: #fff !important; 
+  padding: 16px 18px;
+  background-color: rgba(75, 180, 191, 0.2);
+  margin: 0px 2px;
+}
+
+.user_profile_page_section .upper_section .user_social_icons .socialicon_cover_heart .inactive:hover {
+  color: #E34B51 !important;
+  background-color: rgba(75, 180, 191, 0.2) !important;
+}
+
+.user_profile_page_section .upper_section .user_social_icons .fa-heartbeat {
+  height: 47px;
+  font-size: 15px;
+  color: #fff !important; 
+  padding: 16px 18px;
+  background-color: rgba(255,255,255, 0.2);
+  margin: 0px 2px;
+}
+
+.user_profile_page_section .upper_section .user_social_icons .fa-heartbeat:hover {
+  background-color: rgba(255,255,255, 0.2) !important;
+}
+
 .user_profile_page_section .upper_section .user_social_icons .fa-twitter {
   height: 47px;
   font-size: 15px;
