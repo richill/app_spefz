@@ -75,10 +75,12 @@
             <div class="main_text_format"><%= user.category_managementgroup.name %></div>
           </div>
           <div class="tablecell">
-            <div class="overall_rate">
-              <div>Rate</div>
-              <div><%= number_with_precision(user.overall_ratings, precision: 1) %></div>
-            </div>
+            <%= link_to connect_matches_user_path(user), target:"_blank" do %>
+              <div class="overall_rate">
+                <div>Rate</div>
+                <div><%= number_with_precision(user.overall_ratings, precision: 1) %></div>
+              </div>
+            <% end %>
           </div>
           <div class="tablecell">
             <div>
