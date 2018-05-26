@@ -504,9 +504,11 @@
                         <div>pymt: spefz</div>
                       </div>
                       <% if attendant.user.overall_ratings.present? && attendant.user.overall_ratings > 0.1 %>
-                        <div class="user_overall_ratings">
-                          <%= number_with_precision(attendant.user.overall_ratings, precision: 1) %>
-                        </div>
+                        <%= link_to connect_matches_user_path(attendant.user), target:"_blank" do %>
+                          <div class="user_overall_ratings">
+                            <%= number_with_precision(attendant.user.overall_ratings, precision: 1) %>
+                          </div>
+                        <% end %>
                       <% end %>
                       <div class="image_section">
                         <% if attendant.user.image_url.present? %>
@@ -600,9 +602,11 @@
                         <div>pymt: ext.</div>
                       </div>
                       <% if attendant.overall_ratings.present? && attendant.overall_ratings > 0.1 %>
-                        <div class="user_overall_ratings">
-                          <%= number_with_precision(attendant.overall_ratings, precision: 1) %>
-                        </div>
+                        <%= link_to connect_matches_user_path(attendant), target:"_blank" do %>
+                          <div class="user_overall_ratings">
+                            <%= number_with_precision(attendant.overall_ratings, precision: 1) %>
+                          </div>
+                        <% end %>
                       <% end %>
                       <div class="image_section">
                         <% if attendant.image_url.present? %>
