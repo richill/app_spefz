@@ -28,19 +28,6 @@
           </div><br/>
           <!-- user info details --> 
 
-          <!-- all users -->
-          <div class="">
-            <span><u>all users</u> <%= link_to "view", users_path %></span>
-            <ul>
-              <% @users.each do |user| %>
-                <% unless @user == user %>
-                <li><span>stat: <%= user.overall_ratings %></span> | <span>username: <%= link_to "#{user.firstname}", user_path(user), target:"_blank" %></span></li>
-                <% end %>
-              <% end %>
-            </ul>
-          </div><br/>
-          <!-- all users --> 
-
           <!-- user exact matches -->
           <div>
             <u><%= "#{@user.firstname}'s" %> exact [stat] matches [users with exactly <%= @user.overall_ratings %>]</u>
@@ -108,8 +95,38 @@
           <!-- user preference & stat matches -->
 
           <!-- dated section -->
-          <u>list of users <%= "#{@user.firstname}" %> has been placed on a date with</u><br/>
+          <u>list of users <%= "#{@user.firstname}" %> has been placed on a date with</u><br/><br/><br/>
           <!-- members matches -->
+
+
+          <!-- all users with pref form -->
+          <div class="">
+            <span><u>all users with preference form</u> <%= link_to "view", users_path %></span>
+            <ul>
+              <% @users.each do |user| %>
+                <% if user.preference.present? %>
+                <li><span>stat: <%= user.overall_ratings %></span> | <span>username: <%= link_to "#{user.firstname}", user_path(user), target:"_blank" %></span></li>
+                <% end %>
+              <% end %>
+            </ul>
+          </div><br/>
+          <!-- all users with pref form -->
+
+          <!-- all users eith ratings -->
+          <div class="">
+            <span><u>all users with ratings</u> <%= link_to "view", users_path %></span>
+            <ul>
+              <% @users.each do |user| %>
+                <% if user.overall_ratings > 0 %>
+                  <% unless @user == user %>
+                  <li><span>stat: <%= user.overall_ratings %></span> | <span>username: <%= link_to "#{user.firstname}", user_path(user), target:"_blank" %></span></li>
+                  <% end %>
+                <% end %>
+              <% end %>
+            </ul>
+          </div><br/>
+          <!-- all users eith ratings -->
+
         </div>
       </div>
     </div>
