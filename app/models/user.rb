@@ -759,10 +759,6 @@ class User < ActiveRecord::Base
     end
   end
 
-
-
-
-
   protected
   # deactivates confirmable
   def confirmation_required?
