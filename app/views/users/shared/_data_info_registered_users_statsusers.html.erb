@@ -5,7 +5,7 @@
   <span id="status_statsusers_dummies" class="status_colour_blue">dummies [<%= @dummies.count %>]</span>
 
 
-  <span id="status_statsusers_forms" class="status_colour_pink">pref forms [--]</span>
+  <span id="status_statsusers_forms" class="status_colour_pink">pref forms [<%= @users.users_with_pref_forms.count %>]</span>
 
 
 
@@ -432,7 +432,7 @@
         <div class="tablecell background"></div>
         <div class="tablecell background"></div>
       </div>
-      <% @users.users_with_ratings.each do |user| %>
+      <% @users.users_with_pref_forms.each do |user| %>
         <div class="tablerow">
           <div class="tablecell" style="width:10%">
             <% if user_signed_in? %>
