@@ -13,7 +13,7 @@
             <u><%= "#{@user.firstname}'s" %> info</u>
             <ul>
               <li>user name: <%= link_to "#{@user.firstname} #{@user.lastname}", user_path(@user), target:"_blank" %></li>
-              <li>user stats: <%= @user.overall_ratings %></li>
+              <li>user stats: <%= number_with_precision(@user.overall_ratings, precision: 1) %></li>
               <li>
                 <span>user is seeking:</span>
                 <span>
@@ -30,12 +30,12 @@
 
           <!-- user exact matches -->
           <div>
-            <u><%= "#{@user.firstname}'s" %> exact [stat] matches [users with exactly <%= @user.overall_ratings %>]</u>
+            <u><%= "#{@user.firstname}'s" %> exact [stat] matches [users with exactly <%= number_with_precision(@user.overall_ratings, precision: 1) %>]</u>
             <ul>
               <% @users.each do |user| %>
                 <% if @user.connectMatchesExact(user) %>
                   <% unless @user == user %>
-                  <li><span>stat: <%= user.overall_ratings %></span> | <span>username: <%= link_to "#{user.firstname}", user_path(user), target:"_blank" %></span></li>
+                  <li><span>stat: <%= number_with_precision(user.overall_ratings, precision: 1) %></span> | <span>username: <%= link_to "#{user.firstname}", user_path(user), target:"_blank" %></span></li>
                   <% end %>
                 <% end %>
               <% end %>
@@ -50,7 +50,7 @@
               <% @users.each do |user| %>
                 <% if @user.connectMatches(user) %>
                   <% unless @user == user %>
-                  <li><span>stat: <%= user.overall_ratings %></span> | <span>username: <%= link_to "#{user.firstname}", user_path(user), target:"_blank" %></span></li>
+                  <li><span>stat: <%= number_with_precision(user.overall_ratings, precision: 1) %></span> | <span>username: <%= link_to "#{user.firstname}", user_path(user), target:"_blank" %></span></li>
                   <% end %>
                 <% end %>
               <% end %>
@@ -65,7 +65,7 @@
               <ul>
                 <% @users.each do |user| %>
                   <% if @user.matching(user) %>
-                    <li><span>stat: <%= user.overall_ratings %></span> | <span>username: <%= link_to "#{user.firstname}", user_path(user), target:"_blank" %></span></li>
+                    <li><span>stat: <%= number_with_precision(user.overall_ratings, precision: 1) %></span> | <span>username: <%= link_to "#{user.firstname}", user_path(user), target:"_blank" %></span></li>
                   <% end %>
                 <% end %>
               </ul>
@@ -83,7 +83,7 @@
                 <% @users.each do |user| %>
                   <% if @user.matching(user) && @user.connectMatches(user) %>
                     <% unless @user == user %>
-                    <li><span>stat: <%= user.overall_ratings %></span> | <span>username: <%= link_to "#{user.firstname}", user_path(user), target:"_blank" %></span></li>
+                    <li><span>stat: <%= number_with_precision(user.overall_ratings, precision: 1) %></span> | <span>username: <%= link_to "#{user.firstname}", user_path(user), target:"_blank" %></span></li>
                     <% end %>
                   <% end %>
                 <% end %>
@@ -105,7 +105,7 @@
             <ul>
               <% @users.each do |user| %>
                 <% if user.preference.present? %>
-                <li><span>stat: <%= user.overall_ratings %></span> | <span>username: <%= link_to "#{user.firstname}", user_path(user), target:"_blank" %></span></li>
+                <li><span>stat: <%= number_with_precision(user.overall_ratings, precision: 1) %></span> | <span>username: <%= link_to "#{user.firstname}", user_path(user), target:"_blank" %></span></li>
                 <% end %>
               <% end %>
             </ul>
@@ -119,7 +119,7 @@
               <% @users.each do |user| %>
                 <% if user.overall_ratings > 0 %>
                   <% unless @user == user %>
-                  <li><span>stat: <%= user.overall_ratings %></span> | <span>username: <%= link_to "#{user.firstname}", user_path(user), target:"_blank" %></span></li>
+                  <li><span>stat: <%= number_with_precision(user.overall_ratings, precision: 1) %></span> | <span>username: <%= link_to "#{user.firstname}", user_path(user), target:"_blank" %></span></li>
                   <% end %>
                 <% end %>
               <% end %>
