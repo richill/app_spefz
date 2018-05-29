@@ -10,7 +10,11 @@
       <!-- nav right side -->
       <ul class="inline-list right">
         <li class="link responsive_header_link"><%= link_to 'speed-socials', events_path %></li>
-        <li class="link responsive_header_link"><%= link_to 'socials', socials_path %></li>
+
+        <% if Social.live_socials.open_socials.count >= 1  %>
+          <li class="link responsive_header_link"><%= link_to 'socials', socials_path %></li>
+        <% end %>
+
         <li class="link responsive_header_link">
           <% if current_user.image? %>
             <%= link_to 'activity', activities_path %>
