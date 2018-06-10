@@ -4,19 +4,26 @@
     <% if current_user.admin_pa_management_group || current_user.pa_administration_group || current_user.pa_event_mgt_group  %>
     <li>
       <div class="list_cover">
-        <span><i class="fa fa-tasks" aria-hidden="true"></i></span>
+        <span><i class="fa fa-line-chart" aria-hidden="true"></i></span>
         <span>
           <% if current_user.admin_pa_management_group %>
-            <%= link_to "dashboard", dashboard_user_path(current_user) %>
+            <%= link_to "admin panel", dashboard_user_path(current_user) %>
           <% elsif current_user.pa_administration_group %>
-            <%= link_to "dashboard", stats_blogs_user_path(current_user) %>
+            <%= link_to "admin panel", stats_blogs_user_path(current_user) %>
           <% else current_user.pa_event_mgt_group %>
-            <%= link_to "dashboard", stats_socials_user_path(current_user) %>
+            <%= link_to "admin panel", stats_socials_user_path(current_user) %>
           <% end %>
         </span>
       </div>
     </li>
     <% end %>
+
+    <li>
+      <div class="list_cover">
+        <span><i class="fa fa-tasks" aria-hidden="true"></i></span>
+        <span><%= link_to "dashboard", new_user_preference_path(current_user) %></span>
+      </div>
+    </li>
 
     <li>
       <div class="list_cover">

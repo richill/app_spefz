@@ -17,7 +17,6 @@
 //= require jquery-ui
 //= require foundation-datetimepicker
 //= require social-share-button
-//= require turbolinks
 //= require jquery.raty
 //= require ratyrate
 //= require ckeditor/init
