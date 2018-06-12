@@ -168,7 +168,7 @@
                     <span class="divider">|</span>
                   </span>
                   <% if user_signed_in? %>
-                    <% if current_user.admin_pa_management_group %>
+                    <% if current_user.admin_pa_management_group || current_user.pa_administration_group %>
                       <span>
                         <span><%= pluralize(@blog.impressionist_count(filter: :ip_address), 'view') %></span>
                         <span class="divider">|</span>
