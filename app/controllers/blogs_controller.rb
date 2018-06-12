@@ -2,6 +2,7 @@ class BlogsController < ApplicationController
   respond_to :html, :xml, :json
   before_action :set_blog, only: [:show, :edit, :update, :destroy]
   before_filter :setup_friends, :setup_subscription, :setup_cards, :setup_events, :setup_invite_form, :setup_user_network_activities
+  impressionist :actions=>[:show]
 
   def index
     @search = Blog.published_blogs.past_blogs.order("publishdate DESC").order("created_at DESC").search(params[:q])
@@ -11,6 +12,7 @@ class BlogsController < ApplicationController
   def show
     @search = Blog.order("publishdate DESC").search(params[:q])
     @blogs = @search.result(distinct: true)
+    impressionist(@blog)
   end
 
   def new

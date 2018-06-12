@@ -58,6 +58,12 @@
                         <span>Category: </span>
                         <span class="blog_category"><%= link_to "#{blog.category_blog.name}", "#" %></span>
                         <span class="divider">|</span>
+                        <% if user_signed_in? %>
+                          <% if current_user.admin_pa_management_group %>
+                            <span><%= pluralize(blog.impressionist_count(filter: :ip_address), 'view') %></span>
+                            <span class="divider">|</span>
+                          <% end %>
+                        <% end %>
                         <span>
                           <% if blog.publishdate? %>
                             <%= blog.publishdate.strftime("%B %d, %Y") %>

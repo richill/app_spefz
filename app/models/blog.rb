@@ -1,6 +1,7 @@
 class Blog < ActiveRecord::Base
   extend FriendlyId
   friendly_id :slug_blogs, use: :slugged
+  is_impressionable
 
   validates_presence_of :title, presence: true, message: "can't be blank"
   validates_presence_of :content, presence: true, message: "can't be blank"
