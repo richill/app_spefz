@@ -1,5 +1,6 @@
 class BusinessadsController < ApplicationController
   before_action :set_businessad, only: [:show, :edit, :update, :destroy]
+  before_filter :setup_friends, :setup_subscription, :setup_cards, :setup_events, :setup_invite_form, :setup_user_network_activities
 
   def index
     if current_user.admin_pa_management_group || current_user.pa_event_mgt_group
@@ -61,11 +62,43 @@ class BusinessadsController < ApplicationController
   end
 
   private
-    def set_businessad
-      @businessad = Businessad.find(params[:id])
+    def setup_friends
+    if signed_in?
+    @user = User.find(current_user.id)
+    @friend = User.find_by_email(params[:id])
     end
+  end
 
-    def businessad_params
-      params.require(:businessad).permit(:name, :content, :link, :image, :displaytext, :category_advert_id, :event_id)
+  def setup_subscription
+    @premium_plan = Subscription.find_by(title:"premium") 
+  end
+
+  def setup_cards
+    @cards = Card.all
+  end
+
+  def setup_events
+    @events = Event.all
+  end
+
+  def setup_invite_form
+    if signed_in?
+      @invite = Invite.new
     end
+  end
+
+  def setup_user_network_activities
+    if signed_in?
+      @user_network_activities = Activity.order("created_at desc").where(owner_id: current_user.friends)
+      @activity =  Activity.last
+    end
+  end
+
+  def set_businessad
+    @businessad = Businessad.find(params[:id])
+  end
+
+  def businessad_params
+    params.require(:businessad).permit(:name, :content, :link, :image, :displaytext, :category_advert_id, :event_id)
+  end
 end
