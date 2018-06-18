@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  resources :businessads
+
   resources :photos
 
   resources :albums do

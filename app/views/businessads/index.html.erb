@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Businessads</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Content</th>
+      <th>Link</th>
+      <th>Image</th>
+      <th>Displaytext</th>
+      <th>Category advert</th>
+      <th>Event</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @businessads.each do |businessad| %>
+      <tr>
+        <td><%= businessad.name %></td>
+        <td><%= businessad.content %></td>
+        <td><%= businessad.link %></td>
+        <td><%= businessad.image %></td>
+        <td><%= businessad.displaytext %></td>
+        <td><%= businessad.category_advert_id %></td>
+        <td><%= businessad.event_id %></td>
+        <td><%= link_to 'Show', businessad %></td>
+        <td><%= link_to 'Edit', edit_businessad_path(businessad) %></td>
+        <td><%= link_to 'Destroy', businessad, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Businessad', new_businessad_path %>

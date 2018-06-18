@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180618181131) do
+ActiveRecord::Schema.define(version: 20180618183754) do
 
   create_table "activities", force: :cascade do |t|
     t.integer  "trackable_id"
@@ -89,6 +89,18 @@ ActiveRecord::Schema.define(version: 20180618181131) do
   end
 
   add_index "blogs", ["slug"], name: "index_blogs_on_slug", unique: true
+
+  create_table "businessads", force: :cascade do |t|
+    t.string   "name"
+    t.text     "content"
+    t.text     "link"
+    t.string   "image"
+    t.boolean  "displaytext"
+    t.integer  "category_advert_id"
+    t.integer  "event_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+  end
 
   create_table "cards", force: :cascade do |t|
     t.string   "title"
