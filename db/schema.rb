@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180618193135) do
+ActiveRecord::Schema.define(version: 20180618193520) do
 
   create_table "activities", force: :cascade do |t|
     t.integer  "trackable_id"
@@ -101,6 +101,8 @@ ActiveRecord::Schema.define(version: 20180618193135) do
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
     t.integer  "user_id"
+    t.string   "companyname"
+    t.string   "imagelink"
   end
 
   create_table "cards", force: :cascade do |t|
