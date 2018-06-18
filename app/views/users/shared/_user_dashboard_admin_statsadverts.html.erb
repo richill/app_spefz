@@ -1,5 +1,3 @@
-<h1>user_dashboard_admin_statsadverts</h1>
-
 <div class="user_dashboard_admin_statsblogs">
   <!-- upper_data_content -->
   <div class="medium-12 columns upper_data_content">
@@ -7,47 +5,49 @@
       <div class="data_content">
         <div class="header"> total adverts</div>
         <div class="header_data">
-          <span class="header_icon"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></span>
-          <span><%= @blogs.all.count %></span>
+          <span class="header_icon"><i class="fa fa-newspaper-o" aria-hidden="true"></i></span>
+          <span><%# @blogs.all.count %></span>
         </div>
       </div>
     </div>
     <div class="medium-2 columns middle_data responsive_data stats_tab_02">
       <div class="data_content">
-        <div class="header"> total blogs [mth]</div>
-        <div class="header_data"><span class="header_icon"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></span>
-          <span><%= @blogs.created_this_month.count %></span>
+        <div class="header"> total live adverts</div>
+        <div class="header_data"><span class="header_icon"><i class="fa fa-newspaper-o" aria-hidden="true"></i></span>
+          <span><%# @blogs.created_this_month.count %></span>
         </div>
       </div>
     </div>
-    <div class="medium-2 columns middle_data responsive_data stats_tab_03">
+    <div class="medium-2 columns middle_data responsive_data stats_tab_02">
       <div class="data_content">
-        <div class="header"> total blogs [news]</div>
-        <div class="header_data"><span class="header_icon"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></span><span><%= @blogs.news.count %></span></div>
+        <div class="header"> live adverts [mth]</div>
+        <div class="header_data"><span class="header_icon"><i class="fa fa-newspaper-o" aria-hidden="true"></i></span>
+          <span><%# @blogs.created_this_month.count %></span>
+        </div>
       </div>
     </div>
     <div class="medium-2 columns middle_data responsive_data stats_tab_04">
       <div class="data_content">
-        <div class="header"> total blogs [venues]</div>
+        <div class="header"> total adverts [adverts]</div>
         <div class="header_data">
-          <span class="header_icon"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></span>
-          <span><%= @blogs.venues.count %></span>
+          <span class="header_icon"><i class="fa fa-newspaper-o" aria-hidden="true"></i></span>
+          <span><%# @blogs.venues.count %></span>
         </div>
       </div>
     </div>
     <div class="medium-2 columns middle_data responsive_data stats_tab_05">
       <div class="data_content">
-        <div class="header"> total blogs [networking]</div>
-        <div class="header_data"><span class="header_icon"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></span>
-          <span><%= @blogs.networking.count %></span>
+        <div class="header"> total adverts [partnership]</div>
+        <div class="header_data"><span class="header_icon"><i class="fa fa-newspaper-o" aria-hidden="true"></i></span>
+          <span><%# @blogs.networking.count %></span>
         </div>
       </div>
     </div>
     <div class="medium-2 columns right_data responsive_data stats_tab_06">
       <div class="data_content">
-        <div class="header"> total blogs [dating]</div>
+        <div class="header"> total adverts [sponsorship]</div>
         <div class="header_data">
-          <span class="header_icon"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></span><span><%= @blogs.dating.count %></span>
+          <span class="header_icon"><i class="fa fa-newspaper-o" aria-hidden="true"></i></span><span><%# @blogs.dating.count %></span>
         </div>
       </div>
     </div>
@@ -57,37 +57,37 @@
   <!-- table_data_content -->
   <div class="medium-12 columns lower_data_content stats_tab_01_content">
     <div class="medium-12 columns lower_data_inner_content">
-      <%= render 'users/shared/data_info_blogs' %>
+      <%# render 'users/shared/data_info_blogs' %>
     </div>
   </div>
 
   <div class="medium-12 columns lower_data_content stats_tab_02_content hide">
     <div class="medium-12 columns lower_data_inner_content">
-      <%= render 'users/shared/data_info_blogs_mth' %>
+      <%# render 'users/shared/data_info_blogs_mth' %>
     </div>
   </div>
 
   <div class="medium-12 columns lower_data_content stats_tab_03_content hide">
     <div class="medium-12 columns lower_data_inner_content">
-      <%= render 'users/shared/data_info_blogs_news' %>
+      <%# render 'users/shared/data_info_blogs_news' %>
     </div>
   </div>
 
   <div class="medium-12 columns lower_data_content stats_tab_04_content hide">
     <div class="medium-12 columns lower_data_inner_content">
-      <%= render 'users/shared/data_info_blogs_venues' %>
+      <%# render 'users/shared/data_info_blogs_venues' %>
     </div>
   </div>
 
   <div class="medium-12 columns lower_data_content stats_tab_05_content hide">
     <div class="medium-12 columns lower_data_inner_content">
-      <%= render 'users/shared/data_info_blogs_network' %>
+      <%# render 'users/shared/data_info_blogs_network' %>
     </div>
   </div>
 
    <div class="medium-12 columns lower_data_content stats_tab_06_content hide">
     <div class="medium-12 columns lower_data_inner_content">
-      <%= render 'users/shared/data_info_blogs_dating' %>
+      <%# render 'users/shared/data_info_blogs_dating' %>
     </div>
   </div>
   <div class="clear"></div>
