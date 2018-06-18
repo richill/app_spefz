@@ -1,10 +1,30 @@
-<div class="medium-12 columns ad_spnonsor_section">
-  <div class="medium-12 columns ad_spnonsor_container">
-    <div class="ad_spnonsor_inner_content">
-      <h1>hello</h1>
+
+
+
+<!-- sponsors -->
+<div class="medium-12 columns sponsor_section">
+  <div class="medium-12 columns sponsor_container">
+    <div class="sponsor_inner_content">
+      <div><%= link_to (cl_image_tag(@event.event_image_link, :transformation=>[{:gravity=>"face", :width => 600, :height => 320, :crop=>"fill"}])), "#", target:"_blank" %></div>
     </div>
-  </div>
+  </div> 
 </div>
+<!-- sponsors -->
+
+
+<!-- adverts -->
+<div class="medium-12 columns ad_section">
+  <div class="medium-12 columns ad_container">
+    <div class="ad_inner_content">
+      <div><%= link_to (cl_image_tag(@event.event_image_link, :transformation=>[{:gravity=>"face", :width => 600, :height => 320, :crop=>"fill"}])), "#", target:"_blank" %></div>
+    </div>
+  </div> 
+</div>
+<!-- adverts -->
+
+
+
+
 
 
 

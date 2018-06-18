@@ -6,36 +6,56 @@
 
 .ad_spnonsor_section .divider {
   border-top: 1px solid #fff;
-  margin: 20px 0px;
 }
 
-
-// ---------------------------
-// adverts
-// ---------------------------
-
-
-.ad_spnonsor_section {
-  background-color: transparent;
-  padding: 5px !important;
-}
-
-.ad_spnonsor_container {
-  background-color: rgba(47, 63, 91, 0.1);
-  padding: 15px !important;
-
-}
-
-.ad_spnonsor_inner_content {
-  padding: 15px;
-  background-color: red;
-  height: 222.5px;
-}
 
 
 // ---------------------------
 // sponsors
 // ---------------------------
+.sponsor_section {
+  background-color: transparent;
+  padding: 5px !important;
+}
+
+.sponsor_container {
+  background-color: rgba(47, 63, 91, 0.1);
+  padding: 15px !important;
+}
+
+.sponsor_inner_content {
+  background-color: red;
+  height: 222.5px;
+  overflow: hidden;
+}
+
+
+
+
+
+
+
+
+// ---------------------------
+// adverts
+// ---------------------------
+.ad_section {
+  background-color: transparent;
+  padding: 5px !important;
+}
+
+.ad_container {
+  background-color: rgba(47, 63, 91, 0.1);
+  padding: 15px !important;
+}
+
+.ad_inner_content {
+  background-color: red;
+  height: 222.5px;
+  overflow: hidden;
+}
+
+
 
 
 
