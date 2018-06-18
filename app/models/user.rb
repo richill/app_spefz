@@ -34,6 +34,7 @@ class User < ActiveRecord::Base
   has_and_belongs_to_many :socials 
 
   has_many :payments
+  has_many :businessads
   has_many :blogs
   has_many :reports
   has_many :events

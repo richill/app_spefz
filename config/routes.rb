@@ -75,6 +75,7 @@ Rails.application.routes.draw do
     resources :events
     resources :blogs
     resources :preferences
+    resources :businessads
     member do
       get 'dashboard'
       get 'membership'
@@ -122,7 +123,6 @@ Rails.application.routes.draw do
     resources :cards
     resources :hosts
     resources :externalattendinglists
-    resources :businessads
     member do
       get 'attendants'
       get 'preview'
