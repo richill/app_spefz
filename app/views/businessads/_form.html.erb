@@ -1,4 +1,4 @@
-<%= simple_form_for(@businessad) do |f| %>
+<%= simple_form_for [@user, @businessad] do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
@@ -9,6 +9,7 @@
     <%= f.input :displaytext %>
     <%= f.input :category_advert_id %>
     <%= f.input :event_id %>
+    <%= f.input :user_id %>
   </div>
 
   <div class="form-actions">
