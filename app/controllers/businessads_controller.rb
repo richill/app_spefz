@@ -4,17 +4,28 @@ class BusinessadsController < ApplicationController
   # GET /businessads
   # GET /businessads.json
   def index
-    @businessads = Businessad.all
+    if current_user.admin_pa_management_group || current_user.pa_event_mgt_group
+      @businessads = Businessad.all
+    else
+      redirect_to errorpermission_path
+    end
   end
 
   # GET /businessads/1
   # GET /businessads/1.json
   def show
+    unless current_user.admin_pa_management_group || current_user.pa_event_mgt_group
+      redirect_to errorpermission_path
+    end
   end
 
   # GET /businessads/new
   def new
-    @businessad = Businessad.new
+    if current_user.admin_pa_management_group || current_user.pa_event_mgt_group
+      @businessad = Businessad.new
+    else
+      redirect_to errorpermission_path
+    end
   end
 
   # GET /businessads/1/edit
