@@ -1,1 +1,25 @@
-<h1>stats adverts</h1>
+<div class= "medium-12 columns user_general_settings_section user_main_statsadverts_page">
+
+  <!-- left_column_section -->
+  <div class="medium-2 columns left_column_section">
+    <%= render 'shared/content_user_adminpanel_left_column' %>
+  </div>
+  <!-- left_column_section -->
+
+
+  <!-- right_column_section -->
+  <div class="medium-10 columns right_column_section">
+    <div class="right_inner_section">
+      <!-- content -->
+      <div class="tree_link">
+        <span><i class="fa fa-user" aria-hidden="true"></i> <%= link_to "#{current_user.firstname}", user_path(current_user)%></span> <span class="fwd_sign">></span> <span>adverts</span> <span class="tree_link_btn"><%= link_to "create advert", new_user_businessad_path(current_user) %></span> <span class="tree_link_btn"><%= link_to "view adverts", businessads_path, target: "_blank" %></span>
+      </div>
+      <div class="user_general_settings_inner_section user_dashboard_section_main_content">
+        <div><%# render "users/shared/user_dashboard_admin_statsadverts" %></div>
+      </div>
+      <!-- content -->
+    </div>
+  </div>
+  <!-- right_column_section -->
+</div>
+
