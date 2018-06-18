@@ -1,8 +1,6 @@
 class BusinessadsController < ApplicationController
   before_action :set_businessad, only: [:show, :edit, :update, :destroy]
 
-  # GET /businessads
-  # GET /businessads.json
   def index
     if current_user.admin_pa_management_group || current_user.pa_event_mgt_group
       @businessads = Businessad.all
@@ -11,15 +9,12 @@ class BusinessadsController < ApplicationController
     end
   end
 
-  # GET /businessads/1
-  # GET /businessads/1.json
   def show
     unless current_user.admin_pa_management_group || current_user.pa_event_mgt_group
       redirect_to errorpermission_path
     end
   end
 
-  # GET /businessads/new
   def new
     if current_user.admin_pa_management_group || current_user.pa_event_mgt_group
       @businessad = Businessad.new
@@ -28,12 +23,9 @@ class BusinessadsController < ApplicationController
     end
   end
 
-  # GET /businessads/1/edit
   def edit
   end
 
-  # POST /businessads
-  # POST /businessads.json
   def create
     @businessad = Businessad.new(businessad_params)
 
@@ -48,8 +40,6 @@ class BusinessadsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /businessads/1
-  # PATCH/PUT /businessads/1.json
   def update
     respond_to do |format|
       if @businessad.update(businessad_params)
@@ -62,8 +52,6 @@ class BusinessadsController < ApplicationController
     end
   end
 
-  # DELETE /businessads/1
-  # DELETE /businessads/1.json
   def destroy
     @businessad.destroy
     respond_to do |format|
@@ -73,12 +61,10 @@ class BusinessadsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_businessad
       @businessad = Businessad.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def businessad_params
       params.require(:businessad).permit(:name, :content, :link, :image, :displaytext, :category_advert_id, :event_id)
     end

@@ -122,6 +122,7 @@ Rails.application.routes.draw do
     resources :cards
     resources :hosts
     resources :externalattendinglists
+    resources :businessads
     member do
       get 'attendants'
       get 'preview'
