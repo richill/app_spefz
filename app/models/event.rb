@@ -45,6 +45,7 @@ class Event < ActiveRecord::Base
   has_many :payments, dependent: :destroy
   has_many :reports, dependent: :destroy
   has_many :managements
+  has_many :businessads
   
   belongs_to :user
   belongs_to :category_topic
