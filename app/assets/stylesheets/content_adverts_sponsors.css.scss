@@ -15,31 +15,9 @@
 
 
 
-// ---------------------------
-// sponsors
-// ---------------------------
-.sponsor_section {
-  background-color: transparent;
-  padding: 5px !important;
-}
-
-.sponsor_container {
-  background-color: rgba(47, 63, 91, 0.1);
-  padding: 15px !important;
-}
-
-.sponsor_inner_content {
-  background-color: red;
-  height: 222.5px;
-  overflow: hidden;
-  position: relative;
-}
-
-
 .text_conent {
   padding: 2px 8px;
   background-color: rgba(47, 63, 91, 0.5) !important;
-  // background-color: red;
   position: absolute;
   bottom: 0;
   height: 63px;
@@ -68,6 +46,31 @@
 
 
 
+// ---------------------------
+// sponsors
+// ---------------------------
+.sponsor_section {
+  background-color: transparent;
+  padding: 5px !important;
+}
+
+.sponsor_section .sponsor_container {
+  background-color: rgba(47, 63, 91, 0.1);
+  padding: 15px !important;
+}
+
+.sponsor_section .sponsor_inner_content {
+  background-color: red;
+  height: 222.5px;
+  overflow: hidden;
+  position: relative;
+}
+
+
+
+
+
+
 
 
 
@@ -76,20 +79,22 @@
 // ---------------------------
 // adverts
 // ---------------------------
+
 .ad_section {
   background-color: transparent;
   padding: 5px !important;
 }
 
-.ad_container {
+.ad_section .ad_container {
   background-color: rgba(47, 63, 91, 0.1);
   padding: 15px !important;
 }
 
-.ad_inner_content {
+.ad_section .ad_inner_content {
   background-color: red;
   height: 222.5px;
   overflow: hidden;
+  position: relative;
 }
 
 
