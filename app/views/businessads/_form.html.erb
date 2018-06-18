@@ -1,18 +1,98 @@
-<%= simple_form_for [@user, @businessad] do |f| %>
-  <%= f.error_notification %>
+<div class= "medium-12 columns user_general_settings_section user_main_createbusinessad_page ">
 
-  <div class="form-inputs">
-    <%= f.input :name %>
-    <%= f.input :content %>
-    <%= f.input :link %>
-    <%= f.input :image %>
-    <%= f.input :displaytext %>
-    <%= f.input :category_advert_id %>
-    <%= f.input :event_id %>
-    <%= f.input :user_id %>
+  <!-- left_column_section -->
+  <div class="medium-2 columns left_column_section">
+    <%= render 'shared/content_user_adminpanel_left_column' %>
   </div>
+  <!-- left_column_section -->
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+  <!-- right_column_section -->
+  <div class="medium-10 columns right_column_section">
+    <div class="right_inner_section">
+      <!-- content -->
+      <div class="tree_link">
+        <span><i class="fa fa-user" aria-hidden="true"></i> <%= link_to "#{current_user.firstname}", user_path(current_user)%></span> <span class="fwd_sign">></span> <span><%= link_to "blogs", stats_blogs_user_path(current_user) %></span> <span class="fwd_sign">></span>
+        <% if action_name == 'new'  %>
+          <span>create advert</span>
+        <% else %>
+          <span>update advert</span> <span class="tree_link_btn"><%= link_to 'delete advert', stats_blogs_user_path(@blog, @blog.user), method: :delete, data: { confirm: 'Are you sure?' } %></span>
+        <% end %>
+      </div>
+      <div class="user_general_settings_inner_section businessad_edit_update_form">
+        <%= simple_form_for [@user, @businessad] do |f| %>
+          <%= f.error_notification %>
+
+          <div class="form-inputs">
+            <%= f.file_field :image %>
+
+            <%= f.input :imagelink, label: "Blog Image [Image Link]", placeholder: "https://res.cloudinary.com/account/image/upload/v1474379672/happy-family.jpg" %>
+            <div class="text_info">If unable to upload image for the advert. Place image link here</div> 
+
+            <div class="blog_topic">
+              <%= f.input :name, label: "Blog Title", placeholder: "15 First Dates At Speed Dating!" %>
+              <div class="text_info">*maximum word count: 55 | *minmum: 40 | <span id="textarea_title_blog"></span></div> 
+            </div>
+
+            <%# if current_user.admin_pa_management_group || current_user.pa_administration_group %>
+              <div class="blog_topic">
+                <%# f.input :subtitle, label: "Blog Subtitle", placeholder: "week1: currently on a date with mr. right this evening, lets see how this goes... #isheakeeper #emmaDiary" %>
+              </div>
+            <%# end %>
+
+            <%= f.association :category_advert, collection: CategoryAdvert.all, prompt: "select a category", label: "Blog Category" %>
+            <%= javascript_include_tag Ckeditor.cdn_url %>
+            <%= f.cktext_area :content, value: @businessad.content, id: 'sometext' %>
+            <%# f.input :content %>
+
+        
+
+            <div class="publish_content">
+              <%= f.input :displaytext, label: "Publish Blog" %>
+              <div class="text_info">Tick if you would like blog to be published</div>
+            </div>
+
+            
+            <!-- hidden fields -->
+            <%= f.hidden_field :user_id %>
+            <!-- hidden fields -->
+          </div>
+
+          <div class="form-actions">
+            <%= f.button :submit %>
+          </div>
+        <% end %>
+      </div>
+      <!-- content -->
+    </div>
   </div>
-<% end %>
+  <!-- right_column_section -->
+</div>
+
+
+
+
+
+
+<div class="old_content">
+  <%= simple_form_for [@user, @businessad] do |f| %>
+    <%= f.error_notification %>
+
+    <div class="form-inputs">
+      <%= f.input :name %>
+      <%= f.input :content %>
+      <%= f.input :link %>
+      <%= f.input :image %>
+      <%= f.input :displaytext %>
+      <%= f.input :category_advert_id %>
+      <%= f.input :event_id %>
+      <%= f.input :user_id %>
+      <%= f.input :companyname %>
+      <%= f.input :imagelink %>
+
+    </div>
+
+    <div class="form-actions">
+      <%= f.button :submit %>
+    </div>
+  <% end %>
+</div>
