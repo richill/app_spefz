@@ -39,7 +39,7 @@
               </div>
             <%# end %>
 
-            <%= f.association :category_advert, collection: CategoryAdvert.all, prompt: "select a category", label: "Blog Category" %>
+            <%= f.association :category_advert, collection: CategoryAdvert.all, prompt: "select a category", label: "Advert Category" %>
             <%= javascript_include_tag Ckeditor.cdn_url %>
             <%= f.cktext_area :content, value: @businessad.content, id: 'sometext' %>
             <%# f.input :content %>
@@ -47,8 +47,8 @@
         
 
             <div class="publish_content">
-              <%= f.input :displaytext, label: "Publish Blog" %>
-              <div class="text_info">Tick if you would like blog to be published</div>
+              <%= f.input :displaytext, label: "display text content" %>
+              <div class="text_info">Tick if you would like to display the text content of the advert</div>
             </div>
 
             

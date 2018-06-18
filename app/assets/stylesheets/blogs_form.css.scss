@@ -5,7 +5,7 @@
   =========================================*/
 
 // --------right_column_section--------
-.user_general_settings_section .right_inner_section .businessad_edit_update_form #blog_image {
+.user_general_settings_section .right_inner_section .blog_edit_update_form #blog_image {
   height: 100%;
   margin-bottom: 15px !important;
   padding: 15px;
@@ -17,7 +17,7 @@
   letter-spacing: 1px;
 }
 
-.user_general_settings_section .right_inner_section .businessad_edit_update_form label {
+.user_general_settings_section .right_inner_section .blog_edit_update_form label {
   font-family: 'Lato', sans-serif;
   font-size: 15px !important;
   font-weight: 300 !important;
@@ -25,22 +25,22 @@
   margin-top: 15px !important;
 }
 
-.user_general_settings_section .businessad_edit_update_form .close_social_section {
+.user_general_settings_section .blog_edit_update_form .close_social_section {
   margin: 0px 0px 15px;
 }
 
-.user_general_settings_section .businessad_edit_update_form .boolean {
+.user_general_settings_section .blog_edit_update_form .boolean {
   background-color: rgba(75, 180, 191, 0.2) !important;
   padding: 8px !important;
   padding-top: 1px !important;
 }
 
-.user_general_settings_section .businessad_edit_update_form .social_form_main_content input[type="text"]:focus {
+.user_general_settings_section .blog_edit_update_form .social_form_main_content input[type="text"]:focus {
   border: 1px solid rgba(75, 180, 191, 0.5) !important;
   background-color: #fff !important;
 }
 
-.user_general_settings_section .businessad_edit_update_form .text_info {
+.user_general_settings_section .blog_edit_update_form .text_info {
   font-family: 'Lato', sans-serif;
   font-size: 12px !important;
   font-weight: 300 !important;
@@ -50,80 +50,80 @@
   padding: 5px 15px !important;
 }
 
-.user_general_settings_section .businessad_edit_update_form #event_close {
+.user_general_settings_section .blog_edit_update_form #event_close {
   margin-bottom: 0px;
   margin-right: 5px;
 }
 
-.user_general_settings_section .businessad_edit_update_form .company_info_section {
+.user_general_settings_section .blog_edit_update_form .company_info_section {
   margin-bottom: 15px;
 }
 
-.user_general_settings_section .businessad_edit_update_form .blog_topic {
+.user_general_settings_section .blog_edit_update_form .blog_topic {
   margin-bottom: 15px;
 }
 
-.user_general_settings_section .businessad_edit_update_form textarea {
+.user_general_settings_section .blog_edit_update_form textarea {
   font-weight: 300 !important;
   font-family: 'Lato', sans-serif;
   font-size: 15px;
   height: 200px;
 }
 
-.user_general_settings_section .businessad_edit_update_form .event_tags {
+.user_general_settings_section .blog_edit_update_form .event_tags {
   margin-bottom: 15px;
 }
 
-.user_general_settings_section .businessad_edit_update_form .event_venuename {
+.user_general_settings_section .blog_edit_update_form .event_venuename {
   width: 540px;
   float: left;
   margin-bottom: 15px;
 }
 
-.user_general_settings_section .businessad_edit_update_form .event_address {
+.user_general_settings_section .blog_edit_update_form .event_address {
   width: 540px;
   float: right;
   margin-bottom: 15px;
 }
 
-.user_general_settings_section .businessad_edit_update_form .event_category_country {
+.user_general_settings_section .blog_edit_update_form .event_category_country {
   width: 350px;
   float: left;
   margin-bottom: 15px;
 }
 
-.user_general_settings_section .businessad_edit_update_form #event_category_country_id {
+.user_general_settings_section .blog_edit_update_form #event_category_country_id {
   height: 40px !important;
 }
 
-.user_general_settings_section .businessad_edit_update_form .event_city {
+.user_general_settings_section .blog_edit_update_form .event_city {
   width: 350px;
   float: left;
   margin: 0px 29px 15px;
 }
 
-.user_general_settings_section .businessad_edit_update_form .event_postcode {
+.user_general_settings_section .blog_edit_update_form .event_postcode {
   width: 350px;
   float: right;
   margin-bottom: 15px;
 }
 
-.user_general_settings_section .businessad_edit_update_form .map_link {
+.user_general_settings_section .blog_edit_update_form .map_link {
   margin-bottom: 15px;
 }
 
-.user_general_settings_section .businessad_edit_update_form #event_maplink {
+.user_general_settings_section .blog_edit_update_form #event_maplink {
   margin-bottom: 0px;
 }
 
-.user_general_settings_section .businessad_edit_update_form .date_time {
+.user_general_settings_section .blog_edit_update_form .date_time {
   background-color: rgba(75, 180, 191, 0.2) !important;
   padding: 15px !important;
   margin-bottom: 15px;
   display: inline-block;
 }
 
-.user_general_settings_section .businessad_edit_update_form .blog_label {
+.user_general_settings_section .blog_edit_update_form .blog_label {
   font-family: 'Lato', sans-serif;
   font-size: 15px !important;
   font-weight: 300 !important;
@@ -131,32 +131,32 @@
   margin-top: 15px !important;
 }
 
-.user_general_settings_section .businessad_edit_update_form .event_time {
+.user_general_settings_section .blog_edit_update_form .event_time {
   float: left !important;
   margin-right: 40px !important;
 }
 
-.user_general_settings_section .businessad_edit_update_form .event_time_end {
+.user_general_settings_section .blog_edit_update_form .event_time_end {
   float: left;
 }
 
-.user_general_settings_section .businessad_edit_update_form #event_date {
+.user_general_settings_section .blog_edit_update_form #event_date {
   width: 170px;
   margin-bottom: 15px !important;
 }
 
-.user_general_settings_section .businessad_edit_update_form .time {
+.user_general_settings_section .blog_edit_update_form .time {
   width: 170px;
   margin: 0px;
 }
 
-.user_general_settings_section .businessad_edit_update_form .gender_selection_section {
+.user_general_settings_section .blog_edit_update_form .gender_selection_section {
   background-color: rgba(75, 180, 191, 0.2) !important;
   padding: 15px;
   margin-bottom: 15px;
 }
 
-.user_general_settings_section .businessad_edit_update_form .current_gender_selection {
+.user_general_settings_section .blog_edit_update_form .current_gender_selection {
   font-family: 'Lato', sans-serif;
   font-size: 12px !important;
   font-weight: 300 !important;
@@ -168,64 +168,64 @@
   margin-bottom: 8px !important;
 }
 
-.user_general_settings_section .businessad_edit_update_form .current_gender_selection i {
+.user_general_settings_section .blog_edit_update_form .current_gender_selection i {
   margin-left: 10px;
 }
 
-.user_general_settings_section .businessad_edit_update_form .current_gender_selection .divider {
+.user_general_settings_section .blog_edit_update_form .current_gender_selection .divider {
   margin: 0px 5px;
 }
 
-.user_general_settings_section .businessad_edit_update_form .event_price {
+.user_general_settings_section .blog_edit_update_form .event_price {
   width: 540px;
   float: left;
 }
 
-.user_general_settings_section .businessad_edit_update_form #event_price {
+.user_general_settings_section .blog_edit_update_form #event_price {
   height: 40px;
 }
 
-.user_general_settings_section .businessad_edit_update_form .event_category_age {
+.user_general_settings_section .blog_edit_update_form .event_category_age {
   width: 540px;
   float: right;
 }
 
-.user_general_settings_section .businessad_edit_update_form #event_category_age_id {
+.user_general_settings_section .blog_edit_update_form #event_category_age_id {
   height: 40px;
 }
 
-.user_general_settings_section .businessad_edit_update_form #event_display_match {
+.user_general_settings_section .blog_edit_update_form #event_display_match {
   margin-bottom: 0px;
   margin-right: 5px;
 }
 
-.user_general_settings_section .businessad_edit_update_form .event_score_access {
+.user_general_settings_section .blog_edit_update_form .event_score_access {
   background-color: rgba(75, 180, 191, 0.2) !important;
   padding: 15px !important;
   margin-top: 5px !important;
   margin-bottom: 30px !important;
 }
 
-.user_general_settings_section .businessad_edit_update_form .save_btn {
+.user_general_settings_section .blog_edit_update_form .save_btn {
   margin: 30px 0px;
 }
 
-.user_general_settings_section .businessad_edit_update_form #blog_category_blog_id {
+.user_general_settings_section .blog_edit_update_form #blog_category_blog_id {
   margin-bottom: 23px !important;
 }
 
-.user_general_settings_section .businessad_edit_update_form .guest_blogger_content {
+.user_general_settings_section .blog_edit_update_form .guest_blogger_content {
   padding: 15px;
   background-color: rgba(75, 180, 191, 0.2) !important;
   margin: 20px 0px 30px !important;
 }
 
-.user_general_settings_section .businessad_edit_update_form input[type="text"]:focus {
+.user_general_settings_section .blog_edit_update_form input[type="text"]:focus {
   border: 1px solid rgba(75, 180, 191, 0.5) !important;
   background-color: #fff !important;
 }
 
-.user_general_settings_section .businessad_edit_update_form input[type="submit"] {
+.user_general_settings_section .blog_edit_update_form input[type="submit"] {
   font-family: 'Lato', sans-serif;
   font-size: 20px;
   color: #fff !important;
@@ -244,11 +244,11 @@
   -o-transition: all 0.3s ease;
 }
 
-.user_general_settings_section .businessad_edit_update_form .error small.error {
+.user_general_settings_section .blog_edit_update_form .error small.error {
   margin-bottom: 0px;
 }
 
-.user_general_settings_section .businessad_edit_update_form .publish_content {
+.user_general_settings_section .blog_edit_update_form .publish_content {
   padding: 15px;
   background-color: rgba(75, 180, 191, 0.2) !important;
   margin: 20px 0px 30px !important;
