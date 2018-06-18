@@ -313,6 +313,18 @@ class UsersController < ApplicationController
     end
   end
 
+  def stats_adverts
+    if current_user.admin_pa_management_group || current_user.pa_administration_group
+      @users = User.all
+      @socials = Social.all
+      @events = Event.all
+      @payments = Payment.all
+      @blogs = Blog.all
+    else
+      redirect_to errorpermission_path
+    end
+  end
+
   private
   def setup_friends
     if action_name == 'edit'

@@ -100,6 +100,7 @@ Rails.application.routes.draw do
       get 'documentation-links'
       get 'stats-albums'
       get 'stats-photos'
+      get 'stats-adverts'
 
       get 'attending-socials'
       get 'attending-events'
