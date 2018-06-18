@@ -141,6 +141,6 @@ class BusinessadsController < ApplicationController
   end
 
   def businessad_params
-    params.require(:businessad).permit(:name, :content, :link, :image, :displaytext, :category_advert_id, :event_id, :user_id)
+    params.require(:businessad).permit(:name, :content, :link, :image, :displaytext, :category_advert_id, :event_id, :user_id, :companyname, :imagelink)
   end
 end
