@@ -15,7 +15,31 @@
 
 
 
-.text_conent {
+
+// ---------------------------
+// adverts
+// ---------------------------
+
+.ad_sponsor_mian_section .ad_section {
+  background-color: transparent;
+  padding: 5px !important;
+}
+
+.ad_sponsor_mian_section .ad_section .ad_container {
+  background-color: rgba(47, 63, 91, 0.1);
+  padding: 15px !important;
+}
+
+.ad_sponsor_mian_section .ad_section .ad_inner_content {
+  background-color: #fff;
+  height: 222.5px;
+  overflow: hidden;
+  position: relative;
+}
+
+
+
+.ad_sponsor_mian_section .ad_section .text_conent {
   padding: 2px 8px;
   background-color: rgba(47, 63, 91, 0.5) !important;
   position: absolute;
@@ -24,46 +48,55 @@
   overflow: hidden;
 }
 
-.text_conent_header {
+.ad_sponsor_mian_section .ad_section .text_conent_header {
   line-height: 12px;
 }
 
-.text_conent_header a {
+.ad_section .text_conent_header a {
   font-size: 12px;
   text-transform: capitalize;
   color: #fff !important;
 }
 
-.text_conent_link a {
+.ad_section .text_conent_header a:hover {
+  text-decoration: underline;
+}
+
+.ad_section .text_conent_link a {
   color: #fff !important;
   font-size: 10px;
 }
 
-.main_content {
+.ad_sponsor_mian_section .ad_section .text_conent_link a:hover {
+  text-decoration: underline;
+}
+
+.ad_sponsor_mian_section .ad_section .main_content {
   font-size: 9px;
   color: #fff;
 }
 
 
-
-// ---------------------------
-// sponsors
-// ---------------------------
-.sponsor_section {
-  background-color: transparent;
-  padding: 5px !important;
+.ad_sponsor_mian_section .ad_section .add_type {
+  height: 10px;
+  width: 10px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-radius: 200px;
+  margin: 14px 15px 15px;
 }
 
-.sponsor_section .sponsor_container {
-  background-color: rgba(47, 63, 91, 0.1);
-  padding: 15px !important;
+.ad_sponsor_mian_section .yellow_sponsor {
+  background-color: #eeaa02;
 }
 
-.sponsor_section .sponsor_inner_content {
-  background-color: red;
-  height: 222.5px;
-  overflow: hidden;
-  position: relative;
+.ad_sponsor_mian_section .red_advert {
+  background-color: #E34B51;
+}
+
+.ad_sponsor_mian_section .blue_partnership {
+  background-color: #4BB4BF;
 }
 
 
@@ -76,26 +109,12 @@
 
 
 
-// ---------------------------
-// adverts
-// ---------------------------
 
-.ad_section {
-  background-color: transparent;
-  padding: 5px !important;
-}
 
-.ad_section .ad_container {
-  background-color: rgba(47, 63, 91, 0.1);
-  padding: 15px !important;
-}
 
-.ad_section .ad_inner_content {
-  background-color: red;
-  height: 222.5px;
-  overflow: hidden;
-  position: relative;
-}
+
+
+
 
 
 
