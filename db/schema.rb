@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180212135247) do
+ActiveRecord::Schema.define(version: 20180618181131) do
 
   create_table "activities", force: :cascade do |t|
     t.integer  "trackable_id"
@@ -99,6 +99,12 @@ ActiveRecord::Schema.define(version: 20180212135247) do
   end
 
   add_index "cards", ["slug"], name: "index_cards_on_slug", unique: true
+
+  create_table "category_adverts", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "category_ages", force: :cascade do |t|
     t.string   "name"
