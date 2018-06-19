@@ -38,33 +38,21 @@
               <div class="text_info">*maximum word count: 55 | *minmum: 40 | <span id="textarea_title_blog"></span></div> 
             </div>
 
-            
-
             <div class="blog_topic">
               <%= f.input :link, label: "Advert website", placeholder: "https://www.spefz.com" %>
               <div class="text_info">*maximum word count: 55 | *minmum: 40 | <span id="textarea_title_blog"></span></div> 
             </div>
 
-            <%# if current_user.admin_pa_management_group || current_user.pa_administration_group %>
-              <div class="blog_topic">
-                <%# f.input :subtitle, label: "Blog Subtitle", placeholder: "week1: currently on a date with mr. right this evening, lets see how this goes... #isheakeeper #emmaDiary" %>
-              </div>
-            <%# end %>
-
             <%= f.association :event, collection: Event.all, prompt: "select a event", label: "Event" %>
             <%= f.association :category_advert, collection: CategoryAdvert.all, prompt: "select a category", label: "Advert Category" %>
             <%= javascript_include_tag Ckeditor.cdn_url %>
             <%= f.input :content %>
-            <%# f.input :content %>
-
-        
 
             <div class="publish_content">
               <%= f.input :displaytext, label: "display text content" %>
               <div class="text_info">Tick if you would like to display the text content of the advert</div>
             </div>
 
-            
             <!-- hidden fields -->
             <%= f.hidden_field :user_id %>
             <!-- hidden fields -->
@@ -81,31 +69,3 @@
   <!-- right_column_section -->
 </div>
 
-
-
-
-
-
-<div class="old_content">
-  <%= simple_form_for [@user, @businessad] do |f| %>
-    <%= f.error_notification %>
-
-    <div class="form-inputs">
-      <%= f.input :name %>
-      <%= f.input :content %>
-      <%= f.input :link %>
-      <%= f.input :image %>
-      <%= f.input :displaytext %>
-      <%= f.input :category_advert_id %>
-      <%= f.input :event_id %>
-      <%= f.input :user_id %>
-      <%= f.input :companyname %>
-      <%= f.input :imagelink %>
-
-    </div>
-
-    <div class="form-actions">
-      <%= f.button :submit %>
-    </div>
-  <% end %>
-</div>
