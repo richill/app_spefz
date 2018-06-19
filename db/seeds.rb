@@ -16,9 +16,9 @@ ca06 = CategoryAge.create!(name:'65+')
 ca07 = CategoryAge.create!(name:'All Ages')
 
 CategoryAdvert.delete_all
-cad01 = CategoryBlog.create!(name:'Advert')
-cad02 = CategoryBlog.create!(name:'Sponsorship')
-cad03 = CategoryBlog.create!(name:'Partnership')
+cad01 = CategoryAdvert.create!(name:'Advert')
+cad02 = CategoryAdvert.create!(name:'Sponsorship')
+cad03 = CategoryAdvert.create!(name:'Partnership')
 
 CategoryBlog.delete_all
 cb01 = CategoryBlog.create!(name:'News')

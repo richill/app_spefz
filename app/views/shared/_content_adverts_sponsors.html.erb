@@ -1,68 +1,30 @@
 <div class="medium-12 columns ad_sponsor_mian_section">
-
-
   <!-- advert -->
   <div class="medium-12 columns ad_section">
     <div class="medium-12 columns ad_container">
       <div class="ad_inner_content">
 
-        <% @businessads.each do |advert| %>
-
+        <% @event.businessads.each do |advert| %>
           <div><%= link_to (cl_image_tag(advert.imagelink, :transformation=>[{:gravity=>"face", :width => 600, :height => 320, :crop=>"fill"}])), "#{advert.link}", target:"_blank" %></div>
           <div class="text_conent">
             <div class="text_conent_header"><%= link_to "#{advert.name}", "#{advert.link}" %></div>
             <div class="text_conent_link"><%= link_to "#{advert.link}", "#{advert.link}" %></div>
             <div class="main_content"><%= "#{advert.content}" %></div>
           </div>
-
-
           <% if current_user.admin_pa_management_group || current_user.pa_administration_group || current_user.pa_event_mgt_group %>
-
-            <!-- <div data-tooltip aria-haspopup="true" data-options="disable_for_touch:true" class="tip-right add_type yellow_sponsor" title="<%#{}"#{social.set_availability_BothX_men_and_women}"%> capacity"></div> -->
-
-            <div data-tooltip aria-haspopup="true" data-options="disable_for_touch:true" class="tip-right add_type yellow_sponsor" title="sponsor"></div>
+            <% if advert.category_advert.name == "Advert" %>
+              <div data-tooltip aria-haspopup="true" data-options="disable_for_touch:true" class="tip-right add_type red_advert" title="<%= "#{advert.category_advert.name}"%>"></div>
+            <% elsif advert.category_advert.name == "Sponsorship" %>
+              <div data-tooltip aria-haspopup="true" data-options="disable_for_touch:true" class="tip-right add_type yellow_sponsor" title="<%= "#{advert.category_advert.name}"%>"></div>
+            <% elsif advert.category_advert.name == "Partnership" %>
+              <div data-tooltip aria-haspopup="true" data-options="disable_for_touch:true" class="tip-right add_type blue_partnership" title="<%= "#{advert.category_advert.name}"%>"></div>
+            <% end %>
           <% end %>
-
-
-
-
-
         <% end %>
       </div>
     </div> 
   </div>
   <!-- advert -->
-
-  <!-- advert -->
-  <div class="medium-12 columns ad_section">
-    <div class="medium-12 columns ad_container">
-      <div class="ad_inner_content">
-        <div><%= link_to (cl_image_tag(@event.event_image_link, :transformation=>[{:gravity=>"face", :width => 600, :height => 320, :crop=>"fill"}])), "#", target:"_blank" %></div>
-        <div class="text_conent">
-          <div class="text_conent_header"><%= link_to "casey's removal", "#" %></div>
-          <div class="text_conent_link"><%= link_to "www.spefz.com", "#" %></div>
-          <div class="main_content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
-        </div>
-
-
-        <% if current_user.admin_pa_management_group || current_user.pa_administration_group || current_user.pa_event_mgt_group %>
-
-          <!-- <div data-tooltip aria-haspopup="true" data-options="disable_for_touch:true" class="tip-right add_type yellow_sponsor" title="<%#{}"#{social.set_availability_BothX_men_and_women}"%> capacity"></div> -->
-
-          <div data-tooltip aria-haspopup="true" data-options="disable_for_touch:true" class="tip-right add_type yellow_sponsor" title="sponsor"></div>
-        <% end %>
-
-      </div>
-    </div> 
-  </div>
-  <!-- advert -->
-
-
-
-
-
-
-
 </div>
 
 

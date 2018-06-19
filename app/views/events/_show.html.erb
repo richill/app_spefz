@@ -304,15 +304,10 @@
 
       <!-- right column -->
       <div class="medium-3 columns column_right">
-
-
-
         <!-- adverts & sponsers -->
-        <div><%= render 'shared/content_adverts_sponsors' %></div>
-        <!-- adverts & sponsers -->
-
-
-
+        <% if @event.businessads.present? %>
+          <div><%= render 'shared/content_adverts_sponsors' %></div>
+        <% end %>
         <!-- event_host -->
         <div class="medium-12 columns right_container">
           <div class="medium-12 columns right_inner_container host_container">
