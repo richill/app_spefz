@@ -54,7 +54,7 @@
             <%= f.association :event, collection: Event.all, prompt: "select a event", label: "Event" %>
             <%= f.association :category_advert, collection: CategoryAdvert.all, prompt: "select a category", label: "Advert Category" %>
             <%= javascript_include_tag Ckeditor.cdn_url %>
-            <%= f.cktext_area :content, value: @businessad.content, id: 'sometext' %>
+            <%= f.input :content %>
             <%# f.input :content %>
 
         
