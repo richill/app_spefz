@@ -36,8 +36,17 @@
   overflow: hidden;
   position: relative;
 }
+@media only screen and (max-width: 1185px) {
+  .ad_sponsor_mian_section .ad_section .ad_inner_content {
+    height: 63px;
+  }
+}
 
-
+@media only screen and (max-width: 1185px) {
+  .ad_sponsor_mian_section .ad_section .ad_inner_content a img {
+    display: none;
+  }
+}
 
 .ad_sponsor_mian_section .ad_section .text_conent {
   padding: 2px 8px;
@@ -97,10 +106,6 @@
 .ad_sponsor_mian_section .blue_partnership {
   background-color: #4BB4BF;
 }
-
-
-
-
 
 
 
