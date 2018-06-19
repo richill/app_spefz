@@ -1,5 +1,38 @@
 <div class="medium-12 columns ad_sponsor_mian_section">
-  
+
+
+  <!-- advert -->
+  <div class="medium-12 columns ad_section">
+    <div class="medium-12 columns ad_container">
+      <div class="ad_inner_content">
+
+        <% @businessads.each do |advert| %>
+
+          <div><%= link_to (cl_image_tag(advert.imagelink, :transformation=>[{:gravity=>"face", :width => 600, :height => 320, :crop=>"fill"}])), "#{advert.link}", target:"_blank" %></div>
+          <div class="text_conent">
+            <div class="text_conent_header"><%= link_to "#{advert.name}", "#{advert.link}" %></div>
+            <div class="text_conent_link"><%= link_to "#{advert.link}", "#{advert.link}" %></div>
+            <div class="main_content"><%= "#{advert.content}" %></div>
+          </div>
+
+
+          <% if current_user.admin_pa_management_group || current_user.pa_administration_group || current_user.pa_event_mgt_group %>
+
+            <!-- <div data-tooltip aria-haspopup="true" data-options="disable_for_touch:true" class="tip-right add_type yellow_sponsor" title="<%#{}"#{social.set_availability_BothX_men_and_women}"%> capacity"></div> -->
+
+            <div data-tooltip aria-haspopup="true" data-options="disable_for_touch:true" class="tip-right add_type yellow_sponsor" title="sponsor"></div>
+          <% end %>
+
+
+
+
+
+        <% end %>
+      </div>
+    </div> 
+  </div>
+  <!-- advert -->
+
   <!-- advert -->
   <div class="medium-12 columns ad_section">
     <div class="medium-12 columns ad_container">
