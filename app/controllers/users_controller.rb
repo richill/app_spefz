@@ -320,6 +320,7 @@ class UsersController < ApplicationController
       @events = Event.all
       @payments = Payment.all
       @blogs = Blog.all
+      @businessads = Businessad.all
     else
       redirect_to errorpermission_path
     end

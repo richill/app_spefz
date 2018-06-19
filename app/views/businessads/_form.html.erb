@@ -11,7 +11,7 @@
     <div class="right_inner_section">
       <!-- content -->
       <div class="tree_link">
-        <span><i class="fa fa-user" aria-hidden="true"></i> <%= link_to "#{current_user.firstname}", user_path(current_user)%></span> <span class="fwd_sign">></span> <span><%= link_to "blogs", stats_blogs_user_path(current_user) %></span> <span class="fwd_sign">></span>
+        <span><i class="fa fa-user" aria-hidden="true"></i> <%= link_to "#{current_user.firstname}", user_path(current_user)%></span> <span class="fwd_sign">></span> <span><%= link_to "adverts", stats_adverts_user_path(current_user) %></span> <span class="fwd_sign">></span>
         <% if action_name == 'new'  %>
           <span>create advert</span>
         <% else %>
@@ -25,11 +25,23 @@
           <div class="form-inputs">
             <%= f.file_field :image %>
 
-            <%= f.input :imagelink, label: "Blog Image [Image Link]", placeholder: "https://res.cloudinary.com/account/image/upload/v1474379672/happy-family.jpg" %>
+            <%= f.input :imagelink, label: "Advert Image [Image Link]", placeholder: "https://res.cloudinary.com/account/image/upload/v1474379672/happy-family.jpg" %>
             <div class="text_info">If unable to upload image for the advert. Place image link here</div> 
 
             <div class="blog_topic">
-              <%= f.input :name, label: "Blog Title", placeholder: "15 First Dates At Speed Dating!" %>
+              <%= f.input :name, label: "Advert Name", placeholder: "Spefz | Dating App" %>
+              <div class="text_info">*maximum word count: 55 | *minmum: 40 | <span id="textarea_title_blog"></span></div> 
+            </div>
+
+            <div class="blog_topic">
+              <%= f.input :companyname, label: "Company Name", placeholder: "Spefz | Dating App" %>
+              <div class="text_info">*maximum word count: 55 | *minmum: 40 | <span id="textarea_title_blog"></span></div> 
+            </div>
+
+            
+
+            <div class="blog_topic">
+              <%= f.input :link, label: "Advert website", placeholder: "https://www.spefz.com" %>
               <div class="text_info">*maximum word count: 55 | *minmum: 40 | <span id="textarea_title_blog"></span></div> 
             </div>
 
@@ -39,6 +51,7 @@
               </div>
             <%# end %>
 
+            <%= f.association :event, collection: Event.all, prompt: "select a event", label: "Event" %>
             <%= f.association :category_advert, collection: CategoryAdvert.all, prompt: "select a category", label: "Advert Category" %>
             <%= javascript_include_tag Ckeditor.cdn_url %>
             <%= f.cktext_area :content, value: @businessad.content, id: 'sometext' %>

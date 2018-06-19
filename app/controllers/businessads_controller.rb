@@ -50,7 +50,7 @@ class BusinessadsController < ApplicationController
       @businessad = @user.businessads.create(businessad_params)
       respond_to do |format|
         if @businessad.save
-          format.html { redirect_to([@businessad.user, @businessad], notice: 'Advert was successfully created.') }
+          format.html { redirect_to(stats_adverts_user_path(current_user), notice: 'Advert was successfully created.') }
           format.json  { render json: @businessad, status: :created, location: @businessad }
         else
           format.html { render action: "new" }
