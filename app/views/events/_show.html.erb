@@ -308,6 +308,7 @@
         <% if @event.businessads.present? %>
           <div><%= render 'shared/content_adverts_sponsors' %></div>
         <% end %>
+
         <!-- event_host -->
         <div class="medium-12 columns right_container">
           <div class="medium-12 columns right_inner_container host_container">
@@ -319,6 +320,7 @@
             </div>
           </div>
         </div>
+
         <!-- event_card -->
         <% if @event.current_user_attending_paid?(current_user) || @event.user_on_event_attendingList?(current_user) || current_user.admin_pa_management_group || current_user.pa_event_mgt_group %>
         <div class="medium-12 columns right_container">
@@ -333,6 +335,7 @@
         </div>
         <% end %>
       </div>
+
       <!-- event_venue_imgs -->
       <% if @event.venue_imgs? %>
         <div class="medium-3 columns column_right">
@@ -348,6 +351,7 @@
           </div>
         </div>
       <% end %>
+      
       <!-- event_event_imgs -->
       <% if @event.event_imgs? %>
         <div class="medium-3 columns column_right">

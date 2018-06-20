@@ -15,7 +15,7 @@
         <% if action_name == 'new'  %>
           <span>create advert</span>
         <% else %>
-          <span>update advert</span> <span class="tree_link_btn"><%= link_to 'delete advert', stats_blogs_user_path(@blog, @blog.user), method: :delete, data: { confirm: 'Are you sure?' } %></span>
+          <span>update advert</span> <span class="tree_link_btn"><%= link_to 'delete advert', stats_adverts_user_path(@businessad, @businessad.user), method: :delete, data: { confirm: 'Are you sure?' } %></span>
         <% end %>
       </div>
       <div class="user_general_settings_inner_section businessad_edit_update_form">
@@ -28,22 +28,22 @@
             <%= f.input :imagelink, label: "Advert Image [Image Link]", placeholder: "https://res.cloudinary.com/account/image/upload/v1474379672/happy-family.jpg" %>
             <div class="text_info">If unable to upload image for the advert. Place image link here</div> 
 
-            <div class="blog_topic">
+            <div class="page_topic">
               <%= f.input :name, label: "Advert Name", placeholder: "Spefz | Dating App" %>
               <div class="text_info">*maximum word count: 55 | *minmum: 40 | <span id="textarea_title_blog"></span></div> 
             </div>
 
-            <div class="blog_topic">
+            <div class="page_topic">
               <%= f.input :companyname, label: "Company Name", placeholder: "Spefz | Dating App" %>
               <div class="text_info">*maximum word count: 55 | *minmum: 40 | <span id="textarea_title_blog"></span></div> 
             </div>
 
-            <div class="blog_topic">
+            <div class="page_topic">
               <%= f.input :link, label: "Advert website", placeholder: "https://www.spefz.com" %>
               <div class="text_info">*maximum word count: 55 | *minmum: 40 | <span id="textarea_title_blog"></span></div> 
             </div>
 
-            <%= f.association :event, collection: Event.all, prompt: "select a event", label: "Event" %>
+            <%= f.association :event, collection: Event.live_events.open_events.all, prompt: "select a event", label: "Event" %>
             <%= f.association :category_advert, collection: CategoryAdvert.all, prompt: "select a category", label: "Advert Category" %>
             <%= javascript_include_tag Ckeditor.cdn_url %>
             <%= f.input :content %>
@@ -59,7 +59,11 @@
           </div>
 
           <div class="form-actions">
-            <%= f.button :submit %>
+            <% if action_name == 'new'  %>
+              <%= f.button :submit, "Create Advert" %>
+            <% else %>
+              <%= f.button :submit, "Update Advert" %>
+            <% end %>
           </div>
         <% end %>
       </div>

@@ -123,7 +123,7 @@
 
 .user_dashboard_admin_statsadverts .lower_data_inner_content .image img {
   height: 50px;
-  border-radius: 250px;
+  border-radius: 0px !important;
 }
 
 .user_dashboard_admin_statsadverts .lower_data_inner_content .image img:hover {
@@ -165,7 +165,7 @@
   font-weight: bold;
   border-radius: 2px;
   margin-right: 5px;
-  width: 125px;
+  width: 115px;
   text-align: center;
   display: inline-block;
   cursor: pointer;
@@ -354,6 +354,20 @@
   color: #E1473E !important;
 }
 
+.user_dashboard_admin_statsadverts .lower_data_inner_content .access_score {
+  font-size: 12px;
+  font-weight: 400 !important;
+  background-color: rgba(88, 205, 166, 0.9) !important;
+  text-transform: capitalize;
+  padding: 10px;
+  color: #fff;
+  font-weight: bold;
+  margin-right: 5px;
+  text-align: center;
+  border-radius: 200px;
+  width: 60px;
+}
+
 .user_dashboard_admin_statsadverts .lower_data_inner_content .overall_rate {
   font-size: 12px;
   font-weight: 400 !important;
@@ -397,7 +411,7 @@
 }
 
 .user_dashboard_admin_statsadverts .lower_data_inner_content .main_text_format a {
-  color: #2F3F5B !important;
+  color: #E34B51 !important;
   font-weight: 400;
 }
 
@@ -519,7 +533,8 @@
   background-color: #CF8381;
   padding: 4px 0px;
   color: #fff;
-  font-weight: bold;
+  font-weight: 300;
+  letter-spacing: 1px;
   border-radius: 2px;
   margin-right: 5px;
   width: 100px;
@@ -537,7 +552,46 @@
   opacity: 0.7;
 }
 
+.user_dashboard_admin_statsadverts .delete_btn a {
+  background-color: #E34B51;
+  color: #fff !important;
+  display: inline-block;
+  padding: 5px 15px;
+  border-radius: 2px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  height: 28px;
+  width: 80px;
+  text-align: center !important;
+  margin-bottom: 5px !important;
+}
 
+.user_dashboard_admin_statsadverts .delete_btn a:hover {
+  background-color: #E34B51 !important;
+  text-decoration: underline;
+}
+
+.user_dashboard_admin_statsadverts .data_divider {
+  margin: 0px 5px;
+}
+
+.user_dashboard_admin_statsadverts .evt_status_open {
+  background-color: rgba(88, 205, 166, 0.9) !important;
+  text-align: center;
+  color: #fff;
+  text-transform: capitalize;
+  border-radius: 2px;
+  margin-top: 5px;
+}
+
+.user_dashboard_admin_statsadverts .evt_status_closed_expired {
+  background-color: #E34B51 !important;
+  text-align: center;
+  color: #fff;
+  text-transform: capitalize;
+  border-radius: 2px;
+  margin-top: 5px;
+}
 
 
 // -----------------------------------
@@ -550,14 +604,6 @@
     padding: 15px !important;
   }
 }
-
-
-
-
-
-
-
-
 
 
 
