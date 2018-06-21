@@ -11,6 +11,7 @@ class BusinessadsController < ApplicationController
   end
 
   def show
+    @businessad = Businessad.friendly.find(params[:id])
     unless current_user.admin_pa_management_group || current_user.pa_administration_group
       redirect_to errorpermission_path
     end
@@ -19,7 +20,6 @@ class BusinessadsController < ApplicationController
   def new
     @user = User.friendly.find(params[:user_id])
     if current_user.admin_pa_management_group || current_user.pa_administration_group
-      # @businessad = Businessad.new
       @businessad = @user.businessads.build
     else
       redirect_to errorpermission_path
@@ -27,7 +27,7 @@ class BusinessadsController < ApplicationController
   end
 
   def edit
-    @user = current_user
+    @user = User.friendly.find(params[:user_id])
     unless current_user.admin_pa_management_group || current_user.pa_administration_group
       redirect_to errorpermission_path
     end
@@ -74,7 +74,7 @@ class BusinessadsController < ApplicationController
     # end
     if current_user.admin_pa_management_group || current_user.pa_administration_group
       respond_to do |format|
-        if @businessad.update_attributes(blog_params)
+        if @businessad.update_attributes(businessad_params)
           format.html { redirect_to([@businessad.user, @businessad], notice: 'Advert was successfully updated.') }
           format.json { head :no_content }
         else
@@ -95,7 +95,8 @@ class BusinessadsController < ApplicationController
     # end
     if current_user.admin_pa_management_group || current_user.pa_administration_group
       @user = User.friendly.find(params[:user_id])
-      @blog = @user.businessads.find(params[:id])
+      @businessad = Businessad.friendly.find(params[:id])
+      # @businessad = @user.businessads.find(params[:id])
       @businessad.destroy
       redirect_to businessads_path
     else
@@ -137,7 +138,7 @@ class BusinessadsController < ApplicationController
   end
 
   def set_businessad
-    @businessad = Businessad.find(params[:id])
+    @businessad = Businessad.friendly.find(params[:id])
   end
 
   def businessad_params

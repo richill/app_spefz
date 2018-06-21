@@ -1,9 +1,18 @@
 class Businessad < ActiveRecord::Base
+  extend FriendlyId
+  friendly_id :slug_businessads, use: :slugged
+
   belongs_to :user
   belongs_to :event
   belongs_to :category_advert
 
   before_create :generate_reference_number
+
+  def slug_events
+    [
+      :name
+    ]
+  end
 
   def generate_reference_number
     begin

@@ -53,6 +53,20 @@
               <div class="text_info">Tick if you would like to display the text content of the advert</div>
             </div>
 
+            <div class="publish_content advert_content">
+              <div class="text_info">Place duration of advert</div>
+              <%= f.text_field :publishdate_start, label: false, class: "event_datepicker", placeholder: "publish start date", id: 'blog_date' %>
+              <%= f.text_field :publishdate_end, label: false, class: "event_datepicker", placeholder: "publish end date", id: '' %>
+            </div>
+
+            <div class="publish_content">
+              <div class="text_info">Place Client/Partner/Sponser information</div>
+              <%= f.input :clientname, label: false, placeholder:"client name" %>
+              <%= f.input :clientjob, label: false, placeholder:"client job eg: consultant" %>
+              <%= f.input :clientcontact, label: false, placeholder:"client number" %>
+              <%= f.input :price, label: false, placeholder:"200" %>
+            </div>
+
             <!-- hidden fields -->
             <%= f.hidden_field :user_id %>
             <!-- hidden fields -->
