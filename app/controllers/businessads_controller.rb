@@ -27,7 +27,7 @@ class BusinessadsController < ApplicationController
   end
 
   def edit
-    @user = User.friendly.find(params[:user_id])
+    @user = current_user
     unless current_user.admin_pa_management_group || current_user.pa_administration_group
       redirect_to errorpermission_path
     end
@@ -141,6 +141,6 @@ class BusinessadsController < ApplicationController
   end
 
   def businessad_params
-    params.require(:businessad).permit(:name, :content, :link, :image, :displaytext, :category_advert_id, :event_id, :user_id, :companyname, :imagelink)
+    params.require(:businessad).permit(:name, :content, :link, :image, :displaytext, :category_advert_id, :event_id, :user_id, :companyname, :imagelink, :reference, :publishdate_start, :publishdate_end, :price, :clientname, :clientjob, :clientcontact)
   end
 end

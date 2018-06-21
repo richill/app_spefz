@@ -1,6 +1,10 @@
-<h1>Editing Businessad</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @businessad %> |
-<%= link_to 'Back', businessads_path %>
+<% provide(:title, "Edit Advert") %>
+<div>
+  <% if signed_in? %>
+    <%= render 'shared/header' %>
+  <% else %>
+    <%= render 'shared/header_unsigned' %>
+  <% end %>
+  <%= render 'form' %>
+  <%= render 'shared/footer' %>
+</div>
