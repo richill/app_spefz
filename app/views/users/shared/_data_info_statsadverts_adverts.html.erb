@@ -36,7 +36,7 @@
           <div class="tablecell">
             <div class="user_name"><%= link_to (truncate "#{advert.name}", length: 30), "#{advert.link}", target:"_blank" %></div>
             <div class="user_name"><%= link_to (truncate "#{advert.companyname}", length: 30), "#{advert.link}", target:"_blank" %></div>
-            <div class="main_text_format"><%= link_to "#{advert.event.reference}", event_path(advert.event), target:"_blank" %></div>
+            <div class="main_text_format"><%= link_to "#{advert.reference}", advert, target:"_blank" %></div>
             <div class="faint_text_format">created: <%= advert.created_at.strftime("%a, %d %b %Y") %></div>
           </div>
 
@@ -55,12 +55,12 @@
 
           <div class="tablecell">
             <div class="faint_text_format">publish Start</div> 
-            <div class="main_text_format"><%= advert.created_at.strftime("%a, %d %b %Y") %></div>
+            <div class="main_text_format"><%= advert.publishdate_start.strftime("%a, %d %b %Y") %></div>
           </div>
 
           <div class="tablecell">
             <div class="faint_text_format">publish End</div> 
-            <div class="main_text_format"><%= advert.created_at.strftime("%a, %d %b %Y") %></div>
+            <div class="main_text_format"><%= advert.publishdate_end.strftime("%a, %d %b %Y") %></div>
           </div>
 
           <div class="tablecell">
@@ -75,7 +75,13 @@
 
           <div class="tablecell">
             <div class="faint_text_format">charge</div> 
-            <div class="main_text_format">£200</div>
+            <div class="main_text_format">
+              <% if advert.price == 0 %>
+                <span class="free_charge">Free</span>
+              <% else %>
+                <span>£<%= number_with_precision(advert.price, precision: 0) %></span>
+              <% end %>
+            </div>
           </div>
 
           <div class="tablecell">
@@ -89,9 +95,9 @@
               <%# render partial: 'shared/modal_album_content', locals: { advert: advert } %>
             </div>
             <div>-------------</div>
-            <div class="faint_text_format"><%= link_to "stephen evans", "#", target:"_blank" %></div>
-            <div class="faint_text_format">marketing manager</div>
-            <div class="faint_text_format">+44 208 958 7999</div>
+            <div class="faint_text_format"><%= link_to "#{advert.clientname}", "#{advert.link}", target:"_blank" %></div>
+            <div class="faint_text_format"><%= advert.clientjob %></div>
+            <div class="faint_text_format"><%= advert.clientcontact %></div>
           </div>
           <% if current_user.admin_pa_management_group || current_user.pa_administration_group %>
             <div class="tablecell">
