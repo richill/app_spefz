@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180621132859) do
+ActiveRecord::Schema.define(version: 20180622132908) do
 
   create_table "activities", force: :cascade do |t|
     t.integer  "trackable_id"
@@ -111,6 +111,7 @@ ActiveRecord::Schema.define(version: 20180621132859) do
     t.string   "clientjob"
     t.string   "clientcontact"
     t.string   "slug"
+    t.boolean  "close"
   end
 
   add_index "businessads", ["slug"], name: "index_businessads_on_slug", unique: true
