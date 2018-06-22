@@ -20,4 +20,12 @@ class Businessad < ActiveRecord::Base
       self.reference = "SPz_" + Devise.friendly_token.first(reference_length)
     end while self.class.exists?(reference: reference)
   end
+
+  def advert_period
+    ((self.publishdate_end - self.publishdate_start) + 1).to_i
+  end
+
+  def expired_advert
+    self.publishdate_end < Date.current
+  end
 end

@@ -51,21 +51,27 @@
             <% else %>
               <div class="evt_status_closed_expired">closed/expired event</div>
             <% end %>
+
+            <% if advert.expired_advert %>
+              <div class="evt_status_closed_expired">closed/expired advert</div>
+            <% else %>
+              <div class="evt_status_open">live event</div>
+            <% end %>
           </div>
 
           <div class="tablecell">
-            <div class="faint_text_format">publish Start</div> 
+            <div class="faint_text_format">publish Starts</div> 
             <div class="main_text_format"><%= advert.publishdate_start.strftime("%a, %d %b %Y") %></div>
           </div>
 
           <div class="tablecell">
-            <div class="faint_text_format">publish End</div> 
+            <div class="faint_text_format">publish Ends</div> 
             <div class="main_text_format"><%= advert.publishdate_end.strftime("%a, %d %b %Y") %></div>
           </div>
 
           <div class="tablecell">
             <div class="faint_text_format">days</div> 
-            <div class="main_text_format">8</div>
+            <div class="main_text_format"><%= advert.advert_period %></div>
           </div>
 
           <div class="tablecell">
