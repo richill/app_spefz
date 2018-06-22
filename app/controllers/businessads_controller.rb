@@ -34,17 +34,6 @@ class BusinessadsController < ApplicationController
   end
 
   def create
-    # @businessad = Businessad.new(businessad_params)
-    # respond_to do |format|
-    #   if @businessad.save
-    #     format.html { redirect_to @businessad, notice: 'Businessad was successfully created.' }
-    #     format.json { render :show, status: :created, location: @businessad }
-    #   else
-    #     format.html { render :new }
-    #     format.json { render json: @businessad.errors, status: :unprocessable_entity }
-    #   end
-    # end
-
     @user = User.friendly.find(params[:user_id])
     if current_user.admin_pa_management_group || current_user.pa_administration_group
       @businessad = @user.businessads.create(businessad_params)
@@ -63,15 +52,6 @@ class BusinessadsController < ApplicationController
   end
 
   def update
-    # respond_to do |format|
-    #   if @businessad.update(businessad_params)
-    #     format.html { redirect_to @businessad, notice: 'Businessad was successfully updated.' }
-    #     format.json { render :show, status: :ok, location: @businessad }
-    #   else
-    #     format.html { render :edit }
-    #     format.json { render json: @businessad.errors, status: :unprocessable_entity }
-    #   end
-    # end
     if current_user.admin_pa_management_group || current_user.pa_administration_group
       respond_to do |format|
         if @businessad.update_attributes(businessad_params)
