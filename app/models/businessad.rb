@@ -8,7 +8,7 @@ class Businessad < ActiveRecord::Base
 
   before_create :generate_reference_number
 
-  def slug_events
+  def slug_businessads
     [
       :name
     ]
