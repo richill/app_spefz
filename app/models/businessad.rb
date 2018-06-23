@@ -16,6 +16,8 @@ class Businessad < ActiveRecord::Base
 
   scope :closed_adverts, -> {where(['close = ?', true])}
 
+  scope :expired_closed_adverts, -> { where('close = ? OR publishdate_end < ?', true, Date.current) }
+
   scope :adverts, ->() { joins(:category_advert).where('category_adverts.name' => "Advert") } 
   scope :sponsorship, ->() { joins(:category_advert).where('category_adverts.name' => "Sponsorship") } 
   scope :partnership, ->() { joins(:category_advert).where('category_adverts.name' => "Partnership") } 
