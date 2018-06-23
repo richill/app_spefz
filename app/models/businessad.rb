@@ -8,7 +8,7 @@ class Businessad < ActiveRecord::Base
 
   before_create :generate_reference_number
 
-  scope :live_adverts, -> {where(['publishdate_end > ?', Date.current])}
+  scope :live_adverts, -> {where(['publishdate_end >= ?', Date.current])}
 
   scope :expired_adverts, -> {where(['publishdate_end < ?', Date.current])}
 
@@ -38,7 +38,7 @@ class Businessad < ActiveRecord::Base
   end
 
   def live
-    self.publishdate_end > Date.current
+    self.publishdate_end >= Date.current
   end
 
   def closed
