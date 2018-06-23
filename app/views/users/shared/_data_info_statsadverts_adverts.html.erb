@@ -1,5 +1,8 @@
 <h1>total adverts [<%= @businessads.count %>]
-  <div class="h1_subtitle"><i class="fa fa-info-circle"></i> displays all adverts on the platform [ordered by published date]</div>
+  <span id="status_statsblogs_all" class="status_colour_blue">all [<%= @blogs.all.count %>]</span>
+  <span id="status_statsblogs_published" class="status_colour_blue">published [<%= @blogs.published_blogs.count %>]</span>
+  <span id="status_statsblogs_unpublished" class="status_colour_blue">unpublished [<%= @blogs.unpublished_blogs.count %>]</span>
+  <div class="h1_subtitle"><i class="fa fa-info-circle"></i> displays all created blogs on the platform [ordered by publisheddate]</div>
 </h1>
 
 <div id="">
