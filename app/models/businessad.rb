@@ -8,6 +8,14 @@ class Businessad < ActiveRecord::Base
 
   before_create :generate_reference_number
 
+  scope :live_adverts, -> {where(['publishdate_end > ?', Date.current])}
+
+  scope :expired_adverts, -> {where(['publishdate_end < ?', Date.current])}
+
+  scope :open_adverts, -> {where(['close = ? OR close IS ?', false, nil])} 
+
+  scope :closed_adverts, -> {where(['close = ?', true])}
+
   def slug_businessads
     [
       :name
