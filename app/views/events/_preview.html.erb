@@ -219,7 +219,7 @@
       <!-- right column -->
       <!-- adverts & sponsers -->
       <div class="medium-3 columns column_right">
-        <% if @event.businessads.present? %>
+        <% if @event.businessads.live_adverts.open_adverts.present? %>
           <div><%= render 'shared/content_adverts_sponsors' %></div>
         <% end %>
       </div>

@@ -133,8 +133,7 @@
           <div class="tablecell" style="width:15%;">
             <div class="main_text_format report_content_view">
               <%= (truncate "#{advert.content}", length: 50) %>
-              <a href="#<%= advert.id %>" data-reveal-id="<%= dom_id(advert) %>_album_content_show" style="">view</a>
-              <%# render partial: 'shared/modal_album_content', locals: { advert: advert } %>
+              <%= link_to "view", advert, target:"_blank" %>
             </div>
             <div>-------------</div>
             <div class="faint_text_format"><%= link_to "#{advert.clientname}", "#{advert.link}", target:"_blank" %></div>
@@ -281,8 +280,7 @@
           <div class="tablecell" style="width:15%;">
             <div class="main_text_format report_content_view">
               <%= (truncate "#{advert.content}", length: 50) %>
-              <a href="#<%= advert.id %>" data-reveal-id="<%= dom_id(advert) %>_album_content_show" style="">view</a>
-              <%# render partial: 'shared/modal_album_content', locals: { advert: advert } %>
+              <%= link_to "view", advert, target:"_blank" %>
             </div>
             <div>-------------</div>
             <div class="faint_text_format"><%= link_to "#{advert.clientname}", "#{advert.link}", target:"_blank" %></div>
@@ -429,8 +427,7 @@
           <div class="tablecell" style="width:15%;">
             <div class="main_text_format report_content_view">
               <%= (truncate "#{advert.content}", length: 50) %>
-              <a href="#<%= advert.id %>" data-reveal-id="<%= dom_id(advert) %>_album_content_show" style="">view</a>
-              <%# render partial: 'shared/modal_album_content', locals: { advert: advert } %>
+              <%= link_to "view", advert, target:"_blank" %>
             </div>
             <div>-------------</div>
             <div class="faint_text_format"><%= link_to "#{advert.clientname}", "#{advert.link}", target:"_blank" %></div>
