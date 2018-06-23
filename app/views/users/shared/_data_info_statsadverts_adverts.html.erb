@@ -44,6 +44,17 @@
             <div class="user_name"><%= link_to (truncate "#{advert.name}", length: 30), "#{advert.link}", target:"_blank" %></div>
             <div class="user_name"><%= link_to (truncate "#{advert.companyname}", length: 30), "#{advert.link}", target:"_blank" %></div>
             <div class="main_text_format"><%= link_to "#{advert.reference}", advert, target:"_blank" %></div>
+            <div>
+              <% if advert.category_advert.present? %>
+                <% if advert.category_advert.name == "Advert" %>
+                  <span class="ad_type blue_advert">advert</span>
+                <% elsif advert.category_advert.name == "Sponsorship" %>
+                  <span class="ad_type yellow_sponsor">partnership</span>
+                <% elsif advert.category_advert.name == "Partnership" %>
+                  <span class="ad_type tuquois_partnership">sponsorship</span>
+                <% end %>
+              <% end %>
+            </div>
             <div class="faint_text_format">created: <%= advert.created_at.strftime("%a, %d %b %Y") %></div>
           </div>
 

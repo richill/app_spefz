@@ -21,7 +21,7 @@
             <% if current_user.admin_pa_management_group || current_user.pa_administration_group || current_user.pa_event_mgt_group %>
               <% if advert.category_advert.name == "Advert" %>
                 <%= link_to businessad_path(advert), target:"_blank" do %>
-                  <div data-tooltip aria-haspopup="true" data-options="disable_for_touch:true" class="tip-right add_type red_advert" title="<%= "#{advert.category_advert.name}"%>"></div>
+                  <div data-tooltip aria-haspopup="true" data-options="disable_for_touch:true" class="tip-right add_type blue_advert" title="<%= "#{advert.category_advert.name}"%>"></div>
                 <% end %>
               <% elsif advert.category_advert.name == "Sponsorship" %>
                 <%= link_to businessad_path(advert), target:"_blank" do %>
@@ -29,7 +29,7 @@
                 <% end %>
               <% elsif advert.category_advert.name == "Partnership" %>
                 <%= link_to businessad_path(advert), target:"_blank" do %>
-                  <div data-tooltip aria-haspopup="true" data-options="disable_for_touch:true" class="tip-right add_type blue_partnership" title="<%= "#{advert.category_advert.name}"%>"></div>
+                  <div data-tooltip aria-haspopup="true" data-options="disable_for_touch:true" class="tip-right add_type tuquois_partnership" title="<%= "#{advert.category_advert.name}"%>"></div>
                 <% end %>
               <% end %>
             <% end %>

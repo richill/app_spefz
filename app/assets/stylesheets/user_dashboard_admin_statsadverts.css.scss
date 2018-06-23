@@ -594,6 +594,27 @@
 }
 
 
+.user_dashboard_admin_statsadverts .ad_type {
+  width: 100%;
+  display: inline-block;
+  text-align: center;
+  border-radius: 2px;
+  text-transform: capitalize;
+}
+
+.user_dashboard_admin_statsadverts .yellow_sponsor {
+  background-color: rgba(238, 170, 2, 0.3);
+}
+
+.user_dashboard_admin_statsadverts .blue_advert {
+  background-color: rgba(47, 63, 91, 0.3);
+}
+
+.user_dashboard_admin_statsadverts .tuquois_partnership {
+  background-color: rgba(75, 180, 191, 0.3);
+}
+
+
 // -----------------------------------
 //  responsive
 // -----------------------------------

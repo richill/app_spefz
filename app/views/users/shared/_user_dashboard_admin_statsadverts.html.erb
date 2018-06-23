@@ -7,6 +7,8 @@
         <div class="header_data">
           <span class="header_icon"><i class="fa fa-newspaper-o" aria-hidden="true"></i></span>
           <span><%= @businessads.all.count %></span>
+          <div class="minor_info">£<%= @businessads.sum(&:price) %></div>
+          <div class="minor_info">£<%= (@users.subcribed_users.count) * (@premium_plan.price) %>/mth</div>
         </div>
       </div>
     </div>
@@ -31,7 +33,8 @@
         <div class="header"> total adverts [adverts]</div>
         <div class="header_data">
           <span class="header_icon"><i class="fa fa-newspaper-o" aria-hidden="true"></i></span>
-          <span><%# @blogs.venues.count %></span>
+          <span><%= @businessads.adverts.live_adverts.open_adverts.count %></span>
+          <div class="minor_info">£<%= (@users.subcribed_users.count) * (@premium_plan.price) %>/mth</div>
         </div>
       </div>
     </div>
@@ -39,7 +42,7 @@
       <div class="data_content">
         <div class="header"> total adverts [partnership]</div>
         <div class="header_data"><span class="header_icon"><i class="fa fa-newspaper-o" aria-hidden="true"></i></span>
-          <span><%# @blogs.networking.count %></span>
+          <span><%= @businessads.partnership.live_adverts.open_adverts.count %></span>
         </div>
       </div>
     </div>
@@ -47,7 +50,8 @@
       <div class="data_content">
         <div class="header"> total adverts [sponsorship]</div>
         <div class="header_data">
-          <span class="header_icon"><i class="fa fa-newspaper-o" aria-hidden="true"></i></span><span><%# @blogs.dating.count %></span>
+          <span class="header_icon"><i class="fa fa-newspaper-o" aria-hidden="true"></i>
+          </span><span><%= @businessads.sponsorship.live_adverts.open_adverts.count %></span>
         </div>
       </div>
     </div>
