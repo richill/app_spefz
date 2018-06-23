@@ -1,7 +1,7 @@
 <div class="medium-12 columns ad_sponsor_mian_section">
   <!-- advert -->
   <div class="medium-12 columns ad_section">
-    <% @event.businessads.each do |advert| %>
+    <% @event.businessads.live_adverts.open_adverts.each do |advert| %>
       <div class="medium-12 columns ad_container">
         <div class="ad_inner_content">
           
