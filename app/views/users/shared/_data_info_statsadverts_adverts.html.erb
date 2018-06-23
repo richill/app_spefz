@@ -46,17 +46,25 @@
             <span class="main_text_format"><%= link_to "#{advert.event.reference}", event_path(advert.event), target:"_blank" %></span><span class="data_divider">|</span>
             <span class="main_text_format"><%= link_to "#{advert.event.businessads.count} ads", event_path(advert.event), target:"_blank" %></span>
             
+            <!-- event status -->
             <% if advert.event.open_event && advert.event.live_event %>
               <div class="evt_status_open">live event</div>
             <% else %>
               <div class="evt_status_closed_expired">closed/expired event</div>
             <% end %>
+            <!-- event status -->
 
-            <% if advert.expired_advert %>
-              <div class="evt_status_closed_expired">closed/expired advert</div>
-            <% else %>
-              <div class="evt_status_open">live event</div>
+            <!-- advert status -->
+            <% if advert.expired && advert.open %>
+              <div class="evt_status_closed_expired">expired advert</div>
+            <% elsif advert.expired && advert.close %>
+              <div class="evt_status_closed_expired">closed & expired advert</div>
+            <% elsif advert.live && advert.open %>
+              <div class="evt_status_open">live advert</div>
+            <% elsif advert.live && advert.closed %>
+              <div class="evt_status_closed_expired">closed advert</div>
             <% end %>
+            <!-- advert status -->
           </div>
 
           <div class="tablecell">

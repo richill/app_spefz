@@ -25,7 +25,19 @@ class Businessad < ActiveRecord::Base
     ((self.publishdate_end - self.publishdate_start) + 1).to_i
   end
 
-  def expired_advert
+  def expired
     self.publishdate_end < Date.current
+  end
+
+  def live
+    self.publishdate_end > Date.current
+  end
+
+  def closed
+    self.close == true || self.close == nil
+  end
+
+  def open
+    self.close == false || self.close == nil
   end
 end
