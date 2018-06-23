@@ -21,11 +21,12 @@
 .ad_sponsor_mian_section .ad_section .ad_container {
   background-color: rgba(47, 63, 91, 0.1);
   padding: 15px !important;
+  margin-bottom: 15px;
 }
 
 .ad_sponsor_mian_section .ad_section .ad_inner_content {
   background-color: #fff;
-  height: 222.5px;
+  // height: 222.5px;
   overflow: hidden;
   position: relative;
 }
@@ -42,7 +43,7 @@
 }
 
 .ad_sponsor_mian_section .ad_section .text_conent {
-  padding: 2px 8px;
+  padding: 3px 8px;
   background-color: rgba(47, 63, 91, 0.5) !important;
   position: absolute;
   bottom: 0;
@@ -85,7 +86,7 @@
   top: 0;
   right: 0;
   border-radius: 200px;
-  margin: 14px 15px 15px;
+  margin: 10px 10px 15px;
 }
 
 .ad_sponsor_mian_section .yellow_sponsor {
@@ -98,6 +99,16 @@
 
 .ad_sponsor_mian_section .blue_partnership {
   background-color: #4BB4BF;
+}
+
+.ad_sponsor_mian_section .imagecontainer {
+  height: 222.5px;
+  background-color: transparent;
+}
+
+.ad_sponsor_mian_section .imagecontainer_no_img {
+  height: 62.5px;
+  background-color: transparent;
 }
 
 

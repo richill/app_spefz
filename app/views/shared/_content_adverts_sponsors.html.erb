@@ -1,11 +1,16 @@
 <div class="medium-12 columns ad_sponsor_mian_section">
   <!-- advert -->
   <div class="medium-12 columns ad_section">
-    <div class="medium-12 columns ad_container">
-      <div class="ad_inner_content">
-
-        <% @event.businessads.each do |advert| %>
-          <div><%= link_to (cl_image_tag(advert.imagelink, :transformation=>[{:gravity=>"face", :width => 600, :height => 320, :crop=>"fill"}])), "#{advert.link}", target:"_blank" %></div>
+    <% @event.businessads.each do |advert| %>
+      <div class="medium-12 columns ad_container">
+        <div class="ad_inner_content">
+          
+          <% if advert.imagelink.present? || advert.image.present? %>
+            <div class="imagecontainer"><%= link_to (cl_image_tag(advert.imagelink, :transformation=>[{:gravity=>"face", :width => 600, :height => 320, :crop=>"fill"}])), "#{advert.link}", target:"_blank" %></div>
+          <% else %>
+            <div class="imagecontainer_no_img"></div>
+          <% end %>
+         
           <div class="text_conent">
             <div class="text_conent_header"><%= link_to "#{advert.name}", "#{advert.link}" %></div>
             <div class="text_conent_link"><%= link_to "#{advert.link}", "#{advert.link}" %></div>
@@ -28,11 +33,10 @@
                 <% end %>
               <% end %>
             <% end %>
-          <% end %>
-
-        <% end %>
-      </div>
-    </div> 
+          <% end %>     
+        </div>
+      </div> 
+    <% end %>
   </div>
   <!-- advert -->
 </div>
