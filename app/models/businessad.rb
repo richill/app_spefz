@@ -20,7 +20,7 @@ class Businessad < ActiveRecord::Base
   scope :sponsorship, ->() { joins(:category_advert).where('category_adverts.name' => "Sponsorship") } 
   scope :partnership, ->() { joins(:category_advert).where('category_adverts.name' => "Partnership") } 
 
-  scope :total_price, -> { where("businessads.price").sum }
+  scope :total_price, -> { sum("businessads.price") }
 
   scope :live_this_month, -> { where(publishdate_end: Time.now.beginning_of_month..Time.now.end_of_month) }
   #adevrts that are live in current month
