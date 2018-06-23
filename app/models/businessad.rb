@@ -25,6 +25,9 @@ class Businessad < ActiveRecord::Base
   scope :live_this_month, -> { where(publishdate_end: Time.now.beginning_of_month..Time.now.end_of_month) }
   #adevrts that are live in current month
 
+  scope :live_this_year, -> { where(publishdate_end: Time.now.beginning_of_year..Time.now.end_of_year) }
+  #adevrts that are live in current year
+
   def slug_businessads
     [
       :name

@@ -7,7 +7,7 @@
         <div class="header_data">
           <span class="header_icon"><i class="fa fa-newspaper-o" aria-hidden="true"></i></span>
           <span><%= @businessads.all.count %></span>
-          <div class="minor_info">£<%= number_with_precision(@businessads.total_price, precision: 0) %> [all]</div>
+          <div class="minor_info">£<%= number_with_precision(@businessads.live_this_year.total_price, precision: 0) %> [<%= Date.current.strftime("%Y") %>]</div>
         </div>
       </div>
     </div>
