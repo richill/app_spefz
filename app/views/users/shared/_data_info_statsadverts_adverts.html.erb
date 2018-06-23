@@ -102,7 +102,17 @@
 
           <div class="tablecell">
             <div class="faint_text_format">impr.</div> 
-            <div class="main_text_format"><%= advert.event.impressionist_count(filter: :ip_address) %></div>
+            <div class="main_text_format">
+              <div class="stats_impression_cover">
+                <div class="stats_views">evt views</div>
+                <div class="stats_views_count"><%= advert.event.impressionist_count(filter: :ip_address)%></div>
+              </div>
+
+              <div class="stats_impression_cover">
+                <div class="stats_views">ad views</div>
+                <div class="stats_views_count"><%= advert.event.impressionist_count(filter: :ip_address)%></div>
+              </div>
+            </div>
           </div>
 
           <div class="tablecell">

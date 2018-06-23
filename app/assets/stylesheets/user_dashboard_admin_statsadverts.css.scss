@@ -603,15 +603,32 @@
 }
 
 .user_dashboard_admin_statsadverts .yellow_sponsor {
-  background-color: rgba(238, 170, 2, 0.3);
+  background-color: rgba(238, 170, 2, 0.2);
 }
 
 .user_dashboard_admin_statsadverts .blue_advert {
-  background-color: rgba(47, 63, 91, 0.3);
+  background-color: rgba(47, 63, 91, 0.05);
 }
 
 .user_dashboard_admin_statsadverts .tuquois_partnership {
-  background-color: rgba(75, 180, 191, 0.3);
+  background-color: rgba(75, 180, 191, 0.2);
+}
+
+.user_dashboard_admin_statsadverts .stats_impression_cover {
+  background-color: rgba(47, 63, 91, 0.05);
+  border-bottom: 2px;
+  padding: 3px;
+  border-radius: 2px;
+  margin-bottom: 5px;
+}
+
+.user_dashboard_admin_statsadverts .stats_views {
+  font-size: 10px;
+  text-align: center;
+}
+
+.user_dashboard_admin_statsadverts .stats_views_count {
+  text-align: center;
 }
 
 
