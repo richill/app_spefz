@@ -14,7 +14,7 @@
       <div class="data_content">
         <div class="header"> total live adverts</div>
         <div class="header_data"><span class="header_icon"><i class="fa fa-newspaper-o" aria-hidden="true"></i></span>
-          <span><%= @businessads.all.count %></span>
+          <span><%= @businessads.live_adverts.open_adverts.count %></span>
         </div>
       </div>
     </div>
@@ -22,7 +22,7 @@
       <div class="data_content">
         <div class="header"> live adverts [mth]</div>
         <div class="header_data"><span class="header_icon"><i class="fa fa-newspaper-o" aria-hidden="true"></i></span>
-          <span><%# @blogs.created_this_month.count %></span>
+          <span><%= @businessads.live_adverts.open_adverts.live_this_month.count %></span>
         </div>
       </div>
     </div>

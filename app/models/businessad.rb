@@ -16,6 +16,9 @@ class Businessad < ActiveRecord::Base
 
   scope :closed_adverts, -> {where(['close = ?', true])}
 
+  scope :live_this_month, -> { where(publishdate_end: Time.now.beginning_of_month..Time.now.end_of_month) }
+  #adevrts that are live in current month
+
   def slug_businessads
     [
       :name
