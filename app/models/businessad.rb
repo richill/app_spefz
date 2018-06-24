@@ -47,6 +47,10 @@ class Businessad < ActiveRecord::Base
     ((self.publishdate_end - self.publishdate_start) + 1).to_i
   end
 
+  def advert_remaining_period
+    (self.publishdate_end - Date.current).to_i
+  end
+
   def expired
     self.publishdate_end < Date.current
   end

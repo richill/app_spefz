@@ -25,25 +25,41 @@
       </p>
 
       <p>
-        <strong>Advertised Under:</strong>
-        <span><%= @businessad.event.title %></span>
-        <span>[<%= @businessad.event.reference %>]</span>
+        <span>
+          <strong>Advertised Under:</strong>
+          <span><%= @businessad.event.title %></span>
+          <span>[<%= @businessad.event.reference %>]</span>
+        </span>
+        <span>|</span>
+        <span>
+          <strong>Evt End Date:</strong>
+          <%= @businessad.event.date.strftime("%a, %d %b %Y") %>
+        </span>
       </p>
 
       <p>
         <span>
-          <strong>Published Date:</strong>
+          <strong>Published Start:</strong>
           <%= @businessad.publishdate_start.strftime("%a, %d %b %Y") %>
         </span>
         <span>|</span>
         <span>
-          <strong>Published Date:</strong>
+          <strong>Published End:</strong>
           <%= @businessad.publishdate_end.strftime("%a, %d %b %Y") %>
         </span>
         <span>|</span>
         <span>
-          <strong>Durations:</strong>
-          <%= 8 %> days
+          <strong>Duration:</strong>
+          <%= @businessad.advert_period %> days
+        </span>
+        <span>|</span>
+        <span>
+          <strong>Remaining Days:</strong>
+          <% if @businessad.expired || @businessad.closed %>
+            <span class="price"><%= "expired/close advert" %></span>
+          <% else %>
+            <span><%= @businessad.advert_remaining_period %> days</span>
+          <% end %>
         </span>
       </p>
       <p>
@@ -59,7 +75,6 @@
   <!-- table_data_content -->
   <div class="medium-12 columns lower_data_content stats_tab_01_content">
     <div class="medium-12 columns lower_data_inner_content">
-      <%# render 'users/shared/data_info_statsalbums_albumphotos' %>
       <%= render 'users/shared/data_info_statsadverts_addetails' %>
     </div>
   </div>
