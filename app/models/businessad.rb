@@ -2,6 +2,19 @@ class Businessad < ActiveRecord::Base
   extend FriendlyId
   friendly_id :slug_businessads, use: :slugged
 
+  validates_presence_of :name, presence: true, message: "can't be blank"
+  validates_presence_of :content, presence: true, message: "can't be blank"
+  validates_presence_of :link, presence: true, message: "can't be blank"
+  validates_presence_of :category_advert, presence: true, message: "can't be blank"
+  validates_presence_of :companyname, presence: true, message: "can't be blank"
+  validates_presence_of :imagelink, presence: true, message: "can't be blank"
+  validates_presence_of :publishdate_start, presence: true, message: "can't be blank"
+  validates_presence_of :publishdate_end, presence: true, message: "can't be blank"
+  validates_presence_of :price, presence: true, message: "can't be blank"
+  validates_presence_of :clientname, presence: true, message: "can't be blank"
+  validates_presence_of :clientjob, presence: true, message: "can't be blank"
+  validates_presence_of :clientcontact, presence: true, message: "can't be blank"
+
   belongs_to :user
   belongs_to :event
   belongs_to :category_advert
