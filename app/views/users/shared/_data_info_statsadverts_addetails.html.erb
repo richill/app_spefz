@@ -1,0 +1,152 @@
+<h1><%= @businessad.name %>
+  <div class="h1_subtitle"><i class="fa fa-info-circle"></i> displays all created blogs on the platform [ordered by publisheddate]</div>
+</h1>
+
+<div id="">
+  <div class="bottom_inner_content">
+    <div class="table">
+      <div class="tablerow">
+        <div class="tablecell header background">advert</div>
+        <div class="tablecell background"></div>
+        <div class="tablecell background"></div>
+        <div class="tablecell background"></div>
+        <div class="tablecell background"></div>
+        <div class="tablecell background"></div>
+        <div class="tablecell background"></div>
+        <div class="tablecell background"></div>
+        <div class="tablecell background"></div>
+        <div class="tablecell background"></div>
+        <% if current_user.admin_pa_management_group || current_user.pa_administration_group %>
+          <div class="tablecell background"></div>
+        <% end %>
+      </div>
+      <!-- advert details -->
+      <div class="tablerow">
+        <div class="tablecell" style="width:10%">
+          <div class="image_container">
+            <div class="image">
+              <% if @businessad.imagelink.present? %>
+                <%= link_to image_tag(@businessad.imagelink), @businessad %>
+              <% else %>
+                <% if @businessad.image.present? %>
+                  <%= link_to image_tag(@businessad.image_url), @businessad %>
+                <% else %>
+                  <%= link_to image_tag("img-profile-company-default.png"), @businessad %>
+                <% end %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+        <div class="tablecell">
+          <div class="user_name"><%= link_to (truncate "#{@businessad.name}", length: 30), "#{@businessad.link}", target:"_blank" %></div>
+          <div class="user_name"><%= link_to (truncate "#{@businessad.companyname}", length: 30), "#{@businessad.link}", target:"_blank" %></div>
+          <div class="main_text_format"><%= link_to "#{@businessad.reference}", @businessad %></div>
+          <div>
+            <% if @businessad.category_advert.present? %>
+              <% if @businessad.category_advert.name == "Advert" %>
+                <span class="ad_type blue_advert">advert</span>
+              <% elsif @businessad.category_advert.name == "Sponsorship" %>
+                <span class="ad_type yellow_sponsor">partnership</span>
+              <% elsif @businessad.category_advert.name == "Partnership" %>
+                <span class="ad_type tuquois_partnership">sponsorship</span>
+              <% end %>
+            <% end %>
+          </div>
+          <div class="faint_text_format">created: <%= @businessad.created_at.strftime("%a, %d %b %Y") %></div>
+        </div>
+
+        <div class="tablecell">
+          <div class="faint_text_format">event</div> 
+          <div class="user_name"><%= link_to (truncate "#{@businessad.event.title}", length: 30), event_path(@businessad.event), target: "_blank" %></div>
+          <span class="main_text_format"><%= link_to "#{@businessad.event.reference}", event_path(@businessad.event), target:"_blank" %></span><span class="data_divider">|</span>
+          <span class="main_text_format"><%= link_to "#{@businessad.event.businessads.count} ads", event_path(@businessad.event), target:"_blank" %></span>
+          
+          <!-- event status -->
+          <% if @businessad.event.open_event && @businessad.event.live_event %>
+            <div class="evt_status_open">live event</div>
+          <% else %>
+            <div class="evt_status_closed_expired">closed/expired event</div>
+          <% end %>
+          <!-- event status -->
+
+          <!-- advert status -->
+          <% if @businessad.expired && @businessad.open %>
+            <div class="evt_status_closed_expired">expired advert</div>
+          <% elsif @businessad.expired && @businessad.close %>
+            <div class="evt_status_closed_expired">closed & expired advert</div>
+          <% elsif @businessad.live && @businessad.open %>
+            <div class="evt_status_open">live advert</div>
+          <% elsif @businessad.live && @businessad.closed %>
+            <div class="evt_status_closed_expired">closed advert</div>
+          <% end %>
+          <!-- advert status -->
+        </div>
+
+        <div class="tablecell">
+          <div class="faint_text_format">publish Starts</div> 
+          <div class="main_text_format"><%= @businessad.publishdate_start.strftime("%a, %d %b %Y") %></div>
+        </div>
+
+        <div class="tablecell">
+          <div class="faint_text_format">publish Ends</div> 
+          <div class="main_text_format"><%= @businessad.publishdate_end.strftime("%a, %d %b %Y") %></div>
+        </div>
+
+        <div class="tablecell">
+          <div class="faint_text_format">days</div> 
+          <div class="main_text_format"><%= @businessad.advert_period %></div>
+        </div>
+
+        <div class="tablecell">
+          <div class="faint_text_format">impr.</div> 
+          <div class="main_text_format">
+            <div class="stats_impression_cover">
+              <div class="stats_views">evt views</div>
+              <div class="stats_views_count"><%= @businessad.event.impressionist_count(filter: :ip_address)%></div>
+            </div>
+
+            <div class="stats_impression_cover">
+              <div class="stats_views">ad views</div>
+              <div class="stats_views_count"><%= @businessad.event.impressionist_count(filter: :ip_address)%></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tablecell">
+          <div class="faint_text_format">charge</div> 
+          <div class="main_text_format">
+            <% if @businessad.price == 0 %>
+              <span class="free_charge">Free</span>
+            <% else %>
+              <span>£<%= number_with_precision(@businessad.price, precision: 0) %></span>
+            <% end %>
+          </div>
+        </div>
+
+        <div class="tablecell">
+          <div class="faint_text_format">creator</div> 
+          <div class="main_text_format"><%= link_to "#{@businessad.user.firstname}", user_path(@businessad.user), target:"_blank" %></div>
+        </div>
+        <div class="tablecell" style="width:15%;">
+          <div class="main_text_format report_content_view">
+            <%= (truncate "#{@businessad.content}", length: 50) %>
+            <%= link_to "view", @businessad, target:"_blank" %>
+          </div>
+          <div>-------------</div>
+          <div class="faint_text_format"><%= link_to "#{@businessad.clientname}", "#{@businessad.link}", target:"_blank" %></div>
+          <div class="faint_text_format"><%= @businessad.clientjob %></div>
+          <div class="faint_text_format"><%= @businessad.clientcontact %></div>
+        </div>
+        <% if current_user.admin_pa_management_group || current_user.pa_administration_group %>
+          <div class="tablecell">
+            <div class="delete_btn"><%= link_to 'Edit', edit_user_businessad_path(@businessad.user, @businessad) %></div>
+            <div class="delete_btn"><%= link_to 'Destroy', @businessad, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+          </div>
+        <% end %>
+      </div>
+      <!-- advert details -->
+    </div>
+  </div>
+</div>
+
+<div class="clear"></div>
