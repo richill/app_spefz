@@ -68,15 +68,9 @@ class BusinessadsController < ApplicationController
   end
 
   def destroy
-    # @businessad.destroy
-    # respond_to do |format|
-    #   format.html { redirect_to businessads_url, notice: 'Businessad was successfully destroyed.' }
-    #   format.json { head :no_content }
-    # end
     if current_user.admin_pa_management_group || current_user.pa_administration_group
       @user = User.friendly.find(params[:user_id])
       @businessad = Businessad.friendly.find(params[:id])
-      # @businessad = @user.businessads.find(params[:id])
       @businessad.destroy
       redirect_to businessads_path
     else
