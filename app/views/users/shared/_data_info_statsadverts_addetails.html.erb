@@ -130,7 +130,7 @@
         <div class="tablecell" style="width:15%;">
           <div class="main_text_format report_content_view">
             <%= (truncate "#{@businessad.content}", length: 50) %>
-            <%= link_to "view", @businessad, target:"_blank" %>
+            <%= link_to "view", @businessad %>
           </div>
           <div>-------------</div>
           <div class="faint_text_format"><%= link_to "#{@businessad.clientname}", "#{@businessad.link}", target:"_blank" %></div>
