@@ -1,1 +1,66 @@
-<h1>user_dashboard_admin_statsadverts_show</h1>
+<div class="user_dashboard_admin_statsalbums user_dashboard_admin_statsadverts user_dashboard_admin_statsadverts_show">
+  <!-- upper_data_content -->
+  <div class="medium-12 columns upper_data_content">
+    <div class="">
+      <p id="notice"><%= notice %></p>
+      <p>
+        <strong>Advert Name:</strong>
+        <span><%= @businessad.name %></span>
+        <span>[<%= @businessad.reference %>]</span>
+      </p>
+
+      <p>
+        <span>
+          <strong>Advertised Type:</strong>
+          <span><%= @businessad.category_advert.name %></span>
+        </span>
+        <span>|</span>
+        <span>
+          <% if @businessad.price == 0 %>
+            <span class="price">FREE %></span>
+          <% else %>
+            <span class="price">£<%= @businessad.price %></span>
+          <% end %>
+        </span>
+      </p>
+
+      <p>
+        <strong>Advertised Under:</strong>
+        <span><%= @businessad.event.title %></span>
+        <span>[<%= @businessad.event.reference %>]</span>
+      </p>
+
+      <p>
+        <span>
+          <strong>Published Date:</strong>
+          <%= @businessad.publishdate_start.strftime("%a, %d %b %Y") %>
+        </span>
+        <span>|</span>
+        <span>
+          <strong>Published Date:</strong>
+          <%= @businessad.publishdate_end.strftime("%a, %d %b %Y") %>
+        </span>
+        <span>|</span>
+        <span>
+          <strong>Durations:</strong>
+          <%= 8 %> days
+        </span>
+      </p>
+      <p>
+        <strong>Description:</strong>
+        <%= @businessad.content %>
+      </p>
+    </div>
+  </div>
+
+
+  <div class="clear"></div>
+
+  <!-- table_data_content -->
+  <div class="medium-12 columns lower_data_content stats_tab_01_content">
+    <div class="medium-12 columns lower_data_inner_content">
+      <%# render 'users/shared/data_info_statsalbums_albumphotos' %>
+    </div>
+  </div>
+</div>
+

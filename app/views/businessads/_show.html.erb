@@ -15,55 +15,12 @@
         <span><i class="fa fa-user" aria-hidden="true"></i> <%= link_to "#{current_user.firstname}", user_path(current_user)%></span> <span class="fwd_sign">></span> <span><%= link_to "adverts", stats_adverts_user_path(current_user) %></span> <span class="fwd_sign">></span> <span><%= @businessad.name %></span> <span class="tree_link_btn"><%= link_to 'edit advert', edit_user_businessad_path(@businessad.user, @businessad) %></span>
       </div>
       <div class="user_general_settings_inner_section user_dashboard_section_main_content">
-        <div><%# render "users/shared/user_dashboard_admin_statsalbums_show" %></div>
         <div><%= render "users/shared/user_dashboard_admin_statsadverts_show" %></div>
       </div>
       <!-- content -->
     </div>
   </div>
   <!-- right_column_section -->
-</div>
-
-<div class="old_content">
-  <p id="notice"><%= notice %></p>
-
-  <p>
-    <strong>Name:</strong>
-    <%= @businessad.name %>
-  </p>
-
-  <p>
-    <strong>Content:</strong>
-    <%= @businessad.content %>
-  </p>
-
-  <p>
-    <strong>Link:</strong>
-    <%= @businessad.link %>
-  </p>
-
-  <p>
-    <strong>Image:</strong>
-    <%= @businessad.image %>
-  </p>
-
-  <p>
-    <strong>Displaytext:</strong>
-    <%= @businessad.displaytext %>
-  </p>
-
-  <p>
-    <strong>Category advert:</strong>
-    <%= @businessad.category_advert_id %>
-  </p>
-
-  <p>
-    <strong>Event:</strong>
-    <%= @businessad.event_id %>
-  </p>
-
-  <%= link_to 'Edit', edit_businessad_path(@businessad) %> |
-  <%= link_to 'Back', businessads_path %>
 </div>
 
 
