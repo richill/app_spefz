@@ -1,15 +1,12 @@
-<h1>total adverts [<%= @businessads.count %>]
-  <span id="status_statsadverts_all" class="status_colour_blue">all [<%= @businessads.all.count %>]</span>
-  <span id="status_statsadverts_live" class="status_colour_blue">live adevrts [<%= @businessads.live_adverts.open_adverts.count %>]</span>
-  <span id="status_statsadverts_expired" class="status_colour_blue">expired/closed adverts [<%= @businessads.expired_closed_adverts.count %>]</span>
-  <div class="h1_subtitle"><i class="fa fa-info-circle"></i> displays all created adverts on the platform</div>
+<h1>total category: partnerships [<%= @businessads.partnership.live_adverts.open_adverts.count %>]
+  <div class="h1_subtitle"><i class="fa fa-info-circle"></i> displays all created adverts under the category partnership on the platform</div>
 </h1>
 
 <div id="content_status_statsadverts_all">
   <div class="bottom_inner_content">
     <div class="table">
       <div class="tablerow">
-        <div class="tablecell header background">adverts</div>
+        <div class="tablecell header background">partnerships</div>
         <div class="tablecell background"></div>
         <div class="tablecell background"></div>
         <div class="tablecell background"></div>
@@ -23,7 +20,7 @@
           <div class="tablecell background"></div>
         <% end %>
       </div>
-      <% @businessads.order("created_at desc").each do |advert| %>
+      <% @businessads.partnership.live_adverts.open_adverts.order("created_at desc").each do |advert| %>
         <div class="tablerow">
           <div class="tablecell" style="width:10%">
             <div class="image_container">
@@ -196,9 +193,9 @@
                 <% if advert.category_advert.name == "Advert" %>
                   <span class="ad_type blue_advert">advert</span>
                 <% elsif advert.category_advert.name == "Sponsorship" %>
-                  <span class="ad_type yellow_sponsor">sponsorship</span>
+                  <span class="ad_type yellow_sponsor">partnership</span>
                 <% elsif advert.category_advert.name == "Partnership" %>
-                  <span class="ad_type tuquois_partnership">partnership</span>
+                  <span class="ad_type tuquois_partnership">sponsorship</span>
                 <% end %>
               <% end %>
             </div>
@@ -343,9 +340,9 @@
                 <% if advert.category_advert.name == "Advert" %>
                   <span class="ad_type blue_advert">advert</span>
                 <% elsif advert.category_advert.name == "Sponsorship" %>
-                  <span class="ad_type yellow_sponsor">sponsorship</span>
+                  <span class="ad_type yellow_sponsor">partnership</span>
                 <% elsif advert.category_advert.name == "Partnership" %>
-                  <span class="ad_type tuquois_partnership">partnership</span>
+                  <span class="ad_type tuquois_partnership">sponsorship</span>
                 <% end %>
               <% end %>
             </div>

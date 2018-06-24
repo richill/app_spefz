@@ -7,6 +7,17 @@
         <strong>Advert Name:</strong>
         <span><%= @businessad.name %></span>
         <span>[<%= @businessad.reference %>]</span>
+        <span>
+          <% if @businessad.category_advert.present? %>
+            <% if @businessad.category_advert.name == "Advert" %>
+              <span class="ad_type_cover blue_advert_cover">advert</span>
+            <% elsif @businessad.category_advert.name == "Sponsorship" %>
+              <span class="ad_type_cover yellow_sponsor_cover">sponsorship</span>
+            <% elsif @businessad.category_advert.name == "Partnership" %>
+              <span class="ad_type_cover tuquois_partnership_cover">partnership</span>
+            <% end %>
+          <% end %>
+        </span>
       </p>
 
       <p>
