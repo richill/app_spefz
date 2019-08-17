@@ -7,7 +7,9 @@ class AlbumsController < ApplicationController
   end
 
   def show
-    unless current_user.admin_pa_management_group || current_user.pa_event_mgt_group
+    if current_user.admin_pa_management_group || current_user.pa_event_mgt_group
+      @album = Album.friendly.find(params[:id])
+    else
       redirect_to errorpermission_path
     end
   end
@@ -62,6 +64,8 @@ class AlbumsController < ApplicationController
 
   def destroy
     if current_user.admin_pa_management_group 
+      @album = Album.friendly.find(params[:album_id])
+      @user = User.friendly.find(params[:user_id])
       @album.destroy
       respond_to do |format|
         format.html { redirect_to stats_albums_user_url(current_user), notice: 'Album was successfully destroyed.' }
@@ -73,8 +77,8 @@ class AlbumsController < ApplicationController
   end
 
   def preview
-    @album = Album.find(params[:id])
-    # @album = Album.friendly.find(params[:id])
+    # @album = Album.find(params[:id])
+    @album = Album.friendly.find(params[:id])
   end
 
   private
@@ -111,7 +115,7 @@ class AlbumsController < ApplicationController
     end
 
     def set_album
-      @album = Album.find(params[:id])
+      @album = Album.friendly.find(params[:id])
     end
 
     def album_params

@@ -1,4 +1,7 @@
 class Album < ActiveRecord::Base
+  extend FriendlyId
+  friendly_id :slug_albums, use: :slugged
+
   validates_presence_of :name, presence: true, message: "can't be blank"
   validates_presence_of :date, presence: true, message: "can't be blank"
   validates_presence_of :description, presence: true, message: "can't be blank"
@@ -10,6 +13,12 @@ class Album < ActiveRecord::Base
 
   scope :published_albums, -> { where('publish = ?', true) }
   scope :unpublished_albums, -> { where('publish = ?', false) }
+
+  def slug_albums
+    [
+      :name
+    ]
+  end
 
   def image_or_albumlink
     if image.blank? ^ album_image_link.blank?

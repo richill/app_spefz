@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180622132908) do
+ActiveRecord::Schema.define(version: 20190817155034) do
 
   create_table "activities", force: :cascade do |t|
     t.integer  "trackable_id"
@@ -40,7 +40,10 @@ ActiveRecord::Schema.define(version: 20180622132908) do
     t.boolean  "publish"
     t.string   "album_image_link"
     t.integer  "user_id"
+    t.string   "slug"
   end
+
+  add_index "albums", ["slug"], name: "index_albums_on_slug", unique: true
 
   create_table "attendances", force: :cascade do |t|
     t.integer  "attendable_id"
