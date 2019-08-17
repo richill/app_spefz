@@ -1,4 +1,4 @@
-<div class= "medium-12 columns user_general_settings_section">
+<div class= "medium-12 columns user_general_settings_section socials_form_section">
 
   <!-- left_column_section -->
   <div class="medium-2 columns left_column_section">
@@ -27,7 +27,27 @@
               <%= f.error_notification %>
 
               <div class="form-inputs">
-                <%= f.file_field :image %>
+                <!-- social_image -->
+                <div class="image_container">
+                  <div class="image_header">upload social image</div>
+                  <div class="avatar-upload">
+                    <div class="avatar-edit">
+                      <%= f.file_field :image, type: 'file', id: "imageUpload", accept: ".png, .jpg, .jpeg" %>
+                      <%= f.hidden_field(:image_cache) %>
+                      <label for="imageUpload"></label>
+                    </div>
+
+                    <div class="avatar-preview">
+                      <% if @social.image.present? %>
+                        <span class="current_image_cover">
+                          <span class="current_image"><%= cl_image_tag("#{@social.image}") %></span>
+                        </span>
+                      <% end %>
+                      <div id="imagePreview" style="background-image: url(https://res.cloudinary.com/spefzapp/image/upload/v1566053569/Venue%20Images/Spefz%20Images/img-profile-company-default.png);"></div>
+                    </div>
+                  </div>
+                </div>
+                <!-- social_image -->
 
                 <% if current_user.admin_pa_management_group || current_user.pa_event_mgt_group %>
                   <%= f.input :social_image_link, label: "Social Image [Image Link]", placeholder: "https://res.cloudinary.com/account/image/upload/v1474379672/happy-family.jpg" %>

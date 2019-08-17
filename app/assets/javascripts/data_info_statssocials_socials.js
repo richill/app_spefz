@@ -32,3 +32,19 @@ $(document).ready(function() {
     $("#status_statssocials_all_content").hide();
   });
 });
+
+// display socials uploaded image
+function readURL(input) {
+  if (input.files && input.files[0]) {
+    var reader = new FileReader();
+    reader.onload = function(e) {
+      $('#imagePreviewSocial').css('background-image', 'url('+e.target.result +')');
+      $('#imagePreviewSocial').hide();
+      $('#imagePreviewSocial').fadeIn(650);
+    }
+    reader.readAsDataURL(input.files[0]);
+  }
+}
+$("#imageUploadSocial").change(function() {
+  readURL(this);
+});

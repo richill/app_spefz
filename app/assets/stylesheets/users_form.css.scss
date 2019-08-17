@@ -366,13 +366,13 @@
 // ---------------------------------------
 //   image_upload_start
 // ---------------------------------------
-.user_general_settings_section .image_container {
+.user_main_form_page .image_container {
   padding: 20px;
   background-color: #fff;
   border-radius: 5px;
 }
 
-.user_general_settings_section .avatar-upload {
+.user_main_form_page .avatar-upload {
   position: relative;
   max-width: 205px;
   margin: 30px auto 0px;
@@ -404,7 +404,7 @@
               font-family: 'FontAwesome';
               color: #757575;
               position: absolute;
-              top: 10px;
+              top: 7px;
               left: 0;
               right: 0;
               text-align: center;
@@ -431,7 +431,7 @@
   }
 }
 
-.user_general_settings_section .current_image_cover {
+.user_main_form_page .current_image_cover {
   background-color: transparent;
   height: 43px;
   width: 43px;
@@ -443,12 +443,12 @@
   top: -12px;
 }
 
-.user_general_settings_section .current_image img {
+.user_main_form_page .current_image img {
   border-radius: 200px;
   height: 100%;
 }
 
-.user_general_settings_section .image_header {
+.user_main_form_page .image_header {
   color: #ccc;
   font-weight: bold;
   text-transform: capitalize;
@@ -456,7 +456,7 @@
   text-align: center;
 }
 @media only screen and (max-width: 1030px) {
-  .user_general_settings_section .image_header{
+  .user_main_form_page .image_header{
     font-size: 25px;
   }
 }
