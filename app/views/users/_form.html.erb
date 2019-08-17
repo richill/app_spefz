@@ -18,8 +18,28 @@
           <%= f.error_notification %>
 
           <div class="form-inputs">
-            <%= f.file_field :image, type: :file %>
-            <%= f.hidden_field(:image_cache) %>
+            <!-- user_image -->
+            <div class="image_container">
+              <div class="image_header">upload profile image</div>
+              <div class="avatar-upload">
+                <div class="avatar-edit">
+                  <%= f.file_field :image, type: 'file', id: "imageUpload", accept: ".png, .jpg, .jpeg" %>
+                  <%= f.hidden_field(:image_cache) %>
+                  <label for="imageUpload"></label>
+                </div>
+
+                <div class="avatar-preview">
+                  <% if @user.image.present? %>
+                    <span class="current_image_cover">
+                      <span class="current_image"><%= cl_image_tag("#{@user.image}") %></span>
+                    </span>
+                  <% end %>
+                  <div id="imagePreview" style="background-image: url(https://res.cloudinary.com/childmindrnet/image/upload/v1561111366/profile%20images/rhihx4rzxdet0mi9n8iz.png);"></div>
+                </div>
+              </div>
+            </div>
+            <!-- user_image -->
+
             <%= f.input :firstname, label: "First Name", placeholder: "first name" %>
             <%= f.input :lastname, label: "Last Name", placeholder: "last name" %>
             <div class="clear"></div>
