@@ -127,7 +127,7 @@ cmr08 = CategoryManagementgroup.create!(name:'Management Group') #superior group
 cmr09 = CategoryManagementgroup.create!(name:'Sales/Marketing Group')
 
 Subscription.delete_all
-sb01 = Subscription.create!(title:'premium', price: 15.0, reference: 'SPz_x4Hrmg')
+sb01 = Subscription.create!(title:'premium', price: 18.0, reference: 'SPz_x4Hrmg')
 
 CategoryMatchseeking.delete_all
 ctms01 = CategoryMatchseeking.create!(name:'Male')
