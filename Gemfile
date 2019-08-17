@@ -33,6 +33,7 @@ gem 'ratyrate'
 gem 'unread'
 gem 'thin'
 gem 'ckeditor'
+gem 'pry'
 
 group :development, :test do
   gem 'sqlite3'

@@ -78,11 +78,11 @@
             <!-- <span id="notification_count_bell"><%# @user_network_activities.unread_by(current_user).count %></span> -->
           <%# end %>
 
-          <!-- note: the below display activities that are live & open by current_user's network that are unread -->            
-          <% if @user_network_activities.unread_by(current_user).where(trackable_type: "Social").select {|activity| activity.trackable.live_social && activity.trackable.open_social }.present? || @user_network_activities.unread_by(current_user).where(trackable_type: "Attendance").select {|activity| activity.trackable.attendable.live_social && activity.trackable.attendable.open_social }.present? %>          
+          <!-- note: the below display activities that are live & open by current_user's network that are unread -->
+          <% if @user_network_activities.unread_by(current_user).where(trackable_type: "Social").select {|activity| activity.trackable.present? && activity.trackable.live_social && activity.trackable.open_social }.present? || @user_network_activities.unread_by(current_user).where(trackable_type: "Attendance").select {|activity| activity.trackable.present? && activity.trackable.attendable.live_social && activity.trackable.attendable.open_social }.present? %>          
             <span id="notification_count_bell">
-              <%= (@user_network_activities.unread_by(current_user).where(trackable_type: "Social").select {|activity| activity.trackable.live_social && activity.trackable.open_social }.count) +
-                (@user_network_activities.unread_by(current_user).where(trackable_type: "Attendance").select {|activity| activity.trackable.attendable.live_social && activity.trackable.attendable.open_social }.count)
+              <%= (@user_network_activities.unread_by(current_user).where(trackable_type: "Social").select {|activity| activity.trackable.present? && activity.trackable.live_social && activity.trackable.open_social }.count) +
+                (@user_network_activities.unread_by(current_user).where(trackable_type: "Attendance").select {|activity| activity.trackable.present? && activity.trackable.attendable.live_social && activity.trackable.attendable.open_social }.count)
               %>
             </span>
           <% end %>
