@@ -28,8 +28,27 @@
               <div class="text_info" style="margin-bottom:15px;">Tick if you would like to close this advert</div>
             </div>
 
-            <%= f.file_field :image %>
+            <!-- businessAdverts_image -->
+            <div class="image_container">
+              <div class="image_header">upload business ad image</div>
+              <div class="avatar-upload">
+                <div class="avatar-edit">
+                  <%= f.file_field :image, type: 'file', id: "imageUpload", accept: ".png, .jpg, .jpeg" %>
+                  <label for="imageUpload"></label>
+                </div>
 
+                <div class="avatar-preview">
+                  <% if @businessad.image.present? %>
+                    <span class="current_image_cover">
+                      <span class="current_image"><%= cl_image_tag("#{@businessad.image}") %></span>
+                    </span>
+                  <% end %>
+                  <div id="imagePreview" style="background-image: url(https://res.cloudinary.com/spefzapp/image/upload/v1566053569/Venue%20Images/Spefz%20Images/img-profile-company-default.png);"></div>
+                </div>
+              </div>
+            </div>
+            <!-- businessAdverts_image -->
+            
             <%= f.input :imagelink, label: "Advert Image [Image Link]", placeholder: "https://res.cloudinary.com/account/image/upload/v1474379672/happy-family.jpg" %>
             <div class="text_info">If unable to upload image for the advert. Place image link here</div> 
 
