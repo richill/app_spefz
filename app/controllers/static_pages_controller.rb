@@ -205,6 +205,9 @@ class StaticPagesController < ApplicationController
     end
   end
 
+  def presskitpg
+  end
+
   def investmentpg
     @premium_plan = Subscription.find_by(title:"premium")
     if signed_in?

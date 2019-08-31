@@ -168,6 +168,7 @@ Rails.application.routes.draw do
   get   'message-delivered',              to: 'static_pages#messagesentpg'
   get   'notes',                          to: 'static_pages#notepg'
   get   'presentation',                   to: 'static_pages#presentationpg'
+  get   'press-kit',                      to: 'static_pages#presskitpg'
   get   'sponsorship',                    to: 'static_pages#sponsorshippg'
   get   'terms',                          to: 'static_pages#termspg'
   get   'terms/cookie-policy',            to: 'static_pages#cookiepg'
