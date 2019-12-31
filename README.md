@@ -1,4 +1,2 @@
-app_social
-===========
-
-social app
+# app_spefz
+Social Dating Platform
